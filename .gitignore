@@ -1,3 +1,5 @@
+# Origin for C
+
 # Object files
 *.o
 *.ko
@@ -31,3 +33,7 @@
 # Debug files
 *.dSYM/
 *.su
+
+# Advanced for C#
+
+*.dat
