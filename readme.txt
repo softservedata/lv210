@@ -1,6 +1,9 @@
 In the winter time we go
 Walking in the fields of snow;
 
+Where there is no grass at all;
+Where the top of every wall,
+
 Pointing out the way we came,
 
 And our mothers always know,
