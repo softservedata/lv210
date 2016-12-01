@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\InformationAboutPerson\InformationAboutPerson\bin\Debug\InformationAboutPerson.exe.config
+D:\Курси\c_sharp hometasks\InformationAboutPerson\InformationAboutPerson\bin\Debug\InformationAboutPerson.exe
+D:\Курси\c_sharp hometasks\InformationAboutPerson\InformationAboutPerson\bin\Debug\InformationAboutPerson.pdb
+D:\Курси\c_sharp hometasks\InformationAboutPerson\InformationAboutPerson\obj\Debug\InformationAboutPerson.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\InformationAboutPerson\InformationAboutPerson\obj\Debug\InformationAboutPerson.exe
+D:\Курси\c_sharp hometasks\InformationAboutPerson\InformationAboutPerson\obj\Debug\InformationAboutPerson.pdb

@@ -1,9 +1,0 @@
-D:\Курси\c_sharp hometasks\TaskSecondHomework\TaskSecondHomework\bin\Debug\TaskSecondHomework.exe.config
-D:\Курси\c_sharp hometasks\TaskSecondHomework\TaskSecondHomework\obj\Debug\TaskSecondHomework.csprojResolveAssemblyReference.cache
-D:\Курси\c_sharp hometasks\TaskSecondHomework\TaskSecondHomework\bin\Debug\TaskSecondHomework.exe
-D:\Курси\c_sharp hometasks\TaskSecondHomework\TaskSecondHomework\bin\Debug\TaskSecondHomework.pdb
-D:\Курси\c_sharp hometasks\TaskSecondHomework\TaskSecondHomework\obj\Debug\TaskSecondHomework.exe
-D:\Курси\c_sharp hometasks\TaskSecondHomework\TaskSecondHomework\obj\Debug\TaskSecondHomework.pdb
-D:\Курси\c_sharp hometasks\Homework2\TaskSecondHomework\TaskSecondHomework\bin\Debug\TaskSecondHomework.exe.config
-D:\Курси\c_sharp hometasks\Homework2\TaskSecondHomework\TaskSecondHomework\obj\Debug\TaskSecondHomework.exe
-D:\Курси\c_sharp hometasks\Homework2\TaskSecondHomework\TaskSecondHomework\obj\Debug\TaskSecondHomework.pdb

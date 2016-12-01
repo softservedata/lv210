@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\ActionsWithSquare\ActionsWithSquare\bin\Debug\ActionsWithSquare.exe.config
+D:\Курси\c_sharp hometasks\ActionsWithSquare\ActionsWithSquare\bin\Debug\ActionsWithSquare.exe
+D:\Курси\c_sharp hometasks\ActionsWithSquare\ActionsWithSquare\bin\Debug\ActionsWithSquare.pdb
+D:\Курси\c_sharp hometasks\ActionsWithSquare\ActionsWithSquare\obj\Debug\ActionsWithSquare.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\ActionsWithSquare\ActionsWithSquare\obj\Debug\ActionsWithSquare.exe
+D:\Курси\c_sharp hometasks\ActionsWithSquare\ActionsWithSquare\obj\Debug\ActionsWithSquare.pdb
