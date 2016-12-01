@@ -1,0 +1,5 @@
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\HowAreYou\HowAreYou\bin\Debug\HowAreYou.exe.config
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\HowAreYou\HowAreYou\bin\Debug\HowAreYou.exe
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\HowAreYou\HowAreYou\bin\Debug\HowAreYou.pdb
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\HowAreYou\HowAreYou\obj\Debug\HowAreYou.exe
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\HowAreYou\HowAreYou\obj\Debug\HowAreYou.pdb
