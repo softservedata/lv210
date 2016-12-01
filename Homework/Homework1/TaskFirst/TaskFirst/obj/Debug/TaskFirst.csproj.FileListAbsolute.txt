@@ -1,0 +1,9 @@
+D:\Курси\TaskFirst\TaskFirst\bin\Debug\TaskFirst.exe.config
+D:\Курси\TaskFirst\TaskFirst\bin\Debug\TaskFirst.exe
+D:\Курси\TaskFirst\TaskFirst\bin\Debug\TaskFirst.pdb
+D:\Курси\TaskFirst\TaskFirst\obj\Debug\TaskFirst.csprojResolveAssemblyReference.cache
+D:\Курси\TaskFirst\TaskFirst\obj\Debug\TaskFirst.exe
+D:\Курси\TaskFirst\TaskFirst\obj\Debug\TaskFirst.pdb
+D:\Курси\c_sharp hometasks\TaskFirst\TaskFirst\bin\Debug\TaskFirst.exe.config
+D:\Курси\c_sharp hometasks\TaskFirst\TaskFirst\obj\Debug\TaskFirst.exe
+D:\Курси\c_sharp hometasks\TaskFirst\TaskFirst\obj\Debug\TaskFirst.pdb
