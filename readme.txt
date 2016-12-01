@@ -6,6 +6,9 @@ Where the top of every wall,
 
 Pointing out the way we came,
 
+All across the fields there be
+Prints in silver filigree;
+
 And our mothers always know,
 
 By the footprints in the snow,
