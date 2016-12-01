@@ -1,0 +1,5 @@
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\RadiusOperation\RadiusOperation\bin\Debug\RadiusOperation.exe.config
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\RadiusOperation\RadiusOperation\bin\Debug\RadiusOperation.exe
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\RadiusOperation\RadiusOperation\bin\Debug\RadiusOperation.pdb
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\RadiusOperation\RadiusOperation\obj\Debug\RadiusOperation.exe
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\RadiusOperation\RadiusOperation\obj\Debug\RadiusOperation.pdb

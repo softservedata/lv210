@@ -1,0 +1,5 @@
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\Greeting\Greeting\bin\Debug\Greeting.exe.config
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\Greeting\Greeting\bin\Debug\Greeting.exe
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\Greeting\Greeting\bin\Debug\Greeting.pdb
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\Greeting\Greeting\obj\Debug\Greeting.exe
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\Greeting\Greeting\obj\Debug\Greeting.pdb

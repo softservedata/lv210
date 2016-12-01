@@ -1,0 +1,6 @@
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\RangeCheck\RangeCheck\bin\Debug\RangeCheck.exe.config
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\RangeCheck\RangeCheck\bin\Debug\RangeCheck.exe
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\RangeCheck\RangeCheck\bin\Debug\RangeCheck.pdb
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\RangeCheck\RangeCheck\obj\Debug\RangeCheck.csprojResolveAssemblyReference.cache
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\RangeCheck\RangeCheck\obj\Debug\RangeCheck.exe
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\RangeCheck\RangeCheck\obj\Debug\RangeCheck.pdb

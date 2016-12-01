@@ -1,0 +1,5 @@
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\MaxMin\MaxMin\bin\Debug\MaxMin.exe.config
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\MaxMin\MaxMin\bin\Debug\MaxMin.exe
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\MaxMin\MaxMin\bin\Debug\MaxMin.pdb
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\MaxMin\MaxMin\obj\Debug\MaxMin.exe
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\MaxMin\MaxMin\obj\Debug\MaxMin.pdb

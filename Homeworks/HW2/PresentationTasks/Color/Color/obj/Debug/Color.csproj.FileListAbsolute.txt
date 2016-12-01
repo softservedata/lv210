@@ -1,0 +1,5 @@
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\Color\Color\bin\Debug\Color.exe.config
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\Color\Color\bin\Debug\Color.exe
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\Color\Color\bin\Debug\Color.pdb
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\Color\Color\obj\Debug\Color.exe
+c:\users\марія сергіївна\documents\visual studio 2015\Projects\Color\Color\obj\Debug\Color.pdb
