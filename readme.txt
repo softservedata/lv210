@@ -5,6 +5,7 @@ Where there is no grass at all;
 Where the top of every wall,
 
 Pointing out the way we came,
+Every one of them the same
 
 All across the fields there be
 Prints in silver filigree;
