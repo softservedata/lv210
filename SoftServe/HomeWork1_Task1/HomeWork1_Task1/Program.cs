@@ -14,21 +14,21 @@ namespace HomeWork1_Task1
             Console.Write("Input variable a : ");
             int a = int.Parse(Console.ReadLine());
 
-            int area = Area(a);
+            int area = SquareArea(a);
 
-            int perimetr = Perimetr(a);
+            int perimetr = SquarePerimetr(a);
 
-            Console.WriteLine("Area is equal : {0}, perimeter is equal : {1} with side length a : {2}", area, perimetr, a);
+            Console.WriteLine("Area of square is equal : {0}, perimeter is equal : {1} with length a : {2}", area, perimetr, a);
 
             Console.ReadKey();
         }
 
-        private static int Area(int a)
+        private static int SquareArea(int a)
         {
             return a * a;
         }
 
-        private static int Perimetr(int a)
+        private static int SquarePerimetr(int a)
         {
             return 4 * a;
         }
