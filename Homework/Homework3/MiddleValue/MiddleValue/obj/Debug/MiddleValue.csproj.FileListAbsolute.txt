@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\MiddleValue\MiddleValue\bin\Debug\MiddleValue.exe.config
+D:\Курси\c_sharp hometasks\MiddleValue\MiddleValue\bin\Debug\MiddleValue.exe
+D:\Курси\c_sharp hometasks\MiddleValue\MiddleValue\bin\Debug\MiddleValue.pdb
+D:\Курси\c_sharp hometasks\MiddleValue\MiddleValue\obj\Debug\MiddleValue.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\MiddleValue\MiddleValue\obj\Debug\MiddleValue.exe
+D:\Курси\c_sharp hometasks\MiddleValue\MiddleValue\obj\Debug\MiddleValue.pdb

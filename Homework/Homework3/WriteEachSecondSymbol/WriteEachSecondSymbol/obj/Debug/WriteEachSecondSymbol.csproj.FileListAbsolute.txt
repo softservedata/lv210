@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\WriteEachSecondSymbol\WriteEachSecondSymbol\bin\Debug\WriteEachSecondSymbol.exe.config
+D:\Курси\c_sharp hometasks\WriteEachSecondSymbol\WriteEachSecondSymbol\bin\Debug\WriteEachSecondSymbol.exe
+D:\Курси\c_sharp hometasks\WriteEachSecondSymbol\WriteEachSecondSymbol\bin\Debug\WriteEachSecondSymbol.pdb
+D:\Курси\c_sharp hometasks\WriteEachSecondSymbol\WriteEachSecondSymbol\obj\Debug\WriteEachSecondSymbol.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\WriteEachSecondSymbol\WriteEachSecondSymbol\obj\Debug\WriteEachSecondSymbol.exe
+D:\Курси\c_sharp hometasks\WriteEachSecondSymbol\WriteEachSecondSymbol\obj\Debug\WriteEachSecondSymbol.pdb

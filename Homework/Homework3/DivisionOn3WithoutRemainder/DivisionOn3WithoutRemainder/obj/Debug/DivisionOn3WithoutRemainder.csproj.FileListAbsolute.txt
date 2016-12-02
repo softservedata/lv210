@@ -1,0 +1,9 @@
+D:\Курси\c_sharp hometasks\DivisionOn3WithoutRemainder\DivisionOn3WithoutRemainder\bin\Debug\DivisionOn3WithoutRemainder.exe.config
+D:\Курси\c_sharp hometasks\DivisionOn3WithoutRemainder\DivisionOn3WithoutRemainder\bin\Debug\DivisionOn3WithoutRemainder.exe
+D:\Курси\c_sharp hometasks\DivisionOn3WithoutRemainder\DivisionOn3WithoutRemainder\bin\Debug\DivisionOn3WithoutRemainder.pdb
+D:\Курси\c_sharp hometasks\DivisionOn3WithoutRemainder\DivisionOn3WithoutRemainder\obj\Debug\DivisionOn3WithoutRemainder.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\DivisionOn3WithoutRemainder\DivisionOn3WithoutRemainder\obj\Debug\DivisionOn3WithoutRemainder.exe
+D:\Курси\c_sharp hometasks\DivisionOn3WithoutRemainder\DivisionOn3WithoutRemainder\obj\Debug\DivisionOn3WithoutRemainder.pdb
+D:\Курси\c_sharp hometasks\Homework3\DivisionOn3WithoutRemainder\DivisionOn3WithoutRemainder\bin\Debug\DivisionOn3WithoutRemainder.exe.config
+D:\Курси\c_sharp hometasks\Homework3\DivisionOn3WithoutRemainder\DivisionOn3WithoutRemainder\obj\Debug\DivisionOn3WithoutRemainder.exe
+D:\Курси\c_sharp hometasks\Homework3\DivisionOn3WithoutRemainder\DivisionOn3WithoutRemainder\obj\Debug\DivisionOn3WithoutRemainder.pdb

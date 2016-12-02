@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\DrinkPrice\DrinkPrice\bin\Debug\DrinkPrice.exe.config
+D:\Курси\c_sharp hometasks\DrinkPrice\DrinkPrice\bin\Debug\DrinkPrice.exe
+D:\Курси\c_sharp hometasks\DrinkPrice\DrinkPrice\bin\Debug\DrinkPrice.pdb
+D:\Курси\c_sharp hometasks\DrinkPrice\DrinkPrice\obj\Debug\DrinkPrice.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\DrinkPrice\DrinkPrice\obj\Debug\DrinkPrice.exe
+D:\Курси\c_sharp hometasks\DrinkPrice\DrinkPrice\obj\Debug\DrinkPrice.pdb
