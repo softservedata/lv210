@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HomeWork2_Task1
 {
@@ -34,9 +30,14 @@ namespace HomeWork2_Task1
             foreach (var item in list)
             {
                 if (item <= 5 && item >= -5)
+                {
                     belongToRange = true;
+                }
                 else
+                {
                     belongToRange = false;
+                    break;
+                }
             }
 
             return belongToRange;
