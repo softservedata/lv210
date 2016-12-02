@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\HttpErrorsEnum\HttpErrorsEnum\bin\Debug\HttpErrorsEnum.exe.config
+D:\Курси\c_sharp hometasks\HttpErrorsEnum\HttpErrorsEnum\bin\Debug\HttpErrorsEnum.exe
+D:\Курси\c_sharp hometasks\HttpErrorsEnum\HttpErrorsEnum\bin\Debug\HttpErrorsEnum.pdb
+D:\Курси\c_sharp hometasks\HttpErrorsEnum\HttpErrorsEnum\obj\Debug\HttpErrorsEnum.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\HttpErrorsEnum\HttpErrorsEnum\obj\Debug\HttpErrorsEnum.exe
+D:\Курси\c_sharp hometasks\HttpErrorsEnum\HttpErrorsEnum\obj\Debug\HttpErrorsEnum.pdb

@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\NumbersInRange\NumbersInRange\bin\Debug\NumbersInRange.exe.config
+D:\Курси\c_sharp hometasks\NumbersInRange\NumbersInRange\bin\Debug\NumbersInRange.exe
+D:\Курси\c_sharp hometasks\NumbersInRange\NumbersInRange\bin\Debug\NumbersInRange.pdb
+D:\Курси\c_sharp hometasks\NumbersInRange\NumbersInRange\obj\Debug\NumbersInRange.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\NumbersInRange\NumbersInRange\obj\Debug\NumbersInRange.exe
+D:\Курси\c_sharp hometasks\NumbersInRange\NumbersInRange\obj\Debug\NumbersInRange.pdb

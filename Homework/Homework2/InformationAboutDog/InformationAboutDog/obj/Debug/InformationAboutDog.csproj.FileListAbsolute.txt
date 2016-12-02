@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\InformationAboutDog\InformationAboutDog\bin\Debug\InformationAboutDog.exe.config
+D:\Курси\c_sharp hometasks\InformationAboutDog\InformationAboutDog\bin\Debug\InformationAboutDog.exe
+D:\Курси\c_sharp hometasks\InformationAboutDog\InformationAboutDog\bin\Debug\InformationAboutDog.pdb
+D:\Курси\c_sharp hometasks\InformationAboutDog\InformationAboutDog\obj\Debug\InformationAboutDog.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\InformationAboutDog\InformationAboutDog\obj\Debug\InformationAboutDog.exe
+D:\Курси\c_sharp hometasks\InformationAboutDog\InformationAboutDog\obj\Debug\InformationAboutDog.pdb

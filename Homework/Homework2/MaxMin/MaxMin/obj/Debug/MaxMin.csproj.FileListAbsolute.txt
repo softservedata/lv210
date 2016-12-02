@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\MaxMin\MaxMin\bin\Debug\MaxMin.exe.config
+D:\Курси\c_sharp hometasks\MaxMin\MaxMin\bin\Debug\MaxMin.exe
+D:\Курси\c_sharp hometasks\MaxMin\MaxMin\bin\Debug\MaxMin.pdb
+D:\Курси\c_sharp hometasks\MaxMin\MaxMin\obj\Debug\MaxMin.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\MaxMin\MaxMin\obj\Debug\MaxMin.exe
+D:\Курси\c_sharp hometasks\MaxMin\MaxMin\obj\Debug\MaxMin.pdb
