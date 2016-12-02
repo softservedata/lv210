@@ -1,13 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HomeWork1_Task2
 {
     class Program
     {
+        /// <summary>
+        /// Task Description: define string variable name and integer value age. 
+        /// Output question "What is your name?"; Read the value name and output next 
+        /// question: "How old are you,(name)?". Read age and write whole information
+        /// </summary>
+
         static void Main(string[] args)
         {
             Console.WriteLine("What is your name?");
