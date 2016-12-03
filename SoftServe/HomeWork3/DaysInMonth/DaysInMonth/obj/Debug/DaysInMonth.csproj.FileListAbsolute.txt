@@ -1,0 +1,6 @@
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork3\DaysInMonth\DaysInMonth\bin\Debug\DaysInMonth.exe.config
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork3\DaysInMonth\DaysInMonth\bin\Debug\DaysInMonth.exe
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork3\DaysInMonth\DaysInMonth\bin\Debug\DaysInMonth.pdb
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork3\DaysInMonth\DaysInMonth\obj\Debug\DaysInMonth.csprojResolveAssemblyReference.cache
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork3\DaysInMonth\DaysInMonth\obj\Debug\DaysInMonth.exe
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork3\DaysInMonth\DaysInMonth\obj\Debug\DaysInMonth.pdb
