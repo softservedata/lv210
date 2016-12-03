@@ -1,6 +1,0 @@
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork2_Task3\HomeWork2_Task3\bin\Debug\HomeWork2_Task3.exe.config
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork2_Task3\HomeWork2_Task3\bin\Debug\HomeWork2_Task3.exe
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork2_Task3\HomeWork2_Task3\bin\Debug\HomeWork2_Task3.pdb
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork2_Task3\HomeWork2_Task3\obj\Debug\HomeWork2_Task3.csprojResolveAssemblyReference.cache
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork2_Task3\HomeWork2_Task3\obj\Debug\HomeWork2_Task3.exe
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork2_Task3\HomeWork2_Task3\obj\Debug\HomeWork2_Task3.pdb
