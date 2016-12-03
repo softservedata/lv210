@@ -5,6 +5,11 @@ namespace VowelsCount
 {
     class Program
     {
+        /// <summary>
+        /// Read the text as a string value 
+        /// and culculate the counts of characters 'a', 'o', 'i', 'e' in this text.
+        /// </summary>
+        
         static void Main(string[] args)
         {
             Console.Write("Input some text : ");
