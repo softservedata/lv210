@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\CreatingClassPerson\CreatingClassPerson\bin\Debug\CreatingClassPerson.exe.config
+D:\Курси\c_sharp hometasks\CreatingClassPerson\CreatingClassPerson\bin\Debug\CreatingClassPerson.exe
+D:\Курси\c_sharp hometasks\CreatingClassPerson\CreatingClassPerson\bin\Debug\CreatingClassPerson.pdb
+D:\Курси\c_sharp hometasks\CreatingClassPerson\CreatingClassPerson\obj\Debug\CreatingClassPerson.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\CreatingClassPerson\CreatingClassPerson\obj\Debug\CreatingClassPerson.exe
+D:\Курси\c_sharp hometasks\CreatingClassPerson\CreatingClassPerson\obj\Debug\CreatingClassPerson.pdb
