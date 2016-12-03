@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\DaysCount\DaysCount\bin\Debug\DaysCount.exe.config
+D:\Курси\c_sharp hometasks\DaysCount\DaysCount\bin\Debug\DaysCount.exe
+D:\Курси\c_sharp hometasks\DaysCount\DaysCount\bin\Debug\DaysCount.pdb
+D:\Курси\c_sharp hometasks\DaysCount\DaysCount\obj\Debug\DaysCount.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\DaysCount\DaysCount\obj\Debug\DaysCount.exe
+D:\Курси\c_sharp hometasks\DaysCount\DaysCount\obj\Debug\DaysCount.pdb

@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\ActionsWithTheTenNumbers\ActionsWithTheTenNumbers\bin\Debug\ActionsWithTheTenNumbers.exe.config
+D:\Курси\c_sharp hometasks\ActionsWithTheTenNumbers\ActionsWithTheTenNumbers\bin\Debug\ActionsWithTheTenNumbers.exe
+D:\Курси\c_sharp hometasks\ActionsWithTheTenNumbers\ActionsWithTheTenNumbers\bin\Debug\ActionsWithTheTenNumbers.pdb
+D:\Курси\c_sharp hometasks\ActionsWithTheTenNumbers\ActionsWithTheTenNumbers\obj\Debug\ActionsWithTheTenNumbers.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\ActionsWithTheTenNumbers\ActionsWithTheTenNumbers\obj\Debug\ActionsWithTheTenNumbers.exe
+D:\Курси\c_sharp hometasks\ActionsWithTheTenNumbers\ActionsWithTheTenNumbers\obj\Debug\ActionsWithTheTenNumbers.pdb
