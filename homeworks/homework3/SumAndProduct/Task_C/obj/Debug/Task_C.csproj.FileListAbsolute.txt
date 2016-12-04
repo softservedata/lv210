@@ -1,0 +1,9 @@
+C:\Users\user\documents\visual studio 2015\Projects\Ta\Ta\bin\Debug\Ta.exe.config
+C:\Users\user\documents\visual studio 2015\Projects\Ta\Ta\obj\Debug\Ta.exe
+C:\Users\user\documents\visual studio 2015\Projects\Ta\Ta\obj\Debug\Ta.pdb
+C:\Users\user\documents\visual studio 2015\Projects\Ta\Ta\bin\Debug\Ta.exe
+C:\Users\user\documents\visual studio 2015\Projects\Ta\Ta\bin\Debug\Ta.pdb
+C:\Users\user\documents\visual studio 2015\Projects\Ta\Ta\obj\Debug\Task_C.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2015\Projects\SumAndProduct\Task3\bin\Debug\Ta.exe.config
+C:\Users\user\Documents\Visual Studio 2015\Projects\SumAndProduct\Task3\obj\Debug\Ta.exe
+C:\Users\user\Documents\Visual Studio 2015\Projects\SumAndProduct\Task3\obj\Debug\Ta.pdb

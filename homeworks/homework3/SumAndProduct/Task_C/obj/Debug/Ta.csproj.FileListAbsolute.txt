@@ -1,0 +1,6 @@
+c:\users\user\documents\visual studio 2015\Projects\Ta\Ta\bin\Debug\Ta.exe.config
+c:\users\user\documents\visual studio 2015\Projects\Ta\Ta\bin\Debug\Ta.exe
+c:\users\user\documents\visual studio 2015\Projects\Ta\Ta\bin\Debug\Ta.pdb
+c:\users\user\documents\visual studio 2015\Projects\Ta\Ta\obj\Debug\Ta.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\Ta\Ta\obj\Debug\Ta.exe
+c:\users\user\documents\visual studio 2015\Projects\Ta\Ta\obj\Debug\Ta.pdb
