@@ -1,0 +1,6 @@
+D:\Курси\c_sharp hometasks\CreatingClassCar\CreatingClassCar\bin\Debug\CreatingClassCar.exe.config
+D:\Курси\c_sharp hometasks\CreatingClassCar\CreatingClassCar\bin\Debug\CreatingClassCar.exe
+D:\Курси\c_sharp hometasks\CreatingClassCar\CreatingClassCar\bin\Debug\CreatingClassCar.pdb
+D:\Курси\c_sharp hometasks\CreatingClassCar\CreatingClassCar\obj\Debug\CreatingClassCar.csprojResolveAssemblyReference.cache
+D:\Курси\c_sharp hometasks\CreatingClassCar\CreatingClassCar\obj\Debug\CreatingClassCar.exe
+D:\Курси\c_sharp hometasks\CreatingClassCar\CreatingClassCar\obj\Debug\CreatingClassCar.pdb
