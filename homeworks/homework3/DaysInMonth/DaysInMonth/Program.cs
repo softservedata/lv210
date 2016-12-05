@@ -19,8 +19,10 @@ namespace DaysInMonth
             int []DaysPerMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
             Console.Write("Input month number:");
             int MonthNumber = Convert.ToInt32(Console.ReadLine());
-            if (!isMonth(MonthNumber)) Console.WriteLine("Month number must be in range 1-12");
-            else Console.WriteLine("Month {0} has {1} days", MonthNumber,DaysPerMonth[MonthNumber-1]);
+            if (!isMonth(MonthNumber))
+                Console.WriteLine("Month number must be in range 1-12");
+            else
+                Console.WriteLine("Month {0} has {1} days", MonthNumber,DaysPerMonth[MonthNumber-1]);
             Console.ReadKey();
 
         }
