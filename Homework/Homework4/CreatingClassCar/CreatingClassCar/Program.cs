@@ -12,7 +12,7 @@ namespace CreatingClassCar
     /// User enters information about three cars, then enters percents to change the price and some color. 
     /// If some car has color 'White', this color will be changed to the entered color.
     ///</summary>
-    ///
+  
 
     class Program
     {
