@@ -11,16 +11,20 @@ namespace Task_C
         public static bool isPositive(int []Array,int countOfElements)
         {
             for(int i=0;i< countOfElements; i++)
-            if (Array[i]<= 0) return false;
+            {
+                if (Array[i]<= 0)   return false;
+            }     
             return true;
         }
 
         public static int calcSumOfElements(int elementCount, int[] array)
         {
+            
             int sum = 0;
             for (int i = 0; i < elementCount; i++) sum += array[i];
             return sum;
         }
+        
         public static int calcProductOfElements(int elementCount, int[] array)
         {
             int product = 1;
@@ -39,8 +43,10 @@ namespace Task_C
                 Console.Write("Number[{0}]=", i+1);
                 Array[i] = Convert.ToInt32(Console.ReadLine());
                                            }
-            if (isPositive(Array,5)) Console.WriteLine("Sum of first 5 elements {0}", calcSumOfElements(5, Array));
-            else Console.WriteLine("Product of last 5 elements {0}", calcProductOfElements(5, Array));
+            if (isPositive(Array,5))
+                Console.WriteLine("Sum of first 5 elements {0}", calcSumOfElements(5, Array));
+            else
+                Console.WriteLine("Product of last 5 elements {0}", calcProductOfElements(5, Array));
             Console.ReadKey();
         }
     }
