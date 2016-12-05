@@ -20,14 +20,16 @@ namespace HomeWorkTwo
             {
                 Console.WriteLine("Enter dog's name:");
                 Name = Console.ReadLine();
+
                 Console.WriteLine("Enter dog's mark:");
                 Mark = Console.ReadLine();
+
                 Console.WriteLine("Enter dog's age:");
                 Age = Convert.ToInt32(Console.ReadLine());
             }
             public override string ToString()
             {
-                return "Dogs name:" + Name + "\nDogs mark:" + Mark + "\nAge:" + Age;
+                return String.Format("Dogs name: {0}{3} Dogs mark:{1}{3} Age: {2}{3}", Name, Mark, Age, Environment.NewLine);
             }
         }
 

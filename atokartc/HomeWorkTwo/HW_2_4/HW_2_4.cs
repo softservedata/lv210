@@ -18,25 +18,37 @@ namespace HomeWorkTwo
         {
             Console.WriteLine("Enter three float numbers");
 
-            float one = Convert.ToSingle(Console.ReadLine());
-            float two = Convert.ToSingle(Console.ReadLine());
-            float three = Convert.ToSingle(Console.ReadLine());
+            float one;
+            float two;
+            float three;
 
-            if (one >= -5 && one <= 5)
+            if (float.TryParse(Console.ReadLine(), out one) && float.TryParse(Console.ReadLine(), out two) &&
+                float.TryParse(Console.ReadLine(), out three))
             {
-                if (two >= -5 && two <= 5)
+                float[] oneTwoThree = { one, two, three };
+                bool check = true;
+
+                for (int i = 0; i < oneTwoThree.Length; i++)
                 {
-                    if (three >= -5 && three <= 5)
+                    if (oneTwoThree[i] < -5 || oneTwoThree[i] > 5)
                     {
-                        Console.WriteLine("All three numbers are in the range of [-5;5]");
+                        check = false;
+                        Console.WriteLine("Number # {0} are not in the range of [-5;5]", oneTwoThree[i]);
                     }
                 }
+
+                if (check)
+                {
+                    Console.WriteLine("All three numbers are in the range of [-5;5]");
+                }
+                Console.ReadKey();
             }
             else
             {
-                Console.WriteLine("One of the numbers are in the range of [-5;5]");
+                Console.WriteLine("Please enter floats!");
+                Main();
             }
-            Console.ReadKey();
         }
     }
 }
+        
