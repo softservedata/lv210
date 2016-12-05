@@ -6,18 +6,12 @@ namespace AppropriateFunctions
     {
         public static int max(int a, int b, int c)
         {
-            if (a > b && a > c)
-                return a;
-            else if (b > c) return b;
-            else return c;
+            return Math.Max(Math.Max(a, b), c);
         }
 
         public static int min(int a, int b, int c)
         {
-            if (a < b && a < c)
-                return a;
-            else if (b < c) return b;
-            else return c;
+            return Math.Min(Math.Min(a, b), c);
         }
 
         public static void FindMinMax()
