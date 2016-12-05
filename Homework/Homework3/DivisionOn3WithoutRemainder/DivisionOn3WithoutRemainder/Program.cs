@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace DivisionOn3WithoutRemainder
 {
+    ///<summary>
+    ///This program finds count of numbers from interval [a,b] which are multiples of 3.
+    ///</summary>
+    
     using AppropriateFunctions;
     class Program
     {
