@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace ActionsWithTheTenNumbers
 {
+    ///<summary>
+    ///User enters 10 numbers.
+    ///This program add first five elements of array
+    ///if they all are positive
+    ///and multiply last five elements in another case.
+    ///</summary>
+    
     using FunctionsWithArray;
     class Program
     {
