@@ -24,7 +24,7 @@ namespace CreatingClassCar
 
         public void ChangePrice (double percent)
         {
-            this.Price = (Price*percent)/100;
+            this.Price += (Price*percent)/100;
         }
 
         public override string ToString()

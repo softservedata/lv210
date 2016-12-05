@@ -7,6 +7,13 @@ using System.Drawing;
 
 namespace CreatingClassCar
 {
+    ///<summary>
+    /// This program creates class Car and some kind of wrapper to read data from console.
+    /// User enters information about three cars, then enters percents to change the price and some color. 
+    /// If some car has color 'White', this color will be changed to the entered color.
+    ///</summary>
+    ///
+
     class Program
     {
         public static List<ConsoleCar> ReadCars()
