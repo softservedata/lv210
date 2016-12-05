@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace CalculateCountOfAppropriateSymbols
 {
+    ///<summary>
+    ///This program finds count of some symbols in entered string.
+    ///</sumarry>
+    
     using AppropriateFunctions;
     class Program
     {
