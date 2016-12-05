@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace DrinkPrice
 {
+    ////<sumarry>
+    /// This program shows user the price of entered drink.
+    ///</sumarry>
+    
     class Program
     {
-    
         public enum Drink { Coffee = 15, Tea = 8, Juice = 10, Water = 7 };
         static void Main(string[] args)
         {
