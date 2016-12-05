@@ -4,6 +4,10 @@ namespace DaysInMonth
 {
     class Program
     {
+	/*
+		Ask user to enter the number of mounth. 
+		Read the value and write the amount of days in this mounth.
+	*/
         static void Main(string[] args)
         {
             Console.Write("Input number of month:");

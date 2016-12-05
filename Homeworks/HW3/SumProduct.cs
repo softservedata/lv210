@@ -4,6 +4,10 @@ namespace SumProduct
 {
     class Program
     {
+	/*
+		Enter 10 integer numbers. 
+		Culculate the sum of first 5 elements if they are posetive or product of last 5 element in  the other case.
+	*/
         public static bool isPositive(int[] data)
         {
             bool isPositive = true;

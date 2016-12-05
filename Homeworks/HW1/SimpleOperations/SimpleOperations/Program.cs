@@ -4,6 +4,11 @@ namespace SimpleOperations
 {
     class Program
     {
+	/*
+		define integer variables a and b.
+		Read values a and b from Console and calculate: a+b, a-b, a*b, a/b. 
+		Output obtained results.
+	*/
         static void Main(string[] args)
         {
             int a, b;

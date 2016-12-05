@@ -4,6 +4,11 @@ namespace Square
 {
     class Program
     {
+	/*
+		define integer variable a.
+		Read the value of a from console and calculate area and perimetr of square with length a. 
+		Output obtained results.
+	*/
         static void Main(string[] args)
         {
             int a;
