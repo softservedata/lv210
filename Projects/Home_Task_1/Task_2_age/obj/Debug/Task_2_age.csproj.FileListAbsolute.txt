@@ -1,0 +1,5 @@
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Work_1\Task_2_age\bin\Debug\Task_2_age.exe.config
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Work_1\Task_2_age\bin\Debug\Task_2_age.exe
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Work_1\Task_2_age\bin\Debug\Task_2_age.pdb
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Work_1\Task_2_age\obj\Debug\Task_2_age.exe
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Work_1\Task_2_age\obj\Debug\Task_2_age.pdb
