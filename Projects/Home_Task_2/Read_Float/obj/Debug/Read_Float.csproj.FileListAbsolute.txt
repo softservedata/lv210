@@ -1,6 +1,0 @@
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\Read_Float\bin\Debug\Read_Float.exe.config
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\Read_Float\bin\Debug\Read_Float.exe
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\Read_Float\bin\Debug\Read_Float.pdb
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\Read_Float\obj\Debug\Read_Float.csprojResolveAssemblyReference.cache
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\Read_Float\obj\Debug\Read_Float.exe
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\Read_Float\obj\Debug\Read_Float.pdb
