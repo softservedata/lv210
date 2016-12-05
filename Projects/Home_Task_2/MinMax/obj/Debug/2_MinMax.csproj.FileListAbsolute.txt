@@ -1,0 +1,5 @@
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\MinMax\bin\Debug\MinMax.exe.config
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\MinMax\obj\Debug\MinMax.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\MinMax\obj\Debug\MinMax.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\MinMax\bin\Debug\MinMax.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\MinMax\bin\Debug\MinMax.pdb
