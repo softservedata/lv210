@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace WriteEachSecondSymbol
 {
+    ///<sumarry>
+    ///This program output each second symbol from inputted string.
+    ///</sumarry>
+    
     using AppropriateFunctions;
     class Program
     {
