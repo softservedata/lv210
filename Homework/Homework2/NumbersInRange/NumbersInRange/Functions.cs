@@ -30,7 +30,8 @@ namespace AppropriateFunction
 
             if (isInputX1Valid && isInputX2Valid && isInputX3Valid)
             {
-                Console.WriteLine("\nAll these numbers are from the interval [-5,5] - {0} ", logical_conjunction(IsInRange(x1, -5, 5), IsInRange(x2, -5, 5), IsInRange(x3, -5, 5)));
+                Console.WriteLine("\nAll these numbers are from the interval [-5,5] - {0} ", 
+                    logical_conjunction(IsInRange(x1, -5, 5), IsInRange(x2, -5, 5), IsInRange(x3, -5, 5)));
             }
             else
             {

@@ -17,7 +17,7 @@ namespace AppropriateFunctions
         public static bool IsNecessaryCharacter(char character, char [] char_collection)
         {
             bool isFromCollection = false;
-            foreach( char ch in char_collection)
+            foreach( var ch in char_collection)
             {
                 if (character == ch)
                 {

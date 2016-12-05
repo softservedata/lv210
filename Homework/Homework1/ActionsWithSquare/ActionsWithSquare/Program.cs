@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace ActionsWithSquare
 {
+    ///<summary>
+    ///This program calculates the square and periment of quadrate.
+    ///</summary>
+
     using AppropriateFunctios;
     class Program
     {

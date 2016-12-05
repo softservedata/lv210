@@ -4,3 +4,6 @@ D:\Курси\c_sharp hometasks\LeapYear\LeapYear\bin\Debug\LeapYear.pdb
 D:\Курси\c_sharp hometasks\LeapYear\LeapYear\obj\Debug\LeapYear.csprojResolveAssemblyReference.cache
 D:\Курси\c_sharp hometasks\LeapYear\LeapYear\obj\Debug\LeapYear.exe
 D:\Курси\c_sharp hometasks\LeapYear\LeapYear\obj\Debug\LeapYear.pdb
+C:\Users\Уля\git\lv210\Homework\Homework3\LeapYear\LeapYear\bin\Debug\LeapYear.exe.config
+C:\Users\Уля\git\lv210\Homework\Homework3\LeapYear\LeapYear\obj\Debug\LeapYear.exe
+C:\Users\Уля\git\lv210\Homework\Homework3\LeapYear\LeapYear\obj\Debug\LeapYear.pdb
