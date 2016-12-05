@@ -9,9 +9,15 @@ using System.Collections.Generic;
 namespace CreatingClassPerson
 {
  
+    /// <summary>
+    /// This program creates class Person.
+    /// User can enter information about 5 persons. 
+    /// After that age of these persons is calculated and shown at the console.
+    /// If age is less than 16, person's name is changed to "Very young".
+    /// </summary>
+    
     class Program
     {
-
         public static Person CreatePerson(string number)
         {
             Console.WriteLine("\nPerson {0}:", number);
