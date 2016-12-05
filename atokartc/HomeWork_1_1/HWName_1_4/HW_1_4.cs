@@ -12,13 +12,21 @@ namespace HomeWorkOne
     {
         public static void Main()
         {
-            string name = Console.ReadLine();
-            int age = Convert.ToInt32(Console.ReadLine());
-
             Console.WriteLine("What is your name?");
-            Console.WriteLine("My name is: {0}", name);
+            string name = Console.ReadLine();
+
             Console.WriteLine("How old are you?");
-            Console.WriteLine("I am {0} years old", age);
+            int age;
+
+            if (int.TryParse(Console.ReadLine(), out age) && age >= 0)
+            {
+                Console.WriteLine("My name is: {0}", name);
+                Console.WriteLine("I am {0} years old", age);
+            }
+            else
+            {
+                Console.WriteLine("You entered incorrect age!");
+            }
 
             Console.ReadKey();
         }

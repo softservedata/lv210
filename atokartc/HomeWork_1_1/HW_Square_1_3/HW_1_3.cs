@@ -12,12 +12,19 @@ namespace HomeWorkOne
     {
         public static void Main()
         {
+            int a;
             Console.WriteLine("Define integer variable: ");
 
-            int a = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Area of Square is:{0}", a * a);
-            Console.WriteLine("Perimeter of Square is:{0}", 4 * a);
+            if (int.TryParse(Console.ReadLine(), out a) && a >= 0)
+            {
+                Console.WriteLine("Area of Square is:{0}", Math.Pow(a, 2));
+                Console.WriteLine("Perimeter of Square is:{0}", 4 * a);
+            }
+            else
+            {
+                Console.WriteLine("You should enter an integer! ");
+                Main();
+            }
 
             Console.ReadKey();
         }
