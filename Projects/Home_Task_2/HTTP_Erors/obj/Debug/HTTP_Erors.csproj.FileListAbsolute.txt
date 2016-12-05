@@ -1,6 +1,0 @@
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\HTTP_Erors\bin\Debug\HTTP_Erors.exe.config
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\HTTP_Erors\bin\Debug\HTTP_Erors.exe
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\HTTP_Erors\bin\Debug\HTTP_Erors.pdb
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\HTTP_Erors\obj\Debug\HTTP_Erors.csprojResolveAssemblyReference.cache
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\HTTP_Erors\obj\Debug\HTTP_Erors.exe
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\HTTP_Erors\obj\Debug\HTTP_Erors.pdb

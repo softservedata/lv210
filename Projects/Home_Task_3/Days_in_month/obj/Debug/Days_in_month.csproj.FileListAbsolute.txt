@@ -1,5 +1,0 @@
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Days_in_month\bin\Debug\Days_in_month.exe.config
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Days_in_month\bin\Debug\Days_in_month.exe
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Days_in_month\bin\Debug\Days_in_month.pdb
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Days_in_month\obj\Debug\Days_in_month.exe
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Days_in_month\obj\Debug\Days_in_month.pdb

@@ -1,6 +1,0 @@
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\MinMax\bin\Debug\MinMax.exe.config
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\MinMax\bin\Debug\MinMax.exe
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\MinMax\bin\Debug\MinMax.pdb
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\MinMax\obj\Debug\MinMax.csprojResolveAssemblyReference.cache
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\MinMax\obj\Debug\MinMax.exe
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\MinMax\obj\Debug\MinMax.pdb

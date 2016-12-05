@@ -1,5 +1,0 @@
-C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\Task_2_age\bin\Debug\Task_2_age.exe.config
-C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\Task_2_age\obj\Debug\Task_2_age.exe
-C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\Task_2_age\obj\Debug\Task_2_age.pdb
-C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\Task_2_age\bin\Debug\Task_2_age.exe
-C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\Task_2_age\bin\Debug\Task_2_age.pdb

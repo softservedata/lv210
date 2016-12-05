@@ -1,5 +1,0 @@
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\Dog\bin\Debug\Dog.exe.config
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\Dog\bin\Debug\Dog.exe
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\Dog\bin\Debug\Dog.pdb
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\Dog\obj\Debug\Dog.exe
-c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_2\Dog\obj\Debug\Dog.pdb
