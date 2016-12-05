@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Home_Work_1
 {
+    /// <summary>
+    /// Define integer variables a and b.
+    /// Read values a and b from Console and calculate: a+b, a-b, a*b, a/b. 
+    /// Output obtained results.
+    /// </summary>
     class Program
     {
 
@@ -18,11 +23,11 @@ namespace Home_Work_1
             int b = Int32.Parse(Console.ReadLine());
 
             //Result
-            Console.WriteLine("Result \n");
-            Console.WriteLine("a+b={0}", a + b);
-            Console.WriteLine("a-b={0}", a - b);
-            Console.WriteLine("a*b={0}", a * b);
-            Console.WriteLine("a/b={0}", a / b);
+            Console.WriteLine("\n-----Result------");
+            Console.WriteLine("a + b = {0}", a + b);
+            Console.WriteLine("a - b = {0}", a - b);
+            Console.WriteLine("a * b = {0}", a * b);
+            Console.WriteLine("a / b = {0}", a / b);
 
         }
     }

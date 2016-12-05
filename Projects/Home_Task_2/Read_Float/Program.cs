@@ -6,22 +6,32 @@ using System.Threading.Tasks;
 
 namespace Read_Float
 {
+    /// <summary>
+    /// Read 3 float numbers and check: are they all belong to the range [-5,5]
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
         {
-            ////Task #1
-            //// Read 3 float numbers and check: are they all belong to the range [-5,5]
+            //Initialization of variables
             float a, b, c;
+
+            //Reading of values
             Console.Write("Entert first number: ");
             a = Convert.ToSingle(Console.ReadLine());
+
             Console.Write("Entert second number: ");
             b = Convert.ToSingle(Console.ReadLine());
+
             Console.Write("Entert third number: ");
             c = Convert.ToSingle(Console.ReadLine());
 
-            string res = ((a >= -5 && a <= 5) && (b >= -5 && b <= 5) && (c >= -5 && c <= 5)) ? "true":"false";
-            Console.WriteLine("All numbers belong to range [-5;5]: " + res);
+            //Checking conditions
+            bool res = (a >= -5 && a <= 5) && (b >= -5 && b <= 5) && (c >= -5 && c <= 5);
+
+            //Result print
+            Console.WriteLine("------------------------");
+            Console.WriteLine("All numbers belong to range [-5;5]: {0}", res);
 
         }
     }

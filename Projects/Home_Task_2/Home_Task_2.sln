@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Read_Float", "Read_Float\Read_Float.csproj", "{1B4D1B56-16CA-4B1B-8288-795B7BB7B3A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1_Read_Float", "Read_Float\1_Read_Float.csproj", "{1B4D1B56-16CA-4B1B-8288-795B7BB7B3A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinMax", "MinMax\MinMax.csproj", "{44BFBB62-4B22-4973-BF55-1C47BB7760CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2_MinMax", "MinMax\2_MinMax.csproj", "{44BFBB62-4B22-4973-BF55-1C47BB7760CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTTP_Erors", "HTTP_Erors\HTTP_Erors.csproj", "{0FB1524A-5FC3-4E20-9717-ABCF039AB9A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_HTTP_Errors", "HTTP_Erors\3_HTTP_Errors.csproj", "{0FB1524A-5FC3-4E20-9717-ABCF039AB9A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dog", "Dog\Dog.csproj", "{EBA93366-01C9-4EE4-BF08-E086469E1CDD}"
 EndProject
