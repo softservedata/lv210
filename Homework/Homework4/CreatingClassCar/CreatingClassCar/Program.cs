@@ -25,7 +25,6 @@ namespace CreatingClassCar
 
             for (int i = 0; i < count; i++)
             {
-
                 Console.WriteLine("\nCar №{0}:", (i + 1).ToString());
                 var car = new ConsoleCar();
                 сars.Add(car);
