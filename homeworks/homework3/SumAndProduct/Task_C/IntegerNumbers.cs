@@ -40,14 +40,15 @@ namespace Task_C
 
         static void Main(string[] args)
         {
-            int numbersToCheck=5;
+            
             Console.WriteLine("Input 10 integer numbers:");
             int[] Array = new int[10];
             for (int i = 0; i < Array.Length; i++)
             {
                 Console.Write("Number[{0}]=", i+1);
                 Array[i] = Convert.ToInt32(Console.ReadLine());
-                                           }
+            }
+            int numbersToCheck=5;
             if (isPositive(Array,numbersToCheck))
                 Console.WriteLine("Sum of first 5 elements {0}", calcSumOfElements(numbersToCheck, Array));
             else
