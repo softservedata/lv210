@@ -18,6 +18,7 @@ namespace RangeDivide3
 
             if (a >= b)
                 Console.WriteLine("Wrong data");
+            else
             Console.WriteLine("{0} numbers from a--b diapason", CountOf(a, b));
 
             Console.ReadLine();
