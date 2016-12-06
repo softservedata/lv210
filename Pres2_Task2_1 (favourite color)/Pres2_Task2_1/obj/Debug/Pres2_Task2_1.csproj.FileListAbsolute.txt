@@ -1,0 +1,5 @@
+D:\Documents\Моє\AQC\C#Projects\Pres2_Task2_1\Pres2_Task2_1\bin\Debug\Pres2_Task2_1.exe.config
+D:\Documents\Моє\AQC\C#Projects\Pres2_Task2_1\Pres2_Task2_1\bin\Debug\Pres2_Task2_1.exe
+D:\Documents\Моє\AQC\C#Projects\Pres2_Task2_1\Pres2_Task2_1\bin\Debug\Pres2_Task2_1.pdb
+D:\Documents\Моє\AQC\C#Projects\Pres2_Task2_1\Pres2_Task2_1\obj\Debug\Pres2_Task2_1.exe
+D:\Documents\Моє\AQC\C#Projects\Pres2_Task2_1\Pres2_Task2_1\obj\Debug\Pres2_Task2_1.pdb
