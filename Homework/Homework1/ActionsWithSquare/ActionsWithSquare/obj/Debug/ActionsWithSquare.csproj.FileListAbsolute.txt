@@ -7,3 +7,9 @@ D:\Курси\c_sharp hometasks\ActionsWithSquare\ActionsWithSquare\obj\Debug\Ac
 C:\Users\Уля\git\lv210\Homework\Homework1\ActionsWithSquare\ActionsWithSquare\bin\Debug\ActionsWithSquare.exe.config
 C:\Users\Уля\git\lv210\Homework\Homework1\ActionsWithSquare\ActionsWithSquare\obj\Debug\ActionsWithSquare.exe
 C:\Users\Уля\git\lv210\Homework\Homework1\ActionsWithSquare\ActionsWithSquare\obj\Debug\ActionsWithSquare.pdb
+C:\Users\Уля\git\Homework\Homework1\ActionsWithSquare\ActionsWithSquare\bin\Debug\ActionsWithSquare.exe.config
+C:\Users\Уля\git\Homework\Homework1\ActionsWithSquare\ActionsWithSquare\obj\Debug\ActionsWithSquare.pdb
+C:\Users\Уля\git\Homework\Homework1\ActionsWithSquare\ActionsWithSquare\obj\Debug\ActionsWithSquare.csprojResolveAssemblyReference.cache
+C:\Users\Уля\git\Homework\Homework1\ActionsWithSquare\ActionsWithSquare\bin\Debug\ActionsWithSquare.exe
+C:\Users\Уля\git\Homework\Homework1\ActionsWithSquare\ActionsWithSquare\bin\Debug\ActionsWithSquare.pdb
+C:\Users\Уля\git\Homework\Homework1\ActionsWithSquare\ActionsWithSquare\obj\Debug\ActionsWithSquare.exe

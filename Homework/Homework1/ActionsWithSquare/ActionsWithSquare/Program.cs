@@ -10,12 +10,13 @@ namespace ActionsWithSquare
     ///This program calculates the square and periment of quadrate.
     ///</summary>
 
-    using AppropriateFunctios;
+    using WorkWithSquare;
     class Program
     {
         static void Main(string[] args)
         {
-            Functions.CalcSquareParametrs();
+            var program = new ProgramSquare();
+            program.Run();
         }
     }
 }

@@ -1,46 +1,75 @@
 ﻿using System;
 
-namespace AppropriateFunctios
+namespace WorkWithSquare
 {
-    public class Functions
+    public class ProgramSquare
     {
-        public static int Square(int a)
+        public int Square(int size)
         {
-            return a * a;
-        }
-
-        public static int Perimeter(int a)
-        {
-            return 4 * a;
-        }
-
-        public static void CalcSquareParametrs()
-        {
-            Console.WriteLine("Please, enter side length of square:");
-            Console.Write("a = ");
-
-            var input = Console.ReadLine();
-            int size;
-
-            var isInputValid = int.TryParse(input, out size);
-            var isSizeValid = size > 0;
-
-            if (isInputValid && isSizeValid)
+            if (size <= 0)
             {
-                var square = Square(size);
-
-                var perimeter = Perimeter(size);
-            
-                Console.WriteLine("\nArea = {0}", square);
-                Console.WriteLine("Periment = {0}\n", perimeter);
-
+                throw new ArgumentException("Length of the side can't be less or equal zero!");
             }
-            else
+
+            return size * size;
+        }
+
+        public int Perimeter(int size)
+        {
+            if (size <= 0)
             {
-                Console.WriteLine("Incorrect value!\n");
+                throw new ArgumentException("Length of the side can't be less or equal zero!");
+            }
+
+            return 4 * size;
+        }
+
+        public void Run()
+        {
+            try
+            {
+                var readedData = ReadData();
+                var size = ParseData(readedData);
+
+                DisplaySquareParametrs(size);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
 
             Console.ReadLine();
+        }
+
+        public void DisplaySquareParametrs(int size)
+        {         
+            var square = Square(size);
+            var perimeter = Perimeter(size);
+
+            Console.WriteLine("\nArea = {0}", square);
+            Console.WriteLine("Periment = {0}\n", perimeter);
+        }
+
+        public string ReadData()
+        {
+            Console.Write("Please, enter side length of square:\na = ");
+            var readedData = Console.ReadLine();
+
+            return readedData;
+        }
+
+        public int ParseData(string data)
+        {
+            int parsedValue;
+
+            var isParseSuccessful = int.TryParse(data, out parsedValue);
+
+            if(!isParseSuccessful)
+            {
+                throw new FormatException("Can't parse data to <int>");
+            }
+
+            return parsedValue;
         }
     }
 }
