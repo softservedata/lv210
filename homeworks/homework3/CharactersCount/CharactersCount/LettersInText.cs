@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*Read the text as a string value and calculate the counts
+of characters 'a', 'o', 'i', 'e' in this text.*/
 namespace CountOfCharacters
 {
    
     class LettersInText
-    {
-        public static int findCharacterCount(string text, char letter)
+    { 
+       //Find character count in string 
+       public static int findCharacterCount(string text, char letter)
         {
             int count = 0;
             foreach (char symbol in text)
