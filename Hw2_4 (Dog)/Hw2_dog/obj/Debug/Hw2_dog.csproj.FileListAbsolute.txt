@@ -1,0 +1,12 @@
+D:\Documents\Моє\AQC\C#Projects\Hw2_dog\Hw2_dog\bin\Debug\Hw2_dog.exe.config
+D:\Documents\Моє\AQC\C#Projects\Hw2_dog\Hw2_dog\bin\Debug\Hw2_dog.exe
+D:\Documents\Моє\AQC\C#Projects\Hw2_dog\Hw2_dog\bin\Debug\Hw2_dog.pdb
+D:\Documents\Моє\AQC\C#Projects\Hw2_dog\Hw2_dog\obj\Debug\Hw2_dog.csprojResolveAssemblyReference.cache
+D:\Documents\Моє\AQC\C#Projects\Hw2_dog\Hw2_dog\obj\Debug\Hw2_dog.exe
+D:\Documents\Моє\AQC\C#Projects\Hw2_dog\Hw2_dog\obj\Debug\Hw2_dog.pdb
+D:\Documents\Моє\AQC\C#Projects\Hw2_4 (Dog)\Hw2_dog\bin\Debug\Hw2_dog.exe.config
+D:\Documents\Моє\AQC\C#Projects\Hw2_4 (Dog)\Hw2_dog\obj\Debug\Hw2_dog.exe
+D:\Documents\Моє\AQC\C#Projects\Hw2_4 (Dog)\Hw2_dog\obj\Debug\Hw2_dog.pdb
+D:\Documents\Моє\AQC\C#Projects\Hw2_4 (Dog)\Hw2_dog\bin\Debug\Hw2_dog.exe
+D:\Documents\Моє\AQC\C#Projects\Hw2_4 (Dog)\Hw2_dog\bin\Debug\Hw2_dog.pdb
+D:\Documents\Моє\AQC\C#Projects\Hw2_4 (Dog)\Hw2_dog\obj\Debug\Hw2_dog.csprojResolveAssemblyReference.cache
