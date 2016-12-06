@@ -4,3 +4,6 @@ c:\users\марія сергіївна\documents\visual studio 2015\Projects\Sim
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\SimpleOperations\SimpleOperations\obj\Debug\SimpleOperations.csprojResolveAssemblyReference.cache
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\SimpleOperations\SimpleOperations\obj\Debug\SimpleOperations.exe
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\SimpleOperations\SimpleOperations\obj\Debug\SimpleOperations.pdb
+C:\Users\Марія Сергіївна\git\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations\bin\Debug\SimpleOperations.exe.config
+C:\Users\Марія Сергіївна\git\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations\obj\Debug\SimpleOperations.exe
+C:\Users\Марія Сергіївна\git\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations\obj\Debug\SimpleOperations.pdb
