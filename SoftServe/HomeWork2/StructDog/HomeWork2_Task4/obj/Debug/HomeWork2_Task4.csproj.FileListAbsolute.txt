@@ -4,3 +4,6 @@ C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork2_Task4\Ho
 C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork2_Task4\HomeWork2_Task4\obj\Debug\HomeWork2_Task4.csprojResolveAssemblyReference.cache
 C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork2_Task4\HomeWork2_Task4\obj\Debug\HomeWork2_Task4.exe
 C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork2_Task4\HomeWork2_Task4\obj\Debug\HomeWork2_Task4.pdb
+C:\Users\Dima\git\lv210\SoftServe\HomeWork2\StructDog\HomeWork2_Task4\bin\Debug\HomeWork2_Task4.exe.config
+C:\Users\Dima\git\lv210\SoftServe\HomeWork2\StructDog\HomeWork2_Task4\obj\Debug\HomeWork2_Task4.exe
+C:\Users\Dima\git\lv210\SoftServe\HomeWork2\StructDog\HomeWork2_Task4\obj\Debug\HomeWork2_Task4.pdb

@@ -21,7 +21,7 @@ namespace VowelsCount
 
             Console.WriteLine("Total number of vowels are : {0}", vowelsCount);
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }
