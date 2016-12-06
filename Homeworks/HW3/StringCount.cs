@@ -5,9 +5,9 @@ namespace StringCount
 {
     class Program
     {
-	/*
-		Read the text as a string value and culculate the counts of characters 'a', 'o', 'i', 'e' in this text.
-	*/
+	///<summary>
+	///	Read the text as a string value and culculate the counts of characters 'a', 'o', 'i', 'e' in this text.
+	///</summary>
         static void Main(string[] args)
         {
             char[] characters = new char[] { 'a', 'o', 'i', 'e' };
