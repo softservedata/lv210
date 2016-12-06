@@ -4,9 +4,9 @@ namespace MaxMin
 {
     class Program
     {
-		/*
-			read 3 integres and write max and min of them.
-		*/
+		///<summary>
+		///	Read 3 integres and write max and min of them.
+		///</summary>
         static void Main(string[] args)
         {
             int a, b, c;
