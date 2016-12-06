@@ -1,0 +1,12 @@
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\Home_Work_1\bin\Debug\Home_Work_1.exe.config
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\Home_Work_1\bin\Debug\Home_Work_1.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\Home_Work_1\bin\Debug\Home_Work_1.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\Home_Work_1\obj\Debug\1_Operations.csprojResolveAssemblyReference.cache
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\Home_Work_1\obj\Debug\Home_Work_1.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\Home_Work_1\obj\Debug\Home_Work_1.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\1_Operations\bin\Debug\Home_Work_1.exe.config
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\1_Operations\obj\Debug\Home_Work_1.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\1_Operations\obj\Debug\Home_Work_1.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\1_Operations\bin\Debug\Home_Work_1.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\1_Operations\bin\Debug\Home_Work_1.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_1\1_Operations\obj\Debug\1_Operations.csprojResolveAssemblyReference.cache
