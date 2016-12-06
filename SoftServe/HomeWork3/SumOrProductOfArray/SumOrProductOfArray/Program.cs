@@ -23,7 +23,7 @@ namespace SumOrProductOfArray
                 inputData[i] = int.Parse(inputIntegerData[i]);
             }
 
-            if (IsFirstFiveElementsPositive(inputData))
+            if (IsPositive(inputData))
             {
                 Console.WriteLine("Sum of first 5 elements : {0}", ArraySum(inputData));
             }
@@ -35,11 +35,11 @@ namespace SumOrProductOfArray
             Console.ReadKey();
         }
 
-        private static bool IsFirstFiveElementsPositive(int[] inputData)
+        private static bool IsPositive(int[] inputData)
         {
             bool isPositive = true;
 
-            for (int i = 0; i < inputData.Length; i++)
+            for (int i = 0; i < 5; i++)
             {
                 if (inputData[i] < 0)
                 {
