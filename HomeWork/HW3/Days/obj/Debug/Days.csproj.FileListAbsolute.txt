@@ -3,3 +3,6 @@ c:\users\rostyslav\documents\visual studio 2015\Projects\Days\bin\Debug\Days.exe
 c:\users\rostyslav\documents\visual studio 2015\Projects\Days\bin\Debug\Days.pdb
 c:\users\rostyslav\documents\visual studio 2015\Projects\Days\obj\Debug\Days.exe
 c:\users\rostyslav\documents\visual studio 2015\Projects\Days\obj\Debug\Days.pdb
+C:\Users\Rostyslav\lv210\HomeWork\HW3\Days\bin\Debug\Days.exe.config
+C:\Users\Rostyslav\lv210\HomeWork\HW3\Days\obj\Debug\Days.exe
+C:\Users\Rostyslav\lv210\HomeWork\HW3\Days\obj\Debug\Days.pdb

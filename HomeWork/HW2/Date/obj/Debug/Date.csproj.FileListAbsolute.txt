@@ -1,0 +1,6 @@
+c:\users\rostyslav\documents\visual studio 2015\Projects\Date\bin\Debug\Date.exe.config
+c:\users\rostyslav\documents\visual studio 2015\Projects\Date\bin\Debug\Date.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\Date\bin\Debug\Date.pdb
+c:\users\rostyslav\documents\visual studio 2015\Projects\Date\obj\Debug\Date.csprojResolveAssemblyReference.cache
+c:\users\rostyslav\documents\visual studio 2015\Projects\Date\obj\Debug\Date.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\Date\obj\Debug\Date.pdb

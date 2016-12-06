@@ -1,0 +1,5 @@
+c:\users\rostyslav\documents\visual studio 2015\Projects\EachSecondChar\bin\Debug\EachSecondChar.exe.config
+c:\users\rostyslav\documents\visual studio 2015\Projects\EachSecondChar\bin\Debug\EachSecondChar.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\EachSecondChar\bin\Debug\EachSecondChar.pdb
+c:\users\rostyslav\documents\visual studio 2015\Projects\EachSecondChar\obj\Debug\EachSecondChar.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\EachSecondChar\obj\Debug\EachSecondChar.pdb
