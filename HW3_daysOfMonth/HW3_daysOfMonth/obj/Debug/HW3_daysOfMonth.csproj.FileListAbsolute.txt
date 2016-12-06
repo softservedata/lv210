@@ -1,0 +1,6 @@
+E:\Documents\Anna\HW3_daysOfMonth\HW3_daysOfMonth\bin\Debug\HW3_daysOfMonth.exe.config
+E:\Documents\Anna\HW3_daysOfMonth\HW3_daysOfMonth\bin\Debug\HW3_daysOfMonth.exe
+E:\Documents\Anna\HW3_daysOfMonth\HW3_daysOfMonth\bin\Debug\HW3_daysOfMonth.pdb
+E:\Documents\Anna\HW3_daysOfMonth\HW3_daysOfMonth\obj\Debug\HW3_daysOfMonth.exe
+E:\Documents\Anna\HW3_daysOfMonth\HW3_daysOfMonth\obj\Debug\HW3_daysOfMonth.pdb
+E:\Documents\Anna\HW3_daysOfMonth\HW3_daysOfMonth\obj\Debug\HW3_daysOfMonth.csprojResolveAssemblyReference.cache

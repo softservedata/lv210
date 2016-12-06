@@ -1,0 +1,6 @@
+E:\Documents\Anna\HW3_sum_product_5number\HW3_sum_product_5number\bin\Debug\HW3_sum_product_5number.exe.config
+E:\Documents\Anna\HW3_sum_product_5number\HW3_sum_product_5number\bin\Debug\HW3_sum_product_5number.exe
+E:\Documents\Anna\HW3_sum_product_5number\HW3_sum_product_5number\bin\Debug\HW3_sum_product_5number.pdb
+E:\Documents\Anna\HW3_sum_product_5number\HW3_sum_product_5number\obj\Debug\HW3_sum_product_5number.csprojResolveAssemblyReference.cache
+E:\Documents\Anna\HW3_sum_product_5number\HW3_sum_product_5number\obj\Debug\HW3_sum_product_5number.exe
+E:\Documents\Anna\HW3_sum_product_5number\HW3_sum_product_5number\obj\Debug\HW3_sum_product_5number.pdb

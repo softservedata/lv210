@@ -1,0 +1,6 @@
+E:\Documents\Anna\HW3_count_a_e_i\HW3_count_a_e_i\bin\Debug\HW3_count_a_e_i.exe.config
+E:\Documents\Anna\HW3_count_a_e_i\HW3_count_a_e_i\bin\Debug\HW3_count_a_e_i.exe
+E:\Documents\Anna\HW3_count_a_e_i\HW3_count_a_e_i\bin\Debug\HW3_count_a_e_i.pdb
+E:\Documents\Anna\HW3_count_a_e_i\HW3_count_a_e_i\obj\Debug\HW3_count_a_e_i.csprojResolveAssemblyReference.cache
+E:\Documents\Anna\HW3_count_a_e_i\HW3_count_a_e_i\obj\Debug\HW3_count_a_e_i.exe
+E:\Documents\Anna\HW3_count_a_e_i\HW3_count_a_e_i\obj\Debug\HW3_count_a_e_i.pdb
