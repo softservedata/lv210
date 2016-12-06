@@ -1,0 +1,6 @@
+c:\users\rostyslav\documents\visual studio 2015\Projects\CountsOfChar\bin\Debug\CountsOfChar.exe.config
+c:\users\rostyslav\documents\visual studio 2015\Projects\CountsOfChar\bin\Debug\CountsOfChar.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\CountsOfChar\bin\Debug\CountsOfChar.pdb
+c:\users\rostyslav\documents\visual studio 2015\Projects\CountsOfChar\obj\Debug\CountsOfChar.csprojResolveAssemblyReference.cache
+c:\users\rostyslav\documents\visual studio 2015\Projects\CountsOfChar\obj\Debug\CountsOfChar.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\CountsOfChar\obj\Debug\CountsOfChar.pdb

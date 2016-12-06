@@ -1,0 +1,5 @@
+c:\users\rostyslav\documents\visual studio 2015\Projects\radius\bin\Debug\radius.exe.config
+c:\users\rostyslav\documents\visual studio 2015\Projects\radius\bin\Debug\radius.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\radius\bin\Debug\radius.pdb
+c:\users\rostyslav\documents\visual studio 2015\Projects\radius\obj\Debug\radius.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\radius\obj\Debug\radius.pdb

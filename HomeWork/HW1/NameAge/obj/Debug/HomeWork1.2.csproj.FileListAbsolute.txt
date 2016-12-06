@@ -1,0 +1,5 @@
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.2\bin\Debug\HomeWork1.2.exe.config
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.2\bin\Debug\HomeWork1.2.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.2\bin\Debug\HomeWork1.2.pdb
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.2\obj\Debug\HomeWork1.2.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.2\obj\Debug\HomeWork1.2.pdb

@@ -1,0 +1,6 @@
+c:\users\rostyslav\documents\visual studio 2015\Projects\ABCompare\bin\Debug\ABCompare.exe.config
+c:\users\rostyslav\documents\visual studio 2015\Projects\ABCompare\obj\Debug\ABCompare.csprojResolveAssemblyReference.cache
+c:\users\rostyslav\documents\visual studio 2015\Projects\ABCompare\bin\Debug\ABCompare.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\ABCompare\bin\Debug\ABCompare.pdb
+c:\users\rostyslav\documents\visual studio 2015\Projects\ABCompare\obj\Debug\ABCompare.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\ABCompare\obj\Debug\ABCompare.pdb

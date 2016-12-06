@@ -1,0 +1,6 @@
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork2.1\bin\Debug\HomeWork2.1.exe.config
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork2.1\bin\Debug\HomeWork2.1.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork2.1\bin\Debug\HomeWork2.1.pdb
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork2.1\obj\Debug\HomeWork2.1.csprojResolveAssemblyReference.cache
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork2.1\obj\Debug\HomeWork2.1.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork2.1\obj\Debug\HomeWork2.1.pdb
