@@ -1,0 +1,5 @@
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Leap_year\bin\Debug\Leap_year.exe.config
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Leap_year\bin\Debug\Leap_year.exe
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Leap_year\bin\Debug\Leap_year.pdb
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Leap_year\obj\Debug\Leap_year.exe
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Leap_year\obj\Debug\Leap_year.pdb

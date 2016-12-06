@@ -1,0 +1,5 @@
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Count_char\bin\Debug\Count_char.exe.config
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Count_char\bin\Debug\Count_char.exe
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Count_char\bin\Debug\Count_char.pdb
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Count_char\obj\Debug\Count_char.exe
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Count_char\obj\Debug\Count_char.pdb
