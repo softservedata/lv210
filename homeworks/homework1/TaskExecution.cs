@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*In method Main() write code for solving next tasks:
+	b) define integer variable a.Read the value of a from console and calculate area and perimetr of square with length a.
+    Output obtained results.
+	c) define string variable name and integer value age. Output question "What is your name?";Read the value name and output next 
+           question: "How old are you,(name)?". Read age and write whole information   
+*/
 namespace Homework1
 {
     public class TaskExecution
