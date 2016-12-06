@@ -2,10 +2,10 @@
 
 namespace HttpErrors
 {
-/*
-	read number of HTTP Error (400, 401,402, ...) 
-	and write the name of this error (Decleare enum HTTPError)
-*/
+///<summary>
+///	Read number of HTTP Error (400, 401,402, ...) 
+///	and write the name of this error (Decleare enum HTTPError)
+///</summary>
     enum HTTPEror
     {
         BAD_REQUEST = 400,

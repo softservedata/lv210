@@ -2,11 +2,11 @@
 
 namespace Dog
 {
-/*
-	declare struct Dog with fields Name, Mark, Age. 
-	Decleare variable myDog of Dog type and read values for it.
-	Output myDos into console.(Decleare method ToString in struct)
-*/
+///<summary>
+///	Declare struct Dog with fields Name, Mark, Age. 
+///	Decleare variable myDog of Dog type and read values for it.
+///	Output myDos into console.(Decleare method ToString in struct)
+///</summary>
     struct Dog
     {
         public string Name;

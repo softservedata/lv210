@@ -4,9 +4,9 @@ namespace RangeCheck
 {
     class Program
     {
-	/*
-		read 3 float numbers and check: are they all belong to the range [-5,5].
-	*/
+	///<summary>
+	///	Read 3 float numbers and check: are they all belong to the range [-5,5].
+	///</summary>
         static void Main(string[] args)
         {
             double a, b, c;
