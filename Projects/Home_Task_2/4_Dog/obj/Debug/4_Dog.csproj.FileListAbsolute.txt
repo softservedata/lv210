@@ -1,0 +1,12 @@
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\Dog\bin\Debug\Dog.exe.config
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\Dog\bin\Debug\Dog.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\Dog\bin\Debug\Dog.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\Dog\obj\Debug\4_Dog.csprojResolveAssemblyReference.cache
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\Dog\obj\Debug\Dog.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\Dog\obj\Debug\Dog.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\4_Dog\bin\Debug\Dog.exe.config
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\4_Dog\bin\Debug\Dog.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\4_Dog\bin\Debug\Dog.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\4_Dog\obj\Debug\4_Dog.csprojResolveAssemblyReference.cache
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\4_Dog\obj\Debug\Dog.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\4_Dog\obj\Debug\Dog.pdb

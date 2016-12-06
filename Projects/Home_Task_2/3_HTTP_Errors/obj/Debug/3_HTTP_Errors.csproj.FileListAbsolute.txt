@@ -1,0 +1,10 @@
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\HTTP_Erors\bin\Debug\HTTP_Erors.exe.config
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\HTTP_Erors\bin\Debug\HTTP_Erors.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\HTTP_Erors\bin\Debug\HTTP_Erors.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\HTTP_Erors\obj\Debug\HTTP_Erors.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\HTTP_Erors\obj\Debug\HTTP_Erors.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\3_HTTP_Errors\bin\Debug\HTTP_Erors.exe.config
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\3_HTTP_Errors\obj\Debug\HTTP_Erors.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\3_HTTP_Errors\obj\Debug\HTTP_Erors.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\3_HTTP_Errors\bin\Debug\HTTP_Erors.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\3_HTTP_Errors\bin\Debug\HTTP_Erors.pdb
