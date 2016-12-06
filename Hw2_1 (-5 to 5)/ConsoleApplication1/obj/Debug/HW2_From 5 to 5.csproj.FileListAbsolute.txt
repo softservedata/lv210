@@ -1,0 +1,3 @@
+D:\Documents\Моє\AQC\C#Projects\Hw2_1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Documents\Моє\AQC\C#Projects\Hw2_1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\Documents\Моє\AQC\C#Projects\Hw2_1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

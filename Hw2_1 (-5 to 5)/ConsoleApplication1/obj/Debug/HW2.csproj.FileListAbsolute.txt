@@ -1,0 +1,12 @@
+D:\Documents\Моє\Soft Serve\C#Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Documents\Моє\Soft Serve\C#Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Documents\Моє\Soft Serve\C#Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Documents\Моє\Soft Serve\C#Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\HW2.csprojResolveAssemblyReference.cache
+D:\Documents\Моє\Soft Serve\C#Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\Documents\Моє\Soft Serve\C#Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+D:\Documents\Моє\AQC\C#Projects\Hw2_1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Documents\Моє\AQC\C#Projects\Hw2_1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\Documents\Моє\AQC\C#Projects\Hw2_1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+D:\Documents\Моє\AQC\C#Projects\Hw2_1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Documents\Моє\AQC\C#Projects\Hw2_1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Documents\Моє\AQC\C#Projects\Hw2_1\ConsoleApplication1\obj\Debug\HW2.csprojResolveAssemblyReference.cache
