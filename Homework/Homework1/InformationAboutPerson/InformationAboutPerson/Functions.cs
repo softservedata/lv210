@@ -2,33 +2,60 @@
 
 namespace AppropriateFunctions
 {
-    public class Function
+    public class ProgramPerson
     {
-        public static void InformationAboutPerson()
+        public void Run()
+        {
+            try
+            {
+                var name = ReadName();
+                var readedAge = ReadAge(name);
+
+                var age = ParseData(readedAge);
+                DisplayInformationAboutPerson(name, age);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.ReadLine();
+        }
+
+        public string ReadName()
         {
             Console.WriteLine("What is your name?");
             var name = Console.ReadLine();
 
-            Console.WriteLine("How old are you, {0}?", name);
-            var input = Console.ReadLine();
-            int age;
+            return name;
+        }
 
-            var isInputValid = int.TryParse(input, out age);
-            var isAgeValid = age > 0;
+        public string ReadAge(string name)
+        {
+            Console.WriteLine("\nHow old are you, {0}?", name);
+            var age = Console.ReadLine();
 
+            return age;
+        }
 
+        public void DisplayInformationAboutPerson(string name, int age)
+        {
+            if (age <= 0)
+                throw new ArgumentException("\nAge can't be less or equal zero!");
 
-            if (isInputValid && isAgeValid)
-            {
-                Console.WriteLine("\nYour name is {0}", name);
-                Console.WriteLine("You are {0} years old\n", age);
-            }
-            else
-            {
-                Console.WriteLine("Incorrect value!\n");
-            }
-            Console.ReadLine();
+            Console.WriteLine("\nYour name is {0}", name);
+            Console.WriteLine("You are {0} years old\n", age);
+        }
 
+        public int ParseData(string data)
+        {
+            int parsedValue;
+
+            var isParseSuccessful = int.TryParse(data, out parsedValue);
+
+            if (!isParseSuccessful)
+                throw new FormatException("Can't parse data to <int>");
+
+            return parsedValue;
         }
     }
 }

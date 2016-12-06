@@ -11,7 +11,8 @@ namespace InformationAboutPerson
     {
         static void Main(string[] args)
         {
-            Function.InformationAboutPerson();
+            ProgramPerson person = new ProgramPerson();
+            person.Run();
         }
     }
 }

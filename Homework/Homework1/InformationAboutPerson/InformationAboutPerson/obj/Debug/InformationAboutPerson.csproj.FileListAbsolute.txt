@@ -7,3 +7,9 @@ D:\Курси\c_sharp hometasks\InformationAboutPerson\InformationAboutPerson\ob
 C:\Users\Уля\git\lv210\Homework\Homework1\InformationAboutPerson\InformationAboutPerson\bin\Debug\InformationAboutPerson.exe.config
 C:\Users\Уля\git\lv210\Homework\Homework1\InformationAboutPerson\InformationAboutPerson\obj\Debug\InformationAboutPerson.exe
 C:\Users\Уля\git\lv210\Homework\Homework1\InformationAboutPerson\InformationAboutPerson\obj\Debug\InformationAboutPerson.pdb
+C:\Users\Уля\git\Homework\Homework1\InformationAboutPerson\InformationAboutPerson\bin\Debug\InformationAboutPerson.exe.config
+C:\Users\Уля\git\Homework\Homework1\InformationAboutPerson\InformationAboutPerson\obj\Debug\InformationAboutPerson.pdb
+C:\Users\Уля\git\Homework\Homework1\InformationAboutPerson\InformationAboutPerson\bin\Debug\InformationAboutPerson.exe
+C:\Users\Уля\git\Homework\Homework1\InformationAboutPerson\InformationAboutPerson\bin\Debug\InformationAboutPerson.pdb
+C:\Users\Уля\git\Homework\Homework1\InformationAboutPerson\InformationAboutPerson\obj\Debug\InformationAboutPerson.csprojResolveAssemblyReference.cache
+C:\Users\Уля\git\Homework\Homework1\InformationAboutPerson\InformationAboutPerson\obj\Debug\InformationAboutPerson.exe
