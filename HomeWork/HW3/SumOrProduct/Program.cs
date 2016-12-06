@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+/*
+Enter 10 integer numbers. 
+Culculate the sum of first 5 elements if they are posetive or product of last 5 element in  the other case.
+*/
+
 namespace SumOrProduct
 {
     class Program
