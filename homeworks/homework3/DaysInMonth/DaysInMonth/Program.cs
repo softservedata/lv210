@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*Ask user to enter the number of mounth.
+Read the value and write the amount of days in this mounth.*/
 namespace DaysInMonth
 {
     class Program
     {
+        //check if entered number of month is in range 1-12.
         public static bool isMonth(int MonthNumber)
         {
-            //if (MonthNumber > 12 || MonthNumber <= 0) return false;
+            
             return (MonthNumber <= 12 && MonthNumber > 0);
         }
         
         static void Main(string[] args)
         {
-            int []DaysPerMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            int []DaysPerMonth = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
             Console.Write("Input month number:");
             int MonthNumber = Convert.ToInt32(Console.ReadLine());
             if (!isMonth(MonthNumber))
