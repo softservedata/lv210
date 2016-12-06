@@ -24,8 +24,10 @@ namespace Sequence
                 Console.Write("- ");
                 temp = int.Parse(Console.ReadLine());
             }
-
+            if(sum > 0 && count > 0)
             Console.WriteLine("Середнє арифметчне: {0}", sum / count);
+            else
+                Console.WriteLine("Неправильні дані");
             Console.ReadKey();
         }
     }
