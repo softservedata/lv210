@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Calc
 {
-    class Numeric
+    public class Numeric
     {
 
         public double add(double arg0, double arg1)
         {
-            return arg0 + arg0;
+            return arg0 + arg1;
         }
 
         public double div(double arg0, double arg1)
