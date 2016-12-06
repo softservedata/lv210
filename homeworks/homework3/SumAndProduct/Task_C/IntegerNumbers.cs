@@ -12,9 +12,9 @@ namespace Task_C
     {
         /*Check if elements are positive.
         countOfElements - number of elements to be checked*/
-        public static bool isPositive(int []Array,int countOfElements)
+        public static bool isPositive(int []array,int countOfElements)
         {
-            for(int i=0;i< countOfElements; i++)
+          for (int i=0; i< countOfElements; i++)
             {
                 if (Array[i]<= 0)   return false;
             }     
@@ -40,6 +40,7 @@ namespace Task_C
 
         static void Main(string[] args)
         {
+            int numbersToCheck=5;
             Console.WriteLine("Input 10 integer numbers:");
             int[] Array = new int[10];
             for (int i = 0; i < Array.Length; i++)
@@ -47,10 +48,10 @@ namespace Task_C
                 Console.Write("Number[{0}]=", i+1);
                 Array[i] = Convert.ToInt32(Console.ReadLine());
                                            }
-            if (isPositive(Array,5))
-                Console.WriteLine("Sum of first 5 elements {0}", calcSumOfElements(5, Array));
+            if (isPositive(Array,numbersToCheck))
+                Console.WriteLine("Sum of first 5 elements {0}", calcSumOfElements(numbersToCheck, Array));
             else
-                Console.WriteLine("Product of last 5 elements {0}", calcProductOfElements(5, Array));
+                Console.WriteLine("Product of last 5 elements {0}", calcProductOfElements(numbersToCheck, Array));
             Console.ReadKey();
         }
     }
