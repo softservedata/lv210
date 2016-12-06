@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*Enter 10 integer numbers. 
+Calculate the sum of first 5 elements if they are posetive
+or product of last 5 element in  the other case.*/
 namespace Task_C
 {
     class IntegerNumbers
     {
+        /*Check if elements are positive.
+        countOfElements - number of elements to be checked*/
         public static bool isPositive(int []Array,int countOfElements)
         {
             for(int i=0;i< countOfElements; i++)
