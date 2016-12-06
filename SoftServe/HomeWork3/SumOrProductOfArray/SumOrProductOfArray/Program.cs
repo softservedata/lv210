@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SumOrProductOfArray
 {
@@ -15,58 +16,60 @@ namespace SumOrProductOfArray
             Console.WriteLine("Input 10 integer numbers divided by space: ");
             string[] inputIntegerData = Console.ReadLine().Split(' ');
 
-            if (IsFirstFiveElementsPositive(inputIntegerData))
+            int[] inputData = new int[inputIntegerData.Length];
+
+            for (int i = 0; i < inputIntegerData.Length; i++)
             {
-                Console.WriteLine("Sum of first 5 elements : {0}", ArraySum(inputIntegerData));
+                inputData[i] = int.Parse(inputIntegerData[i]);
+            }
+
+            if (IsFirstFiveElementsPositive(inputData))
+            {
+                Console.WriteLine("Sum of first 5 elements : {0}", ArraySum(inputData));
             }
             else
             {
-                Console.WriteLine("Product of last 5 elements : {0}", ArrayProduct(inputIntegerData));
+                Console.WriteLine("Product of last 5 elements : {0}", ArrayProduct(inputData));
             }
 
             Console.ReadKey();
         }
 
-        private static bool IsFirstFiveElementsPositive(string[] inputData)
+        private static bool IsFirstFiveElementsPositive(int[] inputData)
         {
-            int[] positiveArray = new int[5];
             bool isPositive = true;
 
-            for (int i = 0; i < positiveArray.Length; i++)
+            for (int i = 0; i < inputData.Length; i++)
             {
-                positiveArray[i] = int.Parse(inputData[i]);
-                if (positiveArray[i] <= 0)
+                if (inputData[i] < 0)
                 {
                     isPositive = false;
                     break;
                 }
             }
-            
+
             return isPositive;
         }
 
-        private static int ArraySum(string[] inputData)
+        private static int ArraySum(int[] inputData)
         {
-            int[] sumOfArray = new int[5];
             int sum = 0;
 
-            for (int i = 0; i < sumOfArray.Length; i++)
+            for (int i = 0; i < 5; i++)
             {
-                sumOfArray[i] = int.Parse(inputData[i]);
-                sum += sumOfArray[i]; 
+                sum += inputData[i];
             }
+
             return sum;
         }
 
-        private static int ArrayProduct(string[] inputData)
+        private static int ArrayProduct(int[] inputData)
         {
-            int[] productOfArray = new int[5];
             int product = 1;
 
-            for (int i = 0; i < productOfArray.Length; i++)
+            for (int i = inputData.Length - 1; i >= 5; i--)
             {
-                productOfArray[i] = int.Parse(inputData[productOfArray.Length + i]);
-                product *= productOfArray[i]; 
+                product *= inputData[i];
             }
 
             return product;

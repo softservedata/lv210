@@ -3,3 +3,9 @@ C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork3\SumOrPro
 C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork3\SumOrProductOfArray\SumOrProductOfArray\bin\Debug\SumOrProductOfArray.pdb
 C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork3\SumOrProductOfArray\SumOrProductOfArray\obj\Debug\SumOrProductOfArray.exe
 C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork3\SumOrProductOfArray\SumOrProductOfArray\obj\Debug\SumOrProductOfArray.pdb
+C:\Users\Dima\git\lv210\SoftServe\HomeWork3\SumOrProductOfArray\SumOrProductOfArray\bin\Debug\SumOrProductOfArray.exe.config
+C:\Users\Dima\git\lv210\SoftServe\HomeWork3\SumOrProductOfArray\SumOrProductOfArray\obj\Debug\SumOrProductOfArray.exe
+C:\Users\Dima\git\lv210\SoftServe\HomeWork3\SumOrProductOfArray\SumOrProductOfArray\obj\Debug\SumOrProductOfArray.pdb
+C:\Users\Dima\git\lv210\SoftServe\HomeWork3\SumOrProductOfArray\SumOrProductOfArray\bin\Debug\SumOrProductOfArray.exe
+C:\Users\Dima\git\lv210\SoftServe\HomeWork3\SumOrProductOfArray\SumOrProductOfArray\bin\Debug\SumOrProductOfArray.pdb
+C:\Users\Dima\git\lv210\SoftServe\HomeWork3\SumOrProductOfArray\SumOrProductOfArray\obj\Debug\SumOrProductOfArray.csprojResolveAssemblyReference.cache
