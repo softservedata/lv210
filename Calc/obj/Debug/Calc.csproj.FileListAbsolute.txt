@@ -1,0 +1,6 @@
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc\bin\Debug\Calc.exe.config
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc\bin\Debug\Calc.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc\bin\Debug\Calc.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc\obj\Debug\Calc.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc\obj\Debug\Calc.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc\obj\Debug\Calc.pdb
