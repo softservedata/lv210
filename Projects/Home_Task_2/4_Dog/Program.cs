@@ -17,16 +17,16 @@ namespace Dog
         {
             //Reading info from console
             Console.Write("Enter the name of your dog: ");
-            string n = Console.ReadLine();
+            string nameDog = Console.ReadLine();
 
             Console.Write("Enter the mark of your dog: ");
-            string m = Console.ReadLine();
+            string markDog = Console.ReadLine();
 
             Console.Write("Enter the age of your dog: ");
-            int a = Convert.ToInt32(Console.ReadLine());
+            int ageDog = Convert.ToInt32(Console.ReadLine());
 
             //Create new var myDog
-            Dog myDog = new Dog(n, m, a);
+            Dog myDog = new Dog(nameDog, markDog, ageDog);
 
             //Print result
             Console.WriteLine(myDog);
