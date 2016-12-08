@@ -30,10 +30,10 @@ namespace Person
         }
 
         /// <summary>
-        /// Constructor for Person 
+        /// Constructor for class Person
         /// </summary>
-        /// <param name="name">name of person</param>
-        /// <param name="birthYear">birthYear of person</param>
+        /// <param name="name">Person name</param>
+        /// <param name="birthDate">Person birthDate</param>
         public Person(string name, DateTime birthDate)
         {
             this.name = name;
