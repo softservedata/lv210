@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace Person
     {
         //fields
         private string name;
-        private int birthYear;
+        private DateTime birthDate;
 
         /// <summary>
         /// Property Name for Person
@@ -21,11 +22,11 @@ namespace Person
         }
 
         /// <summary>
-        /// Property BirthYear for Person
+        /// Property BirthDate for Person
         /// </summary>
-        public int BirthYear
+        public DateTime BirthDate
         {
-            get { return birthYear; }
+            get { return birthDate; }
         }
 
         /// <summary>
@@ -33,10 +34,10 @@ namespace Person
         /// </summary>
         /// <param name="name">name of person</param>
         /// <param name="birthYear">birthYear of person</param>
-        public Person(string name, int birthYear)
+        public Person(string name, DateTime birthDate)
         {
             this.name = name;
-            this.birthYear = birthYear;
+            this.birthDate = birthDate;
         }
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Person
         /// <returns></returns>
         public int Age()
         {
-            return DateTime.Now.Year - BirthYear;
+            return DateTime.Now.Year - BirthDate.Year;
         }
 
         /// <summary>
@@ -61,16 +62,13 @@ namespace Person
         /// <returns></returns>
         public static Person Input()
         {
-            Console.WriteLine("-----Creating new Person-----");
             Console.Write("Enter the name: ");
             string name = Console.ReadLine();
 
-            Console.Write("Enter the birth year: ");
-            int birthYear = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter the birth date in format day-month-year: ");
+            DateTime birthDate = DateTime.Parse(Console.ReadLine());
 
-            Console.WriteLine("-----Person saved-----\n");
-
-            return new Person(name, birthYear);
+            return new Person(name, birthDate);
         }
 
         /// <summary>
@@ -79,7 +77,7 @@ namespace Person
         public void Output()
         {
             int age = Age();
-            Console.WriteLine("{0}, {1} years old", Name, age);
+            Console.WriteLine("{0}, {1} years old. Birthday: {2}", Name, age, BirthDate.ToShortDateString());
         }
 
         /// <summary>
@@ -89,7 +87,9 @@ namespace Person
         public void ChangeName()
         {
             if (Age() < 16)
+            {
                 name = "Very Young";
+            }
         }
     }
 }

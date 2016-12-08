@@ -4,3 +4,9 @@ c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_4\
 c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_4\Person\obj\Debug\Person.csprojResolveAssemblyReference.cache
 c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_4\Person\obj\Debug\Person.exe
 c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_4\Person\obj\Debug\Person.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person\bin\Debug\Person.exe.config
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person\obj\Debug\Person.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person\bin\Debug\Person.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person\bin\Debug\Person.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person\obj\Debug\Person.csprojResolveAssemblyReference.cache
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person\obj\Debug\Person.exe

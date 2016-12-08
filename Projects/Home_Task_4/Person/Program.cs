@@ -11,23 +11,22 @@ namespace Person
         static void Main(string[] args)
         {
             //Creating collection of persons
-            Person[] arr = new Person[5];
+            int numbberOfPersons = 3;
+            Person[] arr = new Person[numbberOfPersons];
+
             for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = Person.Input();
+                arr[i].ChangeName();
             }
 
             //Output results
             Console.Clear();
-            Console.WriteLine("-----Information about Persons-----\n");
+
             foreach (Person p in arr)
             {
-                p.ChangeName();
                 p.Output();
             }
-
-
-
         }
     }
 }
