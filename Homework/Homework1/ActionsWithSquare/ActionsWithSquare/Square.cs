@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ActionsWithSquare
 {
-    public class Square
+    public class Square: IShape2D
     {
-        public double _sideLength;
+        private double _sideLength;
 
         public Square(double side)
         {
@@ -34,6 +29,7 @@ namespace ActionsWithSquare
         public override string ToString()
         {
             return string.Format("\nSize is {0}, area is {1}, perimeter is {2}.", this._sideLength, this.Area(), this.Perimeter());
+
         }
     }
 }

@@ -1,0 +1,13 @@
+<?xml version="2.0"?>
+<person>
+   <name>Ivan</name>
+   <age>-20</age>
+</person>
+<person>
+   <name>Ivan</name>
+   <age>-1</age>
+</person>
+<person>
+   <name>Ivan</name>
+   <age>0</age>
+</person>
