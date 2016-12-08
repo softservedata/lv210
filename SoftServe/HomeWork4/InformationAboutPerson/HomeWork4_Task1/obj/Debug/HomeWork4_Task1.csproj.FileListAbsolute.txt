@@ -1,0 +1,7 @@
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork4_Task1\HomeWork4_Task1\bin\Debug\HomeWork4_Task1.exe.config
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork4_Task1\HomeWork4_Task1\bin\Debug\HomeWork4_Task1.exe
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork4_Task1\HomeWork4_Task1\bin\Debug\HomeWork4_Task1.pdb
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork4_Task1\HomeWork4_Task1\obj\Debug\HomeWork4_Task1.exe
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork4_Task1\HomeWork4_Task1\obj\Debug\HomeWork4_Task1.pdb
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4_Task1\HomeWork4_Task1\bin\Debug\HomeWork4_Task1.exe.config
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4_Task1\HomeWork4_Task1\obj\Debug\HomeWork4_Task1.pdb
