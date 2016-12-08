@@ -9,31 +9,31 @@ namespace ActionsWithSquare
 {
     public class Square
     {
-        public double _size;
+        public double _sideLength;
 
-        public Square(double size)
+        public Square(double side)
         {
-            if (size <= 0)
+            if (side <= 0)
             {
                 throw new ArgumentException("\nLength of the side can't be less or equal zero!");
             }
 
-            this._size = size;
+            this._sideLength = side;
         }
 
         public double Area()
         {
-            return this._size * this._size;
+            return this._sideLength * this._sideLength;
         }
 
         public double Perimeter()
         {
-            return 4 * this._size;
+            return 4 * this._sideLength;
         }
 
         public override string ToString()
         {
-            return string.Format("\nSize is {0}, area is {1}, perimeter is {2}.", this._size, this.Area(), this.Perimeter());
+            return string.Format("\nSize is {0}, area is {1}, perimeter is {2}.", this._sideLength, this.Area(), this.Perimeter());
         }
     }
 }
