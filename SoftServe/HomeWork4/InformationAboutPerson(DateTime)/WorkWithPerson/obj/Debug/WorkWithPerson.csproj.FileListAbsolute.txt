@@ -1,0 +1,7 @@
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork4\WorkWithPerson\WorkWithPerson\bin\Debug\WorkWithPerson.exe.config
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork4\InformationAboutPerson(DateTime)\WorkWithPerson\bin\Debug\WorkWithPerson.exe.config
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork4\InformationAboutPerson(DateTime)\WorkWithPerson\bin\Debug\WorkWithPerson.exe
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork4\InformationAboutPerson(DateTime)\WorkWithPerson\bin\Debug\WorkWithPerson.pdb
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork4\InformationAboutPerson(DateTime)\WorkWithPerson\obj\Debug\WorkWithPerson.csprojResolveAssemblyReference.cache
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork4\InformationAboutPerson(DateTime)\WorkWithPerson\obj\Debug\WorkWithPerson.exe
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork4\InformationAboutPerson(DateTime)\WorkWithPerson\obj\Debug\WorkWithPerson.pdb
