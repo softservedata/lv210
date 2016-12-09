@@ -1,0 +1,11 @@
+C:\Users\Марія Сергіївна\Source\Repos\lv210\CalcTests\bin\Debug\CalcTests.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\CalcTests\bin\Debug\CalcTests.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\CalcTests\bin\Debug\Calc.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\CalcTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\CalcTests\bin\Debug\NSubstitute.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\CalcTests\bin\Debug\Calc.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\CalcTests\bin\Debug\NSubstitute.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\CalcTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\CalcTests\obj\Debug\CalcTests.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\CalcTests\obj\Debug\CalcTests.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\CalcTests\obj\Debug\CalcTests.pdb

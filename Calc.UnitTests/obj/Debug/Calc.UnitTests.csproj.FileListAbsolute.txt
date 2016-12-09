@@ -1,0 +1,13 @@
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\bin\Debug\Calc.UnitTests.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\bin\Debug\Calc.UnitTests.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\bin\Debug\Calc.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\bin\Debug\NSubstitute.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\bin\Debug\Calc.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\bin\Debug\NSubstitute.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\obj\Debug\Calc.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\obj\Debug\Calc.UnitTests.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Calc.UnitTests\obj\Debug\Calc.UnitTests.pdb
