@@ -12,6 +12,7 @@ namespace MaxMin
         public static T Max(T[] array) 
         {
             var max = array[0];
+
             for (int i = 1; i < array.Length; i++)
             {
                 if (array[i].CompareTo(max) > 0)
