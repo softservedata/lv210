@@ -3,3 +3,9 @@ c:\users\марія сергіївна\documents\visual studio 2015\Projects\Nam
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\NameAndAge\NameAndAge\bin\Debug\NameAndAge.pdb
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\NameAndAge\NameAndAge\obj\Debug\NameAndAge.exe
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\NameAndAge\NameAndAge\obj\Debug\NameAndAge.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\NameAndAge\NameAndAge\bin\Debug\NameAndAge.exe.config
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\NameAndAge\NameAndAge\obj\Debug\NameAndAge.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\NameAndAge\NameAndAge\bin\Debug\NameAndAge.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\NameAndAge\NameAndAge\bin\Debug\NameAndAge.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\NameAndAge\NameAndAge\obj\Debug\NameAndAge.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\NameAndAge\NameAndAge\obj\Debug\NameAndAge.exe
