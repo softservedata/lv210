@@ -1,0 +1,11 @@
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations.Test\bin\Debug\SimpleOperations.Test.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations.Test\bin\Debug\SimpleOperations.Test.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations.Test\bin\Debug\nunit.framework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations.Test\bin\Debug\SimpleOperations.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations.Test\bin\Debug\SimpleOperations.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations.Test\bin\Debug\nunit.framework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations.Test\obj\Debug\SimpleOperations.Test.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations.Test\obj\Debug\SimpleOperations.Test.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\SimpleOperations\SimpleOperations.Test\obj\Debug\SimpleOperations.Test.pdb

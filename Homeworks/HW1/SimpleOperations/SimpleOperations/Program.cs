@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace SimpleOperations
 {
@@ -9,36 +10,23 @@ namespace SimpleOperations
         ///	Read values a and b from Console and calculate: a+b, a-b, a*b, a/b. 
         ///	Output obtained results.
         ///</summary>
-        public static int Summ(int FirstNumber, int SecondNumber)
-        {
-            return FirstNumber + SecondNumber;
-        }
-        public static int Difference(int FirstNumber, int SecondNumber)
-        {
-            return FirstNumber - SecondNumber;
-        }
-        public static int Multiplax(int FirstNumber, int SecondNumber)
-        {
-            return FirstNumber * SecondNumber;
-        }
-        public static int Division(int FirstNumber, int SecondNumber)
-        {
-            return FirstNumber / SecondNumber;
-        }
         static void Main(string[] args)
         {
-            int a, b;
-            Console.WriteLine("Input integer values");
-            Console.Write("a = ");
-            a = Convert.ToInt32(Console.ReadLine());
-            Console.Write("b = ");
-            b = Convert.ToInt32(Console.ReadLine());
-            int sum, diff, mult, div;
-            sum = Summ(a, b);
-            diff = Difference(a, b);
-            mult = Multiplax(a, b);
-            div = Division(a, b);
-            Console.WriteLine("a + b = {0};\na - b = {1};\na * b = {2};\na / b = {3};", sum, diff, mult, div);
+            Console.Write("Input two integer values divided by space: ");
+
+            int[] Variables;
+            int ParsedValues;
+            Variables = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select
+                                                    (i => int.TryParse(i, out ParsedValues) ? ParsedValues : 0).ToArray();
+            int summ, difference, product, fraction;
+            MathOperations MathObject = new MathOperations();
+
+            summ =  MathObject.Add(Variables[0], Variables[1]);
+            difference = MathObject.Subtract(Variables[0], Variables[1]);
+            product = MathObject.Product(Variables[0], Variables[1]);
+            fraction = MathObject.Division(Variables[0], Variables[1]);
+
+            Console.WriteLine("a + b = {0};\na - b = {1};\na * b = {2};\na / b = {3};", summ, difference, product, fraction);
             Console.ReadLine();
         }
     }
