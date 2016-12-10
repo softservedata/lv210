@@ -3,3 +3,9 @@ c:\users\марія сергіївна\documents\visual studio 2015\Projects\Rad
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\RadiusOperation\RadiusOperation\bin\Debug\RadiusOperation.pdb
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\RadiusOperation\RadiusOperation\obj\Debug\RadiusOperation.exe
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\RadiusOperation\RadiusOperation\obj\Debug\RadiusOperation.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation\bin\Debug\RadiusOperation.exe.config
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation\obj\Debug\RadiusOperation.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation\bin\Debug\RadiusOperation.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation\bin\Debug\RadiusOperation.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation\obj\Debug\RadiusOperation.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation\obj\Debug\RadiusOperation.exe

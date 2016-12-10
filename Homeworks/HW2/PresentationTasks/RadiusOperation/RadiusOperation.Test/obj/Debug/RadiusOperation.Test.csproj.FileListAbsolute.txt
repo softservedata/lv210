@@ -1,0 +1,11 @@
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation.Test\bin\Debug\RadiusOperation.Test.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation.Test\bin\Debug\RadiusOperation.Test.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation.Test\bin\Debug\nunit.framework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation.Test\bin\Debug\RadiusOperation.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation.Test\bin\Debug\RadiusOperation.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation.Test\bin\Debug\nunit.framework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation.Test\obj\Debug\RadiusOperation.Test.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation.Test\obj\Debug\RadiusOperation.Test.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\RadiusOperation\RadiusOperation.Test\obj\Debug\RadiusOperation.Test.pdb
