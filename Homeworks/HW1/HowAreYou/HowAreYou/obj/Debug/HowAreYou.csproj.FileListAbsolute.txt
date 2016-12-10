@@ -3,3 +3,5 @@ c:\users\марія сергіївна\documents\visual studio 2015\Projects\How
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\HowAreYou\HowAreYou\bin\Debug\HowAreYou.pdb
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\HowAreYou\HowAreYou\obj\Debug\HowAreYou.exe
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\HowAreYou\HowAreYou\obj\Debug\HowAreYou.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\HowAreYou\HowAreYou\bin\Debug\HowAreYou.exe.config
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\HowAreYou\HowAreYou\obj\Debug\HowAreYou.pdb
