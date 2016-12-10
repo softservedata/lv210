@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DataParser.cs" />
     <Compile Include="Person.cs" />
+    <Compile Include="PersonBuilder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

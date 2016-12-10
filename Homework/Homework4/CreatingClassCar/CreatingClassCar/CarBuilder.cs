@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 
 namespace CreatingClassCar
 {
-    public class ConsoleCar: Car
+    public class CarBuilder
     {
-        public ConsoleCar():base(ReadBrand(),ReadColor(),ReadPrice())
+        public static Car BuildCar()
         {
-
+            return new Car(ReadBrand(), ReadColor(), ReadPrice());
         }
 
         public static string ReadBrand()
@@ -33,8 +29,7 @@ namespace CreatingClassCar
                throw new ArgumentException("\nInvalid color!");
             }
 
-            return color;
-            
+            return color;           
         }
 
         public static double ReadPrice()
@@ -46,11 +41,15 @@ namespace CreatingClassCar
 
             if (!double.TryParse(inputedPrice, out price))
             {
-                throw new ArgumentException("\nInvalid price!");
+                throw new FormatException("\nCan not convert to <double>!");
+            }
+
+            if (price<=0)
+            {
+                throw new ArgumentException("\nPrice can not be less or equal zero!");
             }
             
             return price;
-
         }
     }
 }

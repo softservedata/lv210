@@ -13,25 +13,13 @@ namespace InformationAboutPerson
 
         public Person(string name, int age)
         {
-            if ((name == string.Empty) || (name.Any(c => char.IsDigit(c))) ||
-                    (name.Any(c => ! char.IsLetterOrDigit(c))))
-            {
-                throw new ArgumentException("\nPerson's name cannot be empty, contain digits or specific characters");
-            }
-
             this._name = name;
-
-            if (age <= 0)
-            {
-                throw new ArgumentException("\nPerson's age cannot be less or equal zero!");
-            }
-
             this._age = age;
         }
 
         public override string ToString()
         {
-            return string.Format("\nName is {0}, age is {1}.", this._name, this._age);
+            return $"\nName is {this._name}, age is {this._age}.";
         }
     }
 }

@@ -1,36 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace CreatingClassCar
 {
     public class Car
     {
         public string Brand { get; private set; }
-        public Color Color{ get; set; }
+        public Color Color{ get; private set; }
         public double Price { get; private set; }
 
         public Car(){ }
 
-        public Car(string Brand, Color Color, double Price)
+        public Car(string brand, Color color, double price)
         {
-            this.Brand = Brand;
-            this.Color = Color;
-            this.Price = Price;
+            this.Brand = brand;
+            this.Color = color;
+            this.Price = price;
         }
 
-        public void ChangePrice (double percent)
+        public void ChangePricePercentage(double percent)
         {
-            this.Price += (Price*percent)/100;
+            this.Price += ((Price * percent) / 100);
+        }
+
+        public void ChangeColor(double price)
+        {
+            this.Price = price;
+        }
+
+        public void ChangeColor(Color color)
+        {
+            this.Color = color;
         }
 
         public override string ToString()
         {
-            return string.Format("\nBrand is {0}, color is {1}, price is {2}.", this.Brand, this.Color.Name, this.Price);
+            //string interpolation
+            return $"\nBrand is {this.Brand}, color is {this.Color.Name}, price is {this.Price}.";
         }
-
     }
 }

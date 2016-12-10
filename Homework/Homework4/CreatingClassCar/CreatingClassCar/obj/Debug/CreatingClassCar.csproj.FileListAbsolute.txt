@@ -7,3 +7,6 @@ D:\Курси\c_sharp hometasks\CreatingClassCar\CreatingClassCar\obj\Debug\Crea
 C:\Users\Уля\git\lv210\Homework\Homework4\CreatingClassCar\CreatingClassCar\bin\Debug\CreatingClassCar.exe.config
 C:\Users\Уля\git\lv210\Homework\Homework4\CreatingClassCar\CreatingClassCar\obj\Debug\CreatingClassCar.exe
 C:\Users\Уля\git\lv210\Homework\Homework4\CreatingClassCar\CreatingClassCar\obj\Debug\CreatingClassCar.pdb
+C:\Users\Уля\git\lv210\Homework\Homework4\CreatingClassCar\CreatingClassCar\bin\Debug\CreatingClassCar.exe
+C:\Users\Уля\git\lv210\Homework\Homework4\CreatingClassCar\CreatingClassCar\bin\Debug\CreatingClassCar.pdb
+C:\Users\Уля\git\lv210\Homework\Homework4\CreatingClassCar\CreatingClassCar\obj\Debug\CreatingClassCar.csprojResolveAssemblyReference.cache
