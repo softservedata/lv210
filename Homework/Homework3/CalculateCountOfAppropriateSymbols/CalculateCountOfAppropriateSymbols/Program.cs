@@ -1,27 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CalculateCountOfAppropriateSymbols
 {
     ///<summary>
     ///This program finds count of some symbols in entered string.
-    ///</sumarry>
+    /// </summary>
     
-    using AppropriateFunctions;
     class Program
     {
         static void Main(string[] args)
         {
-            char[] char_collection = { 'a', 'o', 'i', 'e' };
+            char[] charCollection = { 'a', 'o', 'i', 'e' };
 
             Console.WriteLine("Please, enter some string:");
 
             var input = Console.ReadLine();
+            var countOfCharacters = input.FindCountOf(charCollection);
 
-            Console.WriteLine("\nCount of characters 'a', 'o', 'i', 'e' in current string is {0}.", Functions.FindCountOfSomeCharactersInString(input, char_collection));
+            Console.WriteLine("\nCount of characters 'a', 'o', 'i', 'e' in current string is {0}.", countOfCharacters);
 
             Console.ReadLine();
         }

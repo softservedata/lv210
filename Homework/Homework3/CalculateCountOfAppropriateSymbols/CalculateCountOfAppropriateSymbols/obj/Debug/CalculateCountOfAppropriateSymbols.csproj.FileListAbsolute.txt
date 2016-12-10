@@ -7,3 +7,6 @@ D:\Курси\c_sharp hometasks\CalculateCountOfAppropriateSymbols\CalculateCoun
 C:\Users\Уля\git\lv210\Homework\Homework3\CalculateCountOfAppropriateSymbols\CalculateCountOfAppropriateSymbols\bin\Debug\CalculateCountOfAppropriateSymbols.exe.config
 C:\Users\Уля\git\lv210\Homework\Homework3\CalculateCountOfAppropriateSymbols\CalculateCountOfAppropriateSymbols\obj\Debug\CalculateCountOfAppropriateSymbols.exe
 C:\Users\Уля\git\lv210\Homework\Homework3\CalculateCountOfAppropriateSymbols\CalculateCountOfAppropriateSymbols\obj\Debug\CalculateCountOfAppropriateSymbols.pdb
+C:\Users\Уля\git\lv210\Homework\Homework3\CalculateCountOfAppropriateSymbols\CalculateCountOfAppropriateSymbols\bin\Debug\CalculateCountOfAppropriateSymbols.exe
+C:\Users\Уля\git\lv210\Homework\Homework3\CalculateCountOfAppropriateSymbols\CalculateCountOfAppropriateSymbols\bin\Debug\CalculateCountOfAppropriateSymbols.pdb
+C:\Users\Уля\git\lv210\Homework\Homework3\CalculateCountOfAppropriateSymbols\CalculateCountOfAppropriateSymbols\obj\Debug\CalculateCountOfAppropriateSymbols.csprojResolveAssemblyReference.cache
