@@ -1,0 +1,11 @@
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square.Test\bin\Debug\Square.Test.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square.Test\bin\Debug\Square.Test.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square.Test\bin\Debug\nunit.framework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square.Test\bin\Debug\Square.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square.Test\bin\Debug\Square.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square.Test\bin\Debug\nunit.framework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square.Test\obj\Debug\Square.Test.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square.Test\obj\Debug\Square.Test.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square.Test\obj\Debug\Square.Test.pdb

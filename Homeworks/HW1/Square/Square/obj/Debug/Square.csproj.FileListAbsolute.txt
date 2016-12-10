@@ -4,3 +4,9 @@ c:\users\марія сергіївна\documents\visual studio 2015\Projects\Squ
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\Square\Square\obj\Debug\Square.csprojResolveAssemblyReference.cache
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\Square\Square\obj\Debug\Square.exe
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\Square\Square\obj\Debug\Square.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square\bin\Debug\Square.exe.config
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square\obj\Debug\Square.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square\obj\Debug\Square.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square\bin\Debug\Square.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square\bin\Debug\Square.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW1\Square\Square\obj\Debug\Square.exe
