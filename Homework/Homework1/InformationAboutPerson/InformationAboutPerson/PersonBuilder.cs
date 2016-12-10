@@ -7,8 +7,10 @@ namespace InformationAboutPerson
     {
         public static Person BuildPerson()
         {
-            var name = NameValidation(ReadName());
-            var age = AgeValidation(ReadAge(name));
+            var readedName = ReadName();
+            var readedAge = ReadAge(readedName);
+            var name = NameValidation(readedName);
+            var age = AgeValidation(readedAge);
 
             return new Person(name, age);
         }

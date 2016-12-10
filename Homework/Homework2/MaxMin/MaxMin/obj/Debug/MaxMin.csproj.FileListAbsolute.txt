@@ -7,3 +7,6 @@ D:\Курси\c_sharp hometasks\MaxMin\MaxMin\obj\Debug\MaxMin.pdb
 C:\Users\Уля\git\lv210\Homework\Homework2\MaxMin\MaxMin\bin\Debug\MaxMin.exe.config
 C:\Users\Уля\git\lv210\Homework\Homework2\MaxMin\MaxMin\obj\Debug\MaxMin.exe
 C:\Users\Уля\git\lv210\Homework\Homework2\MaxMin\MaxMin\obj\Debug\MaxMin.pdb
+C:\Users\Уля\git\lv210\Homework\Homework2\MaxMin\MaxMin\bin\Debug\MaxMin.exe
+C:\Users\Уля\git\lv210\Homework\Homework2\MaxMin\MaxMin\bin\Debug\MaxMin.pdb
+C:\Users\Уля\git\lv210\Homework\Homework2\MaxMin\MaxMin\obj\Debug\MaxMin.csprojResolveAssemblyReference.cache
