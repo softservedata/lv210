@@ -3,3 +3,9 @@ c:\users\марія сергіївна\documents\visual studio 2015\Projects\Max
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\MaxMin\MaxMin\bin\Debug\MaxMin.pdb
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\MaxMin\MaxMin\obj\Debug\MaxMin.exe
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\MaxMin\MaxMin\obj\Debug\MaxMin.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\MaxMin\MaxMin\bin\Debug\MaxMin.exe.config
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\MaxMin\MaxMin\obj\Debug\MaxMin.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\MaxMin\MaxMin\bin\Debug\MaxMin.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\MaxMin\MaxMin\bin\Debug\MaxMin.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\MaxMin\MaxMin\obj\Debug\MaxMin.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\MaxMin\MaxMin\obj\Debug\MaxMin.exe

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace MaxMin
 {
@@ -9,27 +10,15 @@ namespace MaxMin
 		///</summary>
         static void Main(string[] args)
         {
-            int a, b, c;
-            Console.WriteLine("Input 3 integer numbers:");
-            a = Convert.ToInt32(Console.ReadLine());
-            b = Convert.ToInt32(Console.ReadLine());
-            c = Convert.ToInt32(Console.ReadLine());
-            int min = 10000000;
-            int max = -10000000;
-            if (a > max)
-                max = a;
-            if (b > max)
-                max = b;
-            if (c > max)
-                max = c;
-            Console.WriteLine("Max = {0}", max);
-            if (a < min)
-                min = a;
-            if (b < min)
-                min = b;
-            if (c < min)
-                min = c;
-            Console.WriteLine("Min = {0}", min);
+            Console.Write("Input 3 integer numbers: ");
+            int[] Variables;
+            int ParsedValues;
+            Variables = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select
+                                                    (i => int.TryParse(i, out ParsedValues) ? ParsedValues : 0).ToArray();
+            int min = Variables.Min();
+            int max = Variables.Max();
+
+            Console.WriteLine("Max = {0}\nMin = {1}", max, min);
             Console.ReadLine();
         }
     }
