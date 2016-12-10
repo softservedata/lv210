@@ -11,9 +11,8 @@ namespace HowAreYou
 	///</summary>
         static void Main(string[] args)
         {
-            string answer;
-            Console.WriteLine("How are you?");
-            answer = Console.ReadLine();
+            Console.Write("How are you? ");
+            string answer = Console.ReadLine();
             Console.WriteLine("You are {0}", answer);
             Console.ReadLine();
         }
