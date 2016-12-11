@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Homework4
 {
-    class Person
+    class NewPerson
     {
         private string name;
-        private int birthYear;
+        private DateTime birthDate;
         public string Name
         {
             get
@@ -17,41 +17,38 @@ namespace Homework4
                 return name;
             }
         }
-        public int BirthYear
+        public DateTime BirthDate
         {
             get
             {
-                return birthYear;
+                return birthDate;
             }
         }
-       public Person() { }
-        public Person(string name,int birthYear)
+       public NewPerson() { }
+        public NewPerson(string name,DateTime birthDate)
         {
             this.name = name;
-            this.birthYear = birthYear;
+            this.birthDate = birthDate;
         }
 
         public int Age()
         {
-            return DateTime.Now.Year - birthYear;
+            return DateTime.Now.Year - birthDate.Year;
         }
-        public  Person Input()
-        {
-            Console.Write("Input name:");
-            name = Console.ReadLine();
-            Console.Write("Input bith year:");
-            birthYear = Convert.ToInt32(Console.ReadLine());
-            return new Person(name, birthYear);
-        }
+      
         public void Output()
         {
             Console.WriteLine("Name: {0}", name);
-            Console.WriteLine("birth year: {0}", birthYear);
+            Console.WriteLine("birth year: {0}", birthDate);
             Console.WriteLine("Age: {0}", Age());
                     }
         public void ChangeName(string newName)
         {
             name = newName;
+        }
+        public void Input()
+        {
+           
         }
     }
 }
