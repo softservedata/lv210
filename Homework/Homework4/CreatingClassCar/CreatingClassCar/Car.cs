@@ -17,12 +17,17 @@ namespace CreatingClassCar
             this.Price = price;
         }
 
+        public Car(double price)
+        {
+            this.Price = price;
+        }
+
         public void ChangePricePercentage(double percent)
         {
             this.Price += ((Price * percent) / 100);
         }
 
-        public void ChangeColor(double price)
+        public void ChangePrice(double price)
         {
             this.Price = price;
         }

@@ -22,7 +22,7 @@ namespace NumbersInRange
             return convertedArray;
         }
 
-        public static Number<float>[] CreateArrayOfNumbers(float [] array)
+        public static Number<float>[] CreateArrayOfNumbers(float[] array)
         {
             var arrayOfNumbers = new Number<float>[array.Length];
 
@@ -60,23 +60,31 @@ namespace NumbersInRange
 
         static void Main(string[] args)
         {
-            var count = 3;
-            float a = -5;
-            float b = 5;
-            char[] symbols = {'-', ' '};
+            try
+            {
+                var count = 3;
+                float a = -5;
+                float b = 5;
+                char[] symbols = { '-', ' ' };
 
-            Console.WriteLine($"Please, enter {count} float numbers:");
-            var enteredNumbers = Console.ReadLine();
-            var arrayOfStringNumbers = enteredNumbers?.Split(symbols, count);
+                Console.WriteLine($"Please, enter {count} float numbers:");
+                var enteredNumbers = Console.ReadLine();
+                var arrayOfStringNumbers = enteredNumbers?.Split(symbols, count);
 
-            var arrayOfFloatNumbers = ConvertToFloatArray(arrayOfStringNumbers);
-            var objectsOfClassNumber = CreateArrayOfNumbers(arrayOfFloatNumbers);
+                var arrayOfFloatNumbers = ConvertToFloatArray(arrayOfStringNumbers);
+                var objectsOfClassNumber = CreateArrayOfNumbers(arrayOfFloatNumbers);
 
-            var areFromOneRange = AreFromOneRange(objectsOfClassNumber, a ,b);
-            Console.Write("\nNumbers \n");
-            PrintArrayOfNumbers(objectsOfClassNumber);
-            Console.WriteLine($"are from interval [{a},{b}] - {areFromOneRange}");
-
+                var areFromOneRange = AreFromOneRange(objectsOfClassNumber, a, b);
+                Console.Write("\nNumbers \n");
+                PrintArrayOfNumbers(objectsOfClassNumber);
+                Console.WriteLine($"are from interval [{a},{b}] - {areFromOneRange}");
+            }
+            catch (FormatException ex)
+            {
+                
+                Console.WriteLine(ex.Message);
+            }
+            
             Console.ReadLine();
         }
     }
