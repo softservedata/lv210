@@ -49,7 +49,7 @@ namespace MaxMin
             Console.WriteLine($"\nPlease, enter {countOfNumbers} numbers:");
             var readedSequance = Console.ReadLine();
 
-            return readedSequance?.Substring(0, countOfNumbers + 2);
+            return readedSequance;
         }
 
         static void Main(string[] args)
@@ -59,7 +59,7 @@ namespace MaxMin
                 var countOfNumbers = ReadAndParseCountOfNumbers();
                 var sequanceOfNumbers = ReadSequanceOfNumbers(countOfNumbers);
 
-                char[] seperators = { ' ', ',' };
+                char[] seperators = { ' ', '-' };
                 //if readedSequance is not null
                 string[] readedArray = sequanceOfNumbers?.Split(seperators, countOfNumbers);
                 int[] arrayOfNumbers = ConvertArray(readedArray);
