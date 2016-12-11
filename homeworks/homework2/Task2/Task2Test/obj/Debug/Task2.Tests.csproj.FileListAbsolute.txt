@@ -1,0 +1,7 @@
+C:\Users\user\Documents\Visual Studio 2015\Projects\Task2\Task2Test\bin\Debug\Task2Test.dll
+C:\Users\user\Documents\Visual Studio 2015\Projects\Task2\Task2Test\bin\Debug\Task2Test.pdb
+C:\Users\user\Documents\Visual Studio 2015\Projects\Task2\Task2Test\bin\Debug\nunit.framework.dll
+C:\Users\user\Documents\Visual Studio 2015\Projects\Task2\Task2Test\bin\Debug\nunit.framework.xml
+C:\Users\user\Documents\Visual Studio 2015\Projects\Task2\Task2Test\obj\Debug\Task2Test.dll
+C:\Users\user\Documents\Visual Studio 2015\Projects\Task2\Task2Test\obj\Debug\Task2Test.pdb
+C:\Users\user\Documents\Visual Studio 2015\Projects\Task2\Task2Test\obj\Debug\Task2.Tests.csprojResolveAssemblyReference.cache
