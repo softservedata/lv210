@@ -1,23 +1,49 @@
 ﻿using System;
+using System.Linq;
 
 namespace Greeting
 {
-    class Program
+    public class Program
     {
+        public static string GreetingChoise(int hour)
+        {
+            if (hour > 24 || hour < 1)
+            {
+                throw new FormatException("Hour should be in range of [1, 12]");
+            }
+            else if (hour >= 6 && hour < 12)
+            {
+               return "Good morning!";
+            }
+            else if (hour >= 12 && hour < 18)
+            {
+                return "Good afternoon!";
+            }
+            else if (hour >= 18 && hour < 22)
+            {
+                return "Good evening!";
+            }
+            else
+            {
+                return "Good night!";
+            }
+        }
         static void Main(string[] args)
         {
-            int h, m;
-            Console.WriteLine("Input hour");
-            h = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Input minutes");
-            m = Convert.ToInt32(Console.ReadLine());
-            if (h >= 6 && h < 12)
-                Console.WriteLine("Good morning!");
-            else if (h >= 12 && h < 18)
-                Console.WriteLine("Good afternoon!");
-            else if (h >= 18 && h < 22)
-                Console.WriteLine("Good evening!");
-            else Console.WriteLine("Good night!");
+            Console.Write("Input hour and minutes divided by space: ");
+            int[] Variables;
+            int ParsedValues;
+            Variables = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select
+                                                    (i => int.TryParse(i, out ParsedValues) ? ParsedValues : 0).ToArray();
+            try
+            {
+                string greeting = GreetingChoise(Variables[0]);
+                Console.WriteLine(greeting);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.ReadLine();
         }
     }

@@ -3,3 +3,9 @@ c:\users\марія сергіївна\documents\visual studio 2015\Projects\Gre
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\Greeting\Greeting\bin\Debug\Greeting.pdb
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\Greeting\Greeting\obj\Debug\Greeting.exe
 c:\users\марія сергіївна\documents\visual studio 2015\Projects\Greeting\Greeting\obj\Debug\Greeting.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\Greeting\Greeting\bin\Debug\Greeting.exe.config
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\Greeting\Greeting\obj\Debug\Greeting.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\Greeting\Greeting\bin\Debug\Greeting.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\Greeting\Greeting\bin\Debug\Greeting.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\Greeting\Greeting\obj\Debug\Greeting.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW2\PresentationTasks\Greeting\Greeting\obj\Debug\Greeting.exe
