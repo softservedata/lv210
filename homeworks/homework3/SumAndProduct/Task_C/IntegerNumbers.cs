@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Enter 10 integer numbers. 
-Calculate the sum of first 5 elements if they are posetive
-or product of last 5 element in  the other case.*/
+//Enter 10 integer numbers. 
+//Calculate the sum of first 5 elements if they are posetive
+//or product of last 5 element in  the other case.
 namespace Task_C
 {
     class IntegerNumbers
     {
-        /*Check if elements are positive.
-        countOfElements - number of elements to be checked*/
-        public static bool isPositive(int []array,int countOfElements)
+        //Check if elements are positive.
+        //countOfElements - number of elements to be checked
+        public static bool IsPositive(int []array,int countOfElements)
         {
           for (int i=0; i< countOfElements; i++)
             {
@@ -21,7 +21,7 @@ namespace Task_C
             return true;
         }
 
-        public static int calcSumOfElements(int elementCount, int[] array)
+        public static int CalcSumOfElements(int elementCount, int[] array)
         {
             
             int sum = 0;
@@ -29,7 +29,7 @@ namespace Task_C
             return sum;
         }
         
-        public static int calcProductOfElements(int elementCount, int[] array)
+        public static int CalcProductOfElements(int elementCount, int[] array)
         {
             int product = 1;
             for (int i = elementCount; i < array.Length; i++) product *= array[i];
@@ -50,9 +50,9 @@ namespace Task_C
             }
             int numbersToCheck=5;
             if (isPositive(Array,numbersToCheck))
-                Console.WriteLine("Sum of first 5 elements {0}", calcSumOfElements(numbersToCheck, Array));
+                Console.WriteLine("Sum of first 5 elements {0}", CalcSumOfElements(numbersToCheck, Array));
             else
-                Console.WriteLine("Product of last 5 elements {0}", calcProductOfElements(numbersToCheck, Array));
+                Console.WriteLine("Product of last 5 elements {0}", CalcProductOfElements(numbersToCheck, Array));
             Console.ReadKey();
         }
     }
