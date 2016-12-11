@@ -11,7 +11,7 @@ namespace CountOfCharacters
     class LettersInText
     { 
        //Find character count in string 
-       public static int findCharacterCount(string text, char letter)
+       public static int FindCharacterCount(string text, char letter)
         {
             int count = 0;
             foreach (char symbol in text)
@@ -21,7 +21,6 @@ namespace CountOfCharacters
             return count;
         }
 
-     
         static void Main(string[] args)
         {
             Console.WriteLine("Input string:");
@@ -30,7 +29,7 @@ namespace CountOfCharacters
             Console.WriteLine("Letter\tCount");
             for (int i=0;i<letters.Length;i++)
             {
-                Console.WriteLine("{0}\t{1}", letters[i], findCharacterCount(text, letters[i]));
+                Console.WriteLine("{0}\t{1}", letters[i], FindCharacterCount(text, letters[i]));
             }
                 Console.ReadKey();
         }
