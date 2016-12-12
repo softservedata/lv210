@@ -8,13 +8,13 @@ namespace RadiusOperation
         {
             double ReadVariable;
             bool ParseAtempt = double.TryParse(Console.ReadLine(), out ReadVariable);
-            if (ParseAtempt)
+            if (ParseAtempt && ReadVariable > 0)
             {
                 return ReadVariable;
             }
             else
             {
-                throw new FormatException("Wrong data type.");
+                throw new FormatException("Please, input positive <double> number");
             }
         }
         public static void CircleAction(double radius)
