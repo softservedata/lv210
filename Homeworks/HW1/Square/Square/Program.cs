@@ -13,14 +13,21 @@ namespace Square
         {
             int ReadVariable;
             bool ParseAtempt = Int32.TryParse(Console.ReadLine(), out ReadVariable);
-            if (ParseAtempt)
+            if (ParseAtempt && ReadVariable > 0)
             {
                 return ReadVariable;
             }
             else
             {
-                throw new FormatException("Wrong data type.");
+                throw new FormatException("Please, input positive <int> number");
             }
+        }
+        public static void SquareAction(int SideLength)
+        {
+            Square MySquare = new Square(SideLength);
+            int perimeter = MySquare.Perimeter();
+            int area = MySquare.Area();
+            Console.WriteLine("Perimetr = {0};\nArea = {1};", perimeter, area);
         }
         static void Main(string[] args)
         {
@@ -28,10 +35,7 @@ namespace Square
             try
             {
                 int length = ParseAtempt();
-                Square MySquare = new Square(length);
-                int perimeter = MySquare.Perimeter();
-                int area = MySquare.Area();
-                Console.WriteLine("Perimetr = {0};\nArea = {1};", perimeter, area);
+                SquareAction(length);
             }
             catch (Exception e)
             {
