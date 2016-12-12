@@ -45,7 +45,6 @@ namespace InformationAboutPerson.UnitTests
 
         [Test]
         [TestCase("Uliana", 21)]
-        [TestCase("Bogdan", 10)]
         public void Should_Return_True_When_Data_IsValid(string name, int age)
         {
             //Preconditions
