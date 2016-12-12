@@ -1,22 +1,45 @@
 ﻿using System;
+using System.Linq;
 
 namespace InformationAboutPerson
 {
     class Program
     {
+        public static string ReadName()
+        {
+            Console.WriteLine("What is your name?");
+            return Console.ReadLine()?.Replace(" ", "");
+        }
+
+        public static int ReadAge(string name)
+        {
+            Console.WriteLine("\nHow old are you, {0}?", name);
+            var age = Console.ReadLine();
+            DataParser parser = new DataParser();
+
+            return parser.Parse(age);
+        }
+
         static void Main(string[] args)
         {
-            try
+            var readedName = ReadName();
+            var readedAge = ReadAge(readedName);
+            var person = new Person(readedName, readedAge);
+            var validationResults = person.Validate();
+            if (validationResults.Any())
             {
-                var person = PersonBuilder.BuildPerson();
-                Console.WriteLine(person);
+                foreach (var validationResult in validationResults)
+                {
+                    Console.WriteLine(validationResult.ErrorMessage);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(person);
             }
 
             Console.ReadLine();
         }
     }
 }
+
