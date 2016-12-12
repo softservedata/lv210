@@ -17,6 +17,10 @@ namespace RadiusOperation
                 throw new FormatException("Wrong data type.");
             }
         }
+        public static void CircleAction()
+        {
+
+        }
         static void Main(string[] args)
         {
             Console.Write("Input radius: ");

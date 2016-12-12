@@ -37,3 +37,4 @@
 # Advanced for C#
 
 *.dat
+/Demo2/Polygons/Polygons/bin/Debug
