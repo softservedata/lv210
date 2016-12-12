@@ -10,3 +10,5 @@ D:\Documents\Моє\AQC\C#Projects\HW2_2\HW2_2\obj\Debug\HW2_2.pdb
 D:\Documents\Моє\AQC\C#Projects\HW2_2\HW2_2\bin\Debug\HW2_2.exe
 D:\Documents\Моє\AQC\C#Projects\HW2_2\HW2_2\bin\Debug\HW2_2.pdb
 D:\Documents\Моє\AQC\C#Projects\HW2_2\HW2_2\obj\Debug\HW2_2.csprojResolveAssemblyReference.cache
+C:\Users\aorlovtc\Source\Repos\lv210\Hw2_2 (Max_Min)\HW2_2\bin\Debug\HW2_2.exe.config
+C:\Users\aorlovtc\Source\Repos\lv210\Hw2_2 (Max_Min)\HW2_2\obj\Debug\HW2_2.pdb
