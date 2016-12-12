@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
+using FluentValidation.Results;
 
 namespace CreatingClassCar
 {
@@ -35,6 +37,14 @@ namespace CreatingClassCar
         public void ChangeColor(Color color)
         {
             this.Color = color;
+        }
+
+        public IList<ValidationFailure> Validate()
+        {
+            var validator = new CarValidator();
+            var result = validator.Validate(this);
+
+            return result.Errors;
         }
 
         public override string ToString()

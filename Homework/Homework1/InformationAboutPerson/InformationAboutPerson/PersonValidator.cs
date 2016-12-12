@@ -8,15 +8,15 @@ namespace InformationAboutPerson
         public PersonValidator()
         {
             RuleFor(person => person.Age)
-            .GreaterThan(0)
-            .LessThan(150)
-            .WithMessage("\nPerson's age cannot be less or equal zero or greater 150!");
+                .GreaterThan(0)
+                .LessThan(150)
+                .WithMessage("\nPerson's age cannot be less or equal zero or greater 150!");
             RuleFor(person => person.Name)
-            .Length(0, 40)
-            .NotNull()
-            .NotEmpty()
-            .Must(IsCharacterStringOnly)
-            .WithMessage("\nPerson's name cannot be empty, contain digits or specific characters");
+                .Length(0, 40)
+                .NotNull()
+                .NotEmpty()
+                .Must(IsCharacterStringOnly)
+                .WithMessage("\nPerson's name cannot be empty, contain digits or specific characters");
         }
 
         private bool IsCharacterStringOnly(string name)

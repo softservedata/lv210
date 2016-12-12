@@ -48,6 +48,38 @@ namespace CreatingClassCar
             }
         }
         #endregion
+
+        public static string ReadBrand()
+        {
+            Console.Write("\nBrand - ");
+            var inputedBrand = Console.ReadLine();
+
+            return inputedBrand;
+        }
+
+        public static Color ReadColor()
+        {
+            Console.Write("Color - ");
+            var inputedColor = Console.ReadLine();
+            Color color = Color.FromName(inputedColor);
+
+            return color;
+        }
+
+        public static double ReadPrice()
+        {
+            Console.Write("Price - ");
+            var inputedPrice = Console.ReadLine();
+
+            double price;
+
+            if (!double.TryParse(inputedPrice, out price))
+            {
+                throw new FormatException("\nCan not convert to <double>!");
+            }
+
+            return price;
+        }
         static void Main(string[] args)
         {
             try
