@@ -19,27 +19,11 @@ namespace HomeWork4_Task1
             birthYear = _birthYear;
         }
 
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-        }
-
-        public int BirthYear
-        {
-            get
-            {
-                return birthYear;
-            }
-        }
-
         public int Age()
         {
             int presentYear = DateTime.Now.Year;
 
-            return presentYear - BirthYear;
+            return presentYear - birthYear;
         }
 
         public static Person Input()
@@ -57,12 +41,12 @@ namespace HomeWork4_Task1
 
         public void Output()
         {
-            Console.WriteLine("Person's name: {0}, age: {1}", Name, Age());
+            Console.WriteLine("Person's name: {0}, age: {1}", name, Age());
         }
 
         public void ChangeName()
         {
-            if(Age() < 16)
+            if (Age() < 16)
             {
                 name = "Very Young";
             }   

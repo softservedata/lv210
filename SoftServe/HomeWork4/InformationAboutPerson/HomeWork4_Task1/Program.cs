@@ -40,7 +40,7 @@ namespace HomeWork4_Task1
 
             persons.ForEach(p => p.ChangeName());
 
-            Console.WriteLine();
+            Console.WriteLine("Change name (if neccessary).");
 
             persons.ForEach(p => p.Output());
 
