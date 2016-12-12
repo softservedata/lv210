@@ -1,0 +1,6 @@
+D:\Documents\Моє\AQC\C#Projects\Pres3_int_div3\Pres3_int_div3\bin\Debug\Pres3_int_div3.exe.config
+D:\Documents\Моє\AQC\C#Projects\Pres3_int_div3\Pres3_int_div3\bin\Debug\Pres3_int_div3.exe
+D:\Documents\Моє\AQC\C#Projects\Pres3_int_div3\Pres3_int_div3\bin\Debug\Pres3_int_div3.pdb
+D:\Documents\Моє\AQC\C#Projects\Pres3_int_div3\Pres3_int_div3\obj\Debug\Pres3_int_div3.csprojResolveAssemblyReference.cache
+D:\Documents\Моє\AQC\C#Projects\Pres3_int_div3\Pres3_int_div3\obj\Debug\Pres3_int_div3.exe
+D:\Documents\Моє\AQC\C#Projects\Pres3_int_div3\Pres3_int_div3\obj\Debug\Pres3_int_div3.pdb
