@@ -9,31 +9,63 @@ namespace MaxMin
 
     public class ArrayExtentions<T> where T : IComparable
     {
-        public static T Max(T[] array) 
+        public static T Max(T[] array)
         {
-            var max = array[0];
+            T max;
 
-            for (int i = 1; i < array.Length; i++)
+            if ((array.Length != 0))
             {
-                if (array[i].CompareTo(max) > 0)
+                max = array[0];
+
+                for (var i = 1; i < array.Length; i++)
                 {
-                    max = array[i];
+                    if (array[i] != null)
+                    {
+                        if (array[i].CompareTo(max) > 0)
+                        {
+                            max = array[i];
+                        }
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Data is not valid! Array cannot be empty or has null values!");
+                    }                
                 }
             }
-
+            else
+            {
+                throw new ArgumentException("Data is not valid! Array cannot be empty or has null values!");
+            }
+            
             return max;
         }
 
         public static T Min(T[] array)
         {
-            var min = array[0];
+            T min;
 
-            for (int i = 1; i < array.Length; i++)
+            if ((array.Length != 0))
             {
-                if (array[i].CompareTo(min) < 0)
+                min = array[0];
+
+                for (var i = 1; i < array.Length; i++)
                 {
-                    min = array[i];
+                    if (array[i] != null)
+                    {
+                        if (array[i].CompareTo(min) < 0)
+                        {
+                            min = array[i];
+                        }
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Data is not valid! Array cannot be empty or has null values!");
+                    }
                 }
+            }
+            else
+            {
+                throw new ArgumentException("Data is not valid! Array cannot be empty or has null values!");
             }
 
             return min;
