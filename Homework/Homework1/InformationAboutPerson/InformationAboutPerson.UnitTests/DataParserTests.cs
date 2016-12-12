@@ -13,7 +13,6 @@ namespace InformationAboutPerson.UnitTests
         {
             //Precondition
             var parser = new DataParser();
-
             //Check
             return parser.Parse(value);
         }
@@ -27,7 +26,6 @@ namespace InformationAboutPerson.UnitTests
         {
             //Precondition
             DataParser parser = new DataParser();
-
             //Check
             Assert.Throws<FormatException>(() => parser.Parse(value));
         }
