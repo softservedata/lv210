@@ -17,9 +17,18 @@ namespace RadiusOperation
                 throw new FormatException("Wrong data type.");
             }
         }
-        public static void CircleAction()
+        public static void CircleAction(double radius)
         {
-
+            Circle MyCircle = new Circle(radius);
+            double length = MyCircle.CircleLength();
+            double area = MyCircle.CircleArea();
+            Console.WriteLine("Length: {0};\nArea: {1};", length, area);
+        }
+        public static void SphereAction(double radius)
+        {
+            Sphere MySphere = new Sphere(radius);
+            double volume = MySphere.SphereVolume();
+            Console.WriteLine("Volume: {0};", volume);
         }
         static void Main(string[] args)
         {
@@ -27,12 +36,8 @@ namespace RadiusOperation
             try
             {
                 double radius = ParseAtempt();
-                Circle MyCircle = new Circle(radius);
-                Sphere MySphere = new Sphere(radius);
-                double length = MyCircle.CircleLength();
-                double area = MyCircle.CircleArea();
-                double volume = MySphere.SphereVolume();
-                Console.WriteLine("Length: {0};\nArea: {1};\nVolume: {2};", length, area, volume);
+                CircleAction(radius);
+                SphereAction(radius);
             }
             catch (Exception e)
             {
