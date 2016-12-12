@@ -1,0 +1,11 @@
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\ReadFloat.UnitTest\bin\Debug\ReadFloat.UnitTest.dll
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\ReadFloat.UnitTest\bin\Debug\ReadFloat.UnitTest.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\ReadFloat.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\ReadFloat.UnitTest\bin\Debug\nunit.framework.dll
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\ReadFloat.UnitTest\bin\Debug\Read_Float.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\ReadFloat.UnitTest\bin\Debug\Read_Float.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\ReadFloat.UnitTest\bin\Debug\nunit.framework.xml
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\ReadFloat.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\ReadFloat.UnitTest\obj\Debug\1_ReadFloat.UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\ReadFloat.UnitTest\obj\Debug\ReadFloat.UnitTest.dll
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\ReadFloat.UnitTest\obj\Debug\ReadFloat.UnitTest.pdb

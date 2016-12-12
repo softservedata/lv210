@@ -9,3 +9,7 @@ C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\
 C:\Users\rostyslav.zhalivtsiv\Documents\Visual Studio 2015\Projects\Home_Task_2\1_Read_Float\obj\Debug\Read_Float.pdb
 C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\1_Read_Float\bin\Debug\Read_Float.exe.config
 C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\1_Read_Float\obj\Debug\Read_Float.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\1_Read_Float\bin\Debug\Read_Float.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\1_Read_Float\bin\Debug\Read_Float.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\1_Read_Float\obj\Debug\1_Read_Float.csprojResolveAssemblyReference.cache
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\1_Read_Float\obj\Debug\Read_Float.exe

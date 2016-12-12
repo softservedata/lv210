@@ -1,0 +1,11 @@
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\2_MinMax.UnitTest\bin\Debug\2_MinMax.UnitTest.dll
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\2_MinMax.UnitTest\bin\Debug\2_MinMax.UnitTest.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\2_MinMax.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\2_MinMax.UnitTest\bin\Debug\MinMax.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\2_MinMax.UnitTest\bin\Debug\nunit.framework.dll
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\2_MinMax.UnitTest\bin\Debug\MinMax.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\2_MinMax.UnitTest\bin\Debug\nunit.framework.xml
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\2_MinMax.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\2_MinMax.UnitTest\obj\Debug\2_MinMax.UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\2_MinMax.UnitTest\obj\Debug\2_MinMax.UnitTest.dll
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_2\2_MinMax.UnitTest\obj\Debug\2_MinMax.UnitTest.pdb

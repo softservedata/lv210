@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_HTTP_Errors", "3_HTTP_Err
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_Dog", "4_Dog\4_Dog.csproj", "{EBA93366-01C9-4EE4-BF08-E086469E1CDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1_ReadFloat.UnitTest", "ReadFloat.UnitTest\1_ReadFloat.UnitTest.csproj", "{1B0E79C6-B661-4518-859B-5D34D4FA39D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2_MinMax.UnitTest", "2_MinMax.UnitTest\2_MinMax.UnitTest.csproj", "{8E253881-55FE-4E9A-8645-A6D3CA8ECF51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{EBA93366-01C9-4EE4-BF08-E086469E1CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBA93366-01C9-4EE4-BF08-E086469E1CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBA93366-01C9-4EE4-BF08-E086469E1CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B0E79C6-B661-4518-859B-5D34D4FA39D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B0E79C6-B661-4518-859B-5D34D4FA39D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B0E79C6-B661-4518-859B-5D34D4FA39D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B0E79C6-B661-4518-859B-5D34D4FA39D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E253881-55FE-4E9A-8645-A6D3CA8ECF51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E253881-55FE-4E9A-8645-A6D3CA8ECF51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E253881-55FE-4E9A-8645-A6D3CA8ECF51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E253881-55FE-4E9A-8645-A6D3CA8ECF51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,30 +10,31 @@ namespace Read_Float
     /// <summary>
     /// Read 3 float numbers and check: are they all belong to the range [-5,5]
     /// </summary>
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            //Initialization of variables
-            float a, b, c;
-
             //Reading of values
             Console.Write("Entert first number: ");
-            a = Convert.ToSingle(Console.ReadLine());
+            float firstNumber = Convert.ToSingle(Console.ReadLine());
 
             Console.Write("Entert second number: ");
-            b = Convert.ToSingle(Console.ReadLine());
+            float secondNumber = Convert.ToSingle(Console.ReadLine());
 
             Console.Write("Entert third number: ");
-            c = Convert.ToSingle(Console.ReadLine());
-
-            //Checking conditions
-            bool res = (a >= -5 && a <= 5) && (b >= -5 && b <= 5) && (c >= -5 && c <= 5);
+            float thirdNumber = Convert.ToSingle(Console.ReadLine());
 
             //Result print
-            Console.WriteLine("------------------------");
-            Console.WriteLine("All numbers belong to range [-5;5]: {0}", res);
+            Console.WriteLine("All numbers belong to range [-5;5]: {0}", IsNumbersInRange(firstNumber, secondNumber, thirdNumber));
+        }
 
+        public static bool IsNumbersInRange(float firstNumb, float secondNumb, float thirdNumb)
+        {
+            float lowBoundary = -5;
+            float hightBoundary = 5;
+
+            return ((firstNumb >= lowBoundary) && (firstNumb <= hightBoundary)) && ((secondNumb >= lowBoundary) 
+                && (secondNumb <= hightBoundary)) && ((thirdNumb >= lowBoundary) && (thirdNumb <= hightBoundary));
         }
     }
 }
