@@ -2,7 +2,7 @@
 
 namespace Square
 {
-    class Program
+    public class Program
     {
         ///<summary>
         ///	Define integer variable a.
@@ -12,7 +12,7 @@ namespace Square
         public static int ParseAtempt()
         {
             int ReadVariable;
-            bool ParseAtempt = Int32.TryParse(Console.ReadLine(), out ReadVariable);
+            bool ParseAtempt = int.TryParse(Console.ReadLine(), out ReadVariable);
             if (ParseAtempt && ReadVariable > 0)
             {
                 return ReadVariable;
