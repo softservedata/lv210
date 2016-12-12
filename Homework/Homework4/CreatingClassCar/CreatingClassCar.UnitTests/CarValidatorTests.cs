@@ -1,6 +1,5 @@
-﻿using System;
-using System.Drawing;
-using System.Linq;
+﻿using System.Drawing;
+using FluentValidation;
 using NUnit.Framework;
 
 namespace CreatingClassCar.UnitTests
@@ -29,14 +28,14 @@ namespace CreatingClassCar.UnitTests
 
         [Test]
         [TestCase("")]
-        [TestCase("I1go2r")]
-        [TestCase("I*&ra")]
+        [TestCase("B1M2W")]
+        [TestCase("O&*pel")]
         public void Should_Return_False_When_NameIsInvalid(string name)
         {
             //Preconditions
-            var age = 13;
-            var validator = new PersonValidator();
-            var person = new Person(name, age);
+            var price = 123000;
+            var validator = new CarValidator();
+            var person = new Car(name, Color.Chocolate, price);
             //Test steps
             var expected = false;
             var actual = validator.Validate(person).IsValid;
@@ -45,13 +44,12 @@ namespace CreatingClassCar.UnitTests
         }
 
         [Test]
-        [TestCase("Uliana", 21)]
-        [TestCase("Bogdan", 10)]
-        public void Should_Return_True_When_Data_IsValid(string name, int age)
+        [TestCase("Nissan", "White", 21)]
+        public void Should_Return_True_When_Data_IsValid(string name, string color, double price)
         {
             //Preconditions
-            var validator = new PersonValidator();
-            var person = new Person(name, age);
+            var validator = new CarValidator();
+            var person = new Car(name, Color.FromName(color), price);
             //Test steps
             var expected = true;
             var actual = validator.Validate(person).IsValid;
