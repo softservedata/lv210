@@ -70,7 +70,7 @@ namespace SimpleOperations.Test
             int result = MathObject.Division(-20, -4);
             Assert.AreEqual(5, result);
         }
-        /*Test cases with negative numbers*/
+        /*Test cases with NULL numbers*/
         [TestCase]
         public void NullAddTest()
         {
