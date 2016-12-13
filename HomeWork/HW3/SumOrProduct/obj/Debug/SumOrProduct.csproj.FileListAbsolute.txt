@@ -3,3 +3,9 @@ c:\users\rostyslav\documents\visual studio 2015\Projects\SumOrProduct\bin\Debug\
 c:\users\rostyslav\documents\visual studio 2015\Projects\SumOrProduct\bin\Debug\SumOrProduct.pdb
 c:\users\rostyslav\documents\visual studio 2015\Projects\SumOrProduct\obj\Debug\SumOrProduct.exe
 c:\users\rostyslav\documents\visual studio 2015\Projects\SumOrProduct\obj\Debug\SumOrProduct.pdb
+C:\Users\Rostyslav\Desktop\SumOrProduct\bin\Debug\SumOrProduct.exe.config
+C:\Users\Rostyslav\Desktop\SumOrProduct\obj\Debug\SumOrProduct.pdb
+C:\Users\Rostyslav\Desktop\SumOrProduct\bin\Debug\SumOrProduct.exe
+C:\Users\Rostyslav\Desktop\SumOrProduct\bin\Debug\SumOrProduct.pdb
+C:\Users\Rostyslav\Desktop\SumOrProduct\obj\Debug\SumOrProduct.csprojResolveAssemblyReference.cache
+C:\Users\Rostyslav\Desktop\SumOrProduct\obj\Debug\SumOrProduct.exe
