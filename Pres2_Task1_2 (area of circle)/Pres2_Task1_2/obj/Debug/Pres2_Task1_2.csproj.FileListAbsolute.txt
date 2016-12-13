@@ -7,3 +7,6 @@ D:\Documents\Моє\AQC\C#Projects\Pres2_Task1_2 (area of circle)\Pres2_Task1_2\
 D:\Documents\Моє\AQC\C#Projects\Pres2_Task1_2 (area of circle)\Pres2_Task1_2\obj\Debug\Pres2_Task1_2.csprojResolveAssemblyReference.cache
 c:\Users\user\Source\Repos\lv210\Pres2_Task1_2 (area of circle)\Pres2_Task1_2\obj\Debug\Pres2_Task1_2.exe
 c:\Users\user\Source\Repos\lv210\Pres2_Task1_2 (area of circle)\Pres2_Task1_2\obj\Debug\Pres2_Task1_2.pdb
+c:\Users\user\Source\Repos\lv210\Pres2_Task1_2 (area of circle)\Pres2_Task1_2\bin\Debug\Pres2_Task1_2.exe
+c:\Users\user\Source\Repos\lv210\Pres2_Task1_2 (area of circle)\Pres2_Task1_2\bin\Debug\Pres2_Task1_2.pdb
+c:\Users\user\Source\Repos\lv210\Pres2_Task1_2 (area of circle)\Pres2_Task1_2\obj\Debug\Pres2_Task1_2.csprojResolveAssemblyReference.cache
