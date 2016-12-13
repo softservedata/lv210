@@ -5,6 +5,9 @@ namespace HomeWorkThree
 {
     public class HW_3_2
     {
+        /// <summary>
+        /// Ask user to enter the number of month. Read the value and write the amount of days in this month. Year 2016; Using switch-case;
+        /// </summary>
         public static int IsIntEntered()
         {
             int readedVar = 0;
@@ -35,10 +38,7 @@ namespace HomeWorkThree
             return isIntEnteredIntinRangeMonth;
         }
 
-        /// <summary>
-        /// Ask user to enter the number of month. Read the value and write the amount of days in this month. Year 2016; Using switch-case;
-        /// </summary>
-        public static void Main()
+        private static void DaysInMonth()
         {
             Console.WriteLine("Enter month from 1 to 12");
             int month = IsIntEntered();
@@ -70,6 +70,11 @@ namespace HomeWorkThree
             }
 
             Console.ReadKey();
+        }
+
+        public static void Main()
+        {
+            DaysInMonth();
         }
     }
 }

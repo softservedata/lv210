@@ -1,6 +1,7 @@
 C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFour\bin\Debug\HomeWorkFour.exe.config
-C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFour\obj\Debug\HomeWorkFour.csprojResolveAssemblyReference.cache
 C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFour\bin\Debug\HomeWorkFour.exe
 C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFour\bin\Debug\HomeWorkFour.pdb
 C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFour\obj\Debug\HomeWorkFour.exe
 C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFour\obj\Debug\HomeWorkFour.pdb
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFour\bin\Debug\nunit.framework.dll
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFour\bin\Debug\nunit.framework.xml

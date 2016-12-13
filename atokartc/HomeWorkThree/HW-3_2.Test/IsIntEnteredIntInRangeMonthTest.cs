@@ -1,5 +1,4 @@
-﻿using HomeWorkThree;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace HomeWorkThree.Test
 {
@@ -53,7 +52,5 @@ namespace HomeWorkThree.Test
 
             Assert.AreEqual(expected, actual);
         }
-
-
     }
 }

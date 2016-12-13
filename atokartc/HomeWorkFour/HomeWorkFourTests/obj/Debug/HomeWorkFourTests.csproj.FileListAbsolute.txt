@@ -1,0 +1,11 @@
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFourTests\bin\Debug\HomeWorkFourTests.dll
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFourTests\bin\Debug\HomeWorkFourTests.pdb
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFourTests\bin\Debug\HomeWorkFour.exe
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFourTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFourTests\bin\Debug\nunit.framework.dll
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFourTests\bin\Debug\HomeWorkFour.pdb
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFourTests\bin\Debug\nunit.framework.xml
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFourTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFourTests\obj\Debug\HomeWorkFourTests.csprojResolveAssemblyReference.cache
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFourTests\obj\Debug\HomeWorkFourTests.dll
+C:\Users\Andrii\lv210\atokartc\HomeWorkFour\HomeWorkFourTests\obj\Debug\HomeWorkFourTests.pdb
