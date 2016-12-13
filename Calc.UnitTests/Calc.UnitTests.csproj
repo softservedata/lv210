@@ -60,6 +60,8 @@
   <ItemGroup>
     <Compile Include="AccountTest.cs" />
     <Compile Include="CalcTest.cs" />
+    <Compile Include="ParallelTest.cs" />
+    <Compile Include="ParameterizedTestFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
