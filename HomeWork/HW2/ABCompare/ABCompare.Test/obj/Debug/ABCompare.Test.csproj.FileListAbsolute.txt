@@ -1,0 +1,11 @@
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\ABCompare.Test\bin\Debug\ABCompare.Test.dll
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\ABCompare.Test\bin\Debug\ABCompare.Test.pdb
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\ABCompare.Test\bin\Debug\ABCompare.exe
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\ABCompare.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\ABCompare.Test\bin\Debug\nunit.framework.dll
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\ABCompare.Test\bin\Debug\ABCompare.pdb
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\ABCompare.Test\bin\Debug\nunit.framework.xml
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\ABCompare.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\ABCompare.Test\obj\Debug\ABCompare.Test.csprojResolveAssemblyReference.cache
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\ABCompare.Test\obj\Debug\ABCompare.Test.dll
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\ABCompare.Test\obj\Debug\ABCompare.Test.pdb

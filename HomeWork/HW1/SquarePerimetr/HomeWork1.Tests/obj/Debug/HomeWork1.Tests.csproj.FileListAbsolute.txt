@@ -1,0 +1,9 @@
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.Tests\bin\Debug\HomeWork1.Tests.dll
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.Tests\bin\Debug\HomeWork1.Tests.pdb
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.Tests\bin\Debug\FullHomeWork1.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.Tests\bin\Debug\nunit.framework.dll
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.Tests\bin\Debug\FullHomeWork1.pdb
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.Tests\bin\Debug\nunit.framework.xml
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.Tests\obj\Debug\HomeWork1.Tests.csprojResolveAssemblyReference.cache
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.Tests\obj\Debug\HomeWork1.Tests.dll
+c:\users\rostyslav\documents\visual studio 2015\Projects\HomeWork1.Tests\obj\Debug\HomeWork1.Tests.pdb

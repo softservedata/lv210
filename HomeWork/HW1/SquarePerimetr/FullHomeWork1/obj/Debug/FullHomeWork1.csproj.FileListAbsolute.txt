@@ -1,0 +1,8 @@
+c:\users\rostyslav\documents\visual studio 2015\Projects\FullHomeWork1\bin\Debug\FullHomeWork1.exe.config
+c:\users\rostyslav\documents\visual studio 2015\Projects\FullHomeWork1\bin\Debug\FullHomeWork1.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\FullHomeWork1\bin\Debug\FullHomeWork1.pdb
+c:\users\rostyslav\documents\visual studio 2015\Projects\FullHomeWork1\obj\Debug\FullHomeWork1.csprojResolveAssemblyReference.cache
+c:\users\rostyslav\documents\visual studio 2015\Projects\FullHomeWork1\obj\Debug\FullHomeWork1.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\FullHomeWork1\obj\Debug\FullHomeWork1.pdb
+c:\users\rostyslav\documents\visual studio 2015\Projects\FullHomeWork1\bin\Debug\nunit.framework.dll
+c:\users\rostyslav\documents\visual studio 2015\Projects\FullHomeWork1\bin\Debug\nunit.framework.xml
