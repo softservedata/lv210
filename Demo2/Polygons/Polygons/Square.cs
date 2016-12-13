@@ -2,29 +2,36 @@
 
 namespace Polygons
 {
-    public class Square : IPolygon
+    public class Square : EquilateralTriangle
     {
-        private double SideLength;
-        private double Perimeter;
-        private double Area;
+        private double sideLength;
+        private double perimeter;
+        private double area;
+
         public Square()
         {
         }
-        public Square(double SideLength)
+
+        public Square(double sideLength)
         {
-            this.SideLength = SideLength;
+            this.sideLength = sideLength;
         }
-        public void PerimeterCalculation()
+
+        public new double PerimeterCalculation()
         {
-            Perimeter = 4 * SideLength;
+            perimeter = 4 * sideLength;
+            return perimeter;
         }
-        public void AreaCalculation()
+
+        public new double AreaCalculation()
         {
-            Area = Math.Pow(SideLength, 2);
+            area = Math.Pow(sideLength, 2);
+            return area;
         }
-        public void Display()
+
+        public new void Display()
         {
-            Console.WriteLine("Square information:\nPerimeter: {0}\nArea: {1}\n", Perimeter, Area);
+            Console.WriteLine("Square information:\nPerimeter: {0}\nArea: {1}\n", perimeter, area);
         }
     }
 }

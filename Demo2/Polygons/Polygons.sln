@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polygons", "Polygons\Polygons.csproj", "{C78A0277-65BB-4ADA-AE08-6EC5D920D184}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polygons.Test", "Polygons.Test\Polygons.Test.csproj", "{BEA25CFA-440E-4D80-95A6-C91EF7E0E091}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C78A0277-65BB-4ADA-AE08-6EC5D920D184}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C78A0277-65BB-4ADA-AE08-6EC5D920D184}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C78A0277-65BB-4ADA-AE08-6EC5D920D184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA25CFA-440E-4D80-95A6-C91EF7E0E091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA25CFA-440E-4D80-95A6-C91EF7E0E091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA25CFA-440E-4D80-95A6-C91EF7E0E091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA25CFA-440E-4D80-95A6-C91EF7E0E091}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,11 @@
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Demo2\Polygons\Polygons.Test\bin\Debug\Polygons.Test.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Demo2\Polygons\Polygons.Test\bin\Debug\Polygons.Test.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Demo2\Polygons\Polygons.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Demo2\Polygons\Polygons.Test\bin\Debug\nunit.framework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Demo2\Polygons\Polygons.Test\bin\Debug\Polygons.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Demo2\Polygons\Polygons.Test\bin\Debug\Polygons.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Demo2\Polygons\Polygons.Test\bin\Debug\nunit.framework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Demo2\Polygons\Polygons.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Demo2\Polygons\Polygons.Test\obj\Debug\Polygons.Test.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Demo2\Polygons\Polygons.Test\obj\Debug\Polygons.Test.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Demo2\Polygons\Polygons.Test\obj\Debug\Polygons.Test.pdb

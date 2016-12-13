@@ -2,29 +2,36 @@
 
 namespace Polygons
 {
-    public class Pentagon : IPolygon
+    public class Pentagon : Square
     {
-        private double SideLength;
-        private double Perimeter;
-        private double Area;
+        private double sideLength;
+        private double perimeter;
+        private double area;
+
         public Pentagon()
         {
         }
-        public Pentagon(double SideLength)
+
+        public Pentagon(double sideLength)
         {
-            this.SideLength = SideLength;
+            this.sideLength = sideLength;
         }
-        public void PerimeterCalculation()
+
+        public new double PerimeterCalculation()
         {
-            Perimeter = 5 * SideLength;
+            perimeter = 5 * sideLength;
+            return perimeter;
         }
-        public void AreaCalculation()
+
+        public new double AreaCalculation()
         {
-            Area = (Math.Pow(SideLength, 2) * Math.Sqrt(25 + 10 * Math.Sqrt(5))) / 4;
+            area = (Math.Pow(sideLength, 2) * Math.Sqrt(25 + 10 * Math.Sqrt(5))) / 4;
+            return area;
         }
-        public void Display()
+
+        public new void Display()
         {
-            Console.WriteLine("Pentagon information:\nPerimeter: {0}\nArea: {1}\n", Perimeter, Area);
+            Console.WriteLine("Pentagon information:\nPerimeter: {0}\nArea: {1}\n", perimeter, area);
         }
     }
 }

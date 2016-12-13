@@ -4,27 +4,34 @@ namespace Polygons
 {
     public class EquilateralTriangle : IPolygon
     {
-        private double SideLength;
-        private double Perimeter;
-        private double Area;
+        private double sideLength;
+        private double perimeter;
+        private double area;
+
         public EquilateralTriangle()
         {
         }
-        public EquilateralTriangle(double SideLength)
+
+        public EquilateralTriangle(double sideLength)
         {
-            this.SideLength = SideLength;
+            this.sideLength = sideLength;
         }
-        public void PerimeterCalculation()
+
+        public double PerimeterCalculation()
         {
-            Perimeter = 3 * SideLength;
+            perimeter = 3 * sideLength;
+            return perimeter;
         }
-        public void AreaCalculation()
+
+        public double AreaCalculation()
         {
-            Area = Math.Pow(SideLength, 2) * (Math.Sqrt(3) / 4);
+            area = Math.Pow(sideLength, 2) * (Math.Sqrt(3) / 4);
+            return area;
         }
+
         public void Display()
         {
-            Console.WriteLine("Triangle information:\nPerimeter: {0}\nArea: {1}\n", Perimeter, Area);
+            Console.WriteLine("Triangle information:\nPerimeter: {0}\nArea: {1}\n", perimeter, area);
         }
     }
 }

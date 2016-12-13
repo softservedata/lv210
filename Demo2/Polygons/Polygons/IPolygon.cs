@@ -2,8 +2,10 @@
 {
     public interface IPolygon
     {
-        void PerimeterCalculation();
-        void AreaCalculation();
+        double PerimeterCalculation();
+
+        double AreaCalculation();
+
         void Display();
     }
 }
