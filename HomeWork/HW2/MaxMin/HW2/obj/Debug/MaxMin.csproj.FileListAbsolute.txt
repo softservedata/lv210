@@ -1,0 +1,6 @@
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\HW2\bin\Debug\HW2.exe.config
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\HW2\bin\Debug\HW2.exe
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\HW2\bin\Debug\HW2.pdb
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\HW2\obj\Debug\MaxMin.csprojResolveAssemblyReference.cache
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\HW2\obj\Debug\HW2.exe
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\HW2\obj\Debug\HW2.pdb
