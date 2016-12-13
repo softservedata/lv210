@@ -8,7 +8,6 @@ namespace Pres2_Task1_2.UnitTests
     public class UnitTest1
     {
         [Test]
-
         public void CircleLengthTest()
         {
             double delta = 0.001;
@@ -17,6 +16,7 @@ namespace Pres2_Task1_2.UnitTests
             double ActualResult = Program.CircleLength(radius);
             Assert.AreEqual(ExcpectedResult, ActualResult, delta);
         }
+
         [Test]
         public void CircleAreaTest()
         {
@@ -26,6 +26,7 @@ namespace Pres2_Task1_2.UnitTests
             double ActualResult = Program.CircleArea(radius);
             Assert.AreEqual(ExcpectedResult, ActualResult, delta);
         }
+
         [Test]
         public void SphereVolumeTest()
         {
