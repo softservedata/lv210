@@ -1,0 +1,13 @@
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\bin\Debug\PerimetrAndAreaOfSquare.UnitTests.dll
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\bin\Debug\PerimetrAndAreaOfSquare.UnitTests.pdb
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\bin\Debug\HomeWork1_Task1.exe
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\bin\Debug\NSubstitute.dll
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\bin\Debug\HomeWork1_Task1.pdb
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\bin\Debug\NSubstitute.xml
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\obj\Debug\PerimetrAndAreaOfSquare.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\obj\Debug\PerimetrAndAreaOfSquare.UnitTests.dll
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork1_Task1\PerimetrAndAreaOfSquare.UnitTests\obj\Debug\PerimetrAndAreaOfSquare.UnitTests.pdb
