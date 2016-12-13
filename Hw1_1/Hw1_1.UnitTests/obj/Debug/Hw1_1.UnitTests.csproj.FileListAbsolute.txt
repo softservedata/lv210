@@ -1,0 +1,11 @@
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\obj\Debug\Hw1_1.UnitTests.csprojResolveAssemblyReference.cache
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\bin\Debug\Hw1_1.UnitTests.dll
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\bin\Debug\Hw1_1.UnitTests.pdb
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\bin\Debug\HW1.exe
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\bin\Debug\NSubstitute.dll
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\bin\Debug\nunit.framework.dll
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\bin\Debug\HW1.pdb
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\bin\Debug\NSubstitute.xml
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\bin\Debug\nunit.framework.xml
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\obj\Debug\Hw1_1.UnitTests.dll
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\obj\Debug\Hw1_1.UnitTests.pdb

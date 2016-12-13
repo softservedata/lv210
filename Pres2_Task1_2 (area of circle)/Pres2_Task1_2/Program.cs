@@ -2,7 +2,7 @@
 
 namespace Pres2_Task1_2
 {
-    class Program
+    public class Program
     {
         public static double CircleLength (double radius)
         {
@@ -23,11 +23,9 @@ namespace Pres2_Task1_2
         {
             Console.Write("Enter radius: ");
             double radius = Convert.ToDouble(Console.ReadLine());
-
             double circleLength = CircleLength(radius);
             double circleArea = CircleArea(radius);
             double sphereVolume = SphereVolume(radius);
-
             Console.WriteLine("Length of circle = {0}", circleLength);
             Console.WriteLine("Square of circle = {0}", circleArea);
             Console.WriteLine("Volume of sphere = {0}", sphereVolume);
