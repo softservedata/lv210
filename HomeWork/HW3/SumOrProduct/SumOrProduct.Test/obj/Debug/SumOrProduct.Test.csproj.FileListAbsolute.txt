@@ -1,0 +1,9 @@
+C:\Users\Rostyslav\Desktop\SumOrProduct.Test\bin\Debug\SumOrProduct.Test.dll
+C:\Users\Rostyslav\Desktop\SumOrProduct.Test\bin\Debug\SumOrProduct.Test.pdb
+C:\Users\Rostyslav\Desktop\SumOrProduct.Test\bin\Debug\nunit.framework.dll
+C:\Users\Rostyslav\Desktop\SumOrProduct.Test\bin\Debug\SumOrProduct.exe
+C:\Users\Rostyslav\Desktop\SumOrProduct.Test\bin\Debug\SumOrProduct.pdb
+C:\Users\Rostyslav\Desktop\SumOrProduct.Test\bin\Debug\nunit.framework.xml
+C:\Users\Rostyslav\Desktop\SumOrProduct.Test\obj\Debug\SumOrProduct.Test.csprojResolveAssemblyReference.cache
+C:\Users\Rostyslav\Desktop\SumOrProduct.Test\obj\Debug\SumOrProduct.Test.dll
+C:\Users\Rostyslav\Desktop\SumOrProduct.Test\obj\Debug\SumOrProduct.Test.pdb
