@@ -40,10 +40,10 @@ namespace Cars.UnitTest
         public double ChangePriceForCarBoundaryValueTest(double percent)
         {
             Car testCar = new Car("BMW", "Black", 1000);
-            Console.WriteLine("Price = {0}",testCar.CarPrice);
+            Console.WriteLine("Price = {0}", testCar.CarPrice);
 
             double newPrice = testCar.ChangePriceForCar(percent);
-            Console.WriteLine("Discount {0}%. New Price = {1}",percent, newPrice);
+            Console.WriteLine("Discount {0}%. New Price = {1}", percent, newPrice);
 
             return newPrice;
         }
@@ -68,9 +68,9 @@ namespace Cars.UnitTest
             Car testCar = new Car("BMW E30", "Black", 1000);
 
             string actualResult = testCar.PrintInfoAboutCar();
-            string expectedResult = String.Format("Model: {0}. Color: {1}. Price {2:C}",testCar.CarModel,testCar.CarColor,testCar.CarPrice);
+            string expectedResult = String.Format("Model: {0}. Color: {1}. Price {2:C}", testCar.CarModel, testCar.CarColor, testCar.CarPrice);
 
-            StringAssert.AreEqualIgnoringCase(expectedResult,actualResult,"FAIL!");
+            StringAssert.AreEqualIgnoringCase(expectedResult, actualResult, "FAIL!");
             Console.WriteLine("Test Done!");
         }
     }
