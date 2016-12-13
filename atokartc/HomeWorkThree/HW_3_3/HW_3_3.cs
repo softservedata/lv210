@@ -4,9 +4,13 @@ namespace HomeWorkThree
 {
     public class MethodsForIntArr
     {
+        /// <summary>
+        /// Enter 10 integer numbers. Culculate the sum of first 5 elements if they are posetive or product of last 5 element in  the other case.
+        /// </summary>
         public static bool IsPositiveInt(int[] arr, int arrCounter)
         {
             bool isPositive = true;
+
             for (int i = 0; i < arrCounter; i++)
             {
                 if ((arr[i] <= 0))
@@ -65,16 +69,18 @@ namespace HomeWorkThree
                 }
             }
 
-
+            int firstFivenumbsOfArr = 5;
             if (isInt)
             {
-                if (MethodsForIntArr.IsPositiveInt(arr, 5))
+                if (MethodsForIntArr.IsPositiveInt(arr, firstFivenumbsOfArr))
                 {
-                    Console.WriteLine("First 5 integers are positive. Sum og first five integers are: {0}", MethodsForIntArr.IntArrayElementsSum(arr, 5));
+                    Console.WriteLine("First 5 integers are positive. Sum og first five integers are: {0}", 
+                        MethodsForIntArr.IntArrayElementsSum(arr, firstFivenumbsOfArr));
                 }
                 else
                 {
-                    Console.WriteLine("One or few of first 5 integers are negative. Product of the last 5 elements are: {0}", MethodsForIntArr.IntArrayElementsProduct(arr, 5));
+                    Console.WriteLine("One or few of first 5 integers are negative. Product of the last 5 elements are: {0}", 
+                        MethodsForIntArr.IntArrayElementsProduct(arr, firstFivenumbsOfArr));
                 }
             }
         }

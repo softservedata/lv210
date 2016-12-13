@@ -16,7 +16,7 @@ namespace HomeWorkOne
             string name = Console.ReadLine();
 
             Console.WriteLine("How old are you?");
-            int age;
+            int age = 0;
 
             if (int.TryParse(Console.ReadLine(), out age) && age >= 0)
             {

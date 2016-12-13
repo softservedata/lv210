@@ -18,9 +18,9 @@ namespace HomeWorkTwo
         {
             Console.WriteLine("Enter three float numbers");
 
-            float one;
-            float two;
-            float three;
+            float one = 0;
+            float two = 0;
+            float three = 0S;
 
             if (float.TryParse(Console.ReadLine(), out one) && float.TryParse(Console.ReadLine(), out two) &&
                 float.TryParse(Console.ReadLine(), out three))

@@ -12,7 +12,7 @@ namespace HomeWorkOne
     {
         public static void Main()
         {
-            int a;
+            int a = 0;
             Console.WriteLine("Define integer variable: ");
 
             if (int.TryParse(Console.ReadLine(), out a) && a >= 0)
@@ -23,7 +23,6 @@ namespace HomeWorkOne
             else
             {
                 Console.WriteLine("You should enter an integer! ");
-                Main();
             }
 
             Console.ReadKey();

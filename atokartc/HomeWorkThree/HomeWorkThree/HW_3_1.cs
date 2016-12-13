@@ -8,16 +8,35 @@ namespace HomeWorkThree
         /// <summary>
         /// Read the text as a string value and culculate the counts of characters 'a', 'o', 'i', 'e' in this text.
         /// </summary>
-        public static void Main()
+        class LettersInText
         {
-            Console.WriteLine("Enter string value!");
-            string value = Console.ReadLine();
-            char[] charsToCount = { 'a', 'o', 'i', 'e' };
+            public static int FindCharacterCount(string text, char letter)
+            {
+                int count = 0;
 
-            int counter = value.Count(a => charsToCount.Contains(a));
+                foreach (char symbol in text)
+                {
+                    if (symbol == letter) count++;
+                }
 
-            Console.WriteLine("Total number: {0}", counter);
-            Console.ReadKey();
+                return count;
+            }
+
+            static void Main(string[] args)
+            {
+                Console.WriteLine("Input string:");
+                string text = Console.ReadLine();
+                char[] letters = new char[] { 'a', 'o', 'i', 'e' };
+
+                Console.WriteLine("Letter\tCount");
+
+                for (int i = 0; i < letters.Length; i++)
+                {
+                    Console.WriteLine("{0}\t{1}", letters[i], FindCharacterCount(text, letters[i]));
+                }
+
+                Console.ReadKey();
+            }
         }
     }
 }
