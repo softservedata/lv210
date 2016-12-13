@@ -28,31 +28,29 @@ namespace Cars
 
             for (int i = 0; i < arrayOfCars.Length; i++)
             {
-                arrayOfCars[i] = Car.Input();
+                arrayOfCars[i] = Car.CreateNewCar();
             }
 
-            //Output results
             Console.WriteLine("---Original result---");
             foreach (Car car in arrayOfCars)
             {
-                car.Print();
+                car.PrintInfoAboutCar();
             }
 
             Console.WriteLine("\n---Change price---");
             foreach (Car car in arrayOfCars)
             {
                 double percent = 10;
-                car.ChangePrice(percent);
-                car.Print();
+                car.ChangePriceForCar(percent);
+                car.PrintInfoAboutCar();
             }
 
             Console.WriteLine("\n---Change color---");
-            Console.Write("Enter new color:");
-            string newColor = Console.ReadLine();
+            string newColor = "Blue";
             foreach (Car car in arrayOfCars)
             {
                 car.ChangeColorForWhiteCars(newColor);
-                car.Print();
+                car.PrintInfoAboutCar();
             }
         }
     }

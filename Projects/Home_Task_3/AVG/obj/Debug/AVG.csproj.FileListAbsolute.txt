@@ -4,3 +4,9 @@ c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\
 c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\AVG\obj\Debug\AVG.csprojResolveAssemblyReference.cache
 c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\AVG\obj\Debug\AVG.exe
 c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\AVG\obj\Debug\AVG.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_3\AVG\bin\Debug\AVG.exe.config
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_3\AVG\obj\Debug\AVG.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_3\AVG\bin\Debug\AVG.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_3\AVG\bin\Debug\AVG.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_3\AVG\obj\Debug\AVG.csprojResolveAssemblyReference.cache
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_3\AVG\obj\Debug\AVG.exe

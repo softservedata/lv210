@@ -3,3 +3,8 @@ c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\
 c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Leap_year\bin\Debug\Leap_year.pdb
 c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Leap_year\obj\Debug\Leap_year.exe
 c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Home_Task_3\Leap_year\obj\Debug\Leap_year.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_3\Leap_year\bin\Debug\Leap_year.exe.config
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_3\Leap_year\obj\Debug\Leap_year.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_3\Leap_year\bin\Debug\Leap_year.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_3\Leap_year\bin\Debug\Leap_year.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_3\Leap_year\obj\Debug\Leap_year.exe

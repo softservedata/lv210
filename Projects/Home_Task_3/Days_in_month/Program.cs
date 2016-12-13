@@ -14,9 +14,15 @@ namespace Days_in_month
         static void Main(string[] args)
         {
             Console.Write("Enter the number of month: ");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int numberOfMonth;
+            Int32.TryParse(Console.ReadLine(), out numberOfMonth);
 
-            switch (n)
+            NumberOfDaysInMonth(numberOfMonth);
+        }
+
+        static void NumberOfDaysInMonth(int numberOfMonth)
+        {
+            switch (numberOfMonth)
             {
                 case 1:
                 case 3:
