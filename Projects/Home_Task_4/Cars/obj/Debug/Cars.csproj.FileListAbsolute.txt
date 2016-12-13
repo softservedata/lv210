@@ -4,3 +4,5 @@ C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Cars\bin\
 C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Cars\obj\Debug\Cars.csprojResolveAssemblyReference.cache
 C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Cars\obj\Debug\Cars.exe
 C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Cars\obj\Debug\Cars.pdb
+C:\Users\rzhaltc\Git\lv210\Projects\Home_Task_4\Cars\bin\Debug\Cars.exe.config
+C:\Users\rzhaltc\Git\lv210\Projects\Home_Task_4\Cars\obj\Debug\Cars.pdb
