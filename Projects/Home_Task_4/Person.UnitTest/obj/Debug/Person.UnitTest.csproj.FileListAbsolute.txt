@@ -1,0 +1,11 @@
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person.UnitTest\bin\Debug\Person.UnitTest.dll
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person.UnitTest\bin\Debug\Person.UnitTest.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person.UnitTest\bin\Debug\nunit.framework.dll
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person.UnitTest\bin\Debug\Person.exe
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person.UnitTest\bin\Debug\Person.pdb
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person.UnitTest\bin\Debug\nunit.framework.xml
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person.UnitTest\obj\Debug\Person.UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person.UnitTest\obj\Debug\Person.UnitTest.dll
+C:\Users\rostyslav.zhalivtsiv\Documents\Git\lv210\Projects\Home_Task_4\Person.UnitTest\obj\Debug\Person.UnitTest.pdb

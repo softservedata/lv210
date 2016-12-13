@@ -7,53 +7,38 @@ using System.Threading.Tasks;
 
 namespace Person
 {
-    class Person
+    public class Person
     {
-        //fields
-        private string name;
-        private DateTime birthDate;
+        //Fields
+        private string nameOfPerson;
+        private DateTime birthDateOfPerson;
 
-        /// <summary>
-        /// Property Name for Person
-        /// </summary>
-        public string Name
+        //Properties
+        public string NameOfPerson
         {
-            get { return name; }
+            get { return nameOfPerson; }
         }
 
-        /// <summary>
-        /// Property BirthDate for Person
-        /// </summary>
-        public DateTime BirthDate
+        public DateTime BirthDateOfPerson
         {
-            get { return birthDate; }
+            get { return birthDateOfPerson; }
         }
 
-        /// <summary>
-        /// Constructor for class Person
-        /// </summary>
-        /// <param name="name">Person name</param>
-        /// <param name="birthDate">Person birthDate</param>
         public Person(string name, DateTime birthDate)
         {
-            this.name = name;
-            this.birthDate = birthDate;
+            nameOfPerson = name;
+            birthDateOfPerson = birthDate;
         }
 
-        /// <summary>
-        /// Default constructor for Person
-        /// </summary>
         public Person() { }
-
-        //Methods
 
         /// <summary>
         /// Calculate the age of person
         /// </summary>
         /// <returns></returns>
-        public int Age()
+        public int AgeOfPerson()
         {
-            return DateTime.Now.Year - BirthDate.Year;
+            return DateTime.Now.Year - BirthDateOfPerson.Year;
         }
 
         /// <summary>
@@ -76,8 +61,8 @@ namespace Person
         /// </summary>
         public void Output()
         {
-            int age = Age();
-            Console.WriteLine("{0}, {1} years old. Birthday: {2}", Name, age, BirthDate.ToShortDateString());
+            int age = AgeOfPerson();
+            Console.WriteLine("{0}, {1} years old. Birthday: {2}", NameOfPerson, age, BirthDateOfPerson.ToShortDateString());
         }
 
         /// <summary>
@@ -86,9 +71,9 @@ namespace Person
         /// </summary>
         public void ChangeName()
         {
-            if (Age() < 16)
+            if (AgeOfPerson() < 16)
             {
-                name = "Very Young";
+                nameOfPerson = "Very Young";
             }
         }
     }
