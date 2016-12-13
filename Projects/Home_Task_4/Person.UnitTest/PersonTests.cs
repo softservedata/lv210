@@ -47,17 +47,15 @@ namespace Person.UnitTest
         }
 
         [Test]
-        [TestCase(1992, 9, 27, "John")]
-        [TestCase(2000, 1, 27, "John")]
-        [TestCase(2001, 9, 27, "Very Young")]
-        [TestCase(2016, 9, 27, "Very Young")]
-        public void ChangeNameTest(int year, int month, int day, string expectedResult)
+        [TestCase(1992, 9, 27, ExpectedResult = "John")]
+        [TestCase(2000, 1, 27, ExpectedResult = "John")]
+        [TestCase(2001, 9, 27, ExpectedResult = "Very Young")]
+        [TestCase(2016, 9, 27, ExpectedResult = "Very Young")]
+        public string ChangeNameTest(int year, int month, int day)
         {
             Person testPerson = new Person("John", new DateTime(year, month, day));
             testPerson.ChangeName();
-            string actualResult = testPerson.NameOfPerson;
-            StringAssert.AreEqualIgnoringCase(expectedResult, actualResult, "FAIL!");
-            Console.WriteLine("Test Done!");
+            return testPerson.NameOfPerson;
         }
     }
 }
