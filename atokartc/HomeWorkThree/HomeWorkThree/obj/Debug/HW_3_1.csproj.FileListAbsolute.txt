@@ -1,1 +1,8 @@
 C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HomeWorkThree\bin\Debug\HomeWorkThree.exe.config
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HomeWorkThree\bin\Debug\HomeWorkThree.exe
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HomeWorkThree\bin\Debug\HomeWorkThree.pdb
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HomeWorkThree\bin\Debug\nunit.framework.dll
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HomeWorkThree\bin\Debug\nunit.framework.xml
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HomeWorkThree\obj\Debug\HomeWorkThree.exe
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HomeWorkThree\obj\Debug\HomeWorkThree.pdb
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HomeWorkThree\obj\Debug\HW_3_1.csprojResolveAssemblyReference.cache

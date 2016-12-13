@@ -1,0 +1,7 @@
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW_3_3\bin\Debug\HW_3_3.exe.config
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW_3_3\bin\Debug\HW_3_3.exe
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW_3_3\bin\Debug\HW_3_3.pdb
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW_3_3\bin\Debug\nunit.framework.dll
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW_3_3\bin\Debug\nunit.framework.xml
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW_3_3\obj\Debug\HW_3_3.exe
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW_3_3\obj\Debug\HW_3_3.pdb

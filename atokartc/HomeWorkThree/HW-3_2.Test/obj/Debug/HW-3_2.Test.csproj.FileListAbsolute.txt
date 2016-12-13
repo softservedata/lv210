@@ -1,0 +1,11 @@
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\bin\Debug\HW-3_2.Test.dll
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\bin\Debug\HW-3_2.Test.pdb
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\bin\Debug\HW_3_2.exe
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\bin\Debug\nunit.framework.dll
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\bin\Debug\HW_3_2.pdb
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\bin\Debug\nunit.framework.xml
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\obj\Debug\HW-3_2.Test.csprojResolveAssemblyReference.cache
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\obj\Debug\HW-3_2.Test.dll
+C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\obj\Debug\HW-3_2.Test.pdb

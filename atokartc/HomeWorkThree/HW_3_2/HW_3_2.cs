@@ -5,15 +5,45 @@ namespace HomeWorkThree
 {
     public class HW_3_2
     {
+        public static int IsIntEntered()
+        {
+            int readedVar = 0;
+            bool isIntEntered = int.TryParse(Console.ReadLine(), out readedVar);
+
+            if (isIntEntered && readedVar != 0)
+            {
+                return readedVar;
+            }
+            else
+            {
+                throw new FormatException("Please, enter integer");
+            }
+        }
+
+        public static bool IsIntEnteredIntInRangeMonth(int month)
+        {
+            bool isIntEnteredIntinRangeMonth;
+
+            if (Enumerable.Range(1, 12).Contains(month))
+            {
+                isIntEnteredIntinRangeMonth = true;
+            }
+            else
+            {
+                isIntEnteredIntinRangeMonth = false;
+            }
+            return isIntEnteredIntinRangeMonth;
+        }
+
         /// <summary>
         /// Ask user to enter the number of month. Read the value and write the amount of days in this month. Year 2016; Using switch-case;
         /// </summary>
         public static void Main()
         {
             Console.WriteLine("Enter month from 1 to 12");
-            int month = Convert.ToInt32(Console.ReadLine());
+            int month = IsIntEntered();
 
-            if (Enumerable.Range(1, 12).Contains(month))
+            if (IsIntEnteredIntInRangeMonth(month))
             {
                 switch (month)
                 {
@@ -37,8 +67,8 @@ namespace HomeWorkThree
             else
             {
                 Console.WriteLine("Please enter correct value!");
-                Main();
             }
+
             Console.ReadKey();
         }
     }
