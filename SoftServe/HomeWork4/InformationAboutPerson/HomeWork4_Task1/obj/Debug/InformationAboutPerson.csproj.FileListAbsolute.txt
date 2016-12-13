@@ -1,0 +1,6 @@
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\HomeWork4_Task1\bin\Debug\HomeWork4_Task1.exe.config
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\HomeWork4_Task1\bin\Debug\HomeWork4_Task1.exe
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\HomeWork4_Task1\bin\Debug\HomeWork4_Task1.pdb
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\HomeWork4_Task1\obj\Debug\InformationAboutPerson.csprojResolveAssemblyReference.cache
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\HomeWork4_Task1\obj\Debug\HomeWork4_Task1.exe
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\HomeWork4_Task1\obj\Debug\HomeWork4_Task1.pdb

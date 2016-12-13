@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HomeWork4_Task1
 {
-    class Person
+    public class Person
     {
         private string name;
         private int birthYear;
@@ -17,9 +13,14 @@ namespace HomeWork4_Task1
         {
             name = _name;
             birthYear = _birthYear;
+
+            if (!IsValidAge)
+            {
+                throw new ArgumentException("Age can't be less than 0, ", "_birthYear");
+            }
         }
 
-        public int Age()
+        public int GetAge()
         {
             int presentYear = DateTime.Now.Year;
 
@@ -28,12 +29,18 @@ namespace HomeWork4_Task1
 
         public static Person Input()
         {
+            int birthYear;
+
             Console.WriteLine("Information about person.");
             Console.Write("Input name for person: ");
             var name = Console.ReadLine();
 
             Console.Write("Input year of person's birth: ");
-            var birthYear = int.Parse(Console.ReadLine());
+            while (!int.TryParse(Console.ReadLine(), out birthYear))
+            {
+                Console.Write("You can't use characters, please try again: ");
+            }
+            
             Console.WriteLine();
 
             return new Person(name, birthYear);
@@ -41,15 +48,23 @@ namespace HomeWork4_Task1
 
         public void Output()
         {
-            Console.WriteLine("Person's name: {0}, age: {1}", name, Age());
+            Console.WriteLine("Person's name: {0}, age: {1}", name, GetAge());
         }
 
         public void ChangeName()
         {
-            if (Age() < 16)
+            if (GetAge() < 16)
             {
                 name = "Very Young";
             }   
+        }
+
+        private bool IsValidAge
+        {
+            get
+            {
+                return (GetAge() > 0);
+            }
         }
     }
 }

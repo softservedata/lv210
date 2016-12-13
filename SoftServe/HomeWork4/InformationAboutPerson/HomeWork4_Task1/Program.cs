@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HomeWork4_Task1
 {
@@ -28,19 +25,26 @@ namespace HomeWork4_Task1
         
         static void Main(string[] args)
         {
-            var personCount = 5;
+            var personCount = 2;
             var persons = new List<Person>();
 
-            for(int i = 0; i < personCount; i++)
+            try
             {
-                persons.Add(Person.Input());
+                for (int i = 0; i < personCount; i++)
+                {
+                    persons.Add(Person.Input());
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                throw new ArgumentException(ex.Message);
             }
 
             persons.ForEach(p => p.Output());
 
             persons.ForEach(p => p.ChangeName());
 
-            Console.WriteLine("Change name (if neccessary).");
+            Console.WriteLine("Change person's name (if age < 16).");
 
             persons.ForEach(p => p.Output());
 

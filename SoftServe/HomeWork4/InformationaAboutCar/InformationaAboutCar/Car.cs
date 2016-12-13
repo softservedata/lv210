@@ -21,25 +21,13 @@ namespace InformationaAboutCar
             this.price = price;
         }
 
-        public string Color
-        {
-            get
-            {
-                return color;
-            }
-            set
-            {
-                color = value;
-            }
-         }
-
         public static Car Input()
         {
             Console.WriteLine("Information about car: ");
             Console.Write("Brand : ");
             var brand = Console.ReadLine();
 
-            Console.Write("Color(for first charachter use uppercase) : ");
+            Console.Write("Color : ");
             var color = Console.ReadLine();
 
             Console.Write("Price : ");
@@ -64,12 +52,12 @@ namespace InformationaAboutCar
 
         public void ChangeColor()
         {
-            if (Color == ConsoleColor.White.ToString())
+            if ((color == "White") || (color == "white"))
             {
                 Console.Write("\nInput new color : ");
                 var newColor = Console.ReadLine();
 
-                Color = newColor;
+                color = newColor;
 
                 Print();
             }

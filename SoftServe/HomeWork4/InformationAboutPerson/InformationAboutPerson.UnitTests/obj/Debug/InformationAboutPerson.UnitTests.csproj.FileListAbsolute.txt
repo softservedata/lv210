@@ -1,0 +1,13 @@
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\bin\Debug\InformationAboutPerson.UnitTests.dll
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\bin\Debug\InformationAboutPerson.UnitTests.pdb
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\bin\Debug\HomeWork4_Task1.exe
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\bin\Debug\NSubstitute.dll
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\bin\Debug\HomeWork4_Task1.pdb
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\bin\Debug\NSubstitute.xml
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\obj\Debug\InformationAboutPerson.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\obj\Debug\InformationAboutPerson.UnitTests.dll
+C:\Users\Dima\git\lv210\SoftServe\HomeWork4\InformationAboutPerson\InformationAboutPerson.UnitTests\obj\Debug\InformationAboutPerson.UnitTests.pdb

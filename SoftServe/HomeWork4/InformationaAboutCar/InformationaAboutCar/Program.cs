@@ -21,7 +21,7 @@ namespace InformationaAboutCar
         
         static void Main(string[] args)
         {
-            int carCount = 3;
+            int carCount = 1;
             List<Car> carList = new List<Car>();
 
             for (int i = 0; i < carCount; i++)
