@@ -1,3 +1,9 @@
 D:\Documents\Моє\AQC\C#Projects\Hw2_1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
 D:\Documents\Моє\AQC\C#Projects\Hw2_1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 D:\Documents\Моє\AQC\C#Projects\Hw2_1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+c:\Users\user\Source\Repos\lv210\Hw2_1 (-5 to 5)\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+c:\Users\user\Source\Repos\lv210\Hw2_1 (-5 to 5)\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+c:\Users\user\Source\Repos\lv210\Hw2_1 (-5 to 5)\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+c:\Users\user\Source\Repos\lv210\Hw2_1 (-5 to 5)\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+c:\Users\user\Source\Repos\lv210\Hw2_1 (-5 to 5)\ConsoleApplication1\obj\Debug\HW2_From 5 to 5.csprojResolveAssemblyReference.cache
+c:\Users\user\Source\Repos\lv210\Hw2_1 (-5 to 5)\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
