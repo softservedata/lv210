@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task1
-{
-    class FloatNumbers
+
+
+    public class FloatNumbers
     {
         public static bool isInRange(float []numbers,float leftBound, float rightBound)
         {
@@ -34,4 +34,4 @@ namespace Task1
             Console.ReadKey();
         }
     }
-}
+

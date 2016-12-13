@@ -3,3 +3,5 @@ c:\users\user\documents\visual studio 2015\Projects\Task3\Task3\bin\Debug\Task3.
 c:\users\user\documents\visual studio 2015\Projects\Task3\Task3\bin\Debug\Task3.pdb
 c:\users\user\documents\visual studio 2015\Projects\Task3\Task3\obj\Debug\Task3.exe
 c:\users\user\documents\visual studio 2015\Projects\Task3\Task3\obj\Debug\Task3.pdb
+C:\Users\user\Source\Repos\Softserve\homeworks\homework2\Task3\Task3\bin\Debug\Task3.exe.config
+C:\Users\user\Source\Repos\Softserve\homeworks\homework2\Task3\Task3\obj\Debug\Task3.pdb

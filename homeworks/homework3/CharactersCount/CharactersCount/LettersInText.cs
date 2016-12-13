@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 /*Read the text as a string value and calculate the counts
 of characters 'a', 'o', 'i', 'e' in this text.*/
-namespace CountOfCharacters
+namespace CharactersCount
 {
    
-    class LettersInText
+    public class LettersInText
     { 
        //Find character count in string 
        public static int FindCharacterCount(string text, char letter)
@@ -18,6 +18,7 @@ namespace CountOfCharacters
             {
                 if (symbol == letter) count++;
             }
+
             return count;
         }
 
@@ -31,7 +32,8 @@ namespace CountOfCharacters
             {
                 Console.WriteLine("{0}\t{1}", letters[i], FindCharacterCount(text, letters[i]));
             }
-                Console.ReadKey();
+
+            Console.ReadKey();
         }
     }
 }

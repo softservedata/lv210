@@ -4,3 +4,9 @@ c:\users\user\documents\visual studio 2015\Projects\Task1\Task1\bin\Debug\Task1.
 c:\users\user\documents\visual studio 2015\Projects\Task1\Task1\obj\Debug\Task1.csprojResolveAssemblyReference.cache
 c:\users\user\documents\visual studio 2015\Projects\Task1\Task1\obj\Debug\Task1.exe
 c:\users\user\documents\visual studio 2015\Projects\Task1\Task1\obj\Debug\Task1.pdb
+C:\Users\user\Source\Repos\Softserve\homeworks\homework2\Task1\Task1\bin\Debug\Task1.exe.config
+C:\Users\user\Source\Repos\Softserve\homeworks\homework2\Task1\Task1\obj\Debug\Task1.pdb
+C:\Users\user\Source\Repos\Softserve\homeworks\homework2\Task1\Task1\bin\Debug\Task1.exe
+C:\Users\user\Source\Repos\Softserve\homeworks\homework2\Task1\Task1\bin\Debug\Task1.pdb
+C:\Users\user\Source\Repos\Softserve\homeworks\homework2\Task1\Task1\obj\Debug\Task1.csprojResolveAssemblyReference.cache
+C:\Users\user\Source\Repos\Softserve\homeworks\homework2\Task1\Task1\obj\Debug\Task1.exe

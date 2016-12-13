@@ -4,3 +4,9 @@ C:\Users\user\documents\visual studio 2015\Projects\DaysInMonth\DaysInMonth\bin\
 C:\Users\user\documents\visual studio 2015\Projects\DaysInMonth\DaysInMonth\obj\Debug\DaysInMonth.csprojResolveAssemblyReference.cache
 C:\Users\user\documents\visual studio 2015\Projects\DaysInMonth\DaysInMonth\obj\Debug\DaysInMonth.exe
 C:\Users\user\documents\visual studio 2015\Projects\DaysInMonth\DaysInMonth\obj\Debug\DaysInMonth.pdb
+C:\Users\user\Source\Repos\Softserve\homeworks\homework3\DaysInMonth\DaysInMonth\bin\Debug\DaysInMonth.exe.config
+C:\Users\user\Source\Repos\Softserve\homeworks\homework3\DaysInMonth\DaysInMonth\obj\Debug\DaysInMonth.pdb
+C:\Users\user\Source\Repos\Softserve\homeworks\homework3\DaysInMonth\DaysInMonth\obj\Debug\DaysInMonth.csprojResolveAssemblyReference.cache
+C:\Users\user\Source\Repos\Softserve\homeworks\homework3\DaysInMonth\DaysInMonth\bin\Debug\DaysInMonth.exe
+C:\Users\user\Source\Repos\Softserve\homeworks\homework3\DaysInMonth\DaysInMonth\bin\Debug\DaysInMonth.pdb
+C:\Users\user\Source\Repos\Softserve\homeworks\homework3\DaysInMonth\DaysInMonth\obj\Debug\DaysInMonth.exe
