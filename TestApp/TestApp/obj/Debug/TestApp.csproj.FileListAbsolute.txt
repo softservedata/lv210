@@ -1,0 +1,6 @@
+E:\Documents\Anna\TestApp\TestApp\bin\Debug\TestApp.exe.config
+E:\Documents\Anna\TestApp\TestApp\obj\Debug\TestApp.csprojResolveAssemblyReference.cache
+E:\Documents\Anna\TestApp\TestApp\bin\Debug\TestApp.exe
+E:\Documents\Anna\TestApp\TestApp\bin\Debug\TestApp.pdb
+E:\Documents\Anna\TestApp\TestApp\obj\Debug\TestApp.exe
+E:\Documents\Anna\TestApp\TestApp\obj\Debug\TestApp.pdb
