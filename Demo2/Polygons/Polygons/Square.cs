@@ -2,7 +2,7 @@
 
 namespace Polygons
 {
-    public class Square : EquilateralTriangle
+    public class Square : IPolygon
     {
         private double sideLength;
         private double perimeter;
@@ -17,19 +17,19 @@ namespace Polygons
             this.sideLength = sideLength;
         }
 
-        public new double PerimeterCalculation()
+        public double PerimeterCalculation()
         {
             perimeter = 4 * sideLength;
             return perimeter;
         }
 
-        public new double AreaCalculation()
+        public double AreaCalculation()
         {
             area = Math.Pow(sideLength, 2);
             return area;
         }
 
-        public new void Display()
+        public void Display()
         {
             Console.WriteLine("Square information:\nPerimeter: {0}\nArea: {1}\n", perimeter, area);
         }
