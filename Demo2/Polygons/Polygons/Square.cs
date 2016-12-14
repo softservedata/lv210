@@ -33,5 +33,12 @@ namespace Polygons
         {
             Console.WriteLine("Square information:\nPerimeter: {0}\nArea: {1}\n", perimeter, area);
         }
+
+        public void SquareCalculation()
+        {
+            PerimeterCalculation();
+            AreaCalculation();
+            Display();
+        }
     }
 }

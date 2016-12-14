@@ -21,42 +21,6 @@ namespace Polygons
                 throw new FormatException("Please, input positive <double> number");
             }
         }
-        /// <summary>
-        /// Create object of "EquilateralTriangle" class, calculate perimeter and area of triangle using methods "PerimeterCalculation()"
-        /// and "AreaCalculation()". All information displays using method "Display()"
-        /// </summary>
-        /// <param name="sideLength"></param>
-        public static void TriangleCalculation(double sideLength)
-        {
-            EquilateralTriangle myTriangle = new EquilateralTriangle(sideLength);
-            myTriangle.PerimeterCalculation();
-            myTriangle.AreaCalculation();
-            myTriangle.Display();
-        }
-        /// <summary>
-        /// Create object of "Square" class, calculate perimeter and area of square using methods "PerimeterCalculation()"
-        /// and "AreaCalculation()". All information displays using method "Display()"
-        /// </summary>
-        /// <param name="sideLength"></param>
-        public static void SquareCalculation(double sideLength)
-        {
-            Square mySquare = new Square(sideLength);
-            mySquare.PerimeterCalculation();
-            mySquare.AreaCalculation();
-            mySquare.Display();
-        }
-        /// <summary>
-        /// Create object of "Pentagon" class, calculate perimeter and area of pentagon using methods "PerimeterCalculation()"
-        /// and "AreaCalculation()". All information displays using method "Display()"
-        /// </summary>
-        /// <param name="sideLength"></param>
-        public static void PentagonCalculation(double sideLength)
-        {
-            Pentagon myPentagon = new Pentagon(sideLength);
-            myPentagon.PerimeterCalculation();
-            myPentagon.AreaCalculation();
-            myPentagon.Display();
-        }
 
         static void Main(string[] args)
         {
@@ -64,9 +28,15 @@ namespace Polygons
             try
             {
                 double sideLength = ParseAtempt(Console.ReadLine());
-                TriangleCalculation(sideLength);
-                SquareCalculation(sideLength);
-                PentagonCalculation(sideLength);
+
+                EquilateralTriangle myTriangle = new EquilateralTriangle(sideLength);
+                myTriangle.TriangleCalculation();
+
+                Square mySquare = new Square(sideLength);
+                mySquare.SquareCalculation();
+
+                Pentagon myPentagon = new Pentagon(sideLength);
+                myPentagon.PentagonCalculation();
             }
             catch (Exception e)
             {

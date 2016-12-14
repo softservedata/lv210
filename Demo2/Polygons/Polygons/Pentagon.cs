@@ -33,5 +33,12 @@ namespace Polygons
         {
             Console.WriteLine("Pentagon information:\nPerimeter: {0}\nArea: {1}\n", perimeter, area);
         }
+
+        public void PentagonCalculation()
+        {
+            PerimeterCalculation();
+            AreaCalculation();
+            Display();
+        }
     }
 }

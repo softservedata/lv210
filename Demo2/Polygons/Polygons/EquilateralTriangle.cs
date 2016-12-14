@@ -31,7 +31,14 @@ namespace Polygons
 
         public void Display()
         {
-            Console.WriteLine("Triangle information:\nPerimeter: {0}\nArea: {1}\n", perimeter, area);
+            Console.WriteLine("\nTriangle information:\nPerimeter: {0}\nArea: {1}\n", perimeter, area);
+        }
+
+        public void TriangleCalculation()
+        {
+            PerimeterCalculation();
+            AreaCalculation();
+            Display();
         }
     }
 }
