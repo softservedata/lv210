@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 using Assert = NUnit.Framework.Assert;
 
 namespace HierarchyOfGeometricShapes.UnitTests
@@ -24,12 +25,16 @@ namespace HierarchyOfGeometricShapes.UnitTests
             new object[] {new[] {new Point(3, 2), new Point(5, 6), new Point(9, 6), new Point(11, 2)}, true},
         };
 
+        private static readonly object[] IncorrectTestDataForQuadrangle =
+        {
+            new object[] {new[] {new Point(10, 5), new Point(4, 4), new Point(7, 1), new Point(4, 11)}},
+        };
+
         [Test, TestCaseSource(nameof(TestDataForArea))]
         public void Should_Calculate_Correct_Area_Of_Quadrangle(Point[] points, double result)
         {
             //Arrange
             var quadrangle = new Quadrangle(points);
-            //var validator = new QuadrangleValidator();
             //Act
             var expected = result;
             var actual = quadrangle.Area();
@@ -61,16 +66,13 @@ namespace HierarchyOfGeometricShapes.UnitTests
             Assert.AreEqual(expected, actual);
         }
 
-        [Test, TestCaseSource(nameof(TestDataForInscribedQuadrangle))]
-        public void Should_Throw_Exeption_When_Data_(Point[] points, bool result)
+        [Test, TestCaseSource(nameof(IncorrectTestDataForQuadrangle))]
+        public void Should_Throw_Exeption_When_Test_Data_Is_NotValid(Point[] points)
         {
             //Arrange
-            var quadrangle = new Quadrangle(points);
-            //Act
-            var expected = result;
-            var actual = quadrangle.IsAbleToBeInscribedInCircle();
+            var quadratangle = new Quadrangle(points);
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.Throws<ArgumentException>(() => quadratangle.Area());
         }
     }
 }
