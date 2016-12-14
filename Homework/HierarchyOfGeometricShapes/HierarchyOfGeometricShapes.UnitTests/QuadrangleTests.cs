@@ -27,7 +27,8 @@ namespace HierarchyOfGeometricShapes.UnitTests
 
         private static readonly object[] IncorrectTestDataForQuadrangle =
         {
-            new object[] {new[] {new Point(10, 5), new Point(4, 4), new Point(7, 1), new Point(4, 11)}},
+            new object[] {new[] {new Point(2, 3), new Point(9, 2), new Point(3, 6)}},
+            new object[] {new[] {new Point(2, 3), new Point(2, 6), new Point(2, 8), new Point(9, 2)}},
         };
 
         [Test, TestCaseSource(nameof(TestDataForArea))]
@@ -69,10 +70,8 @@ namespace HierarchyOfGeometricShapes.UnitTests
         [Test, TestCaseSource(nameof(IncorrectTestDataForQuadrangle))]
         public void Should_Throw_Exeption_When_Test_Data_Is_NotValid(Point[] points)
         {
-            //Arrange
-            var quadratangle = new Quadrangle(points);
             //Assert
-            Assert.Throws<ArgumentException>(() => quadratangle.Area());
+            Assert.Throws<ArgumentException>(() => new Quadrangle(points).Area());
         }
     }
 }

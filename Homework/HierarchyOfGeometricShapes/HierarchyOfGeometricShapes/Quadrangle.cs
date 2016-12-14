@@ -7,7 +7,10 @@ namespace HierarchyOfGeometricShapes
 {
     public class Quadrangle : Polygon
     {
-        public Quadrangle(Point[] points) : base(points) { }
+        public Quadrangle(Point[] points) : base(points)
+        {
+            CheckForCorrectness();
+        }
 
         private IList<ValidationFailure> Validate()
         {
@@ -17,13 +20,16 @@ namespace HierarchyOfGeometricShapes
             return result.Errors;
         }
 
-        public override double Area()
+        private void CheckForCorrectness()
         {
-            if (Validate().Any())
+            if (this.Validate().Any())
             {
                 throw new ArgumentException();
             }
+        }
 
+        public override double Area()
+        {
             var a = Line(Points[0], Points[1]);
             var b = Line(Points[1], Points[2]);
             var c = Line(Points[2], Points[3]);
