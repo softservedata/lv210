@@ -44,12 +44,13 @@ namespace Polygons.Test
         [TestCase(5, 15)]
         public void EquilateralTriangle_PerimeterCalculation_ReturnCorrectValue_WhenInputedDataIsValid(double sideLength, double testResult)
         {
+            double precision = 0.0001;
             double expectedResult = testResult;
 
             EquilateralTriangle testTriangle = new EquilateralTriangle(sideLength);
             double actualResult = testTriangle.PerimeterCalculation();
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult, actualResult, precision);
         }
 
         /// <summary>
@@ -77,12 +78,13 @@ namespace Polygons.Test
         [TestCase(5, 20)]
         public void Square_PerimeterCalculation_ReturnCorrectValue_WhenInputedDataIsValid(double sideLength, double testResult)
         {
+            double precision = 0.0001;
             double expectedResult = testResult;
 
             Square testSquare = new Square(sideLength);
             double actualResult = testSquare.PerimeterCalculation();
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult, actualResult, precision);
         }
 
         /// <summary>
@@ -93,12 +95,13 @@ namespace Polygons.Test
         [TestCase(5, 25)]
         public void Square_AreaCalculation_ReturnCorrectValue_WhenInputedDataIsValid(double sideLength, double testResult)
         {
+            double precision = 0.0001;
             double expectedResult = testResult;
 
             Square testSquare = new Square(sideLength);
             double actualResult = testSquare.AreaCalculation();
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult, actualResult, precision);
         }
 
         /// <summary>
@@ -109,12 +112,13 @@ namespace Polygons.Test
         [TestCase(5, 25)]
         public void Pentagon_PerimeterCalculation_ReturnCorrectValue_WhenInputedDataIsValid(double sideLength, double testResult)
         {
+            double precision = 0.0001;
             double expectedResult = testResult;
 
             Pentagon testPentagon = new Pentagon(sideLength);
             double actualResult = testPentagon.PerimeterCalculation();
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult, actualResult, precision);
         }
 
         /// <summary>
