@@ -24,6 +24,19 @@ namespace Polygons.Test
         }
 
         /// <summary>
+        /// Method checks returned <double> data when inputed data is correct:
+        /// </summary>
+        /// <param name="testData"></param>
+        [TestCase("8")]
+        public void ParseAtempt_ReturnDoubleData_WhenInputedDataIsValid(string testData)
+        {
+            double expectedResult = PolygonsActions.ParseAtempt(testData);
+            double actualResult = 8;
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        /// <summary>
         /// Method check calculated perimeter of equilateral triangle
         /// </summary>
         /// <param name="sideLength"></param>
