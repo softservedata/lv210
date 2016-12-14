@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using FluentValidation.Results;
 
 namespace HierarchyOfGeometricShapes
@@ -8,20 +9,21 @@ namespace HierarchyOfGeometricShapes
     {
         public Quadrangle(Point[] points) : base(points) { }
 
-        #region FunctionToVerifyConvexity
-
-        private bool IsConvex()
+        private IList<ValidationFailure> Validate()
         {
-            Point point = PointOfLinesIntersection(Points[0], Points[2], Points[1], Points[3]);
-            return !((LineEquation(point, Points[1], Points[2]) > 0) && (LineEquation(point, Points[2], Points[3]) > 0));
+            var validator = new QuadrangleValidator();
+            var result = validator.Validate(this);
+
+            return result.Errors;
         }
 
-        #endregion
-
-        #region FunctionsToCalcArea
-
-        private double CalculateAreaForConvexQuardangle()
+        public override double Area()
         {
+            if (Validate().Any())
+            {
+                throw new ArgumentException();
+            }
+
             var a = Line(Points[0], Points[1]);
             var b = Line(Points[1], Points[2]);
             var c = Line(Points[2], Points[3]);
@@ -32,41 +34,53 @@ namespace HierarchyOfGeometricShapes
             return Math.Sqrt((4 * e * e * f * f - Math.Pow((b * b + d * d - a * a - c * c), 2)) / 16);
         }
 
-        private double CalculateAreaForNotConvexQuardangle()
+        public bool IsAbleToBeInscribedInCircle()
         {
-            var a = Line(Points[0], Points[1]);
-            var b = Line(Points[1], Points[3]);
-            var c = Line(Points[3], Points[0]);
-            var p = (a + b + c) / 2;
-            var areaOfBigTriangle = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            var cosA = CosOfAngleBetweenSides(Points[0], Points[1], Points[0], Points[3]);
+            var cosB = CosOfAngleBetweenSides(Points[1], Points[0], Points[1], Points[2]);
+            var cosC = CosOfAngleBetweenSides(Points[2], Points[1], Points[2], Points[3]);
+            var cosD = CosOfAngleBetweenSides(Points[3], Points[2], Points[3], Points[0]);
 
-            var e = Line(Points[2], Points[1]);
-            var d = Line(Points[3], Points[2]);
-            p = (e + b + d) / 2;
-            var areaOfSmallTriangle = Math.Sqrt(p * (p - e) * (p - b) * (p - d));
-
-            return areaOfBigTriangle - areaOfSmallTriangle;
-        }
-
-        #endregion
-
-        public IList<ValidationFailure> Validate()
-        {
-            var validator = new QuadrangleValidator();
-            var result = validator.Validate(this);
-
-            return result.Errors;
-        }
-
-        public override double Area()
-        {
-            var area = IsConvex() ? CalculateAreaForConvexQuardangle() : CalculateAreaForNotConvexQuardangle();
-            return area;
+            return (Math.Abs((cosA + cosC) - (cosB + cosD)) < 0.00001);
         }
 
         public override string ToString()
         {
             return $"Hi! This is a Quadrangle. Perimeter is {Perimeter()}, area is {Area()}.";
         }
+
+        private Point Vector(Point a, Point b)
+        {
+            var resultPoint = new Point
+            {
+                X = b.X - a.X,
+                Y = b.Y - a.Y
+            };
+
+            return resultPoint;
+        }
+
+        #region ActionsWithVectors
+
+        private int ScalarProduct(Point a, Point b)
+        {
+            return a.X * b.X + a.Y * b.Y;
+        }
+
+        private double LengthOfVector(Point a)
+        {
+            return Math.Sqrt(a.X * a.X + a.Y * a.Y);
+        }
+
+        private double CosOfAngleBetweenSides(Point firstPoint, Point secondPoint, Point thirdPoint, Point forthPoint)
+        {
+            var vectorA = Vector(firstPoint, secondPoint);
+            var vectorB = Vector(thirdPoint, forthPoint);
+
+            return ScalarProduct(vectorA, vectorB) / (LengthOfVector(vectorA) * LengthOfVector(vectorB));
+        }
+
+        #endregion
+
     }
 }

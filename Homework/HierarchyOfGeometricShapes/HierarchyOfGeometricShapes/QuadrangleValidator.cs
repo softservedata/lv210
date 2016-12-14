@@ -8,6 +8,7 @@ namespace HierarchyOfGeometricShapes
         public QuadrangleValidator()
         {
             RuleFor(quadrangle => quadrangle.Points.Length)
+                .NotEmpty()
                 .Equal(4)
                 .WithMessage("\nQuadrangle always has 4 sides!");
             RuleFor(quadrangle => quadrangle.Points)
@@ -21,6 +22,11 @@ namespace HierarchyOfGeometricShapes
 
         private bool HasLessThanThreePointsOnTheSameLine(Point[] points)
         {
+            if (points.Length < 4)
+            {
+                throw new ArgumentException("It is not a quadrangle");
+            }
+
             var valueFirst = IsOnTheSameLine(points[0], points[1], points[2]);
             var valueSecond = IsOnTheSameLine(points[0], points[1], points[3]);
             var valueThird = IsOnTheSameLine(points[0], points[2], points[3]);
@@ -31,6 +37,11 @@ namespace HierarchyOfGeometricShapes
 
         private bool IsReallyQuadrangle(Point[] points)
         {
+            if (points.Length < 4)
+            {
+                throw new ArgumentException("It is not a quadrangle");
+            }
+
             var haveCorrectIntersectionAwithB = HaveIntersectionInSetPoint(points[0], points[1], points[1], points[2],
                 points[1]);
             var haveCorrectIntersectionBwithC = HaveIntersectionInSetPoint(points[1], points[2], points[2], points[3],
@@ -68,9 +79,9 @@ namespace HierarchyOfGeometricShapes
             }
             else
             {
-                point.X = (int)Math.Ceiling((coefSecondEquation[1] - coefFirstEquation[1]) /
+                point.X = Convert.ToInt32((coefSecondEquation[1] - coefFirstEquation[1]) /
                      (coefFirstEquation[0] - coefSecondEquation[0]));
-                point.Y = (int)Math.Ceiling(coefSecondEquation[0] * point.X + coefSecondEquation[1]);
+                point.Y = Convert.ToInt32(coefSecondEquation[0] * point.X + coefSecondEquation[1]);
             }
 
             return point;

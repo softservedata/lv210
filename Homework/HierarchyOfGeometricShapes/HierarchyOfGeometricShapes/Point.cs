@@ -1,6 +1,4 @@
-﻿using System.CodeDom;
-
-namespace HierarchyOfGeometricShapes
+﻿namespace HierarchyOfGeometricShapes
 {
     public struct Point
     {
