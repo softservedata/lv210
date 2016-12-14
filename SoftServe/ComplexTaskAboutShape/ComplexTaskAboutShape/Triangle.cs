@@ -18,12 +18,12 @@ namespace ComplexTaskAboutShape
             secondPoint = second;
             thirdPoint = third;
 
+            DefineRange();
+
             if (!IsValid)
             {
                 throw new ArgumentException("Can't create triangle with that point", "thirdPoint");
             }
-
-            DefineRange();
         }
 
         private void DefineRange()
@@ -48,20 +48,11 @@ namespace ComplexTaskAboutShape
         {
             get
             {
-                return ((firstSideLength + secondSideLength) < thirdSideLength) ||
-                    ((secondSideLength + thirdSideLength) < firstSideLength) ||
-                    ((firstSideLength + thirdSideLength) < secondSideLength);
+                return ((firstSideLength + secondSideLength) > thirdSideLength) &&
+                    ((secondSideLength + thirdSideLength) > firstSideLength) &&
+                    ((firstSideLength + thirdSideLength) > secondSideLength);
             }
         }
-
-        //public bool IsValid
-        //{
-        //    get
-        //    {
-        //        return (((firstPoint.X - secondPoint.X) != 0) || ((secondPoint.X - thirdPoint.X) != 0)) &&
-        //            (((firstPoint.Y - secondPoint.Y) != 0) || ((secondPoint.Y - thirdPoint.Y) != 0));
-        //    }
-        //}
 
         public override string ToString()
         {
