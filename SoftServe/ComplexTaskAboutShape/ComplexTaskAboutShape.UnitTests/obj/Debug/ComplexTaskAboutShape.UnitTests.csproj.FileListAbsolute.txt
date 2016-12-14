@@ -1,0 +1,13 @@
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\bin\Debug\ComplexTaskAboutShape.UnitTests.dll
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\bin\Debug\ComplexTaskAboutShape.UnitTests.pdb
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\bin\Debug\ComplexTaskAboutShape.exe
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\bin\Debug\NSubstitute.dll
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\bin\Debug\ComplexTaskAboutShape.pdb
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\bin\Debug\NSubstitute.xml
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\obj\Debug\ComplexTaskAboutShape.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\obj\Debug\ComplexTaskAboutShape.UnitTests.dll
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\ComplexTaskAboutShape\ComplexTaskAboutShape.UnitTests\obj\Debug\ComplexTaskAboutShape.UnitTests.pdb
