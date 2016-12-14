@@ -4,3 +4,6 @@ E:\Documents\Anna\TestApp\TestApp\bin\Debug\TestApp.exe
 E:\Documents\Anna\TestApp\TestApp\bin\Debug\TestApp.pdb
 E:\Documents\Anna\TestApp\TestApp\obj\Debug\TestApp.exe
 E:\Documents\Anna\TestApp\TestApp\obj\Debug\TestApp.pdb
+C:\Users\user\Source\Repos\lv210\TestApp\TestApp\bin\Debug\TestApp.exe.config
+C:\Users\user\Source\Repos\lv210\TestApp\TestApp\obj\Debug\TestApp.exe
+C:\Users\user\Source\Repos\lv210\TestApp\TestApp\obj\Debug\TestApp.pdb

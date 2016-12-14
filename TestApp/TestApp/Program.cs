@@ -6,16 +6,6 @@ namespace TestApp
     {
         static void Main(string[] args)
         {
-            ContactData contactData = new ContactData (1, "Ukraine", "Lviv", "Zelena", 15, 534);
-
-            //Console.WriteLine(contactData.toString());
-            //Console.ReadKey();
-            //Console.WriteLine(contactData.isUkraine());
-            //Console.ReadKey();
-            //Console.WriteLine(contactData.sideStreet());
-            //Console.ReadKey();
-            //Console.WriteLine(contactData.nearTheKyiv());
-            //Console.ReadKey();
 
             SmartCalc calculator = new SmartCalc();
 
