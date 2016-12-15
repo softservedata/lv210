@@ -51,7 +51,7 @@ namespace ShapesApplication.Tests
             double expected = 4*Math.PI*Math.Pow(sphere.Radius, 3.0);
             double precision = 0.0000001;
             Assert.AreEqual(expected, actual, precision);
-            Assert.AreEqual(expected, actual);
+            
         }
 
         /// <summary>
@@ -66,7 +66,6 @@ namespace ShapesApplication.Tests
             var sphere = new Sphere(new Point3D(0, 0, 0), radius);
             double actual = sphere.CalculateArea();
             double expected = 4*Math.PI*Math.Pow(sphere.Radius, 2.0);
-            Assert.AreEqual(expected, actual);
             double precision = 0.0000001;
             Assert.AreEqual(expected, actual, precision);
         }
