@@ -1,0 +1,11 @@
+C:\Users\user\Source\Repos\lv210\TestApp\SmartCalc.UnitTests\bin\Debug\SmartCalc.UnitTests.dll
+C:\Users\user\Source\Repos\lv210\TestApp\SmartCalc.UnitTests\bin\Debug\SmartCalc.UnitTests.pdb
+C:\Users\user\Source\Repos\lv210\TestApp\SmartCalc.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\user\Source\Repos\lv210\TestApp\SmartCalc.UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\user\Source\Repos\lv210\TestApp\SmartCalc.UnitTests\bin\Debug\TestApp.exe
+C:\Users\user\Source\Repos\lv210\TestApp\SmartCalc.UnitTests\bin\Debug\TestApp.pdb
+C:\Users\user\Source\Repos\lv210\TestApp\SmartCalc.UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\user\Source\Repos\lv210\TestApp\SmartCalc.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\user\Source\Repos\lv210\TestApp\SmartCalc.UnitTests\obj\Debug\SmartCalc.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\user\Source\Repos\lv210\TestApp\SmartCalc.UnitTests\obj\Debug\SmartCalc.UnitTests.dll
+C:\Users\user\Source\Repos\lv210\TestApp\SmartCalc.UnitTests\obj\Debug\SmartCalc.UnitTests.pdb

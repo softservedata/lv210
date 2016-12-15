@@ -3,20 +3,24 @@
 
 namespace TestApp
 {
-    public class SmartCalc
+    public class SmartCalculator
     {
-        public int fibonacciNumber(int number)
+        public int FibonacciNumber(int number)
         {
+            if (number <= 0)
+            {
+                throw new ArgumentException("You can't input number less than 1", "number");
+            }
             if (number == 1 || number == 2)
             {
                 return 1;
             }
             else
             {
-                return fibonacciNumber(number - 2) + fibonacciNumber(number - 1);
+                return FibonacciNumber(number - 2) + FibonacciNumber(number - 1);
             }
         }
-        public int factorial(int number)
+        public int Factorial(int number)
         {
             if (number == 1)
             {
@@ -24,10 +28,10 @@ namespace TestApp
             }
             else
             {
-                return factorial(number - 1) * number;
+                return Factorial(number - 1) * number;
             }
         }
-        public double pow(double x, int k)
+        public double Pow(double x, int k)
         {
             if (k == 0)
             {
@@ -35,10 +39,10 @@ namespace TestApp
             }
             else
             {
-                return pow(x, k - 1) * x;
+                return Pow(x, k - 1) * x;
             }
         }
-        public int maxOfThreeDigits(int a, int b, int c)
+        public double MaxOfThreeNumbers(double a, double b, double c)
         {
             if (a > b && a > c)
             {
@@ -50,9 +54,10 @@ namespace TestApp
             }
             return c;
         }
-        public bool isDigitInRange(int digit, int low, int high)
+        public bool IsNumberInRange(double digit, int low, int high)
         {
-            if(digit>=low && digit<=high){
+            if (digit >= low && digit <= high)
+            {
                 return true;
             }
             return false;
