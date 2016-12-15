@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using FluentValidation.Results;
 
 namespace HierarchyOfGeometricShapes
 {
@@ -25,7 +23,7 @@ namespace HierarchyOfGeometricShapes
             }
             set
             {
-                if (value == _radiusPoint)
+                if (value == CenterPoint)
                 {
                     throw new ArgumentException();
                 }

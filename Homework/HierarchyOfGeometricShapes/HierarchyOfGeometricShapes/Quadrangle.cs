@@ -18,7 +18,6 @@ namespace HierarchyOfGeometricShapes
         private const double Tolerance = 0.001;
 
         public Quadrangle(Point[] points) : base(points) { }
-        
 
         /// <summary>
         /// <para>This method verifies whether created object is valid.</para>
@@ -135,6 +134,5 @@ namespace HierarchyOfGeometricShapes
         }
 
         #endregion
-
     }
 }
