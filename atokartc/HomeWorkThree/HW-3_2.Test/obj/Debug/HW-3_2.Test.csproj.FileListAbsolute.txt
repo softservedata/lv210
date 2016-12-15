@@ -9,3 +9,5 @@ C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\bin\Debug\Microsoft.Vis
 C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\obj\Debug\HW-3_2.Test.csprojResolveAssemblyReference.cache
 C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\obj\Debug\HW-3_2.Test.dll
 C:\Users\Andrii\lv210\atokartc\HomeWorkThree\HW-3_2.Test\obj\Debug\HW-3_2.Test.pdb
+C:\Users\atokartc\Source\Repos\lv210\atokartc\HomeWorkThree\HW-3_2.Test\obj\Debug\HW-3_2.Test.csprojResolveAssemblyReference.cache
+C:\Users\atokartc\Source\Repos\lv210\atokartc\HomeWorkThree\HW-3_2.Test\obj\Debug\HW-3_2.Test.pdb
