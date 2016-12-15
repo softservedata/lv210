@@ -26,8 +26,8 @@ namespace ShapesApplication.Tests
         [TestCase(0.2, 1.5, 10.0)]
         public void CanDrawWithValidDataTest(double x, double y, double radius)
         {
-            var expected = new Circle(new Point2D(x, y), radius);
-            bool actual = expected.CanDraw();
+            var circle = new Circle(new Point2D(x, y), radius);
+            bool actual = circle.CanDraw();
             Assert.IsTrue(actual);
         }
 
