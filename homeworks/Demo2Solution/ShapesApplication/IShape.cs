@@ -6,6 +6,6 @@
 
         double CalculateArea();
 
-        IShape Draw();
+        bool CanDraw();
     }
 }
