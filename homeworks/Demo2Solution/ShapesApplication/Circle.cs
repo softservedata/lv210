@@ -17,12 +17,10 @@ namespace ShapesApplication
             Color = color;
         }
 
-
         public virtual double CalculateArea()
         {
             return Math.PI*(Math.Pow(Radius, 2.0));
         }
-
 
         public IShape Draw()
         {
@@ -32,7 +30,6 @@ namespace ShapesApplication
             }
             return this;
         }
-
 
         public double CalculatePerimeter()
         {
