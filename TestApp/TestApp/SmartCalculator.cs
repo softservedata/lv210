@@ -20,6 +20,7 @@ namespace TestApp
                 return FibonacciNumber(number - 2) + FibonacciNumber(number - 1);
             }
         }
+
         public int Factorial(int number)
         {
             if (number == 1)
@@ -31,6 +32,7 @@ namespace TestApp
                 return Factorial(number - 1) * number;
             }
         }
+
         public double Pow(double x, int k)
         {
             if (k == 0)
@@ -42,6 +44,7 @@ namespace TestApp
                 return Pow(x, k - 1) * x;
             }
         }
+
         public double MaxOfThreeNumbers(double a, double b, double c)
         {
             if (a > b && a > c)
@@ -54,6 +57,7 @@ namespace TestApp
             }
             return c;
         }
+
         public bool IsNumberInRange(double digit, int low, int high)
         {
             if (digit >= low && digit <= high)
