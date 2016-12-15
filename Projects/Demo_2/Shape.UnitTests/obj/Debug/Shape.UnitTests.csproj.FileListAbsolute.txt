@@ -1,0 +1,11 @@
+C:\Users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape.UnitTests\bin\Debug\Shape.UnitTests.dll
+C:\Users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape.UnitTests\bin\Debug\Shape.UnitTests.pdb
+C:\Users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape.UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape.UnitTests\bin\Debug\Shape.exe
+C:\Users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape.UnitTests\bin\Debug\Shape.pdb
+C:\Users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape.UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape.UnitTests\obj\Debug\Shape.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape.UnitTests\obj\Debug\Shape.UnitTests.dll
+C:\Users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape.UnitTests\obj\Debug\Shape.UnitTests.pdb

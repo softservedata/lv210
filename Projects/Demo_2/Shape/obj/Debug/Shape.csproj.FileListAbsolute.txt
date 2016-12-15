@@ -1,0 +1,6 @@
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape\bin\Debug\Shape.exe.config
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape\bin\Debug\Shape.exe
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape\bin\Debug\Shape.pdb
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape\obj\Debug\Shape.csprojResolveAssemblyReference.cache
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape\obj\Debug\Shape.exe
+c:\users\rostyslav.zhalivtsiv\documents\visual studio 2015\Projects\Demo_2\Shape\obj\Debug\Shape.pdb
