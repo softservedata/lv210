@@ -1,0 +1,9 @@
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\Triangle.Test\bin\Debug\Triangle.Test.dll
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\Triangle.Test\bin\Debug\Triangle.Test.pdb
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\Triangle.Test\bin\Debug\Demo2.exe
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\Triangle.Test\bin\Debug\nunit.framework.dll
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\Triangle.Test\bin\Debug\Demo2.pdb
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\Triangle.Test\bin\Debug\nunit.framework.xml
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\Triangle.Test\obj\Debug\ComplexTask.Test.csprojResolveAssemblyReference.cache
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\Triangle.Test\obj\Debug\Triangle.Test.dll
+C:\Users\Rostyslav\Documents\Visual Studio 2015\Projects\Triangle.Test\obj\Debug\Triangle.Test.pdb

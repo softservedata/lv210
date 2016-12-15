@@ -2,7 +2,7 @@
 
 namespace Demo2
 {
-    class Dot : ICloneable
+   public class Dot : ICloneable
     {
         public double x;
         public double y;
@@ -17,10 +17,20 @@ namespace Demo2
             this.x = x;
             this.y = y;
         }
-        //
         public string Show()
         {
             return "(" + x + ", " + y + ")";
+        }
+        public static bool AreDotsEqual(Dot dot1, Dot dot2)
+        {
+            if ((dot1.x == dot2.x) && (dot1.y == dot2.y))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
       
         public object Clone()
