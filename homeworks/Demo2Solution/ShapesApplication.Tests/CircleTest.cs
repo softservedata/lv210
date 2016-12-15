@@ -33,7 +33,7 @@ namespace ShapesApplication.Tests
 
         [TestCase(0.0)]
         [TestCase(10.0)]
-s void CalculatePerimeterTest(double radius)
+        public void CalculatePerimeterTest(double radius)
         {
             var circle = new Circle(new Point2D(1.0, 2.0), radius);
             double expected = Math.PI*circle.Radius*2;
