@@ -3,6 +3,15 @@ using FluentValidation;
 
 namespace HierarchyOfGeometricShapes
 {
+    /// <summary>
+    /// <para>Class QuadrangleValidator is inherited from AbstractValidator class.</para>
+    /// <para>This class is from FluentValidation library.</para>
+    /// <para>It allows to validate class fields using some rules.</para>
+    /// <para>Apart of basic validation, QuadrangleValidator also validates 
+    /// whether three points lay on the same line or whether such sequence of points
+    /// can create a quadrangle.</para>
+    /// </summary>
+
     public class QuadrangleValidator : AbstractValidator<Quadrangle>
     {
         public QuadrangleValidator()
@@ -24,7 +33,7 @@ namespace HierarchyOfGeometricShapes
         {
             if (points.Length < 4)
             {
-                throw new ArgumentException("It is not a quadrangle");
+                return false;
             }
 
             var valueFirst = IsOnTheSameLine(points[0], points[1], points[2]);
@@ -39,7 +48,7 @@ namespace HierarchyOfGeometricShapes
         {
             if (points.Length < 4)
             {
-                throw new ArgumentException("It is not a quadrangle");
+                return false;
             }
 
             var haveCorrectIntersectionAwithB = HaveIntersectionInSetPoint(points[0], points[1], points[1], points[2],
@@ -79,9 +88,9 @@ namespace HierarchyOfGeometricShapes
             }
             else
             {
-                point.X = Convert.ToInt32((coefSecondEquation[1] - coefFirstEquation[1]) /
-                     (coefFirstEquation[0] - coefSecondEquation[0]));
-                point.Y = Convert.ToInt32(coefSecondEquation[0] * point.X + coefSecondEquation[1]);
+                point.X = (int) Math.Ceiling((coefSecondEquation[1] - coefFirstEquation[1]) /
+                                             (coefFirstEquation[0] - coefSecondEquation[0]));
+                point.Y = (int) Math.Ceiling(coefSecondEquation[0] * point.X + coefSecondEquation[1]);
             }
 
             return point;

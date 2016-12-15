@@ -1,5 +1,10 @@
 ﻿namespace HierarchyOfGeometricShapes
 {
+    /// <summary>
+    /// <para>Struct Point has two properties X and Y to display point in Cartesian coordinate system.</para>
+    /// <para>Some standart operators are overloaded.</para>
+    /// </summary>
+
     public struct Point
     {
         public int X { get; set; }

@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Circle.cs" />
+    <Compile Include="CircleValidator.cs" />
     <Compile Include="IShape.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Polygon.cs" />
@@ -54,8 +56,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quadrangle.cs" />
     <Compile Include="QuadrangleValidator.cs" />
-    <Compile Include="Rectangle.cs" />
-    <Compile Include="RectangleValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
