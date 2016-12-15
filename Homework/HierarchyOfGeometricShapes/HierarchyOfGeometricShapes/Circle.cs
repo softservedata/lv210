@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using FluentValidation.Results;
 
 namespace HierarchyOfGeometricShapes
@@ -15,38 +14,30 @@ namespace HierarchyOfGeometricShapes
 
     public class Circle : IShape
     {
+        private Point _radiusPoint;
         public Point CenterPoint { get; private set; }
-        public Point RadiusPoint { get; private set; }
+
+        public Point RadiusPoint
+        {
+            get
+            {
+                return _radiusPoint;
+            }
+            set
+            {
+                if (value == _radiusPoint)
+                {
+                    throw new ArgumentException();
+                }
+
+                _radiusPoint = value;
+            }
+        }
 
         public Circle(Point centerPoint, Point radiusPoint)
         {
             this.CenterPoint = centerPoint;
             this.RadiusPoint = radiusPoint;
-
-            CheckForCorrectness();
-        }
-
-        /// <summary>
-        /// <para>This method verifies whether created object is valid.</para>
-        /// <para>If it is, method will return empty list of errors.</para>
-        /// <para>In other case it returns list with results of validation.</para>
-        /// <para>It provides possibility to learn information about occured errors.</para>
-        /// </summary>
-
-        public IList<ValidationFailure> Validate()
-        {
-            var validator = new CircleValidator();
-            var result = validator.Validate(this);
-
-            return result.Errors;
-        }
-
-        private void CheckForCorrectness()
-        {
-            if (this.Validate().Any())
-            {
-                throw new ArgumentException();
-            }
         }
 
         /// <summary>
