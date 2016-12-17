@@ -1,8 +1,8 @@
 ﻿namespace HW5
 {
-    interface IDeveloper
+    public interface IDeveloper
     {
-        string Tool { get; set; }
+        string Tool { get; }
 
         void Create();
 
