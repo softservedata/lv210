@@ -17,22 +17,19 @@ namespace ShapesApplication
             Color = color;
         }
 
-
         public virtual double CalculateArea()
         {
             return Math.PI*(Math.Pow(Radius, 2.0));
         }
 
-
-        public IShape Draw()
+        public bool CanDraw()
         {
             if (Radius <= 0 || Center == null)
             {
                 throw new ArgumentException("Radius can not be < 0");
             }
-            return this;
+            return true;
         }
-
 
         public double CalculatePerimeter()
         {

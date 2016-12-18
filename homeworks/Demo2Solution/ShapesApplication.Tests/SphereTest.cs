@@ -13,29 +13,29 @@ namespace ShapesApplication.Tests
         /// <param name="radius"></param>
         [TestCase(-1)]
         [TestCase(0)]
-        public void DrawWithInvalidRadiusTest(double radius)
+        public void CanDrawWithInvalidRadiusTest(double radius)
         {
             var sphere = new Sphere(new Point3D(0, 0, 0), radius);
-            Assert.Throws<ArgumentException>(() => sphere.Draw());
+            Assert.Throws<ArgumentException>(() => sphere.CanDraw());
         }
 
         /// <summary>
         /// Check if exceptin is thrown, when calling draw method with null value.
         /// </summary>
         [Test]
-        public void DrawWithInvalidCenterTest()
+        public void CanDrawWithInvalidCenterTest()
         {
             var sphere = new Sphere(null, 1.0);
-            Assert.Throws<ArgumentException>(() => sphere.Draw());
+            Assert.Throws<ArgumentException>(() => sphere.CanDraw());
         }
 
         [TestCase(0.1, 1.0, 0.8, 0.1)]
         [TestCase(0.1, 1.0, 0.8, 10.0)]
-        public void DrawWithValidDataTest(double x, double y, double z, double radius)
+        public void CanDrawWithValidDataTest(double x, double y, double z, double radius)
         {
-            var expected = new Sphere(new Point3D(x, y, z), radius);
-            IShape actual = expected.Draw();
-            Assert.AreEqual(expected, actual);
+            var sphere = new Sphere(new Point3D(x, y, z), radius);
+            bool actual = sphere.CanDraw();
+            Assert.IsTrue(actual);
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace ShapesApplication.Tests
             double expected = 4*Math.PI*Math.Pow(sphere.Radius, 3.0);
             double precision = 0.0000001;
             Assert.AreEqual(expected, actual, precision);
-            Assert.AreEqual(expected, actual);
+            
         }
 
         /// <summary>
@@ -66,7 +66,6 @@ namespace ShapesApplication.Tests
             var sphere = new Sphere(new Point3D(0, 0, 0), radius);
             double actual = sphere.CalculateArea();
             double expected = 4*Math.PI*Math.Pow(sphere.Radius, 2.0);
-            Assert.AreEqual(expected, actual);
             double precision = 0.0000001;
             Assert.AreEqual(expected, actual, precision);
         }

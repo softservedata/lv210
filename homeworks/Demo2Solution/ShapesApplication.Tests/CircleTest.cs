@@ -9,26 +9,26 @@ namespace ShapesApplication.Tests
     {
         [TestCase(-1)]
         [TestCase(0)]
-        public void DrawWithInvalidRadiusTest(double radius)
+        public void CanDrawWithInvalidRadiusTest(double radius)
         {
             var circle = new Circle(new Point2D(0, 0), radius);
-            Assert.Throws<ArgumentException>(() => circle.Draw());
+            Assert.Throws<ArgumentException>(() => circle.CanDraw());
         }
 
         [Test]
-        public void DrawWithInvalidCenterTest()
+        public void CanDrawWithInvalidCenterTest()
         {
             var circle = new Circle(null, 1.0);
-            Assert.Throws<ArgumentException>(() => circle.Draw());
+            Assert.Throws<ArgumentException>(() => circle.CanDraw());
         }
 
         [TestCase(0.1, 1.0, 0.1)]
         [TestCase(0.2, 1.5, 10.0)]
-        public void DrawWithValidDataTest(double x, double y, double radius)
+        public void CanDrawWithValidDataTest(double x, double y, double radius)
         {
-            var expected = new Circle(new Point2D(x, y), radius);
-            IShape actual = expected.Draw();
-            Assert.AreEqual(expected, actual);
+            var circle = new Circle(new Point2D(x, y), radius);
+            bool actual = circle.CanDraw();
+            Assert.IsTrue(actual);
         }
 
         [TestCase(0.0)]
