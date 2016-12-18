@@ -17,6 +17,7 @@ namespace Task3
 
             Console.WriteLine("Please enter id:");
             uint id = uint.Parse(Console.ReadLine());
+            
             if (!dictionary.Contains(id))
             {
                 Console.WriteLine("Person with such id can't be found");
