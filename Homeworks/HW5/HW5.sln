@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW5", "HW5\HW5.csproj", "{A824A91F-808D-4352-8EF2-23AD30CAAD94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW5_1", "HW5\HW5_1.csproj", "{A824A91F-808D-4352-8EF2-23AD30CAAD94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW5_2", "HW5_2\HW5_2.csproj", "{84E90F47-237B-471F-8ACC-5B08C2852732}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A824A91F-808D-4352-8EF2-23AD30CAAD94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A824A91F-808D-4352-8EF2-23AD30CAAD94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A824A91F-808D-4352-8EF2-23AD30CAAD94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84E90F47-237B-471F-8ACC-5B08C2852732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84E90F47-237B-471F-8ACC-5B08C2852732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84E90F47-237B-471F-8ACC-5B08C2852732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84E90F47-237B-471F-8ACC-5B08C2852732}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

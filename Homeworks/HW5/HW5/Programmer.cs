@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HW5
+namespace HW5_1
 {
     class Programmer : IDeveloper
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace HW5
+namespace HW5_1
 {
     class Program
     {
@@ -25,17 +25,10 @@ namespace HW5
             DevelopersList.Add(Programmer2);
             DevelopersList.Add(Programmer3);
 
-            foreach (var Builder in DevelopersList)
+            foreach (var IDeveloper in DevelopersList)
             {
-                Builder.Create();   
+                IDeveloper.Create();   
             }
-
-            foreach (var Programmer in DevelopersList)
-            {
-                Programmer.Create();
-            }
-
-
             Console.ReadLine();
         }
     }

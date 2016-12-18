@@ -1,4 +1,4 @@
-﻿namespace HW5
+﻿namespace HW5_1
 {
     public interface IDeveloper
     {
