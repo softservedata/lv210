@@ -1,6 +1,0 @@
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork5\WorkWithInterface\WorkWithInterface\bin\Debug\WorkWithInterface.exe.config
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork5\WorkWithInterface\WorkWithInterface\bin\Debug\WorkWithInterface.exe
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork5\WorkWithInterface\WorkWithInterface\bin\Debug\WorkWithInterface.pdb
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork5\WorkWithInterface\WorkWithInterface\obj\Debug\WorkWithInterface.csprojResolveAssemblyReference.cache
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork5\WorkWithInterface\WorkWithInterface\obj\Debug\WorkWithInterface.exe
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork5\WorkWithInterface\WorkWithInterface\obj\Debug\WorkWithInterface.pdb
