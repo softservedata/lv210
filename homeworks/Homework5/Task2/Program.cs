@@ -10,9 +10,6 @@ namespace Task2
     class Program
     {
         private static List<int> integersList = new List<int>();
-     
-        //private static ArrayList arrayList=new ArrayList();
-        //private SortedList<int,int> sortedIntegerList=new SortedList<int, int>();
         
         public static void CreateList(string input)
         {
