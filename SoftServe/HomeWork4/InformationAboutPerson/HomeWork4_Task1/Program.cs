@@ -25,7 +25,7 @@ namespace HomeWork4_Task1
         
         static void Main(string[] args)
         {
-            var personCount = 2;
+            var personCount = 5;
             var persons = new List<Person>();
 
             try
