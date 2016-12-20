@@ -17,12 +17,12 @@ namespace DeveloperTask
         }
         public string Create()
         {
-            return $"Programmer {Name} {Surname} is created.";
+            return "";//$"Programmer {Name} {Surname} is created.";
         }
 
         public string Destroy()
         {
-            var currentProgrammerData = $"Programmer {Name} {Surname} is destroyed.";
+            var currentProgrammerData = " ";//$"Programmer {Name} {Surname} is destroyed.";
             this.Name = null;
             this.Surname = null;
             this.Tool = null;

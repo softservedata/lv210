@@ -15,16 +15,17 @@
         }
         public string Create()
         {
-            return $"Builder {Name} {Surname} is created.";
+            return "";//$"Builder {Name} {Surname} is created.";
         }
 
         public string Destroy()
         {
-            var currentProgrammerData = $"Builder {Name} {Surname} is destroyed.";
+            var currentProgrammerData = "";//$"Builder {Name} {Surname} is destroyed.";
             this.Name = null;
             this.Surname = null;
             this.Tool = null;
             this.Salary = double.NaN;
+
             return currentProgrammerData;
         }
     }
