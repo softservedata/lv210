@@ -1,0 +1,6 @@
+D:\Documents\Моє\AQC\C#Projects\CollectionProject\CollectionProject\bin\Debug\CollectionProject.exe.config
+D:\Documents\Моє\AQC\C#Projects\CollectionProject\CollectionProject\bin\Debug\CollectionProject.exe
+D:\Documents\Моє\AQC\C#Projects\CollectionProject\CollectionProject\bin\Debug\CollectionProject.pdb
+D:\Documents\Моє\AQC\C#Projects\CollectionProject\CollectionProject\obj\Debug\CollectionProject.exe
+D:\Documents\Моє\AQC\C#Projects\CollectionProject\CollectionProject\obj\Debug\CollectionProject.pdb
+D:\Documents\Моє\AQC\C#Projects\CollectionProject\CollectionProject\obj\Debug\CollectionProject.csprojResolveAssemblyReference.cache

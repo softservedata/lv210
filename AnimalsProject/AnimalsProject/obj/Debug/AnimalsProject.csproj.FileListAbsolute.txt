@@ -1,0 +1,6 @@
+D:\Documents\Моє\AQC\C#Projects\AnimalsProject\AnimalsProject\bin\Debug\AnimalsProject.exe.config
+D:\Documents\Моє\AQC\C#Projects\AnimalsProject\AnimalsProject\bin\Debug\AnimalsProject.exe
+D:\Documents\Моє\AQC\C#Projects\AnimalsProject\AnimalsProject\bin\Debug\AnimalsProject.pdb
+D:\Documents\Моє\AQC\C#Projects\AnimalsProject\AnimalsProject\obj\Debug\AnimalsProject.csprojResolveAssemblyReference.cache
+D:\Documents\Моє\AQC\C#Projects\AnimalsProject\AnimalsProject\obj\Debug\AnimalsProject.exe
+D:\Documents\Моє\AQC\C#Projects\AnimalsProject\AnimalsProject\obj\Debug\AnimalsProject.pdb
