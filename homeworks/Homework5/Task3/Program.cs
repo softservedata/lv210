@@ -2,18 +2,29 @@
 using System.Collections;
 using System.Collections.Generic;
 
-
 namespace Task3
 {
-    class Program
+    public class Program
     {
+        private static Dictionary<uint, string> ConsoleInput(int counOfElements)
+        {
+            Dictionary<uint, string> dictionary = new Dictionary<uint, string>();
+
+            Console.WriteLine("Input id and name.");
+            string[] input;
+
+            for (int i = 0; i < counOfElements; i++)
+            {
+                input = Console.ReadLine().Split(new char[] {' ', ','});
+                dictionary.Add(uint.Parse(input[0]), input[1]);
+            }
+
+            return dictionary;
+        }
+
         static void Main(string[] args)
         {
-            IDictionary dictionary = new Dictionary<uint, string>();
-
-            dictionary.Add(1u, "Roman");
-            dictionary.Add(2u, "Andrii");
-            dictionary.Add(3u, "Ihor");
+            IDictionary dictionary = ConsoleInput(7);
 
             Console.WriteLine("Please enter id:");
             uint id = uint.Parse(Console.ReadLine());

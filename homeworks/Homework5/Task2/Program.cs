@@ -1,30 +1,30 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task2
 {
-    class Program
+    public class Program
     {
-        private static List<int> integersList = new List<int>();
-        //private static ArrayList arrayList=new ArrayList();
-        //private SortedList<int,int> sortedIntegerList=new SortedList<int, int>();
-        public static void CreateList(string input)
+        //Converts input string to array of integers.
+        public static int[] ConvertStringToArray(string input)
         {
             char[] separators = {' ', ',', ';', '.'};
             string[] inputList = input.Split(separators);
+
+            int[] convertedInput = new int[inputList.Length];
+
             for (int i = 0; i < inputList.Length; i++)
             {
-                integersList.Add(Convert.ToInt32(inputList[i]));
+                convertedInput[i] = Convert.ToInt32(inputList[i]);
             }
+            return convertedInput;
         }
 
-        public static void PrintValues<T>(IList<T> list)
+
+        public static void PrintValues(IEnumerable list)
         {
-            foreach (T item in list)
+            foreach (var item in list)
             {
                 Console.Write(" {0}", item);
             }
@@ -33,25 +33,92 @@ namespace Task2
         public static void TestList()
         {
             string input = Console.ReadLine();
-            CreateList(input);
+            List<int> myColl = new List<int>((ConvertStringToArray(input)));
             Console.WriteLine("Integers list");
-            PrintValues(integersList);
+            PrintValues(myColl);
 
             Console.WriteLine("\nRemove values greater than");
             int valueToRemove = Convert.ToInt32(Console.ReadLine());
-            integersList.RemoveAll(value => value > valueToRemove);
-            PrintValues(integersList);
+            myColl.RemoveAll(value => value > valueToRemove);
+            PrintValues(myColl);
 
             Console.WriteLine("\nInserting values 1,-3,-4 to positions 2,8,5:");
-            integersList.Insert(2, 1);
-            integersList.Insert(8, -5);
-            integersList.Insert(5, -4);
-            PrintValues(integersList);
+            myColl.Insert(2, 1);
+            myColl.Insert(8, -3);
+            myColl.Insert(5, -4);
+            PrintValues(myColl);
+
+            Console.WriteLine("\nSorted list:");
+            myColl.Sort();
+            PrintValues(myColl);
         }
-        
+
+        public static void TestArrayList()
+        {
+            string input = Console.ReadLine();
+            ArrayList myColl = new ArrayList((ConvertStringToArray(input)));
+            Console.WriteLine("Integers array list");
+            PrintValues(myColl);
+
+            Console.WriteLine("\nAll positions of -10:");
+            PrintValues(ListUtils.FindPositions(myColl, -10));
+
+            Console.WriteLine("\nRemove values greater than");
+            int valueToRemove = Convert.ToInt32(Console.ReadLine());
+            ListUtils.RemoveAllFromArrayList(myColl, valueToRemove);
+            PrintValues(myColl);
+
+            Console.WriteLine("\nInserting values 1,-3,-4 to positions 2,8,5:");
+            myColl.Insert(2, 1);
+            myColl.Insert(8, -3);
+            myColl.Insert(5, -4);
+            PrintValues(myColl);
+
+            Console.WriteLine("\nSorted list:");
+            myColl.Sort();
+            PrintValues(myColl);
+        }
+
+        public static void TestSortedList()
+        {
+            //Reading string from console
+            string input = Console.ReadLine();
+
+            //Converting string to array of integers
+            int[] inputArray = (ConvertStringToArray(input));
+
+            SortedList myColl = new SortedList();
+
+            //Adding values to sorted list
+            for (int i = 0; i < inputArray.Length; i++)
+            {
+                myColl.Add(i, inputArray[i]);
+            }
+
+            Console.WriteLine("Sorted list");
+            PrintValues(myColl.Values);
+
+            Console.WriteLine("\nAll positions of -10:");
+            PrintValues(ListUtils.FindPositions(myColl, -10));
+
+            Console.WriteLine("\nInserting values 1,-3,-4 to positions 2,8,5:");
+            myColl.SetByIndex(2, 1);
+            myColl.SetByIndex(8, -3);
+            myColl.SetByIndex(5, -4);
+            PrintValues(myColl.Values);
+
+            Console.WriteLine("\nRemove values greater than");
+            int valueToRemove = Convert.ToInt32(Console.ReadLine());
+            ListUtils.RemoveAllFromSortedList(myColl, valueToRemove);
+            PrintValues(myColl.Values);
+        }
+
         static void Main(string[] args)
         {
+            Console.WriteLine("Input list of integer numbers and press <enter>");
             TestList();
+            //TestArrayList();
+            //TestSortedList();
             Console.ReadKey();
         }
     }
