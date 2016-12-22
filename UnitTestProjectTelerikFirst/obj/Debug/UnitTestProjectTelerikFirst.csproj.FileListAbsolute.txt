@@ -1,0 +1,13 @@
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\bin\Debug\UnitTestProjectTelerikFirst.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\bin\Debug\UnitTestProjectTelerikFirst.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\bin\Debug\ArtOfTest.WebAii.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\bin\Debug\nunit.framework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\bin\Debug\Telerik.TestStudio.Core.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\bin\Debug\Telerik.TestingFramework.Json.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\bin\Debug\Telerik.TestingFramework.Hosts.Common.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\bin\Debug\ArtOfTest.WebAii.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\bin\Debug\nunit.framework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\obj\Debug\UnitTestProjectTelerikFirst.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\UnitTestProjectTelerikFirst\obj\Debug\UnitTestProjectTelerikFirst.pdb
