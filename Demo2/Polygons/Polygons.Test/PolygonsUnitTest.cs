@@ -121,7 +121,7 @@ namespace Polygons.Test
             Assert.AreEqual(expectedResult, actualResult, precision);
         }
 
-        /// <summary>
+        /// <summary> 
         /// Method check calculated area of pentagon
         /// </summary>
         /// <param name="sideLength"></param>

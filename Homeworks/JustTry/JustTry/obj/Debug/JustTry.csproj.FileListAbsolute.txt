@@ -1,0 +1,6 @@
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\JustTry\JustTry\bin\Debug\JustTry.exe.config
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\JustTry\JustTry\bin\Debug\JustTry.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\JustTry\JustTry\bin\Debug\JustTry.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\JustTry\JustTry\obj\Debug\JustTry.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\JustTry\JustTry\obj\Debug\JustTry.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\JustTry\JustTry\obj\Debug\JustTry.pdb
