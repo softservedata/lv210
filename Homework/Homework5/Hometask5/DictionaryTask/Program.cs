@@ -7,7 +7,7 @@ namespace DictionaryTask
     {
         static List<string> ReadPerson()
         {
-            List<string> listOfData = new List<string>();
+            var listOfData = new List<string>();
 
             Console.WriteLine("Input person's data:\n");
             Console.Write("ID: ");
@@ -44,7 +44,7 @@ namespace DictionaryTask
 
         static Dictionary<uint, string> ReadAllPersons(int count)
         {
-            Dictionary < uint, string> person = new Dictionary<uint, string>();
+            var person = new Dictionary<uint, string>();
 
             for (var i = 0; i < count; i++)
             {
@@ -67,7 +67,7 @@ namespace DictionaryTask
             try
             {
                 const int count = 7;
-                Dictionary<uint, string> person = ReadAllPersons(count);
+                var person = ReadAllPersons(count);
 
                 FindPerson(person);
             }
