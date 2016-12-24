@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace ListTask
 {
-    class Program
+    internal class Program
     {
-        static void TestListOrArrayList<T>(string[] inputedData, ref T listOfIntegers) where T : IList
+        private static void TestListOrArrayList<T>(string[] inputedData, ref T listOfIntegers) where T : IList
         {
             foreach (var value in inputedData)
             {
@@ -28,7 +28,7 @@ namespace ListTask
             PrintList(listOfIntegers);
         }
 
-        static void TestSortedList(string[] inputedData, ref SortedList listOfIntegers)
+        private static void TestSortedList(string[] inputedData, ref SortedList listOfIntegers)
         {
             for (var i = 0; i < inputedData.Length; i++)
             {
@@ -56,7 +56,7 @@ namespace ListTask
         {
             if (listOfElements.Count == 0)
             {
-                Console.WriteLine("\nList is empty:");
+                Console.WriteLine("\nList is empty!");
             }
 
             foreach (var element in listOfElements)
@@ -133,7 +133,7 @@ namespace ListTask
             listOfIntegers.SetByIndex(position, element);
         }
 
-        private static void Swap(ref SortedList listOfIntegers, int i, int j)
+        private static void Swap(ref SortedList listOfIntegers, int j)
         {
             var elementJ = (int)listOfIntegers.GetByIndex(j);
             var elementJPlusOne = (int)listOfIntegers.GetByIndex(j + 1);
@@ -158,14 +158,14 @@ namespace ListTask
         private static void SortByValues(ref SortedList listOfIntegers)
         {
             var wasSwapped = true;
-            for (var i = 1; (i <= listOfIntegers.Count) && wasSwapped; i++)
+            for (var i = 1; (i < listOfIntegers.Count) && wasSwapped; i++)
             {
                 wasSwapped = false;
                 for (var j = 0; j < (listOfIntegers.Count - i); ++j)
                 {
                     if ((int)listOfIntegers.GetByIndex(j) > (int)listOfIntegers.GetByIndex(j + 1))
                     {
-                        Swap(ref listOfIntegers, j, j + 1);
+                        Swap(ref listOfIntegers, j + 1);
                         wasSwapped = true;
                     }
                 }
@@ -189,37 +189,53 @@ namespace ListTask
 
         #endregion
 
+        #region RunListsFunction
 
-
-        static void Main(string[] args)
+        private static void RunList(string[] arrayOfStringNumbers)
         {
-            Console.WriteLine("Please, input 10 integer numbers:");
+            Console.WriteLine("\n\n\nTest List: ");
+            var listOfIntegers = new List<int>();
+            TestListOrArrayList(arrayOfStringNumbers, ref listOfIntegers);
+            listOfIntegers.Sort();
+            Console.WriteLine("\nSorted List: ");
+            PrintList(listOfIntegers);
+        }
+
+        private static void RunArrayList(string[] arrayOfStringNumbers)
+        {
+            Console.WriteLine("\n\n\nTest ArrayList: \n");
+            var arrayListOfIntegers = new ArrayList();
+            TestListOrArrayList(arrayOfStringNumbers, ref arrayListOfIntegers);
+            arrayListOfIntegers.Sort();
+            Console.WriteLine("\nSorted ArrayList: ");
+            PrintList(arrayListOfIntegers);
+        }
+
+        private static void RunSortedList(string[] arrayOfStringNumbers)
+        {
+            Console.WriteLine("\n\n\nTest SortedList: \n");
+            var sortedListOfIntegers = new SortedList();
+            TestSortedList(arrayOfStringNumbers, ref sortedListOfIntegers);
+            Console.WriteLine("\nSortedList: ");
+            SortByValues(ref sortedListOfIntegers);
+            PrintSortedList(sortedListOfIntegers);
+        }
+
+        #endregion
+
+
+        private static void Main()
+        {
+            const int count = 10;
+            Console.WriteLine($"Please, input {count} integer numbers:");
             var readedData = Console.ReadLine();
             var arrayOfStringNumbers = readedData?.Split(' ');
 
             try
             {
-                Console.WriteLine("\n\n\nTest List: ");
-                var listOfIntegers = new List<int>();
-                TestListOrArrayList(arrayOfStringNumbers, ref listOfIntegers);
-                listOfIntegers.Sort();
-                Console.WriteLine("\nSorted List: ");
-                PrintList(listOfIntegers);
-
-                Console.WriteLine("\n\n\nTest ArrayList: \n");
-                var arrayListOfIntegers = new ArrayList();
-                TestListOrArrayList(arrayOfStringNumbers, ref arrayListOfIntegers);
-                arrayListOfIntegers.Sort();
-                Console.WriteLine("\nSorted ArrayList: ");
-                PrintList(arrayListOfIntegers);
-
-                Console.WriteLine("\n\n\nTest SortedList: \n");
-                var sortedListOfIntegers = new SortedList();
-                TestSortedList(arrayOfStringNumbers, ref sortedListOfIntegers);
-                Console.WriteLine("\nSortedList: ");
-                SortByValues(ref sortedListOfIntegers);
-                PrintSortedList(sortedListOfIntegers);
-
+                RunList(arrayOfStringNumbers);
+                RunArrayList(arrayOfStringNumbers);
+                RunSortedList(arrayOfStringNumbers);
             }
             catch (Exception ex)
             {
