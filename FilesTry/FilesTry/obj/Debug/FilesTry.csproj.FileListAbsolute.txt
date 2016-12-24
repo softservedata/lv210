@@ -1,0 +1,6 @@
+C:\Users\Марія Сергіївна\Source\Repos\lv210\FilesTry\FilesTry\bin\Debug\FilesTry.exe.config
+C:\Users\Марія Сергіївна\Source\Repos\lv210\FilesTry\FilesTry\bin\Debug\FilesTry.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\FilesTry\FilesTry\bin\Debug\FilesTry.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\FilesTry\FilesTry\obj\Debug\FilesTry.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\FilesTry\FilesTry\obj\Debug\FilesTry.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\FilesTry\FilesTry\obj\Debug\FilesTry.pdb
