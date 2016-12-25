@@ -1,0 +1,11 @@
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\bin\Debug\ExceptionsTast.UnitTest.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\bin\Debug\ExceptionsTast.UnitTest.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\bin\Debug\ExceptionsTask.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\bin\Debug\nunit.framework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\bin\Debug\ExceptionsTask.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\bin\Debug\nunit.framework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\obj\Debug\ExceptionsTast.UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\obj\Debug\ExceptionsTast.UnitTest.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\obj\Debug\ExceptionsTast.UnitTest.pdb
