@@ -1,0 +1,11 @@
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\Dictionary.UnitTest.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\Dictionary.UnitTest.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\DictionaryTask.exe
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\nunit.framework.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\DictionaryTask.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\nunit.framework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\obj\Debug\Dictionary.UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\obj\Debug\Dictionary.UnitTest.dll
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\obj\Debug\Dictionary.UnitTest.pdb
