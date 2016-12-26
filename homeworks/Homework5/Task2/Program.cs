@@ -13,11 +13,18 @@ namespace Task2
             string[] inputList = input.Split(separators);
 
             int[] convertedInput = new int[inputList.Length];
-
-            for (int i = 0; i < inputList.Length; i++)
+            try
             {
-                convertedInput[i] = Convert.ToInt32(inputList[i]);
+                for (int i = 0; i < inputList.Length; i++)
+                {
+                    convertedInput[i] = Convert.ToInt32(inputList[i]);
+                }
             }
+            catch (FormatException fex)
+            {
+                Console.WriteLine("Can not convert to integer");
+            }
+
             return convertedInput;
         }
 
@@ -43,9 +50,17 @@ namespace Task2
             PrintValues(myColl);
 
             Console.WriteLine("\nInserting values 1,-3,-4 to positions 2,8,5:");
-            myColl.Insert(2, 1);
-            myColl.Insert(8, -3);
-            myColl.Insert(5, -4);
+            try
+            {
+                myColl.Insert(2, 1);
+                myColl.Insert(8, -3);
+                myColl.Insert(5, -4);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Index of element is out of range");
+            }
+
             PrintValues(myColl);
 
             Console.WriteLine("\nSorted list:");
@@ -61,17 +76,24 @@ namespace Task2
             PrintValues(myColl);
 
             Console.WriteLine("\nAll positions of -10:");
-            PrintValues(ListUtils.FindPositions(myColl, -10));
+            PrintValues(ArrayListUtils.FindPositions(myColl, -10));
 
             Console.WriteLine("\nRemove values greater than");
             int valueToRemove = Convert.ToInt32(Console.ReadLine());
-            ListUtils.RemoveAllFromArrayList(myColl, valueToRemove);
+            ArrayListUtils.RemoveAllGreaterThan(myColl, valueToRemove);
             PrintValues(myColl);
 
             Console.WriteLine("\nInserting values 1,-3,-4 to positions 2,8,5:");
-            myColl.Insert(2, 1);
-            myColl.Insert(8, -3);
-            myColl.Insert(5, -4);
+            try
+            {
+                myColl.Insert(2, 1);
+                myColl.Insert(8, -3);
+                myColl.Insert(5, -4);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("Index of element is out of range");
+            }
             PrintValues(myColl);
 
             Console.WriteLine("\nSorted list:");
@@ -79,7 +101,7 @@ namespace Task2
             PrintValues(myColl);
         }
 
-        public static void TestSortedList()
+        /*public static void TestSortedList()
         {
             //Reading string from console
             string input = Console.ReadLine();
@@ -109,15 +131,15 @@ namespace Task2
 
             Console.WriteLine("\nRemove values greater than");
             int valueToRemove = Convert.ToInt32(Console.ReadLine());
-            ListUtils.RemoveAllFromSortedList(myColl, valueToRemove);
+            ListUtils.RemoveAllGreaterThan(myColl, valueToRemove);
             PrintValues(myColl.Values);
-        }
+        }*/
 
         static void Main(string[] args)
         {
             Console.WriteLine("Input list of integer numbers and press <enter>");
-            TestList();
-            //TestArrayList();
+            //TestList();
+            TestArrayList();
             //TestSortedList();
             Console.ReadKey();
         }
