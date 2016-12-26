@@ -85,7 +85,6 @@ namespace Dictionary
             }
         }
 
-
         /// <summary>
         /// Search name of person by its ID
         /// </summary>

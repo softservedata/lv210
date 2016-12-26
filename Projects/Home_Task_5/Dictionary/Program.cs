@@ -17,7 +17,7 @@ namespace Dictionary
         static void Main(string[] args)
         {
             Dictionary<uint, string> persons = new Dictionary<uint, string>();
-            int numberOfPersons = 2;
+            int numberOfPersons = 7;
 
             try
             {
