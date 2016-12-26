@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CollectionsTask
 {
-    class SortedListOperations
+    public class SortedListOperations
     {
         public void PrintList(IEnumerable printList)
         {
@@ -50,6 +50,17 @@ namespace CollectionsTask
 
             Console.Write("SortedList with inserted elements: ");
             PrintList(sortedList);
+        }
+
+        public SortedList FromArrayToSortedListData(int[] valuesArray)
+        {
+            SortedList sortedList = new SortedList();
+
+            for (int i = 0; i < valuesArray.Length; i++)
+            {
+                sortedList[i] = valuesArray[i];
+            }
+            return sortedList;
         }
     }
 }

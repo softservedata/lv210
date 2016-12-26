@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace CollectionsTask
 {
-    class ListOperations
+    public class ListOperations
     {
         public void PrintList(IEnumerable printList)
         {
@@ -51,6 +51,17 @@ namespace CollectionsTask
 
             Console.Write("List with inserted elements: ");
             PrintList(list);
+        }
+
+        public List<int> FromArrayToListData(int[] valuesArray)
+        {
+            List<int> list = new List<int>();
+
+            foreach (int value in valuesArray)
+            {
+                list.Add(value);
+            }
+            return list;
         }
     }
 }

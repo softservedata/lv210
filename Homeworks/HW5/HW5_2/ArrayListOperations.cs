@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace CollectionsTask
 {
-    class ArrayListOperations
+    public class ArrayListOperations
     {
         public void PrintList(IEnumerable printList)
         {
@@ -50,6 +50,17 @@ namespace CollectionsTask
 
             Console.Write("ArrayList with inserted elements: ");
             PrintList(arrayList);
+        }
+
+        public ArrayList FromArrayToArrayListData(int[] valuesArray)
+        {
+            ArrayList arrayList = new ArrayList();
+
+            for (int i = 0; i < valuesArray.Length; i++)
+            {
+                arrayList[i] = valuesArray[i];
+            }
+            return arrayList;
         }
     }
 }
