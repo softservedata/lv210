@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
 
@@ -12,6 +13,7 @@ namespace WorkWithFile.UnitTests
         {
             new object[]
             {
+                //Path.Combine(Directory.GetCurrentDirectory(), "phones.txt")
                 @"D:\Курси\c_sharp hometasks\Hometask6\WorkWithFile.UnitTests\phones.txt",
                 new Dictionary<string, string>
                 {
