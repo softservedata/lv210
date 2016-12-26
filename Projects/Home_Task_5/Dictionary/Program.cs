@@ -44,7 +44,7 @@ namespace Dictionary
             PersonUtility.Display(persons);
 
             Console.WriteLine("\n----Find Person in List----");
-            Console.WriteLine(PersonUtility.GetValueByID(persons));
+            Console.WriteLine(PersonUtility.GetValueByID(persons, PersonUtility.InputId()));
         }
     }
 }

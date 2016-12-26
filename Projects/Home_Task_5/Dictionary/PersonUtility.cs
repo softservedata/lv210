@@ -91,14 +91,14 @@ namespace Dictionary
         /// </summary>
         /// <param name="dictionary">Collections in which contains persons</param>
         /// <returns>If ID matches returns name of person</returns>
-        public static string GetValueByID(Dictionary<uint, string> dictionary)
+        public static string GetValueByID(Dictionary<uint, string> dictionary, string idRead)
         {
-            uint id;
-            UInt32.TryParse(InputId(), out id);
-
             string value;
-            if (dictionary.TryGetValue(id, out value))
-                return value;
+            if (IsUnsignedInteger(idRead))
+            {
+                if (dictionary.TryGetValue(uint.Parse(idRead), out value))
+                    return value;
+            }
 
             return "Fail! Can't find this ID.";
         }
