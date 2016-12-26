@@ -1,5 +1,0 @@
-C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\HW5\bin\Debug\HW5.exe.config
-C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\HW5\bin\Debug\HW5.exe
-C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\HW5\bin\Debug\HW5.pdb
-C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\HW5\obj\Debug\HW5.exe
-C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\HW5\obj\Debug\HW5.pdb

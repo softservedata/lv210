@@ -1,5 +1,0 @@
-C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\DictionaryTask\bin\Debug\DictionaryTask.exe.config
-C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\DictionaryTask\bin\Debug\DictionaryTask.exe
-C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\DictionaryTask\bin\Debug\DictionaryTask.pdb
-C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\DictionaryTask\obj\Debug\DictionaryTask.exe
-C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\DictionaryTask\obj\Debug\DictionaryTask.pdb
