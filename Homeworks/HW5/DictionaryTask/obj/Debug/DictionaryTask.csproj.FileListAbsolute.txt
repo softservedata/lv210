@@ -3,3 +3,4 @@ C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictiona
 C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\DictionaryTask\bin\Debug\DictionaryTask.pdb
 C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\DictionaryTask\obj\Debug\DictionaryTask.exe
 C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\DictionaryTask\obj\Debug\DictionaryTask.pdb
+C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\DictionaryTask\obj\Debug\DictionaryTask.csprojResolveAssemblyReference.cache

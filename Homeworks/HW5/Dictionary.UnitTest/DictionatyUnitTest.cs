@@ -26,11 +26,10 @@ namespace Dictionary.UnitTest
         /// Method checks returned <int> data when inputed data is correct:
         /// </summary>
         /// <param name="testData"></param>
-        [TestCase("8")]
-        public void ParseAtempt_ReturnIntData_WhenInputedDataIsValid(string testData)
+        [TestCase("8", 8)]
+        public void ParseAtempt_ReturnIntData_WhenInputedDataIsValid(string testData, int expectedResult)
         {
-            int expectedResult = Program.ParseAtempt(testData);
-            int actualResult = 8;
+            int actualResult = Program.ParseAtempt(testData);
 
             Assert.AreEqual(expectedResult, actualResult);
         }

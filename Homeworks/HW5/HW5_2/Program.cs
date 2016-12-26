@@ -2,13 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CollectionsTask
 {
     public class Program
     {
+        /// <summary>
+        /// Method for parsing inputed data in to <int> data type
+        /// </summary>
+        /// <param name="inputedData"></param>
+        /// <param name="numberCount"></param>
+        /// <returns>Array of integers</returns>
         static int[] ParseAtempt(string inputedData, int numberCount)
         {
             Console.Write("Input 10 <int> values devided by space: ");
@@ -19,6 +23,9 @@ namespace CollectionsTask
             return valuesArray;
         }
 
+        /// <summary>
+        /// Work with list and operations related to it
+        /// </summary>
         static void TestList()
         {
             int numberCount = 10;
@@ -31,6 +38,9 @@ namespace CollectionsTask
             testList.InsertElements(valuesList);
         }
 
+        /// <summary>
+        /// Work with arraylist and operations related to it
+        /// </summary>
         static void TestArrayList()
         {
             int numberCount = 10;
@@ -43,6 +53,9 @@ namespace CollectionsTask
             testArrayList.InsertElements(valuesArrayList);
         }
 
+        /// <summary>
+        /// Work with sorted list and operations related to it
+        /// </summary>
         static void TestSortedList()
         {
             int numberCount = 10;
@@ -54,6 +67,7 @@ namespace CollectionsTask
             testSortedList.RemoveElement(valuesSortedList, 20);
             testSortedList.InsertElements(valuesSortedList);
         }
+
         static void Main(string[] args)
         {
             TestList();

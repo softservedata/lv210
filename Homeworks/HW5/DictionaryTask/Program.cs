@@ -5,6 +5,12 @@ namespace DictionaryTask
 {
     public class Program
     {
+        /// <summary>
+        /// Method for parsing inputed data in to <int> data type
+        /// </summary>
+        /// <param name="inputedData"></param>
+        /// <returns>Read variable when it <int> and throw FormatException
+        /// when inputed data is invalid</returns>
         public static int ParseAtempt(string inputedData)
         {
             int readVariable;
@@ -19,6 +25,10 @@ namespace DictionaryTask
             }
         }
 
+        /// <summary>
+        /// Method create a dictionary and input data into it
+        /// </summary>
+        /// <returns>Dictionary with valid data</returns>
         private static Dictionary<uint, string> InputDictionaryValues()
         {
             Dictionary<uint, string> personsDictionary = new Dictionary<uint, string>();
@@ -37,6 +47,10 @@ namespace DictionaryTask
             return personsDictionary;
         }
 
+        /// <summary>
+        /// Method for searching value in dictionary by id 
+        /// </summary>
+        /// <param name="personsDictionary"></param>
         private static void FindValueInDictionaty(Dictionary<uint, string> personsDictionary)
         {
             Console.Write("Input ID: ");
