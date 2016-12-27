@@ -15,12 +15,26 @@ namespace WorkingWithList
             myCollection = GetListFromConsole();
         }
 
+        private static List<int> GetListFromConsole()
+        {
+            List<int> list = new List<int>();
+
+            Console.WriteLine("Input integer numbers separated by space : ");
+            string[] inputData = Console.ReadLine().Split(' ');
+
+            list = ConvertFromStringToList(inputData);
+
+            return list;
+        }
+
         public void ElementPosition()
         {
             Console.Write("Input element for find position of it : ");
             var elementPosition = int.Parse(Console.ReadLine());
             Console.Write("Position(s) of element {0} is(are) : ", elementPosition);
-            list.GetElementPosition(myCollection, elementPosition);
+            var getElementPosition = list.GetElementPosition(myCollection, elementPosition);
+
+            PrintList(getElementPosition);
         }
 
         public void RemoveFromList()
@@ -28,7 +42,9 @@ namespace WorkingWithList
             Console.Write("\nInput element which you want to remove from list (we remove all elements which greater than inputed element) : ");
             var elementForRemove = int.Parse(Console.ReadLine());
             Console.WriteLine("List after remove some element(s) : ");
-            list.RemoveElement(myCollection, elementForRemove);
+            myCollection = list.RemoveElement(myCollection, elementForRemove);
+
+            PrintList(myCollection);
         }
 
         public void InsertToList()
@@ -43,32 +59,31 @@ namespace WorkingWithList
 
             Console.WriteLine("List after insert some element(s) : ");
             myCollection = list.InsertElements(myCollection, insertElements, insertIndexes);
+
+            PrintList(myCollection);
         }
 
         public void SortList()
         {
             Console.WriteLine("List after sort : ");
-            list.Sort(myCollection);
+            myCollection =  list.Sort(myCollection);
+
+            PrintList(myCollection);
         }
 
-        private static List<int> GetListFromConsole()
+        public void PrintList(List<int> list)
         {
-            List<int> list = new List<int>();
-
-            Console.WriteLine("Input integer numbers separated by space : ");
-            string[] inputData = Console.ReadLine().Split(' ');
-
-            list = ConvertFromStringToList(inputData);
-
-            return list;
+            list.ForEach(p => Console.Write(p.ToString() + " "));
+            Console.WriteLine();
         }
-        private static List<int> ConvertFromStringToList(string[] stringArray)
+
+        private static List<int> ConvertFromStringToList(string[] stringToConvert)
         {
             var list = new List<int>();
 
-            for (int i = 0; i < stringArray.Length; i++)
+            for (int i = 0; i < stringToConvert.Length; i++)
             {
-                list.Add(int.Parse(stringArray[i]));
+                list.Add(int.Parse(stringToConvert[i]));
             }
 
             return list;
