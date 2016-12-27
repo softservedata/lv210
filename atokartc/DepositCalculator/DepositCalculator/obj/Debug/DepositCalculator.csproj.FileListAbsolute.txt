@@ -1,0 +1,6 @@
+C:\Users\Andrii\lv210\atokartc\DepositCalculator\DepositCalculator\bin\Debug\DepositCalculator.exe.config
+C:\Users\Andrii\lv210\atokartc\DepositCalculator\DepositCalculator\bin\Debug\DepositCalculator.exe
+C:\Users\Andrii\lv210\atokartc\DepositCalculator\DepositCalculator\bin\Debug\DepositCalculator.pdb
+C:\Users\Andrii\lv210\atokartc\DepositCalculator\DepositCalculator\obj\Debug\DepositCalculator.csprojResolveAssemblyReference.cache
+C:\Users\Andrii\lv210\atokartc\DepositCalculator\DepositCalculator\obj\Debug\DepositCalculator.exe
+C:\Users\Andrii\lv210\atokartc\DepositCalculator\DepositCalculator\obj\Debug\DepositCalculator.pdb

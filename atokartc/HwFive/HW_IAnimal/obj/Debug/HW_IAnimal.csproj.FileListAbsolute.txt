@@ -1,0 +1,5 @@
+C:\Users\Andrii\lv210\atokartc\HwFive\HW_IAnimal\bin\Debug\HW_IAnimal.exe.config
+C:\Users\Andrii\lv210\atokartc\HwFive\HW_IAnimal\bin\Debug\HW_IAnimal.exe
+C:\Users\Andrii\lv210\atokartc\HwFive\HW_IAnimal\bin\Debug\HW_IAnimal.pdb
+C:\Users\Andrii\lv210\atokartc\HwFive\HW_IAnimal\obj\Debug\HW_IAnimal.exe
+C:\Users\Andrii\lv210\atokartc\HwFive\HW_IAnimal\obj\Debug\HW_IAnimal.pdb
