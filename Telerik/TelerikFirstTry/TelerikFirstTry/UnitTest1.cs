@@ -19,9 +19,13 @@ namespace TelerikFirstTry
             manager.LaunchNewBrowser();
             manager.ActiveBrowser.NavigateTo("https://www.google.com.ua/");
             HtmlAnchor signin = manager.ActiveBrowser.Find.ById<HtmlAnchor>("gb_70");
-            //signin.MouseHover();
-            //signin.Focus();
             signin.Click();
+
+            HtmlInputPassword password = manager.ActiveBrowser.Find.ById<HtmlInputPassword>("Passwd");
+            password.Text = "faerun94";
+
+            HtmlInputSubmit submit = manager.ActiveBrowser.Find.ById<HtmlInputSubmit>("signIn");
+            submit.Click();
         }
     }
 }
