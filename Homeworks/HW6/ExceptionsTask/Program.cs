@@ -3,6 +3,12 @@ using System.Collections.Generic;
 
 namespace ExceptionsTask
 {
+    /// <summary>
+    /// Write a method ReadNumber(int start, int end), that reads from Console (or from file)
+    /// integer number and return it, if it is in the range [start...end]. 
+    /// If an invalid number or non-number text is read, the method should throw an exception.
+    /// Using this method write a method Main(), that has to enter 10 numbers.
+    /// </summary>
     public class Program
     {
         public const int start = 1;
