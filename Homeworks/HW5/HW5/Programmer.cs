@@ -25,10 +25,6 @@ namespace HW5_1
             {
                 return tool;
             }
-            set
-            {
-                tool = value;
-            }
         }
 
         public void Create()

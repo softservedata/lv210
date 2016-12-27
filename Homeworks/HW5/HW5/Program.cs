@@ -3,6 +3,12 @@ using System.Collections.Generic;
 
 namespace HW5_1
 {
+    /// <summary>
+    /// Create interface IDeveloper with property Tool, methods Create() and Destroy()
+    /// Create two classes Programmer and Builder, which implement this interface.
+    ///  Create List of IDeveloper and add some Programmer and Builder to it. 
+    ///  Call Create() and Destroy() methods, property Tool for all of it
+    /// </summary>
     class Program
     {
         static List<IDeveloper> CreateList()
