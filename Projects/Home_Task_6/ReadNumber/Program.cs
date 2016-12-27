@@ -12,7 +12,7 @@ namespace ReadNumbers
         {
             int start = 1;
             int end = 50;
-            int numberCount = 10;
+            int numberCount = 2;
             List<int> integerNumbers = new List<int>();
 
             try
@@ -36,6 +36,7 @@ namespace ReadNumbers
                 Console.Error.WriteLine(exception.Message);
             }
 
+            Console.WriteLine($"\nNumbers in range [{start};{end}]");
             NumberOperations.ConsoleDisplay(integerNumbers);
         }
     }

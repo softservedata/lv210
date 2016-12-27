@@ -10,7 +10,7 @@ namespace PhoneBook
 {
     class PhoneBook
     {
-        // Prop
+        // Field
 
         private Dictionary<string, string> _phoneBook;
 
