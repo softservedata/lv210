@@ -64,7 +64,7 @@ namespace UnitTestProjectTelerikFirst
             Console.WriteLine("done");
         }
 
-        [Test]
+        //[Test]
         public void TestMethod2()
         {
             Manager manager;
@@ -106,6 +106,72 @@ namespace UnitTestProjectTelerikFirst
             //manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//option[contains(@value,'uk')]").Click();
             Assert.AreEqual("Логін", manager.ActiveBrowser.Find.ByAttributes("for=inputEmail").TextContent);
             Thread.Sleep(2000);
+            //
+            manager.Dispose();
+            Console.WriteLine("done");
+        }
+
+        [Test]
+        public void TestMethod3()
+        {
+            Manager manager;
+            Settings mySettings = new Settings();
+            //
+            // Precondition
+            //mySettings.Web.DefaultBrowser = BrowserType.FireFox;
+            //mySettings.Web.DefaultBrowser = BrowserType.InternetExplorer;
+            mySettings.Web.DefaultBrowser = BrowserType.Chrome;
+            manager = new Manager(mySettings);
+            manager.Start();
+            manager.LaunchNewBrowser();
+            manager.ActiveBrowser.NavigateTo("https://wow.training.local/Index#/Home");
+            //
+            IList<HtmlControl> description = manager.ActiveBrowser.Find.AllByXPath<HtmlControl>("//div[@class='text-primary']/h2/small");
+            Console.WriteLine("description = " + description.Count);
+            if ((description.Count == 0)  && (manager.ActiveBrowser.BrowserType == BrowserType.Chrome))
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    manager.ActiveBrowser.Desktop.KeyBoard.KeyPress(System.Windows.Forms.Keys.Tab);
+                }
+                manager.ActiveBrowser.Desktop.KeyBoard.KeyPress(System.Windows.Forms.Keys.Space);
+                manager.ActiveBrowser.Desktop.KeyBoard.KeyPress(System.Windows.Forms.Keys.Tab);
+                manager.ActiveBrowser.Desktop.KeyBoard.KeyPress(System.Windows.Forms.Keys.Tab);
+                manager.ActiveBrowser.Desktop.KeyBoard.KeyPress(System.Windows.Forms.Keys.Enter);
+            }
+            Thread.Sleep(1000);
+            //
+            // Test Steps
+            HtmlButton loginButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-success");
+            loginButton.Click();
+            //HtmlInputEmail loginInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("class=form-control ng-pristine ng-valid ng-valid-email ng-touched");
+            HtmlInputEmail loginInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=email");
+            loginInput.Text = "wowira@ukr.net";
+            Thread.Sleep(1000);
+            HtmlInputPassword passwordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=password");
+            passwordInput.Text = "irawow123";
+            Thread.Sleep(1000);
+            HtmlInputSubmit submitInput = manager.ActiveBrowser.Find.ByName<HtmlInputSubmit>("loginButton");
+            submitInput.Click();
+            Thread.Sleep(2000);
+            //
+            // Check
+            HtmlSpan userAccount = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("ng-bind=userName");
+            //Console.WriteLine("HtmlSpan userAccount done");
+            Assert.AreEqual("LV-204 ISTQB", userAccount.TextContent);
+            //Console.WriteLine("Assert.AreEqual LV - 204 ISTQB done");
+            //
+            // Return to previous state
+            manager.ActiveBrowser.Find.ById<HtmlDiv>("dropdownBtn").Click();
+            //Console.WriteLine("dropdownBtn done");
+            Thread.Sleep(2000);
+            manager.ActiveBrowser.Find.ByAttributes<HtmlAnchor>("ng-click=logOut()").Click();
+            Console.WriteLine("ng-click=logOut() done");
+            Thread.Sleep(2000);
+            //HtmlControl loginDescription = manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//div[@class='text-primary']/h2/small");
+            var loginDescription = manager.ActiveBrowser.Find.ByXPath("//div[@class='text-primary']/h2/small");
+            Console.WriteLine("loginDescription done loginDescription.TextContent = " + loginDescription.TextContent);
+            Assert.AreEqual("SoftServe Language School", loginDescription.TextContent);
             //
             manager.Dispose();
             Console.WriteLine("done");
