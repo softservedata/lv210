@@ -18,6 +18,7 @@ namespace TelerikFirstTry
             manager.Start();
             manager.LaunchNewBrowser();
             manager.ActiveBrowser.NavigateTo("https://www.google.com.ua/");
+
             HtmlAnchor signin = manager.ActiveBrowser.Find.ById<HtmlAnchor>("gb_70");
             signin.Click();
 
