@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Task3
 {
@@ -11,7 +8,7 @@ namespace Task3
     /// Write a method ReadNumber(int start, int end), that reads from Console (or from file) integer number and return it, if it is in the range [start...end]. 
     /// If an invalid number or non-number text is read, the method should throw an exception.
     /// Using this method write a method Main(), that has to enter 10 numbers:
-    /// a1, a2, ..., a10, such that 1 < a1< ... < a10< 100
+    /// a1, a2, ..., a10, such that [1,a1,...,a10,100]
     /// </summary>
     class RangeChecker
     {
@@ -20,7 +17,7 @@ namespace Task3
             Console.WriteLine("Enter integer number");
             string input = Console.ReadLine();
             int number;
-           
+
             if (!int.TryParse(input, out number))
             {
                 throw new FormatException("Not a number");

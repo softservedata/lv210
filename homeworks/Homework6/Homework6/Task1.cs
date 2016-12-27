@@ -6,13 +6,13 @@ namespace Homework6
     {
         public static void Main()
         {
-            PhoneBook phoneBook=new PhoneBook();
+            PhoneBook phoneBook = new PhoneBook();
             phoneBook.ReadFromFile("phones.txt");
             phoneBook.Output();
 
             phoneBook.WritePhoneNumbersToFile("OnlyPhones.txt");
 
-            string findNumber= phoneBook.FindNumber();
+            string findNumber = phoneBook.FindNumber();
             Console.WriteLine(findNumber);
 
             Console.WriteLine("\nNumbers in +38 format");

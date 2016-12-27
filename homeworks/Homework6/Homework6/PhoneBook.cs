@@ -13,7 +13,7 @@ namespace Homework6
     /// </summary>
     public class PhoneBook
     {
-        public Dictionary<string, string> PhoneDictionary {  get; private set; }
+        public Dictionary<string, string> PhoneDictionary { get; private set; }
 
         //Read pairs Name-Phone Number from file
         public void ReadFromFile(string path)

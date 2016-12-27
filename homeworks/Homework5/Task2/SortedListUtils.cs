@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Task2
 {
-    class SortedListUtils
+    public class SortedListUtils
     {
         public static List<int> FindPositions(SortedList sortedList, int value)
         {
@@ -15,21 +15,22 @@ namespace Task2
             {
                 throw new ArgumentNullException("List can not be null or empty");
             }
+
             List<int> positions = new List<int>();
             for (int i = 0; i < sortedList.Count; i++)
             {
-                if ((int)sortedList[i] == value) positions.Add(i + 1);
+                if ((int) sortedList[i] == value) positions.Add(i);
             }
 
             return positions;
         }
 
         //Removes all elements of sorted list, which are greater than specified value
-        public static void RemoveAllGreaterThan(SortedList sortedList, int value)
+        public static void RemoveAllGreaterThan(SortedList sortedList, int upperBound)
         {
             for (int i = 0; i < sortedList.Count; i++)
             {
-                if ((int)sortedList.GetByIndex(i) > value)
+                if ((int) sortedList.GetByIndex(i) > upperBound)
                 {
                     sortedList.RemoveAt(i);
                     i--;
@@ -38,3 +39,4 @@ namespace Task2
         }
     }
 }
+

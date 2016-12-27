@@ -5,31 +5,28 @@ using System.Collections.Generic;
 namespace Task2
 {
     /// <summary>
-    /// Utils class, which have additional methods to work with ArrayList and SortedList.
+    /// Utils class, which have additional methods to work with ArrayList.
     /// </summary>
     public class ArrayListUtils
     {
         //Removes all elements of array list, which are greater than specified value
-        public  static void RemoveAllGreaterThan(ArrayList arrayList, int value)
+        public static void RemoveAllGreaterThan(ArrayList arrayList, int upperBound)
         {
             for (int i = 0; i < arrayList.Count; i++)
             {
-                if ((int) arrayList[i] > value)
+                if ((int) arrayList[i] > upperBound)
                 {
                     arrayList.RemoveAt(i);
                     i--;
                 }
             }
-           
-
         }
 
-      
 
         //Finds all positions of specified value
         public static List<int> FindPositions(ArrayList list, int value)
         {
-            if (list == null||list.Capacity==0)
+            if (list == null || list.Capacity == 0)
             {
                 throw new ArgumentNullException("List can not be null or empty");
             }
@@ -38,11 +35,10 @@ namespace Task2
 
             for (int i = 0; i < list.Count; i++)
             {
-                if ((int) list[i] == value) positions.Add(i + 1);
+                if ((int) list[i] == value) positions.Add(i);
             }
 
             return positions;
         }
-
-      }
+    }
 }

@@ -12,11 +12,17 @@ namespace Task3
 
             Console.WriteLine("Input id and name.");
             string[] input;
-
-            for (int i = 0; i < counOfElements; i++)
+            try
             {
-                input = Console.ReadLine().Split(new char[] {' ', ','});
-                dictionary.Add(uint.Parse(input[0]), input[1]);
+                for (int i = 0; i < counOfElements; i++)
+                {
+                    input = Console.ReadLine().Split(new char[] {' ', ','});
+                    dictionary.Add(uint.Parse(input[0]), input[1]);
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Incorrect format of data");
             }
 
             return dictionary;
@@ -27,7 +33,17 @@ namespace Task3
             IDictionary dictionary = ConsoleInput(7);
 
             Console.WriteLine("Please enter id:");
-            uint id = uint.Parse(Console.ReadLine());
+            string input = Console.ReadLine();
+            uint id = 0;
+            try
+            {
+                id = uint.Parse(input);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Id must be unsigned integer number");
+            }
+
             if (!dictionary.Contains(id))
             {
                 Console.WriteLine("Person with such id can't be found");
