@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lists
 {
-    static class ListUtilityClass
+    public static class ListUtilityClass
     {
         /// <summary>
         /// Check if read value from console is integer
@@ -36,6 +36,7 @@ namespace Lists
             {
                 Console.Write("Enter integer number ==> ");
                 readFromConsole = Console.ReadLine();
+
                 if (!IsInteger(readFromConsole))
                     Console.WriteLine("\nNumber is not integer!");
             }
@@ -96,7 +97,7 @@ namespace Lists
         /// </summary>
         /// <param name="list">List to add new integer numbers</param>
         /// <param name="numbersToFill">How many element List would be consist</param>
-        private static void Fill(List<int> list, int numbersToFill)
+        public static void Fill(List<int> list, int numbersToFill)
         {
             for (int i = 0; i < numbersToFill; i++)
             {
@@ -109,7 +110,7 @@ namespace Lists
         /// </summary>
         /// <param name="list">ArrayList to add new integer numbers</param>
         /// <param name="numbersToFill">How many element ArrayList would be consist</param>
-        private static void Fill(ArrayList list, int numbersToFill)
+        public static void Fill(ArrayList list, int numbersToFill)
         {
             for (int i = 0; i < numbersToFill; i++)
             {
@@ -122,7 +123,7 @@ namespace Lists
         /// </summary>
         /// <param name="list">SortedList to add new integer numbers</param>
         /// <param name="numbersToFill">How many element ArrayList would be consist</param>
-        private static void Fill(SortedList list, int numbersToFill)
+        public static void Fill(SortedList list, int numbersToFill)
         {
             for (int i = 0; i < numbersToFill; i++)
             {
@@ -135,15 +136,19 @@ namespace Lists
         /// </summary>
         /// <param name="list">A List in which will be check conditions</param>
         /// <param name="number">Given element to find</param>
-        private static void FindPosition(List<int> list, int number)
+        public static List<int> FindPositions(List<int> list, int number)
         {
+            List<int> positions = new List<int>();
+
             for (int i = 0; i < list.Count; i++)
             {
                 if (list[i] == number)
                 {
-                    Console.WriteLine("\n№{0} element ({1}) position => [{2}]", i + 1, number, i);
+                    positions.Add(i);
                 }
             }
+
+            return positions;
         }
 
         /// <summary>
@@ -151,15 +156,19 @@ namespace Lists
         /// </summary>
         /// <param name="list">An ArrayList in which will be check conditions</param>
         /// <param name="number">Given element to find</param>
-        private static void FindPosition(ArrayList list, int number)
+        public static List<int> FindPositions(ArrayList list, int number)
         {
+            List<int> positions = new List<int>();
+
             for (int i = 0; i < list.Count; i++)
             {
                 if ((int)list[i] == number)
                 {
-                    Console.WriteLine("\n№{0} element ({1}) position => [{2}]", i + 1, number, i);
+                    positions.Add(i);
                 }
             }
+
+            return positions;
         }
 
         /// <summary>
@@ -167,15 +176,19 @@ namespace Lists
         /// </summary>
         /// <param name="list">A SortedList in which will be check conditions</param>
         /// <param name="number">Given element to find</param>
-        private static void FindPosition(SortedList list, int number)
+        public static List<int> FindPositions(SortedList list, int number)
         {
+            List<int> positions = new List<int>();
+
             for (int i = 0; i < list.Count; i++)
             {
                 if ((int)list[i] == number)
                 {
-                    Console.WriteLine("\n№{0} element ({1}) position => [{2}]", i + 1, number, i);
+                    positions.Add(i);
                 }
             }
+
+            return positions;
         }
 
         /// <summary>
@@ -183,7 +196,7 @@ namespace Lists
         /// </summary>
         /// <param name="list">ArrayList to perform actions</param>
         /// <param name="upperLimit">Defined limit</param>
-        private static void Remove(ArrayList list, int upperLimit)
+        public static void Remove(ArrayList list, int upperLimit)
         {
             for (int i = 0; i < list.Count; i++)
             {
@@ -200,7 +213,7 @@ namespace Lists
         /// </summary>
         /// <param name="list">SortedList to perform actions</param>
         /// <param name="upperLimit">Defined limit</param>
-        private static void Remove(SortedList list, int upperLimit)
+        public static void Remove(SortedList list, int upperLimit)
         {
             for (int i = 0; i < list.Count; i++)
             {
@@ -210,83 +223,6 @@ namespace Lists
                     i--;
                 }
             }
-        }
-
-        /// <summary>
-        /// Testing method for integer List type
-        /// </summary>
-        public static void TestList()
-        {
-            List<int> myColl = new List<int>();
-
-            Fill(myColl, 10);
-            ConsoleDisplay(myColl);
-
-            FindPosition(myColl, -10);
-
-            Console.WriteLine("\n---Remove---");
-            myColl.RemoveAll(item => item > 20);
-            ConsoleDisplay(myColl);
-
-            Console.WriteLine("\n---Insert---");
-            myColl.Insert(2, 1);
-            myColl.Insert(8, -3);
-            myColl.Insert(5, -4);
-            ConsoleDisplay(myColl);
-
-            Console.WriteLine("\n---Sort---");
-            myColl.Sort();
-            ConsoleDisplay(myColl);
-        }
-
-        /// <summary>
-        /// Testing method for ArrayList type
-        /// </summary>
-        public static void TestArrayList()
-        {
-            ArrayList myColl = new ArrayList();
-
-            Fill(myColl, 10);
-            ConsoleDisplay(myColl);
-
-            FindPosition(myColl, -10);
-
-            Console.WriteLine("\n---Remove---");
-            Remove(myColl, 20);
-            ConsoleDisplay(myColl);
-
-            Console.WriteLine("\n---Insert---");
-            myColl.Insert(2, 1);
-            myColl.Insert(8, -3);
-            myColl.Insert(5, -4);
-            ConsoleDisplay(myColl);
-
-            Console.WriteLine("\n---Sort---");
-            myColl.Sort();
-            ConsoleDisplay(myColl);
-        }
-
-        /// <summary>
-        /// Testing method for SortedList type
-        /// </summary>
-        public static void TestSortedList()
-        {
-            SortedList myColl = new SortedList();
-
-            Fill(myColl, 10);
-            ConsoleDisplay(myColl);
-
-            FindPosition(myColl, -10);
-
-            Console.WriteLine("\n---Remove---");
-            Remove(myColl, 20);
-            ConsoleDisplay(myColl);
-
-            Console.WriteLine("\n---Insert---");
-            myColl.SetByIndex(2, 1);
-            myColl.SetByIndex(8, -3);
-            myColl.SetByIndex(5, -4);
-            ConsoleDisplay(myColl);
         }
     }
 }
