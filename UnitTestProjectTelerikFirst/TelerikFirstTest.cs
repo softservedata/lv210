@@ -84,7 +84,7 @@ namespace UnitTestProjectTelerikFirst
             HtmlSelect language = manager.ActiveBrowser.Find.ById<HtmlSelect>("changeLanguage");
             //
             //language.SelectByIndex(2);
-            language.SelectByText("english");
+            language.SelectByText("english",true);
             //language.Click();
             //manager.ActiveBrowser.Refresh();
             //manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//option[contains(@value,'en')]").Click();
@@ -92,7 +92,7 @@ namespace UnitTestProjectTelerikFirst
             Thread.Sleep(2000);
             //
             //language.SelectByIndex(1);
-            language.SelectByText("русский");
+            language.SelectByText("русский", true);
             //language.Click();
             //manager.ActiveBrowser.Refresh();
             //manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//option[contains(@value,'ru')]").Click();
@@ -100,7 +100,7 @@ namespace UnitTestProjectTelerikFirst
             Thread.Sleep(2000);
             //
             //language.SelectByIndex(0);
-            language.SelectByText("українська");
+            language.SelectByText("українська", true);
             //language.Click();
             //manager.ActiveBrowser.Refresh();
             //manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//option[contains(@value,'uk')]").Click();
