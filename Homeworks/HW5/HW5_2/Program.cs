@@ -5,6 +5,13 @@ using System.Linq;
 
 namespace CollectionsTask
 {
+    /// <summary>
+    /// 1) Declare List myColl of integers and fill it from Console by 10 integer numbers.
+    /// 2) Find and print all positions of element -10 in the list
+    /// 3) Remove from list elements, which are greater then 20. Print list
+    /// 4) Insert elements 1,-3,-4 in the positions 2, 8, 5. Print list
+    /// In the method Main() Call developed methods TestList(), TestArrayList(), TestSortedList()
+    /// </summary>
     public class Program
     {
         /// <summary>
