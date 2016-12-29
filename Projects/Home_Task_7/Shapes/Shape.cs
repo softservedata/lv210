@@ -13,6 +13,7 @@ namespace Shapes
 
         // Prop
         public double Perimeter { get; set; }
+
         public double Area { get; set; }
 
         public string Name
@@ -23,7 +24,7 @@ namespace Shapes
 
         public Shape(string name)
         {
-            _name = name;
+            Name = name;
         }
 
         // Methods
