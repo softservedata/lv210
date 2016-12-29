@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShapesProject
 {
@@ -35,11 +31,6 @@ namespace ShapesProject
         public int CompareTo(Shape other)
         {
             return (int) ((int)this.Area() - other.Area());
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
         }
     }
 }
