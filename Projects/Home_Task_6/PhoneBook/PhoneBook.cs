@@ -10,12 +10,16 @@ namespace PhoneBook
 {
     class PhoneBook
     {
-        // Prop
+        // Field
 
         private Dictionary<string, string> _phoneBook;
 
         // Methods
 
+        /// <summary>
+        /// Read from file phone numbers
+        /// </summary>
+        /// <param name="filePath">Path to file</param>
         public void ReadFromFile(string filePath)
         {
             _phoneBook = new Dictionary<string, string>();
@@ -39,6 +43,9 @@ namespace PhoneBook
             }
         }
 
+        /// <summary>
+        /// Represent result on console
+        /// </summary>
         public void ConsoleDisplay()
         {
             foreach (KeyValuePair<string, string> record in _phoneBook)
@@ -47,12 +54,20 @@ namespace PhoneBook
             }
         }
 
+        /// <summary>
+        /// Write only numbers whithout names
+        /// </summary>
+        /// <param name="fileName">Name of file (*.txt format)</param>
         public void WritePhoneNumbersToFile(string fileName)
         {
             File.WriteAllLines(fileName, _phoneBook.Keys);
             Console.WriteLine("\nWriting to file done!");
         }
 
+        /// <summary>
+        /// Write numbers and names to *.txt file
+        /// </summary>
+        /// <param name="fileName">Name of file</param>
         public void WritePhoneBookToFile(string fileName)
         {
             using (StreamWriter writer = new StreamWriter(fileName))
@@ -65,6 +80,11 @@ namespace PhoneBook
             Console.WriteLine("\nWriting to file done!");
         }
 
+        /// <summary>
+        /// If given name is in the phonebook - use FindNumber() 
+        /// to find and display correspond phonenumber
+        /// </summary>
+        /// <param name="name">Given name to find it phone number</param>
         public void GetNumberByName(string name)
         {
             if (_phoneBook.ContainsValue(name))
@@ -74,6 +94,10 @@ namespace PhoneBook
                 Console.WriteLine("There aren't phone number for {0}!", name);
         }
 
+        /// <summary>
+        /// By given name find correspond phone number
+        /// </summary>
+        /// <param name="name">Given name to find it phone number</param>
         private void FindNumber(string name)
         {
             foreach (var record in _phoneBook)
@@ -85,6 +109,9 @@ namespace PhoneBook
             }
         }
 
+        /// <summary>
+        /// Change all phone numbers, which are not in format +380#########
+        /// </summary>
         public void ChangeNumberFormat()
         {
             List<string> numbers = new List<string>(_phoneBook.Keys);

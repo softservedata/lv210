@@ -132,14 +132,14 @@ namespace Lists
         }
 
         /// <summary>
-        /// Find and print all positions of given element in the list
+        /// Find all positions of given element in the list
         /// </summary>
         /// <param name="list">A List in which will be check conditions</param>
         /// <param name="number">Given element to find</param>
         public static List<int> FindPositions(List<int> list, int number)
         {
             List<int> positions = new List<int>();
-
+            
             for (int i = 0; i < list.Count; i++)
             {
                 if (list[i] == number)
