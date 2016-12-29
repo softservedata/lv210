@@ -17,7 +17,7 @@ namespace ShapesProject
 
         public static Shape FindMaxShape(List<Shape> shapeList)
         {
-            Shape maximalShape = shapeList [0];
+            Shape maximalShape = shapeList[0];
            
             foreach (Shape item in shapeList)
             {
