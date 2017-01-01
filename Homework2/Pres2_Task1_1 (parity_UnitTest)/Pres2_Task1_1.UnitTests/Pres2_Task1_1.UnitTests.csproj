@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{874B8397-434B-4255-A9E5-AD65C16BEAC5}</ProjectGuid>
+    <ProjectGuid>{A00C6B38-7112-44A9-BAD5-432195972DCF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartCalc.UnitTests</RootNamespace>
-    <AssemblyName>SmartCalc.UnitTests</AssemblyName>
+    <RootNamespace>Pres2_Task1_1.UnitTests</RootNamespace>
+    <AssemblyName>Pres2_Task1_1.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -55,16 +55,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CalculatorTests.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestApp\SmartCalc.csproj">
-      <Project>{3447f5cf-f212-49d6-a111-96c00d92c181}</Project>
-      <Name>SmartCalc</Name>
+    <ProjectReference Include="..\Pres2_Task1\Pres2_Task1.csproj">
+      <Project>{6750a894-356a-4236-8329-70220f51f309}</Project>
+      <Name>Pres2_Task1</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

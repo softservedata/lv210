@@ -1,0 +1,14 @@
+D:\Documents\Моє\AQC\C#Projects\Pres2_Task1\Pres2_Task1\bin\Debug\Pres2_Task1.exe.config
+D:\Documents\Моє\AQC\C#Projects\Pres2_Task1\Pres2_Task1\bin\Debug\Pres2_Task1.exe
+D:\Documents\Моє\AQC\C#Projects\Pres2_Task1\Pres2_Task1\bin\Debug\Pres2_Task1.pdb
+D:\Documents\Моє\AQC\C#Projects\Pres2_Task1\Pres2_Task1\obj\Debug\Pres2_Task1.csprojResolveAssemblyReference.cache
+D:\Documents\Моє\AQC\C#Projects\Pres2_Task1\Pres2_Task1\obj\Debug\Pres2_Task1.exe
+D:\Documents\Моє\AQC\C#Projects\Pres2_Task1\Pres2_Task1\obj\Debug\Pres2_Task1.pdb
+c:\Users\user\Source\Repos\lv210\Pres2_Task1_1 (parity)\Pres2_Task1\bin\Debug\Pres2_Task1.exe.config
+c:\Users\user\Source\Repos\lv210\Pres2_Task1_1 (parity)\Pres2_Task1\obj\Debug\Pres2_Task1.pdb
+c:\Users\user\Source\Repos\lv210\Pres2_Task1_1 (parity)\Pres2_Task1\bin\Debug\Pres2_Task1.exe
+c:\Users\user\Source\Repos\lv210\Pres2_Task1_1 (parity)\Pres2_Task1\bin\Debug\Pres2_Task1.pdb
+c:\Users\user\Source\Repos\lv210\Pres2_Task1_1 (parity)\Pres2_Task1\obj\Debug\Pres2_Task1.csprojResolveAssemblyReference.cache
+c:\Users\user\Source\Repos\lv210\Pres2_Task1_1 (parity)\Pres2_Task1\obj\Debug\Pres2_Task1.exe
+C:\Users\Anna Orlovska\Source\Repos\lv210\Pres2_Task1_1 (parity)\Pres2_Task1\bin\Debug\Pres2_Task1.exe.config
+C:\Users\Anna Orlovska\Source\Repos\lv210\Pres2_Task1_1 (parity)\Pres2_Task1\obj\Debug\Pres2_Task1.pdb

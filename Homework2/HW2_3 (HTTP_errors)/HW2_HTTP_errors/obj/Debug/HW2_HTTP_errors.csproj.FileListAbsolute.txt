@@ -1,0 +1,8 @@
+D:\Documents\Моє\AQC\C#Projects\HW2_HTTP_errors\HW2_HTTP_errors\bin\Debug\HW2_HTTP_errors.exe.config
+D:\Documents\Моє\AQC\C#Projects\HW2_HTTP_errors\HW2_HTTP_errors\bin\Debug\HW2_HTTP_errors.exe
+D:\Documents\Моє\AQC\C#Projects\HW2_HTTP_errors\HW2_HTTP_errors\bin\Debug\HW2_HTTP_errors.pdb
+D:\Documents\Моє\AQC\C#Projects\HW2_HTTP_errors\HW2_HTTP_errors\obj\Debug\HW2_HTTP_errors.csprojResolveAssemblyReference.cache
+D:\Documents\Моє\AQC\C#Projects\HW2_HTTP_errors\HW2_HTTP_errors\obj\Debug\HW2_HTTP_errors.exe
+D:\Documents\Моє\AQC\C#Projects\HW2_HTTP_errors\HW2_HTTP_errors\obj\Debug\HW2_HTTP_errors.pdb
+C:\Users\aorlovtc\Source\Repos\lv210\HW2_3 (HTTP_errors)\HW2_HTTP_errors\bin\Debug\HW2_HTTP_errors.exe.config
+C:\Users\aorlovtc\Source\Repos\lv210\HW2_3 (HTTP_errors)\HW2_HTTP_errors\obj\Debug\HW2_HTTP_errors.pdb

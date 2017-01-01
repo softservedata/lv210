@@ -1,8 +1,0 @@
-D:\Documents\Моє\AQC\C#Projects\Pres2_Task1\Pres2_Task1\bin\Debug\Pres2_Task1.exe.config
-D:\Documents\Моє\AQC\C#Projects\Pres2_Task1\Pres2_Task1\bin\Debug\Pres2_Task1.exe
-D:\Documents\Моє\AQC\C#Projects\Pres2_Task1\Pres2_Task1\bin\Debug\Pres2_Task1.pdb
-D:\Documents\Моє\AQC\C#Projects\Pres2_Task1\Pres2_Task1\obj\Debug\Pres2_Task1.csprojResolveAssemblyReference.cache
-D:\Documents\Моє\AQC\C#Projects\Pres2_Task1\Pres2_Task1\obj\Debug\Pres2_Task1.exe
-D:\Documents\Моє\AQC\C#Projects\Pres2_Task1\Pres2_Task1\obj\Debug\Pres2_Task1.pdb
-c:\Users\user\Source\Repos\lv210\Pres2_Task1_1\Pres2_Task1\bin\Debug\Pres2_Task1.exe.config
-c:\Users\user\Source\Repos\lv210\Pres2_Task1_1\Pres2_Task1\obj\Debug\Pres2_Task1.pdb

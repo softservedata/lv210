@@ -4,3 +4,5 @@ C:\Users\user\Source\Repos\lv210\TestApp\TestApp\bin\Debug\TestApp.pdb
 C:\Users\user\Source\Repos\lv210\TestApp\TestApp\obj\Debug\SmartCalc.csprojResolveAssemblyReference.cache
 C:\Users\user\Source\Repos\lv210\TestApp\TestApp\obj\Debug\TestApp.exe
 C:\Users\user\Source\Repos\lv210\TestApp\TestApp\obj\Debug\TestApp.pdb
+C:\Users\Anna Orlovska\Source\Repos\lv210\TestApp\TestApp\bin\Debug\TestApp.exe.config
+C:\Users\Anna Orlovska\Source\Repos\lv210\TestApp\TestApp\obj\Debug\TestApp.pdb

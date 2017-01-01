@@ -1,0 +1,11 @@
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\HW1\obj\Debug\HW1_1.csprojResolveAssemblyReference.cache
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\HW1\obj\Debug\HW1.exe
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\HW1\obj\Debug\HW1.pdb
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\HW1\bin\Debug\HW1.exe.config
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\HW1\bin\Debug\HW1.exe
+D:\Documents\Моє\AQC\C#Projects\Hw1_1\HW1\bin\Debug\HW1.pdb
+c:\Users\user\Source\Repos\lv210\Hw1_1\HW1\bin\Debug\HW1.exe.config
+c:\Users\user\Source\Repos\lv210\Hw1_1\HW1\obj\Debug\HW1.exe
+c:\Users\user\Source\Repos\lv210\Hw1_1\HW1\obj\Debug\HW1.pdb
+C:\Users\Anna Orlovska\Source\Repos\lv210\Hw1_1\HW1\bin\Debug\HW1.exe.config
+C:\Users\Anna Orlovska\Source\Repos\lv210\Hw1_1\HW1\obj\Debug\HW1.pdb

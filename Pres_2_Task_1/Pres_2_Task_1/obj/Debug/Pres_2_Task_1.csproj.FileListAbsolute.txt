@@ -1,7 +1,0 @@
-D:\Documents\Моє\Soft Serve\C#Projects\Pres_2_Task_1\Pres_2_Task_1\bin\Debug\Pres_2_Task_1.exe.config
-D:\Documents\Моє\AQC\C#Projects\Pres_2_Task_1\Pres_2_Task_1\bin\Debug\Pres_2_Task_1.exe.config
-D:\Documents\Моє\AQC\C#Projects\Pres_2_Task_1\Pres_2_Task_1\bin\Debug\Pres_2_Task_1.exe
-D:\Documents\Моє\AQC\C#Projects\Pres_2_Task_1\Pres_2_Task_1\bin\Debug\Pres_2_Task_1.pdb
-D:\Documents\Моє\AQC\C#Projects\Pres_2_Task_1\Pres_2_Task_1\obj\Debug\Pres_2_Task_1.csprojResolveAssemblyReference.cache
-D:\Documents\Моє\AQC\C#Projects\Pres_2_Task_1\Pres_2_Task_1\obj\Debug\Pres_2_Task_1.exe
-D:\Documents\Моє\AQC\C#Projects\Pres_2_Task_1\Pres_2_Task_1\obj\Debug\Pres_2_Task_1.pdb

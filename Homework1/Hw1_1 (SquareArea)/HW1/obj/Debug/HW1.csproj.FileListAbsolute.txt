@@ -1,0 +1,13 @@
+D:\Documents\Моє\Soft Serve\C#Projects\HW1\HW1\bin\Debug\HW1.exe.config
+D:\Documents\Моє\Soft Serve\C#Projects\HW1\HW1\bin\Debug\HW1.exe
+D:\Documents\Моє\Soft Serve\C#Projects\HW1\HW1\bin\Debug\HW1.pdb
+D:\Documents\Моє\Soft Serve\C#Projects\HW1\HW1\obj\Debug\HW1.exe
+D:\Documents\Моє\Soft Serve\C#Projects\HW1\HW1\obj\Debug\HW1.pdb
+C:\Users\Anna Orlovska\Source\Repos\lv210\Hw1_2\HW1\bin\Debug\HW1.exe.config
+C:\Users\Anna Orlovska\Source\Repos\lv210\Hw1_2\HW1\obj\Debug\HW1.pdb
+C:\Users\Anna Orlovska\Source\Repos\lv210\Hw1_1 (SquareArea)\HW1\bin\Debug\HW1.exe.config
+C:\Users\Anna Orlovska\Source\Repos\lv210\Hw1_1 (SquareArea)\HW1\obj\Debug\HW1.pdb
+C:\Users\Anna Orlovska\Source\Repos\lv210\Hw1_1 (SquareArea)\HW1\bin\Debug\HW1.exe
+C:\Users\Anna Orlovska\Source\Repos\lv210\Hw1_1 (SquareArea)\HW1\bin\Debug\HW1.pdb
+C:\Users\Anna Orlovska\Source\Repos\lv210\Hw1_1 (SquareArea)\HW1\obj\Debug\HW1.csprojResolveAssemblyReference.cache
+C:\Users\Anna Orlovska\Source\Repos\lv210\Hw1_1 (SquareArea)\HW1\obj\Debug\HW1.exe
