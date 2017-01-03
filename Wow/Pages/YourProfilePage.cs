@@ -7,18 +7,15 @@ using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 
-
 namespace Wow.Pages
 {
-    public class AdminPage
+    public class YourProfilePage : HeadPage
     {
         // Fields
-        private Manager manager;
 
         // Constructor
-        public AdminPage(Manager manager)
+        public YourProfilePage(Manager manager):base(manager)
         {
-            this.manager = manager;
         }
 
         // Page Object

@@ -55,19 +55,19 @@ namespace Wow.Pages
         // get Data
         public HtmlInputEmail GetLoginInput()
         {
-            clickLoginButton();
+            ClickLoginButton();
             return this.loginForm.LoginInput;
         }
 
         public HtmlInputPassword GetPasswordInput()
         {
-            clickLoginButton();
+            ClickLoginButton();
             return this.loginForm.PasswordInput;
         }
 
         public HtmlInputSubmit GetSubmitInput()
         {
-            clickLoginButton();
+            ClickLoginButton();
             return this.loginForm.SubmitInput;
         }
 
@@ -83,7 +83,7 @@ namespace Wow.Pages
         }
 
         // set Data
-        public void clickLoginButton()
+        public void ClickLoginButton()
         {
             this.LoginButton.Click();
             loginForm = new LoginForm(manager);
@@ -92,19 +92,19 @@ namespace Wow.Pages
         // Business Logic
         private void SetLoginData(User user)
         {
-            clickLoginButton();
+            ClickLoginButton();
             this.loginForm.LoginInput.Text = user.Email;
             this.loginForm.PasswordInput.Text = user.Password;
             this.loginForm.SubmitInput.Click();
         }
 
-        public AdminPage SuccessAdminLogin(User admin)
+        public UsersPage SuccessAdminLogin(User admin)
         {
             //public AdminHomePage SuccessAdminLogin(String login, String password) {
             SetLoginData(admin);
             //SetLoginData(login, password);
             // Return a new page object representing the destination.
-            return new AdminPage(manager);
+            return new UsersPage(manager);
         }
 
         public TeacherPage SuccessTeacherLogin(User teacher)
