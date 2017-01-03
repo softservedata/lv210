@@ -9,3 +9,5 @@ C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\Exceptio
 C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\obj\Debug\ExceptionsTast.UnitTest.csprojResolveAssemblyReference.cache
 C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\obj\Debug\ExceptionsTast.UnitTest.dll
 C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\obj\Debug\ExceptionsTast.UnitTest.pdb
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\obj\Debug\ExceptionsTast.UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW6\ExceptionsTast.UnitTest\obj\Debug\ExceptionsTast.UnitTest.pdb
