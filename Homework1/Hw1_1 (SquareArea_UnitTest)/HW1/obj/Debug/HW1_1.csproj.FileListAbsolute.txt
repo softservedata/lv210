@@ -9,3 +9,9 @@ c:\Users\user\Source\Repos\lv210\Hw1_1\HW1\obj\Debug\HW1.exe
 c:\Users\user\Source\Repos\lv210\Hw1_1\HW1\obj\Debug\HW1.pdb
 C:\Users\Anna Orlovska\Source\Repos\lv210\Hw1_1\HW1\bin\Debug\HW1.exe.config
 C:\Users\Anna Orlovska\Source\Repos\lv210\Hw1_1\HW1\obj\Debug\HW1.pdb
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\HW1\bin\Debug\HW1.exe.config
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\HW1\obj\Debug\HW1.pdb
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\HW1\bin\Debug\HW1.exe
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\HW1\bin\Debug\HW1.pdb
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\HW1\obj\Debug\HW1_1.csprojResolveAssemblyReference.cache
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\HW1\obj\Debug\HW1.exe
