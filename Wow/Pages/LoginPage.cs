@@ -90,15 +90,15 @@ namespace Wow.Pages
         }
 
         // Business Logic
-        private void SetLoginData(User user)
+        private void SetLoginData(IUser user)
         {
             ClickLoginButton();
-            this.loginForm.LoginInput.Text = user.Email;
-            this.loginForm.PasswordInput.Text = user.Password;
+            this.loginForm.LoginInput.Text = user.GetEmail();
+            this.loginForm.PasswordInput.Text = user.GetPassword();
             this.loginForm.SubmitInput.Click();
         }
 
-        public UsersPage SuccessAdminLogin(User admin)
+        public UsersPage SuccessAdminLogin(IUser admin)
         {
             //public AdminHomePage SuccessAdminLogin(String login, String password) {
             SetLoginData(admin);
@@ -107,13 +107,13 @@ namespace Wow.Pages
             return new UsersPage(manager);
         }
 
-        public TeacherPage SuccessTeacherLogin(User teacher)
+        public TeacherPage SuccessTeacherLogin(IUser teacher)
         {
             SetLoginData(teacher);
             return new TeacherPage(manager);
         }
 
-        public StudentPage SuccessStudentLogin(User student)
+        public StudentPage SuccessStudentLogin(IUser student)
         {
             SetLoginData(student);
             return new StudentPage(manager);
