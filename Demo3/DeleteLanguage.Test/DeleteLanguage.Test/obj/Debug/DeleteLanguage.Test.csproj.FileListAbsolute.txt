@@ -1,0 +1,13 @@
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\bin\Debug\DeleteLanguage.Test.dll
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\bin\Debug\DeleteLanguage.Test.pdb
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\bin\Debug\ArtOfTest.WebAii.dll
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\bin\Debug\nunit.framework.dll
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\bin\Debug\Telerik.TestStudio.Core.dll
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\bin\Debug\Telerik.TestingFramework.Json.dll
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\bin\Debug\Telerik.TestingFramework.Hosts.Common.dll
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\bin\Debug\ArtOfTest.WebAii.xml
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\bin\Debug\nunit.framework.xml
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\obj\Debug\DeleteLanguage.Test.csprojResolveAssemblyReference.cache
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\obj\Debug\DeleteLanguage.Test.dll
+C:\Users\mdemctc\Source\Repos\lv210\Demo3\DeleteLanguage.Test\DeleteLanguage.Test\obj\Debug\DeleteLanguage.Test.pdb
