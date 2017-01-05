@@ -30,13 +30,18 @@ namespace Wow.Appl
         // URLs
         public string LoginUrl { get; private set; }
         public string LogoutUrl { get; private set; }
+        // private String logoutJS;
         // private String serverUrl;
         //
         // Connect to DB
 
         // constructor
-        public ApplicationSources()
+        public ApplicationSources(string BrowserName, long ImplicitTimeOut, string LoginUrl, string LogoutUrl)
         {
+            this.BrowserName = BrowserName;
+            this.ImplicitTimeOut = ImplicitTimeOut;
+            this.LoginUrl = LoginUrl;
+            this.LogoutUrl = LogoutUrl;
         }
 
     }

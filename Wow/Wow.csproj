@@ -59,8 +59,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Appl\ApplicationSources.cs" />
+    <Compile Include="Appl\ApplicationSourcesRepository.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\UserRepository.cs" />
+    <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\UsersPage.cs" />
     <Compile Include="Pages\HeadPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />

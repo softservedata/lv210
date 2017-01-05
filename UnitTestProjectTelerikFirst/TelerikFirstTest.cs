@@ -111,7 +111,7 @@ namespace UnitTestProjectTelerikFirst
             Console.WriteLine("done");
         }
 
-        [Test]
+        //[Test]
         public void TestMethod3()
         {
             Manager manager;
@@ -140,6 +140,11 @@ namespace UnitTestProjectTelerikFirst
                 manager.ActiveBrowser.Desktop.KeyBoard.KeyPress(System.Windows.Forms.Keys.Enter);
             }
             Thread.Sleep(1000);
+            // 
+            // Check JS injection
+            //Manager.Current.ActiveBrowser.Actions.InvokeScript("alert('Ha-Ha-Ha')");
+            //Thread.Sleep(2000);
+            //string strBool = Actions.InvokeScript("Alert('Ha-Ha-Ha')");
             //
             // Test Steps
             HtmlButton loginButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-success");
@@ -165,7 +170,9 @@ namespace UnitTestProjectTelerikFirst
             manager.ActiveBrowser.Find.ById<HtmlDiv>("dropdownBtn").Click();
             //Console.WriteLine("dropdownBtn done");
             Thread.Sleep(2000);
+            // logout
             manager.ActiveBrowser.Find.ByAttributes<HtmlAnchor>("ng-click=logOut()").Click();
+            //Manager.Current.ActiveBrowser.Actions.InvokeScript("logOut();");
             Console.WriteLine("ng-click=logOut() done");
             Thread.Sleep(2000);
             //HtmlControl loginDescription = manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//div[@class='text-primary']/h2/small");
@@ -176,5 +183,30 @@ namespace UnitTestProjectTelerikFirst
             manager.Dispose();
             Console.WriteLine("done");
         }
+
+        [Test]
+        public void TestMethod4()
+        {
+            Manager manager;
+            Settings mySettings = new Settings();
+            //
+            // Precondition
+            //mySettings.Web.DefaultBrowser = BrowserType.FireFox;
+            //mySettings.Web.DefaultBrowser = BrowserType.InternetExplorer;
+            mySettings.Web.DefaultBrowser = BrowserType.Chrome;
+            manager = new Manager(mySettings);
+            //manager.Start();
+            //manager.LaunchNewBrowser();
+            if (Manager.Current.ActiveBrowser != null)
+            {
+                Manager.Current.ActiveBrowser.Close();
+            }
+            //if (manager != null)
+            if (Manager.Current.Disposed)
+            {
+                manager.Dispose();
+            }
+        }
+
     }
 }

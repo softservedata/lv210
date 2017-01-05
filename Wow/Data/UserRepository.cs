@@ -9,7 +9,7 @@ namespace Wow.Data
     public sealed class UserRepository
     {
         private static volatile UserRepository instance;
-        private static Object synchronize = new Object();
+        private static readonly Object synchronize = new Object();
 
         // constructor
         private UserRepository()

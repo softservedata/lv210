@@ -7,7 +7,6 @@ using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 
-
 namespace Wow.Pages
 {
     public abstract class HeadPage
