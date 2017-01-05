@@ -6,3 +6,7 @@ C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\Exceptio
 C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW6\ExceptionsTask\obj\Debug\ExceptionsTask.csprojResolveAssemblyReference.cache
 C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW6\ExceptionsTask\bin\Debug\ExceptionsTask.exe.config
 C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW6\ExceptionsTask\obj\Debug\ExceptionsTask.pdb
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW6\ExceptionsTask\bin\Debug\ExceptionsTask.exe
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW6\ExceptionsTask\bin\Debug\ExceptionsTask.pdb
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW6\ExceptionsTask\obj\Debug\ExceptionsTask.csprojResolveAssemblyReference.cache
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW6\ExceptionsTask\obj\Debug\ExceptionsTask.exe
