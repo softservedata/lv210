@@ -5,6 +5,7 @@ using NUnit.Framework;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 using System.Collections.Generic;
+using ArtOfTest.WebAii.Win32.Dialogs;
 
 namespace UnitTestProjectTelerikFirst
 {
@@ -111,7 +112,7 @@ namespace UnitTestProjectTelerikFirst
             Console.WriteLine("done");
         }
 
-        //[Test]
+        [Test]
         public void TestMethod3()
         {
             Manager manager;
@@ -121,6 +122,8 @@ namespace UnitTestProjectTelerikFirst
             //mySettings.Web.DefaultBrowser = BrowserType.FireFox;
             //mySettings.Web.DefaultBrowser = BrowserType.InternetExplorer;
             mySettings.Web.DefaultBrowser = BrowserType.Chrome;
+            //mySettings.UnexpectedDialogAction = UnexpectedDialogAction.DoNotHandle;
+            mySettings.UnexpectedDialogAction = UnexpectedDialogAction.HandleAndContinue;
             manager = new Manager(mySettings);
             manager.Start();
             manager.LaunchNewBrowser();
@@ -141,10 +144,26 @@ namespace UnitTestProjectTelerikFirst
             }
             Thread.Sleep(1000);
             // 
+            //
+            Manager.Current.DialogMonitor.AddDialog(AlertDialog.CreateAlertDialog(Manager.Current.ActiveBrowser, DialogButton.OK));
+            Manager.Current.DialogMonitor.Start();
+            //
             // Check JS injection
-            //Manager.Current.ActiveBrowser.Actions.InvokeScript("alert('Ha-Ha-Ha')");
-            //Thread.Sleep(2000);
+            Manager.Current.ActiveBrowser.Actions.InvokeScript("alert('Ha-Ha-Ha')");
+            Thread.Sleep(4000);
             //string strBool = Actions.InvokeScript("Alert('Ha-Ha-Ha')");
+            //
+            //Manager.Current.ActiveBrowser.Actions.
+            //
+            //ConfirmDialog confirmDialog = ConfirmDialog.CreateConfirmDialog(Manager.Current.ActiveBrowser,DialogButton.OK);
+            //confirmDialog.HandlerDelegate = new DialogHandlerDelegate(this.ConfirmHandleDialog);
+            //Manager.Current.DialogMonitor.AddDialog(confirmDialog);
+            //Manager.Current.DialogMonitor.Start();
+            // Click the button
+            //Manager.Current.ActiveBrowser.Action.MouseClickItem(RSSControls.Applications.ApplicationsEditLoginPage.DeleteQuestion);
+            //confirmDialog.WaitUntilHandled();
+            //Manager.Current.DialogMonitor.RemoveDialog(confirmDialog);
+            //Manager.Current.DialogMonitor.Stop();
             //
             // Test Steps
             HtmlButton loginButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-success");
@@ -184,7 +203,7 @@ namespace UnitTestProjectTelerikFirst
             Console.WriteLine("done");
         }
 
-        [Test]
+        //[Test]
         public void TestMethod4()
         {
             Manager manager;

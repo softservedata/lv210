@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
+using ArtOfTest.WebAii.Win32.Dialogs;
 using Wow.Appl;
 
 namespace Wow.Pages
@@ -61,23 +62,28 @@ namespace Wow.Pages
 
         public LoginPage Login()
         {
-            if (Manager.Current.ActiveBrowser == null)
-            {
-                StartBrowser();
-            }
-            CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LoginUrl);
+            StartBrowser();
+            //CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LoginUrl);
+            ApplicationPage.Get().NavigateTo(applicationSources.LoginUrl);
             return new LoginPage(CurrentManager);
         }
 
         public LoginPage Logout()
         {
-            CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LogoutUrl);
+            StartBrowser();
+            //CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LogoutUrl);
+            // TODO now do not working properly
+            ApplicationPage.Get().NavigateTo(applicationSources.LogoutUrl);
             return new LoginPage(CurrentManager);
         }
 
         public void StartBrowser()
         {
-            CurrentManager.LaunchNewBrowser();
+            InitManager();
+            if (Manager.Current.ActiveBrowser == null)
+            {
+                CurrentManager.LaunchNewBrowser();
+            }
         }
 
         public void CloseBrowser()
@@ -90,27 +96,52 @@ namespace Wow.Pages
 
         public void DisposeManager()
         {
+            Console.WriteLine("+++DisposeManager()");
+            CloseBrowser();
             if ((CurrentManager != null) && (Manager.Current.Disposed))
             {
+                Console.WriteLine("+++CurrentManager.Dispose();");
                 CurrentManager.Dispose();
             }
         }
 
         public string InvokeScript(string javaScript)
         {
+            InitManager();
             return Manager.Current.ActiveBrowser.Actions.InvokeScript(javaScript);
+        }
+
+        public void AddAlertDialog()
+        {
+            StopAlertDialog();
+            Manager.Current.DialogMonitor.AddDialog(AlertDialog.CreateAlertDialog(Manager.Current.ActiveBrowser, DialogButton.OK));
+            Manager.Current.DialogMonitor.Start();
+        }
+
+        public void StopAlertDialog()
+        {
+            if (Manager.Current.DialogMonitor.IsMonitoring)
+            {
+                Manager.Current.DialogMonitor.Stop();
+            }
         }
 
         private void InitManager()
         {
-            Settings currentSettings = new Settings();
-            //currentSettings.Web.DefaultBrowser = BrowserType.FireFox;
-            //currentSettings.Web.DefaultBrowser = BrowserType.InternetExplorer;
-            //currentSettings.Web.DefaultBrowser = BrowserType.Chrome;
-            currentSettings.Web.DefaultBrowser = GetBrowser();
-            CurrentManager = new Manager(currentSettings);
-            CurrentManager.Start();
-            //CurrentManager.LaunchNewBrowser();
+            if ((CurrentManager == null) || (!Manager.Current.Disposed))
+            {
+                Settings currentSettings = new Settings();
+                //currentSettings.Web.DefaultBrowser = BrowserType.FireFox;
+                //currentSettings.Web.DefaultBrowser = BrowserType.InternetExplorer;
+                //currentSettings.Web.DefaultBrowser = BrowserType.Chrome;
+                currentSettings.Web.DefaultBrowser = GetBrowser();
+                //
+                //currentSettings.UnexpectedDialogAction = UnexpectedDialogAction.DoNotHandle;
+                currentSettings.UnexpectedDialogAction = UnexpectedDialogAction.HandleAndContinue;
+                CurrentManager = new Manager(currentSettings);
+                CurrentManager.Start();
+                //CurrentManager.LaunchNewBrowser();
+            }
         }
 
         private BrowserType GetBrowser()
