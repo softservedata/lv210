@@ -45,11 +45,11 @@ namespace Wow.Pages
         // Constructor
         public UsersPage(Manager manager) : base(manager)
         {
-            this.All = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:All");
-            this.Admins = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Admins");
-            this.Teacher = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Teachers");
-            this.Students = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Students");
-            this.Search = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=valueToSearch");
+            All = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:All");
+            Admins = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Admins");
+            Teacher = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Teachers");
+            Students = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Students");
+            Search = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=valueToSearch");
         }
 
         // Page Object
