@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using ArtOfTest.WebAii.Core;
 using System.Collections.Generic;
 using ArtOfTest.WebAii.Controls.HtmlControls;
@@ -23,7 +22,6 @@ namespace DeleteLanguage.Test
             manager.ActiveBrowser.NavigateTo("https://192.168.195.249");
             //
             IList<HtmlControl> description = manager.ActiveBrowser.Find.AllByXPath<HtmlControl>("//div[@class='text-primary']/h2/small");
-            Console.WriteLine("description = " + description.Count);
             if ((description.Count == 0) && (manager.ActiveBrowser.BrowserType == BrowserType.Chrome))
             {
                 for (int i = 0; i < 5; i++)
@@ -55,10 +53,6 @@ namespace DeleteLanguage.Test
 
             HtmlSpan addLanguage = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=input-group-btn");
             addLanguage.MouseClick();
-
-            HtmlButton okButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("ng-class={ 'btn-primary': success, 'btn-danger': !success}");
-            
-            //Delete unnecesary language
 
             //html languageRow = manager.ActiveBrowser.Find.ByContent<HtmlTableRow>("Afrikaans");
 
