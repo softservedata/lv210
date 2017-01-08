@@ -16,7 +16,7 @@ namespace Wow.Tests
         [OneTimeSetUp]
         public void Init()
         {
-            Application.Get(ApplicationSourcesRepository.ChromeByTrainingLocal());
+            Application.Get(ApplicationSourcesRepository.ChromeByIP());
         }
 
         [OneTimeTearDown]
