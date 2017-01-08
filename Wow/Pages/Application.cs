@@ -64,7 +64,7 @@ namespace Wow.Pages
         {
             StartBrowser();
             //CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LoginUrl);
-            ApplicationPage.Get().NavigateTo(applicationSources.LoginUrl);
+            ApplicationPage.Get().NavigateTo(applicationSources.GetLoginUrl());
             return new LoginPage(CurrentManager);
         }
 
@@ -73,7 +73,7 @@ namespace Wow.Pages
             StartBrowser();
             //CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LogoutUrl);
             // TODO now do not working properly
-            ApplicationPage.Get().NavigateTo(applicationSources.LogoutUrl);
+            ApplicationPage.Get().NavigateTo(applicationSources.GetLogoutUrl());
             return new LoginPage(CurrentManager);
         }
 
@@ -149,7 +149,7 @@ namespace Wow.Pages
             BrowserType currentBrowser = BrowserType.InternetExplorer;
             foreach (BrowserType browserType in Enum.GetValues(typeof(BrowserType)))
             {
-                if (browserType.ToString().ToLower().Contains(applicationSources.BrowserName.ToLower()))
+                if (browserType.ToString().ToLower().Contains(applicationSources.GetBrowserName().ToLower()))
                 {
                     currentBrowser = browserType;
                     break;

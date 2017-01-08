@@ -6,42 +6,113 @@ using System.Threading.Tasks;
 
 namespace Wow.Appl
 {
-    public class ApplicationSources
+    // builder interfaces
+    public interface IBrowserName
+    {
+        IImplicitTimeOut SetBrowserName(string browserName);
+    }
+
+    public interface IImplicitTimeOut
+    {
+        ILoginUrl SetImplicitTimeOut(long implicitTimeOut);
+    }
+
+    public interface ILoginUrl
+    {
+        ILogoutUrl SetLoginUrl(string loginUrl);
+    }
+
+    public interface ILogoutUrl
+    {
+        IBuilder SetLogoutUrl(string logoutUrl);
+    }
+
+    public interface IBuilder
+    {
+        ApplicationSources Build();
+    }
+
+    // dependency inversion interface
+    public interface IApplicationSources
+    {
+        string GetBrowserName();
+        long GetImplicitTimeOut();
+        string GetLoginUrl();
+        string GetLogoutUrl();
+    }
+
+    public class ApplicationSources : IBrowserName, IImplicitTimeOut, ILoginUrl, ILogoutUrl, IBuilder, IApplicationSources
     {
         // Browser Data
-        public string BrowserName { get; private set; }
-        //private string driverPath;
-        // private string browserPath;
-        // private string defaulProfile;
-        //
-        // Implicit and Explicit Waits
-        public long ImplicitTimeOut { get; private set; }
-        // private long explicitTimeOut;
-        //
-        // Localization Strategy
-        // private string language;
-        //
-        // Search Strategy
-        // private string searchStrategy;
-        //
-        // Logger Strategy
-        // private string loggerStrategy;
-        //
+        private string browserName;
+        private long implicitTimeOut;
         // URLs
-        public string LoginUrl { get; private set; }
-        public string LogoutUrl { get; private set; }
-        // private String logoutJS;
-        // private String serverUrl;
-        //
-        // Connect to DB
+        private string loginUrl;
+        private string logoutUrl;
 
         // constructor
-        public ApplicationSources(string BrowserName, long ImplicitTimeOut, string LoginUrl, string LogoutUrl)
+        private ApplicationSources()
         {
-            this.BrowserName = BrowserName;
-            this.ImplicitTimeOut = ImplicitTimeOut;
-            this.LoginUrl = LoginUrl;
-            this.LogoutUrl = LogoutUrl;
+            //default
+        }
+
+        // static factory
+        // public static User Get() // old
+        public static IBrowserName Get()
+        {
+            return new ApplicationSources();
+        }
+
+        //setters
+        public IImplicitTimeOut SetBrowserName(string browserName)
+        {
+            this.browserName = browserName;
+            return this;
+        }
+
+        public ILoginUrl SetImplicitTimeOut(long implicitTimeOut)
+        {
+            this.implicitTimeOut = implicitTimeOut;
+            return this;
+        }
+
+        public ILogoutUrl SetLoginUrl(string loginUrl)
+        {
+            this.loginUrl = loginUrl;
+            return this;
+        }
+
+        public IBuilder SetLogoutUrl(string logoutUrl)
+        {
+            this.logoutUrl = logoutUrl;
+            return this;
+        }
+
+        public ApplicationSources Build()
+        {
+            return this;
+        }
+
+        //getters
+
+        public string GetBrowserName()
+        {
+            return this.browserName;
+        }
+
+        public long GetImplicitTimeOut()
+        {
+            return this.implicitTimeOut;
+        }
+
+        public string GetLoginUrl()
+        {
+            return this.loginUrl;
+        }
+
+        public string GetLogoutUrl()
+        {
+            return this.logoutUrl;
         }
 
     }
