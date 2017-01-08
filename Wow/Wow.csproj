@@ -72,7 +72,9 @@
     <Compile Include="Pages\TeacherPage.cs" />
     <Compile Include="Pages\YourProfilePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\ChangeUserNameTest.cs" />
     <Compile Include="Tests\LoginTest.cs" />
+    <Compile Include="Tests\PaginationTest.cs" />
     <Compile Include="Tests\TestRunner.cs" />
     <Compile Include="Tests\UserRoleTest.cs" />
   </ItemGroup>

@@ -55,6 +55,8 @@ namespace Wow.Data
         private bool isTeacher;
         private bool isStudent;
 
+
+        public string Name { get; set; }
         // Constructor
         /*
         public User(string email, string password, bool isAdmin, bool isTeacher, bool isStudent)

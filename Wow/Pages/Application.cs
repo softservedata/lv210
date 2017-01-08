@@ -98,11 +98,12 @@ namespace Wow.Pages
         {
             Console.WriteLine("+++DisposeManager()");
             CloseBrowser();
-            if ((CurrentManager != null) && (Manager.Current.Disposed))
-            {
-                Console.WriteLine("+++CurrentManager.Dispose();");
-                CurrentManager.Dispose();
-            }
+            CurrentManager.Dispose();
+            // if ((CurrentManager != null) && (Manager.Current.Disposed))
+            //{
+            //    Console.WriteLine("+++CurrentManager.Dispose();");
+            //    CurrentManager.Dispose();
+            //}
         }
 
         public string InvokeScript(string javaScript)
