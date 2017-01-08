@@ -8,6 +8,7 @@ using Wow.Pages;
 namespace Wow.Tests
 {
     /// <summary>
+    /// WoW-191
     /// This test verifies that the correct messages are shown if the entered data 
     /// in the 'New Name' field is too short (less than 7 characters) 
     /// or too long (more than 31 characters).
