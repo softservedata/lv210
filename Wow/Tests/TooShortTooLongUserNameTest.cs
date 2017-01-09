@@ -33,37 +33,6 @@ namespace Wow.Tests
         };
 
         [Test, TestCaseSource(nameof(TestSigninData))]
-        public void CorrectUserNameTest(User admin, dynamic names, dynamic messages)
-        {
-            // Precondition
-            admin.Name = "Blue Moon";
-
-            LoginPage loginPage = Application.Get().Login();
-            UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
-
-            //Test steps
-            //Go to EditProfile page and check if this page is really opened
-            YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
-            //Assert
-            Assert.IsTrue(yourProfilePage.YourProfileLabel != null);
-
-            //Click on Edit Name. Check
-            yourProfilePage.ClickEditName();
-            //Assert
-            Assert.IsTrue(yourProfilePage.GetNewNameField() != null);
-
-            //Fill 'New Name' field with correct name. Check if name is really changed.
-            yourProfilePage.SetNewName(names.correctName);
-            yourProfilePage = yourProfilePage.ChangeName(admin);
-            //Assert.AreEqual(admin.Name, yourProfilePage.GetNameValue());
-            //TODO ask in which way it is better to check data
-            Assert.AreEqual(names.correctName, yourProfilePage.GetNameValue());
-
-            // Return to previous state
-            loginPage = yourProfilePage.GotoLogOut();
-        }
-
-        [Test, TestCaseSource(nameof(TestSigninData))]
         public void TooShortUserNameTest(User admin, dynamic names, dynamic messages)
         {
             // Precondition
@@ -120,5 +89,38 @@ namespace Wow.Tests
             // Return to previous state
             loginPage = yourProfilePage.GotoLogOut();
         }
+
+
+        [Test, TestCaseSource(nameof(TestSigninData))]
+        public void CorrectUserNameTest(User admin, dynamic names, dynamic messages)
+        {
+            // Precondition
+            admin.Name = "Blue Moon";
+
+            LoginPage loginPage = Application.Get().Login();
+            UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
+
+            //Test steps
+            //Go to EditProfile page and check if this page is really opened
+            YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
+            //Assert
+            Assert.IsTrue(yourProfilePage.YourProfileLabel != null);
+
+            //Click on Edit Name. Check
+            yourProfilePage.ClickEditName();
+            //Assert
+            Assert.IsTrue(yourProfilePage.GetNewNameField() != null);
+
+            //Fill 'New Name' field with correct name. Check if name is really changed.
+            yourProfilePage.SetNewName(names.correctName);
+            yourProfilePage = yourProfilePage.ChangeName(admin);
+            //Assert.AreEqual(admin.Name, yourProfilePage.GetNameValue());
+            //TODO ask in which way it is better to check data
+            Assert.AreEqual(names.correctName, yourProfilePage.GetNameValue());
+
+            // Return to previous state
+            loginPage = yourProfilePage.GotoLogOut();
+        }
+
     }
 }
