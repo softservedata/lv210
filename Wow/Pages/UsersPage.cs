@@ -47,6 +47,16 @@ namespace Wow.Pages
             //Edit button
             public HtmlSpan EditPencil { get;  set; }
 
+          
+            public HtmlSpan CheckMark { get; set; }
+
+          
+                
+              
+                   
+              
+            
+
             public UserRoleManagement(Manager manager)
             {
                 this.manager = manager;
@@ -203,6 +213,51 @@ namespace Wow.Pages
             return arrayOfAppropriateAttributes.Length == 0;
         }
         
+        public bool IsAdminRoleEnabled()
+        {
+            return userRoles.AdminRole.IsEnabled;
+        }
+
+        public bool IsTeacherRoleEnabled()
+        {
+            return userRoles.TeacherRole.IsEnabled;
+        }
+
+        public bool IsStudentRoleEnabled()
+        {
+            return userRoles.StudentRole.IsEnabled;
+        }
+
+        public bool IsAdminRoleChecked()
+        {
+            return userRoles.AdminRole.Checked;
+        }
+
+        public bool IsTeacherRoleChecked()
+        {
+            return userRoles.TeacherRole.Checked;
+        }
+
+        public bool IsStudentRoleChecked()
+        {
+            return userRoles.StudentRole.Checked;
+        }
+
+
+        public bool IsDisplayedEditPencil()
+        {
+            return userRoles.EditPencil.IsVisible();
+        }
+
+        public bool IsDisplayedCheckMark()
+        {
+            return userRoles.CheckMark.IsVisible();
+        }
+
+        public void FinishEditing()
+        {
+            userRoles.CheckMark.Click();
+        }
         // set Data
         public UsersPage ClickFirst()
         {
@@ -241,6 +296,8 @@ namespace Wow.Pages
         public void SetTeacherRole()
         {
             this.userRoles.TeacherRole.Click();
+            this.userRoles.CheckMark.Click();
+         
         }
 
         public void EditRoles()
@@ -256,17 +313,9 @@ namespace Wow.Pages
         public void EditRole()
         {
             this.userRoles.EditPencil.Click();
+            this.userRoles.CheckMark = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=glyphicon glyphicon-ok");
         }
         // Business Logic
-        public void ChangeTeacherRole(string userName)
-        {
-            SetValueToSearch(userName);
-            EditRole();
-            SetTeacherRole();
-            this.userRoles.EditPencil = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=glyphicon glyphicon-ok");
-            EditRole();
-            
-
-        }
+        
     }
 }
