@@ -36,38 +36,33 @@ namespace Wow.Pages
             }
         }
 
+
+        // Components
         private class UserRoleManagement
         {
             private Manager manager;
+
             //Role checkboxes
             public HtmlInputCheckBox AdminRole { get; private set; }
             public HtmlInputCheckBox TeacherRole { get; private set; }
             public HtmlInputCheckBox StudentRole { get; private set; }
 
             //Edit button
-            public HtmlSpan EditPencil { get;  set; }
+            public HtmlSpan EditPencil { get; set; }
 
-          
             public HtmlSpan CheckMark { get; set; }
-
-          
-                
-              
-                   
-              
-            
 
             public UserRoleManagement(Manager manager)
             {
                 this.manager = manager;
-                this.AdminRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isAdmin"); 
-                this.TeacherRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isTeacher"); 
-                this.StudentRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isStudent"); 
-                
-                this.EditPencil= manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=glyphicon glyphicon-pencil");
+                this.AdminRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isAdmin");
+                this.TeacherRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isTeacher");
+                this.StudentRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isStudent");
+
+                this.EditPencil = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=glyphicon glyphicon-pencil");
             }
         }
-        // Components
+
         private class UserTable //: BaseTable
         {
             // Fields
@@ -101,6 +96,7 @@ namespace Wow.Pages
         private UserTable userTable;
         private Pagination pagination;
         private UserRoleManagement userRoles;
+
         // Constructor
         public UsersPage(Manager manager) : base(manager)
         {
@@ -254,10 +250,7 @@ namespace Wow.Pages
             return userRoles.CheckMark.IsVisible();
         }
 
-        public void FinishEditing()
-        {
-            userRoles.CheckMark.Click();
-        }
+   
         // set Data
         public UsersPage ClickFirst()
         {
@@ -283,6 +276,7 @@ namespace Wow.Pages
             return new UsersPage(manager);
         }
 
+        //
         public void SetValueToSearch(string userName)
         {
             Search.Text = userName;
@@ -296,18 +290,12 @@ namespace Wow.Pages
         public void SetTeacherRole()
         {
             this.userRoles.TeacherRole.Click();
-            this.userRoles.CheckMark.Click();
-         
+                     
         }
-
-        public void EditRoles()
-        {
-            this.userRoles.EditPencil.Click();
-        }
-
+              
         public void SetStudentRole()
         {
-            this.userRoles.TeacherRole.Click();
+            this.userRoles.StudentRole.Click();
         }
 
         public void EditRole()
@@ -315,7 +303,12 @@ namespace Wow.Pages
             this.userRoles.EditPencil.Click();
             this.userRoles.CheckMark = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=glyphicon glyphicon-ok");
         }
+
+        public void FinishEditing()
+        {
+            userRoles.CheckMark.Click();
+        }
         // Business Logic
-        
+
     }
 }
