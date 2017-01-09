@@ -1,6 +1,0 @@
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork7\HomeWork7\Shapes\bin\Debug\Shapes.exe.config
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork7\HomeWork7\Shapes\bin\Debug\Shapes.exe
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork7\HomeWork7\Shapes\bin\Debug\Shapes.pdb
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork7\HomeWork7\Shapes\obj\Debug\Shapes.csprojResolveAssemblyReference.cache
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork7\HomeWork7\Shapes\obj\Debug\Shapes.exe
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork7\HomeWork7\Shapes\obj\Debug\Shapes.pdb
