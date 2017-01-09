@@ -18,7 +18,7 @@ namespace Wow.Tests
         {
             LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(UserRepository.Get().Admin());
-            //usersPage.ChangeTeacherRole("Test V");
+            usersPage.ChangeTeacherRole("Test V");
         }
 
     }

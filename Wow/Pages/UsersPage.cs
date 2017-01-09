@@ -7,7 +7,7 @@ using System.Windows.Forms.VisualStyles;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
-
+using System.Threading;
 
 namespace Wow.Pages
 {
@@ -36,6 +36,27 @@ namespace Wow.Pages
             }
         }
 
+        private class UserRoleManagement
+        {
+            private Manager manager;
+            //Role checkboxes
+            public HtmlInputCheckBox AdminRole { get; private set; }
+            public HtmlInputCheckBox TeacherRole { get; private set; }
+            public HtmlInputCheckBox StudentRole { get; private set; }
+
+            //Edit button
+            public HtmlSpan EditPencil { get;  set; }
+
+            public UserRoleManagement(Manager manager)
+            {
+                this.manager = manager;
+                this.AdminRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isAdmin"); 
+                this.TeacherRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isTeacher"); 
+                this.StudentRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isStudent"); 
+                
+                this.EditPencil= manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=glyphicon glyphicon-pencil");
+            }
+        }
         // Components
         private class UserTable //: BaseTable
         {
@@ -63,10 +84,13 @@ namespace Wow.Pages
         public HtmlControl Teacher { get; private set; }
         public HtmlControl Students { get; private set; }
         public HtmlInputText Search { get; private set; }
+
+       
+
         //
         private UserTable userTable;
         private Pagination pagination;
-
+        private UserRoleManagement userRoles;
         // Constructor
         public UsersPage(Manager manager) : base(manager)
         {
@@ -75,11 +99,14 @@ namespace Wow.Pages
             this.Teacher = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Teachers");
             this.Students = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Students");
             this.Search = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=valueToSearch");
+                   
             this.pagination = new Pagination(manager);
+            this.userRoles = new UserRoleManagement(manager);
         }
 
         // Page Object
         // get Data
+    
         public HtmlAnchor GetFirst()
         {
             return this.pagination.First;
@@ -130,6 +157,7 @@ namespace Wow.Pages
             return this.pagination.Active.Parent<HtmlListItem>();
         }
 
+
         // Functional
         private string GetExpressionUsed(HtmlControl element)
         {
@@ -174,6 +202,7 @@ namespace Wow.Pages
 
             return arrayOfAppropriateAttributes.Length == 0;
         }
+        
         // set Data
         public UsersPage ClickFirst()
         {
@@ -199,6 +228,45 @@ namespace Wow.Pages
             return new UsersPage(manager);
         }
 
+        public void SetValueToSearch(string userName)
+        {
+            Search.Text = userName;
+        }
+
+        public void SetAdminRole()
+        {
+            this.userRoles.AdminRole.Click();
+        }
+
+        public void SetTeacherRole()
+        {
+            this.userRoles.TeacherRole.Click();
+        }
+
+        public void EditRoles()
+        {
+            this.userRoles.EditPencil.Click();
+        }
+
+        public void SetStudentRole()
+        {
+            this.userRoles.TeacherRole.Click();
+        }
+
+        public void EditRole()
+        {
+            this.userRoles.EditPencil.Click();
+        }
         // Business Logic
+        public void ChangeTeacherRole(string userName)
+        {
+            SetValueToSearch(userName);
+            EditRole();
+            SetTeacherRole();
+            this.userRoles.EditPencil = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=glyphicon glyphicon-ok");
+            EditRole();
+            
+
+        }
     }
 }
