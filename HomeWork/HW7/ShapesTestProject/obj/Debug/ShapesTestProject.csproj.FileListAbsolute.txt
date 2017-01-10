@@ -1,0 +1,9 @@
+c:\Users\rostyslav\documents\visual studio 2015\Projects\hw7\ShapesTestProject\bin\Debug\ShapesTestProject.dll
+c:\Users\rostyslav\documents\visual studio 2015\Projects\hw7\ShapesTestProject\bin\Debug\ShapesTestProject.pdb
+c:\Users\rostyslav\documents\visual studio 2015\Projects\hw7\ShapesTestProject\bin\Debug\hw7.exe
+c:\Users\rostyslav\documents\visual studio 2015\Projects\hw7\ShapesTestProject\bin\Debug\nunit.framework.dll
+c:\Users\rostyslav\documents\visual studio 2015\Projects\hw7\ShapesTestProject\bin\Debug\hw7.pdb
+c:\Users\rostyslav\documents\visual studio 2015\Projects\hw7\ShapesTestProject\bin\Debug\nunit.framework.xml
+c:\Users\rostyslav\documents\visual studio 2015\Projects\hw7\ShapesTestProject\obj\Debug\ShapesTestProject.csprojResolveAssemblyReference.cache
+c:\Users\rostyslav\documents\visual studio 2015\Projects\hw7\ShapesTestProject\obj\Debug\ShapesTestProject.dll
+c:\Users\rostyslav\documents\visual studio 2015\Projects\hw7\ShapesTestProject\obj\Debug\ShapesTestProject.pdb

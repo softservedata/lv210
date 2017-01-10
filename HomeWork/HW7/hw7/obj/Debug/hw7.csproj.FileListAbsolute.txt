@@ -1,0 +1,6 @@
+c:\users\rostyslav\documents\visual studio 2015\Projects\hw7\hw7\bin\Debug\hw7.exe.config
+c:\users\rostyslav\documents\visual studio 2015\Projects\hw7\hw7\bin\Debug\hw7.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\hw7\hw7\bin\Debug\hw7.pdb
+c:\users\rostyslav\documents\visual studio 2015\Projects\hw7\hw7\obj\Debug\hw7.csprojResolveAssemblyReference.cache
+c:\users\rostyslav\documents\visual studio 2015\Projects\hw7\hw7\obj\Debug\hw7.exe
+c:\users\rostyslav\documents\visual studio 2015\Projects\hw7\hw7\obj\Debug\hw7.pdb
