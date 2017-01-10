@@ -28,7 +28,7 @@ namespace Wow.Tests
             //UsersPage usersPage = Application.Get().Login().SuccessAdminLogin(admin);
             //
             // Check
-            Assert.AreEqual("LV-204 ISTQB", usersPage.GetUsernameText());
+            Assert.AreEqual(admin.GetName(), usersPage.GetUsernameText());
             //
             // Return to previous state
             loginPage = usersPage.GotoLogOut();

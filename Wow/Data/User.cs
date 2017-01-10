@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Wow.Data
+﻿namespace Wow.Data
 {
     // builder interfaces
     public interface IEmail
@@ -14,7 +8,12 @@ namespace Wow.Data
 
     public interface IPassword
     {
-        IAdmin SetPassword(string password);
+        IName SetPassword(string password);
+    }
+
+    public interface IName
+    {
+        IAdmin SetName(string name);
     }
 
     public interface IAdmin
@@ -42,55 +41,48 @@ namespace Wow.Data
     {
         string GetEmail();
         string GetPassword();
+        string GetName();
         bool GetIsAdmin();
         bool GetIsTeacher();
         bool GetIsStudent();
     }
     
-    public class User : IEmail, IPassword, IAdmin, ITeacher, IStudent, IBuilder, IUser
+    public class User : IEmail, IPassword, IName, IAdmin, ITeacher, IStudent, IBuilder, IUser
     {
         private string email;
-        private string password; // { get; private set; }
+        private string password;
+        private string name;
         private bool isAdmin;
         private bool isTeacher;
         private bool isStudent;
 
-
-        public string Name { get; set; }
-        // Constructor
-        /*
-        public User(string email, string password, bool isAdmin, bool isTeacher, bool isStudent)
-        {
-            this.email = email;
-            this.password = password;
-            this.isAdmin = isAdmin;
-            this.isTeacher = isTeacher;
-            this.isStudent = isStudent;
-        }
-        */
         private User()
         {
             // default
         }
 
         // static factory
-        // public static User Get() // old
         public static IEmail Get()
         {
             return new User();
         }
 
         // setters
-
         public IPassword SetEmail(string email)
         {
             this.email = email;
             return this;
         }
 
-        public IAdmin SetPassword(string password)
+        public IName SetPassword(string password)
         {
             this.password = password;
+            return this;
+        }
+
+        public IAdmin SetName(string name)
+        {
+            this.name = name;
             return this;
         }
 
@@ -118,7 +110,6 @@ namespace Wow.Data
         }
 
         // getters
-
         public string GetEmail()
         {
             return this.email;
@@ -127,6 +118,11 @@ namespace Wow.Data
         public string GetPassword()
         {
             return this.password;
+        }
+
+        public string GetName()
+        {
+            return this.name;
         }
 
         public bool GetIsAdmin()
@@ -143,6 +139,5 @@ namespace Wow.Data
         {
             return this.isStudent;
         }
-
     }
 }

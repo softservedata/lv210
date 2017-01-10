@@ -38,7 +38,7 @@ namespace Wow.Tests
             // Go to EditProfile page
             YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
             Assert.IsTrue(yourProfilePage.YourProfileLabel != null);
-            admin.Name = yourProfilePage.GetNameValue(); // Get Current Name
+            admin.SetName(yourProfilePage.GetNameValue()); // Get Current Name
 
             // Go to Edit Name Form
             yourProfilePage.ClickEditName();
@@ -49,7 +49,7 @@ namespace Wow.Tests
 
             // Press 'Cancel' and check if information wasn't saved.
             yourProfilePage.ClickCancel();
-            Assert.AreNotEqual(admin.Name, newName);
+            Assert.AreNotEqual(admin.GetName(), newName);
 
             // Go to Edit Password Form
             yourProfilePage.ClickEditPassword();
