@@ -234,13 +234,15 @@ namespace Wow.Pages
         }
 
         //Change user name
-        //TODO ask if it is correct realization
         public YourProfilePage ChangeName(User user)
         {
             ClickChangeName();
             var appearedMessage = manager.ActiveBrowser.Find.ById("editProfileLabel");
             var yourProfilePage = new YourProfilePage(manager, appearedMessage);
-            user.Name = GetNameValue();
+            if (GetNameValue() != user.GetName())
+            {
+                user.SetName(GetNameValue());
+            }           
             return yourProfilePage;
         }
 

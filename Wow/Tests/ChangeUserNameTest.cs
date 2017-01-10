@@ -35,7 +35,7 @@ namespace Wow.Tests
         public void TestChangeName(User admin, dynamic names, dynamic messages)
         {
             // Precondition
-            admin.Name = "Blue Moon";
+            admin.SetName("Blue Moon");
 
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
