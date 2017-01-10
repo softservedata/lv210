@@ -1,0 +1,12 @@
+C:\Users\Rostyslav\Desktop\ggg\Wow\bin\Debug\Wow.dll
+C:\Users\Rostyslav\Desktop\ggg\Wow\bin\Debug\Wow.pdb
+C:\Users\Rostyslav\Desktop\ggg\Wow\bin\Debug\ArtOfTest.WebAii.dll
+C:\Users\Rostyslav\Desktop\ggg\Wow\bin\Debug\nunit.framework.dll
+C:\Users\Rostyslav\Desktop\ggg\Wow\bin\Debug\Telerik.TestStudio.Core.dll
+C:\Users\Rostyslav\Desktop\ggg\Wow\bin\Debug\Telerik.TestingFramework.Json.dll
+C:\Users\Rostyslav\Desktop\ggg\Wow\bin\Debug\Telerik.TestingFramework.Hosts.Common.dll
+C:\Users\Rostyslav\Desktop\ggg\Wow\bin\Debug\ArtOfTest.WebAii.xml
+C:\Users\Rostyslav\Desktop\ggg\Wow\bin\Debug\nunit.framework.xml
+C:\Users\Rostyslav\Desktop\ggg\Wow\obj\Debug\Wow.csprojResolveAssemblyReference.cache
+C:\Users\Rostyslav\Desktop\ggg\Wow\obj\Debug\Wow.dll
+C:\Users\Rostyslav\Desktop\ggg\Wow\obj\Debug\Wow.pdb
