@@ -5,7 +5,7 @@ namespace Inheritance
     /// <summary>
     /// Base class Shape
     /// </summary>
-    public abstract class Shape : IComparable<Shape>
+    public abstract class Shape //: IComparable<Shape>
     {
         private string name;
 
@@ -35,8 +35,7 @@ namespace Inheritance
         /// <returns></returns>
         public int CompareTo(Shape shape)
         {
-            return (int)((int)this.Area() - shape.Area());
+            return this.Area().CompareTo(shape.Area());
         }
-
     }
 }

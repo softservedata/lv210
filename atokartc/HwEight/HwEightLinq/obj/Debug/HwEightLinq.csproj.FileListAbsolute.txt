@@ -1,1 +1,7 @@
 C:\Users\Andriyi\lv210\atokartc\HwEight\HwEightLinq\bin\Debug\HwEightLinq.exe.config
+C:\Users\Andrii\lv210\atokartc\HwEight\HwEightLinq\bin\Debug\HwEightLinq.exe.config
+C:\Users\Andrii\lv210\atokartc\HwEight\HwEightLinq\bin\Debug\HwEightLinq.exe
+C:\Users\Andrii\lv210\atokartc\HwEight\HwEightLinq\bin\Debug\HwEightLinq.pdb
+C:\Users\Andrii\lv210\atokartc\HwEight\HwEightLinq\obj\Debug\HwEightLinq.csprojResolveAssemblyReference.cache
+C:\Users\Andrii\lv210\atokartc\HwEight\HwEightLinq\obj\Debug\HwEightLinq.exe
+C:\Users\Andrii\lv210\atokartc\HwEight\HwEightLinq\obj\Debug\HwEightLinq.pdb
