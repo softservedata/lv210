@@ -68,7 +68,6 @@
     <Compile Include="Data\UserRepository.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\ApplicationPage.cs" />
-    <Compile Include="Pages\LanguagesPage.cs" />
     <Compile Include="Pages\UsersPage.cs" />
     <Compile Include="Pages\HeadPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
@@ -76,13 +75,13 @@
     <Compile Include="Pages\TeacherPage.cs" />
     <Compile Include="Pages\YourProfilePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\AddUsersToGroupByTeacher.cs" />
     <Compile Include="Tests\ChangeUserNameTest.cs" />
+    <Compile Include="Tests\EditProfileCancelButtonTest.cs" />
     <Compile Include="Tests\LoginTest.cs" />
     <Compile Include="Tests\PaginationTest.cs" />
     <Compile Include="Tests\TestRunner.cs" />
-    <Compile Include="Tests\TooShortTooLongUserNameTest.cs" />
-    <Compile Include="Tests\TooShortTooLongUserNameTest2.cs" />
-    <Compile Include="Tests\UserRoleTest.cs" />
+    <Compile Include="Tests\UserRoleTestSuite.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
