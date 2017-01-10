@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadNumberExceptions", "ReadNumberExceptions\ReadNumberExceptions.csproj", "{F55F4BBB-369E-4B29-92AB-41BAAD41EAD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadNumberExceptions.UnitTest", "ReadNumberExceptions.UnitTest\ReadNumberExceptions.UnitTest.csproj", "{653B38BD-50FC-4704-B5EB-0C724E1FC9A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F55F4BBB-369E-4B29-92AB-41BAAD41EAD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55F4BBB-369E-4B29-92AB-41BAAD41EAD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55F4BBB-369E-4B29-92AB-41BAAD41EAD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55F4BBB-369E-4B29-92AB-41BAAD41EAD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{653B38BD-50FC-4704-B5EB-0C724E1FC9A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{653B38BD-50FC-4704-B5EB-0C724E1FC9A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{653B38BD-50FC-4704-B5EB-0C724E1FC9A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{653B38BD-50FC-4704-B5EB-0C724E1FC9A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

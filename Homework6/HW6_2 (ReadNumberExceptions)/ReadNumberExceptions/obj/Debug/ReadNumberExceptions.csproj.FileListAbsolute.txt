@@ -1,0 +1,12 @@
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions\bin\Debug\ReadNumberExceptions.exe.config
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions\bin\Debug\ReadNumberExceptions.exe
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions\bin\Debug\ReadNumberExceptions.pdb
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions\obj\Debug\ReadNumberExceptions.csprojResolveAssemblyReference.cache
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions\obj\Debug\ReadNumberExceptions.exe
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions\obj\Debug\ReadNumberExceptions.pdb
+C:\Docs\Anya\AQC\C#Projects\Pres6_Task1 (ReadNumberExceptions)\ReadNumberExceptions\bin\Debug\ReadNumberExceptions.exe.config
+C:\Docs\Anya\AQC\C#Projects\Pres6_Task1 (ReadNumberExceptions)\ReadNumberExceptions\obj\Debug\ReadNumberExceptions.exe
+C:\Docs\Anya\AQC\C#Projects\Pres6_Task1 (ReadNumberExceptions)\ReadNumberExceptions\obj\Debug\ReadNumberExceptions.pdb
+C:\Docs\Anya\AQC\C#Projects\HW6_2 (ReadNumberExceptions)\ReadNumberExceptions\bin\Debug\ReadNumberExceptions.exe.config
+C:\Docs\Anya\AQC\C#Projects\HW6_2 (ReadNumberExceptions)\ReadNumberExceptions\obj\Debug\ReadNumberExceptions.exe
+C:\Docs\Anya\AQC\C#Projects\HW6_2 (ReadNumberExceptions)\ReadNumberExceptions\obj\Debug\ReadNumberExceptions.pdb

@@ -1,0 +1,12 @@
+E:\C#\Task7\Task7\bin\Debug\Task7.exe.config
+E:\C#\Task7\Task7\bin\Debug\Task7.exe
+E:\C#\Task7\Task7\bin\Debug\Task7.pdb
+E:\C#\Task7\Task7\obj\Debug\Task7.csprojResolveAssemblyReference.cache
+E:\C#\Task7\Task7\obj\Debug\Task7.exe
+E:\C#\Task7\Task7\obj\Debug\Task7.pdb
+C:\Docs\Anya\AQC\C#Projects\HW7\Task7\bin\Debug\Task7.exe.config
+C:\Docs\Anya\AQC\C#Projects\HW7\Task7\obj\Debug\Task7.exe
+C:\Docs\Anya\AQC\C#Projects\HW7\Task7\obj\Debug\Task7.pdb
+C:\Docs\Anya\AQC\C#Projects\HW7\Task7\bin\Debug\Task7.exe
+C:\Docs\Anya\AQC\C#Projects\HW7\Task7\bin\Debug\Task7.pdb
+C:\Docs\Anya\AQC\C#Projects\HW7\Task7\obj\Debug\Task7.csprojResolveAssemblyReference.cache

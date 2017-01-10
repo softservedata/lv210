@@ -1,6 +1,0 @@
-D:\Documents\Моє\AQC\C#Projects\ProgrammerProject\ProgrammerProject\bin\Debug\ProgrammerProject.exe.config
-D:\Documents\Моє\AQC\C#Projects\ProgrammerProject\ProgrammerProject\bin\Debug\ProgrammerProject.exe
-D:\Documents\Моє\AQC\C#Projects\ProgrammerProject\ProgrammerProject\bin\Debug\ProgrammerProject.pdb
-D:\Documents\Моє\AQC\C#Projects\ProgrammerProject\ProgrammerProject\obj\Debug\ProgrammerProject.csprojResolveAssemblyReference.cache
-D:\Documents\Моє\AQC\C#Projects\ProgrammerProject\ProgrammerProject\obj\Debug\ProgrammerProject.exe
-D:\Documents\Моє\AQC\C#Projects\ProgrammerProject\ProgrammerProject\obj\Debug\ProgrammerProject.pdb

@@ -1,0 +1,11 @@
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions.UnitTest\obj\Debug\ReadNumberExceptions.UnitTest.csprojResolveAssemblyReference.cache
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions.UnitTest\bin\Debug\ReadNumberExceptions.UnitTest.dll
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions.UnitTest\bin\Debug\ReadNumberExceptions.UnitTest.pdb
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions.UnitTest\bin\Debug\nunit.framework.dll
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions.UnitTest\bin\Debug\ReadNumberExceptions.exe
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions.UnitTest\bin\Debug\ReadNumberExceptions.pdb
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions.UnitTest\bin\Debug\nunit.framework.xml
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions.UnitTest\obj\Debug\ReadNumberExceptions.UnitTest.dll
+D:\Documents\Моє\AQC\C#Projects\ReadNumberExceptions\ReadNumberExceptions.UnitTest\obj\Debug\ReadNumberExceptions.UnitTest.pdb

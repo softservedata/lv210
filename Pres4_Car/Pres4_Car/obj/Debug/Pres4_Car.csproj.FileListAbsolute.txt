@@ -1,9 +1,0 @@
-E:\Documents\Anna\Pres4_Car\Pres4_Car\bin\Debug\Pres4_Car.exe.config
-E:\Documents\Anna\Pres4_Car\Pres4_Car\bin\Debug\Pres4_Car.exe
-E:\Documents\Anna\Pres4_Car\Pres4_Car\bin\Debug\Pres4_Car.pdb
-E:\Documents\Anna\Pres4_Car\Pres4_Car\obj\Debug\Pres4_Car.exe
-E:\Documents\Anna\Pres4_Car\Pres4_Car\obj\Debug\Pres4_Car.pdb
-E:\Documents\Anna\Pres4_Car\Pres4_Car\obj\Debug\Pres4_Car.csprojResolveAssemblyReference.cache
-D:\Documents\Моє\AQC\C#Projects\Pres4_Car\Pres4_Car\bin\Debug\Pres4_Car.exe.config
-D:\Documents\Моє\AQC\C#Projects\Pres4_Car\Pres4_Car\obj\Debug\Pres4_Car.exe
-D:\Documents\Моє\AQC\C#Projects\Pres4_Car\Pres4_Car\obj\Debug\Pres4_Car.pdb

@@ -1,9 +1,0 @@
-D:\Documents\Моє\AQC\C#Projects\AnimalsProject\AnimalsProject\bin\Debug\AnimalsProject.exe.config
-D:\Documents\Моє\AQC\C#Projects\AnimalsProject\AnimalsProject\bin\Debug\AnimalsProject.exe
-D:\Documents\Моє\AQC\C#Projects\AnimalsProject\AnimalsProject\bin\Debug\AnimalsProject.pdb
-D:\Documents\Моє\AQC\C#Projects\AnimalsProject\AnimalsProject\obj\Debug\AnimalsProject.csprojResolveAssemblyReference.cache
-D:\Documents\Моє\AQC\C#Projects\AnimalsProject\AnimalsProject\obj\Debug\AnimalsProject.exe
-D:\Documents\Моє\AQC\C#Projects\AnimalsProject\AnimalsProject\obj\Debug\AnimalsProject.pdb
-C:\Docs\Anya\AQC\C#Projects\Pres5_Task1 (AnimalsProject)\AnimalsProject\bin\Debug\AnimalsProject.exe.config
-C:\Docs\Anya\AQC\C#Projects\Pres5_Task1 (AnimalsProject)\AnimalsProject\obj\Debug\AnimalsProject.exe
-C:\Docs\Anya\AQC\C#Projects\Pres5_Task1 (AnimalsProject)\AnimalsProject\obj\Debug\AnimalsProject.pdb

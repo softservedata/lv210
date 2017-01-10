@@ -1,6 +1,0 @@
-D:\Documents\Моє\AQC\C#Projects\DictionaryProject\DictionaryProject\bin\Debug\DictionaryProject.exe.config
-D:\Documents\Моє\AQC\C#Projects\DictionaryProject\DictionaryProject\bin\Debug\DictionaryProject.exe
-D:\Documents\Моє\AQC\C#Projects\DictionaryProject\DictionaryProject\bin\Debug\DictionaryProject.pdb
-D:\Documents\Моє\AQC\C#Projects\DictionaryProject\DictionaryProject\obj\Debug\DictionaryProject.csprojResolveAssemblyReference.cache
-D:\Documents\Моє\AQC\C#Projects\DictionaryProject\DictionaryProject\obj\Debug\DictionaryProject.exe
-D:\Documents\Моє\AQC\C#Projects\DictionaryProject\DictionaryProject\obj\Debug\DictionaryProject.pdb
