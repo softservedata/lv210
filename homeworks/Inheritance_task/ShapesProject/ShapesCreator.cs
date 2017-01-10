@@ -7,7 +7,7 @@ namespace ShapesProject
     
     public class ShapesCreator
     {
-        public static void print(IEnumerable data)
+        public static void Print(IEnumerable data)
         {
             foreach (var item in data)
             {
@@ -17,7 +17,7 @@ namespace ShapesProject
 
         public static Shape FindMaxShape(List<Shape> shapeList)
         {
-            Shape maximalShape = shapeList [0];
+            Shape maximalShape = shapeList[0];
            
             foreach (Shape item in shapeList)
             {
@@ -34,7 +34,7 @@ namespace ShapesProject
             shapes.Add(new Circle("circle2",2.5));
             shapes.Add(new Square("square",0.2));
             shapes.Add(new Square("square2", 1.0));
-            print(shapes);
+            Print(shapes);
 
 
             Shape maximalShape = FindMaxShape(shapes);
@@ -43,7 +43,7 @@ namespace ShapesProject
 
             Console.WriteLine("Shapes sorted by area");
             shapes.Sort();
-            print(shapes);
+            Print(shapes);
             
             Console.ReadKey();
         }

@@ -26,8 +26,9 @@ namespace ShapesApplication
         {
             if (Radius <= 0 || Center == null)
             {
-                throw new ArgumentException("Radius can not be < 0");
+                throw new ArgumentException("Radius can not be <= 0.");
             }
+
             return true;
         }
 

@@ -70,6 +70,7 @@ namespace Task2
             PrintValues(myColl);
 
             Console.WriteLine("\nInserting values 1,-3,-4 to positions 2,8,5:");
+
             try
             {
                 myColl.Insert(2, 1);
@@ -105,6 +106,7 @@ namespace Task2
             PrintValues(myColl);
 
             Console.WriteLine("\nInserting values 1,-3,-4 to positions 2,8,5:");
+
             try
             {
                 myColl.Insert(2, 1);
@@ -143,6 +145,7 @@ namespace Task2
             PrintValues(positions);
 
             Console.WriteLine("\nInserting values 1,-3,-4 to positions 2,8,5:");
+
             try
             {
                 myColl.SetByIndex(2, 1);

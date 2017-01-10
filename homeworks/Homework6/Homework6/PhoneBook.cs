@@ -20,20 +20,22 @@ namespace Homework6
         {
             PhoneDictionary = new Dictionary<string, string>();
             string[] text = {};
+
             try
             {
                 text = File.ReadAllLines(path);
+
+                foreach (string line in text)
+                {
+                    string[] data = line.Split(',');
+                    PhoneDictionary.Add(data[0], data[1]);
+                }
             }
             catch (FileNotFoundException)
             {
                 Console.WriteLine("File was not found");
             }
-
-            foreach (string line in text)
-            {
-                string[] data = line.Split(',');
-                PhoneDictionary.Add(data[0], data[1]);
-            }
+                  
         }
 
         //Outputs phone book to console
