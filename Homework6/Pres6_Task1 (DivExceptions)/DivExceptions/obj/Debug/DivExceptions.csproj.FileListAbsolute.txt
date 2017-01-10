@@ -1,0 +1,9 @@
+D:\Documents\Моє\AQC\C#Projects\DivExceptions\DivExceptions\bin\Debug\DivExceptions.exe.config
+D:\Documents\Моє\AQC\C#Projects\DivExceptions\DivExceptions\bin\Debug\DivExceptions.exe
+D:\Documents\Моє\AQC\C#Projects\DivExceptions\DivExceptions\bin\Debug\DivExceptions.pdb
+D:\Documents\Моє\AQC\C#Projects\DivExceptions\DivExceptions\obj\Debug\DivExceptions.csprojResolveAssemblyReference.cache
+D:\Documents\Моє\AQC\C#Projects\DivExceptions\DivExceptions\obj\Debug\DivExceptions.exe
+D:\Documents\Моє\AQC\C#Projects\DivExceptions\DivExceptions\obj\Debug\DivExceptions.pdb
+C:\Docs\Anya\AQC\C#Projects\Pres6_Task1 (DivExceptions)\DivExceptions\bin\Debug\DivExceptions.exe.config
+C:\Docs\Anya\AQC\C#Projects\Pres6_Task1 (DivExceptions)\DivExceptions\obj\Debug\DivExceptions.exe
+C:\Docs\Anya\AQC\C#Projects\Pres6_Task1 (DivExceptions)\DivExceptions\obj\Debug\DivExceptions.pdb

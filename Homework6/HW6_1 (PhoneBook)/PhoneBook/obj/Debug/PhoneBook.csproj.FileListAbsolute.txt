@@ -1,0 +1,12 @@
+D:\Documents\Моє\AQC\C#Projects\PhoneBook\PhoneBook\bin\Debug\PhoneBook.exe.config
+D:\Documents\Моє\AQC\C#Projects\PhoneBook\PhoneBook\bin\Debug\PhoneBook.exe
+D:\Documents\Моє\AQC\C#Projects\PhoneBook\PhoneBook\bin\Debug\PhoneBook.pdb
+D:\Documents\Моє\AQC\C#Projects\PhoneBook\PhoneBook\obj\Debug\PhoneBook.csprojResolveAssemblyReference.cache
+D:\Documents\Моє\AQC\C#Projects\PhoneBook\PhoneBook\obj\Debug\PhoneBook.exe
+D:\Documents\Моє\AQC\C#Projects\PhoneBook\PhoneBook\obj\Debug\PhoneBook.pdb
+C:\Docs\Anya\AQC\C#Projects\HW6_1 (PhoneBook)\PhoneBook\bin\Debug\PhoneBook.exe.config
+C:\Docs\Anya\AQC\C#Projects\HW6_1 (PhoneBook)\PhoneBook\obj\Debug\PhoneBook.exe
+C:\Docs\Anya\AQC\C#Projects\HW6_1 (PhoneBook)\PhoneBook\obj\Debug\PhoneBook.pdb
+C:\Docs\Anya\AQC\C#Projects\HW6_1 (PhoneBook)\PhoneBook\bin\Debug\PhoneBook.exe
+C:\Docs\Anya\AQC\C#Projects\HW6_1 (PhoneBook)\PhoneBook\bin\Debug\PhoneBook.pdb
+C:\Docs\Anya\AQC\C#Projects\HW6_1 (PhoneBook)\PhoneBook\obj\Debug\PhoneBook.csprojResolveAssemblyReference.cache

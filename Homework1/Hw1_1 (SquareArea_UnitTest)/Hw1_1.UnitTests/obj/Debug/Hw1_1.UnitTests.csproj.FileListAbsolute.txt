@@ -9,3 +9,14 @@ D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\bin\Debug\NSubstitute.x
 D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\bin\Debug\nunit.framework.xml
 D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\obj\Debug\Hw1_1.UnitTests.dll
 D:\Documents\Моє\AQC\C#Projects\Hw1_1\Hw1_1.UnitTests\obj\Debug\Hw1_1.UnitTests.pdb
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\Hw1_1.UnitTests\bin\Debug\Hw1_1.UnitTests.dll
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\Hw1_1.UnitTests\bin\Debug\Hw1_1.UnitTests.pdb
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\Hw1_1.UnitTests\bin\Debug\HW1.exe
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\Hw1_1.UnitTests\bin\Debug\NSubstitute.dll
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\Hw1_1.UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\Hw1_1.UnitTests\bin\Debug\HW1.pdb
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\Hw1_1.UnitTests\bin\Debug\NSubstitute.xml
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\Hw1_1.UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\Hw1_1.UnitTests\obj\Debug\Hw1_1.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\Hw1_1.UnitTests\obj\Debug\Hw1_1.UnitTests.dll
+C:\Users\Anna Orlovska\Source\Repos\lv210\Homework1\Hw1_1 (SquareArea_UnitTest)\Hw1_1.UnitTests\obj\Debug\Hw1_1.UnitTests.pdb

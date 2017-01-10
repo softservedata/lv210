@@ -1,0 +1,12 @@
+C:\Docs\Anya\AQC\C#Projects\DivFile\DivFile\bin\Debug\DivFile.exe.config
+C:\Docs\Anya\AQC\C#Projects\DivFile\DivFile\bin\Debug\DivFile.exe
+C:\Docs\Anya\AQC\C#Projects\DivFile\DivFile\bin\Debug\DivFile.pdb
+C:\Docs\Anya\AQC\C#Projects\DivFile\DivFile\obj\Debug\DivFile.csprojResolveAssemblyReference.cache
+C:\Docs\Anya\AQC\C#Projects\DivFile\DivFile\obj\Debug\DivFile.exe
+C:\Docs\Anya\AQC\C#Projects\DivFile\DivFile\obj\Debug\DivFile.pdb
+C:\Docs\Anya\AQC\C#Projects\Pres6_Task2 (DivFile)\DivFile\bin\Debug\DivFile.exe.config
+C:\Docs\Anya\AQC\C#Projects\Pres6_Task2 (DivFile)\DivFile\obj\Debug\DivFile.exe
+C:\Docs\Anya\AQC\C#Projects\Pres6_Task2 (DivFile)\DivFile\obj\Debug\DivFile.pdb
+C:\Docs\Anya\AQC\C#Projects\Pres6_Task2 (DivFile)\DivFile\bin\Debug\DivFile.exe
+C:\Docs\Anya\AQC\C#Projects\Pres6_Task2 (DivFile)\DivFile\bin\Debug\DivFile.pdb
+C:\Docs\Anya\AQC\C#Projects\Pres6_Task2 (DivFile)\DivFile\obj\Debug\DivFile.csprojResolveAssemblyReference.cache
