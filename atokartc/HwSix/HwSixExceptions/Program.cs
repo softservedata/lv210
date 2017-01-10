@@ -1,18 +1,26 @@
-﻿using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace HwSixExceptions
 {
     class Program
     {
-        public Dictionary<string, string> d = new Dictionary<string, string>();
-        string[] lines = File.ReadAllLines(@"C\");
-
         static void Main(string[] args)
         {
+            PhoneBook phoneBook = new PhoneBook();
+            phoneBook.ReadFromFile("phones.txt");
+            phoneBook.Output();
+
+            phoneBook.WritePhoneNumbersToFile("OnlyPhones.txt");
+
+            string findNumber = phoneBook.FindNumber();
+            Console.WriteLine(findNumber);
+
+            Console.WriteLine("\nNumbers in +38 format");
+            phoneBook.ChangeFormat();
+
+            phoneBook.WriteToFile();
+            phoneBook.Output();
+            Console.ReadKey();
         }
     }
 }
