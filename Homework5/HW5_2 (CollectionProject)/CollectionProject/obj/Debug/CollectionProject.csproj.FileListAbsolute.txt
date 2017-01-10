@@ -1,0 +1,15 @@
+D:\Documents\Моє\AQC\C#Projects\CollectionProject\CollectionProject\bin\Debug\CollectionProject.exe.config
+D:\Documents\Моє\AQC\C#Projects\CollectionProject\CollectionProject\bin\Debug\CollectionProject.exe
+D:\Documents\Моє\AQC\C#Projects\CollectionProject\CollectionProject\bin\Debug\CollectionProject.pdb
+D:\Documents\Моє\AQC\C#Projects\CollectionProject\CollectionProject\obj\Debug\CollectionProject.exe
+D:\Documents\Моє\AQC\C#Projects\CollectionProject\CollectionProject\obj\Debug\CollectionProject.pdb
+D:\Documents\Моє\AQC\C#Projects\CollectionProject\CollectionProject\obj\Debug\CollectionProject.csprojResolveAssemblyReference.cache
+C:\Docs\Anya\AQC\C#Projects\HW5_2 (CollectionProject)\CollectionProject\bin\Debug\CollectionProject.exe.config
+C:\Docs\Anya\AQC\C#Projects\HW5_2 (CollectionProject)\CollectionProject\obj\Debug\CollectionProject.exe
+C:\Docs\Anya\AQC\C#Projects\HW5_2 (CollectionProject)\CollectionProject\obj\Debug\CollectionProject.pdb
+C:\Docs\Anya\AQC\C#Projects\HW5_2 (CollectionProject)\CollectionProject\obj\Debug\CollectionProject.csprojResolveAssemblyReference.cache
+C:\Docs\Anya\AQC\C#Projects\HW5_2 (CollectionProject)\CollectionProject\bin\Debug\CollectionProject.exe
+C:\Docs\Anya\AQC\C#Projects\HW5_2 (CollectionProject)\CollectionProject\bin\Debug\CollectionProject.pdb
+E:\C#\HW5_2 (CollectionProject)\CollectionProject\bin\Debug\CollectionProject.exe.config
+E:\C#\HW5_2 (CollectionProject)\CollectionProject\obj\Debug\CollectionProject.exe
+E:\C#\HW5_2 (CollectionProject)\CollectionProject\obj\Debug\CollectionProject.pdb
