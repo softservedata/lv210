@@ -12,7 +12,7 @@ namespace Shapes
 
         private string _name;
 
-        // Prop
+        // Properties
 
         public double Perimeter { get; set; }
 
@@ -24,7 +24,7 @@ namespace Shapes
             set { _name = value; }
         }
 
-        // Ctor
+        // Constructor
 
         public Shape(string name)
         {
@@ -37,9 +37,23 @@ namespace Shapes
 
         public abstract double GetPerimeter();
 
+        /// <summary>
+        /// Formating shape output
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return String.Format($"{Name} P = {Perimeter:F} S = {Area:F}");
+        }
+
+        /// <summary>
+        /// Output shapes collection on console
+        /// </summary>
+        /// <param name="shapes">Shapes collection</param>
+        public static void ConsoleDisplay(List<Shape> shapes)
+        {
+            foreach (var shape in shapes)
+                Console.WriteLine(shape);
         }
     }
 }

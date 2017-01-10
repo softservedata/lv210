@@ -12,7 +12,7 @@ namespace Shapes
 
         private double _radius;
 
-        // Ctor
+        // Constructor
 
         public Circle(string name, double radius) : base(name)
         {

@@ -12,7 +12,7 @@ namespace Shapes
 
         private double _side;
 
-        // Ctor
+        // Constructor
 
         public Square(string name, double side) : base(name)
         {

@@ -43,9 +43,9 @@ namespace String
 
                 // --- Queries Execution ---
 
-                longestLine.QueryExecution();
-                shortestLine.QueryExecution();
-                consistWordVarLines.QueryExecution();
+                longestLine.ConsoleQueryExecution();
+                shortestLine.ConsoleQueryExecution();
+                consistWordVarLines.ConsoleQueryExecution();
 
             }
 
@@ -60,8 +60,13 @@ namespace String
             }
         }
     }
+
     static class StringUtilityClass
     {
+        /// <summary>
+        /// Output on console the number of symbols in every line from string array
+        /// </summary>
+        /// <param name="textContent">String array with text</param>
         public static void DisplaySymbolsInEachLine(this string[] textContent)
         {
             int lineNumber = 1;
@@ -73,9 +78,13 @@ namespace String
             }
         }
 
-        public static void QueryExecution(this IEnumerable<string> textContent)
+        /// <summary>
+        /// Execute query by printing result on console
+        /// </summary>
+        /// <param name="resultArray">Resulted string array</param>
+        public static void ConsoleQueryExecution(this IEnumerable<string> resultArray)
         {
-            foreach (var line in textContent)
+            foreach (var line in resultArray)
                 Console.WriteLine(line);
         }
     }

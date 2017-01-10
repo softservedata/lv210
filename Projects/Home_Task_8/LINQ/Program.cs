@@ -20,12 +20,6 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            // --- Precondition ---
-
-            int lowerLimit = 10, upperLimit = 100;
-            char desiredChar = 'a';
-            int perimeterLimit = 5;
-
             // --- Data Source ---
 
             List<Shape> shapes = new List<Shape>()
@@ -40,8 +34,8 @@ namespace LINQ
 
             // --- Queries ---
 
-            var areaInRangeQuery = shapes.Where(s => (s.Area >= lowerLimit) && (s.Area <= upperLimit));
-            var nameContainsCharA = shapes.Where(s => s.Name.ToLower().Contains(desiredChar));
+            var areaInRangeQuery = shapes.Where(s => (s.Area >= Conditions.RangeLowerLimit) && (s.Area <= Conditions.RangeUpperLimit));
+            var nameContainsCharA = shapes.Where(s => s.Name.ToLower().Contains(Conditions.DesireChar));
             
             // --- Query Execution ---
 
@@ -50,10 +44,8 @@ namespace LINQ
 
             // --- Remove and display ---
 
-            shapes.RemoveAll(p => p.Perimeter < perimeterLimit);
-
-            foreach (var shape in shapes)
-                Console.WriteLine(shape);
+            shapes.RemoveAll(p => p.Perimeter < Conditions.PerimeterLimit);
+            Shape.ConsoleDisplay(shapes);
         }
     }
 
