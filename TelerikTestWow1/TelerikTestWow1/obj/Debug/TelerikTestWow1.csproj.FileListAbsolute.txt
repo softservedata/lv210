@@ -1,0 +1,13 @@
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\obj\Debug\TelerikTestWow1.csprojResolveAssemblyReference.cache
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\bin\Debug\TelerikTestWow1.dll
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\bin\Debug\TelerikTestWow1.pdb
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\bin\Debug\ArtOfTest.WebAii.dll
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\bin\Debug\nunit.framework.dll
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\bin\Debug\Telerik.TestStudio.Core.dll
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\bin\Debug\Telerik.TestingFramework.Json.dll
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\bin\Debug\Telerik.TestingFramework.Hosts.Common.dll
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\bin\Debug\ArtOfTest.WebAii.xml
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\bin\Debug\nunit.framework.xml
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\obj\Debug\TelerikTestWow1.dll
+C:\Users\aorlovtc\Source\Repos\lv210\TelerikTestWow1\TelerikTestWow1\obj\Debug\TelerikTestWow1.pdb
