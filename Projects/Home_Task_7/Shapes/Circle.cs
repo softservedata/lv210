@@ -9,9 +9,11 @@ namespace Shapes
     class Circle : Shape
     {
         // Field
+
         private double _radius;
 
-        // Ctor
+        // Constructor
+
         public Circle(string name, double radius) : base(name)
         {
             _radius = radius;
@@ -20,19 +22,23 @@ namespace Shapes
         }
 
         // Methods
+
+        /// <summary>
+        /// Calculate area of circle by formula: S = PI*radius^2
+        /// </summary>
+        /// <returns>Area value</returns>
         public override double GetArea()
         {
             return Math.PI * _radius * _radius;
         }
 
+        /// <summary>
+        /// Calculate perimeter of circle by formula: P = 2*PI*radius
+        /// </summary>
+        /// <returns>Perimeter value</returns>
         public override double GetPerimeter()
         {
             return 2 * Math.PI * _radius;
-        }
-
-        public override string ToString()
-        {
-            return String.Format($"{Name} P = {Perimeter:F} S = {Area:F}");
         }
     }
 }
