@@ -68,6 +68,7 @@
     <Compile Include="Data\UserRepository.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\ApplicationPage.cs" />
+    <Compile Include="Pages\LanguagesPage.cs" />
     <Compile Include="Pages\UsersPage.cs" />
     <Compile Include="Pages\HeadPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
