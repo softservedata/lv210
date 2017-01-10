@@ -1,6 +1,7 @@
 ﻿using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
+using Wow.Data;
 
 namespace Wow.Pages
 {
@@ -105,13 +106,28 @@ namespace Wow.Pages
             return this.Message.TextContent;
         }
 
+        public string GetNewNameFieldText()
+        {
+            return GetNewNameField().Text;
+        }
+
         // Business Logic
-        public YourProfilePage ClickChangeName()
+        public void ClickChangeName()
         {
             if (this.editNameForm == null) ClickEditName();
-            this.editNameForm.ChangeName.Click();
+            this.editNameForm.ChangeName.Click();           
+        }
+
+
+        //Change user name
+        //TODO ask if it is correct realization
+        public YourProfilePage ChangeName(User user)
+        {
+            ClickChangeName();
             var appearedMessage = manager.ActiveBrowser.Find.ById("editProfileLabel");
-            return new YourProfilePage(manager, appearedMessage);
+            var yourProfilePage = new YourProfilePage(manager, appearedMessage);
+            user.Name = GetNameValue();
+            return yourProfilePage;
         }
 
         public YourProfilePage ClickCancel()
