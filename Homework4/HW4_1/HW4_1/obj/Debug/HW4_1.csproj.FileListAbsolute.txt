@@ -1,0 +1,6 @@
+E:\Documents\Anna\HW4_1\HW4_1\bin\Debug\HW4_1.exe.config
+E:\Documents\Anna\HW4_1\HW4_1\bin\Debug\HW4_1.exe
+E:\Documents\Anna\HW4_1\HW4_1\bin\Debug\HW4_1.pdb
+E:\Documents\Anna\HW4_1\HW4_1\obj\Debug\HW4_1.csprojResolveAssemblyReference.cache
+E:\Documents\Anna\HW4_1\HW4_1\obj\Debug\HW4_1.exe
+E:\Documents\Anna\HW4_1\HW4_1\obj\Debug\HW4_1.pdb
