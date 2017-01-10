@@ -1,1 +1,3 @@
 C:\Users\Andriyi\lv210\atokartc\Inheritance\Inheritance\bin\Debug\Inheritance.exe.config
+C:\Users\Andrii\lv210\atokartc\Inheritance\Inheritance\bin\Debug\Inheritance.exe.config
+C:\Users\Andrii\lv210\atokartc\Inheritance\Inheritance\obj\Debug\Inheritance.csprojResolveAssemblyReference.cache
