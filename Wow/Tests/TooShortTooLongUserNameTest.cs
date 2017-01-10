@@ -114,8 +114,7 @@ namespace Wow.Tests
             //Fill 'New Name' field with correct name. Check if name is really changed.
             yourProfilePage.SetNewName(names.correctName);
             yourProfilePage = yourProfilePage.ChangeName(admin);
-            //Assert.AreEqual(admin.Name, yourProfilePage.GetNameValue());
-            //TODO ask in which way it is better to check data
+            //Assert
             Assert.AreEqual(names.correctName, yourProfilePage.GetNameValue());
 
             // Return to previous state
