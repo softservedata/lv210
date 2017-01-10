@@ -54,11 +54,11 @@ namespace DeleteLanguage.Test
             HtmlSpan addLanguage = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=input-group-btn");
             addLanguage.MouseClick();
 
-            //html languageRow = manager.ActiveBrowser.Find.ByContent<HtmlTableRow>("Afrikaans");
+            //HtmlTableRow languageRow = manager.ActiveBrowser.Find.ByContent<HtmlTableRow>("Afrikaans");
 
             //manager.Dispose();
 
 
-    }
+        }
     }
 }

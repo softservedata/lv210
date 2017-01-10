@@ -2,6 +2,7 @@
 using Wow.Data;
 using Wow.Pages;
 
+
 namespace Wow.Tests
 {
     /// <summary>
@@ -10,8 +11,7 @@ namespace Wow.Tests
     /// in the 'New Name' field is too short (less than 7 characters) 
     /// or too long (more than 31 characters).
     /// </summary>
-    [TestFixture]
-    public class TooShortTooLongUserNameTest2 : TestRunner
+    class TooLongTooShortUserNameTest
     {
         private static readonly object[] TestSigninData =
            {
@@ -62,7 +62,6 @@ namespace Wow.Tests
             yourProfilePage.SetNewName(names.tooLongName);
             yourProfilePage = yourProfilePage.ChangeName(admin);
             Assert.AreEqual(messages.errorMessageForTooLongName, yourProfilePage.GetMessageText());
-
 
             //Fill 'New Name' field with correct name. Check if name is really changed.
             yourProfilePage.SetNewName(names.correctName);
