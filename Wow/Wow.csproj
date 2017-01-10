@@ -55,7 +55,9 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -77,6 +79,8 @@
     <Compile Include="Tests\LoginTest.cs" />
     <Compile Include="Tests\PaginationTest.cs" />
     <Compile Include="Tests\TestRunner.cs" />
+    <Compile Include="Tests\TooShortTooLongUserNameTest.cs" />
+    <Compile Include="Tests\TooShortTooLongUserNameTest2.cs" />
     <Compile Include="Tests\UserRoleTest.cs" />
   </ItemGroup>
   <ItemGroup />
