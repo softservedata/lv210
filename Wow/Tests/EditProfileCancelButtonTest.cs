@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using Wow.Data;
 using Wow.Pages;
@@ -30,41 +26,42 @@ namespace Wow.Tests
             admin.SetEmail("sokt@securehost.com.es");
             admin.SetPassword("blackstar");
 
+            // Login
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
 
             // --- Test Steps --- //
 
-            // Go to Edit Profile Page
+            // 1. Go to 'Edit Profile' page
             YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
             Assert.IsNotNull(yourProfilePage.YourProfileLabel);
             admin.SetName(yourProfilePage.GetNameValue());  // Get Current Name
 
-            // Go to Edit Name Form
+            // 2. Go to 'Edit Name' form
             yourProfilePage.ClickEditName();
             Assert.IsNotNull(yourProfilePage.GetNewNameField());
 
-            // Set New Name
+            // 3. Set new name
             yourProfilePage.SetNewName(newName);
 
-            // Press 'Cancel' and check if information wasn't saved.
+            // 4. Press 'Cancel' and check if information wasn't saved.
             yourProfilePage.ClickCancel();
             Assert.AreNotEqual(admin.GetName(), newName);
 
-            // Go to Edit Password Form
+            // 5. Go to 'Edit Password' form
             yourProfilePage.ClickEditPassword();
             Assert.IsNotNull(yourProfilePage.YourProfileLabel);
 
-            // Set New Password
+            // 6. Set new password
             yourProfilePage.SetCurrentPassword(admin.GetPassword());
             yourProfilePage.SetNewPassword(newPassword);
             yourProfilePage.SetConfirmPassword(newPassword);
 
-            // Press 'Cancel' and check if information wasn't saved.
+            // 7. Press 'Cancel' and check if information wasn't saved.
             yourProfilePage.ClickCancelPassword();
             Assert.AreNotEqual(admin.GetPassword(), newPassword);
 
-            // Logout
+            // --- Logout --- //
             loginPage = yourProfilePage.GotoLogOut();
 
             Console.WriteLine("Test Done!");
