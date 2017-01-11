@@ -41,31 +41,28 @@ namespace Wow.Tests
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
 
-            //Test steps
-            //Go to EditProfile page and check if this page is really opened
+            // Test steps
+            // Go to EditProfile page and check if this page is really opened
             YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
-            //Assert
             Assert.IsTrue(yourProfilePage.YourProfileLabel != null);
 
-            //Click on Edit Name. Check
+            //Click on Edit Name check if this page is really opened
             yourProfilePage.ClickEditName();
-            //Assert
             Assert.IsTrue(yourProfilePage.GetNewNameField() != null);
 
             //Fill 'New Name' field with too short name. Check if appropriate message appears.
             yourProfilePage.SetNewName(names.tooShortName);
             yourProfilePage = yourProfilePage.ChangeName(admin);
-            //Assert.AreEqual(messages.errorMessageForTooShortName, yourProfilePage.GetMessageText());
+            Assert.AreEqual(messages.errorMessageForTooShortName, yourProfilePage.GetMessageText());
 
             //Fill 'New Name' field with too long name. Check if appropriate message appears.
             yourProfilePage.SetNewName(names.tooLongName);
             yourProfilePage = yourProfilePage.ChangeName(admin);
-            //Assert.AreEqual(messages.errorMessageForTooLongName, yourProfilePage.GetMessageText());
+            Assert.AreEqual(messages.errorMessageForTooLongName, yourProfilePage.GetMessageText());
 
             //Fill 'New Name' field with correct name. Check if name is really changed.
             yourProfilePage.SetNewName(names.correctName);
             yourProfilePage = yourProfilePage.ChangeName(admin);
-            //Assert
             Assert.AreEqual(names.correctName, yourProfilePage.GetNameValue());
 
             // Return to previous state

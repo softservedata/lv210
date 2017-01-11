@@ -4,6 +4,11 @@ using Wow.Pages;
 
 namespace Wow.Tests
 {
+    /// <summary>
+    /// WoW - 197
+    /// This test verifies that the correct error messages
+    /// are shown when leaving mandatory fields blank
+    /// </summary>
     [TestFixture]
     public class BlankMandatoryFieldsTest : TestRunner
     {
@@ -11,10 +16,10 @@ namespace Wow.Tests
         {
             new object[]
             {
-                UserRepository.Get().Admin(), // Admin User
-                "", // Blank string
-                "starblack", // New Password
-                "All fields are mandatory" //Error message
+                UserRepository.Get().Admin(),   // Admin User
+                "",                             // Blank string
+                "starblack",                    // New Password
+                "All fields are mandatory"      // Error message
             }
         };
 
@@ -28,51 +33,43 @@ namespace Wow.Tests
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
 
-            //Test steps
-            //Go to EditProfile page and check if this page is really opened
+            // Test steps
+            // Go to EditProfile page and check if this page is really opened
             YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
-            //Assert
             Assert.NotNull(yourProfilePage.YourProfileLabel);
 
-            //Click on Edit Name. Check
+            // Click on Edit Name and check if this page is really opened
             yourProfilePage.ClickEditName();
-            //Assert
             Assert.NotNull(yourProfilePage.GetNewNameField());
 
-            //Leave 'New Name' field empty. Check if appropriate message appears.
+            // Leave 'New Name' field empty. Check if appropriate message appears.
             yourProfilePage = yourProfilePage.ChangeName(admin);
-            //Assert.AreEqual(errorMessage, yourProfilePage.GetMessageText());
+            Assert.AreEqual(errorMessage, yourProfilePage.GetMessageText());
 
             yourProfilePage.ClickCancel();
 
-            //go to edit password
+            // Go to Edit Password
             yourProfilePage.ClickEditPassword();
             Assert.NotNull(yourProfilePage.YourProfileLabel);
 
-            //leave password
+            // Fill in the 'New Password' and 'Confirm Password' fields
             yourProfilePage.SetNewPassword(newPassword);
             yourProfilePage.SetConfirmPassword(newPassword);
-
             yourProfilePage.ClickChangePassword();
+            Assert.AreEqual(errorMessage, yourProfilePage.GetMessageText());
 
-            //Assert.AreEqual(errorMessage, yourProfilePage.GetMessageText());
-
-            //leave password
+            // Clear the 'New Password' field and fill in the 'Current Password' field
             yourProfilePage.SetCurrentPassword(admin.GetPassword());
             yourProfilePage.SetNewPassword(blankString);
             yourProfilePage.SetConfirmPassword(newPassword);
-
             yourProfilePage.ClickChangePassword();
-
             Assert.AreEqual(errorMessage, yourProfilePage.GetMessageText());
 
-            //leave password
+            // Clear the 'Confirm Password' field and fill in the 'New Password' field
             yourProfilePage.SetCurrentPassword(admin.GetPassword());
             yourProfilePage.SetNewPassword(newPassword);
             yourProfilePage.SetConfirmPassword(blankString);
-
             yourProfilePage.ClickChangePassword();
-
             Assert.AreEqual(errorMessage, yourProfilePage.GetMessageText());
 
             // Return to previous state
