@@ -5,34 +5,22 @@
     /// </summary>
     public class Square : Shape
     {
-        private double side;
-
-        public double Side
-        {
-            get
-            {
-                return side;
-            }
-            set
-            {
-                this.side = value;
-            }
-        }
+        public double Side { get; set; }
 
         public Square(string name, double side)
             : base(name)
         {
-            this.side = side;
+            this.Side = side;
         }
 
         public override double Area()
         {
-            return side * side;
+            return this.Side * this.Side;
         }
 
         public override double Perimeter()
         {
-            return 4 * side;
+            return 4 * this.Side;
         }
 
         public override string ToString()
@@ -42,4 +30,3 @@
         }
     }
 }
-

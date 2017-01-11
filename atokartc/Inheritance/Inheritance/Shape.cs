@@ -1,11 +1,9 @@
-﻿using System;
-
-namespace Inheritance
+﻿namespace Inheritance
 {
     /// <summary>
     /// Base class Shape
     /// </summary>
-    public abstract class Shape //: IComparable<Shape>
+    public abstract class Shape
     {
         private string name;
 
@@ -15,7 +13,7 @@ namespace Inheritance
             {
                 return name;
             }
-            set
+            private set
             {
                 this.name = value;
             }
@@ -23,7 +21,7 @@ namespace Inheritance
 
         public Shape(string name)
         {
-            this.name = name;
+            this.Name = name;
         }
 
         public abstract double Area();
@@ -39,3 +37,8 @@ namespace Inheritance
         }
     }
 }
+
+
+
+
+
