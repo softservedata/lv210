@@ -8,11 +8,7 @@ namespace Shapes
 {
     class Square : Shape
     {
-        // Field
-
         private double _side;
-
-        // Constructor
 
         public Square(string name, double side) : base(name)
         {
@@ -20,8 +16,6 @@ namespace Shapes
             Perimeter = GetPerimeter();
             Area = GetArea();
         }
-
-        // Methods
 
         public override double GetArea()
         {

@@ -20,7 +20,9 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            // --- Data Source ---
+            // --- Data Source --- //
+
+            string pathToWriteFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop),"shapes.txt");
 
             List<Shape> shapes = new List<Shape>()
             {
@@ -32,17 +34,17 @@ namespace LINQ
                 new Square("Square-3 (leg = 15 cm)", 15)
             };
 
-            // --- Queries ---
+            // --- Queries --- //
 
             var areaInRangeQuery = shapes.Where(s => (s.Area >= Conditions.RangeLowerLimit) && (s.Area <= Conditions.RangeUpperLimit));
             var nameContainsCharA = shapes.Where(s => s.Name.ToLower().Contains(Conditions.DesireChar));
             
-            // --- Query Execution ---
+            // --- Query Execution --- //
 
-            areaInRangeQuery.WriteToFile("shapesLINQ.txt");
-            nameContainsCharA.WriteToFile("shapesLINQ.txt");
+            areaInRangeQuery.WriteToFile(pathToWriteFile);
+            nameContainsCharA.WriteToFile(pathToWriteFile);
 
-            // --- Remove and display ---
+            // --- Remove and display --- //
 
             shapes.RemoveAll(p => p.Perimeter < Conditions.PerimeterLimit);
             Shape.ConsoleDisplay(shapes);

@@ -8,11 +8,7 @@ namespace Shapes
 {
     class Circle : Shape
     {
-        // Field
-
         private double _radius;
-
-        // Constructor
 
         public Circle(string name, double radius) : base(name)
         {
@@ -20,8 +16,6 @@ namespace Shapes
             Perimeter = GetPerimeter();
             Area = GetArea();
         }
-
-        // Methods
 
         public override double GetArea()
         {

@@ -8,8 +8,6 @@ namespace LINQ
 {
     public static class Conditions
     {
-        // Properties
-
         public static int RangeLowerLimit { get; set; } = 10;
         public static int RangeUpperLimit { get; set; } = 100;
         public static int PerimeterLimit { get; set; } = 5;

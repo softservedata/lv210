@@ -8,33 +8,22 @@ namespace Shapes
 {
     abstract class Shape
     {
-        // Field
-
         private string _name;
-
-        // Properties
-
-        public double Perimeter { get; set; }
-
-        public double Area { get; set; }
-
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-
-        // Constructor
 
         public Shape(string name)
         {
             Name = name;
         }
 
-        // Methods
+        public double Perimeter { get; set; }
+        public double Area { get; set; }
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
 
         public abstract double GetArea();
-
         public abstract double GetPerimeter();
 
         /// <summary>
