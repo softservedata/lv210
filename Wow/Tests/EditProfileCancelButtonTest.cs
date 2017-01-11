@@ -16,16 +16,16 @@ namespace Wow.Tests
         {
             new object[]
             {
-                UserRepository.Get().Admin(), // Admin User
-                "Supernova", // New Name
-                "starblack", // New Password
+                UserRepository.Get().Admin(),   // Admin User
+                "Supernova",                    // New Name
+                "starblack",                    // New Password
             }
         };
 
         [Test, TestCaseSource(nameof(TestData))]
         public void CancelButtonTest(User admin, string newName, string newPassword)
         {
-            // --- Precondition ---
+            // --- Precondition --- //
 
             admin.SetEmail("sokt@securehost.com.es");
             admin.SetPassword("blackstar");
@@ -33,27 +33,27 @@ namespace Wow.Tests
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
 
-            // --- Test steps ---
+            // --- Test Steps --- //
 
-            // Go to EditProfile page
+            // Go to Edit Profile Page
             YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
-            Assert.IsTrue(yourProfilePage.YourProfileLabel != null);
-            admin.Name = yourProfilePage.GetNameValue(); // Get Current Name
+            Assert.IsNotNull(yourProfilePage.YourProfileLabel);
+            admin.SetName(yourProfilePage.GetNameValue());  // Get Current Name
 
             // Go to Edit Name Form
             yourProfilePage.ClickEditName();
-            Assert.IsTrue(yourProfilePage.GetNewNameField() != null);
+            Assert.IsNotNull(yourProfilePage.GetNewNameField());
 
             // Set New Name
             yourProfilePage.SetNewName(newName);
 
             // Press 'Cancel' and check if information wasn't saved.
             yourProfilePage.ClickCancel();
-            Assert.AreNotEqual(admin.Name, newName);
+            Assert.AreNotEqual(admin.GetName(), newName);
 
             // Go to Edit Password Form
             yourProfilePage.ClickEditPassword();
-            Assert.IsTrue(yourProfilePage.YourProfileLabel != null);
+            Assert.IsNotNull(yourProfilePage.YourProfileLabel);
 
             // Set New Password
             yourProfilePage.SetCurrentPassword(admin.GetPassword());
@@ -63,6 +63,9 @@ namespace Wow.Tests
             // Press 'Cancel' and check if information wasn't saved.
             yourProfilePage.ClickCancelPassword();
             Assert.AreNotEqual(admin.GetPassword(), newPassword);
+
+            // Logout
+            loginPage = yourProfilePage.GotoLogOut();
 
             Console.WriteLine("Test Done!");
         }
