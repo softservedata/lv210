@@ -45,6 +45,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <Choose>
@@ -64,8 +65,15 @@
   <ItemGroup>
     <Compile Include="Appl\ApplicationSources.cs" />
     <Compile Include="Appl\ApplicationSourcesRepository.cs" />
+    <Compile Include="DataBase\IRepositorySettings.cs" />
+    <Compile Include="DataBase\RepositorySettings.cs" />
+    <Compile Include="DataBase\SqlQueries.cs" />
+    <Compile Include="DataBase\SqlRepository.cs" />
+    <Compile Include="Data\DbUserRepository.cs" />
+    <Compile Include="Data\IDbUserRepository.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\UserRepository.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\ApplicationPage.cs" />
     <Compile Include="Pages\UsersPage.cs" />
@@ -83,7 +91,14 @@
     <Compile Include="Tests\TestRunner.cs" />
     <Compile Include="Tests\UserRoleTestSuite.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DataBase\FIndCountOfUsersQuery.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataBase\GetAllQuery.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

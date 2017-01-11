@@ -74,6 +74,5 @@ namespace Wow.Data
             //return new ExcelUtils("FileName").Load();
             return null;
         }
-
     }
 }

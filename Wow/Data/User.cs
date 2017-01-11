@@ -1,6 +1,8 @@
-﻿namespace Wow.Data
+﻿using System;
+
+namespace Wow.Data
 {
-    // builder interfaces
+    // Builder interfaces
     public interface IEmail
     {
         IPassword SetEmail(string email);
@@ -36,7 +38,7 @@
         User Build();
     }
 
-    // dependency inversion interface
+    // Dependency inversion interface
     public interface IUser
     {
         string GetEmail();
@@ -46,7 +48,7 @@
         bool GetIsTeacher();
         bool GetIsStudent();
     }
-    
+
     public class User : IEmail, IPassword, IName, IAdmin, ITeacher, IStudent, IBuilder, IUser
     {
         private string email;
@@ -56,18 +58,31 @@
         private bool isTeacher;
         private bool isStudent;
 
-        private User()
+        private User() { }
+
+        private bool LogicExpressionForEqualMathod(User user)
         {
-            // default
+            return (this.email == user.email) && (this.password == user.password) && (this.name == user.name) &&
+                   (this.isAdmin == user.isAdmin) &&
+                   (this.isTeacher == user.isTeacher) &&
+                   (this.isStudent == user.isStudent);
         }
 
-        // static factory
+        private static bool LogicExpressionForEqualMathod(User userFirst, User userSecond)
+        {
+            return (userFirst.email == userSecond.email) && (userFirst.password == userSecond.password) &&
+                   (userFirst.name == userSecond.name) &&
+                   (userFirst.isAdmin == userSecond.isAdmin) &&
+                   (userFirst.isTeacher == userSecond.isTeacher) &&
+                   (userFirst.isStudent == userSecond.isStudent);
+        }
+
+        // Static factory
         public static IEmail Get()
         {
             return new User();
         }
 
-        // setters
         public IPassword SetEmail(string email)
         {
             this.email = email;
@@ -109,7 +124,6 @@
             return this;
         }
 
-        // getters
         public string GetEmail()
         {
             return this.email;
@@ -138,6 +152,45 @@
         public bool GetIsStudent()
         {
             return this.isStudent;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            User user = obj as User;
+            if ((System.Object)user == null)
+                return false;
+
+            return LogicExpressionForEqualMathod(user);
+        }
+
+        public bool Equals(User user)
+        {
+            if ((object)user == null)
+                return false;
+
+            return LogicExpressionForEqualMathod(user);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.GetEmail().GetHashCode() ^ this.GetPassword().GetHashCode() ^ this.GetName().GetHashCode() ^
+                   this.GetIsAdmin().GetHashCode() ^ this.GetIsTeacher().GetHashCode() ^ this.GetIsStudent().GetHashCode();
+        }
+
+        public static bool operator ==(User firstUser, User secondUser)
+        {
+            if (System.Object.ReferenceEquals(firstUser, secondUser))
+                return true;
+
+            if ((object)firstUser == null || (object)secondUser == null)
+                return false;
+
+            return LogicExpressionForEqualMathod(firstUser, secondUser);
+        }
+
+        public static bool operator !=(User firstUser, User secondUser)
+        {
+            return !(firstUser == secondUser);
         }
     }
 }
