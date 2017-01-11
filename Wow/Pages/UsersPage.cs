@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.VisualStyles;
+﻿using System.Linq;
 using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
-using System.Threading;
+
 
 namespace Wow.Pages
 {
@@ -15,10 +9,8 @@ namespace Wow.Pages
     {
         private class Pagination
         {
-            //Fields
             private Manager manager;
 
-            // get Data
             public HtmlAnchor First { get; private set; }
             public HtmlAnchor StepBack { get; private set; }
             public HtmlAnchor StepForward { get; private set; }
@@ -47,9 +39,8 @@ namespace Wow.Pages
             public HtmlInputCheckBox TeacherRole { get; private set; }
             public HtmlInputCheckBox StudentRole { get; private set; }
 
-            //Edit button
+            //Edit buttons
             public HtmlSpan EditPencil { get; set; }
-
             public HtmlSpan CheckMark { get; set; }
 
             public UserRoleManagement(Manager manager)
@@ -58,21 +49,14 @@ namespace Wow.Pages
                 this.AdminRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isAdmin");
                 this.TeacherRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isTeacher");
                 this.StudentRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isStudent");
-
                 this.EditPencil = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=glyphicon glyphicon-pencil");
             }
         }
 
         private class UserTable //: BaseTable
         {
-            // Fields
             private Manager manager;
-
-            // get Data
-            //public HtmlAnchor EditProfile { get; private set; }
-            //public HtmlAnchor LogOut { get; private set; }
-
-            // Constructor
+                     
             public UserTable(Manager manager)
             {
                 this.manager = manager;
@@ -80,24 +64,18 @@ namespace Wow.Pages
                 //this.LogOut = manager.ActiveBrowser.Find.ByContent<HtmlAnchor>("p:Log Out");
             }
         }
-
-        // Fields
-
-        // get Data
+                
         public HtmlControl All { get; private set; }
         public HtmlControl Admins { get; private set; }
         public HtmlControl Teacher { get; private set; }
         public HtmlControl Students { get; private set; }
         public HtmlInputText Search { get; private set; }
-
-       
-
-        //
+        
         private UserTable userTable;
         private Pagination pagination;
         private UserRoleManagement userRoles;
 
-        // Constructor
+       
         public UsersPage(Manager manager) : base(manager)
         {
             this.All = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:All");
@@ -250,6 +228,18 @@ namespace Wow.Pages
             return userRoles.CheckMark.IsVisible();
         }
 
+        private void RefreshRoleCheckBoxes()
+        {
+            this.userRoles.AdminRole.Refresh();
+            this.userRoles.TeacherRole.Refresh();
+            this.userRoles.StudentRole.Refresh();
+
+        }
+
+        public bool AreRoleCheckBoxesEnabled()
+        {
+            return IsAdminRoleEnabled() && IsTeacherRoleEnabled() && IsStudentRoleEnabled();
+        }
    
         // set Data
         public UsersPage ClickFirst()
@@ -302,6 +292,7 @@ namespace Wow.Pages
         {
             this.userRoles.EditPencil.Click();
             this.userRoles.CheckMark = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=glyphicon glyphicon-ok");
+            RefreshRoleCheckBoxes();
         }
 
         public void FinishEditing()

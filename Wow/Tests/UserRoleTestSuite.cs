@@ -1,6 +1,7 @@
 ﻿using Wow.Pages;
 using Wow.Data;
 using NUnit.Framework;
+using Wow.Appl;
 
 namespace Wow.Tests
 {
@@ -17,10 +18,10 @@ namespace Wow.Tests
         public void ChangeUserRoleTest(string userName)
         {
             //Preconditions
-            LoginPage loginPage = Application.Get().Login();
+            LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(UserRepository.Get().Admin());
             usersPage.SetValueToSearch(userName);
-           
+            
             //Test steps
             //Step 1:Check if checkboxes are disabled and edit button is enabled
             Assert.False(usersPage.IsAdminRoleEnabled());
@@ -31,8 +32,10 @@ namespace Wow.Tests
             //Step 2:click edit button
             usersPage.EditRole();
             Assert.IsTrue(usersPage.IsDisplayedCheckMark());
-            
-            
+            Assert.IsTrue(usersPage.IsAdminRoleEnabled());
+            Assert.IsTrue(usersPage.IsTeacherRoleEnabled());
+            Assert.IsTrue(usersPage.IsTeacherRoleEnabled());
+
             //Step 3:Change state of teacher role chekbox
             usersPage.SetTeacherRole();
             Assert.False(usersPage.IsTeacherRoleChecked());
@@ -43,7 +46,7 @@ namespace Wow.Tests
             usersPage.EditRole();
             usersPage.SetTeacherRole();
             usersPage.FinishEditing();
-                      
+            loginPage = usersPage.GotoLogOut();
         }
 
     }

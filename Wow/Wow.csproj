@@ -80,6 +80,7 @@
     <Compile Include="Tests\EditProfileCancelButtonTest.cs" />
     <Compile Include="Tests\LoginTest.cs" />
     <Compile Include="Tests\PaginationTest.cs" />
+    <Compile Include="Tests\SignUpTestSuite.cs" />
     <Compile Include="Tests\TestRunner.cs" />
     <Compile Include="Tests\UserRoleTestSuite.cs" />
   </ItemGroup>

@@ -34,14 +34,42 @@ namespace Wow.Pages
             }
         }
 
-        // Fields
+        private class SignUpForm
+        {
+            // Fields
+            private Manager manager;
+
+            // get Data
+            public HtmlInputText NameInput { get; private set; }
+            public HtmlInputText SurnameInput { get; private set; }
+            public HtmlSelect LanguageSelect { get; private set; }
+            public HtmlInputEmail EmailInput { get; private set; }
+            public HtmlInputPassword PasswordInput { get; private set; }
+            public HtmlInputPassword RepeatPassword { get; private set; }
+            public HtmlButton SignUp { get; private set; }
+
+            public SignUpForm(Manager manager)
+            {
+                this.manager = manager;
+                this.NameInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=nameValue");
+                this.SurnameInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=surnameValue");
+                this.LanguageSelect = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=languageId");
+                this.EmailInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=emailValue");
+                this.PasswordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=passwordValue");
+                this.RepeatPassword = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=repeatPasswordValue");
+                this.SignUp = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-block btn-primary");
+            }
+        }
+        
         private Manager manager;
 
         // get Data
         public HtmlButton LoginButton { get; private set; }
         public Element LoginDescription { get; private set; }
+        public HtmlButton SignUpButton { get; private set; }
         //
         private LoginForm loginForm;
+        private SignUpForm signUpForm;
 
         // Constructor
         public LoginPage(Manager manager)
@@ -49,6 +77,7 @@ namespace Wow.Pages
             this.manager = manager;
             this.LoginButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-success");
             this.LoginDescription = manager.ActiveBrowser.Find.ByXPath("//div[@class='text-primary']/h2/small");
+            this.SignUpButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-primary");
         }
 
         // Page Object
@@ -89,6 +118,12 @@ namespace Wow.Pages
             loginForm = new LoginForm(manager);
         }
 
+        public void ClickSignUpButton()
+        {
+            this.SignUpButton.Click();
+            signUpForm = new SignUpForm(manager);
+        }
+
         // Business Logic
         private void SetLoginData(IUser user)
         {
@@ -98,6 +133,13 @@ namespace Wow.Pages
             this.loginForm.SubmitInput.Click();
         }
 
+        private void SetSignUpData(IUser user)
+        {
+            ClickSignUpButton();
+            this.signUpForm.NameInput.Text = user.GetName();
+            this.signUpForm.NameInput.Text = user.GetName();
+            this.
+        }
         public UsersPage SuccessAdminLogin(IUser admin)
         {
             //public AdminHomePage SuccessAdminLogin(String login, String password) {
