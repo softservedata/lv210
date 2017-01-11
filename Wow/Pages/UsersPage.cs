@@ -15,13 +15,6 @@ namespace Wow.Pages
         {
             private Manager manager;
 
-            // get Data
-            public HtmlAnchor First { get; private set; }
-            public HtmlAnchor StepBack { get; private set; }
-            public HtmlAnchor StepForward { get; private set; }
-            public HtmlAnchor Last { get; private set; }
-            public HtmlAnchor Active { get; private set; }
-
             public Pagination(Manager manager)
             {
                 this.manager = manager;
@@ -31,20 +24,18 @@ namespace Wow.Pages
                 this.Last = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'Last')]");
                 this.Active = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//li[@class = 'ng-scope active']/a");
             }
+
+            // Get Data
+            public HtmlAnchor First { get; private set; }
+            public HtmlAnchor StepBack { get; private set; }
+            public HtmlAnchor StepForward { get; private set; }
+            public HtmlAnchor Last { get; private set; }
+            public HtmlAnchor Active { get; private set; }
         }
           
         private class UserRoleManagement
         {
             private Manager manager;
-
-            //Role checkboxes
-            public HtmlInputCheckBox AdminRole { get; private set; }
-            public HtmlInputCheckBox TeacherRole { get; private set; }
-            public HtmlInputCheckBox StudentRole { get; private set; }
-
-            //Edit button
-            public HtmlSpan EditPencil { get; set; }
-            public HtmlSpan CheckMark { get; set; }
 
             public UserRoleManagement(Manager manager)
             {
@@ -54,6 +45,15 @@ namespace Wow.Pages
                 this.StudentRole = manager.ActiveBrowser.Find.ByAttributes<HtmlInputCheckBox>("ng-model=user.isStudent");
                 this.EditPencil = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=glyphicon glyphicon-pencil");
             }
+
+            //Role checkboxes
+            public HtmlInputCheckBox AdminRole { get; private set; }
+            public HtmlInputCheckBox TeacherRole { get; private set; }
+            public HtmlInputCheckBox StudentRole { get; private set; }
+
+            //Edit button
+            public HtmlSpan EditPencil { get; set; }
+            public HtmlSpan CheckMark { get; set; }           
         }
 
         private Pagination pagination;
@@ -312,7 +312,7 @@ namespace Wow.Pages
         }
 
 
-        // set Data
+        // Set Data
         public UsersPage ClickAdminTab()
         {
             GetAdminTab().Click();
@@ -379,7 +379,7 @@ namespace Wow.Pages
         {
             userRoles.CheckMark.Click();
         }
-        // Business Logic
 
+        // Business Logic
     }
 }
