@@ -37,12 +37,40 @@ namespace Wow.Pages
             }
         }
 
+        // Component
+        private class SidebarMenu // < -------------------------------------------------------- ron
+        {
+            // Fields
+            private Manager manager;
+
+            // Get Data
+
+            // Admin Tools
+            public HtmlAnchor Users { get; private set; }
+            public HtmlAnchor Languages { get; private set; }
+
+            // Your Stuff
+            public HtmlAnchor Profile { get; private set; }
+
+            // TODO Course, Public Groups, Manager, Tickets
+
+            // Constructor
+            public SidebarMenu(Manager manager)
+            {
+                this.manager = manager;
+                this.Users = manager.ActiveBrowser.Find.ByExpression<HtmlAnchor>("tagname=a", "href=Index#/Users");
+                this.Languages = manager.ActiveBrowser.Find.ByExpression<HtmlAnchor>("tagname=a", "href=Index#/Languages");
+                this.Profile = manager.ActiveBrowser.Find.ByExpression<HtmlAnchor>("tagname=a", "href=Index#/EditUserProfile");
+            }
+        } // <---------------------------------- end
+
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
         // Fields
         protected Manager manager;
         private HtmlDiv navbarCollapse;
-        private Element body;
+        private Element _body; // < ---------------- edit
+        private SidebarMenu _sidebarMenu; // < ------------------------- //
 
         // get Data
         public HtmlSpan Username { get; private set; }
@@ -56,16 +84,16 @@ namespace Wow.Pages
         {
             this.manager = manager;
             this.navbarCollapse = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=collapse navbar-collapse");
-            this.body = manager.ActiveBrowser.Find.ByTagIndex("body", 0);
+            this._body = manager.ActiveBrowser.Find.ByTagIndex("body", 0); // <--------------- edit
             //
             this.Username = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("ng-model=getName");
             this.DefaultTheme = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=defaultTheme");
             this.SidebarToggle = manager.ActiveBrowser.Find.ById<HtmlButton>("sidebar-toggle");
-
         }
 
         // Page Object
-        // get Data
+
+        // Get Data
         public HtmlAnchor GetEditProfile()
         {
             ClickUsername();
@@ -78,15 +106,33 @@ namespace Wow.Pages
             return this.usernameDropdown.LogOut;
         }
 
+        private HtmlAnchor GetAdminToolUsers() // <----------------- //
+        {
+            _sidebarMenu = new SidebarMenu(manager);
+            return _sidebarMenu.Users;
+        }
+
+        private HtmlAnchor GetAdminToolLanguages() // <----------------- //
+        {
+            _sidebarMenu = new SidebarMenu(manager);
+            return _sidebarMenu.Languages;
+        }
+
+        private HtmlAnchor GetYourStuffProfile() // <----------------- //
+        {
+            _sidebarMenu = new SidebarMenu(manager);
+            return _sidebarMenu.Profile;
+        }
+
         // Functional
         public string GetUsernameText()
         {
             return this.Username.TextContent.Trim();
         }
 
-        public bool IsSidebarToggleMinimized()
+        public bool IsSidebarMenuMinimized() // < ------------------------- edit
         {
-            return body.GetAttributeValueOrEmpty("class").Contains("sidebar-minimized");
+            return _body.GetAttributeValueOrEmpty("class").Contains("sidebar-minimized"); // <------------ edit
         }
 
         // set Data
@@ -117,6 +163,21 @@ namespace Wow.Pages
             GetLogOut().Click();
         }
 
+        private void ClickUsers() // <----------------------- ron
+        {
+            GetAdminToolUsers().Click();
+        }
+
+        private void ClickLanguages() // <----------------------- ron
+        {
+            GetAdminToolLanguages().Click();
+        }
+
+        private void ClickProfile() // <----------------------- ron
+        {
+            GetYourStuffProfile().Click();
+        }
+
         public void SelectDefaultTheme(ThemeState theme)
         {
             //DefaultTheme.SelectByIndex((int)theme);
@@ -131,18 +192,36 @@ namespace Wow.Pages
             return new YourProfilePage(manager);
         }
 
-        public HeadPage OpenSidebarToggle()
+        public UsersPage GotoUsersPage() // <--------------------------------- ron
         {
-            if (IsSidebarToggleMinimized())
+            ClickUsers();
+            return new UsersPage(manager);
+        }
+
+        public LanguagesPage GotoLanguagesPage() // <--------------------------------- ron
+        {
+            ClickLanguages();
+            return new LanguagesPage(manager);
+        }
+
+        public YourProfilePage GotoProfilePage() // <--------------------------------- ron
+        {
+            ClickProfile();
+            return new YourProfilePage(manager);
+        }
+
+        public HeadPage OpenSidebarMemu() // < ---------- edit
+        {
+            if (IsSidebarMenuMinimized())
             {
                 ClickSidebarToggle();
             }
             return this;
         }
 
-        public HeadPage CloseSidebarToggle()
+        public HeadPage MinimizedSidebarMenu() // < ---------- edit
         {
-            if (!IsSidebarToggleMinimized())
+            if (!IsSidebarMenuMinimized())
             {
                 ClickSidebarToggle();
             }

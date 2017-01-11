@@ -11,25 +11,25 @@ namespace HW5_1
     /// </summary>
     class Program
     {
-        static List<IDeveloper> CreateList()
+        static List<IDeveloper> CreateDevelopersList()
         {
             List<IDeveloper> DevelopersList = new List<IDeveloper>();
 
-            IDeveloper Builder1 = new Builder("James", "Bond", "Hammer");
-            IDeveloper Builder2 = new Builder("Martin", "Luther", "Ax");
-            IDeveloper Builder3 = new Builder("Guy", "Fawkes", "Dynamite");
+            IDeveloper firstBuilder = new Builder("James", "Bond", "Hammer");
+            IDeveloper secondBuilder = new Builder("Martin", "Luther", "Ax");
+            IDeveloper thirdBuilder = new Builder("Guy", "Fawkes", "Dynamite");
 
-            IDeveloper Programmer1 = new Programmer("Fabian", "Hambuchen", "NodeJS");
-            IDeveloper Programmer2 = new Programmer("Epke", "Zonderland", ".NET Core");
-            IDeveloper Programmer3 = new Programmer("Kazuma", "Kaya", "Angular");
+            IDeveloper firstProgrammer = new Programmer("Fabian", "Hambuchen", "NodeJS");
+            IDeveloper secondProgrammer = new Programmer("Epke", "Zonderland", ".NET Core");
+            IDeveloper thirdProgrammer = new Programmer("Kazuma", "Kaya", "Angular");
 
-            DevelopersList.Add(Builder1);
-            DevelopersList.Add(Builder2);
-            DevelopersList.Add(Builder3);
+            DevelopersList.Add(firstBuilder);
+            DevelopersList.Add(secondBuilder);
+            DevelopersList.Add(thirdBuilder);
 
-            DevelopersList.Add(Programmer1);
-            DevelopersList.Add(Programmer2);
-            DevelopersList.Add(Programmer3);
+            DevelopersList.Add(firstProgrammer);
+            DevelopersList.Add(secondProgrammer);
+            DevelopersList.Add(thirdProgrammer);
 
             return DevelopersList;
         }
@@ -37,11 +37,11 @@ namespace HW5_1
         static void Main(string[] args)
         {
             List<IDeveloper> DevelopersList = new List<IDeveloper>();
-            DevelopersList = CreateList();
+            DevelopersList = CreateDevelopersList();
 
-            foreach (var IDeveloper in DevelopersList)
+            foreach (var item in DevelopersList)
             {
-                IDeveloper.Create();   
+                item.Create();   
             }
             Console.ReadLine();
         }
