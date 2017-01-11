@@ -28,7 +28,7 @@ namespace Wow.Tests
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
 
             // Test steps
-            // Go to EditProfile page and check if this page is really opened.
+            // Go to EditProfile page and check if this page is really opened
             YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
 
             Assert.IsNotNull(yourProfilePage.YourProfileLabel);
@@ -36,19 +36,19 @@ namespace Wow.Tests
             yourProfilePage.ClickEditName();
             Assert.IsNotNull(yourProfilePage.GetNewNameField());
 
-            // Set name with digits and try to change it. Check if appropriate message appears.
+            // Set name with digits and try to change it. Check if appropriate message appears
             yourProfilePage.SetNewName(names[0]);
             yourProfilePage.ChangeName(admin);
 
-            //Assert.AreEqual(YourProfilePage.ErrorMessageForNameWithDigits, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.ErrorMessageForNameWithDigits, yourProfilePage.GetMessageText());
 
-            // Set name with specific symbols and try to change it. Check if appropriate message appears.
+            // Set name with specific symbols and try to change it. Check if appropriate message appears
             yourProfilePage.SetNewName(names[1]);
             yourProfilePage.ChangeName(admin);
 
-            //Assert.AreEqual(YourProfilePage.ErrorMessageForNameWithSymbols, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.ErrorMessageForNameWithSymbols, yourProfilePage.GetMessageText());
 
-            // Set correct name try to change it. Check if name is really changed.
+            // Set correct name try to change it. Check if name is really changed
             yourProfilePage.SetNewName(names[2]);
             yourProfilePage.ChangeName(admin);
 
