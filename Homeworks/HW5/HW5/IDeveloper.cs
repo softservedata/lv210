@@ -1,4 +1,4 @@
-﻿namespace HW5_1
+﻿namespace DevelopersTask
 {
     public interface IDeveloper
     {

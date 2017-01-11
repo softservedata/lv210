@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HW5_1
+namespace DevelopersTask
 {
     public class Builder : IDeveloper
     {

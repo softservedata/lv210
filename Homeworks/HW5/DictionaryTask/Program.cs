@@ -49,7 +49,6 @@ namespace DictionaryTask
                 inputedData = Console.ReadLine().Split(' ');
                 personsDictionary.Add((uint)ParseAtempt(inputedData[0]), inputedData[1]);
             }
-
             return personsDictionary;
         }
 

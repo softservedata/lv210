@@ -9,3 +9,13 @@ C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictiona
 C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\obj\Debug\Dictionary.UnitTest.csprojResolveAssemblyReference.cache
 C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\obj\Debug\Dictionary.UnitTest.dll
 C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\obj\Debug\Dictionary.UnitTest.pdb
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\Dictionary.UnitTest.dll
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\Dictionary.UnitTest.pdb
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\DictionaryTask.exe
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\nunit.framework.dll
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\DictionaryTask.pdb
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\bin\Debug\nunit.framework.xml
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\obj\Debug\Dictionary.UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\obj\Debug\Dictionary.UnitTest.dll
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\Dictionary.UnitTest\obj\Debug\Dictionary.UnitTest.pdb
