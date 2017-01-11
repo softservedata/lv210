@@ -117,6 +117,11 @@ namespace Wow.Pages
             GetLogOut().Click();
         }
 
+        public void OpenThemeDropdown()
+        {
+            this.DefaultTheme.MouseClick();
+        }
+
         public void SelectDefaultTheme(ThemeState theme)
         {
             //DefaultTheme.SelectByIndex((int)theme);

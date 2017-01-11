@@ -1,1 +1,2 @@
 C:\Users\Andrii\lv210\Calc\bin\Debug\Calc.exe.config
+C:\Users\atokartc\Source\Repos\lv210\Calc\obj\Debug\Calc.csprojResolveAssemblyReference.cache
