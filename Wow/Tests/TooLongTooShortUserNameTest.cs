@@ -26,8 +26,8 @@ namespace Wow.Tests
                 },
                 new
                 {
-                    errorMessageForTooShortName = "Name can't be shorter than 7 characters",
-                    errorMessageForTooLongName = "Name can't be longer than 31 characters"
+                    tooShortNameErrorMessage = "Name can't be shorter than 7 characters",
+                    tooLongNameErrorMessage = "Name can't be longer than 31 characters"
                 }
             },
         };
@@ -36,7 +36,7 @@ namespace Wow.Tests
         public void ShortLongUserNameTest(User admin, dynamic names, dynamic messages)
         {
             // Precondition
-            admin.Name = "Blue Moon";
+            admin.SetName("Blue Moon");
 
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
@@ -53,12 +53,12 @@ namespace Wow.Tests
             //Fill 'New Name' field with too short name. Check if appropriate message appears.
             yourProfilePage.SetNewName(names.tooShortName);
             yourProfilePage = yourProfilePage.ChangeName(admin);
-            Assert.AreEqual(messages.errorMessageForTooShortName, yourProfilePage.GetMessageText());
+            Assert.AreEqual(messages.tooShortNameErrorMessage, yourProfilePage.GetMessageText());
 
             //Fill 'New Name' field with too long name. Check if appropriate message appears.
             yourProfilePage.SetNewName(names.tooLongName);
             yourProfilePage = yourProfilePage.ChangeName(admin);
-            Assert.AreEqual(messages.errorMessageForTooLongName, yourProfilePage.GetMessageText());
+            Assert.AreEqual(messages.tooLongNameErrorMessage, yourProfilePage.GetMessageText());
 
             //Fill 'New Name' field with correct name. Check if name is really changed.
             yourProfilePage.SetNewName(names.correctName);
