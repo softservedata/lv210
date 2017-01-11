@@ -15,24 +15,23 @@ namespace Wow.Pages
         {
             private Manager manager;
 
+            public HtmlAnchor FirstItem { get; private set; }
+            public HtmlAnchor StepBackItem { get; private set; }
+            public HtmlAnchor StepForwardItem { get; private set; }
+            public HtmlAnchor LastItem { get; private set; }
+            public HtmlAnchor ActiveItem { get; private set; }
+
             public Pagination(Manager manager)
             {
                 this.manager = manager;
-                this.First = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'First')]");
-                this.StepBack = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'‹')]");
-                this.StepForward = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'›')]");
-                this.Last = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'Last')]");
-                this.Active = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//li[@class = 'ng-scope active']/a");
+                this.FirstItem = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'First')]");
+                this.StepBackItem = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'‹')]");
+                this.StepForwardItem = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'›')]");
+                this.LastItem = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'Last')]");
+                this.ActiveItem = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//li[@class = 'ng-scope active']/a");
             }
-
-            // Get Data
-            public HtmlAnchor First { get; private set; }
-            public HtmlAnchor StepBack { get; private set; }
-            public HtmlAnchor StepForward { get; private set; }
-            public HtmlAnchor Last { get; private set; }
-            public HtmlAnchor Active { get; private set; }
         }
-          
+
         private class UserRoleManagement
         {
             private Manager manager;
@@ -78,31 +77,31 @@ namespace Wow.Pages
         public HtmlInputText Search { get; private set; }
         public HtmlTable TableOfUsers { get; }
 
-        #region PrivateFunctions
+        #region Getters
 
-        private HtmlListItem GetFirstParent()
+        private HtmlListItem GetFirstItemParent()
         {
-            return this.pagination.First.Parent<HtmlListItem>();
+            return this.pagination.FirstItem.Parent<HtmlListItem>();
         }
 
-        private HtmlListItem GetStepBackParent()
+        private HtmlListItem GetStepBackItemParent()
         {
-            return this.pagination.StepBack.Parent<HtmlListItem>();
+            return this.pagination.StepBackItem.Parent<HtmlListItem>();
         }
 
-        private HtmlListItem GetStepForwardParent()
+        private HtmlListItem GetStepForwardItemParent()
         {
-            return this.pagination.StepForward.Parent<HtmlListItem>();
+            return this.pagination.StepForwardItem.Parent<HtmlListItem>();
         }
 
-        private HtmlListItem GetLastParent()
+        private HtmlListItem GetLastItemParent()
         {
-            return this.pagination.Last.Parent<HtmlListItem>();
+            return this.pagination.LastItem.Parent<HtmlListItem>();
         }
 
-        private HtmlListItem GetActiveParent()
+        private HtmlListItem GetActiveItemParent()
         {
-            return this.pagination.Active.Parent<HtmlListItem>();
+            return this.pagination.ActiveItem.Parent<HtmlListItem>();
         }
 
         private HtmlControl GetTeacherTab()
@@ -115,29 +114,29 @@ namespace Wow.Pages
             return this.Admins;
         }
 
-        private HtmlAnchor GetFirst()
+        private HtmlAnchor GetFirstItem()
         {
-            return this.pagination.First;
+            return this.pagination.FirstItem;
         }
 
-        private HtmlAnchor GetStepBack()
+        private HtmlAnchor GetStepBackItem()
         {
-            return this.pagination.StepBack;
+            return this.pagination.StepBackItem;
         }
 
-        private HtmlAnchor GetStepForward()
+        private HtmlAnchor GetStepForwardItem()
         {
-            return this.pagination.StepForward;
+            return this.pagination.StepForwardItem;
         }
 
-        private HtmlAnchor GetLast()
+        private HtmlAnchor GetLastItem()
         {
-            return this.pagination.Last;
+            return this.pagination.LastItem;
         }
 
-        private HtmlAnchor GetActive()
+        private HtmlAnchor GetActiveItem()
         {
-            return this.pagination.Active;
+            return this.pagination.ActiveItem;
         }
 
         private HtmlTable GetTableOfUsers()
@@ -145,26 +144,28 @@ namespace Wow.Pages
             return this.TableOfUsers;
         }
 
-        // Functional
+        #endregion
+
+        #region PrivateFunctional
 
         private string GetExpressionUsed(HtmlControl element)
         {
-            var expression = GetActive().BaseElement.FindExpressionUsed.StringRepresentation;
+            var expression = GetActiveItem().BaseElement.FindExpressionUsed.StringRepresentation;
             return expression.Substring(expression.IndexOf('/'));
         }
 
         private void RefreshPaganation()
         {
-            this.pagination.Active.Refresh();
-            this.pagination.First.Refresh();
-            this.pagination.StepBack.Refresh();
-            this.pagination.StepForward.Refresh();
-            this.pagination.Last.Refresh();
+            this.pagination.ActiveItem.Refresh();
+            this.pagination.FirstItem.Refresh();
+            this.pagination.StepBackItem.Refresh();
+            this.pagination.StepForwardItem.Refresh();
+            this.pagination.LastItem.Refresh();
         }
 
         private HtmlAnchor MoveToNext()
         {
-            var xpath = $"{GetExpressionUsed(this.pagination.Active)}/ancestor::li/following-sibling::li[1]/descendant::a";
+            var xpath = $"{GetExpressionUsed(this.pagination.ActiveItem)}/ancestor::li/following-sibling::li[1]/descendant::a";
             return manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>(xpath);
         }
 
@@ -209,47 +210,43 @@ namespace Wow.Pages
 
         #endregion
 
-        public string GetTextFromActive()
+        /// <returns>Returns inner text of active item of pagination.</returns>
+        public string GetTextFromActiveItem()
         {
-            return this.GetActive().InnerText;
+            return this.GetActiveItem().InnerText;
         }
 
-        /// <returns>Returns whether 'Last' item of pagination is enabled.</returns>
-        public bool IsLastEnabled()
+        public bool IsLastItemEnabled()
         {
-            var arrayOfAppropriateAttributes = GetAllAtributesWithAppropriateValue(GetLastParent());
+            var arrayOfAppropriateAttributes = GetAllAtributesWithAppropriateValue(GetLastItemParent());
 
             return arrayOfAppropriateAttributes.Count == 0;
         }
 
-        /// <returns>Returns whether 'StepBack' item of pagination is enabled.</returns>
-        public bool IsStepBackEnabled()
+        public bool IsStepBackItemEnabled()
         {
-            var arrayOfAppropriateAttributes = GetAllAtributesWithAppropriateValue(GetStepBackParent());
+            var arrayOfAppropriateAttributes = GetAllAtributesWithAppropriateValue(GetStepBackItemParent());
 
             return arrayOfAppropriateAttributes.Count == 0;
         }
 
-        /// <returns>Returns whether 'StepForward' item of pagination is enabled.</returns>
-        public bool IsStepForwardEnabled()
+        public bool IsStepForwardItemEnabled()
         {
-            var arrayOfAppropriateAttributes = GetAllAtributesWithAppropriateValue(GetStepForwardParent());
+            var arrayOfAppropriateAttributes = GetAllAtributesWithAppropriateValue(GetStepForwardItemParent());
 
             return arrayOfAppropriateAttributes.Count == 0;
         }
 
-        /// <returns>Returns whether 'First' item of pagination is enabled.</returns>
-        public bool IsFirstEnabled()
+        public bool IsFirstItemEnabled()
         {
-            var arrayOfAppropriateAttributes = GetAllAtributesWithAppropriateValue(GetFirstParent());
+            var arrayOfAppropriateAttributes = GetAllAtributesWithAppropriateValue(GetFirstItemParent());
 
             return arrayOfAppropriateAttributes.Count == 0;
         }
 
-        /// <returns>Returns whether 'First', 'Last', 'StepBack', 'StepForward' items of pagination are enabled.</returns>
         public bool AreAllPaginationElementsEnabled()
         {
-            return IsFirstEnabled() && IsStepBackEnabled() && IsLastEnabled() && IsStepForwardEnabled();
+            return IsFirstItemEnabled() && IsStepBackItemEnabled() && IsLastItemEnabled() && IsStepForwardItemEnabled();
         }
 
         public int GetCountOfUsersAtPage()
@@ -257,6 +254,7 @@ namespace Wow.Pages
             return this.TableOfUsers.Rows.Count() - 1;
         }
 
+        /// <returns>Returns IList collection that contains all users displayed in a table.</returns>
         public IList<User> GetUsersDataForTable()
         {
             var usersAtCurrentPage = new List<User>();
@@ -269,6 +267,7 @@ namespace Wow.Pages
 
             return usersAtCurrentPage;
         }
+
 
         public bool IsAdminRoleEnabled()
         {
@@ -313,36 +312,36 @@ namespace Wow.Pages
 
 
         // Set Data
-        public UsersPage ClickAdminTab()
+        public void ClickAdminTab()
         {
             GetAdminTab().Click();
-            return new UsersPage(manager);
+            RefreshPaganation();
         }
 
         public void ClickFirst()
         {
-            GetFirst().Click();
+            GetFirstItem().Click();
             TableOfUsers.Refresh();
             RefreshPaganation();
         }
 
         public void ClickStepBack()
         {
-            GetStepBack().Click();
+            GetStepBackItem().Click();
             TableOfUsers.Refresh();
             RefreshPaganation();
         }
 
         public void ClickStepForward()
         {
-            GetStepForward().Click();
+            GetStepForwardItem().Click();
             TableOfUsers.Refresh();
             RefreshPaganation();
         }
 
         public void ClickLast()
         {
-            GetLast().Click();
+            GetLastItem().Click();
             TableOfUsers.Refresh();
             RefreshPaganation();
         }
