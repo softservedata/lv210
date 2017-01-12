@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using Wow.Data;
 using Wow.Pages;
+using Wow.Appl;
 
 namespace Wow.Tests
 {
@@ -28,7 +29,7 @@ namespace Wow.Tests
             admin.SetPassword("qwerty");
 
             // Login
-            LoginPage loginPage = Application.Get().Login();
+            LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
             LanguagesPage languagesPage = usersPage.GotoLanguagesPage();
             Assert.IsNotNull(languagesPage.GetLanguagePageDescription());

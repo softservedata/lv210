@@ -10,7 +10,7 @@ namespace Wow.Data
 
         private UserRepository() { }
 
-        // Static factory
+        // Static Factory
         public static UserRepository Get()
         {
             if (instance == null)

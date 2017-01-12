@@ -19,7 +19,7 @@ namespace Wow.Pages
         public Manager CurrentManager { get; private set; }
         public ApplicationSources applicationSources { get; private set; }
 
-        // Static factory
+        // Static Factory
         public static Application Get()
         {
             return Get(null);
@@ -47,15 +47,12 @@ namespace Wow.Pages
         public void Init()
         {
             InitManager();
-            // TODO
-            // Init Strategy from applicationSources
-            // Init DB access, etc.
+            // TODO Init Strategy, Init DB access, etc.
         }
 
         public LoginPage Login()
         {
             StartBrowser();
-            // CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LoginUrl);
             ApplicationPage.Get().NavigateTo(applicationSources.GetLoginUrl());
             return new LoginPage(CurrentManager);
         }
@@ -63,13 +60,11 @@ namespace Wow.Pages
         public LoginPage Logout()
         {
             StartBrowser();
-            // CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LogoutUrl);
-            // TODO now do not working properly
             ApplicationPage.Get().NavigateTo(applicationSources.GetLogoutUrl());
             return new LoginPage(CurrentManager);
         }
 
-        public void StartBrowser()
+        private void StartBrowser()
         {
             InitManager();
             if (Manager.Current.ActiveBrowser == null)
@@ -78,7 +73,7 @@ namespace Wow.Pages
             }
         }
 
-        public void CloseBrowser()
+        private void CloseBrowser()
         {
             if (Manager.Current.ActiveBrowser != null)
             {
@@ -91,11 +86,6 @@ namespace Wow.Pages
             Console.WriteLine("+++DisposeManager()");
             CloseBrowser();
             CurrentManager.Dispose();
-            // if ((CurrentManager != null) && (Manager.Current.Disposed))
-            //{
-            //    Console.WriteLine("+++CurrentManager.Dispose();");
-            //    CurrentManager.Dispose();
-            //}
         }
 
         public string InvokeScript(string javaScript)
@@ -111,7 +101,7 @@ namespace Wow.Pages
             Manager.Current.DialogMonitor.Start();
         }
 
-        public void StopAlertDialog()
+        private void StopAlertDialog()
         {
             if (Manager.Current.DialogMonitor.IsMonitoring)
             {
@@ -128,7 +118,6 @@ namespace Wow.Pages
                 currentSettings.UnexpectedDialogAction = UnexpectedDialogAction.HandleAndContinue;
                 CurrentManager = new Manager(currentSettings);
                 CurrentManager.Start();
-                //CurrentManager.LaunchNewBrowser();
             }
         }
 
@@ -145,6 +134,5 @@ namespace Wow.Pages
             }
             return currentBrowser;
         }
-
     }
 }
