@@ -93,6 +93,7 @@
     <Compile Include="Tests\PaginationTest.cs" />
     <Compile Include="Tests\TestRunner.cs" />
     <Compile Include="Tests\UserRoleTestSuite.cs" />
+    <Compile Include="Tests\UserSearchTestSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\FIndCountOfUsersQuery.txt">

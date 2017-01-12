@@ -51,8 +51,8 @@ namespace Wow.Pages
             public HtmlInputCheckBox StudentRole { get; private set; }
 
             //Edit button
-            public HtmlSpan EditPencil { get; set; }
-            public HtmlSpan CheckMark { get; set; }           
+            public HtmlSpan EditPencil { get; private set; }
+            public HtmlSpan CheckMark { get; set; }
         }
 
         private Pagination pagination;
@@ -254,6 +254,11 @@ namespace Wow.Pages
             return this.TableOfUsers.Rows.Count() - 1;
         }
 
+        public string GetUserSearchBoxText()
+        {
+            return this.Search.Placeholder;
+        }
+
         /// <returns>Returns IList collection that contains all users displayed in a table.</returns>
         public IList<User> GetUsersDataForTable()
         {
@@ -267,7 +272,6 @@ namespace Wow.Pages
 
             return usersAtCurrentPage;
         }
-
 
         public bool IsAdminRoleEnabled()
         {
@@ -299,7 +303,6 @@ namespace Wow.Pages
             return userRoles.StudentRole.Checked;
         }
 
-
         public bool IsDisplayedEditPencil()
         {
             return userRoles.EditPencil.IsVisible();
@@ -309,7 +312,6 @@ namespace Wow.Pages
         {
             return userRoles.CheckMark.IsVisible();
         }
-
 
         // Set Data
         public void ClickAdminTab()
@@ -346,10 +348,11 @@ namespace Wow.Pages
             RefreshPaganation();
         }
 
-        //
+
         public void SetValueToSearch(string userName)
         {
             Search.Text = userName;
+            TableOfUsers.Refresh();
         }
 
         public void SetAdminRole()
@@ -360,9 +363,9 @@ namespace Wow.Pages
         public void SetTeacherRole()
         {
             this.userRoles.TeacherRole.Click();
-                     
+
         }
-              
+
         public void SetStudentRole()
         {
             this.userRoles.StudentRole.Click();
@@ -378,7 +381,5 @@ namespace Wow.Pages
         {
             userRoles.CheckMark.Click();
         }
-
-        // Business Logic
     }
 }
