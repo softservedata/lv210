@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using Wow.Appl;
 using Wow.Data;
 using Wow.Pages;
 
@@ -27,7 +28,7 @@ namespace Wow.Tests
             admin.SetPassword("blackstar");
 
             // Login
-            LoginPage loginPage = Application.Get().Login();
+            LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
 
             // --- Test Steps --- //

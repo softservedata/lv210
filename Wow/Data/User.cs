@@ -2,7 +2,7 @@
 
 namespace Wow.Data
 {
-    // Builder interfaces
+    // Builder Interfaces
     public interface IEmail
     {
         IPassword SetEmail(string email);
@@ -38,7 +38,7 @@ namespace Wow.Data
         User Build();
     }
 
-    // Dependency inversion interface
+    // Dependency Inversion Interface
     public interface IUser
     {
         string GetEmail();
@@ -77,7 +77,7 @@ namespace Wow.Data
                    (userFirst.isStudent == userSecond.isStudent);
         }
 
-        // Static factory
+        // Static Factory
         public static IEmail Get()
         {
             return new User();
