@@ -21,7 +21,8 @@ namespace Wow.Pages
 
             public HtmlInputEmail LoginInput { get; private set; }
             public HtmlInputPassword PasswordInput { get; private set; }
-            public HtmlInputSubmit SubmitInput { get; private set; }           
+            public HtmlInputSubmit SubmitInput { get; private set; }
+            public Element ErrorMessage { get; internal set; }
         }
 
         private Manager manager;
@@ -67,6 +68,13 @@ namespace Wow.Pages
             return this.LoginDescription.TextContent.Trim();
         }
 
+        public string GetLoginErrorMessageText(IUser user)
+        {
+            SetLoginData(user);
+            loginForm.ErrorMessage = manager.ActiveBrowser.Find.ByAttributes("class=text-danger ng-binding");
+            return this.loginForm.ErrorMessage.TextContent.Trim();
+        }
+
         // set Data
         public void ClickLoginButton()
         {
@@ -77,7 +85,11 @@ namespace Wow.Pages
         // Business Logic
         private void SetLoginData(IUser user)
         {
-            ClickLoginButton();
+            if (this.loginForm == null)
+            {
+                ClickLoginButton();
+            }
+            
             this.loginForm.LoginInput.Text = user.GetEmail();
             this.loginForm.PasswordInput.Text = user.GetPassword();
             this.loginForm.SubmitInput.Click();

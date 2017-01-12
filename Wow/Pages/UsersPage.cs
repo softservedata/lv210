@@ -10,6 +10,7 @@ namespace Wow.Pages
     public class UsersPage : HeadPage
     {
         public const int MaxUsersPerPage = 5;
+        private const int HEAD_ROW_COUNT = 1;
 
         private class Pagination
         {
@@ -62,7 +63,7 @@ namespace Wow.Pages
         {
             this.All = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:All");
             this.Admins = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Admins");
-            this.Teacher = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Teachers");
+            this.Teachers = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Teachers");
             this.Students = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Students");
             this.Search = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=valueToSearch");
             this.TableOfUsers = manager.ActiveBrowser.Find.ByAttributes<HtmlTable>("class=table table-striped width-half");
@@ -72,7 +73,7 @@ namespace Wow.Pages
 
         public HtmlControl All { get; private set; }
         public HtmlControl Admins { get; private set; }
-        public HtmlControl Teacher { get; private set; }
+        public HtmlControl Teachers { get; private set; }
         public HtmlControl Students { get; private set; }
         public HtmlInputText Search { get; private set; }
         public HtmlTable TableOfUsers { get; }
@@ -106,7 +107,7 @@ namespace Wow.Pages
 
         private HtmlControl GetTeacherTab()
         {
-            return this.Teacher;
+            return this.Teachers;
         }
 
         private HtmlControl GetAdminTab()
@@ -154,7 +155,7 @@ namespace Wow.Pages
             return expression.Substring(expression.IndexOf('/'));
         }
 
-        private void RefreshPaganation()
+        private void RefreshPagination()
         {
             this.pagination.ActiveItem.Refresh();
             this.pagination.FirstItem.Refresh();
@@ -317,35 +318,35 @@ namespace Wow.Pages
         public void ClickAdminTab()
         {
             GetAdminTab().Click();
-            RefreshPaganation();
+            RefreshPagination();
         }
 
         public void ClickFirst()
         {
             GetFirstItem().Click();
             TableOfUsers.Refresh();
-            RefreshPaganation();
+            RefreshPagination();
         }
 
         public void ClickStepBack()
         {
             GetStepBackItem().Click();
             TableOfUsers.Refresh();
-            RefreshPaganation();
+            RefreshPagination();
         }
 
         public void ClickStepForward()
         {
             GetStepForwardItem().Click();
             TableOfUsers.Refresh();
-            RefreshPaganation();
+            RefreshPagination();
         }
 
         public void ClickLast()
         {
             GetLastItem().Click();
             TableOfUsers.Refresh();
-            RefreshPaganation();
+            RefreshPagination();
         }
 
 
@@ -380,6 +381,87 @@ namespace Wow.Pages
         public void FinishEditing()
         {
             userRoles.CheckMark.Click();
+        }
+
+        public bool IsUserCheckedAsAdmin()
+        {
+            int userIsAdminCount = 0;
+
+            ClickAdminsTab();
+            TableOfUsers.Refresh();
+
+            for (int i = 1; i < TableOfUsers.BodyRows.Count; i++)
+            {
+                if (TableOfUsers.BodyRows[i].Cells[2].BaseElement.Children[0].Content.Contains("user.isAdmin"))
+                {
+                    userIsAdminCount += 1;
+                }
+            }
+
+            return (TableOfUsers.Rows.Count - HEAD_ROW_COUNT) == userIsAdminCount;
+        }
+
+        public bool IsUserCheckedAsTeacher()
+        {
+            int userIsTeacherCount = 0;
+
+            ClickTeachersTab();
+            TableOfUsers.Refresh();
+
+            for (int i = 1; i < TableOfUsers.BodyRows.Count; i++)
+            {
+                if (TableOfUsers.BodyRows[i].Cells[3].BaseElement.Children[0].Content.Contains("user.isTeacher"))
+                {
+                    userIsTeacherCount += 1;
+                }
+            }
+
+            return (TableOfUsers.Rows.Count - HEAD_ROW_COUNT) == userIsTeacherCount;
+        }
+
+        public bool IsUserCheckedAsStudent()
+        {
+            int userIsStudentCount = 0;
+
+            ClickStudentsTab();
+            TableOfUsers.Refresh();
+
+            for (int i = 1; i < TableOfUsers.BodyRows.Count; i++)
+            {
+                if (TableOfUsers.BodyRows[i].Cells[4].BaseElement.Children[0].Content.Contains("user.isStudent"))
+                {
+                    userIsStudentCount += 1;
+                }
+            }
+
+            return (TableOfUsers.Rows.Count - HEAD_ROW_COUNT) == userIsStudentCount;
+        }
+
+        private void ClickAdminsTab()
+        {
+            this.Admins.Click();
+        }
+
+        private void ClickTeachersTab()
+        {
+            this.Teachers.Click();
+        }
+
+        private void ClickStudentsTab()
+        {
+            this.Students.Click();
+        }
+
+        public string[] GetHeadColumnsText()
+        {
+            string[] headColumnsTextContent = new string[TableOfUsers.ColumnCount];
+
+            for (int i = 0; i < TableOfUsers.ColumnCount; i++)
+            {
+                headColumnsTextContent[i] = TableOfUsers.Rows[0].Cells[i].TextContent;
+            }
+
+            return headColumnsTextContent;
         }
     }
 }
