@@ -12,7 +12,6 @@ namespace Wow.Tests
     [TestFixture]
     public class DeleteLanguageTest : TestRunner
     {
-
         private static readonly object[] TestSigninData =
         {
             new object[] { UserRepository.Get().Admin() },
