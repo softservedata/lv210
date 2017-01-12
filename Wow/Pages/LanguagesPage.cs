@@ -1,95 +1,69 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Linq;
 using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.ObjectModel;
-using NUnit.Framework;
+using ArtOfTest.WebAii.Controls.HtmlControls;
 
 namespace Wow.Pages
 {
     public class LanguagesPage : HeadPage
-    {
-        private class DialogWindow
+    {       
+        private class DialogWindow : ModalContent
         {
-            // Fields
-            private Manager manager;
-
-            // Get Data Properties
-            public HtmlDiv HeaderName { get; private set; }
-            public HtmlDiv BodyMessage { get; private set; }
-            public HtmlButton OkButton { get; private set; }
-
-            // Constructor
-            public DialogWindow(Manager manager)
+            public DialogWindow(Manager manager) : base(manager)
             {
-                this.manager = manager;
                 this.HeaderName = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=modal-header ng-scope bg-primary");
                 this.BodyMessage = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=modal-body text-center ng-scope");
                 this.OkButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-block btn-primary");
             }
+
+            public HtmlButton OkButton { get; private set; }
         }
 
-        private class DeleteDialogWindow
+        private class ConfirmWindow : ModalContent
         {
-            private Manager manager;
-
-            public HtmlDiv HeaderName { get; private set; }
-            public HtmlDiv BodyMessage { get; private set; }
-            public HtmlButton YesButton { get; private set; }
-            public HtmlButton NoButton { get; private set; }
-
-            public DeleteDialogWindow(Manager manager)
+            public ConfirmWindow(Manager manager) : base(manager)
             {
-                this.manager = manager;
-                this.HeaderName = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=modal-header ng-scope bg-primary");
+                this.HeaderName = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=modal-header bg-primary ng-scope");
                 this.BodyMessage = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=modal-body text-center ng-scope");
-                this.YesButton = manager.ActiveBrowser.Find.ByContent<HtmlButton>("Yes");
-                this.NoButton = manager.ActiveBrowser.Find.ByContent<HtmlButton>("No");
+                this.YesButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[contains(text(),'Yes')]");
+                this.NoButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[contains(text(),'No')]");
             }
+
+            public HtmlButton NoButton { get; private set; }
+            public HtmlButton YesButton { get; private set; }
         }
 
-        // Fields
         private DialogWindow dialogWindow;
-        private DeleteDialogWindow deleteDialogWindow;
-
-        // Get Data Properties
-        public Element LanguagesLabel { get; private set; }
-        public HtmlSelect SelectLanguage { get; private set; }
-        public HtmlSpan AddLanguageButton { get; private set; }
-        public HtmlButton DeleteLanguageButton { get; private set; }
-        public HtmlTable ExistingLanguagesTable { get; private set; }
-
+        private ConfirmWindow confirmWindow;
 
         public LanguagesPage(Manager manager) : base(manager)
         {
-            this.LanguagesLabel = manager.ActiveBrowser.Find.ByContent("Languages");
-            this.SelectLanguage = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-options=language.Name for language in languageList");
-            this.AddLanguageButton = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=input-group-btn");
+            this.LanguageHeader = manager.ActiveBrowser.Find.ByAttributes("class=text-center ng-scope");
+            this.LanguageSelect = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=selectedLanguage");
+            this.AddLanguageButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-default btn-block");
             this.ExistingLanguagesTable = manager.ActiveBrowser.Find.ByAttributes<HtmlTable>("class=table table-striped width-quarter");
-            this.DeleteLanguageButton = GetLastLanguageRowFromExistingList().Find.ByAttributes<HtmlButton>("class=btn btn-default nomargins");
         }
 
-        // Page object
+        public Element LanguageHeader { get; private set; }
+        public HtmlSelect LanguageSelect { get; private set; }
+        public HtmlButton AddLanguageButton { get; private set; }
+        public HtmlTable ExistingLanguagesTable { get; private set; }
+
+        // Get Data
         public string GetLanguagePageDescription()
         {
-            return LanguagesLabel.InnerText;
+            return LanguageHeader.InnerText;
+        }
+
+        public HtmlTableRow GetLastLanguageRowFromExistingList()
+        {
+            return ExistingLanguagesTable.BodyRows.Last();
         }
 
         private DialogWindow GetDialogWindow()
         {
             return dialogWindow = new DialogWindow(manager);
         }
-
-        //-------
-        private DeleteDialogWindow GetDeleteLanguageDialogWindow()
-        {
-            return deleteDialogWindow = new DeleteDialogWindow(manager);
-        }
-        //-------
 
         private string GetDialogWindowTitle()
         {
@@ -101,110 +75,79 @@ namespace Wow.Pages
             return dialogWindow.BodyMessage.InnerText;
         }
 
-        public HtmlTableRow GetLastLanguageRowFromExistingList()
+        private ConfirmWindow GetConfirmWindow()
         {
-            return ExistingLanguagesTable.BodyRows.Last();
+            return confirmWindow = new ConfirmWindow(manager);
         }
 
-        //-------
-        private string GetDeleteLanguageWindowTitle()
-        {
-            return deleteDialogWindow.HeaderName.InnerText;
-        }
-
-        private string GetDeleteLanguageWindowMessage()
-        {
-            return deleteDialogWindow.BodyMessage.InnerText;
-        }
-        //-------
-
+        // Set Data
         public void SelectLanguageFromList(string language)
         {
-            SelectLanguage.SelectByText(language, true);
+            LanguageSelect.SelectByText(language, true);
         }
 
         private void ClickAddButton()
         {
-            AddLanguageButton.MouseClick();
+            AddLanguageButton.Click();
         }
 
         private void ClickOkOnDialogWindow()
         {
-            dialogWindow.OkButton.Click();
+            GetDialogWindow().OkButton.Click();
         }
 
-        //-------
-        private void ClickDeleteButton()
-        {
-            DeleteLanguageButton.Click();
-        }
-
-        private void ClickNoOnDeleteDialogWindow()
-        {
-            deleteDialogWindow.NoButton.Click();
-        }
-
-        private void ClickYesOnDeleteDialogWindow()
-        {
-            deleteDialogWindow.YesButton.Click();
-        }
-        //-------
-
+        // Functional
         public bool IsLanguageInExistingList(string language)
         {
             return ExistingLanguagesTable.BodyRows.Any(item => item.InnerText.ToLower().Equals(language.ToLower()));
         }
 
-        public bool IsAddButtonEnabled()
+        private bool IsAddButtonEnabled()
         {
             AddLanguageButton.Refresh();
             return AddLanguageButton.IsEnabled;
         }
 
-        private bool IsAddLanguageDialogWindowAppear()
+        public bool IsAddLanguageDialogWindowAppear(string title, string message)
         {
-            return GetDialogWindowTitle() == "Add language" &&
-                GetDialogWindowMessage() == "Language added successfully";
+            return GetDialogWindowTitle().ToLower().Equals(title.ToLower()) &&
+                GetDialogWindowMessage().ToLower().Equals(message.ToLower());
         }
 
-        //-------
-        private bool IsDeleteLanguageDialogAppear()
+        public LanguagesPage CloseAddLanguageDialogWindow()
         {
-            return GetDialogWindowTitle() == "Delete language" &&
-                GetDialogWindowMessage() == "Language deleted successfully";
+            ClickOkOnDialogWindow();
+            return this;
         }
 
-        private bool IsDeleteLanguageWindowAppear()
+        private void ConfirmLanguageDeletion()
         {
-            return GetDialogWindowTitle() == "Delete Language" &&
-                GetDialogWindowMessage().Contains("Are you sure");
+            GetConfirmWindow().YesButton.Click();
+            ClickOkOnDialogWindow();
         }
-        //-------
 
+        private void CancelLanguageDeletion()
+        {
+            GetConfirmWindow().NoButton.Click();
+        }
+
+        public void DeleteLastAddedLanguage()
+        {
+            GetLastLanguageRowFromExistingList().
+                Find.ByAttributes<HtmlButton>("class=btn btn-default nomargins").Click();
+            ConfirmLanguageDeletion();
+        }
+
+        // Business Logic
         public void AddNewLanguage(string language)
         {
             SelectLanguageFromList(language);
-            ClickAddButton();
-            GetDialogWindow();
-            if (IsAddLanguageDialogWindowAppear())
+            if (IsAddButtonEnabled())
             {
-                ClickOkOnDialogWindow();
+                ClickAddButton();
+                ExistingLanguagesTable.Refresh();
+                GetDialogWindow();
             }
-            ExistingLanguagesTable.Refresh();
         }
-
-        //-------
-        public void DeleteLanguage()
-        {
-            ClickDeleteButton();
-            ClickYesOnDeleteDialogWindow();
-            GetDeleteLanguageDialogWindow();
-            if (IsDeleteLanguageWindowAppear())
-            {
-                ClickYesOnDeleteDialogWindow();
-            }
-            ExistingLanguagesTable.Refresh();
-        }
-        //-------
     }
 }

@@ -13,7 +13,7 @@ namespace Wow.Appl
 
         private ApplicationSourcesRepository() { }
 
-        // static factory
+        // Static Factory
         public static ApplicationSourcesRepository Get()
         {
             if (_instance == null)

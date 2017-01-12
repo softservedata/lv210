@@ -1,0 +1,1 @@
+﻿SELECT COUNT(Users.Name) FROM Users JOIN UserRole ON Users.Id = UserRole.UserId WHERE UserRole.RoleId= 1

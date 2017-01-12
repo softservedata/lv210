@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wow.Appl
 {
-    // builder interfaces
+    // Builder Interfaces
     public interface IBrowserName
     {
         IImplicitTimeOut SetBrowserName(string browserName);
@@ -32,7 +32,7 @@ namespace Wow.Appl
         ApplicationSources Build();
     }
 
-    // dependency inversion interface
+    // Dependency Inversion Interface
     public interface IApplicationSources
     {
         string GetBrowserName();
@@ -46,24 +46,20 @@ namespace Wow.Appl
         // Browser Data
         private string browserName;
         private long implicitTimeOut;
+
         // URLs
         private string loginUrl;
         private string logoutUrl;
 
-        // constructor
-        private ApplicationSources()
-        {
-            //default
-        }
+        private ApplicationSources() { }
 
-        // static factory
-        // public static User Get() // old
+        // Static Factory
         public static IBrowserName Get()
         {
             return new ApplicationSources();
         }
 
-        //setters
+        // Setters
         public IImplicitTimeOut SetBrowserName(string browserName)
         {
             this.browserName = browserName;
@@ -93,8 +89,7 @@ namespace Wow.Appl
             return this;
         }
 
-        //getters
-
+        // Getters
         public string GetBrowserName()
         {
             return this.browserName;
@@ -114,6 +109,5 @@ namespace Wow.Appl
         {
             return this.logoutUrl;
         }
-
     }
 }

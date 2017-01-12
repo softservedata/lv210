@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
-using ArtOfTest.WebAii.Core;
+﻿using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 using Wow.Data;
@@ -13,37 +7,27 @@ namespace Wow.Pages
 {
     public class LoginPage
     {
-        // Components
         private class LoginForm
         {
-            // Fields
             private Manager manager;
 
-            // get Data
-            public HtmlInputEmail LoginInput { get; private set; }
-            public HtmlInputPassword PasswordInput { get; private set; }
-            public HtmlInputSubmit SubmitInput { get; private set; }
-
-            // Constructor
             public LoginForm(Manager manager)
             {
                 this.manager = manager;
-                this.LoginInput =  manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=email");
+                this.LoginInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=email");
                 this.PasswordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=password");
                 this.SubmitInput = manager.ActiveBrowser.Find.ByName<HtmlInputSubmit>("loginButton");
             }
+
+            public HtmlInputEmail LoginInput { get; private set; }
+            public HtmlInputPassword PasswordInput { get; private set; }
+            public HtmlInputSubmit SubmitInput { get; private set; }
+            public Element ErrorMessage { get; internal set; }
         }
 
-        // Fields
         private Manager manager;
-
-        // get Data
-        public HtmlButton LoginButton { get; private set; }
-        public Element LoginDescription { get; private set; }
-        //
         private LoginForm loginForm;
 
-        // Constructor
         public LoginPage(Manager manager)
         {
             this.manager = manager;
@@ -51,8 +35,10 @@ namespace Wow.Pages
             this.LoginDescription = manager.ActiveBrowser.Find.ByXPath("//div[@class='text-primary']/h2/small");
         }
 
-        // Page Object
-        // get Data
+        public HtmlButton LoginButton { get; private set; }
+        public Element LoginDescription { get; private set; }
+        
+        // Get Data
         public HtmlInputEmail GetLoginInput()
         {
             ClickLoginButton();
@@ -82,6 +68,13 @@ namespace Wow.Pages
             return this.LoginDescription.TextContent.Trim();
         }
 
+        public string GetLoginErrorMessageText(IUser user)
+        {
+            SetLoginData(user);
+            loginForm.ErrorMessage = manager.ActiveBrowser.Find.ByAttributes("class=text-danger ng-binding");
+            return this.loginForm.ErrorMessage.TextContent.Trim();
+        }
+
         // set Data
         public void ClickLoginButton()
         {
@@ -92,7 +85,11 @@ namespace Wow.Pages
         // Business Logic
         private void SetLoginData(IUser user)
         {
-            ClickLoginButton();
+            if (this.loginForm == null)
+            {
+                ClickLoginButton();
+            }
+            
             this.loginForm.LoginInput.Text = user.GetEmail();
             this.loginForm.PasswordInput.Text = user.GetPassword();
             this.loginForm.SubmitInput.Click();
@@ -100,10 +97,7 @@ namespace Wow.Pages
 
         public UsersPage SuccessAdminLogin(IUser admin)
         {
-            //public AdminHomePage SuccessAdminLogin(String login, String password) {
             SetLoginData(admin);
-            //SetLoginData(login, password);
-            // Return a new page object representing the destination.
             return new UsersPage(manager);
         }
 
