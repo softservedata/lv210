@@ -28,6 +28,7 @@ namespace Wow.Tests
             LanguagesPage languagesPage = usersPage.GotoLanguagesPage();
 
             languagesPage.AddNewLanguage(language);
+            Assert.IsTrue(languagesPage.IsLanguageInExistingList(language));
 
             // Test steps
             languagesPage.DeleteLastAddedLanguage();
