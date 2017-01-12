@@ -6,3 +6,7 @@ C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\HW5_2\ob
 C:\Users\Марія Сергіївна\Source\Repos\lv210\Homeworks\HW5\HW5_2\obj\Debug\HW5_2.pdb
 C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\HW5_2\bin\Debug\HW5_2.exe.config
 C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\HW5_2\obj\Debug\HW5_2.pdb
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\HW5_2\bin\Debug\HW5_2.exe
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\HW5_2\bin\Debug\HW5_2.pdb
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\HW5_2\obj\Debug\HW5_2.csprojResolveAssemblyReference.cache
+C:\Users\mdemctc\Source\Repos\lv210\Homeworks\HW5\HW5_2\obj\Debug\HW5_2.exe
