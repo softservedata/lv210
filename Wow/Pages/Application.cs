@@ -47,9 +47,7 @@ namespace Wow.Pages
         public void Init()
         {
             InitManager();
-            // TODO
-            // Init Strategy from applicationSources
-            // Init DB access, etc.
+            // TODO Init Strategy, Init DB access, etc.
         }
 
         public LoginPage Login()
@@ -62,7 +60,6 @@ namespace Wow.Pages
         public LoginPage Logout()
         {
             StartBrowser();
-            // TODO now do not working properly
             ApplicationPage.Get().NavigateTo(applicationSources.GetLogoutUrl());
             return new LoginPage(CurrentManager);
         }
@@ -137,6 +134,5 @@ namespace Wow.Pages
             }
             return currentBrowser;
         }
-
     }
 }
