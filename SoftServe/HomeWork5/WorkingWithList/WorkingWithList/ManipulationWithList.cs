@@ -1,43 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace WorkingWithList
 {
     public class ManipulationWithList
     {
-        public List<int> GetElementPosition(List<int> list, int element)
+        public List<int> GetElementPositions(List<int> list, int element)
         {
-            var foundIndex = list.Select((n, i) => new { number = n, index = i })
-                .Where(l => l.number == element)
-                .ToList();
+            var positionsOfElement = new List<int>();
 
-            var indexes = foundIndex.Select(l => l.index).ToList();
-
-            return indexes;
-        }
-
-        public List<int> RemoveElement(List<int> list, int element)
-        {
-            list.RemoveAll(x => x >= element);
-
-            return list;
-        }
-
-        public List<int> InsertElements(List<int> list, List<int> element, List<int> index)
-        {
-            for (int i = 0; i < element.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                list.Insert(index[i], element[i]);
+                if (list[i] == element)
+                {
+                    positionsOfElement.Add(i);
+                }
             }
 
-            return list;
+            return positionsOfElement;
         }
-        public List<int> Sort(List<int> list)
-        {
-            list.Sort();
 
-            return list;
+        public List<int> RemovetElementsGraterThan(List<int> currentList, int elementsForRemove)
+        {
+            currentList.RemoveAll(x => x >= elementsForRemove);
+
+            return currentList;
+        }
+
+        public List<int> InsertElements(List<int> currentList, List<int> elementsForInsertToList, List<int> listOfPositionsForElementsForInsert)
+        {
+            try
+            {
+                for (int i = 0; i < elementsForInsertToList.Count; i++)
+                {
+                    currentList.Insert(listOfPositionsForElementsForInsert[i], elementsForInsertToList[i]);
+                }
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                throw new IndexOutOfRangeException(ex.Message);
+            }
+
+            return currentList;
         }
     }
 }

@@ -5,19 +5,24 @@ namespace WorkingWithList
 {
     class ListInfo
     {
-        ManipulationWithList list;
-        List<int> myCollection;
-        string[] inputData;
+        ManipulationWithList manipulationWithList;
+        List<int> list;
+        string[] inputDataFromConsole;
 
         public ListInfo()
         {
-            list = new ManipulationWithList();
-            myCollection = GetListFromConsole();
+            manipulationWithList = new ManipulationWithList();
+            list = GetListFromConsole();
         }
 
+        /// <summary>
+        /// Read from console numbers, set this numbers to string array.
+        /// Call ConvertFromStringToList(), which convert these strings to list of numbers.
+        /// </summary>
+        /// <returns>List of numbers</returns>
         private static List<int> GetListFromConsole()
         {
-            List<int> list = new List<int>();
+            var list = new List<int>();
 
             Console.WriteLine("Input integer numbers separated by space : ");
             string[] inputData = Console.ReadLine().Split(' ');
@@ -27,66 +32,95 @@ namespace WorkingWithList
             return list;
         }
 
+        /// <summary>
+        /// Ask for which element find position(s) in list.
+        /// Call GetElementPositions() for find position(s) of element.
+        /// Print into console element positions. 
+        /// </summary>
         public void ElementPosition()
         {
             Console.Write("Input element for find position of it : ");
-            var elementPosition = int.Parse(Console.ReadLine());
-            Console.Write("Position(s) of element {0} is(are) : ", elementPosition);
-            var getElementPosition = list.GetElementPosition(myCollection, elementPosition);
+            var searchedElementPosition = int.Parse(Console.ReadLine());
+            Console.Write("Position(s) of element {0} is(are) : ", searchedElementPosition);
+            var elementPositions =  manipulationWithList.GetElementPositions(list, searchedElementPosition);
 
-            PrintList(getElementPosition);
+            PrintList(elementPositions);
         }
 
+        /// <summary>
+        /// Ask which element(s) should be deleted from list.
+        /// Call RemovetElementsGraterThan() for removing from list elements
+        /// which are greater or equal given element.
+        /// Print resulted list into console.
+        /// </summary>
         public void RemoveFromList()
         {
             Console.Write("\nInput element which you want to remove from list (we remove all elements which greater than inputed element) : ");
-            var elementForRemove = int.Parse(Console.ReadLine());
+            var elementsForRemove = int.Parse(Console.ReadLine());
             Console.WriteLine("List after remove some element(s) : ");
-            myCollection = list.RemoveElement(myCollection, elementForRemove);
+            list = manipulationWithList.RemovetElementsGraterThan(list, elementsForRemove);
 
-            PrintList(myCollection);
+            PrintList(list);
         }
 
+        /// <summary>
+        /// Ask which element(s) should be inserted into the list
+        /// and which position(s) should have these element(s) in list.
+        /// Call InsertElements() for it.
+        /// Print resulted list into console.
+        /// </summary>
         public void InsertToList()
         {
             Console.WriteLine("Input separated by space elements what you want to insert : ");
-            inputData = Console.ReadLine().Split(' ');
-            var insertElements = ConvertFromStringToList(inputData);
+            inputDataFromConsole = Console.ReadLine().Split(' ');
+            var elementsForInsertToList = ConvertFromStringToList(inputDataFromConsole);
 
             Console.WriteLine("Input separated by space indexes where you want to insert (index can't be greater than list count): ");
-            inputData = Console.ReadLine().Split(' ');
-            var insertIndexes = ConvertFromStringToList(inputData);
+            inputDataFromConsole = Console.ReadLine().Split(' ');
+            var indexesForInsert = ConvertFromStringToList(inputDataFromConsole);
 
             Console.WriteLine("List after insert some element(s) : ");
-            myCollection = list.InsertElements(myCollection, insertElements, insertIndexes);
+            list = manipulationWithList.InsertElements(list, elementsForInsertToList, indexesForInsert);
 
-            PrintList(myCollection);
+            PrintList(list);
         }
-
+        
+        /// <summary>
+        /// Sort and print resulted list into console.
+        /// </summary>
         public void SortList()
         {
+            list.Sort();
             Console.WriteLine("List after sort : ");
-            myCollection =  list.Sort(myCollection);
 
-            PrintList(myCollection);
+            PrintList(list);
         }
 
-        public void PrintList(List<int> list)
+        /// <summary>
+        /// Print appropriate list into console.
+        /// </summary>
+        /// <param name="list"></param>
+        private void PrintList(List<int> list)
         {
             list.ForEach(p => Console.Write(p.ToString() + " "));
             Console.WriteLine();
         }
 
-        private static List<int> ConvertFromStringToList(string[] stringToConvert)
+        /// <summary>
+        /// Convert from strings array to list. 
+        /// </summary>
+        /// <param name="stringsForConvert">Input strings array</param>
+        /// <returns>List of numbers</returns>
+        private static List<int> ConvertFromStringToList(string[] stringsForConvert)
         {
-            var list = new List<int>();
+            var listFromString = new List<int>();
 
-            for (int i = 0; i < stringToConvert.Length; i++)
+            for (int i = 0; i < stringsForConvert.Length; i++)
             {
-                list.Add(int.Parse(stringToConvert[i]));
+                listFromString.Add(int.Parse(stringsForConvert[i]));
             }
 
-            return list;
+            return listFromString;
         }
     }
 }

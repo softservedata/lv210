@@ -19,7 +19,16 @@ namespace WorkingWithList
 
             info.ElementPosition();
             info.RemoveFromList();
-            info.InsertToList();
+
+            try
+            {
+                info.InsertToList();
+            }
+            catch
+            {
+                throw;
+            }
+            
             info.SortList();
 
             Console.ReadKey();
