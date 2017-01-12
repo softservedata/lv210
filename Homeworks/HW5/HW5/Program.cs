@@ -13,23 +13,23 @@ namespace DevelopersTask
     {
         static List<IDeveloper> CreateDevelopersList()
         {
-            List<IDeveloper> DevelopersList = new List<IDeveloper>();
+            var developersList = new List<IDeveloper>();
 
-            DevelopersList.Add(new Builder("James", "Bond", "Hammer"));
-            DevelopersList.Add(new Builder("Guy", "Fawkes", "Dynamite"));
+            developersList.Add(new Builder("James", "Bond", "Hammer"));
+            developersList.Add(new Builder("Guy", "Fawkes", "Dynamite"));
 
-            DevelopersList.Add(new Programmer("Fabian", "Hambuchen", "NodeJS"));
-            DevelopersList.Add(new Programmer("Epke", "Zonderland", ".NET Core"));
+            developersList.Add(new Programmer("Fabian", "Hambuchen", "NodeJS"));
+            developersList.Add(new Programmer("Epke", "Zonderland", ".NET Core"));
 
-            return DevelopersList;
+            return developersList;
         }
 
         static void Main(string[] args)
         {
-            List<IDeveloper> DevelopersList = new List<IDeveloper>();
-            DevelopersList = CreateDevelopersList();
+            List<IDeveloper> developersList = new List<IDeveloper>();
+            developersList = CreateDevelopersList();
 
-            foreach (var item in DevelopersList)
+            foreach (var item in developersList)
             {
                 item.Create();   
             }
