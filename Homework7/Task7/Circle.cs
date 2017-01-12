@@ -12,14 +12,14 @@ namespace Task7
         private int radius;
         public int Radius { get; set; }
         public Circle(string name, int radius) : base(name)
-      {
-          this.Radius = radius; 
-      }
-        public override double Area() 
+        {
+            this.Radius = radius;
+        }
+        public override double Area()
         {
             return Math.PI * this.Radius * this.Radius;
         }
-        public override double Perimeter() 
+        public override double Perimeter()
         {
             return 2 * Math.PI * this.Radius;
         }
