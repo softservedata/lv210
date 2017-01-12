@@ -22,52 +22,24 @@ namespace LINQ
         {
             // --- Data Source --- //
 
-            string pathToWriteFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop),"shapes.txt");
-
-            List<Shape> shapes = new List<Shape>()
-            {
-                new Circle("Circle-1 (r = 0.5 cm)", 0.5),
-                new Circle("Circle-2 (r = 3 cm)", 3),
-                new Circle("Circle-3 (r = 6 cm)", 6),
-                new Square("Square-1 (leg = 9 cm)", 9),
-                new Square("Square-2 (leg = 12 cm)", 12),
-                new Square("Square-3 (leg = 15 cm)", 15)
-            };
+            List<Shape> shapes = ShapesUtilityClass.GetShapesCollection();
 
             // --- Queries --- //
 
-            var areaInRangeQuery = shapes.Where(s => (s.Area >= Conditions.RangeLowerLimit) && (s.Area <= Conditions.RangeUpperLimit));
+            var areaInRange = shapes.Where(s => (s.Area >= Conditions.RangeLowerLimit) && (s.Area <= Conditions.RangeUpperLimit));
             var nameContainsCharA = shapes.Where(s => s.Name.ToLower().Contains(Conditions.DesireChar));
-            
+
             // --- Query Execution --- //
 
-            areaInRangeQuery.WriteToFile(pathToWriteFile);
-            nameContainsCharA.WriteToFile(pathToWriteFile);
+            string fileName = "shapes.txt";
+
+            areaInRange.WriteToFile(ShapesUtilityClass.GetPath(fileName));
+            nameContainsCharA.WriteToFile(ShapesUtilityClass.GetPath(fileName));
 
             // --- Remove and display --- //
 
             shapes.RemoveAll(p => p.Perimeter < Conditions.PerimeterLimit);
             Shape.ConsoleDisplay(shapes);
-        }
-    }
-
-    static class ShapesUtilityClass
-    {
-        /// <summary>
-        /// Extension method for writing shapes collection to file
-        /// </summary>
-        /// <param name="shapes">Shapes collection</param>
-        /// <param name="fileName">File name or full file name</param>
-        public static void WriteToFile(this IEnumerable<Shape> shapes, string fileName)
-        {
-            using (StreamWriter writer = new StreamWriter(fileName, true))
-            {
-                foreach (var shape in shapes)
-                {
-                    writer.WriteLine(shape.ToString());
-                }
-                writer.WriteLine($"Mod: {DateTime.Now} {Environment.NewLine}");
-            }
         }
     }
 }

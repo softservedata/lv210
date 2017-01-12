@@ -21,32 +21,30 @@ namespace String
         {
             try
             {
-                // --- Data Source ---
+                // --- Data Source --- //
 
                 string fileName = "shape.cs";
-                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
-                string[] textContent = File.ReadAllLines(path);
+                string[] textContent = File.ReadAllLines(StringUtilityClass.GetFileFromDesktop(fileName));
 
-                // --- Write the number of symbols in every line ---
+                // --- Write the number of symbols in each line --- //
 
-                textContent.DisplaySymbolsInEachLine();
+                textContent.ConsoleDisplaySymbolsInEachLine();
 
-                // --- Queries ---
+                // --- Queries --- //
 
                 var longestLine = textContent.Where(line => line.Length ==
-                                                          textContent.Max(i => i.Length));
+                                                          textContent.Max(item => item.Length));
 
                 var shortestLine = textContent.Where(line => line.Length ==
-                                                          textContent.Min(i => i.Length));
+                                                          textContent.Min(item => item.Length));
 
-                var consistWordVarLines = textContent.Where(i => i.ToLower().Contains("var"));
+                var consistWordVarLines = textContent.Where(item => item.ToLower().Contains("var"));
 
-                // --- Queries Execution ---
+                // --- Queries Execution --- //
 
                 longestLine.ConsoleQueryExecution();
                 shortestLine.ConsoleQueryExecution();
                 consistWordVarLines.ConsoleQueryExecution();
-
             }
 
             catch (FileNotFoundException ex)
@@ -58,34 +56,6 @@ namespace String
             {
                 Console.Error.WriteLine(ex.Message);
             }
-        }
-    }
-
-    static class StringUtilityClass
-    {
-        /// <summary>
-        /// Output on console the number of symbols in every line from string array
-        /// </summary>
-        /// <param name="textContent">String array with text</param>
-        public static void DisplaySymbolsInEachLine(this string[] textContent)
-        {
-            int lineNumber = 1;
-
-            foreach (var line in textContent)
-            {
-                Console.WriteLine($"Line №{lineNumber} has {line.Length} symbols.");
-                lineNumber++;
-            }
-        }
-
-        /// <summary>
-        /// Execute query by printing result on console
-        /// </summary>
-        /// <param name="resultArray">Resulted string array</param>
-        public static void ConsoleQueryExecution(this IEnumerable<string> resultArray)
-        {
-            foreach (var line in resultArray)
-                Console.WriteLine(line);
         }
     }
 }

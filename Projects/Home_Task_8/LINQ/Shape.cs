@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shapes
 {
-    abstract class Shape
+    public abstract class Shape
     {
         private string _name;
 
