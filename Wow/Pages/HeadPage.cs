@@ -201,7 +201,7 @@ namespace Wow.Pages
             return this;
         }
 
-        public LoginPage GotoLogOut()
+        public LoginPage GoToLogOut()
         {
             ClickLogOut();
             return new LoginPage(manager);

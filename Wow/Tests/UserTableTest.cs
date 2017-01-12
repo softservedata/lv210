@@ -45,7 +45,7 @@ namespace Wow.Tests
             Assert.IsTrue(usersPage.IsUserCheckedAsStudent());
 
             // Return to previous state
-            usersPage.GotoLogOut();
+            usersPage.GoToLogOut();
         }
     }
 }

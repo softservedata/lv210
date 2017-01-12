@@ -7,8 +7,11 @@ namespace Wow.Pages
 {
     public class YourProfilePage : HeadPage
     {
-        public const string ErrorMessageForNameWithDigits = "Name can't contain digits";
-        public const string ErrorMessageForNameWithSymbols = "Name can't contain reserved characters";
+        public const string errorMessageForNameWithDigits = "Name can't contain digits";
+        public const string errorMessageForNameWithSymbols = "Name can't contain reserved characters";
+        public const string errorMessageForTooShortName = "Name can't be shorter than 7 characters";
+        public const string errorMessageForTooLongName = "Name can't be longer than 31 characters";
+        public const string errorMessageForBlankMandatoryFields = "All fields are mandatory";
 
         private class EditNameForm
         {
@@ -31,10 +34,8 @@ namespace Wow.Pages
 
         private class EditPasswordForm
         {
-            // Fields
             private Manager manager;
 
-            // Get Data
             public Element NewPasswordLabel { get; private set; }
             public HtmlInputPassword CurrentPasswordField { get; private set; }
             public HtmlInputPassword NewPasswordField { get; private set; }
@@ -54,11 +55,9 @@ namespace Wow.Pages
             }
         }
 
-        // Fields
         private EditNameForm editNameForm;
         private EditPasswordForm editPasswordForm;
 
-        // Get Data
         public HtmlControl YourProfileLabel { get; private set; }
         public HtmlSpan Name { get; private set; }
         public HtmlAnchor EditName { get; private set; }
@@ -83,30 +82,40 @@ namespace Wow.Pages
             this.Message = message;
         }
 
-        // Page Object
-
-        // Get data
+        // Get data for name edit form
         public HtmlControl GetNewNameLabel()
         {
-            if (this.editNameForm == null) ClickEditName();
+            if (this.editNameForm == null)
+            {
+                ClickEditName();
+            }
             return this.editNameForm.NewNameLabel;
         }
 
         public HtmlInputText GetNewNameField()
         {
-            if (this.editNameForm == null) ClickEditName();
+            if (this.editNameForm == null)
+            {
+                ClickEditName();
+            }
             return this.editNameForm.NewNameField;
         }
 
         public HtmlInputSubmit GetChangeName()
         {
-            if (this.editNameForm == null) ClickEditName();
+            if (this.editNameForm == null)
+            {
+                ClickEditName();
+            }
             return this.editNameForm.ChangeName;
         }
 
         public HtmlInputSubmit GetCancel()
         {
-            if (this.editNameForm == null) ClickEditName();
+            if (this.editNameForm == null)
+            {
+                ClickEditName();
+            }
             return this.editNameForm.Cancel;
         }
 
@@ -114,42 +123,54 @@ namespace Wow.Pages
         public Element GetNewPasswordLabel()
         {
             if (this.editPasswordForm == null)
+            {
                 ClickEditPassword();
+            }
             return this.editPasswordForm.NewPasswordLabel;
         }
 
         public HtmlInputPassword GetCurrentPasswordField()
         {
             if (this.editPasswordForm == null)
+            {
                 ClickEditPassword();
+            }
             return this.editPasswordForm.CurrentPasswordField;
         }
 
         public HtmlInputPassword GetNewPasswordField()
         {
             if (this.editPasswordForm == null)
+            {
                 ClickEditPassword();
+            }
             return this.editPasswordForm.NewPasswordField;
         }
 
         public HtmlInputPassword GetConfirmPasswordField()
         {
             if (this.editPasswordForm == null)
+            {
                 ClickEditPassword();
+            }
             return this.editPasswordForm.ConfirmPasswordField;
         }
 
         public HtmlInputSubmit GetChangePassword()
         {
             if (this.editPasswordForm == null)
+            {
                 ClickEditPassword();
+            }
             return this.editPasswordForm.ChangePassword;
         }
 
         public HtmlInputSubmit GetCancelPassword()
         {
             if (this.editPasswordForm == null)
+            {
                 ClickEditPassword();
+            }
             return this.editPasswordForm.Cancel;
         }
 
@@ -159,7 +180,7 @@ namespace Wow.Pages
             return this.Name.TextContent;
         }
 
-        // Set Data
+        // Set data for name edit form
         public void ClickEditName()
         {
             this.EditName.Click();
@@ -168,7 +189,10 @@ namespace Wow.Pages
 
         public void SetNewName(string newName)
         {
-            if (this.editNameForm == null) ClickEditName();
+            if (this.editNameForm == null)
+            {
+                ClickEditName();
+            }
             this.editNameForm.NewNameField.Text = newName;
         }
 
@@ -192,22 +216,55 @@ namespace Wow.Pages
         public void SetCurrentPassword(string currentPassword)
         {
             if (this.editPasswordForm == null)
+            {
                 ClickEditPassword();
+            }
             this.editPasswordForm.CurrentPasswordField.Text = currentPassword;
+        }
+
+        public void SetBlankCurrentPassword()
+        {
+            if (this.editPasswordForm == null)
+            {
+                ClickEditPassword();
+            }
+            this.editPasswordForm.CurrentPasswordField.Text = null;
         }
 
         public void SetNewPassword(string newPassword)
         {
             if (this.editPasswordForm == null)
+            {
                 ClickEditPassword();
+            }
             this.editPasswordForm.NewPasswordField.Text = newPassword;
+        }
+
+        public void SetBlankNewPassword()
+        {
+            if (this.editPasswordForm == null)
+            {
+                ClickEditPassword();
+            }
+            this.editPasswordForm.NewPasswordField.Text = null;
         }
 
         public void SetConfirmPassword(string confirmPassword)
         {
             if (this.editPasswordForm == null)
+            {
                 ClickEditPassword();
+            }
             this.editPasswordForm.ConfirmPasswordField.Text = confirmPassword;
+        }
+
+        public void SetBlankConfirmPassword()
+        {
+            if (this.editPasswordForm == null)
+            {
+                ClickEditPassword();
+            }
+            this.editPasswordForm.ConfirmPasswordField.Text = null;
         }
 
         public string GetNewPasswordFieldText()
@@ -218,14 +275,19 @@ namespace Wow.Pages
         // Business Logic
         public void ClickChangeName()
         {
-            if (this.editNameForm == null) ClickEditName();
+            if (this.editNameForm == null)
+            {
+                ClickEditName();
+            }
             this.editNameForm.ChangeName.Click();           
         }
 
         public void ClickChangePassword()
         {
             if (this.editPasswordForm == null)
+            {
                 ClickEditPassword();
+            }
             this.editPasswordForm.ChangePassword.Click();
         }
 
@@ -240,17 +302,22 @@ namespace Wow.Pages
             }
         }
 
-        public YourProfilePage ClickCancel()
+        public YourProfilePage ClickCancelEditName()
         {
-            if (this.editNameForm == null) ClickEditName();
+            if (this.editNameForm == null)
+            {
+                ClickEditName();
+            }
             this.editNameForm.Cancel.Click();
             return this;
         }
 
-        public YourProfilePage ClickCancelPassword()
+        public YourProfilePage ClickCancelEditPassword()
         {
             if (this.editPasswordForm == null)
+            {
                 ClickEditPassword();
+            }
             this.editPasswordForm.Cancel.Click();
             return this;
         }

@@ -46,7 +46,7 @@ namespace Wow.Tests
             yourProfilePage.SetNewName(newName);
 
             // 4. Press 'Cancel' and check if information wasn't saved.
-            yourProfilePage.ClickCancel();
+            yourProfilePage.ClickCancelEditName();
             Assert.AreNotEqual(admin.GetName(), newName);
 
             // 5. Go to 'Edit Password' form
@@ -59,11 +59,11 @@ namespace Wow.Tests
             yourProfilePage.SetConfirmPassword(newPassword);
 
             // 7. Press 'Cancel' and check if information wasn't saved.
-            yourProfilePage.ClickCancelPassword();
+            yourProfilePage.ClickCancelEditPassword();
             Assert.AreNotEqual(admin.GetPassword(), newPassword);
 
             // --- Logout --- //
-            loginPage = yourProfilePage.GotoLogOut();
+            loginPage = yourProfilePage.GoToLogOut();
 
             Console.WriteLine("Test Done!");
         }

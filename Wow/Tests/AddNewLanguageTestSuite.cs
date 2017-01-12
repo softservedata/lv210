@@ -51,7 +51,7 @@ namespace Wow.Tests
             languagesPage.DeleteLastAddedLanguage();
 
             // --- Logout --- //
-            loginPage = languagesPage.GotoLogOut();
+            loginPage = languagesPage.GoToLogOut();
 
             Console.WriteLine("Test Done!");
         }

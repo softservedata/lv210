@@ -30,9 +30,12 @@ namespace Wow.Tests
             languagesPage.AddNewLanguage(language);
 
             // Test steps
-            languagesPage.DeleteLanguage();
+            languagesPage.DeleteLastAddedLanguage();
 
-            Assert.IsFalse(languagesPage.IsLanguageInExistingList(language));   
+            Assert.IsFalse(languagesPage.IsLanguageInExistingList(language));
+
+            // Return to previous state
+            loginPage = languagesPage.GoToLogOut();
         }
     }
 }

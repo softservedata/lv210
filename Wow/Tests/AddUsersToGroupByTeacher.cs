@@ -32,7 +32,7 @@ namespace Wow.Tests
             Assert.AreEqual("LV-204 ISTQB", usersPage.GetUsernameText());
             //
             // Return to previous state
-            loginPage = usersPage.GotoLogOut();
+            loginPage = usersPage.GoToLogOut();
             //
             // Check
             Assert.AreEqual("SoftServe Language School", loginPage.GetLoginDescriptionText());

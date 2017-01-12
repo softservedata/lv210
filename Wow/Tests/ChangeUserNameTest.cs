@@ -40,13 +40,13 @@ namespace Wow.Tests
             yourProfilePage.SetNewName(names[0]);
             yourProfilePage.ChangeName(admin);
 
-            Assert.AreEqual(YourProfilePage.ErrorMessageForNameWithDigits, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.errorMessageForNameWithDigits, yourProfilePage.GetMessageText());
 
             // Set name with specific symbols and try to change it. Check if appropriate message appears
             yourProfilePage.SetNewName(names[1]);
             yourProfilePage.ChangeName(admin);
 
-            Assert.AreEqual(YourProfilePage.ErrorMessageForNameWithSymbols, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.errorMessageForNameWithSymbols, yourProfilePage.GetMessageText());
 
             // Set correct name try to change it. Check if name is really changed
             yourProfilePage.SetNewName(names[2]);
@@ -55,7 +55,7 @@ namespace Wow.Tests
             Assert.AreEqual(names[2], admin.GetName());
 
             // Return to previous state
-            loginPage = yourProfilePage.GotoLogOut();
+            loginPage = yourProfilePage.GoToLogOut();
         }
     }
 }

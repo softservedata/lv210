@@ -98,7 +98,7 @@ namespace Wow.Tests
             CheckUsersAtTable(usersFromDb, usersPage);
 
             // Return to previous state
-            usersPage.GotoLogOut();
+            usersPage.GoToLogOut();
         }
     }
 }

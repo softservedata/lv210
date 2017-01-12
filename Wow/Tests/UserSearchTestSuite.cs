@@ -37,7 +37,7 @@ namespace Wow.Tests
             Assert.IsNotEmpty(usersList.Where(item => item.GetName().Contains(userName)));
             
             // Return to previous state
-            loginPage = usersPage.GotoLogOut();
+            loginPage = usersPage.GoToLogOut();
         }
     }
 }

@@ -19,12 +19,11 @@ namespace Wow.Tests
                 UserRepository.Get().Admin(),   // Admin User
                 "",                             // Blank string
                 "starblack",                    // New Password
-                "All fields are mandatory"      // Error message
             }
         };
 
         [Test, TestCaseSource(nameof(TestData))]
-        public void BlankMandatoryFieldsMessageTest(User admin, string blankString, string newPassword, string errorMessage)
+        public void BlankMandatoryFieldsMessageTest(User admin, string blankString, string newPassword)
         {
             // Precondition
             admin.SetEmail("sokt@securehost.com.es");
@@ -43,37 +42,38 @@ namespace Wow.Tests
             Assert.NotNull(yourProfilePage.GetNewNameField());
 
             // Leave 'New Name' field empty. Check if appropriate message appears.
-            yourProfilePage = yourProfilePage.ChangeName(admin);
-            Assert.AreEqual(errorMessage, yourProfilePage.GetMessageText());
+            yourProfilePage.ChangeName(admin);
+            Assert.AreEqual(YourProfilePage.errorMessageForBlankMandatoryFields, yourProfilePage.GetMessageText());
 
-            yourProfilePage.ClickCancel();
+            yourProfilePage.ClickCancelEditName();
 
             // Go to Edit Password
             yourProfilePage.ClickEditPassword();
             Assert.NotNull(yourProfilePage.YourProfileLabel);
 
             // Fill in the 'New Password' and 'Confirm Password' fields
+            yourProfilePage.SetBlankCurrentPassword();
             yourProfilePage.SetNewPassword(newPassword);
             yourProfilePage.SetConfirmPassword(newPassword);
             yourProfilePage.ClickChangePassword();
-            Assert.AreEqual(errorMessage, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.errorMessageForBlankMandatoryFields, yourProfilePage.GetMessageText());
 
             // Clear the 'New Password' field and fill in the 'Current Password' field
             yourProfilePage.SetCurrentPassword(admin.GetPassword());
-            yourProfilePage.SetNewPassword(blankString);
+            yourProfilePage.SetBlankNewPassword();
             yourProfilePage.SetConfirmPassword(newPassword);
             yourProfilePage.ClickChangePassword();
-            Assert.AreEqual(errorMessage, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.errorMessageForBlankMandatoryFields, yourProfilePage.GetMessageText());
 
             // Clear the 'Confirm Password' field and fill in the 'New Password' field
             yourProfilePage.SetCurrentPassword(admin.GetPassword());
             yourProfilePage.SetNewPassword(newPassword);
-            yourProfilePage.SetConfirmPassword(blankString);
+            yourProfilePage.SetBlankConfirmPassword();
             yourProfilePage.ClickChangePassword();
-            Assert.AreEqual(errorMessage, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.errorMessageForBlankMandatoryFields, yourProfilePage.GetMessageText());
 
             // Return to previous state
-            loginPage = yourProfilePage.GotoLogOut();
+            loginPage = yourProfilePage.GoToLogOut();
         }
     }
 }

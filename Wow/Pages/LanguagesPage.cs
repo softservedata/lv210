@@ -131,13 +131,6 @@ namespace Wow.Pages
             GetConfirmWindow().NoButton.Click();
         }
 
-        public void DeleteLastAddedLanguage()
-        {
-            GetLastLanguageRowFromExistingList().
-                Find.ByAttributes<HtmlButton>("class=btn btn-default nomargins").Click();
-            ConfirmLanguageDeletion();
-        }
-
         // Business Logic
         public void AddNewLanguage(string language)
         {
@@ -148,6 +141,13 @@ namespace Wow.Pages
                 ExistingLanguagesTable.Refresh();
                 GetDialogWindow();
             }
+        }
+
+        public void DeleteLastAddedLanguage()
+        {
+            GetLastLanguageRowFromExistingList().Find.ByAttributes<HtmlButton>("class=btn btn-default nomargins").Click();
+            ConfirmLanguageDeletion();
+            ExistingLanguagesTable.Refresh();
         }
     }
 }

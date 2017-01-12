@@ -87,12 +87,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\AddNewLanguageTestSuite.cs" />
     <Compile Include="Tests\AddUsersToGroupByTeacher.cs" />
+    <Compile Include="Tests\BlankMandatoryFieldsTest.cs" />
     <Compile Include="Tests\ChangeUserNameTest.cs" />
+    <Compile Include="Tests\DeleteLanguageTest.cs" />
     <Compile Include="Tests\EditProfileCancelButtonTest.cs" />
     <Compile Include="Tests\LoginErrorMessageTest.cs" />
     <Compile Include="Tests\LoginTest.cs" />
     <Compile Include="Tests\PaginationTest.cs" />
     <Compile Include="Tests\TestRunner.cs" />
+    <Compile Include="Tests\TooLongTooShortUserNameTest.cs" />
     <Compile Include="Tests\UserRoleTestSuite.cs" />
     <Compile Include="Tests\UserSearchTestSuite.cs" />
     <Compile Include="Tests\UserTableTest.cs" />

@@ -46,7 +46,7 @@ namespace Wow.Tests
             usersPage.EditRole();
             usersPage.SetTeacherRole();
             usersPage.FinishEditing();
-            loginPage = usersPage.GotoLogOut();
+            loginPage = usersPage.GoToLogOut();
         }
     }
 }

@@ -13,30 +13,26 @@ namespace Wow.Tests
     /// </summary>
     class TooLongTooShortUserNameTest : TestRunner
     {
-        private static readonly object[] TestSigninData =
+        private static readonly object[] TestData =
            {
             new object[]
             {
                 UserRepository.Get().Admin(),
-                new
+                new string[]
                 {
-                    tooShortName = "Blu Mo",
-                    tooLongName = "Blueblueblueblue Moonmoonmoonmoo",
-                    correctName = "Blue Moon"
+                    "Blu Mo",
+                    "Blueblueblueblue Moonmoonmoonmoo",
+                    "Blue Moon"
                 },
-                new
-                {
-                    tooShortNameErrorMessage = "Name can't be shorter than 7 characters",
-                    tooLongNameErrorMessage = "Name can't be longer than 31 characters"
-                }
             },
         };
 
-        [Test, TestCaseSource(nameof(TestSigninData))]
-        public void ShortLongUserNameTest(User admin, dynamic names, dynamic messages)
+        [Test, TestCaseSource(nameof(TestData))]
+        public void ShortLongUserNameTest(User admin, string[] names)
         {
             // Precondition
-            admin.SetName("Blue Moon");
+            admin.SetEmail("mbnur@maildx.com");
+            admin.SetPassword("bluemoon");
 
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
@@ -44,29 +40,29 @@ namespace Wow.Tests
             // Test steps
             // Go to EditProfile page and check if this page is really opened
             YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
-            Assert.IsTrue(yourProfilePage.YourProfileLabel != null);
+            Assert.NotNull(yourProfilePage.YourProfileLabel);
 
             //Click on Edit Name check if this page is really opened
             yourProfilePage.ClickEditName();
-            Assert.IsTrue(yourProfilePage.GetNewNameField() != null);
+            Assert.NotNull(yourProfilePage.GetNewNameField());
 
             //Fill 'New Name' field with too short name. Check if appropriate message appears.
-            yourProfilePage.SetNewName(names.tooShortName);
-            yourProfilePage = yourProfilePage.ChangeName(admin);
-            Assert.AreEqual(messages.tooShortNameErrorMessage, yourProfilePage.GetMessageText());
+            yourProfilePage.SetNewName(names[0]);
+            yourProfilePage.ChangeName(admin);
+            Assert.AreEqual(YourProfilePage.errorMessageForTooShortName, yourProfilePage.GetMessageText());
 
             //Fill 'New Name' field with too long name. Check if appropriate message appears.
-            yourProfilePage.SetNewName(names.tooLongName);
-            yourProfilePage = yourProfilePage.ChangeName(admin);
-            Assert.AreEqual(messages.tooLongNameErrorMessage, yourProfilePage.GetMessageText());
+            yourProfilePage.SetNewName(names[1]);
+            yourProfilePage.ChangeName(admin);
+            Assert.AreEqual(YourProfilePage.errorMessageForTooLongName, yourProfilePage.GetMessageText());
 
             //Fill 'New Name' field with correct name. Check if name is really changed.
-            yourProfilePage.SetNewName(names.correctName);
-            yourProfilePage = yourProfilePage.ChangeName(admin);
-            Assert.AreEqual(names.correctName, yourProfilePage.GetNameValue());
+            yourProfilePage.SetNewName(names[2]);
+            yourProfilePage.ChangeName(admin);
+            Assert.AreEqual(names[2], admin.GetName());
 
             // Return to previous state
-            loginPage = yourProfilePage.GotoLogOut();
+            loginPage = yourProfilePage.GoToLogOut();
         }
     }
 }
