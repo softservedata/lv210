@@ -17,13 +17,12 @@ namespace Wow.Tests
             new object[]
             {
                 UserRepository.Get().Admin(),   // Admin User
-                "",                             // Blank string
                 "starblack",                    // New Password
             }
         };
 
         [Test, TestCaseSource(nameof(TestData))]
-        public void BlankMandatoryFieldsMessageTest(User admin, string blankString, string newPassword)
+        public void BlankMandatoryFieldsMessageTest(User admin, string newPassword)
         {
             // Precondition
             admin.SetEmail("sokt@securehost.com.es");
