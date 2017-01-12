@@ -33,8 +33,9 @@ namespace Wow.Tests
             usersPage.SetValueToSearch(userName);
             
             // Step 3: Check if user name from test data are equal with user from table
-            IList<User> usersList = usersPage.GetUsersDataForTable();
-            Assert.IsNotEmpty(usersList.Where(item => item.GetName().Contains(userName)));
+            IList<User> actual = usersPage.GetUsersDataForTable();
+            IList<User> expected = actual.Where(item => item.GetName().Contains(userName)).ToList();
+            Assert.AreEqual(expected,actual);
             
             // Return to previous state
             loginPage = usersPage.GotoLogOut();
