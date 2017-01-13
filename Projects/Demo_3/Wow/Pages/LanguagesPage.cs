@@ -157,6 +157,7 @@ namespace Wow.Pages
         {
             GetDeleteLanguageButtonByRow(GetLastLanguageRowFromExistingList()).Click();
             ConfirmLanguageDeletion();
+            ExistingLanguagesTable.Refresh();
         }
     }
 }

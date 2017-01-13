@@ -47,8 +47,9 @@ namespace Wow.Tests
             // 3. Check if added language is presented in the list as last language
             Assert.AreEqual(languageToAdd, languagesPage.GetLastLanguageRowFromExistingList().InnerText);
 
-            // --- Return to a previous state --- //
+            // --- Return to a previous state and check--- //
             languagesPage.DeleteLastAddedLanguage();
+            Assert.IsFalse(languagesPage.IsLanguageInExistingList(languageToAdd));
 
             // --- Logout --- //
             loginPage = languagesPage.GotoLogOut();

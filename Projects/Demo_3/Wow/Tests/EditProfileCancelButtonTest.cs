@@ -47,7 +47,7 @@ namespace Wow.Tests
 
             // 4. Press 'Cancel' and check if information wasn't saved.
             yourProfilePage.CancelNameChanges();
-            Assert.AreNotEqual(admin.GetName(), newName);
+            Assert.AreNotEqual(newName, admin.GetName());
 
             // 5. Go to 'Edit Password' form
             yourProfilePage.ClickEditPassword();
