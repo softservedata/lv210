@@ -23,19 +23,19 @@ namespace HomeWorkThree
             }
         }
 
-        public static bool IsIntEnteredIntInRangeMonth(int month)
+        public static bool IsMonthEntered(int month)
         {
-            bool isIntEnteredIntinRangeMonth;
+            bool isMonthEntered;
 
             if (Enumerable.Range(1, 12).Contains(month))
             {
-                isIntEnteredIntinRangeMonth = true;
+                isMonthEntered = true;
             }
             else
             {
-                isIntEnteredIntinRangeMonth = false;
+                isMonthEntered = false;
             }
-            return isIntEnteredIntinRangeMonth;
+            return isMonthEntered;
         }
 
         private static void DaysInMonth()
@@ -43,7 +43,7 @@ namespace HomeWorkThree
             Console.WriteLine("Enter month from 1 to 12");
             int month = IsIntEntered();
 
-            if (IsIntEnteredIntInRangeMonth(month))
+            if (IsMonthEntered(month))
             {
                 switch (month)
                 {

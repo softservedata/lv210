@@ -6,27 +6,19 @@ namespace HomeWorkThree.Test
     public class IsIntEnteredIntInRangeMonthTest
     {
         [Test]
-        public void PositiveValTest()
+        public void PositiveValueEnteredTest()
         {
-            bool expected;
-            bool actual;
+            bool actual = HW_3_2.IsMonthEntered(6);
 
-            actual = HW_3_2.IsIntEnteredIntInRangeMonth(6);
-            expected = true;
-
-            Assert.AreEqual(expected, actual);
+            Assert.IsTrue(actual);
         }
 
         [Test]
-        public void NegativeValTest()
+        public void NegativeValueEnteredTest()
         {
-            bool expected;
-            bool actual;
+            bool actual = HW_3_2.IsMonthEntered(15);
 
-            actual = HW_3_2.IsIntEnteredIntInRangeMonth(15);
-            expected = false;
-
-            Assert.AreEqual(expected, actual);
+            Assert.IsTrue(!actual);
         }
 
         [Test, Sequential]
@@ -35,7 +27,7 @@ namespace HomeWorkThree.Test
             bool expected;
             bool actual;
 
-            actual = HW_3_2.IsIntEnteredIntInRangeMonth(values);
+            actual = HW_3_2.IsMonthEntered(values);
             expected = result;
 
             Assert.AreEqual(expected, actual);
@@ -47,7 +39,7 @@ namespace HomeWorkThree.Test
             bool expected;
             bool actual;
 
-            actual = HW_3_2.IsIntEnteredIntInRangeMonth(values);
+            actual = HW_3_2.IsMonthEntered(values);
             expected = result;
 
             Assert.AreEqual(expected, actual);
