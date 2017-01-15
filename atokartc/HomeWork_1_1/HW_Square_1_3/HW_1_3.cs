@@ -10,21 +10,31 @@ namespace HomeWorkOne
     /// </summary>
     public class HW_1_3
     {
-        public static void Main()
+        public static int GetPositiveValueFromConsole()
         {
-            int a = 0;
-            Console.WriteLine("Define integer variable: ");
+            int readedVar = 0;
+            bool isIntEntered = Int32.TryParse(Console.ReadLine(), out readedVar);
 
-            if (int.TryParse(Console.ReadLine(), out a) && a >= 0)
+            if (isIntEntered && readedVar >= 0)
             {
-                Console.WriteLine("Area of Square is:{0}", Math.Pow(a, 2));
-                Console.WriteLine("Perimeter of Square is:{0}", 4 * a);
+                return readedVar;
             }
             else
             {
-                Console.WriteLine("You should enter an integer! ");
+                Console.WriteLine("Please, enter a positive integer");
+                return GetPositiveValueFromConsole();
             }
+        }
 
+        public static void Main()
+        {
+            Console.WriteLine("Define a integer variable: ");
+            int a = GetPositiveValueFromConsole();
+            double area = Math.Pow(a, 2);
+            double perimeter = 4 * a;
+
+            Console.WriteLine("Area of Square is:{0}", area);
+            Console.WriteLine("Perimeter of Square is:{0}", perimeter);
             Console.ReadKey();
         }
     }

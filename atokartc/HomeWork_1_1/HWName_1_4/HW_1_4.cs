@@ -10,23 +10,32 @@ namespace HomeWorkOne
     /// </summary>
     public class HW_1_4
     {
+        public static int GetPositiveValueFromConsole()
+        {
+            int readedVar = 0;
+            bool isIntEntered = Int32.TryParse(Console.ReadLine(), out readedVar);
+
+            if (isIntEntered && readedVar >= 0)
+            {
+                return readedVar;
+            }
+            else
+            {
+                Console.WriteLine("Please, enter a positive integer");
+                return GetPositiveValueFromConsole();
+            }
+        }
+
         public static void Main()
         {
             Console.WriteLine("What is your name?");
             string name = Console.ReadLine();
 
             Console.WriteLine("How old are you?");
-            int age = 0;
+            int age = GetPositiveValueFromConsole();
 
-            if (int.TryParse(Console.ReadLine(), out age) && age >= 0)
-            {
-                Console.WriteLine("My name is: {0}", name);
-                Console.WriteLine("I am {0} years old", age);
-            }
-            else
-            {
-                Console.WriteLine("You entered incorrect age!");
-            }
+            Console.WriteLine("My name is: {0}", name);
+            Console.WriteLine("I am {0} years old", age);
 
             Console.ReadKey();
         }

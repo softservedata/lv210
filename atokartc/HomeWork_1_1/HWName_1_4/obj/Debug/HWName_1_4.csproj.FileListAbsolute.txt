@@ -1,1 +1,5 @@
 C:\Users\Andrii\lv210\atokartc\HomeWork_1_1\HWName_1_4\bin\Debug\HWName_1_4.exe.config
+C:\Users\Andrii\lv210\atokartc\HomeWork_1_1\HWName_1_4\bin\Debug\HWName_1_4.exe
+C:\Users\Andrii\lv210\atokartc\HomeWork_1_1\HWName_1_4\bin\Debug\HWName_1_4.pdb
+C:\Users\Andrii\lv210\atokartc\HomeWork_1_1\HWName_1_4\obj\Debug\HWName_1_4.exe
+C:\Users\Andrii\lv210\atokartc\HomeWork_1_1\HWName_1_4\obj\Debug\HWName_1_4.pdb
