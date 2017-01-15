@@ -1,2 +1,3 @@
 C:\Users\Andriyi\lv210\atokartc\HwSix\HwSixExceptions\bin\Debug\HwSixExceptions.exe.config
 C:\Users\Andrii\lv210\atokartc\HwSix\HwSixExceptions\bin\Debug\HwSixExceptions.exe.config
+C:\Users\atokartc\Source\Repos\lv210\atokartc\HwSix\HwSixExceptions\bin\Debug\HwSixExceptions.exe.config

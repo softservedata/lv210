@@ -1,34 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
-using ArtOfTest.WebAii.Controls.HtmlControls;
 
 namespace Wow.Pages
 {
+    /// <summary>
+    /// Base class that represents the funcionality of the Head page.
+    /// </summary>
     public abstract class HeadPage
     {
-        // Components
+        /// <summary>
+        /// Themes that are present in Theme state dropdown.
+        /// </summary>
         public enum ThemeState
         {
             DarkTheme = 0,
             BlueTheme = 1
         }
-
-        // Components
+        /// <summary>
+        /// Class that represents User name dropdown functionality.
+        /// </summary>
         private class UsernameDropdown
         {
-            // Fields
             private Manager manager;
 
-            // get Data
             public HtmlAnchor EditProfile { get; private set; }
             public HtmlAnchor LogOut { get; private set; }
 
-            // Constructor
             public UsernameDropdown(Manager manager)
             {
                 this.manager = manager;
@@ -39,33 +37,31 @@ namespace Wow.Pages
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        // Fields
         protected Manager manager;
         private HtmlDiv navbarCollapse;
         private Element body;
 
-        // get Data
         public HtmlSpan Username { get; private set; }
         public HtmlSelect DefaultTheme { get; private set; }
         public HtmlButton SidebarToggle { get; private set; }
-        //
+        public Element SelectedThemeBlue { get; private set;}
+        public Element SelectedThemeBlack { get; private set; }
+
         private UsernameDropdown usernameDropdown;
 
-        // Constructor
         public HeadPage(Manager manager)
         {
             this.manager = manager;
             this.navbarCollapse = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=collapse navbar-collapse");
             this.body = manager.ActiveBrowser.Find.ByTagIndex("body", 0);
-            //
+
             this.Username = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("ng-model=getName");
             this.DefaultTheme = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=defaultTheme");
             this.SidebarToggle = manager.ActiveBrowser.Find.ById<HtmlButton>("sidebar-toggle");
-
+            this.SelectedThemeBlue = manager.ActiveBrowser.Find.ByXPath("//link[@href = 'dist/styles-concat-blue-theme.css']");
+            this.SelectedThemeBlack = manager.ActiveBrowser.Find.ByXPath("//link[@href = 'dist/styles-concat-dark-theme.css']");
         }
 
-        // Page Object
-        // get Data
         public HtmlAnchor GetEditProfile()
         {
             ClickUsername();
@@ -78,7 +74,6 @@ namespace Wow.Pages
             return this.usernameDropdown.LogOut;
         }
 
-        // Functional
         public string GetUsernameText()
         {
             return this.Username.TextContent.Trim();
@@ -89,7 +84,6 @@ namespace Wow.Pages
             return body.GetAttributeValueOrEmpty("class").Contains("sidebar-minimized");
         }
 
-        // set Data
         private void ClickNavbarCollapse()
         {
             this.navbarCollapse.Click();
@@ -124,15 +118,23 @@ namespace Wow.Pages
 
         public void SelectDefaultTheme(ThemeState theme)
         {
-            //DefaultTheme.SelectByIndex((int)theme);
             DefaultTheme.SelectByPartialText(theme.ToString().Substring(0, 4), true);
+
         }
 
-        // Business Logic
+        public bool IsBlueThemeSelected()
+        {
+            return this.SelectedThemeBlue.Content.ToLower().Contains("blue");
+        }
+
+        public bool IsDarkThemeSelected()
+        {
+            return this.SelectedThemeBlack.Content.ToLower().Contains("dark");
+        }
+
         public YourProfilePage GotoEditProfile()
         {
             ClickEditProfile();
-            // Return a new page object representing the destination.
             return new YourProfilePage(manager);
         }
 

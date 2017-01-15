@@ -93,7 +93,7 @@ namespace Wow.Pages
        
 
         //
-        private UserTable userTable;
+        //private UserTable userTable;
         private Pagination pagination;
         private UserRoleManagement userRoles;
 

@@ -1,17 +1,7 @@
-﻿using ArtOfTest.WebAii.Controls.HtmlControls;
-using NUnit.Framework;
-using System.Threading;
+﻿using NUnit.Framework;
 using Wow.Appl;
 using Wow.Data;
 using Wow.Pages;
-using System;
-using System.Threading;
-//using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
-using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.Controls.HtmlControls;
-using System.Collections.Generic;
-using ArtOfTest.WebAii.Win32.Dialogs;
 
 namespace Wow.Tests
 {
@@ -26,7 +16,7 @@ namespace Wow.Tests
         [Test, TestCaseSource(nameof(TestSigninData))]
         public void IfUserCanSwitchBetweenThemes(User admin)
         {
-            // Precondition
+            // --- Precondition ---//
             admin.SetEmail("bslw@wovz.cu.cc");
             admin.SetPassword("phoenixrising");
 
@@ -38,14 +28,26 @@ namespace Wow.Tests
             #region Step 1: Click on the theme selection drop-down list on top of the page
 
             usersPage.OpenThemeDropdown();
-            Manager manager;
-            Settings mySettings = new Settings();
-            manager = new Manager(mySettings);
-            HtmlInputUrl link = manager.ActiveBrowser.Find.ByTagIndex<HtmlInputUrl>("//link[@href = 'dist/styles-concat-blue-theme.css']", 0);
-            Assert.IsTrue(link.Text.ToLower().Contains("blue"));
+            bool isBlueThemeSelcted = usersPage.IsBlueThemeSelected();
+
+            Assert.IsTrue(isBlueThemeSelcted);
+
             #endregion EndStep 1: The Blue theme is selected by default
 
+            #region Step 2: Select the Dark theme from the drop-down list
+
+            usersPage.SelectDarkTheme();
+            bool isdarkThemeSelcted = usersPage.IsDarkThemeSelected();
+
+            Assert.IsTrue(isdarkThemeSelcted);
+
+            #endregion EndStep 2: The theme changed to the Dark one
+
+            #region Return to default state
+
             loginPage = usersPage.GotoLogOut();
+
+            #endregion
         }
     }
 }

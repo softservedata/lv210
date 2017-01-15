@@ -82,6 +82,7 @@
     <Compile Include="Tests\PaginationTest.cs" />
     <Compile Include="Tests\SwitchBetweenThemes.cs" />
     <Compile Include="Tests\TestRunner.cs" />
+    <Compile Include="Tests\UnregisteredUserLogin.cs" />
     <Compile Include="Tests\UserRoleTestSuite.cs" />
   </ItemGroup>
   <ItemGroup />

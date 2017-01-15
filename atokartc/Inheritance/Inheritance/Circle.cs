@@ -15,7 +15,7 @@ namespace Inheritance
             {
                 return radius;
             }
-            private set
+            set
             {
                 this.radius = value;
             }
@@ -44,3 +44,4 @@ namespace Inheritance
         }
     }
 }
+

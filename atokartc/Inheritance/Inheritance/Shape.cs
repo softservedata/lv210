@@ -1,4 +1,6 @@
-﻿namespace Inheritance
+﻿using System;
+
+namespace Inheritance
 {
     /// <summary>
     /// Base class Shape
@@ -13,7 +15,7 @@
             {
                 return name;
             }
-            private set
+            set
             {
                 this.name = value;
             }
@@ -21,7 +23,7 @@
 
         public Shape(string name)
         {
-            this.Name = name;
+            this.name = name;
         }
 
         public abstract double Area();
@@ -37,8 +39,3 @@
         }
     }
 }
-
-
-
-
-
