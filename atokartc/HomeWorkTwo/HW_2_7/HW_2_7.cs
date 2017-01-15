@@ -11,25 +11,40 @@ namespace HomeWorkTwo
         /// </summary>
         public struct Dog
         {
-            public string Name;
-            public string Mark;
-            public int Age;
+            public string name;
+            public string mark;
+            public int age;
 
+            public static int GetPositiveValueFromConsole()
+            {
+                int readedVar = 0;
+                bool isIntEntered = Int32.TryParse(Console.ReadLine(), out readedVar);
+
+                if (isIntEntered && readedVar >= 0)
+                {
+                    return readedVar;
+                }
+                else
+                {
+                    Console.WriteLine("Please, enter a positive integer");
+                    return GetPositiveValueFromConsole();
+                }
+            }
 
             public void Inputs()
             {
                 Console.WriteLine("Enter dog's name:");
-                Name = Console.ReadLine();
+                name = Console.ReadLine();
 
                 Console.WriteLine("Enter dog's mark:");
-                Mark = Console.ReadLine();
+                mark = Console.ReadLine();
 
                 Console.WriteLine("Enter dog's age:");
-                Age = Convert.ToInt32(Console.ReadLine());
+                age = GetPositiveValueFromConsole();
             }
             public override string ToString()
             {
-                return String.Format("Dogs name: {0}{3} Dogs mark:{1}{3} Age: {2}{3}", Name, Mark, Age, Environment.NewLine);
+                return String.Format("Dogs name: {0}{3} Dogs mark:{1}{3} Age: {2}{3}", name, mark, age, Environment.NewLine);
             }
         }
 

@@ -30,10 +30,28 @@ namespace HomeWorkTwo
             RANGE_NOT_SATISFIABLE,
             EXPECTATION_FAILED
         };
+
+        public static int GetErrorNumberFromConsole()
+        {
+            int readedVar = 0;
+            bool isIntEntered = Int32.TryParse(Console.ReadLine(), out readedVar);
+
+            if (isIntEntered && readedVar >= 400)
+            {
+                return readedVar;
+            }
+            else
+            {
+                Console.WriteLine("Please, enter a positive error number. Number should > 400");
+                return GetErrorNumberFromConsole();
+            }
+        }
+
         static void Main()
         {
-            Errors error = (Errors)Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Error: {0}", error);
+            Console.WriteLine("Please enter number of error:");
+            Errors error = (Errors)GetErrorNumberFromConsole();
+            Console.WriteLine("Error's name: {0}", error);
             Console.ReadKey();
         }
     }
