@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShapesProject
 {
@@ -15,15 +16,11 @@ namespace ShapesProject
             }
         }
 
-        public static Shape FindMaxShape(List<Shape> shapeList)
+        public static Shape FindMaxShapeByPerimeter(List<Shape> shapeList)
         {
             Shape maximalShape = shapeList[0];
-           
-            foreach (Shape item in shapeList)
-            {
-                if (item.Perimeter() > maximalShape.Perimeter()) maximalShape = item;
-            }
 
+            maximalShape = shapeList.Where(item => item.Perimeter() > maximalShape.Perimeter()).First<Shape>();
             return maximalShape;
         }
 
@@ -35,18 +32,15 @@ namespace ShapesProject
             shapes.Add(new Square("square",0.2));
             shapes.Add(new Square("square2", 1.0));
             Print(shapes);
-
-
-            Shape maximalShape = FindMaxShape(shapes);
+            
+            Shape maximalShape = FindMaxShapeByPerimeter(shapes);
             Console.WriteLine("Shape with max  perimeter [{0}]",maximalShape);
             
-
             Console.WriteLine("Shapes sorted by area");
             shapes.Sort();
             Print(shapes);
             
             Console.ReadKey();
         }
-        
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ShapesProject
 {
-    class Circle:Shape
+   public class Circle:Shape
     {
         private double radius;
 

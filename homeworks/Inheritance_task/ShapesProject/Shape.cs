@@ -2,35 +2,21 @@
 
 namespace ShapesProject
 {
-    public abstract class Shape:IComparable<Shape>
+    public abstract class Shape: IComparable<Shape>
     {
-        private string name;
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-         
-        }
-
+        public string Name { get; set; }
+        
         public Shape(string name)
         {
-            this.name = name;
+            this.Name = name;
         }
 
         public abstract double Area();
         public abstract double Perimeter();
         
-
         public int CompareTo(Shape other)
         {
-            return (int) ((int)this.Area() - other.Area());
+            return this.Area().CompareTo(other.Area());
         }
     }
 }
