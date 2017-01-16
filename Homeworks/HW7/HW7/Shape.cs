@@ -2,7 +2,7 @@
 
 namespace HW7
 {
-    abstract class Shape : IComparable
+    public abstract class Shape : IComparable
     {
         private string name;
 
@@ -22,8 +22,6 @@ namespace HW7
         abstract public double Area();
 
         abstract public double Perimeter();
-        
-        private const double  precision = 0.0001;
 
         public int CompareTo(object obj)
         {
@@ -39,27 +37,6 @@ namespace HW7
             {
                 throw new ArgumentException("Object should be shape");
             }
-        }
-
-
-        public static bool operator <(Shape firstShape, Shape secondShape)
-        {
-            return (firstShape.Area() < secondShape.Area());
-        }
-
-        public static bool operator >(Shape firstShape, Shape secondShape)
-        {
-            return (firstShape.Area() > secondShape.Area());
-        }
-
-        public static bool operator <=(Shape firstShape, Shape secondShape)
-        {
-            return (firstShape.Area() <= secondShape.Area());
-        }
-
-        public static bool operator >=(Shape firstShape, Shape secondShape)
-        {
-            return (firstShape.Area() >= secondShape.Area());
         }
 
         public override string ToString()

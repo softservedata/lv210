@@ -2,7 +2,7 @@
 
 namespace HW7
 {
-    class Square : Shape
+    public class Square : Shape
     {
         private double side;
 
@@ -15,7 +15,7 @@ namespace HW7
             set
             {
                 side = value;
-                if (side < 0)
+                if (side <= 0)
                 {
                     throw new ArgumentException("Side should be greater then 0");
                 }
