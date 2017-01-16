@@ -27,18 +27,7 @@ namespace Shapes
 
         public override int CompareTo(Shape obj)
         {
-            if (GetArea() > obj.GetArea())
-            {
-                return 1;
-            }
-            else if (GetArea() < obj.GetArea())
-            {
-                return -1;
-            }
-            else
-            {
-                return 0;
-            }
+            return GetArea().CompareTo(obj.GetArea());
         }
 
         public override string ToString()
