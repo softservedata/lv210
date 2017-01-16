@@ -34,5 +34,37 @@ namespace TaskWithShapes
         {
             return 2 * Math.PI * this.Radius;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            // If parameter cannot be cast to Circle return false.
+            var circle = obj as Circle;
+            if ((object)circle == null)
+            {
+                return false;
+            }
+
+            return (this.Name == circle.Name) && (Math.Abs(this.Radius - circle.Radius) < Tolerance);
+        }
+
+        public bool Equals(Circle circle)
+        {
+            if ((object)circle == null)
+            {
+                return false;
+            }
+
+            return (this.Name == circle.Name) && (Math.Abs(this.Radius - circle.Radius) < Tolerance);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Name.GetHashCode() ^ this.Radius.GetHashCode();
+        }
     }
 }

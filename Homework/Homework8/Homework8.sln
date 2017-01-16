@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWithShapes", "TaskWithS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWithString", "TaskWithString\TaskWithString.csproj", "{454E1482-91B8-4DDC-84B5-440DCF10073C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWithShapes.UnitTests", "TaskWithShapes.UnitTests\TaskWithShapes.UnitTests.csproj", "{29E07CF9-52CE-4490-9B20-0E1D78D1605B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{454E1482-91B8-4DDC-84B5-440DCF10073C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{454E1482-91B8-4DDC-84B5-440DCF10073C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{454E1482-91B8-4DDC-84B5-440DCF10073C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E07CF9-52CE-4490-9B20-0E1D78D1605B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E07CF9-52CE-4490-9B20-0E1D78D1605B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E07CF9-52CE-4490-9B20-0E1D78D1605B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E07CF9-52CE-4490-9B20-0E1D78D1605B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

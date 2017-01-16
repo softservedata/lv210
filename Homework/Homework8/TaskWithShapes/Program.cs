@@ -31,7 +31,7 @@ namespace TaskWithShapes
         public static double ParseDoubleData(string data)
         {
             double value;
-            var isParsed = double.TryParse(data.Replace(".", "."), out value);
+            var isParsed = double.TryParse(data.Replace(".", ","), out value);
 
             if (!isParsed)
             {
@@ -109,7 +109,7 @@ namespace TaskWithShapes
             return ParseIntData(Console.ReadLine());
         }
 
-        public static List<Shape> ReadListOfShapes(int count)
+        public static IList<Shape> ReadListOfShapes(int count)
         {
             var listOfShapes = new List<Shape>();
 
@@ -125,7 +125,7 @@ namespace TaskWithShapes
             return listOfShapes;
         }
 
-        public static void PrintListOfShapesToConsole(List<Shape> listOfShapes)
+        public static void PrintListOfShapesToConsole(IList<Shape> listOfShapes)
         {
             foreach (var shape in listOfShapes)
             {
@@ -133,70 +133,28 @@ namespace TaskWithShapes
             }
         }
 
-        public static List<Shape> FindAllWithAreaInRange(List<Shape> listOfShapes, double leftBoundary,
-            double rightBoundary)
-        {
-            if (listOfShapes == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            if (leftBoundary > rightBoundary)
-            {
-                throw new ArgumentException();
-            }
-
-            return listOfShapes.Where(shape => (shape.Area() >= leftBoundary) &&
-                                               (shape.Area() <= rightBoundary)).ToList();
-        }
-
-        public static List<Shape> FindAllWithAppropriateSymbolInName(List<Shape> listOfShapes, char symbol)
-        {
-            if (listOfShapes == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            return listOfShapes.Where(shape => (shape.Name.Contains(symbol))).ToList();
-        }
-
-        public static void FindAndRemoveAllWithPerimeterLessThanValue(ref List<Shape> listOfShapes, double value)
-        {
-            if (listOfShapes == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            if (value <= 0)
-            {
-                throw new ArgumentException();
-            }
-
-            listOfShapes.RemoveAll(shape => (shape.Perimeter() < value));
-        }
-
-        public static void WriteListToFile(List<Shape> listOfShapes, string fileName)
+        public static void WriteListToFile(IList<Shape> listOfShapes, string fileName)
         {
             var lines = listOfShapes.Select(shape => shape.ToString() + string.Empty);
 
             File.WriteAllLines(fileName, lines);
         }
 
-        public static void FindByAreaAndWriteToFile(List<Shape> listOfShapes)
+        public static void FindByAreaAndWriteToFile(IList<Shape> listOfShapes)
         {
-            var shapesWithAreaInRange = FindAllWithAreaInRange(listOfShapes, LeftBoundary, RightBoundary);
+            var shapesWithAreaInRange = listOfShapes.FindAllWithAreaInRange(LeftBoundary, RightBoundary);
             WriteListToFile(shapesWithAreaInRange, $"shapes with area in [{LeftBoundary},{RightBoundary}]");
         }
 
-        public static void FindByNameAndWriteToFile(List<Shape> listOfShapes)
+        public static void FindByNameAndWriteToFile(IList<Shape> listOfShapes)
         {
-            var shapesWithAppropriateSymbolInName = FindAllWithAppropriateSymbolInName(listOfShapes, Symbol);
+            var shapesWithAppropriateSymbolInName = listOfShapes.FindAllWithAppropriateSymbolInName(Symbol);
             WriteListToFile(shapesWithAppropriateSymbolInName, $"shapes with name that contains symbol '{Symbol}'");
         }
 
-        public static void FindByPerimeterAndWriteToConsole(List<Shape> listOfShapes)
+        public static void FindByPerimeterAndWriteToConsole(IList<Shape> listOfShapes)
         {
-            FindAndRemoveAllWithPerimeterLessThanValue(ref listOfShapes, PerimeterBoundary);
+            listOfShapes.FindAndRemoveAllWithPerimeterLessThanValue(PerimeterBoundary);
             Console.WriteLine($"\nRemoving shapes with perimeter less than {PerimeterBoundary}...");
             PrintListOfShapesToConsole(listOfShapes);
         }
