@@ -53,7 +53,7 @@ namespace Wow.Pages
 
             //Edit button
             public HtmlSpan EditPencil { get; private set; }
-            public HtmlSpan CheckMark { get; set; }
+            public HtmlSpan CheckMark { get;  set; }
         }
 
         private Pagination pagination;

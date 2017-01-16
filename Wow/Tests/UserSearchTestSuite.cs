@@ -19,7 +19,7 @@ namespace Wow.Tests
         [TestCase("Test")]
         public void UserSearchTest(string userName)
         {
-            const string DEFAULT_TEXT = "Search users";
+            const string DEFAULT_SEARCHBOX_PLACEHOLDER_VALUE = "Search users";
             
             // Preconditions
             LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();
@@ -27,9 +27,9 @@ namespace Wow.Tests
 
             // Test Steps
             // Step 1: Check default value of search box Input users name into search field
-            Assert.AreEqual(DEFAULT_TEXT, usersPage.GetUserSearchBoxText());
+            Assert.AreEqual(DEFAULT_SEARCHBOX_PLACEHOLDER_VALUE, usersPage.GetUserSearchBoxText());
 
-            // Step 2: Enter user name into sezrch box
+            // Step 2: Enter user name into search box
             usersPage.SetValueToSearch(userName);
             
             // Step 3: Check if user name from test data are equal with user from table
