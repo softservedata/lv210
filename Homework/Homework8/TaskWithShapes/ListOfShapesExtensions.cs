@@ -30,7 +30,9 @@ namespace TaskWithShapes
                 throw new ArgumentNullException($"IList<Shape> is null!");
             }
 
-            return listOfShapes.Where(shape => (shape.Name.Contains(symbol))).ToList();
+            var queryResult = from shape in listOfShapes where shape.Name.Contains(symbol) select shape;
+
+            return queryResult.ToList();
         }
 
         public static void FindAndRemoveAllWithPerimeterLessThanValue(this IList<Shape> listOfShapes, double value)
