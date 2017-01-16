@@ -9,6 +9,7 @@ namespace Homework_8
    public class Square : Shape
     {
         public double Side { get; set; }
+
         public Square(string name, double side) : base(name)
         {
             Side = side;

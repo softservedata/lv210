@@ -1,32 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Homework_8
 {
     public abstract class Shape : IComparable<Shape>
     {
-        private string name;
+        public string Name { get; set; }
 
         public Shape(string name)
         {
-            this.name = name;
+            this.Name = name;
         }
-        
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
-
+         
         public abstract double Area();
         public abstract double Perimeter();
 
@@ -38,6 +22,27 @@ namespace Homework_8
         public override string ToString()
         {
             return base.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+           if (obj == null)
+            {
+                return false;
+            }
+         
+            Shape otherShape = obj as Shape;
+            if ((Object)otherShape == null)
+            {
+                return false;
+            }
+                        
+            return (Name == otherShape.Name) && (Area() == otherShape.Area() && Perimeter() == otherShape.Perimeter());
+        }
+
+        public override int GetHashCode()
+        {
+            return Area().GetHashCode()^Perimeter().GetHashCode();
         }
     }
 }
