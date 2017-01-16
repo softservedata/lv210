@@ -16,7 +16,7 @@ namespace Wow.Data
         {
             var users = new List<User>();
 
-            ExecuteDataReaderProc(SqlQueries.GetUsers, null, (reader) =>
+            ExecuteDataReaderQuery(SqlQueries.GetUsers, null, (reader) =>
             {
                 while (reader.Read())
                 {

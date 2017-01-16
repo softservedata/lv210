@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Wow.Data;
 using Wow.Pages;
 
@@ -17,54 +12,59 @@ namespace Wow.Tests
             new object[]
             {
                 StaticUserRepository.Get().Admin(),
-                new
+                new []
                 {
-                    nameWithDigits = "Blue9456 Moon1278",
-                    nameWithSymbols = "Blue/*-) Moon!<@;",
-                    correctName = "Blue Moon"
+                    "Blue9456 Moon1278",
+                    "Blue/*-) Moon!<@;",
+                    "Blue Moon"
                 },
-                new
-                {
-                    messageForNameWithDigits = "Name can't contain digits",
-                    messageForNameWittSymbols = "Name can't contain reserved characters"
-                }
             },
         };
 
         [Test, TestCaseSource(nameof(ChangeNameTestData))]
-        public void TestChangeName(User admin, dynamic names, dynamic messages)
+        public void TestChangeName(User admin, string[] names)
         {
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
+            var userName = admin.GetName();
 
-            //Test steps
-            //Go to EditProfile page and check if this page is really opened
+            // Test steps
+            // Go to EditProfile page and check if this page is really opened
             YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
-            //Assert
+
             Assert.IsNotNull(yourProfilePage.YourProfileLabel);
 
-            //????????????
             yourProfilePage.ClickEditName();
             Assert.IsNotNull(yourProfilePage.GetNewNameField());
 
-            //Set name with digits and try to change it. Check if appropriate message appears.
-            yourProfilePage.SetNewName(names.nameWithDigits);
-            yourProfilePage = yourProfilePage.ChangeName(admin);
-            Assert.AreEqual(messages.messageForNameWithDigits, yourProfilePage.GetMessageText());
+            // Set name with digits and try to change it. Check if appropriate message appears.
+            yourProfilePage.ClickEditName();
+            yourProfilePage.SetNewName(names[0]);
+            yourProfilePage.ChangeName(admin);
 
-            //Set name with specific symbols and try to change it. Check if appropriate message appears.
-            yourProfilePage.SetNewName(names.nameWithSymbols);
-            yourProfilePage = yourProfilePage.ChangeName(admin);
-            Assert.AreEqual(messages.messageForNameWittSymbols, yourProfilePage.GetMessageText());
+            // This method will fail because it is possible to set name with digits.
+            Assert.AreEqual(YourProfilePage.ErrorMessageForNameWithDigits, yourProfilePage.GetMessageText());
 
-            //Set correct name try to change it. Check if name is really changed.
-            yourProfilePage.SetNewName(names.correctName);
-            yourProfilePage = yourProfilePage.ChangeName(admin);
-            //Assert.AreEqual(admin.Name, yourProfilePage.GetNameValue());
-            //TODO ask in which way it is better to check data
-            Assert.AreEqual(names.correctName, yourProfilePage.GetNameValue());
+            // Set name with specific symbols and try to change it. Check if appropriate message appears.
+            yourProfilePage.ClickEditName();
+            yourProfilePage.SetNewName(names[1]);
+            yourProfilePage.ChangeName(admin);
+
+            // This method will fail because it is possible to set name with symbols.
+            Assert.AreEqual(YourProfilePage.ErrorMessageForNameWithSymbols, yourProfilePage.GetMessageText());
+
+            // Set correct name try to change it. Check if name is really changed.
+            yourProfilePage.ClickEditName();
+            yourProfilePage.SetNewName(names[2]);
+            yourProfilePage.ChangeName(admin);
+
+            Assert.AreEqual(names[2], admin.GetName());
 
             // Return to previous state
+            yourProfilePage.ClickEditName();
+            yourProfilePage.SetNewName(userName);
+            yourProfilePage.ClickChangeName();
+            yourProfilePage.ChangeName(admin);
             loginPage = yourProfilePage.GotoLogOut();
         }
     }

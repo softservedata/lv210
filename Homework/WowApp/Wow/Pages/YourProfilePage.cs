@@ -7,17 +7,14 @@ namespace Wow.Pages
 {
     public class YourProfilePage : HeadPage
     {
+        public const string ErrorMessageForNameWithDigits = "Name can't contain digits";
+        public const string ErrorMessageForNameWithSymbols = "Name can't contain reserved characters";
 
         private class EditNameForm
         {
             private Manager manager;
 
-            public HtmlControl NewNameLabel { get; private set; }
-            public HtmlInputText NewNameField { get; private set; }
-            public HtmlInputSubmit ChangeName { get; private set; }
-            public HtmlInputSubmit Cancel { get; private set; }
-
-            public EditNameForm(Manager manager)
+            protected internal EditNameForm(Manager manager)
             {
                 this.manager = manager;
                 this.NewNameLabel = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:New Name");
@@ -25,14 +22,14 @@ namespace Wow.Pages
                 this.ChangeName = manager.ActiveBrowser.Find.ByAttributes<HtmlInputSubmit>("value=Change Name");
                 this.Cancel = manager.ActiveBrowser.Find.ByAttributes<HtmlInputSubmit>("value=Cancel");
             }
+
+            public HtmlControl NewNameLabel { get; private set; }
+            public HtmlInputText NewNameField { get; private set; }
+            public HtmlInputSubmit ChangeName { get; private set; }
+            public HtmlInputSubmit Cancel { get; private set; }           
         }
 
         private EditNameForm editNameForm;
-
-        public HtmlControl YourProfileLabel { get; private set; }
-        public HtmlSpan Name { get; private set; }
-        public HtmlAnchor EditName { get; private set; }
-        public HtmlControl Message { get; private set; }
 
         public YourProfilePage(Manager manager) : base(manager)
         {
@@ -42,23 +39,37 @@ namespace Wow.Pages
             this.Message = null;
         }
 
-        public YourProfilePage(Manager manager, HtmlControl message) : base(manager)
-        {
-            this.YourProfileLabel = manager.ActiveBrowser.Find.ByContent<HtmlControl>("Your Profile");
-            this.Name = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>(new string[] { "ng-bind=userName", "class=ng-binding" });
-            this.EditName = manager.ActiveBrowser.Find.ById<HtmlAnchor>("editName");
-            this.Message = message;
-        }
+        public HtmlControl YourProfileLabel { get; private set; }
+        public HtmlSpan Name { get; private set; }
+        public HtmlAnchor EditName { get; private set; }
+        public HtmlControl Message { get; private set; }
 
-        // Page Object
         // Get data
-        public HtmlControl GetNewNameLabel()
+        private HtmlControl GetNewNameLabel()
         {
             if (this.editNameForm == null)
             {
                 ClickEditName();
             }
             return this.editNameForm.NewNameLabel;
+        }
+
+        private HtmlInputSubmit GetChangeName()
+        {
+            if (this.editNameForm == null)
+            {
+                ClickEditName();
+            }
+            return this.editNameForm.ChangeName;
+        }
+
+        private HtmlInputSubmit GetCancel()
+        {
+            if (this.editNameForm == null)
+            {
+                ClickEditName();
+            }
+            return this.editNameForm.Cancel;
         }
 
         public HtmlInputText GetNewNameField()
@@ -68,24 +79,6 @@ namespace Wow.Pages
                 ClickEditName();
             }
             return this.editNameForm.NewNameField;
-        }
-
-        public HtmlInputSubmit GetChangeName()
-        {
-            if (this.editNameForm == null)
-            {
-                ClickEditName();
-            }
-            return this.editNameForm.ChangeName;
-        }
-
-        public HtmlInputSubmit GetCancel()
-        {
-            if (this.editNameForm == null)
-            {
-                ClickEditName();
-            }
-            return this.editNameForm.Cancel;
         }
 
         // Functional
@@ -103,10 +96,6 @@ namespace Wow.Pages
 
         public void SetNewName(string newName)
         {
-            if (this.editNameForm == null)
-            {
-                ClickEditName();
-            }
             this.editNameForm.NewNameField.Text = newName;
         }
 
@@ -123,34 +112,22 @@ namespace Wow.Pages
         // Business Logic
         public void ClickChangeName()
         {
-            if (this.editNameForm == null)
-            {
-                ClickEditName();
-            }
             this.editNameForm.ChangeName.Click();           
         }
 
-
-        // Change user name
-        // TODO IUser
-        public YourProfilePage ChangeName(User user)
+        public void ChangeName(User user)
         {
             ClickChangeName();
-            var appearedMessage = manager.ActiveBrowser.Find.ById<HtmlControl>("editProfileLabel");
-            var yourProfilePage = new YourProfilePage(manager, appearedMessage);
+            this.Message = manager.ActiveBrowser.Find.ById<HtmlControl>("editProfileLabel");
+            this.Name.Refresh();
             if (user.GetName() != GetNameValue())
             {
                 user.SetName(GetNameValue());
             }
-            return yourProfilePage;
         }
 
         public YourProfilePage ClickCancel()
         {
-            if (this.editNameForm == null)
-            {
-                ClickEditName();
-            }
             this.editNameForm.Cancel.Click();
             return this;
         }

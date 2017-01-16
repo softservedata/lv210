@@ -47,12 +47,12 @@ namespace Wow.Tests
         private int CalcCountOfAllUsers(UsersPage usersPage)
         {
             return usersPage.GetCountOfUsersAtPage() +
-                   (UsersPage.MaxUsersPerPage * (int.Parse(usersPage.GetActiveText()) - 1));
+                   (UsersPage.MaxUsersPerPage * (int.Parse(usersPage.GetTextFromActiveItem()) - 1));
         }
 
         private void CheckUsersAtTable(IList<User> usersFromDb, UsersPage usersPage)
         {
-            var expected = GetUsersInRange(usersFromDb, int.Parse(usersPage.GetActiveText()), UsersPage.MaxUsersPerPage);
+            var expected = GetUsersInRange(usersFromDb, int.Parse(usersPage.GetTextFromActiveItem()), UsersPage.MaxUsersPerPage);
             var actual = usersPage.GetUsersDataForTable();
             CollectionAssert.AreEqual(expected, actual);
         }
@@ -60,46 +60,41 @@ namespace Wow.Tests
         [Test, TestCaseSource(nameof(PaginationTestData))]
         public void TestPagination(User admin, IList<User> usersFromDb, int countOfUsers)
         {
+            // Preconditions
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
-            usersPage = usersPage.ClickAdminTab();
+            usersPage.ClickAdminTab();
 
             // Check if First and StepBack are disabled
-            Assert.IsFalse(usersPage.IsFirstEnabled());
-            Assert.IsFalse(usersPage.IsStepBackEnabled());
+            Assert.IsFalse(usersPage.IsFirstItemEnabled());
+            Assert.IsFalse(usersPage.IsStepBackItemEnabled());
 
-            usersPage = usersPage.ClickStepForward();
+            usersPage.ClickStepForward();
 
             // Check if First, StepBack, StepForward, Last are enabled
-            Assert.IsTrue(usersPage.IsFirstEnabled());
-            Assert.IsTrue(usersPage.IsStepBackEnabled());
-            Assert.IsTrue(usersPage.IsStepForwardEnabled());
-            Assert.IsTrue(usersPage.IsLastEnabled());
+            Assert.IsTrue(usersPage.AreAllPaginationElementsEnabled());
 
             // Check if second page of table is displayed
             CheckUsersAtTable(usersFromDb, usersPage);
 
-            usersPage = usersPage.ClickLast();
+            usersPage.ClickLast();
 
             // Check if Last and StepForward are disabled
-            Assert.IsFalse(usersPage.IsStepForwardEnabled());
-            Assert.IsFalse(usersPage.IsLastEnabled());
+            Assert.IsFalse(usersPage.IsStepForwardItemEnabled());
+            Assert.IsFalse(usersPage.IsLastItemEnabled());
 
             // Check if last page of table is displayed
             CheckUsersAtTable(usersFromDb, usersPage);
 
-            //Check count of users
+            // Check count of users
             Assert.AreEqual(countOfUsers, CalcCountOfAllUsers(usersPage));
 
-            usersPage = usersPage.ClickStepBack();
+            usersPage.ClickStepBack();
 
-            //Check if First, StepBack, StepForward, Last are enabled
-            Assert.IsTrue(usersPage.IsFirstEnabled());
-            Assert.IsTrue(usersPage.IsStepBackEnabled());
-            Assert.IsTrue(usersPage.IsStepForwardEnabled());
-            Assert.IsTrue(usersPage.IsLastEnabled());
+            // Check if First, StepBack, StepForward, Last are enabled
+            Assert.IsTrue(usersPage.AreAllPaginationElementsEnabled());
 
-            //Check if last minus one page of table is displayed
+            // Check if last minus one page of table is displayed
             CheckUsersAtTable(usersFromDb, usersPage);
 
             // Return to previous state

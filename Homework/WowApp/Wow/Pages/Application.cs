@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.ObjectModel;
-using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Win32.Dialogs;
 using Wow.Appl;
 
@@ -14,19 +8,18 @@ namespace Wow.Pages
     public class Application
     {
         private static volatile Application instance;
-        private static readonly Object synchronize = new Object();
-        //
-        public Manager CurrentManager { get; private set; }
-        public ApplicationSources applicationSources { get; private set; }
+        private static readonly Object synchronize = new object();
 
-        // constructor
         private Application(ApplicationSources applicationSources)
         {
-            this.applicationSources = applicationSources;
-            init();
+            this.ApplicationSourcesData = applicationSources;
+            Init();
         }
 
-        // static factory
+        public Manager CurrentManager { get; private set; }
+        public ApplicationSources ApplicationSourcesData { get; private set; }
+
+        // Static factory
         public static Application Get()
         {
             return Get(null);
@@ -51,20 +44,17 @@ namespace Wow.Pages
             return instance;
         }
 
-
-        public void init()
+        public void Init()
         {
             InitManager();
             // TODO
-            // Init Strategy from applicationSources
-            // Init DB access, etc.
         }
 
         public LoginPage Login()
         {
             StartBrowser();
             //CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LoginUrl);
-            ApplicationPage.Get().NavigateTo(applicationSources.GetLoginUrl());
+            ApplicationPage.Get().NavigateTo(ApplicationSourcesData.GetLoginUrl());
             return new LoginPage(CurrentManager);
         }
 
@@ -73,7 +63,7 @@ namespace Wow.Pages
             StartBrowser();
             //CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LogoutUrl);
             // TODO now do not working properly
-            ApplicationPage.Get().NavigateTo(applicationSources.GetLogoutUrl());
+            ApplicationPage.Get().NavigateTo(ApplicationSourcesData.GetLogoutUrl());
             return new LoginPage(CurrentManager);
         }
 
@@ -132,12 +122,7 @@ namespace Wow.Pages
             if ((CurrentManager == null) || (!Manager.Current.Disposed))
             {
                 Settings currentSettings = new Settings();
-                //currentSettings.Web.DefaultBrowser = BrowserType.FireFox;
-                //currentSettings.Web.DefaultBrowser = BrowserType.InternetExplorer;
-                //currentSettings.Web.DefaultBrowser = BrowserType.Chrome;
                 currentSettings.Web.DefaultBrowser = GetBrowser();
-                //
-                //currentSettings.UnexpectedDialogAction = UnexpectedDialogAction.DoNotHandle;
                 currentSettings.UnexpectedDialogAction = UnexpectedDialogAction.HandleAndContinue;
                 CurrentManager = new Manager(currentSettings);
                 CurrentManager.Start();
@@ -150,7 +135,7 @@ namespace Wow.Pages
             BrowserType currentBrowser = BrowserType.InternetExplorer;
             foreach (BrowserType browserType in Enum.GetValues(typeof(BrowserType)))
             {
-                if (browserType.ToString().ToLower().Contains(applicationSources.GetBrowserName().ToLower()))
+                if (browserType.ToString().ToLower().Contains(ApplicationSourcesData.GetBrowserName().ToLower()))
                 {
                     currentBrowser = browserType;
                     break;
@@ -158,6 +143,5 @@ namespace Wow.Pages
             }
             return currentBrowser;
         }
-
     }
 }

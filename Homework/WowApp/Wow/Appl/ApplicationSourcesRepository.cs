@@ -1,32 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Wow.Appl
+﻿namespace Wow.Appl
 {
     public sealed class ApplicationSourcesRepository
     {
-        private static volatile ApplicationSourcesRepository _instance;
-        private static readonly object Synchronize = new object();
+        private static volatile ApplicationSourcesRepository instance;
+        private static readonly object synchronize = new object();
 
         private ApplicationSourcesRepository() { }
 
-        // static factory
+        // Static factory
         public static ApplicationSourcesRepository Get()
         {
-            if (_instance == null)
+            if (instance == null)
             {
-                lock (Synchronize)
+                lock (synchronize)
                 {
-                    if (_instance == null)
+                    if (instance == null)
                     {
-                        _instance = new ApplicationSourcesRepository();
+                        instance = new ApplicationSourcesRepository();
                     }
                 }
             }
-            return _instance;
+            return instance;
         }
 
         public static ApplicationSources Default()

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Wow.Appl
+﻿namespace Wow.Appl
 {
-    // builder interfaces
+    // Builder interfaces
     public interface IBrowserName
     {
         IImplicitTimeOut SetBrowserName(string browserName);
@@ -32,7 +26,7 @@ namespace Wow.Appl
         ApplicationSources Build();
     }
 
-    // dependency inversion interface
+    // Dependency inversion interface
     public interface IApplicationSources
     {
         string GetBrowserName();
@@ -50,20 +44,14 @@ namespace Wow.Appl
         private string loginUrl;
         private string logoutUrl;
 
-        // constructor
-        private ApplicationSources()
-        {
-            //default
-        }
+        private ApplicationSources() { }
 
-        // static factory
-        // public static User Get() // old
+        // Static factory
         public static IBrowserName Get()
         {
             return new ApplicationSources();
         }
 
-        //setters
         public IImplicitTimeOut SetBrowserName(string browserName)
         {
             this.browserName = browserName;
@@ -93,8 +81,6 @@ namespace Wow.Appl
             return this;
         }
 
-        //getters
-
         public string GetBrowserName()
         {
             return this.browserName;
@@ -114,6 +100,5 @@ namespace Wow.Appl
         {
             return this.logoutUrl;
         }
-
     }
 }

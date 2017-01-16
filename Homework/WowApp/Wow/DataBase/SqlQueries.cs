@@ -38,5 +38,4 @@ namespace Wow.DataBase
             return Path.Combine(pathName, fileName);
         }
     }
-
 }

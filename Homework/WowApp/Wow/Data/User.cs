@@ -2,7 +2,7 @@
 
 namespace Wow.Data
 {
-    // builder interfaces
+    // Builder interfaces
     public interface IEmail
     {
         IPassword SetEmail(string email);
@@ -38,7 +38,7 @@ namespace Wow.Data
         User Build();
     }
 
-    // dependency inversion interface
+    // Dependency inversion interface
     public interface IUser
     {
         string GetEmail();
@@ -58,10 +58,7 @@ namespace Wow.Data
         private bool isTeacher;
         private bool isStudent;
 
-        private User()
-        {
-            // default
-        }
+        private User() { }
 
         private bool LogicExpressionForEqualMathod(User user)
         {
@@ -80,13 +77,12 @@ namespace Wow.Data
                    (userFirst.isStudent == userSecond.isStudent);
         }
 
-        // static factory
+        // Static factory
         public static IEmail Get()
         {
             return new User();
         }
 
-        // setters
         public IPassword SetEmail(string email)
         {
             this.email = email;
@@ -128,7 +124,6 @@ namespace Wow.Data
             return this;
         }
 
-        // getters
         public string GetEmail()
         {
             return this.email;

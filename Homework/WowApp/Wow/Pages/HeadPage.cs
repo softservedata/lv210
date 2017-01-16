@@ -11,25 +11,20 @@ namespace Wow.Pages
 {
     public abstract class HeadPage
     {
-        // Components
         public enum ThemeState
         {
             DarkTheme = 0,
             BlueTheme = 1
         }
 
-        // Components
         private class UsernameDropdown
         {
-            // Fields
             private Manager manager;
 
-            // get Data
             public HtmlAnchor EditProfile { get; private set; }
             public HtmlAnchor LogOut { get; private set; }
 
-            // Constructor
-            public UsernameDropdown(Manager manager)
+            protected internal UsernameDropdown(Manager manager)
             {
                 this.manager = manager;
                 this.EditProfile = manager.ActiveBrowser.Find.ByContent<HtmlAnchor>("l:Edit Profile");
@@ -37,21 +32,16 @@ namespace Wow.Pages
             }
         }
 
-        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-        // Fields
         protected Manager manager;
         private HtmlDiv navbarCollapse;
         private Element body;
 
-        // get Data
         public HtmlSpan Username { get; private set; }
         public HtmlSelect DefaultTheme { get; private set; }
         public HtmlButton SidebarToggle { get; private set; }
-        //
+
         private UsernameDropdown usernameDropdown;
 
-        // Constructor
         public HeadPage(Manager manager)
         {
             this.manager = manager;
@@ -65,7 +55,7 @@ namespace Wow.Pages
         }
 
         // Page Object
-        // get Data
+        // Get Data
         public HtmlAnchor GetEditProfile()
         {
             ClickUsername();
@@ -89,7 +79,7 @@ namespace Wow.Pages
             return body.GetAttributeValueOrEmpty("class").Contains("sidebar-minimized");
         }
 
-        // set Data
+        // Set Data
         private void ClickNavbarCollapse()
         {
             this.navbarCollapse.Click();
@@ -119,7 +109,6 @@ namespace Wow.Pages
 
         public void SelectDefaultTheme(ThemeState theme)
         {
-            //DefaultTheme.SelectByIndex((int)theme);
             DefaultTheme.SelectByPartialText(theme.ToString().Substring(0, 4), true);
         }
 
@@ -127,7 +116,6 @@ namespace Wow.Pages
         public YourProfilePage GotoEditProfile()
         {
             ClickEditProfile();
-            // Return a new page object representing the destination.
             return new YourProfilePage(manager);
         }
 
@@ -166,6 +154,5 @@ namespace Wow.Pages
             SelectDefaultTheme(ThemeState.BlueTheme);
             return this;
         }
-
     }
 }

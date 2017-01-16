@@ -2,6 +2,7 @@
 using System.Linq;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.Controls.HtmlControls;
+using ArtOfTest.WebAii.ObjectModel;
 using Wow.Data;
 
 namespace Wow.Pages
@@ -12,24 +13,22 @@ namespace Wow.Pages
 
         private class Pagination
         {
-            //Fields
             private Manager manager;
 
-            // get Data
-            public HtmlAnchor First { get; private set; }
-            public HtmlAnchor StepBack { get; private set; }
-            public HtmlAnchor StepForward { get; private set; }
-            public HtmlAnchor Last { get; private set; }
-            public HtmlAnchor Active { get; private set; }
+            public HtmlAnchor FirstItem { get; private set; }
+            public HtmlAnchor StepBackItem { get; private set; }
+            public HtmlAnchor StepForwardItem { get; private set; }
+            public HtmlAnchor LastItem { get; private set; }
+            public HtmlAnchor ActiveItem { get; private set; }
 
-            public Pagination(Manager manager)
+            protected internal Pagination(Manager manager)
             {
                 this.manager = manager;
-                this.First = manager.ActiveBrowser.Find.ByContent<HtmlAnchor>("l:First");
-                this.StepBack = manager.ActiveBrowser.Find.ByContent<HtmlAnchor>("l:‹");
-                this.StepForward = manager.ActiveBrowser.Find.ByContent<HtmlAnchor>("l:›");
-                this.Last = manager.ActiveBrowser.Find.ByContent<HtmlAnchor>("l:Last");
-                this.Active = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//li[@class = 'ng-scope active']/a");
+                this.FirstItem = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'First')]");
+                this.StepBackItem = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'‹')]");
+                this.StepForwardItem = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'›')]");
+                this.LastItem = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'Last')]");
+                this.ActiveItem = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//li[@class = 'ng-scope active']/a");
             }
         }
 
@@ -53,29 +52,32 @@ namespace Wow.Pages
         public HtmlInputText Search { get; private set; }
         public HtmlTable TableOfUsers { get; }
 
-        private HtmlListItem GetFirstParent()
+
+        #region Getters
+
+        private HtmlListItem GetFirstItemParent()
         {
-            return this.pagination.First.Parent<HtmlListItem>();
+            return this.pagination.FirstItem.Parent<HtmlListItem>();
         }
 
-        private HtmlListItem GetStepBackParent()
+        private HtmlListItem GetStepBackItemParent()
         {
-            return this.pagination.StepBack.Parent<HtmlListItem>();
+            return this.pagination.StepBackItem.Parent<HtmlListItem>();
         }
 
-        private HtmlListItem GetStepForwardParent()
+        private HtmlListItem GetStepForwardItemParent()
         {
-            return this.pagination.StepForward.Parent<HtmlListItem>();
+            return this.pagination.StepForwardItem.Parent<HtmlListItem>();
         }
 
-        private HtmlListItem GetLastParent()
+        private HtmlListItem GetLastItemParent()
         {
-            return this.pagination.Last.Parent<HtmlListItem>();
+            return this.pagination.LastItem.Parent<HtmlListItem>();
         }
 
-        private HtmlListItem GetActiveParent()
+        private HtmlListItem GetActiveItemParent()
         {
-            return this.pagination.Active.Parent<HtmlListItem>();
+            return this.pagination.ActiveItem.Parent<HtmlListItem>();
         }
 
         private HtmlControl GetTeacherTab()
@@ -88,29 +90,29 @@ namespace Wow.Pages
             return this.Admins;
         }
 
-        private HtmlAnchor GetFirst()
+        private HtmlAnchor GetFirstItem()
         {
-            return this.pagination.First;
+            return this.pagination.FirstItem;
         }
 
-        private HtmlAnchor GetStepBack()
+        private HtmlAnchor GetStepBackItem()
         {
-            return this.pagination.StepBack;
+            return this.pagination.StepBackItem;
         }
 
-        private HtmlAnchor GetStepForward()
+        private HtmlAnchor GetStepForwardItem()
         {
-            return this.pagination.StepForward;
+            return this.pagination.StepForwardItem;
         }
 
-        private HtmlAnchor GetLast()
+        private HtmlAnchor GetLastItem()
         {
-            return this.pagination.Last;
+            return this.pagination.LastItem;
         }
 
-        private HtmlAnchor GetActive()
+        private HtmlAnchor GetActiveItem()
         {
-            return this.pagination.Active;
+            return this.pagination.ActiveItem;
         }
 
         private HtmlTable GetTableOfUsers()
@@ -118,22 +120,47 @@ namespace Wow.Pages
             return this.TableOfUsers;
         }
 
-        // Functional
+        #endregion
+
+        #region PrivateFunctional
 
         private string GetExpressionUsed(HtmlControl element)
         {
-            var expression = GetActive().BaseElement.FindExpressionUsed.StringRepresentation;
+            var expression = GetActiveItem().BaseElement.FindExpressionUsed.StringRepresentation;
             return expression.Substring(expression.IndexOf('/'));
         }
 
-        private User ReadDataFromRow(int rowIndex)
+        private void RefreshPaganation()
         {
-            return User.Get().SetEmail(GetCellText(GetCell(rowIndex, 1)))
+            this.pagination.ActiveItem.Refresh();
+            this.pagination.FirstItem.Refresh();
+            this.pagination.StepBackItem.Refresh();
+            this.pagination.StepForwardItem.Refresh();
+            this.pagination.LastItem.Refresh();
+        }
+
+        private HtmlAnchor MoveToNext()
+        {
+            var xpath = $"{GetExpressionUsed(this.pagination.ActiveItem)}/ancestor::li/following-sibling::li[1]/descendant::a";
+            return manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>(xpath);
+        }
+
+        private IList<iAttribute> GetAllAtributesWithAppropriateValue(HtmlControl element)
+        {
+            return element.Attributes.Where(attribure => (attribure.Name == "class") &&
+                                                         (attribure.Value == "ng-scope disabled")).ToList();
+        }
+
+        // Functional : work with table
+
+        private User ReadDataFromRow(IList<HtmlTableRow> rows, int rowIndex)
+        {
+            return User.Get().SetEmail(rows[rowIndex].Cells[1].InnerText)
                 .SetPassword(null)
-                .SetName(GetCellText(GetCell(rowIndex, 0)))
-                .SetIsAdmin(GetCell(rowIndex, 2).ChildNodes[0].As<HtmlInputCheckBox>().Checked)
-                .SetIsTeacher(GetCell(rowIndex, 3).ChildNodes[0].As<HtmlInputCheckBox>().Checked)
-                .SetIsStudent(GetCell(rowIndex, 4).ChildNodes[0].As<HtmlInputCheckBox>().Checked)
+                .SetName(rows[rowIndex].Cells[0].InnerText)
+                .SetIsAdmin(rows[rowIndex].Cells[2].ChildNodes[0].As<HtmlInputCheckBox>().Checked)
+                .SetIsTeacher(rows[rowIndex].Cells[3].ChildNodes[0].As<HtmlInputCheckBox>().Checked)
+                .SetIsStudent(rows[rowIndex].Cells[4].ChildNodes[0].As<HtmlInputCheckBox>().Checked)
                 .Build();
         }
 
@@ -142,14 +169,14 @@ namespace Wow.Pages
             return this.TableOfUsers.Rows.ElementAt(index);
         }
 
-        private HtmlTableCell GetCell(int rowIndex, int cellIndex)
+        private IList<HtmlTableRow> GetAllRows()
         {
-            return this.TableOfUsers.Rows.ElementAt(rowIndex).Cells[cellIndex];
+            return this.TableOfUsers.Rows;
         }
 
-        private string GetCellText(HtmlTableCell cell)
+        private HtmlTableCell GetCell(HtmlTableRow row, int cellIndex)
         {
-            return cell.InnerText;
+            return row.Cells[cellIndex];
         }
 
         private int GetRowsCountInTable()
@@ -157,93 +184,105 @@ namespace Wow.Pages
             return this.TableOfUsers.Rows.Count();
         }
 
-        public bool IsActiveTheLastPage()
+        #endregion
+
+        /// <returns>Returns inner text of active item of pagination.</returns>
+        public string GetTextFromActiveItem()
         {
-            var xpath = $"{GetExpressionUsed(this.pagination.Active)}/ancestor::li/following-sibling::li[1]/descendant::a";
-            return manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>(xpath) == GetStepForward();
+            return this.GetActiveItem().InnerText;
         }
 
-        public bool IsLastEnabled()
+        public bool IsLastItemEnabled()
         {
-            var arrayOfAppropriateAttributes = GetLastParent().Attributes.Where(attribure => (attribure.Name == "class") &&
-            (attribure.Value == "ng-scope disabled")).ToArray();
+            var arrayOfAppropriateAttributes = GetAllAtributesWithAppropriateValue(GetLastItemParent());
 
-            return arrayOfAppropriateAttributes.Length == 0;
+            return arrayOfAppropriateAttributes.Count == 0;
         }
 
-        public bool IsStepBackEnabled()
+        public bool IsStepBackItemEnabled()
         {
-            var arrayOfAppropriateAttributes = GetStepBackParent().Attributes.Where(attribure => (attribure.Name == "class") &&
-            (attribure.Value == "ng-scope disabled")).ToArray();
+            var arrayOfAppropriateAttributes = GetAllAtributesWithAppropriateValue(GetStepBackItemParent());
 
-            return arrayOfAppropriateAttributes.Length == 0;
+            return arrayOfAppropriateAttributes.Count == 0;
         }
 
-        public bool IsStepForwardEnabled()
+        public bool IsStepForwardItemEnabled()
         {
-            var arrayOfAppropriateAttributes = GetStepForwardParent().Attributes.Where(attribure => (attribure.Name == "class") &&
-            (attribure.Value == "ng-scope disabled")).ToArray();
+            var arrayOfAppropriateAttributes = GetAllAtributesWithAppropriateValue(GetStepForwardItemParent());
 
-            return arrayOfAppropriateAttributes.Length == 0;
+            return arrayOfAppropriateAttributes.Count == 0;
         }
 
-        public bool IsFirstEnabled()
+        public bool IsFirstItemEnabled()
         {
-            var arrayOfAppropriateAttributes = GetFirstParent().Attributes.Where(attribure => (attribure.Name == "class") &&
-            (attribure.Value == "ng-scope disabled")).ToArray();
+            var arrayOfAppropriateAttributes = GetAllAtributesWithAppropriateValue(GetFirstItemParent());
 
-            return arrayOfAppropriateAttributes.Length == 0;
+            return arrayOfAppropriateAttributes.Count == 0;
         }
 
+        public bool AreAllPaginationElementsEnabled()
+        {
+            return IsFirstItemEnabled() && IsStepBackItemEnabled() && IsLastItemEnabled() && IsStepForwardItemEnabled();
+        }
+
+        //  -1 because table contains head row
         public int GetCountOfUsersAtPage()
         {
             return this.TableOfUsers.Rows.Count() - 1;
         }
 
+        // i = 1 because table contains head row
+        /// <returns>Returns IList collection that contains all users displayed in a table.</returns>
         public IList<User> GetUsersDataForTable()
         {
             var usersAtCurrentPage = new List<User>();
-            for (var i = 1; i < GetRowsCountInTable(); i++)
+            var rows = GetAllRows();
+            var rowCount = GetRowsCountInTable();
+
+            for (var i = 1; i < rowCount; i++)
             {
-                usersAtCurrentPage.Add(ReadDataFromRow(i));
+                usersAtCurrentPage.Add(ReadDataFromRow(rows,i));
             }
+
             return usersAtCurrentPage;
         }
 
-        public string GetActiveText()
-        {
-            return this.GetActive().InnerText;
-        }
+        #region Setters
 
-        // set Data
-        public UsersPage ClickAdminTab()
+        public void ClickAdminTab()
         {
             GetAdminTab().Click();
-            return new UsersPage(manager);
+            RefreshPaganation();
         }
 
-        public UsersPage ClickFirst()
+        public void ClickFirst()
         {
-            GetFirst().Click();
-            return new UsersPage(manager);
+            GetFirstItem().Click();
+            TableOfUsers.Refresh();
+            RefreshPaganation();
         }
 
-        public UsersPage ClickStepBack()
+        public void ClickStepBack()
         {
-            GetStepBack().Click();
-            return new UsersPage(manager);
+            GetStepBackItem().Click();
+            TableOfUsers.Refresh();
+            RefreshPaganation();
         }
 
-        public UsersPage ClickStepForward()
+        public void ClickStepForward()
         {
-            GetStepForward().Click();
-            return new UsersPage(manager);
+            GetStepForwardItem().Click();
+            TableOfUsers.Refresh();
+            RefreshPaganation();
         }
 
-        public UsersPage ClickLast()
+        public void ClickLast()
         {
-            GetLast().Click();
-            return new UsersPage(manager);
+            GetLastItem().Click();
+            TableOfUsers.Refresh();
+            RefreshPaganation();
         }
+
+        #endregion
     }
 }

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Wow.Data
 {
@@ -11,12 +8,9 @@ namespace Wow.Data
         private static volatile StaticUserRepository instance;
         private static readonly Object synchronize = new Object();
 
-        // constructor
-        private StaticUserRepository()
-        {
-        }
+        private StaticUserRepository() { }
 
-        // static factory
+        // Static factory
         public static StaticUserRepository Get()
         {
             if (instance == null)
@@ -56,7 +50,7 @@ namespace Wow.Data
                 .Build();
         }
 
-        // not exist in DB
+        // Not exist in DB
         public IUser NewUser()
         {
             return User.Get()
@@ -71,9 +65,8 @@ namespace Wow.Data
 
         public List<IUser> FromExcel()
         {
-            //return new ExcelUtils("FileName").Load();
+            // TODO
             return null;
         }
-
     }
 }

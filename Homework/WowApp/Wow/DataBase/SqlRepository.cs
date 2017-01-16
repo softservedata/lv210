@@ -13,8 +13,7 @@ namespace Wow.DataBase
             RepositorySettings = repositorySettings;
         }
 
-
-        protected void ExecuteDataReaderProc(string queryText, SqlParameter[] parameters,
+        protected void ExecuteDataReaderQuery(string queryText, SqlParameter[] parameters,
             Action<SqlDataReader> onReaderExecuted)
         {
             using (SqlConnection connection = new SqlConnection(RepositorySettings.ConnectionString))
