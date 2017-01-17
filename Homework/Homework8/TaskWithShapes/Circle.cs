@@ -4,19 +4,19 @@ namespace TaskWithShapes
 {
     public class Circle : Shape
     {
-        private double _radius;
+        private double radius;
         public double Radius
         {
-            get { return _radius; }
+            get { return radius; }
 
             private set
             {
-                _radius = value;
-
-                if (_radius <= 0)
+                if (radius <= 0)
                 {
                     throw new ArgumentException("Circle radius can not be less or equal zero!");
-                }               
+                }
+
+                radius = value;                              
             }
         }
 

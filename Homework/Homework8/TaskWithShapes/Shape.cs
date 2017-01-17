@@ -12,7 +12,7 @@ namespace TaskWithShapes
         protected const double Tolerance = 0.001;
         public string Name { get; }
 
-        public Shape(string name)
+        protected Shape(string name)
         {
             this.Name = name;
         }
@@ -21,11 +21,9 @@ namespace TaskWithShapes
         {
             if (obj == null) return 1;
 
-            var shape = obj as Shape;
-
-            if (shape != null)
+            if (obj is Shape)
             {
-                return this.Area().CompareTo(shape.Area());
+                return this.Area().CompareTo((obj as Shape).Area());
             }
             else
             {

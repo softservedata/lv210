@@ -116,7 +116,7 @@ namespace TaskWithShapes.UnitTests
             IList<Shape> expectedList)
         {
             // Test steps
-            listOfShapes.FindAndRemoveAllWithPerimeterLessThanValue(perimeterBoundary);
+            listOfShapes.RemoveAllWithPerimeterLessThanValue(perimeterBoundary);
             var actualList = listOfShapes;
             // Check
             CollectionAssert.AreEqual(expectedList, actualList);
@@ -130,11 +130,11 @@ namespace TaskWithShapes.UnitTests
         }
 
         [TestCase(null,7)]
-        public void Should_Throw_Exeption_When_List_For_FindAndRemoveAllWithPerimeterLessThanValue_Function_IsNull(
+        public void Should_Throw_Exeption_When_List_For_RemoveAllWithPerimeterLessThanValue_Function_IsNull(
             IList<Shape> listOfShapes, double perimeter)
         {
             Assert.Throws<ArgumentNullException>(
-                () => listOfShapes.FindAndRemoveAllWithPerimeterLessThanValue(perimeter));
+                () => listOfShapes.RemoveAllWithPerimeterLessThanValue(perimeter));
         }
 
         [TestCase(null, 'a')]
@@ -161,7 +161,7 @@ namespace TaskWithShapes.UnitTests
         [Test, TestCaseSource(nameof(TestDataWithIncorrectPerimeter))]
         public void Should_Throw_Exeption_When_Perimeter_IsIncorrect(IList<Shape> listOfShapes, double perimeterBoundary)
         {
-            Assert.Throws<ArgumentException>(() => listOfShapes.FindAndRemoveAllWithPerimeterLessThanValue(perimeterBoundary));
+            Assert.Throws<ArgumentException>(() => listOfShapes.RemoveAllWithPerimeterLessThanValue(perimeterBoundary));
         }
     }
 }

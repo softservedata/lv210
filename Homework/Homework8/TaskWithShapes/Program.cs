@@ -154,7 +154,7 @@ namespace TaskWithShapes
 
         public static void FindByPerimeterAndWriteToConsole(IList<Shape> listOfShapes)
         {
-            listOfShapes.FindAndRemoveAllWithPerimeterLessThanValue(PerimeterBoundary);
+            listOfShapes.RemoveAllWithPerimeterLessThanValue(PerimeterBoundary);
             Console.WriteLine($"\nRemoving shapes with perimeter less than {PerimeterBoundary}...");
             PrintListOfShapesToConsole(listOfShapes);
         }

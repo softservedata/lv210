@@ -4,20 +4,20 @@ namespace TaskWithShapes
 {
     public class Square : Shape
     {
-        private double _side;
+        private double side;
 
         public double Side
         {
-            get { return _side; }
+            get { return side; }
 
             private set
             {
-                _side = value;
-
-                if (_side <= 0)
+                if (side <= 0)
                 {
                     throw new ArgumentException("Side of square can not be less or equal zero!");
                 }
+
+                side = value;
             }
         }
 
