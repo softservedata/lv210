@@ -2,7 +2,7 @@
 
 namespace HW7
 {
-    class Circle : Shape
+    public class Circle : Shape
     {
         private double radius;
 
@@ -15,7 +15,7 @@ namespace HW7
             set
             {
                 radius = value;
-                if (radius < 0)
+                if (radius <= 0)
                 {
                     throw new ArgumentException("Radius should be greater then 0");
                 }

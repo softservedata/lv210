@@ -9,26 +9,27 @@ namespace DevelopersTask
     /// Create List of IDeveloper and add some Programmer and Builder to it. 
     /// Call Create() and Destroy() methods, property Tool for all of it
     /// </summary>
-    class Program
+    internal class Program
     {
-        static List<IDeveloper> CreateDevelopersList()
+        private static List<IDeveloper> CreateDevelopersList()
         {
-            var developersList = new List<IDeveloper>();
-
-            developersList.Add(new Builder("James", "Bond", "Hammer"));
-            developersList.Add(new Builder("Guy", "Fawkes", "Dynamite"));
-
-            developersList.Add(new Programmer("Fabian", "Hambuchen", "NodeJS"));
-            developersList.Add(new Programmer("Epke", "Zonderland", ".NET Core"));
-
+            var developersList = new List<IDeveloper>
+            {
+                new Builder("James", "Bond", "Hammer"),
+                new Builder("Guy", "Fawkes", "Dynamite"),
+                new Programmer("Fabian", "Hambuchen", "NodeJS"),
+                new Programmer("Epke", "Zonderland", ".NET Core")
+            };
             return developersList;
         }
 
-        static void Main(string[] args)
+        private static void Main()
         {
-            List<IDeveloper> developersList = new List<IDeveloper>();
-            developersList = CreateDevelopersList();
-
+            var developersList = CreateDevelopersList();
+            if (developersList == null)
+            {
+                throw new ArgumentNullException(nameof(developersList));
+            }
             foreach (var item in developersList)
             {
                 item.Create();   

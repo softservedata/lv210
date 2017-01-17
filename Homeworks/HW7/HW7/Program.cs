@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace HW7
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            var shapeOperations = new ShapeOperations();
+            var shapesList = shapeOperations.CreateShapesList();
+
+            shapeOperations.FindAndPrintShapeWithMaxPerimeter(shapesList);
+
+            shapesList.Sort();
+            shapeOperations.PrintShapes(shapesList);
         }
     }
 }

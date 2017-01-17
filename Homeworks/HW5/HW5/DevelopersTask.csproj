@@ -42,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\DevelopersTask\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
     <Compile Include="Builder.cs" />
     <Compile Include="IDeveloper.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Programmer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
