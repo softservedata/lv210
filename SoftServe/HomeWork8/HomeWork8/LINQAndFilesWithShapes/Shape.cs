@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LINQAndFilesWithShapes
 {
-    abstract class Shape : IComparable<Shape>
+    public abstract class Shape : IComparable<Shape>
     {
         private string name;
         public string Name { get; set; }

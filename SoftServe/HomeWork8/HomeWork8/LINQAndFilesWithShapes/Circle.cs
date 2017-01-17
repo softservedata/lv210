@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LINQAndFilesWithShapes
 {
-    class Circle : Shape
+    public class Circle : Shape
     {
         private double radius;
 

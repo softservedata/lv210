@@ -1,0 +1,11 @@
+C:\Users\Dima\git\lv210\SoftServe\HomeWork7\HomeWork7\Shapes.UnitTests\bin\Debug\Shapes.UnitTests.dll
+C:\Users\Dima\git\lv210\SoftServe\HomeWork7\HomeWork7\Shapes.UnitTests\bin\Debug\Shapes.UnitTests.pdb
+C:\Users\Dima\git\lv210\SoftServe\HomeWork7\HomeWork7\Shapes.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Dima\git\lv210\SoftServe\HomeWork7\HomeWork7\Shapes.UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\Dima\git\lv210\SoftServe\HomeWork7\HomeWork7\Shapes.UnitTests\bin\Debug\Shapes.exe
+C:\Users\Dima\git\lv210\SoftServe\HomeWork7\HomeWork7\Shapes.UnitTests\bin\Debug\Shapes.pdb
+C:\Users\Dima\git\lv210\SoftServe\HomeWork7\HomeWork7\Shapes.UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\Dima\git\lv210\SoftServe\HomeWork7\HomeWork7\Shapes.UnitTests\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Dima\git\lv210\SoftServe\HomeWork7\HomeWork7\Shapes.UnitTests\obj\Debug\Shapes.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Dima\git\lv210\SoftServe\HomeWork7\HomeWork7\Shapes.UnitTests\obj\Debug\Shapes.UnitTests.dll
+C:\Users\Dima\git\lv210\SoftServe\HomeWork7\HomeWork7\Shapes.UnitTests\obj\Debug\Shapes.UnitTests.pdb

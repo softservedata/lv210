@@ -47,6 +47,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shape.cs" />
+    <Compile Include="ShapeActions.cs" />
+    <Compile Include="ShapeActionsInfo.cs" />
+    <Compile Include="ShapeFromConsole.cs" />
     <Compile Include="Square.cs" />
   </ItemGroup>
   <ItemGroup>

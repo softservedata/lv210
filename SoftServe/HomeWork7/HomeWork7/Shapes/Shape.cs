@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shapes
 {
-    abstract class Shape : IComparable<Shape>
+    public abstract class Shape : IComparable<Shape>
     {
         private string name;
         public string Name { get; set; }

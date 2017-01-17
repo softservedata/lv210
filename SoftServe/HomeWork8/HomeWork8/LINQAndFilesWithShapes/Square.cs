@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LINQAndFilesWithShapes
 {
-    class Square : Shape
+    public class Square : Shape
     {
         private double sideLength;
         public Square(string name, double length) : base(name)
