@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,6 +78,7 @@ namespace Calc
             //Console.WriteLine("email = " + user.SetEmail("qwqw"));
             //
             // add dependency inversion
+            /*
             IUser user = User.Get()
                 .SetEmail("a@a.ua")
                 .SetPassword("123")
@@ -85,6 +87,29 @@ namespace Calc
                 .SetIsStudent(true)
                 .Build();
             Console.WriteLine("email = " + user.GetEmail());
+            */
+            //
+            //string assemblyPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location).ToString();
+            //Console.WriteLine("assemblyPath = " + assemblyPath);
+            //string filePath = AppDomain.CurrentDomain.BaseDirectory;
+            //Console.WriteLine("filePath = " + filePath);
+            //string absolutePathOfCurrentDirectory = System.IO.Directory.GetCurrentDirectory();
+            //Console.WriteLine("absolutePathOfCurrentDirectory = " + absolutePathOfCurrentDirectory);
+            //string fullPath = Path.GetFullPath("FileStorage/Users.csv");
+            //Console.WriteLine("fullPath = " + fullPath);
+            //string wantedPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+            //Console.WriteLine("wantedPath = " + wantedPath);
+            //
+            //var assembly = typeof(Program).Assembly;
+            //using (var stream = assembly.GetManifestResourceStream("Calc.Program.cs"))
+            //using (var xmlReader = XmlReader.Create(stream)) { }
+            //
+            foreach (IUser user in UserRepository.Get().FromDefaultCsv())
+            {
+                Console.WriteLine("Email = " + user.GetEmail());
+                Console.WriteLine("Password = " + user.GetPassword());
+                Console.WriteLine("IsIsAdmin = " + user.GetIsAdmin());
+            }
         }
     }
 }

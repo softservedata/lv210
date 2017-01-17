@@ -61,8 +61,11 @@
   <ItemGroup>
     <Compile Include="Appl\ApplicationSources.cs" />
     <Compile Include="Appl\ApplicationSourcesRepository.cs" />
+    <Compile Include="Data\CsvUtils.cs" />
+    <Compile Include="Data\IExternalData.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\UserRepository.cs" />
+    <Compile Include="Data\UserUtils.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\ApplicationPage.cs" />
     <Compile Include="Pages\UsersPage.cs" />
@@ -77,6 +80,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="FileStorage\Users.csv" />
     <None Include="packages.config" />
   </ItemGroup>
   <Choose>

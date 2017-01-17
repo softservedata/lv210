@@ -36,5 +36,17 @@ namespace Wow.Tests
             // Check
             Assert.AreEqual("SoftServe Language School", loginPage.GetLoginDescriptionText());
         }
+
+        //[Test]
+        public void TestFile()
+        {
+            foreach (IUser user in UserRepository.Get().FromDefaultCsv())
+            {
+                Console.WriteLine("Email = " + user.GetEmail());
+                Console.WriteLine("Password = " + user.GetPassword());
+                Console.WriteLine("IsIsAdmin = " + user.GetIsAdmin());
+            }
+        }
+
     }
 }
