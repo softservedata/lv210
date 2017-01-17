@@ -83,6 +83,7 @@ namespace Wow.Pages
             if (Manager.Current.ActiveBrowser == null)
             {
                 CurrentManager.LaunchNewBrowser();
+                //Manager.Current.ActiveBrowser.WaitForElement(1, null);
             }
         }
 
