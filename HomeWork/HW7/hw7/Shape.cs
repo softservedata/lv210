@@ -8,19 +8,7 @@ namespace hw7
 {
    public abstract class Shape : IComparable<Shape>
     {
-        private string name;
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
+        public string name;
 
         public Shape()
         {

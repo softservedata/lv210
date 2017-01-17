@@ -20,16 +20,18 @@ namespace hw7
                 Console.Write("\nEnter side for square: ");
                 shapes.Add(new Square(double.Parse(Console.ReadLine())));
             }
+
             Console.WriteLine("----------");
 
             for(int i = 0; i < shapes.Count; i++)
             {
-                Console.WriteLine("The area of a {0} is {1}", shapes[i].Name, shapes[i].Area());
-                Console.WriteLine("The perimeter of a {0} is {1}", shapes[i].Name, shapes[i].Perimeter());
+                Console.WriteLine("The area of a {0} is {1}", shapes[i].name, shapes[i].Area());
+                Console.WriteLine("The perimeter of a {0} is {1}", shapes[i].name, shapes[i].Perimeter());
             }
+
             Console.WriteLine("----------");
             Console.WriteLine("Largest perimeter has {0} with index {1} and perimeter {2}",
-                shapes[Functions.LargestPerimeter(shapes)].Name, Functions.LargestPerimeter(shapes),
+                shapes[Functions.LargestPerimeter(shapes)].name, Functions.LargestPerimeter(shapes),
                 shapes[Functions.LargestPerimeter(shapes)].Perimeter());
 
             Console.WriteLine("----------");
@@ -38,7 +40,7 @@ namespace hw7
 
             for(int i = 0; i < shapes.Count; i++)
             {
-                Console.WriteLine("{0} {1}", shapes[i].Name, shapes[i].Area());
+                Console.WriteLine("{0} {1}", shapes[i].name, shapes[i].Area());
             }
 
             Console.ReadKey();

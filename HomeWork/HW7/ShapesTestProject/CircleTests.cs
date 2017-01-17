@@ -12,6 +12,7 @@ namespace ShapesTestProject
             new object[] {50, 7853.975},
             new object[] {75, 17671.44375},
        };
+
         private static readonly object[] TestDataForPerimeter =
        {
             new object[] {20, 125.6636},
@@ -20,21 +21,21 @@ namespace ShapesTestProject
        };
 
         [Test, TestCaseSource(nameof(TestDataForArea))]
-        public void CalculateArea(double radius, double ExpectedResult)
+        public void CalculateArea(double radius, double expectedResult)
         {
             Shape shape = new Circle(radius);
-            double ActualResult = shape.Area();
+            double actualResult = shape.Area();
             var delta = 0.1;
-            Assert.AreEqual(ExpectedResult, ActualResult, delta);
+            Assert.AreEqual(expectedResult, actualResult, delta);
         }
 
         [Test, TestCaseSource(nameof(TestDataForPerimeter))]
-        public void CalculatePerimeter(double radius, double ExpectedResult)
+        public void CalculatePerimeter(double radius, double expectedResult)
         {
             Shape shape = new Circle(radius);
-            double ActualResult = shape.Perimeter();
+            double actualResult = shape.Perimeter();
             var delta = 0.1;
-            Assert.AreEqual(ExpectedResult, ActualResult, delta);
+            Assert.AreEqual(expectedResult, actualResult, delta);
         }
     }
 }

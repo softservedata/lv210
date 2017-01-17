@@ -1,0 +1,11 @@
+C:\Users\Rostyslav\documents\visual studio 2015\Projects\hw8\ShapeOperationsTest\bin\Debug\ShapeOperationsTest.dll
+C:\Users\Rostyslav\documents\visual studio 2015\Projects\hw8\ShapeOperationsTest\bin\Debug\ShapeOperationsTest.pdb
+C:\Users\Rostyslav\documents\visual studio 2015\Projects\hw8\ShapeOperationsTest\bin\Debug\hw8.exe
+C:\Users\Rostyslav\documents\visual studio 2015\Projects\hw8\ShapeOperationsTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Rostyslav\documents\visual studio 2015\Projects\hw8\ShapeOperationsTest\bin\Debug\nunit.framework.dll
+C:\Users\Rostyslav\documents\visual studio 2015\Projects\hw8\ShapeOperationsTest\bin\Debug\hw8.pdb
+C:\Users\Rostyslav\documents\visual studio 2015\Projects\hw8\ShapeOperationsTest\bin\Debug\nunit.framework.xml
+C:\Users\Rostyslav\documents\visual studio 2015\Projects\hw8\ShapeOperationsTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Rostyslav\documents\visual studio 2015\Projects\hw8\ShapeOperationsTest\obj\Debug\ShapeOperationsTest.csprojResolveAssemblyReference.cache
+C:\Users\Rostyslav\documents\visual studio 2015\Projects\hw8\ShapeOperationsTest\obj\Debug\ShapeOperationsTest.dll
+C:\Users\Rostyslav\documents\visual studio 2015\Projects\hw8\ShapeOperationsTest\obj\Debug\ShapeOperationsTest.pdb

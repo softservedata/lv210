@@ -10,20 +10,15 @@ namespace hw7
     {
         private double side;
 
-        public Square()
+        public Square(double side) : base("Square")
         {
-            Name = "Square";
-        }
-        public Square(double side)
-        {
-            Name = "Square";
             this.side = side;
         }
+
         public override double Area()
         {
             return side * side;
         }
-
         public override double Perimeter()
         {
             return 4 * side;

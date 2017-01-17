@@ -22,19 +22,16 @@ namespace hw8
             File.WriteAllLines(fileName, lines);
         }
 
-
         public void CountOfString(string[] data)
         {
             WriteData("CountOfString.txt", data.Select(line => line.Length).ToArray());
         }
-
 
         public void FindLongestLine(string[] data)
         {
             var maxLength = data.Max(x => x.Length);
             WriteData("LongestLine.txt", data.Where(x => x.Length == maxLength).ToArray());
         }
-
  
         public void FindShortestLine(string[] data)
         {

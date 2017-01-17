@@ -8,19 +8,7 @@ namespace hw8
 {
     public abstract class Shape : IComparable<Shape>
     {
-        private string name;
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
+        public string name;
 
         public Shape()
         {
@@ -33,7 +21,6 @@ namespace hw8
 
         public abstract double Area();
         public abstract double Perimeter();
-
         public int CompareTo(Shape other)
         {
             return this.Area().CompareTo(other.Area());

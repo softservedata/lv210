@@ -10,13 +10,9 @@ namespace hw7
     {
         private const double Pi = 3.14159;
         private double radius;
-        public Circle()
+
+        public Circle(double radius) : base ("Circle")
         {
-            Name = "Circle";
-        }
-        public Circle(double radius)
-        {
-            Name = "Circle";
             this.radius = radius;
         }
         public override double Area()

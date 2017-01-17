@@ -1,8 +1,4 @@
-﻿    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+﻿    using System.Collections.Generic;
 
     namespace hw7
     {
@@ -10,18 +6,19 @@
         {
             public static int LargestPerimeter(List<Shape> shapes)
             {
-                int LargestShapeIndex = -1;
+                int largestShapeIndex = -1;
                 double value = double.MinValue;
                 
                 for(int i = 0; i < shapes.Count; i++)
                 {
                     if(shapes[i].Perimeter() > value)
                     {
-                        LargestShapeIndex = i;
+                        largestShapeIndex = i;
                         value = shapes[i].Perimeter();
                     }
                 }
-                return LargestShapeIndex + 1;
+
+                return largestShapeIndex + 1;
             }
         }
     }
