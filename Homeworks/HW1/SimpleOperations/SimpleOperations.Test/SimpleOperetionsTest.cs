@@ -6,105 +6,124 @@ namespace SimpleOperations.Test
     [TestFixture]
     public class SimpleOperetionsTest
     {
-        [Test]
-        //Equivalance partition: using 3 ranges for test data
-        //Positive numbers
-        //Negative numbers
-        //NULLs
-        /*Test cases with positive numbers*/
-        [TestCase]
-        public void PositiveAddTest()
+        [TestCase(10, 5, 15)]
+        public void PositiveAddTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int ActualResult = MathObject.Add(10, 5);
-            Assert.AreEqual(15, ActualResult);           
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Add(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);           
         }
-        [TestCase]
-        public void PositiveSubtractTest()
+
+        [TestCase(10, 1, 9)]
+        public void PositiveSubtractTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Subtract(10, 1);
-            Assert.AreEqual(9, result);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Subtract(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
-        [TestCase]
-        public void PositiveProductTest()
+
+        [TestCase(5, 4, 20)]
+        public void PositiveProductTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Product(5, 4);
-            Assert.AreEqual(20, result);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Product(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
-        [TestCase]
-        public void PositiveDivisionTest()
+
+        [TestCase(20, 4, 5)]
+        public void PositiveDivisionTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Division(20, 4);
-            Assert.AreEqual(5, result);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Divide(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
 
         /*Test cases with negative numbers*/
-        [TestCase]
-        public void NegativeAddTest()
+        [TestCase(-10, -5, -15)]
+        public void NegativeAddTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int ActualResult = MathObject.Add(-10, -5);
-            Assert.AreEqual(-15, ActualResult);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Add(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
-        [TestCase]
-        public void NegativeSubtractTest()
+
+        [TestCase(-10, -1, -9)]
+        public void NegativeSubtractTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Subtract(-10, -1);
-            Assert.AreEqual(-9, result);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Subtract(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
-        [TestCase]
-        public void NegativeProductTest()
+
+        [TestCase(-5, -4, 20)]
+        public void NegativeProductTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Product(-5, -4);
-            Assert.AreEqual(20, result);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Product(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
-        [TestCase]
-        public void NegativeDivisionTest()
+
+        [TestCase(-20, -4, 5)]
+        public void NegativeDivisionTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Division(-20, -4);
-            Assert.AreEqual(5, result);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Divide(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
+
         /*Test cases with NULL numbers*/
-        [TestCase]
-        public void NullAddTest()
+        [TestCase(0, 5, 5)]
+        public void NullAddTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int ActualResult = MathObject.Add(0, 5);
-            Assert.AreEqual(5, ActualResult);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Add(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
-        [TestCase]
-        public void NullSubtractTest()
+
+        [TestCase(5, 0, 5)]
+        public void NullSubtractTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Subtract(5, 0);
-            Assert.AreEqual(5, result);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Subtract(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
-        [TestCase]
-        public void NullProductTest()
+
+        [TestCase(5, 0, 0)]
+        public void NullProductTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Product(5, 0);
-            Assert.AreEqual(0, result);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Product(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
-        [TestCase]
-        public void NullDivisionTest()
+
+        [TestCase(0, 4, 0)]
+        public void NullDivisionTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Division(0, 4);
-            Assert.AreEqual(0, result);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Divide(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
+
         /*Exception test cases*/
-        [TestCase]
-        public void Should_Throw_Exception_When_Division_By_Zero()
+        [TestCase(4, 0)]
+        public void ExceptionDivisionByZeroTest(int firstNumber, int secondNumber)
         {
-            MathOperations MathObject = new MathOperations();
-            Assert.Throws<DivideByZeroException>(() => MathObject.Division(4, 0));
+            var mathObject = new MathOperations();
+            Assert.Throws<DivideByZeroException>(() => mathObject.Divide(firstNumber, secondNumber));
+        }
+
+        [TestCase("qwerty")]
+        public void ParseAtemptThrowsExceptionTest(string testData)
+        {
+            Assert.Throws<FormatException>(() => Program.ParseAtempt(testData));
+        }
+
+        [TestCase("8", 8)]
+        public void ParseAtemptReturnDataTest(string testData, double expectedResult)
+        {
+            double actualResult = Program.ParseAtempt(testData);
+
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }
