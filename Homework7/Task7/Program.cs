@@ -10,12 +10,14 @@ namespace Task7
     {
         static void Main(string[] args)
         {
-      //1) In Main() create list of Shape, then ask user to enter data of 10 different shapes. 
-      //Write name, area and perimeter all of shapes.
+
+            //1) In Main() create list of Shape, then ask user to enter data of 10 different shapes. 
+            //Write name, area and perimeter all of shapes.
+
             List<Shape> shapeList = new List<Shape>();
             string shapeName;
             int shapeFieldForCalcaulation;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine("Please enter name of shape{0}",i);
                 shapeName = Console.ReadLine();
@@ -47,6 +49,7 @@ namespace Task7
             }
             Console.ReadKey();
 
+
          //2) Find shape with the largest perimeter and print its name.
             
             double largestPerimeter = shapeList[0].Perimeter();
@@ -61,8 +64,10 @@ namespace Task7
             }
             Console.WriteLine("{0} has largest perimeter", shapeNameWithLargestPerimeter);
             Console.ReadKey();
-            
+
+
             //3) Sort shapes by area and print obtained list (Remember about IComparable)
+
             shapeList.Sort();
             Console.WriteLine("Sorted Shape List:");
             foreach (Shape item in shapeList)

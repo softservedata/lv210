@@ -10,6 +10,5 @@ C:\Docs\Anya\AQC\C#Projects\HW7\Task7\obj\Debug\Task7.pdb
 C:\Docs\Anya\AQC\C#Projects\HW7\Task7\bin\Debug\Task7.exe
 C:\Docs\Anya\AQC\C#Projects\HW7\Task7\bin\Debug\Task7.pdb
 C:\Docs\Anya\AQC\C#Projects\HW7\Task7\obj\Debug\Task7.csprojResolveAssemblyReference.cache
-C:\Users\Anna Orlovska\Source\Repos\lv210\Homework7\Task7\bin\Debug\Task7.exe.config
-C:\Users\Anna Orlovska\Source\Repos\lv210\Homework7\Task7\obj\Debug\Task7.exe
-C:\Users\Anna Orlovska\Source\Repos\lv210\Homework7\Task7\obj\Debug\Task7.pdb
+C:\Users\aorlovtc\Source\Repos\lv210\Homework7\Task7\bin\Debug\Task7.exe.config
+C:\Users\aorlovtc\Source\Repos\lv210\Homework7\Task7\obj\Debug\Task7.pdb
