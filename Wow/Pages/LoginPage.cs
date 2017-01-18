@@ -34,6 +34,9 @@ namespace Wow.Pages
             }
         }
 
+        // Expected Data
+        public static readonly string LOGIN_DESCRIPTION_TEXT = "SoftServe Language School";
+
         // Fields
         private Manager manager;
 

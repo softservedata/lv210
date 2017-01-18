@@ -63,6 +63,7 @@
     <Compile Include="Appl\ApplicationSourcesRepository.cs" />
     <Compile Include="Data\CsvUtils.cs" />
     <Compile Include="Data\IExternalData.cs" />
+    <Compile Include="Data\ListUtils.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\UserRepository.cs" />
     <Compile Include="Data\UserUtils.cs" />

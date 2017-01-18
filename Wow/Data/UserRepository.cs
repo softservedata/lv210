@@ -35,6 +35,9 @@ namespace Wow.Data
         public IUser Admin()
         {
             return User.Get()
+                .SetFirstname("LV-204")
+                .SetLastname("ISTQB")
+                .SetLanguage("English")
                 .SetEmail("wowira@ukr.net")
                 .SetPassword("irawow123")
                 .SetIsAdmin(true)
@@ -46,6 +49,9 @@ namespace Wow.Data
         public IUser Student()
         {
             return User.Get()
+                .SetFirstname("aaaaaa")
+                .SetLastname("aaaaaa")
+                .SetLanguage("English")
                 .SetEmail("k2854799@mvrht.com")
                 .SetPassword("qwerty+1")
                 .SetIsAdmin(false)
@@ -57,6 +63,9 @@ namespace Wow.Data
         public IUser Invalid()
         {
             return User.Get()
+                .SetFirstname("1234")
+                .SetLastname("1234")
+                .SetLanguage("English")
                 .SetEmail("wow@i.ua")
                 .SetPassword("qwerty")
                 .SetIsAdmin(true)
@@ -69,6 +78,9 @@ namespace Wow.Data
         public IUser NewUser()
         {
             return User.Get()
+                .SetFirstname("")
+                .SetLastname("")
+                .SetLanguage("English")
                 .SetEmail("new@gmail.com")
                 .SetPassword("qwerty")
                 .SetIsAdmin(true)

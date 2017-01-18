@@ -1,3 +1,3 @@
-Email;Password;IsAdmin;IsTeacher;IsStudent
-wowira@ukr.net;irawow123;1;1;1
-k2854799@mvrht.com;qwerty+1;0;0;1
+Firstname;Lastname;Language;Email;Password;IsAdmin;IsTeacher;IsStudent
+LV-204;ISTQB;English;wowira@ukr.net;irawow123;true;true;true
+aaaaaa;aaaaaa;English;k2854799@mvrht.com;qwerty+1;false;false;true

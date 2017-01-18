@@ -16,11 +16,23 @@ namespace Wow.Tests
         private static readonly object[] TestSigninData =
         {
             new object[] { UserRepository.Get().Admin() },
-            //new object[] { UserRepository.Get().Student() },
+            new object[] { UserRepository.Get().Student() },
         };
 
-        [Test, TestCaseSource(nameof(TestSigninData))]
-        public void TestSignin(User admin)
+        private static readonly object[] TestExternalData =
+            ListUtils.ToMultiArray(UserRepository.Get().FromDefaultCsv());
+
+        //[Test, TestCaseSource(nameof(TestExternalData))]
+        public void TestRead(User admin)
+        {
+            Console.WriteLine("Email = " + admin.GetEmail());
+            Console.WriteLine("Password = " + admin.GetPassword());
+            Console.WriteLine("IsIsAdmin = " + admin.GetIsAdmin());
+        }
+
+        //[Test, TestCaseSource(nameof(TestSigninData))]
+        [Test, TestCaseSource(nameof(TestExternalData))]
+        public void TestSignin(IUser admin)
         {
             // Precondition
             // Test Steps
@@ -29,13 +41,13 @@ namespace Wow.Tests
             //UsersPage usersPage = Application.Get().Login().SuccessAdminLogin(admin);
             //
             // Check
-            Assert.AreEqual("LV-204 ISTQB", usersPage.GetUsernameText());
+            Assert.AreEqual(admin.GetName(), usersPage.GetUsernameText());
             //
             // Return to previous state
             loginPage = usersPage.GotoLogOut();
             //
             // Check
-            Assert.AreEqual("SoftServe Language School", loginPage.GetLoginDescriptionText());
+            Assert.AreEqual(LoginPage.LOGIN_DESCRIPTION_TEXT, loginPage.GetLoginDescriptionText());
         }
 
         private static readonly object[] CheckData =
@@ -46,7 +58,10 @@ namespace Wow.Tests
              new object[] { "333", "info3" },
         };
 
-        //[Test, TestCaseSource(nameof(CheckData))]
+        private static readonly object[][] TwoDimData =
+              { new object[] { "111", "info1" }, new object[] { "222", "info2" }, new object[] { "333", "info3" } };
+
+        //[Test, TestCaseSource(nameof(TwoDimData))]
         public void TestFile(string data, string info)
         {
             Console.WriteLine("data = " + data);

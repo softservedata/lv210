@@ -99,7 +99,8 @@ namespace Wow.Pages
         {
             Console.WriteLine("+++DisposeManager()");
             CloseBrowser();
-            if ((CurrentManager != null) && (Manager.Current.Disposed))
+            if ((CurrentManager != null) && (Manager.Current != null))
+            //if ((CurrentManager != null) && (Manager.Current.Disposed))
             {
                 Console.WriteLine("+++CurrentManager.Dispose();");
                 CurrentManager.Dispose();
@@ -129,7 +130,8 @@ namespace Wow.Pages
 
         private void InitManager()
         {
-            if ((CurrentManager == null) || (!Manager.Current.Disposed))
+            if ((CurrentManager == null) || (Manager.Current == null))
+            //if ((CurrentManager == null) || (!Manager.Current.Disposed))
             {
                 Settings currentSettings = new Settings();
                 //currentSettings.Web.DefaultBrowser = BrowserType.FireFox;
@@ -143,6 +145,7 @@ namespace Wow.Pages
                 CurrentManager.Start();
                 //CurrentManager.LaunchNewBrowser();
             }
+            //Console.WriteLine("+++Manager.Current.Disposed = " + Manager.Current.Disposed);
         }
 
         private BrowserType GetBrowser()

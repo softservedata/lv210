@@ -24,7 +24,6 @@ namespace Wow.Tests
         public void Cleanup()
         {
             Console.WriteLine("[OneTimeTearDown] done");
-            Application.Get().CloseBrowser();
             Application.Get().DisposeManager();
         }
 

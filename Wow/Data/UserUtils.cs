@@ -45,17 +45,20 @@ namespace Wow.Data
             IList<IUser> users = new List<IUser>();
             foreach (IList<string> row in externalData.GetAllCells(path))
             {
-                if (row[0].ToLower().Equals("email")
-                        && row[1].ToLower().Equals("password"))
+                if (row[3].ToLower().Equals("email")
+                        && row[4].ToLower().Equals("password"))
                 {
                     continue;
                 }
                 users.Add(User.Get()
-                        .SetEmail("wowira@ukr.net")
-                        .SetPassword("irawow123")
-                        .SetIsAdmin(true)
-                        .SetIsTeacher(true)
-                        .SetIsStudent(true)
+                        .SetFirstname(row[0])
+                        .SetLastname(row[1])
+                        .SetLanguage(row[2])
+                        .SetEmail(row[3])
+                        .SetPassword(row[4])
+                        .SetIsAdmin(row[5].ToLower().Equals("true"))
+                        .SetIsTeacher(row[6].ToLower().Equals("true"))
+                        .SetIsStudent(row[7].ToLower().Equals("true"))
                         .Build());
             }
             return users;

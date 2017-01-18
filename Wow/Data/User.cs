@@ -7,11 +7,25 @@ using System.Threading.Tasks;
 namespace Wow.Data
 {
     // builder interfaces
+    public interface IFirstname
+    {
+        ILastname SetFirstname(string firstname);
+    }
+
+    public interface ILastname
+    {
+        ILanguage SetLastname(string lastname);
+    }
+
+    public interface ILanguage
+    {
+        IEmail SetLanguage(string language);
+    }
+
     public interface IEmail
     {
         IPassword SetEmail(string email);
     }
-
     public interface IPassword
     {
         IAdmin SetPassword(string password);
@@ -40,6 +54,10 @@ namespace Wow.Data
     // dependency inversion interface
     public interface IUser
     {
+        string GetName();
+        string GetFirstname();
+        string GetLastname();
+        string GetLanguage();
         string GetEmail();
         string GetPassword();
         bool GetIsAdmin();
@@ -47,8 +65,12 @@ namespace Wow.Data
         bool GetIsStudent();
     }
     
-    public class User : IEmail, IPassword, IAdmin, ITeacher, IStudent, IBuilder, IUser
+    public class User : IFirstname, ILastname, ILanguage, IEmail, IPassword, IAdmin, ITeacher, IStudent, IBuilder, IUser
     {
+        private const string SPACE = " ";
+        private string firstname;
+        private string lastname;
+        private string language;
         private string email;
         private string password; // { get; private set; }
         private bool isAdmin;
@@ -73,12 +95,30 @@ namespace Wow.Data
 
         // static factory
         // public static User Get() // old
-        public static IEmail Get()
+        public static IFirstname Get()
         {
             return new User();
         }
 
         // setters
+
+        public ILastname SetFirstname(string firstname)
+        {
+            this.firstname = firstname;
+            return this;
+        }
+
+        public ILanguage SetLastname(string lastname)
+        {
+            this.lastname = lastname;
+            return this;
+        }
+
+        public IEmail SetLanguage(string language)
+        {
+            this.language = language;
+            return this;
+        }
 
         public IPassword SetEmail(string email)
         {
@@ -116,6 +156,26 @@ namespace Wow.Data
         }
 
         // getters
+
+        public string GetName()
+        {
+            return GetFirstname() + SPACE + GetLastname();
+        }
+
+        public string GetFirstname()
+        {
+            return this.firstname;
+        }
+
+        public string GetLastname()
+        {
+            return this.lastname;
+        }
+
+        public string GetLanguage()
+        {
+            return this.language;
+        }
 
         public string GetEmail()
         {
