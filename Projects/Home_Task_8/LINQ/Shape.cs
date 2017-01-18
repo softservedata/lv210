@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shapes
 {
-    public abstract class Shape
+    public abstract class Shape : IComparable<Shape>
     {
         public Shape(string name)
         {
@@ -35,9 +35,14 @@ namespace Shapes
             }
 
             // Condition of equality
-            return (this.Name == other.Name) && 
-                (this.Perimeter == other.Perimeter) && 
-                (this.Area == other.Area);
+            return (this.Name == other.Name) &&
+                (this.Perimeter == other.Perimeter) &&
+                (this.Area.Equals(other.Area));
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Name.GetHashCode() ^ this.Area.GetHashCode() ^ this.Perimeter.GetHashCode();
         }
     }
 }

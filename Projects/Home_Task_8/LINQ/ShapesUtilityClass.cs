@@ -23,7 +23,7 @@ namespace LINQ
             }
         }
 
-        public static void DisplayOnConsole(this IList<Shape> shapes)
+        public static void DisplayOnConsole(this IEnumerable<Shape> shapes)
         {
             foreach (var shape in shapes)
                 Console.WriteLine(shape);
