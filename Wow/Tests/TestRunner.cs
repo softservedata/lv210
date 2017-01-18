@@ -16,12 +16,15 @@ namespace Wow.Tests
         [OneTimeSetUp]
         public void Init()
         {
+            Console.WriteLine("[OneTimeSetUp] done");
             Application.Get(ApplicationSourcesRepository.ChromeByTrainingLocal());
         }
 
         [OneTimeTearDown]
         public void Cleanup()
         {
+            Console.WriteLine("[OneTimeTearDown] done");
+            Application.Get().CloseBrowser();
             Application.Get().DisposeManager();
         }
 
@@ -34,6 +37,7 @@ namespace Wow.Tests
         [TearDown]
         public void TearDown()
         {
+            Console.WriteLine("[TearDown] done");
             // TODO
             //Application.Get().Logout();
             //Application.Get().CloseBrowser();

@@ -28,10 +28,14 @@ namespace Wow.Data
 
         public IList<IUser> GetAllUsers()
         {
-            var codeBase = Assembly.GetExecutingAssembly().CodeBase;
-            var uri = new UriBuilder(codeBase);
-            var path = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Uri.UnescapeDataString(uri.Path))));
+            // for main method
             //return GetAllUsers(Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + storageName);
+            // for test, ver 1
+            //var codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            //var uri = new UriBuilder(codeBase);
+            //var path = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Uri.UnescapeDataString(uri.Path))));
+            // for test, ver 2
+            string path = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(AppDomain.CurrentDomain.SetupInformation.ApplicationBase)));
             return GetAllUsers(path + storageName);
         }
 

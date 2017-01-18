@@ -43,6 +43,17 @@ namespace Wow.Data
                 .Build();
         }
 
+        public IUser Student()
+        {
+            return User.Get()
+                .SetEmail("k2854799@mvrht.com")
+                .SetPassword("qwerty+1")
+                .SetIsAdmin(false)
+                .SetIsTeacher(false)
+                .SetIsStudent(true)
+                .Build();
+        }
+
         public IUser Invalid()
         {
             return User.Get()
