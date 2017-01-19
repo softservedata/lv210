@@ -25,12 +25,39 @@ namespace Wow.Pages
             public HtmlInputSubmit SubmitInput { get; private set; }
 
             // Constructor
-            public LoginForm(Manager manager)
+            protected internal LoginForm(Manager manager)
             {
                 this.manager = manager;
-                this.LoginInput =  manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=email");
+                this.LoginInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=email");
                 this.PasswordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=password");
                 this.SubmitInput = manager.ActiveBrowser.Find.ByName<HtmlInputSubmit>("loginButton");
+            }
+        }
+        private class SignForm
+        {
+            // Fields
+            private Manager manager;
+
+            // get Data
+            public HtmlInputText NameInput { get; private set; }
+            public HtmlInputText SurnameInput { get; private set; }
+            public HtmlSelect SelectLanguageInput { get; private set; }
+            public HtmlInputEmail EmailInput { get; private set; }
+            public HtmlInputPassword PasswordInput { get; private set; }
+            public HtmlInputPassword RepeatPasswordInput { get; private set; }
+            public HtmlInputSubmit SignUp { get; private set; }
+
+            // Constructor
+            protected internal SignForm(Manager manager)
+            {
+                this.manager = manager;
+                this.NameInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=nameValue");
+                this.SurnameInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=surnameValue");
+                this.SelectLanguageInput = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=languageId");
+                this.EmailInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=emailValue");
+                this.PasswordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=passwordValue");
+                this.RepeatPasswordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=repeatPasswordValue");
+                this.SignUp = manager.ActiveBrowser.Find.ByAttributes<HtmlInputSubmit>("class=btn btn-block btn-primary");
             }
         }
 
@@ -39,9 +66,13 @@ namespace Wow.Pages
 
         // get Data
         public HtmlButton LoginButton { get; private set; }
+
+        public HtmlButton SignButton { get; private set; }
+
         public Element LoginDescription { get; private set; }
         //
         private LoginForm loginForm;
+        private SignForm singForm;
 
         // Constructor
         public LoginPage(Manager manager)
@@ -49,6 +80,7 @@ namespace Wow.Pages
             this.manager = manager;
             this.LoginButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-success");
             this.LoginDescription = manager.ActiveBrowser.Find.ByXPath("//div[@class='text-primary']/h2/small");
+            this.SignButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn - primary");
         }
 
         // Page Object
@@ -69,6 +101,37 @@ namespace Wow.Pages
         {
             ClickLoginButton();
             return this.loginForm.SubmitInput;
+        }
+
+        //Geters to SingForm
+        private HtmlInputText GetNameInput()
+        {
+            return this.singForm.NameInput;
+        }
+
+        private HtmlInputText GetSurnameInput()
+        {
+            return this.singForm.SurnameInput;
+        }
+        private HtmlSelect GetSelectLanguageInput()
+        {
+            return this.singForm.SelectLanguageInput;
+        }
+        private HtmlInputEmail GetEmailInput()
+        {
+            return this.singForm.EmailInput;
+        }
+        private HtmlInputPassword GetPasswordInSingFormInput()
+        {
+            return this.singForm.PasswordInput;
+        }
+        private HtmlInputPassword GetRepeatPasswordInput()
+        {
+            return this.singForm.RepeatPasswordInput;
+        }
+        private HtmlInputSubmit GetSignUp()
+        {
+            return this.singForm.SignUp;
         }
 
         // Functional
@@ -102,7 +165,7 @@ namespace Wow.Pages
         {
 
             SetLoginData(admin);
-          
+
             return new UsersPage(manager);
         }
 
