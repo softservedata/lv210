@@ -16,7 +16,7 @@ namespace SimpleOperations.Test
         private readonly TestResults testResults = new TestResults();
         private readonly TestTimeWatch timeWatch = new TestTimeWatch();
 
-        #endregion 
+        #endregion
 
         #region Tests set up
 
@@ -62,7 +62,7 @@ namespace SimpleOperations.Test
         {
             var mathObject = new MathOperations();
             var actualResult = mathObject.Add(firstNumber, secondNumber);
-            Assert.AreEqual(expectedResult, actualResult);           
+            Assert.AreEqual(expectedResult, actualResult);
         }
 
         [TestCase(10, 1, 9)]
