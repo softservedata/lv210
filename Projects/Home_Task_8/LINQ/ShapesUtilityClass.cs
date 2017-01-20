@@ -12,31 +12,25 @@ namespace LINQ
     {
         public static void WriteToFile(this IEnumerable<Shape> shapes, string fileName, string title)
         {
-            using (StreamWriter writer = new StreamWriter(fileName, true))
-            {
-                writer.WriteLine(title);
-                foreach (var shape in shapes)
-                {
-                    writer.WriteLine(shape.ToString());
-                }
-                writer.WriteLine($"Mod: {DateTime.Now} {Environment.NewLine}");
-            }
+            File.AppendAllText(fileName, $"{title}\r\n");
+            foreach (var shape in shapes)
+                File.AppendAllText(fileName, $"{shape}\r\n");
         }
 
-        public static void DisplayOnConsole(this IEnumerable<Shape> shapes)
+        public static void DisplayOnConsole(IEnumerable<Shape> shapes)
         {
             foreach (var shape in shapes)
                 Console.WriteLine(shape);
         }
 
-        public static IList<Shape> GetAllWithAreaInRange(this IList<Shape> shapes, double lowerLimit, double upperLimit)
+        public static IList<Shape> GetAllWithAreaInRange(this IEnumerable<Shape> shapes, double lowerLimit, double upperLimit)
         {
             return shapes.Where(shape =>
             (shape.Area >= Conditions.RangeLowerLimit) &&
             (shape.Area <= Conditions.RangeUpperLimit)).ToList();
         }
 
-        public static IList<Shape> GetAllWithProperCharInName(this IList<Shape> shapes, char desireChar)
+        public static IList<Shape> GetAllWithProperCharInName(this IEnumerable<Shape> shapes, char desireChar)
         {
             return shapes.Where(shape =>
             shape.Name.ToLower().Contains(desireChar)).ToList();

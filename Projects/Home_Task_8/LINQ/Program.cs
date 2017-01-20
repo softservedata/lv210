@@ -19,29 +19,42 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            // 1. Create list of Shape and fill it with 6 different shapes(Circle and Square).
-
-            IList<Shape> shapes = new List<Shape>()
+            try
             {
-                new Circle(0.5), new Circle(3), new Circle(6),
-                new Square(9), new Square(12), new Square( 15)
-            };
+                // 1. Create list of Shape and fill it with 6 different shapes(Circle and Square).
 
-            // 2. Find and write into the file shapes with area from range[10, 100]
+                IList<Shape> shapes = new List<Shape>
+                {
+                    new Circle(0.5), new Circle(3), new Circle(6),
+                    new Square(9), new Square(12), new Square( 15)
+                };
 
-            string fileName = "shapes.txt";
-            shapes.GetAllWithAreaInRange(Conditions.RangeLowerLimit, Conditions.RangeUpperLimit)
-                .WriteToFile(fileName, title: "Shapes with area from range[10, 100]");
+                // 2. Find and write into the file shapes with area from range[10, 100]
 
-            // 3. Find and write into the file shapes which name contains letter 'a'
+                string fileName = "shapes.txt";
+                shapes.GetAllWithAreaInRange(Conditions.RangeLowerLimit, Conditions.RangeUpperLimit)
+                    .WriteToFile(fileName, title: "Shapes with area from range[10, 100]");
 
-            shapes.GetAllWithProperCharInName(Conditions.DesireChar)
-                .WriteToFile(fileName, title: "Shapes which name contains letter 'a'");
+                // 3. Find and write into the file shapes which name contains letter 'a'
 
-            // 4. Find and remove from the list all shapes with perimeter less then 5. Write resulted list into Console
+                shapes.GetAllWithProperCharInName(Conditions.DesireChar)
+                    .WriteToFile(fileName, title: "Shapes which name contains letter 'a'");
 
-            shapes.RemoveAllWithPerimeterLessThanLimit(Conditions.PerimeterLimit);
-            shapes.DisplayOnConsole();
+                // 4. Find and remove from the list all shapes with perimeter less then 5. Write resulted list into Console
+
+                shapes.RemoveAllWithPerimeterLessThanLimit(Conditions.PerimeterLimit);
+                ShapesUtilityClass.DisplayOnConsole(shapes);
+            }
+
+            catch (ArgumentOutOfRangeException exp)
+            {
+                Console.Error.WriteLine(exp.Message);
+            }
+
+            catch (Exception exp)
+            {
+                Console.Error.WriteLine(exp.Message);
+            }
         }
     }
 }

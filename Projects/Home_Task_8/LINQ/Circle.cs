@@ -13,8 +13,8 @@ namespace Shapes
         public Circle(double radius) : base("Circle")
         {
             Radius = radius;
-            Perimeter = GetPerimeter();
-            Area = GetArea();
+            Area = area;
+            Perimeter = perimeter;
         }
 
         public double Radius
@@ -23,23 +23,30 @@ namespace Shapes
 
             private set
             {
-                _radius = value;
-
-                if (_radius <= 0)
-                {
+                if (value <= 0)
                     throw new ArgumentOutOfRangeException("Only positive values allowed for circle radius!");
-                }
+                _radius = value;
             }
         }
 
-        protected override double GetArea()
+        public override double Perimeter
         {
-            return Math.PI * _radius * _radius;
+            get { return perimeter; }
+
+            protected set
+            {
+                perimeter = 2 * Math.PI * _radius;
+            }
         }
 
-        protected override double GetPerimeter()
+        public override double Area
         {
-            return 2 * Math.PI * _radius;
+            get { return area; }
+
+            protected set
+            {
+                area = Math.PI * _radius * _radius;
+            }
         }
 
         public override string ToString()

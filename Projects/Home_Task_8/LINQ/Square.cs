@@ -13,8 +13,8 @@ namespace Shapes
         public Square(double side) : base("Square")
         {
             Side = side;
-            Perimeter = GetPerimeter();
-            Area = GetArea();
+            Area = area;
+            Perimeter = perimeter;
         }
 
         public double Side
@@ -23,23 +23,30 @@ namespace Shapes
 
             private set
             {
-                _side = value;
-
-                if (_side <= 0)
-                {
+                if (value <= 0)
                     throw new ArgumentOutOfRangeException("Only positive values allowed for square side!");
-                }
+                _side = value;
             }
         }
 
-        protected override double GetArea()
+        public override double Perimeter
         {
-            return Math.Pow(_side, 2);
+            get { return perimeter; }
+
+            protected set
+            {
+                perimeter = 4 * _side;
+            }
         }
 
-        protected override double GetPerimeter()
+        public override double Area
         {
-            return 4 * _side;
+            get { return area; }
+
+            protected set
+            {
+                area = Math.Pow(_side, 2);
+            }
         }
 
         public override string ToString()

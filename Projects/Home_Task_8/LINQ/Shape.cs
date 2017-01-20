@@ -8,17 +8,17 @@ namespace Shapes
 {
     public abstract class Shape : IComparable<Shape>
     {
+        protected double area;
+        protected double perimeter;
+
         public Shape(string name)
         {
             Name = name;
         }
 
-        public double Perimeter { get; protected set; }
-        public double Area { get; protected set; }
+        public abstract double Perimeter { get; protected set; }
+        public abstract double Area { get; protected set; }
         public string Name { get; }
-
-        protected abstract double GetArea();
-        protected abstract double GetPerimeter();
 
         public int CompareTo(Shape other)
         {
@@ -35,8 +35,8 @@ namespace Shapes
             }
 
             // Condition of equality
-            return (this.Name == other.Name) &&
-                (this.Perimeter == other.Perimeter) &&
+            return (this.Name.Equals(other.Name)) &&
+                (this.Perimeter.Equals(other.Perimeter)) &&
                 (this.Area.Equals(other.Area));
         }
 
