@@ -1,0 +1,124 @@
+{
+  "results": [
+    {
+      "testName": "ExceptionDivisionByZeroTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.ExceptionDivisionByZeroTest(4,0)",
+      "startTime": "2017-01-19T19:37:01.3736496+02:00",
+      "endTime": "2017-01-19T19:37:01.4896563+02:00"
+    },
+    {
+      "testName": "NegativeAddTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.NegativeAddTest(-10,-5,-15)",
+      "startTime": "2017-01-19T19:37:01.5186579+02:00",
+      "endTime": "2017-01-19T19:37:01.5466595+02:00"
+    },
+    {
+      "testName": "NegativeDivisionTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.NegativeDivisionTest(-20,-4,5)",
+      "startTime": "2017-01-19T19:37:01.5576602+02:00",
+      "endTime": "2017-01-19T19:37:01.5606603+02:00"
+    },
+    {
+      "testName": "NegativeProductTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.NegativeProductTest(-5,-4,20)",
+      "startTime": "2017-01-19T19:37:01.5646606+02:00",
+      "endTime": "2017-01-19T19:37:01.5656606+02:00"
+    },
+    {
+      "testName": "NegativeSubtractTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.NegativeSubtractTest(-10,-1,-9)",
+      "startTime": "2017-01-19T19:37:01.5696608+02:00",
+      "endTime": "2017-01-19T19:37:01.5696608+02:00"
+    },
+    {
+      "testName": "NullAddTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.NullAddTest(0,5,5)",
+      "startTime": "2017-01-19T19:37:01.5746611+02:00",
+      "endTime": "2017-01-19T19:37:01.5746611+02:00"
+    },
+    {
+      "testName": "NullDivisionTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.NullDivisionTest(0,4,0)",
+      "startTime": "2017-01-19T19:37:01.5836616+02:00",
+      "endTime": "2017-01-19T19:37:01.5836616+02:00"
+    },
+    {
+      "testName": "NullProductTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.NullProductTest(5,0,0)",
+      "startTime": "2017-01-19T19:37:01.5886619+02:00",
+      "endTime": "2017-01-19T19:37:01.5886619+02:00"
+    },
+    {
+      "testName": "NullSubtractTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.NullSubtractTest(5,0,5)",
+      "startTime": "2017-01-19T19:37:01.5926622+02:00",
+      "endTime": "2017-01-19T19:37:01.5926622+02:00"
+    },
+    {
+      "testName": "ParseAtemptReturnDataTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.ParseAtemptReturnDataTest(\"8\",8)",
+      "startTime": "2017-01-19T19:37:01.5966624+02:00",
+      "endTime": "2017-01-19T19:37:01.5966624+02:00"
+    },
+    {
+      "testName": "ParseAtemptThrowsExceptionTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.ParseAtemptThrowsExceptionTest(\"qwerty\")",
+      "startTime": "2017-01-19T19:37:01.6006626+02:00",
+      "endTime": "2017-01-19T19:37:01.6016627+02:00"
+    },
+    {
+      "testName": "PositiveAddTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.PositiveAddTest(10,5,15)",
+      "startTime": "2017-01-19T19:37:01.6056629+02:00",
+      "endTime": "2017-01-19T19:37:01.6056629+02:00"
+    },
+    {
+      "testName": "PositiveDivisionTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.PositiveDivisionTest(20,4,5)",
+      "startTime": "2017-01-19T19:37:01.6096631+02:00",
+      "endTime": "2017-01-19T19:37:01.6096631+02:00"
+    },
+    {
+      "testName": "PositiveProductTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.PositiveProductTest(5,4,20)",
+      "startTime": "2017-01-19T19:37:01.6136634+02:00",
+      "endTime": "2017-01-19T19:37:01.6136634+02:00"
+    },
+    {
+      "testName": "PositiveSubtractTest",
+      "result": "Passed",
+      "errorMessage": null,
+      "stackTrace": "SimpleOperations.Test.SimpleOperetionsTest.PositiveSubtractTest(10,1,9)",
+      "startTime": "2017-01-19T19:37:01.6176636+02:00",
+      "endTime": "2017-01-19T19:37:01.6176636+02:00"
+    }
+  ]
+}

@@ -1,68 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
 using Newtonsoft.Json;
 using NUnit.Framework;
-using Newtonsoft.Json.Linq;
 
 namespace SimpleOperations.Test
 {
     [TestFixture]
     public class SimpleOperetionsTest
     {
-        public List<TestResultsData> listOfResults = new List<TestResultsData>();
-        private readonly TestTimeLimits testTime = new TestTimeLimits();
+        #region Fields
 
-        private string GetPathForReport()
-        {
-            var codeBase = Assembly.GetExecutingAssembly().CodeBase;
-            var uri = new UriBuilder(codeBase);
-            var path = Uri.UnescapeDataString(uri.Path);
+        private const string ReportsDirectory = "Reports";
+        private const string ReportsFileName = "report.txt";
 
-            return Path.GetDirectoryName(path);
-        }
+        private readonly TestResults testResults = new TestResults();
+        private readonly TestTimeWatch timeWatch = new TestTimeWatch();
 
-        private void WriteReportToFile(string pathName, JObject jsonObject)
-        {
-            using (var sw = new StreamWriter(Path.Combine(pathName, "json.txt")))
-            {
-                var s = jsonObject.ToString(Formatting.Indented);
-                sw.Write(s);
-            }
-        }
+        #endregion 
+
+        #region Tests set up
 
         [SetUp]
         public void StartTimer()
         {
-            testTime.StartTime = DateTime.Now;
+            timeWatch.Start();
         }
 
         [TearDown]
         public void GetTestResults()
         {
-            testTime.EndTime = DateTime.Now;
+            timeWatch.End();
 
-            var testResult = TestResultsData.Get(TestContext.CurrentContext, testTime);
+            var testResult = new TestResult
+            {
+                TestName = TestContext.CurrentContext.Test.MethodName,
+                StartTime = timeWatch.StartTime,
+                EndTime = timeWatch.EndTime,
+                Result = TestContext.CurrentContext.Result.Outcome.Status.ToString(),
+                ErrorMessage = TestContext.CurrentContext.Result.Message,
+                StackTrace = TestContext.CurrentContext.Test.FullName
+            };
 
-            listOfResults.Add(testResult);
+            testResults.Results.Add(testResult);
         }
 
         [OneTimeTearDown]
-        public void ConvertTestResultsToJsonAndWriteToFile()
+        public void WriteTestsResultsToReportFile()
         {
-            var jsonObject = new JObject { ["results"] = JToken.FromObject(listOfResults) };
+            var pathName = GetPathForReport(ReportsFileName);
+            var json = JsonConvert.SerializeObject(testResults, Formatting.Indented);
 
-            var pathName = GetPathForReport();
-
-            if (pathName == null)
-            {
-                throw new ArgumentNullException($"Such path does not exists!");
-            }
-
-            WriteReportToFile(pathName, jsonObject);
-
+            WriteReportToFile(pathName, json);
         }
+
+        #endregion
+
+        #region Tests
 
         [TestCase(10, 5, 15)]
         public void PositiveAddTest(int firstNumber, int secondNumber, int expectedResult)
@@ -96,7 +89,6 @@ namespace SimpleOperations.Test
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        /*Test cases with negative numbers*/
         [TestCase(-10, -5, -15)]
         public void NegativeAddTest(int firstNumber, int secondNumber, int expectedResult)
         {
@@ -162,7 +154,6 @@ namespace SimpleOperations.Test
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        /*Exception test cases*/
         [TestCase(4, 0)]
         public void ExceptionDivisionByZeroTest(int firstNumber, int secondNumber)
         {
@@ -183,5 +174,33 @@ namespace SimpleOperations.Test
 
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        #endregion
+
+        #region Helpers
+
+        private string GetPathForReport(string fileName)
+        {
+            var baseDirectory = GetTestsBaseDirectory();
+
+            return Path.Combine(baseDirectory, ReportsDirectory, fileName);
+        }
+
+        private string GetTestsBaseDirectory()
+        {
+            var path = TestContext.CurrentContext.TestDirectory;
+
+            return Path.GetDirectoryName(Path.GetDirectoryName(path));
+        }
+
+        private void WriteReportToFile(string pathName, string report)
+        {
+            using (var sw = new StreamWriter(pathName))
+            {
+                sw.Write(report);
+            }
+        }
+
+        #endregion
     }
 }
