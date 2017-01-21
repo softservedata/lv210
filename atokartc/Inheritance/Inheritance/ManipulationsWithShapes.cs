@@ -12,18 +12,44 @@ namespace Inheritance
         private string circleName = "Circle";
         private string squareName = "Square";
 
-        public int EnterIntValueManually()
+        private int GetPositiveInt()
         {
-            int readedVar = 0;
+            int readedVar = -1;
             bool isIntEntered = Int32.TryParse(Console.ReadLine(), out readedVar);
 
-            if (isIntEntered && readedVar != 0)
+            if (isIntEntered == false || readedVar <= 0)
             {
-                return readedVar;
+                Console.WriteLine("Please, enter an positive integer");
+                return this.GetPositiveInt();
+            }
+            return readedVar;
+        }
+
+        private int GetRadiusFromConsole()
+        {
+            Console.WriteLine("Please, enter radius value!");
+            return GetPositiveInt();
+        }
+
+        private int GetSideFromConsole()
+        {
+            Console.WriteLine("Please, enter side value!");
+            return GetPositiveInt();
+        }
+
+        private int EnterNumToSelectShape()
+        {
+            Console.WriteLine("Please, enter an integer: 1 - to select Circle, 2 -to select Square");
+            int enteredValue = GetPositiveInt();
+
+            if (enteredValue != 1 || enteredValue != 2)
+            {
+                return enteredValue;
             }
             else
             {
-                throw new FormatException("Please, enter an integer");
+                Console.WriteLine("You entered incorrect value! Please enter an integer: 1 - to select Circle, 2 -to select Square");
+                return GetPositiveInt();
             }
         }
 
@@ -32,45 +58,39 @@ namespace Inheritance
         /// </summary>
         /// <param name="shapesCounter"></param>
         /// <returns></returns>
-        public List<Shape> GetSpecificShapes(int shapesCounter) 
+        public List<Shape> GetSpecificShapes(int shapesCounter)
         {
             List<Shape> list = new List<Shape>();
             Shape shape = null;
-
-            Console.WriteLine("Enter number of figures you want to add to list");
-            shapesCounter = EnterIntValueManually();
-
-            Console.WriteLine("Select shapes that will be added to the following list: press 1 to add Circle to list,"
-                + " press 2 if you want to add Square to list");
+            //shapesCounter = EnterIntValueManually();
 
             for (int i = 0; i < shapesCounter; i++)
             {
-                switch (EnterIntValueManually())
-                {
-                    case 1:
-                        int radius = EnterIntValueManually();
-                        shape = new Circle(circleName + i, radius);
-                        break;
-                    case 2:
-                        int side = EnterIntValueManually();
-                        shape = new Square(squareName + i, side);
-                        break;
-                }
+                shape = GetSpecificShape();
                 list.Add(shape);
             }
             return list;
         }
 
-        public void Print(IEnumerable data)
+        public Shape GetSpecificShape()
         {
-            foreach (var item in data)
+            Shape shape = null;
+
+            switch (EnterNumToSelectShape())
             {
-                Console.WriteLine(item);
+                case 1:
+                    int radius = GetRadiusFromConsole();
+                    shape = new Circle(circleName, radius);
+                    break;
+                case 2:
+                    int side = GetSideFromConsole();
+                    shape = new Square(squareName, side);
+                    break;
             }
-            Console.ReadKey();
+            return shape;
         }
 
-        public Shape FindMaxShape(List<Shape> shapeList)
+        public Shape FindMaxPerimeter(List<Shape> shapeList)
         {
             Shape maximalShape = shapeList[0];
 
@@ -82,6 +102,15 @@ namespace Inheritance
                 }
             }
             return maximalShape;
+        }
+
+        public void Print(IEnumerable data)
+        {
+            foreach (var item in data)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadKey();
         }
     }
 }
