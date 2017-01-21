@@ -39,7 +39,10 @@ namespace HomeWorkFour
         {
             return DateTime.Now.Year - birthYear.Year;
         }
-
+        /// <summary>
+        /// Gives possibility to manually input information about person
+        /// </summary>
+        /// <returns></returns>
         public Person Input()
         {
             Console.WriteLine("Enter person's name:");

@@ -2,7 +2,7 @@
 
 namespace HomeWorkFour
 {
-    class ProframDateTime
+    class ProgramDateTime
     {
         public static void Main()
         {

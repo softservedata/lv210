@@ -11,34 +11,31 @@ namespace HomeWorkFourTests
         [Test]
         public void CorrecrAgeTest()
         {
-            int expected;
-            int actual;
-
             Person person = new Person("Andrii", 1988);
 
-            expected = 28;
-            actual = person.Age();
+            int expected = 28;
+            int actual = person.Age();
 
             Assert.AreEqual(expected, actual);
         }
 
-        //[Test]
-        //public void CorrectOutputTest()
-        //{
-        //    string expected;
-        //    int actual;
+        [Test]
+        public void CorrectOutputTest()
+        {
+            string expected;
+            int actual;
 
-        //    string name = "Andrii";
-        //    int birthYear = 1988;
-        //    int age = 28;
+            string name = "Andrii";
+            int birthYear = 1988;
+            int age = 28;
 
-        //    Person person = Substitute.For<Person>();
-        //    person.Age().Returns(age);
+            Person person = Substitute.For<Person>();
+            person.Age().Returns(age);
 
-        //    expected = person.Output();
-        //    actual = Console.WriteLine("Person's name is: {0}, birth year is: {1}, age is {2}", name, birthYear, age);
+            expected = person.Output();
+            actual = Console.WriteLine("Person's name is: {0}, birth year is: {1}, age is {2}", name, birthYear, age);
 
-        //    Assert.AreEqual(expected, actual);
-        //}
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

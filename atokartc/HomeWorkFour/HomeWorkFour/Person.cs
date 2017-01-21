@@ -49,18 +49,34 @@ namespace HomeWorkFour
         #endregion
 
         #region Methods
+        private int GetPositiveInt()
+        {
+            int readedVar = -1;
+            bool isIntEntered = Int32.TryParse(Console.ReadLine(), out readedVar);
+
+            if (isIntEntered == false || readedVar <= 0)
+            {
+                Console.WriteLine("Please, enter an positive integer");
+                return this.GetPositiveInt();
+            }
+            return readedVar;
+        }
+
         public int Age()
         {
             return DateTime.Now.Year - this.birthYear;
         }
-
+        /// <summary>
+        /// Gives possibility to manually input information about person
+        /// </summary>
+        /// <returns></returns>
         public Person Input()
         {
             Console.WriteLine("Enter person's name:");
             this.name = Console.ReadLine();
 
             Console.WriteLine("Enter person's birth year:");
-            var year = Int32.TryParse(Console.ReadLine(), out this.birthYear);
+            int birthYear = GetPositiveInt();
 
             return new Person(name, birthYear);
         }
@@ -68,7 +84,8 @@ namespace HomeWorkFour
         public void Output()
         {
             int age = Age();
-            Console.WriteLine("Person's name is: {0}, birth year is: {1}, age is {2}", name, birthYear, age);
+            Console.WriteLine("Person's name is: {0}, birth year is: {1}, age is {2}", 
+                name, birthYear, age);
         }
 
         public void ChangeName(string newName)
