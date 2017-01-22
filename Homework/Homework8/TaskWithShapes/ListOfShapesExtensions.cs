@@ -19,8 +19,12 @@ namespace TaskWithShapes
                 throw new ArgumentException("Incorrect boundaries!");
             }
 
-            return listOfShapes.Where(shape => (shape.Area() >= leftBoundary) &&
-                                               (shape.Area() <= rightBoundary)).ToList();
+            return listOfShapes.Where(shape =>
+            {
+                var area = shape.Area();
+                return (area >= leftBoundary) && (area <= rightBoundary);
+            }).ToList();
+
         }
 
         public static IList<Shape> FindAllWithAppropriateSymbolInName(this IList<Shape> listOfShapes, char symbol)
@@ -30,12 +34,14 @@ namespace TaskWithShapes
                 throw new ArgumentNullException($"IList<Shape> is null!");
             }
 
-            var queryResult = from shape in listOfShapes where shape.Name.Contains(symbol) select shape;
+            var queryResult = from shape in listOfShapes
+                              where shape.Name.Contains(symbol)
+                              select shape;
 
             return queryResult.ToList();
         }
 
-        public static void FindAndRemoveAllWithPerimeterLessThanValue(this IList<Shape> listOfShapes, double value)
+        public static void RemoveAllWithPerimeterLessThanValue(this IList<Shape> listOfShapes, double value)
         {
             if (listOfShapes == null)
             {
