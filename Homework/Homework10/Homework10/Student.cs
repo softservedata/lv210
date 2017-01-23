@@ -27,7 +27,7 @@ namespace Homework10
             }
         }
 
-        public event MarkAddedEventHandler MarkChanged;
+        public event MarkAddedHandler MarkAdded;
 
         public Student()
         {
@@ -43,7 +43,7 @@ namespace Homework10
         public void AddMark(MarkAddedEventArgs e)
         {
             this.Marks.Add(e.MarkValue);
-            this.MarkChanged?.Invoke(this, e);
+            this.MarkAdded?.Invoke(this, e);
         }
     }
 }

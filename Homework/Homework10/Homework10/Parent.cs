@@ -11,7 +11,7 @@ namespace Homework10
             this.Email = email;
         }
 
-        public void OnMarkChange(object sender, MarkAddedEventArgs e)
+        public void OnMarkAdded(object sender, MarkAddedEventArgs e)
         {
             string[] lines = {$"New mark is {e.MarkValue}"};
             File.AppendAllLines(Email, lines);

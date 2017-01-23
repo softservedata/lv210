@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Homework10
 {
-    public delegate void MarkAddedEventHandler(object sender, MarkAddedEventArgs e);
+    public delegate void MarkAddedHandler(object sender, MarkAddedEventArgs e);
 
     class Program
     {
@@ -42,7 +42,7 @@ namespace Homework10
 
             var student = new Student("Ivan", new List<int>() {4, 5, 4, 4, 5});
             var parent = new Parent(path);
-            student.MarkChanged+=parent.OnMarkChange;
+            student.MarkAdded += parent.OnMarkAdded;
 
             int count = 3;
             var e = CreateRandomEventArgs(count);
