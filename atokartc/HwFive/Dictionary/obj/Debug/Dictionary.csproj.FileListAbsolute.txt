@@ -4,3 +4,5 @@ C:\Users\Andrii\lv210\atokartc\HwFive\Dictionary\bin\Debug\Dictionary.pdb
 C:\Users\Andrii\lv210\atokartc\HwFive\Dictionary\obj\Debug\Dictionary.csprojResolveAssemblyReference.cache
 C:\Users\Andrii\lv210\atokartc\HwFive\Dictionary\obj\Debug\Dictionary.exe
 C:\Users\Andrii\lv210\atokartc\HwFive\Dictionary\obj\Debug\Dictionary.pdb
+C:\Users\Andriyi\lv210\atokartc\HwFive\Dictionary\bin\Debug\Dictionary.exe.config
+C:\Users\Andriyi\lv210\atokartc\HwFive\Dictionary\obj\Debug\Dictionary.pdb

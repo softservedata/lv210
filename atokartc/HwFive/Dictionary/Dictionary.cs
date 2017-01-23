@@ -18,7 +18,8 @@ namespace HwFive
         public Dictionary<uint, string> AddValuesToDictiuonary(int numberOfValues)
         {
             Dictionary<uint, string> dictionary = new Dictionary<uint, string>();
-            Console.WriteLine("Enter id press Enter than enter name. Press Enter. Emter all vakues one by one");
+            Console.WriteLine("Enter id press Enter than enter name. Press Enter." + 
+                "Emter all vakues one by one");
 
             for (int i = 0; i < numberOfValues; i++)
             {
