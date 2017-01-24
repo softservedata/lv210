@@ -12,6 +12,7 @@ namespace Serialization
 
         [DataMember(Order = 2)]
         public DateTime BirthDate { get; set; }
+        
         public Person()
         {
         }
