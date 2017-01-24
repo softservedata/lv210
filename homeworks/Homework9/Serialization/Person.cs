@@ -9,7 +9,6 @@ namespace Serialization
     {
         [DataMember(Order = 1)]
         public string Name { get; set; }
-
         [DataMember(Order = 2)]
         public DateTime BirthDate { get; set; }
         
@@ -32,5 +31,5 @@ namespace Serialization
         {
             Name = newName;
         }
-      }
+    }
 }
