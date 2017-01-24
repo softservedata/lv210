@@ -20,11 +20,12 @@ namespace Delegates
         {
             RealNumber del = arg => Math.Sin(arg);
             string[] func = OperationUtil.GetTabulation(del, 5, -5, 8);
-            OperationUtil.WriteToFile(func, "func.txt", title: "F(x) = sin(x)");
+            string fileName = "func.txt";
+            OperationUtil.WriteToFile(func, fileName, title: "F(x) = sin(x)");
 
             del = arg => 2 * Math.Pow(arg, 2) + 3 * arg * Math.Cos(Math.Pow(arg, 3));
             func = OperationUtil.GetTabulation(del, 5, -5, 8);
-            OperationUtil.WriteToFile(func, "func.txt", title: "F(x) = 2x^2+3x*cos(x^3)");
+            OperationUtil.WriteToFile(func, fileName, title: "F(x) = 2x^2+3x*cos(x^3)");
         }
     }
 }
