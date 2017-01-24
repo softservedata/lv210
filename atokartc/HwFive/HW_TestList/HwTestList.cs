@@ -31,9 +31,9 @@ namespace HwFive
             List<int> myColl = new List<int>();
             MyTestList testList = new MyTestList();
 
-            myColl = testList.FilledFromConsole(elementsToAdd);
+            myColl = testList.FillFromConsole(elementsToAdd);
             testList.FindElementsPosition(myColl, elementToFind);
-            testList.RemoveElementsAndPrintList(myColl, elementToRemove);
+            testList.RemoveElementsLessThanSpecified(myColl, elementToRemove);
             testList.InsertElements(myColl, elements, indexes);
             testList.SortList(myColl);
             testList.PrintList(myColl);
@@ -50,9 +50,9 @@ namespace HwFive
             SortedList mySortedColl = new SortedList();
             MySortedList testList = new MySortedList();
 
-            mySortedColl = testList.FilledFromConsole(elementsToAdd);
+            mySortedColl = testList.FillFromConsole(elementsToAdd);
             testList.FindElementsPosition(mySortedColl, elementToFind);
-            testList.RemoveElementsAndPrintList(mySortedColl, elementToRemove);
+            testList.RemoveElementsLessThanSpecified(mySortedColl, elementToRemove);
             testList.InsertElements(mySortedColl, elements, indexes);
             testList.PrintList(mySortedColl);
         }
@@ -70,7 +70,7 @@ namespace HwFive
 
             myArrayColl = testList.FilledFromConsole(elementsToAdd);
             testList.FindElementsPosition(myArrayColl, elementToFind);
-            testList.RemoveElementsAndPrintList(myArrayColl, elementToRemove);
+            testList.RemoveElementsLessThanSpecified(myArrayColl, elementToRemove);
             testList.InsertElements(myArrayColl, elements, indexes);
             testList.SortList(myArrayColl);
             testList.PrintList(myArrayColl);

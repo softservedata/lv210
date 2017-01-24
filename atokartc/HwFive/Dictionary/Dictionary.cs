@@ -8,25 +8,35 @@ namespace HwFive
     /// In the Main() method declare Dictionary of pairs<uint, string>.Add to Dictionary from Console 7 pairs(ID, Name) of some persons.
     /// Ask user to enter ID, then find and write corresponding Name from your Dictionary.If you can't find this ID - say about it to user. 
     /// </summary>
-    public class Program
+    public class DictionaryUtils
     {
-        /// <summary>
-        /// Adds specific amount of values to Dictionary which could be specified by user. 
-        /// </summary>
-        /// <param name="numberOfValues"></param>
-        /// <returns></returns>
+        private uint GetPositiveNumber()
+        {
+            uint readedVar = 0;
+            bool isIntEntered = UInt32.TryParse(Console.ReadLine(), out readedVar);
+
+            if (isIntEntered == false)
+            {
+                Console.WriteLine("Please, enter an positive integer");
+                return this.GetPositiveNumber();
+            }
+            return readedVar;
+        }
+
         public Dictionary<uint, string> AddValuesToDictiuonary(int numberOfValues)
         {
+            bool doesKeyBefore;
+            uint key = 0;
+            string value = null;
             Dictionary<uint, string> dictionary = new Dictionary<uint, string>();
-            Console.WriteLine("Enter id press Enter than enter name. Press Enter." + 
-                "Emter all vakues one by one");
 
             for (int i = 0; i < numberOfValues; i++)
             {
-                uint key = UInt16.Parse(Console.ReadLine());
-                string value = Console.ReadLine();
+                key = GetPositiveNumber();
+                value = Console.ReadLine();
+                doesKeyBefore = dictionary.ContainsKey(key);
 
-                if (dictionary.ContainsKey(key))
+                if (doesKeyBefore)
                 {
                     dictionary[key] = value;
                 }
@@ -37,33 +47,21 @@ namespace HwFive
             }
             return dictionary;
         }
-        /// <summary>
-        /// Gets name from dictionary using id(key)
-        /// </summary>
-        /// <param name="dictionary"></param>
+
         public void GetNameById(Dictionary<uint, string> dictionary)
         {
             Console.Write("Enter number Id to get name: ");
-            uint enteredId = UInt16.Parse(Console.ReadLine());
+            uint id = GetPositiveNumber();
             string name;
 
-            if (dictionary.TryGetValue(enteredId, out name))
+            if (dictionary.TryGetValue(id, out name))
             {
-                Console.WriteLine("Id: {0} - Name: {1}", enteredId, name);
+                Console.WriteLine("Id: {0} - Name: {1}", id, name);
             }
             else
             {
-                Console.WriteLine("There is no such id in Dictionary: {0}", enteredId);
+                Console.WriteLine("There is no such id in Dictionary: {0}", id);
             }
-        }
-
-        public static void Main()
-        {
-            Dictionary<uint, string> dictionary = new Dictionary<uint, string>();
-
-            Program p = new Program();
-            dictionary = p.AddValuesToDictiuonary(3);
-            p.GetNameById(dictionary);
         }
     }
 }

@@ -8,3 +8,7 @@ C:\Users\Andrii\lv210\atokartc\Inheritance\Inheritance\obj\Debug\Inheritance.pdb
 C:\Users\atokartc\Source\Repos\lv210\atokartc\Inheritance\Inheritance\bin\Debug\Inheritance.exe.config
 C:\Users\atokartc\Source\Repos\lv210\atokartc\Inheritance\Inheritance\obj\Debug\Inheritance.pdb
 C:\Users\Andriyi\lv210\atokartc\Inheritance\Inheritance\obj\Debug\Inheritance.pdb
+C:\Users\Andriyi\lv210\atokartc\Inheritance\Inheritance\bin\Debug\Inheritance.exe
+C:\Users\Andriyi\lv210\atokartc\Inheritance\Inheritance\bin\Debug\Inheritance.pdb
+C:\Users\Andriyi\lv210\atokartc\Inheritance\Inheritance\obj\Debug\Inheritance.csprojResolveAssemblyReference.cache
+C:\Users\Andriyi\lv210\atokartc\Inheritance\Inheritance\obj\Debug\Inheritance.exe

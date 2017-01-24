@@ -10,7 +10,7 @@ namespace HwFive
     	/// </summary>
     	/// <param name="inputedValuesCount">The inputed values count.</param>
     	/// <returns>filled sorted list</returns>
-    	public SortedList FilledFromConsole(int inputedValuesCount)
+    	public SortedList FillFromConsole(int inputedValuesCount)
         {
             Console.WriteLine("Enter 10 integer numbers one by one separated by space.");
 
@@ -22,16 +22,21 @@ namespace HwFive
         /// Finds the elements position.
         /// </summary>
         /// <param name="list">The list.</param>
-        /// <param name="element">The element.</param>
-        public void FindElementsPosition(SortedList sortedList, int element)
+        /// <param name="elementToFind">The element.</param>
+        public int FindElementsPosition(SortedList sortedList, int elementToFind)
         {
+            int elementsPosition = -1;
+            bool isPresentInList;
+
             for (int i = 0; i < sortedList.Count; i++)
             {
-                if ((int)sortedList.GetByIndex(i) == element)
+                isPresentInList = ((int)sortedList.GetByIndex(i) == elementToFind);
+                if (isPresentInList)
                 {
-                    Console.WriteLine("Positions of element {0} in the arrayList {1}", element, i);
+                    elementsPosition = i;
                 }
             }
+            return elementsPosition;
         }
         /// <summary>
         /// Inserts the elements to sorted list.
@@ -40,15 +45,12 @@ namespace HwFive
         /// <param name="element">The element.</param>
         /// <param name="index">The index.</param>
         /// <returns>list with inserted elements</returns>
-        public SortedList InsertElements(SortedList sortedList, int[] element = null, int[] index = null)
+        public SortedList InsertElements(SortedList sortedList, int[] element, int[] index)
         {
             for (int i = 0; i < element.Length; i++)
             {
                 sortedList.SetByIndex(index[i], element[i]);
             }
-
-            PrintList(sortedList);
-
             return sortedList;
         }
         /// <summary>
@@ -64,20 +66,38 @@ namespace HwFive
             Console.ReadKey();
         }
         /// <summary>
-        /// Removes the elements from the sorted list and prints it.
+        /// Removes the elements from the sorted list if it's bigger than specified element.
         /// </summary>
-        /// <param name="list">The list.</param>
+        /// <param name="sortedList">The list.</param>
         /// <param name="element">The element.</param>
-        public void RemoveElementsAndPrintList(SortedList sortedList, int element)
+        public SortedList RemoveElementsLessThanSpecified(SortedList sortedList, int element)
         {
             for (int i = 0; i < sortedList.Count; i++)
             {
                 if ((int)sortedList.GetByIndex(i) > element)
                 {
                     sortedList.RemoveAt(i);
+                    sortedList.TrimToSize();
                 }
             }
-            PrintList(sortedList);
+            return sortedList;
+        }
+        /// <summary>
+        /// Removes the elements from the sorted list if it's equals than specified element.
+        /// </summary>
+        /// <param name="sortedList">The list.</param>
+        /// <param name="element">The element.</param>
+        public SortedList RemoveElementFromList(SortedList sortedList, int element)
+        {
+            for (int i = 0; i < sortedList.Count; i++)
+            {
+                if ((int)sortedList.GetByIndex(i) == element)
+                {
+                    sortedList.RemoveAt(i);
+                    sortedList.TrimToSize();
+                }
+            }
+            return sortedList;
         }
     }
 }

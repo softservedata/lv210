@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HwTestList.cs" />
+    <Compile Include="MyArrayList.cs" />
+    <Compile Include="MySortedList.cs" />
+    <Compile Include="MyTestList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

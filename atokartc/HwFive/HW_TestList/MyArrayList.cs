@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 
 namespace HwFive
 {
@@ -12,8 +13,6 @@ namespace HwFive
     	/// <returns>filled list</returns>
     	public ArrayList FilledFromConsole(int inputedValuesCount)
         {
-            Console.WriteLine("Enter 10 integer numbers one by one separated by space.");
-
             ArrayList arrayList = new ArrayList(inputedValuesCount);
 
             return arrayList;
@@ -23,15 +22,20 @@ namespace HwFive
         /// </summary>
         /// <param name="list">The list.</param>
         /// <param name="element">The element.</param>
-        public void FindElementsPosition(ArrayList arrayList, int element)
+        public int FindElementsPosition(ArrayList arrayList, int element)
         {
+            int elementsPosition = -1;
+            bool isPresentInList;
+
             for (int i = 0; i < arrayList.Count; i++)
             {
-                if ((int)arrayList[i] == element)
+                isPresentInList = ((int)arrayList[i] == element);
+                if (isPresentInList)
                 {
-                    Console.WriteLine("Positions of element {0} in the arrayList {1}", element, i);
+                    elementsPosition = i;
                 }
             }
+            return elementsPosition;
         }
         /// <summary>
         /// Inserts the elements to array list.
@@ -40,14 +44,12 @@ namespace HwFive
         /// <param name="element">The element.</param>
         /// <param name="index">The index.</param>
         /// <returns>array list with inserted elements</returns>
-        public ArrayList InsertElements(ArrayList arrayList, int[] element = null, int[] index = null)
+        public ArrayList InsertElements(ArrayList arrayList, int[] element, int[] index)
         {
             for (int i = 0; i < element.Length; i++)
             {
                 arrayList.Insert(index[i], element[i]);
             }
-
-            PrintList(arrayList);
 
             return arrayList;
         }
@@ -64,20 +66,38 @@ namespace HwFive
             Console.ReadKey();
         }
         /// <summary>
-        /// Removes the elements from the list and prints it.
+        /// Removes the elements from the list if it's bigger than specified element.
         /// </summary>
-        /// <param name="list">The list.</param>
+        /// <param name="arrayList">The list.</param>
         /// <param name="element">The element.</param>
-        public void RemoveElementsAndPrintList(ArrayList arrayList, int element)
+        public ArrayList RemoveElementsLessThanSpecified(ArrayList arrayList, int element)
         {
             for (int i = 0; i < arrayList.Count; i++)
             {
                 if ((int)arrayList[i] > element)
                 {
                     arrayList.RemoveAt(i);
+                    arrayList.TrimToSize();
                 }
             }
-            PrintList(arrayList);
+            return arrayList;
+        }
+        /// <summary>
+        /// Removes the elements from the array list if it's equals than specified element.
+        /// </summary>
+        /// <param name="arrayList">The list.</param>
+        /// <param name="element">The element.</param>
+        public ArrayList RemoveElementFromList(ArrayList arrayList, int element)
+        {
+            for (int i = 0; i < arrayList.Count; i++)
+            {
+                if ((int)arrayList[i] == element)
+                {
+                    arrayList.RemoveAt(i);
+                    arrayList.TrimToSize();
+                }
+            }
+            return arrayList;
         }
         /// <summary>
         /// Sorts the list.
