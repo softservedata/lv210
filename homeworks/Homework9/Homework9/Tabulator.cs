@@ -11,10 +11,9 @@ namespace Homework9
     class Program
     {
         /// <summary>
-        /// 
-        /// </summary>
-        /// Method tabulates given function in given interval
+         /// Method tabulates given function in given interval
         /// from a to b.
+        /// </summary>
         /// <param name="del">Function</param>
         /// <param name="a">Lower bound</param>
         /// <param name="b">Upper bound</param>
