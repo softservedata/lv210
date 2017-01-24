@@ -1,0 +1,6 @@
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork9\HomeWork9\Delegates\bin\Debug\Delegates.exe.config
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork9\HomeWork9\Delegates\bin\Debug\Delegates.exe
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork9\HomeWork9\Delegates\bin\Debug\Delegates.pdb
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork9\HomeWork9\Delegates\obj\Debug\Delegates.csprojResolveAssemblyReference.cache
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork9\HomeWork9\Delegates\obj\Debug\Delegates.exe
+C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork9\HomeWork9\Delegates\obj\Debug\Delegates.pdb
