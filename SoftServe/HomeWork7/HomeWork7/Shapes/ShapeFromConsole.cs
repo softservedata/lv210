@@ -40,13 +40,13 @@ namespace Shapes
             string shapeName = string.Empty;
             double sideLength = 0.0;
 
-            switch ((int)shapeType)
+            switch (shapeType)
             {
-                case 1:
+                case ShapeType.Circle:
                     GetCorrectValuesForShape(out shapeName, out sideLength);
                     shape = new Circle(shapeName, sideLength);
                     break;
-                case 2:
+                case ShapeType.Square:
                     GetCorrectValuesForShape(out shapeName, out sideLength);
                     shape = new Square(shapeName, sideLength);
                     break;

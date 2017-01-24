@@ -1,6 +1,0 @@
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork9\HomeWork9\DelegatesAndEvents\bin\Debug\DelegatesAndEvents.exe.config
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork9\HomeWork9\DelegatesAndEvents\bin\Debug\DelegatesAndEvents.exe
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork9\HomeWork9\DelegatesAndEvents\bin\Debug\DelegatesAndEvents.pdb
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork9\HomeWork9\DelegatesAndEvents\obj\Debug\DelegatesAndEvents.exe
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork9\HomeWork9\DelegatesAndEvents\obj\Debug\DelegatesAndEvents.pdb
-C:\Users\Dima\Documents\Visual Studio 2015\Projects\SoftServe\HomeWork9\HomeWork9\DelegatesAndEvents\obj\Debug\DelegatesAndEvents.csprojResolveAssemblyReference.cache

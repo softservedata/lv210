@@ -1,6 +1,0 @@
-C:\Users\Dima\git\lv210\SoftServe\HomeWork8\HomeWork8\LINQAndFilesWithShapes\bin\Debug\LINQAndFilesWithShapes.exe.config
-C:\Users\Dima\git\lv210\SoftServe\HomeWork8\HomeWork8\LINQAndFilesWithShapes\bin\Debug\LINQAndFilesWithShapes.exe
-C:\Users\Dima\git\lv210\SoftServe\HomeWork8\HomeWork8\LINQAndFilesWithShapes\bin\Debug\LINQAndFilesWithShapes.pdb
-C:\Users\Dima\git\lv210\SoftServe\HomeWork8\HomeWork8\LINQAndFilesWithShapes\obj\Debug\LINQAndFilesWithShapes.csprojResolveAssemblyReference.cache
-C:\Users\Dima\git\lv210\SoftServe\HomeWork8\HomeWork8\LINQAndFilesWithShapes\obj\Debug\LINQAndFilesWithShapes.exe
-C:\Users\Dima\git\lv210\SoftServe\HomeWork8\HomeWork8\LINQAndFilesWithShapes\obj\Debug\LINQAndFilesWithShapes.pdb

@@ -1,3 +1,0 @@
-Shape name : Circle, area : 3.14159265358979, perimetr : 6.28318530717959
-Shape name : Circle, area : 28.2743338823081, perimetr : 18.8495559215388
-Shape name : Circle, area : 78.5398163397448, perimetr : 31.4159265358979
