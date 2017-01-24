@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ArrayOfPerson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Person>
+    <LastName>James</LastName>
+    <Age>32</Age>
+    <City>Cleveland</City>
+  </Person>
+  <Person>
+    <LastName>Rose</LastName>
+    <Age>28</Age>
+    <City>New York</City>
+  </Person>
+  <Person>
+    <LastName>Iverson</LastName>
+    <Age>41</Age>
+    <City>Philadelphia</City>
+  </Person>
+</ArrayOfPerson>
