@@ -15,7 +15,7 @@ namespace Homework6
     {
         public Dictionary<string, string> PhoneDictionary { get; private set; }
 
-        //Read pairs Name-Phone Number from file
+        // Read pairs Name-Phone Number from file
         public void ReadFromFile(string path)
         {
             PhoneDictionary = new Dictionary<string, string>();
@@ -38,7 +38,7 @@ namespace Homework6
                   
         }
 
-        //Outputs phone book to console
+        // Outputs phone book to console
         public void Output()
         {
             foreach (var item in PhoneDictionary)
@@ -47,13 +47,13 @@ namespace Homework6
             }
         }
 
-        //Writes all phone numbers to file
+        // Writes all phone numbers to file
         public void WritePhoneNumbersToFile(string fileName)
         {
             File.WriteAllLines(fileName, PhoneDictionary.Values);
         }
 
-        //Changes phone numbers from 80 to +380 format
+        // Changes phone numbers from 80 to +380 format
         public void ChangeFormat()
         {
             List<string> keys = new List<string>(PhoneDictionary.Keys);
@@ -68,7 +68,7 @@ namespace Homework6
             File.WriteAllLines("PhoneBook.txt", PhoneDictionary.Select(item => item.Key + ", " + item.Value));
         }
 
-        //Searches for users phone number
+        // Searches for users phone number
         public string FindNumber()
         {
             Console.WriteLine("Please enter name to search");
@@ -82,4 +82,3 @@ namespace Homework6
         }
     }
 }
-

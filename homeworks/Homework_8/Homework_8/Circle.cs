@@ -8,28 +8,21 @@ namespace Homework_8
 {
     public class Circle : Shape
     {
-        private double radius;
-
-
-        public double Radius
-        {
-            get { return radius; }
-            set { radius = value; }
-        }
-
+        public double Radius { get; set; }
+       
         public Circle(string name, double radius) : base(name)
         {
-            this.radius = radius;
+            this.Radius = radius;
         }
 
         public override double Area()
         {
-            return Math.Pow(Math.PI*radius, 2.0);
+            return Math.Pow(Math.PI*Radius, 2.0);
         }
 
         public override double Perimeter()
         {
-            return 2*Math.PI*radius;
+            return 2*Math.PI*Radius;
         }
 
         public override string ToString()

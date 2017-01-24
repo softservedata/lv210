@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StringTask
 {
-    internal class Program
+    public class Program
     {
         public static Dictionary<int, int> SymbolsPerLine(string[] input)
         {
-            var symbolsPerLine = new Dictionary<int, int>();
-            var i = 0;
+            Dictionary<int,int> symbolsPerLine = new Dictionary<int, int>();
+            int i = 0;
+
             foreach (var line in input)
             {
                 symbolsPerLine.Add(i, line.Length);
@@ -22,8 +19,7 @@ namespace StringTask
             }
             return symbolsPerLine;
         }
-
-
+        
         public static List<string> LongestStrings(string[] input)
         {
             var maxString = input.Max(line => line.Length);
