@@ -9,9 +9,9 @@ namespace Event
 {
     public class Parent
     {
-        public Parent(string email)
+        public Parent(string reportName)
         {
-            ReportName = email;
+            ReportName = reportName;
         }
 
         public string ReportName { get; }
