@@ -7,53 +7,53 @@ using System.Threading.Tasks;
 
 namespace LINQAndFilesWithShapes
 {
-    public class ShapeActions
+    public static class ShapeActions
     {
         /// <summary>
-        /// Finds shapes which are in range from lowerBoundary to upperBoundary 
-        /// and write them into file.
+        /// Finds shapes which are in range from lowerBoundary to upperBoundary.
         /// </summary>
         /// <param name="shapes">Input list of shapes</param>
         /// <param name="lowerBoundary">Lower boundary for range</param>
         /// <param name="upperBoundary">Upper boundary for range</param>
-        /// <param name="path">Path to file</param>
-        internal void FindShapesFromRange(List<Shape> shapes, int lowerBoundary, int upperBoundary, string path)
+        public static IEnumerable<Shape> FindShapesFromRange(this IEnumerable<Shape> shapes, double lowerBoundary, double upperBoundary)
         {
-            var shapesFromRange = shapes.Where(i => (i.GetArea() >= lowerBoundary) && ((i.GetArea() <= upperBoundary))).ToList();
+            return shapes.Where(x => ShapesInRange(x, lowerBoundary, upperBoundary));
+        }
 
-            WriteListOfShapesIntoFile(shapesFromRange, path);
+        private static bool ShapesInRange(Shape shape, double lowerBoundary, double upperBoundary)
+        {
+            var area = shape.GetArea();
+            return ((area >= lowerBoundary) && (area <= upperBoundary));
         }
 
         /// <summary>
-        /// Finds shapes which names contains appropriate character
-        /// and write them into file.
+        /// Finds shapes which names contains appropriate character.
         /// </summary>
         /// <param name="shapes">Input list of shapes</param>
         /// <param name="appropriateChar">Searched character</param>
-        /// <param name="path">Path to file</param>
-        internal void FindShapesWithSymbol(List<Shape> shapes, char appropriateChar, string path)
+        public static IEnumerable<Shape> FindShapesWithSymbol(this IEnumerable<Shape> shapes, char appropriateChar)
         {
-            var shapesWithAppropriateChar = shapes.Where(i => i.Name.Contains(appropriateChar.ToString().ToLower()) || i.Name.Contains(appropriateChar.ToString().ToUpper())).ToList();
+            return shapes.Where(x => x.Name.Contains(appropriateChar));
 
-            WriteListOfShapesIntoFile(shapesWithAppropriateChar, path);
+            //WriteListOfShapesIntoFile(shapesWithAppropriateChar, path);
         }
 
         /// <summary>
-        /// Read perimetr from console
-        /// and remove from list shapes which perimeters are less than inputed.
-        /// Write into console resulted list of shapes.
+        /// Remove from list shapes which perimeters are less than inputed.
         /// </summary>
         /// <param name="shapes">Input list of shapes</param>
-        public List<Shape> GetShapesWithPerimetrLessThan(List<Shape> shapes, double perimetr)
+        /// <param name="perimetr">Input perimetr</param>
+        public static void RemoveShapesWithPerimetrLessThanValue(this List<Shape> shapes, double perimetr)
         {
-            var shapesWithPerimetrLessThan = shapes.Where(i => i.GetPerimetr() < perimetr).ToList();
+            var shapesToRemove = shapes.Where(i => i.GetPerimetr() < perimetr).ToList();
 
-            shapesWithPerimetrLessThan.ForEach(i => shapes.Remove(i));
-
-            return shapesWithPerimetrLessThan;
+            foreach (var shape in shapesToRemove)
+            {
+                shapes.Remove(shape);
+            }
         }
 
-        private void WriteListOfShapesIntoFile(List<Shape> shapes, string path)
+        public static void WriteListOfShapesIntoFile(this IEnumerable<Shape> shapes, string path)
         {
             using (StreamWriter writer = new StreamWriter(path))
             {

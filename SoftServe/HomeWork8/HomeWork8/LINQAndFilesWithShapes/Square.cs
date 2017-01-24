@@ -9,9 +9,10 @@ namespace LINQAndFilesWithShapes
     public class Square : Shape
     {
         private double sideLength;
-        public Square(string name, double length) : base(name)
+
+        public Square(double sideLength) : base("Square")
         {
-            this.sideLength = length;
+            this.sideLength = sideLength;
         }
 
         public override double GetArea()
@@ -22,22 +23,6 @@ namespace LINQAndFilesWithShapes
         public override double GetPerimetr()
         {
             return sideLength * 4;
-        }
-
-        public override int CompareTo(Shape obj)
-        {
-            if (GetArea() > obj.GetArea())
-            {
-                return 1;
-            }
-            else if (GetArea() < obj.GetArea())
-            {
-                return -1;
-            }
-            else
-            {
-                return 0;
-            }
         }
 
         public override string ToString()

@@ -20,6 +20,27 @@ namespace LINQAndFilesWithShapes
 
         public abstract double GetPerimetr();
 
-        public abstract int CompareTo(Shape shape);
+        public int CompareTo(Shape other)
+        {
+            return GetArea().CompareTo(other.GetArea());
+        }
+
+        public override bool Equals(object obj)
+        {
+            var other = obj as Shape;
+            if (other == null)
+            {
+                return false;
+            }
+            else
+            {
+                return this.Name.Equals(other.Name);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Name.GetHashCode();
+        }
     }
 }

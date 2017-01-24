@@ -9,26 +9,31 @@ namespace LINQAndFilesWithShapes
 {
     class Program
     {
+        private const string pathToShapesFromRange = "ShapesFromRange.txt";
+        private const string pathToShapesWithAppropriateCharacter = "ShapeWithAppropriateCharacter.txt";
+        private const char APPROPRIATE_CHAR = 'C';
+        private const double LOWER_BOUNDARY = 10;
+        private const double UPPER_BOUNDARY = 100;
+        private const double PERIMETR = 10;
+
         static void Main(string[] args)
         {
-            ShapeFromConsole shapeFromConsole = new ShapeFromConsole();
-            ShapeActions shapeActions = new ShapeActions();
-            ShapeActionsInfo shapeActionsInfo = new ShapeActionsInfo();
-            List<Shape> shapes = new List<Shape>();
+            IEnumerable<Shape> shapes = new List<Shape>()
+            {
+                new Circle(1), new Circle(3), new Circle(5),
+                new Square(2), new Square(5), new Square(10)
+            };
 
-            shapes = shapeFromConsole.GetListOfShapes();
+            shapes.FindShapesFromRange(LOWER_BOUNDARY, UPPER_BOUNDARY).WriteListOfShapesIntoFile(pathToShapesFromRange);
 
-            shapeActionsInfo.InfoAboutShapeAreaRange(shapes);
+            shapes.FindShapesWithSymbol(APPROPRIATE_CHAR).WriteListOfShapesIntoFile(pathToShapesWithAppropriateCharacter);
 
-            shapeActionsInfo.ShapesWithAppropriateSymbol(shapes);
+            shapes.ToList().RemoveShapesWithPerimetrLessThanValue(PERIMETR);
 
-            Console.Write("\nInput perimetr for remove (if shape perimetr less than inputed) : ");
-            var perimetr = int.Parse(Console.ReadLine());
-
-            shapeActions.GetShapesWithPerimetrLessThan(shapes, perimetr);
-
-            Console.WriteLine("After remove");
-            shapes.ForEach(s => Console.WriteLine(s));
+            foreach (var shape in shapes)
+            {
+                Console.WriteLine(shape);
+            }
 
             Console.ReadKey();
         }

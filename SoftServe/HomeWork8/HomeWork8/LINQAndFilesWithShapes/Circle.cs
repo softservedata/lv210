@@ -10,7 +10,7 @@ namespace LINQAndFilesWithShapes
     {
         private double radius;
 
-        public Circle(string name, double radius) : base(name)
+        public Circle(double radius) : base("Circle")
         {
             this.radius = radius;
         }
@@ -23,22 +23,6 @@ namespace LINQAndFilesWithShapes
         public override double GetPerimetr()
         {
             return 2 * Math.PI * radius;
-        }
-
-        public override int CompareTo(Shape obj)
-        {
-            if (GetArea() > obj.GetArea())
-            {
-                return 1;
-            }
-            else if (GetArea() < obj.GetArea())
-            {
-                return -1;
-            }
-            else
-            {
-                return 0;
-            }
         }
 
         public override string ToString()
