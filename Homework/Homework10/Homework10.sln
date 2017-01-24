@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsDelegates", "Homework
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serialization\Serialization.csproj", "{A133525E-2E9F-40D2-A0F3-73A747F337C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tabulation", "..\Tabulation\Tabulation\Tabulation.csproj", "{063C6104-781F-4C6F-9156-03A6C3945F54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tabulation", "Tabulation\Tabulation.csproj", "{C854DA82-D6A1-4BD9-B2CD-1F3A82F736D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{A133525E-2E9F-40D2-A0F3-73A747F337C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A133525E-2E9F-40D2-A0F3-73A747F337C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A133525E-2E9F-40D2-A0F3-73A747F337C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{063C6104-781F-4C6F-9156-03A6C3945F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{063C6104-781F-4C6F-9156-03A6C3945F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{063C6104-781F-4C6F-9156-03A6C3945F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{063C6104-781F-4C6F-9156-03A6C3945F54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C854DA82-D6A1-4BD9-B2CD-1F3A82F736D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C854DA82-D6A1-4BD9-B2CD-1F3A82F736D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C854DA82-D6A1-4BD9-B2CD-1F3A82F736D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C854DA82-D6A1-4BD9-B2CD-1F3A82F736D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
