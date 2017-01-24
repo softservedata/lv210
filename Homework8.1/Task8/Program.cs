@@ -27,6 +27,7 @@ namespace Task8
             //5) Read all lines of text from file into array of strings.
             //Each array item contains one line from file.
             StreamReader reader = new StreamReader(Path + "LongTextFile.txt");
+            reader.Dispose;
             List<string> textLines = new List<string>();
             string line;
             while ((line = reader.ReadLine()) != null)
@@ -40,24 +41,22 @@ namespace Task8
                 Console.WriteLine(item.Length);
             }
 
-
             //7) Find the longest and the shortest line. 
-
             int max = textLines.Max(item => item.Length);
             string longestLine = textLines.Find(item => item.Length == max);
             int min = textLines.Min(item => item.Length);
             string shortestLine = textLines.Find(item => item.Length == min);
 
-            Console.WriteLine("longestLine is ->{0}. Its length is -> {1}.", longestLine, longestLine.Length);
+            Console.WriteLine("longestLine is {0}. Its length is {1}.", longestLine, longestLine.Length);
 
-            Console.WriteLine("shortestLine is ->{0}. Its length is -> {1}.", shortestLine, shortestLine.Length);
+            Console.WriteLine("shortestLine is {0}. Its length is {1}.", shortestLine, shortestLine.Length);
             Console.ReadKey();
 
             //8) Find and write only lines, which consist of word "var"
             IEnumerable<string> textLinesContainsVar = textLines.Where<string>(item => item.Contains("var"));
             foreach (var item in textLinesContainsVar)
             {
-                Console.WriteLine("Lines which consist of word 'var' :");
+                Console.WriteLine("Lines which consist of word 'var': ");
                 Console.WriteLine(item);
             }
             Console.ReadKey();
@@ -120,6 +119,5 @@ namespace Task8
             Shape.printShapesListToConsole(shapeList);
             Console.ReadKey();
         }
-
     }
 }

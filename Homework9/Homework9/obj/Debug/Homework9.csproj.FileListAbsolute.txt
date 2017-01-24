@@ -1,0 +1,6 @@
+C:\Docs\Anya\AQC\C#Projects\Homework9\Homework9\bin\Debug\Homework9.exe.config
+C:\Docs\Anya\AQC\C#Projects\Homework9\Homework9\bin\Debug\Homework9.exe
+C:\Docs\Anya\AQC\C#Projects\Homework9\Homework9\bin\Debug\Homework9.pdb
+C:\Docs\Anya\AQC\C#Projects\Homework9\Homework9\obj\Debug\Homework9.csprojResolveAssemblyReference.cache
+C:\Docs\Anya\AQC\C#Projects\Homework9\Homework9\obj\Debug\Homework9.exe
+C:\Docs\Anya\AQC\C#Projects\Homework9\Homework9\obj\Debug\Homework9.pdb

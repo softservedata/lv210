@@ -1,0 +1,6 @@
+C:\Docs\Anya\AQC\C#Projects\Homework9\Task2\bin\Debug\Task2.exe.config
+C:\Docs\Anya\AQC\C#Projects\Homework9\Task2\bin\Debug\Task2.exe
+C:\Docs\Anya\AQC\C#Projects\Homework9\Task2\bin\Debug\Task2.pdb
+C:\Docs\Anya\AQC\C#Projects\Homework9\Task2\obj\Debug\Task2.exe
+C:\Docs\Anya\AQC\C#Projects\Homework9\Task2\obj\Debug\Task2.pdb
+C:\Docs\Anya\AQC\C#Projects\Homework9\Task2\obj\Debug\Task2.csprojResolveAssemblyReference.cache
