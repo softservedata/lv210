@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace EventsTask
 {
+    public delegate void MyDel(int m);
     public class Student
     {
         public List<int> Marks { get; private set; }
         public string Name { get; set; }
         public event MyDel MarkChange;
-
-        public delegate void MyDel(int m);
-
+        
         public Student(string name)
         {
             Name = name;

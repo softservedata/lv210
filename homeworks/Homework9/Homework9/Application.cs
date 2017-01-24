@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Homework9
 {
-    class Application
+    public class Application
     {
+        static void Main(string[] args)
+        {
+            Tabulator.Tabulate(Math.Sin, -1, 1, 7);
+            Tabulator.Tabulate(MathCustomFunctions.TrygonometricFunction, -1, 1, 7);
+            Console.ReadKey();
+        }
     }
 }
