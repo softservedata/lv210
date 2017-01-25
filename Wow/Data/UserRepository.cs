@@ -96,8 +96,8 @@ namespace Wow.Data
 
         public IList<IUser> FromExcel()
         {
-            //return new ExcelUtils("FileName").Load();
-            return null;
+            return new UserUtils("Users.xlsx", new ExcelUtils()).GetAllUsers();
+            //return null;
         }
 
     }

@@ -22,7 +22,8 @@ namespace Wow.Tests
         };
 
         private static readonly object[] TestExternalData =
-            ListUtils.ToMultiArray(UserRepository.Get().FromDefaultCsv());
+            //ListUtils.ToMultiArray(UserRepository.Get().FromDefaultCsv());
+            ListUtils.ToMultiArray(UserRepository.Get().FromExcel());
 
         //[Test, TestCaseSource(nameof(TestExternalData))]
         public void TestRead(User admin)

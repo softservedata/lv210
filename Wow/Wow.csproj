@@ -39,6 +39,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\Test Studio\Bin\ArtOfTest.WebAii.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.4.1\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
@@ -66,6 +72,7 @@
     <Compile Include="Appl\ApplicationSources.cs" />
     <Compile Include="Appl\ApplicationSourcesRepository.cs" />
     <Compile Include="Data\CsvUtils.cs" />
+    <Compile Include="Data\ExcelUtils.cs" />
     <Compile Include="Data\IExternalData.cs" />
     <Compile Include="Data\ListUtils.cs" />
     <Compile Include="Data\User.cs" />
