@@ -5,14 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Wow.Data;
+using NLog;
 
 namespace Calc
 {
     public class Numeric
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         public double add(double arg0, double arg1)
         {
+            logger.Info("logger.Info add(double arg0, double arg1)");
             return arg0 + arg1;
         }
 
@@ -24,6 +27,8 @@ namespace Calc
 
     class Program
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         static void Main(string[] args)
         {
             /*
@@ -104,12 +109,21 @@ namespace Calc
             //using (var stream = assembly.GetManifestResourceStream("Calc.Program.cs"))
             //using (var xmlReader = XmlReader.Create(stream)) { }
             //
-            foreach (IUser user in UserRepository.Get().FromDefaultCsv())
-            {
-                Console.WriteLine("Email = " + user.GetEmail());
-                Console.WriteLine("Password = " + user.GetPassword());
-                Console.WriteLine("IsIsAdmin = " + user.GetIsAdmin());
-            }
+            //foreach (IUser user in UserRepository.Get().FromDefaultCsv())
+            //{
+            //    Console.WriteLine("Email = " + user.GetEmail());
+            //    Console.WriteLine("Password = " + user.GetPassword());
+            //    Console.WriteLine("IsIsAdmin = " + user.GetIsAdmin());
+            //}
+            //
+            logger.Trace("logger.Trace");
+            logger.Debug("logger.Debug");
+            logger.Info("logger.Info");
+            logger.Warn("logger.Warn");
+            logger.Error("logger.Error");
+            logger.Fatal("logger.Fatal");
+            //
+            new Numeric().add(1, 2);
         }
     }
 }

@@ -8,11 +8,14 @@ using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Win32.Dialogs;
 using Wow.Appl;
+using NLog;
 
 namespace Wow.Pages
 {
     public class Application
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+        //
         private static volatile Application instance;
         private static readonly Object synchronize = new Object();
         //
@@ -54,10 +57,12 @@ namespace Wow.Pages
 
         public void init()
         {
+            logger.Debug("Start init()");
             InitManager();
             // TODO
             // Init Strategy from applicationSources
             // Init DB access, etc.
+            logger.Debug("Done init()");
         }
 
         public LoginPage Login()
@@ -79,32 +84,40 @@ namespace Wow.Pages
 
         public void StartBrowser()
         {
+            logger.Debug("Start StartBrowser()");
             InitManager();
             if (Manager.Current.ActiveBrowser == null)
             {
+                logger.Trace("Run CurrentManager.LaunchNewBrowser();");
                 CurrentManager.LaunchNewBrowser();
                 //Manager.Current.ActiveBrowser.WaitForElement(1, null);
             }
+            logger.Debug("Done StartBrowser()");
         }
 
         public void CloseBrowser()
         {
+            logger.Debug("Start CloseBrowser()");
             if (Manager.Current.ActiveBrowser != null)
             {
                 Manager.Current.ActiveBrowser.Close();
             }
+            logger.Debug("Done CloseBrowser()");
         }
 
         public void DisposeManager()
         {
+            logger.Debug("Start DisposeManager()");
             Console.WriteLine("+++DisposeManager()");
             CloseBrowser();
             if ((CurrentManager != null) && (Manager.Current != null))
             //if ((CurrentManager != null) && (Manager.Current.Disposed))
             {
+                logger.Trace("Run CurrentManager.Dispose();");
                 Console.WriteLine("+++CurrentManager.Dispose();");
                 CurrentManager.Dispose();
             }
+            logger.Debug("Done DisposeManager()");
         }
 
         public string InvokeScript(string javaScript)

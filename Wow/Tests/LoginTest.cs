@@ -6,12 +6,14 @@ using ArtOfTest.WebAii.Controls.HtmlControls;
 using System.Collections.Generic;
 using Wow.Data;
 using Wow.Pages;
+using NLog;
 
 namespace Wow.Tests
 {
     [TestFixture]
     public class LoginTest : TestRunner
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         private static readonly object[] TestSigninData =
         {
@@ -34,6 +36,7 @@ namespace Wow.Tests
         [Test, TestCaseSource(nameof(TestExternalData))]
         public void TestSignin(IUser admin)
         {
+            logger.Info("Start TestSignin(IUser admin), admin = " + admin.GetEmail());
             // Precondition
             // Test Steps
             LoginPage loginPage = Application.Get().Login();
@@ -48,6 +51,7 @@ namespace Wow.Tests
             //
             // Check
             Assert.AreEqual(LoginPage.LOGIN_DESCRIPTION_TEXT, loginPage.GetLoginDescriptionText());
+            logger.Info("Done TestSignin(IUser admin), admin = " + admin.GetEmail());
         }
 
         private static readonly object[] CheckData =
@@ -64,6 +68,7 @@ namespace Wow.Tests
         //[Test, TestCaseSource(nameof(TwoDimData))]
         public void TestFile(string data, string info)
         {
+            logger.Info("Start");
             Console.WriteLine("data = " + data);
             Console.WriteLine("info = " + info);
             foreach (IUser user in UserRepository.Get().FromDefaultCsv())
@@ -72,6 +77,7 @@ namespace Wow.Tests
                 Console.WriteLine("Password = " + user.GetPassword());
                 Console.WriteLine("IsIsAdmin = " + user.GetIsAdmin());
             }
+            logger.Info("Done");
         }
 
     }
