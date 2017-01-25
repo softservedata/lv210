@@ -37,7 +37,7 @@ namespace Serialization
             WriteToFile(readPersons, $"{fileName}.txt", title: "Deserialize from JSON");
         }
 
-        public static void WriteToFile(IEnumerable<Person> persons, string fileName, string title)
+        private static void WriteToFile(IEnumerable<Person> persons, string fileName, string title)
         {
             File.AppendAllText(fileName, $"{title}\r\n");
             foreach (var person in persons)
