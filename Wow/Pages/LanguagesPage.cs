@@ -6,7 +6,9 @@ using ArtOfTest.WebAii.Controls.HtmlControls;
 namespace Wow.Pages
 {
     public class LanguagesPage : HeadPage
-    {       
+    {
+        public const string errorMessageForExistingLanguage = "English already exists";
+
         private class DialogWindow : ModalContent
         {
             public DialogWindow(Manager manager) : base(manager)
@@ -80,6 +82,11 @@ namespace Wow.Pages
             return confirmWindow = new ConfirmWindow(manager);
         }
 
+        public string GetLanguageAlreadyExistMessage()
+        {
+            return manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=tile-large").InnerText;
+        }
+
         // Set Data
         public void SelectLanguageFromList(string language)
         {
@@ -102,7 +109,7 @@ namespace Wow.Pages
             return ExistingLanguagesTable.BodyRows.Any(item => item.InnerText.ToLower().Equals(language.ToLower()));
         }
 
-        private bool IsAddButtonEnabled()
+        public bool IsAddButtonEnabled()
         {
             AddLanguageButton.Refresh();
             return AddLanguageButton.IsEnabled;

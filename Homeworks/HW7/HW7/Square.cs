@@ -14,6 +14,7 @@ namespace HW7
             }
             set
             {
+                //////
                 side = value;
                 if (side <= 0)
                 {

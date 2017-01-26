@@ -27,6 +27,7 @@ namespace HW7
         {
             if (obj == null) return 1;
 
+            // is
             var shape = obj as Shape;
 
             if (shape != null)

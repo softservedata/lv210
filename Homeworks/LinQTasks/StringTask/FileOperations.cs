@@ -45,5 +45,6 @@ namespace StringTask
             var lines = data.Where(x => x.Contains(value)).ToArray();
             WriteData("SearchAndWriteSpecificString.txt", lines);
         }
+        //delegates!
     }
 }

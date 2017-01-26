@@ -5,14 +5,13 @@ namespace StringTask
     internal class Program
     {
         //Read data
-        public static string[] ReadData(string fileName)
+        private static string[] ReadData(string fileName)
         {
             return File.ReadAllLines(fileName);
         }
 
-        private static void Main()
+        private static void WorkWithMethods(string[] data)
         {
-            var data = ReadData("hp1.txt");
             var fileData = new FileOperations();
             const string stringToFind = "wand";
 
@@ -20,6 +19,12 @@ namespace StringTask
             fileData.SearchAndWriteLongestString(data);
             fileData.SearchAndWriteShortestString(data);
             fileData.SearchAndWriteSpecificString(data, stringToFind);
+        }
+
+        private static void Main()
+        {
+            var data = ReadData("hp1.txt");
+            WorkWithMethods(data);
         }
     }
 }
