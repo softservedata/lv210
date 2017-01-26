@@ -89,6 +89,7 @@
     <Compile Include="Tests\AddNewLanguageTestSuite.cs" />
     <Compile Include="Tests\AddUsersToGroupByTeacher.cs" />
     <Compile Include="Tests\BlankMandatoryFieldsTest.cs" />
+    <Compile Include="Tests\CancelLanguageDeletingTest.cs" />
     <Compile Include="Tests\ChangeUserNameTest.cs" />
     <Compile Include="Tests\DeleteLanguageTest.cs" />
     <Compile Include="Tests\EditProfileCancelButtonTest.cs" />

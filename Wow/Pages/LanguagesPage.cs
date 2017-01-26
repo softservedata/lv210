@@ -156,5 +156,12 @@ namespace Wow.Pages
             ConfirmLanguageDeletion();
             ExistingLanguagesTable.Refresh();
         }
+
+        public void CancelDeletingOfLastAddedLanguage()
+        {
+            GetLastLanguageRowFromExistingList().Find.ByAttributes<HtmlButton>("class=btn btn-default nomargins").Click();
+            CancelLanguageDeletion();
+            ExistingLanguagesTable.Refresh();
+        }
     }
 }
