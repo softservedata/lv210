@@ -1,35 +1,41 @@
 ﻿using System;
-using System.Linq;
 
 namespace SimpleOperations
 {
-    class Program
+    public class Program
     {
-        ///<summary>
-        ///	Define integer variables a and b.
-        ///	Read values a and b from Console and calculate: a+b, a-b, a*b, a/b. 
-        ///	Output obtained results.
-        ///</summary>
-        public static void Operations(int FirstNumber, int SecondNumber)
+        public static int ParseAtempt(string inputedData)
         {
-            MathOperations MathObject = new MathOperations();
-            int summ = MathObject.Add(FirstNumber, SecondNumber);
-            int difference = MathObject.Subtract(FirstNumber, SecondNumber);
-            int product = MathObject.Product(FirstNumber, SecondNumber);
-            int fraction = MathObject.Division(FirstNumber, SecondNumber);
-            Console.WriteLine("a + b = {0};\na - b = {1};\na * b = {2};\na / b = {3};", summ, difference, product, fraction);
+            int readVariable;
+            var parseAtempt = int.TryParse(inputedData, out readVariable);
+            if (parseAtempt)
+            {
+                return readVariable;
+            }
+            else
+            {
+                throw new FormatException("Please, input <int> number");
+            }
         }
 
-        static void Main(string[] args)
+        public static void Operations(int firstNumber, int secondNumber)
+        {
+            var mathObject = new MathOperations();
+            var summ = mathObject.Add(firstNumber, secondNumber);
+            var difference = mathObject.Subtract(firstNumber, secondNumber);
+            var product = mathObject.Product(firstNumber, secondNumber);
+            var fraction = mathObject.Divide(firstNumber, secondNumber);
+            mathObject.PrintResults(summ, difference, product, fraction);
+        }
+
+        private static void Main()
         {
             Console.Write("Input two integer values divided by space: ");
 
-            int[] Variables;
-            int ParsedValues;
-            Variables = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select
-                                                    (i => int.TryParse(i, out ParsedValues) ? ParsedValues : 0).ToArray();
+            var firstNumber = ParseAtempt(Console.ReadLine());
+            var secondNumber = ParseAtempt(Console.ReadLine());
 
-            Operations(Variables[0], Variables[0]);
+            Operations(firstNumber, secondNumber);
             Console.ReadLine();
         }
     }

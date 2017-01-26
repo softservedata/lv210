@@ -1,110 +1,148 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
+using System.IO;
+using Newtonsoft.Json;
+using NUnit.Framework;
 
 namespace SimpleOperations.Test
 {
     [TestFixture]
     public class SimpleOperetionsTest
     {
-        [Test]
-        //Equivalance partition: using 3 ranges for test data
-        //Positive numbers
-        //Negative numbers
-        //NULLs
-        /*Test cases with positive numbers*/
-        [TestCase]
-        public void PositiveAddTest()
+        #region Fields
+
+        private const string ReportsDirectory = "Reports";
+        private const string ReportsFileName = "report.txt";
+
+        private readonly TestResults testResults = new TestResults();
+        private readonly TestTimeWatch timeWatch = new TestTimeWatch();
+
+        #endregion
+
+        #region Tests set up
+
+        [SetUp]
+        public void StartTimer()
         {
-            MathOperations MathObject = new MathOperations();
-            int ActualResult = MathObject.Add(10, 5);
-            Assert.AreEqual(15, ActualResult);           
-        }
-        [TestCase]
-        public void PositiveSubtractTest()
-        {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Subtract(10, 1);
-            Assert.AreEqual(9, result);
-        }
-        [TestCase]
-        public void PositiveProductTest()
-        {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Product(5, 4);
-            Assert.AreEqual(20, result);
-        }
-        [TestCase]
-        public void PositiveDivisionTest()
-        {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Division(20, 4);
-            Assert.AreEqual(5, result);
+            timeWatch.Start();
         }
 
-        /*Test cases with negative numbers*/
-        [TestCase]
-        public void NegativeAddTest()
+        [TearDown]
+        public void GetTestResults()
         {
-            MathOperations MathObject = new MathOperations();
-            int ActualResult = MathObject.Add(-10, -5);
-            Assert.AreEqual(-15, ActualResult);
+            timeWatch.End();
+
+            var testResult = new TestResult
+            {
+                TestName = TestContext.CurrentContext.Test.MethodName,
+                StartTime = timeWatch.StartTime,
+                EndTime = timeWatch.EndTime,
+                Result = TestContext.CurrentContext.Result.Outcome.Status.ToString(),
+                ErrorMessage = TestContext.CurrentContext.Result.Message,
+                StackTrace = TestContext.CurrentContext.Test.FullName
+            };
+
+            testResults.Results.Add(testResult);
         }
-        [TestCase]
-        public void NegativeSubtractTest()
+
+        [OneTimeTearDown]
+        public void WriteTestsResultsToReportFile()
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Subtract(-10, -1);
-            Assert.AreEqual(-9, result);
+            var pathName = GetPathForReport(ReportsFileName);
+            var json = JsonConvert.SerializeObject(testResults, Formatting.Indented);
+
+            WriteReportToFile(pathName, json);
         }
-        [TestCase]
-        public void NegativeProductTest()
+
+        #endregion
+
+        #region Tests
+
+        [TestCase(10, 5, 15)]
+        [TestCase(-10, -5, -15)]
+        [TestCase(0, 5, 5)]
+        public void AddTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Product(-5, -4);
-            Assert.AreEqual(20, result);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Add(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
-        [TestCase]
-        public void NegativeDivisionTest()
+
+        [TestCase(10, 1, 9)]
+        [TestCase(-10, -1, -9)]
+        [TestCase(5, 0, 5)]
+        public void SubtractTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Division(-20, -4);
-            Assert.AreEqual(5, result);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Subtract(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
-        /*Test cases with NULL numbers*/
-        [TestCase]
-        public void NullAddTest()
+
+        [TestCase(5, 4, 20)]
+        [TestCase(-5, -4, 20)]
+        [TestCase(5, 0, 0)]
+        public void ProductTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int ActualResult = MathObject.Add(0, 5);
-            Assert.AreEqual(5, ActualResult);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Product(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
-        [TestCase]
-        public void NullSubtractTest()
+
+        [TestCase(20, 4, 5)]
+        [TestCase(-20, -4, 5)]
+        [TestCase(0, 4, 0)]
+        public void DivisionTest(int firstNumber, int secondNumber, int expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Subtract(5, 0);
-            Assert.AreEqual(5, result);
+            var mathObject = new MathOperations();
+            var actualResult = mathObject.Divide(firstNumber, secondNumber);
+            Assert.AreEqual(expectedResult, actualResult);
         }
-        [TestCase]
-        public void NullProductTest()
+        
+        [TestCase(4, 0)]
+        public void ExceptionDivisionByZeroTest(int firstNumber, int secondNumber)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Product(5, 0);
-            Assert.AreEqual(0, result);
+            var mathObject = new MathOperations();
+            Assert.Throws<DivideByZeroException>(() => mathObject.Divide(firstNumber, secondNumber));
         }
-        [TestCase]
-        public void NullDivisionTest()
+
+        [TestCase("qwerty")]
+        public void ParseAtemptThrowsExceptionTest(string testData)
         {
-            MathOperations MathObject = new MathOperations();
-            int result = MathObject.Division(0, 4);
-            Assert.AreEqual(0, result);
+            Assert.Throws<FormatException>(() => Program.ParseAtempt(testData));
         }
-        /*Exception test cases*/
-        [TestCase]
-        public void Should_Throw_Exception_When_Division_By_Zero()
+
+        [TestCase("8", 8)]
+        public void ParseAtemptReturnDataTest(string testData, double expectedResult)
         {
-            MathOperations MathObject = new MathOperations();
-            Assert.Throws<DivideByZeroException>(() => MathObject.Division(4, 0));
+            double actualResult = Program.ParseAtempt(testData);
+            Assert.AreEqual(expectedResult, actualResult);
         }
+
+        #endregion
+
+        #region Helpers
+
+        private string GetPathForReport(string fileName)
+        {
+            var baseDirectory = GetTestsBaseDirectory();
+
+            return Path.Combine(baseDirectory, ReportsDirectory, fileName);
+        }
+
+        private string GetTestsBaseDirectory()
+        {
+            var path = TestContext.CurrentContext.TestDirectory;
+
+            return Path.GetDirectoryName(Path.GetDirectoryName(path));
+        }
+
+        private void WriteReportToFile(string pathName, string report)
+        {
+            using (var sw = new StreamWriter(pathName))
+            {
+                sw.Write(report);
+            }
+        }
+
+        #endregion
     }
 }
