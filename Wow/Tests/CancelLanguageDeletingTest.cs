@@ -35,6 +35,7 @@ namespace Wow.Tests
             Assert.IsTrue(languagesPage.IsLanguageInExistingList(language));
 
             // Return to previous state
+            languagesPage.DeleteLastAddedLanguage();
             loginPage = languagesPage.GoToLogOut();
         }
     }

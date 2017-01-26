@@ -147,6 +147,7 @@ namespace Wow.Pages
                 ClickAddButton();
                 ExistingLanguagesTable.Refresh();
                 GetDialogWindow();
+                CloseAddLanguageDialogWindow();
             }
         }
 
