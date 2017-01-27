@@ -22,6 +22,7 @@ namespace Wow.Pages
             public HtmlAnchor LastItem { get; private set; }
             public HtmlAnchor ActiveItem { get; private set; }
 
+            // TODO Develop Builder
             protected internal Pagination(Manager manager,
                 string FirstXPath, string StepBackXPath, string StepForwardXPath, string LastXPath, string ActiveXPath)
             {
@@ -45,6 +46,7 @@ namespace Wow.Pages
         private Pagination pagination;
 
         // Constructor
+        // TODO Develop Builder
         public BasicTable(Manager manager, string TableAttribute)
         {
             this.manager = manager;
@@ -63,13 +65,43 @@ namespace Wow.Pages
         // get Data
         //public List<Element> getHeader() { return null; }
 
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        // TODO
         public IList<IList<Element>> GetAllCells() { return null; }
 
-        public IList<Element> getRowByIndex(int rowIndex) { return null; }
+        public IList<HtmlTableCell> getRowByIndex(int rowIndex)
+        {
+            return this.Table.Rows.ElementAt(rowIndex).Cells;
+        }
 
-        public IList<Element> getRowByValueInColumn(String value, int columnIndex) { return null; }
+        public IList<HtmlTableCell> getRowByValueInColumn(String value, int columnIndex)
+        {
+            IList<HtmlTableCell> result = null;
+            foreach (var row in this.Table.Rows)
+            {
+                if (row.Cells[columnIndex].TextContent.ToLower().Contains(value))
+                {
+                    result = row.Cells;
+                    break;
+                }
+            }
+            return result;
+        }
 
-        public int getRowIndexByValueInColumn(String value, int columnIndex) { return null; }
+        public int getRowIndexByValueInColumn(String value, int columnIndex)
+        {
+            int result = -1;
+            for (int i = 0; i < this.Table.Rows.Count; i++)
+            {
+                if (this.Table.Rows.ElementAt(i).Cells[columnIndex].TextContent.ToLower().Contains(value))
+                {
+                    result = i;
+                    break;
+                }
+            }
+            return result;
+        }
 
         public IList<Element> getColumnByIndex(int columnIndex) { return null; }
 
@@ -80,6 +112,8 @@ namespace Wow.Pages
         //public int getColumnIndexByValueOfHeader(String value) { return null; }
 
         public Element getCell(int rowIndex, int columnIndex) { return null; }
+
+        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         public bool IsFirstItemEnable()
         {
@@ -134,17 +168,20 @@ namespace Wow.Pages
             return htmlAnchor.Parent<HtmlListItem>();
         }
 
+        // TODO
         public bool IsItemPresent(string text)
         {
             return true;
         }
 
+        // TODO
         public bool IsItemPresent(int columnNumber, string text)
         {
             // Searching
             return true;
         }
 
+        // TODO
         public bool IsItemPresent(string columnName, string text)
         {
             return true;

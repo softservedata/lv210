@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using NLog;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
 namespace Wow.Data
 {
@@ -45,6 +46,15 @@ namespace Wow.Data
                 }
                 allCells.Add(rowCells);
             }
+            // Cleanup
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            //
+            xlWorkbook.Close();
+            Marshal.ReleaseComObject(xlWorkbook);
+            // Quit and release
+            xlApp.Quit();
+            Marshal.ReleaseComObject(xlApp);
             //
             logger.Debug("Done GetAllCells(string path), path = " + path);
             return allCells;
