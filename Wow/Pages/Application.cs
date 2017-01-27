@@ -47,7 +47,6 @@ namespace Wow.Pages
         public void Init()
         {
             InitManager();
-            // TODO Init Strategy, Init DB access, etc.
         }
 
         public LoginPage Login()
@@ -83,9 +82,11 @@ namespace Wow.Pages
 
         public void DisposeManager()
         {
-            Console.WriteLine("+++DisposeManager()");
             CloseBrowser();
-            CurrentManager.Dispose();
+            if ((CurrentManager != null) && (Manager.Current != null))
+            {
+                CurrentManager.Dispose();
+            }
         }
 
         public string InvokeScript(string javaScript)
