@@ -28,10 +28,8 @@ namespace Wow.Tests
             LanguagesPage languagesPage = usersPage.GotoLanguagesPage();
 
             // Test steps
-            // Verify is language displays on page
             Assert.IsTrue(languagesPage.IsLanguageInExistingList(language));
 
-            // Select language from list. Verify
             languagesPage.SelectLanguageFromList(language);
             Assert.IsFalse(languagesPage.IsAddButtonEnabled());
             Assert.AreEqual(LanguagesPage.errorMessageForExistingLanguage, languagesPage.GetLanguageAlreadyExistMessage());

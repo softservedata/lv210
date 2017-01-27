@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using NLog;
 using Wow.Data;
 using Wow.Pages;
 
@@ -7,6 +8,8 @@ namespace Wow.Tests
     [TestFixture]
     public class CancelLanguageDeletingTest : TestRunner
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         private static readonly object[] TestData =
         {
             new object[]
@@ -19,6 +22,8 @@ namespace Wow.Tests
         [Test, TestCaseSource(nameof(TestData))]
         public void CancelLanguageDeleting(User admin, string language)
         {
+            logger.Info("Start CancelLanguageDeleting(IUser admin, string language), admin = " + admin.GetEmail());
+
             // Precondition
             admin.SetEmail("admin.wow@ukr.net");
             admin.SetPassword("qwerty");
@@ -36,7 +41,9 @@ namespace Wow.Tests
 
             // Return to previous state
             languagesPage.DeleteLastAddedLanguage();
-            loginPage = languagesPage.GoToLogOut();
+            languagesPage.GoToLogOut();
+
+            logger.Info("Done CancelLanguageDeleting(IUser admin, string language), admin = " + admin.GetEmail());
         }
     }
 }
