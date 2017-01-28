@@ -83,9 +83,12 @@ namespace Wow.Pages
 
         public void DisposeManager()
         {
-            Console.WriteLine("DisposeManager() Done!");
             CloseBrowser();
-            CurrentManager.Dispose();
+            if ((CurrentManager != null) && (Manager.Current != null))
+            {
+                CurrentManager.Dispose();
+                Console.WriteLine("DisposeManager() Done!");
+            }
         }
 
         public string InvokeScript(string javaScript)
@@ -111,7 +114,7 @@ namespace Wow.Pages
 
         private void InitManager()
         {
-            if ((CurrentManager == null) || (!Manager.Current.Disposed))
+            if ((CurrentManager == null) || (Manager.Current == null))
             {
                 Settings currentSettings = new Settings();
                 currentSettings.Web.DefaultBrowser = GetBrowser();

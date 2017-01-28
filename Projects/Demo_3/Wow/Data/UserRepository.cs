@@ -83,6 +83,11 @@ namespace Wow.Data
                 .Build();
         }
 
+        public IList<IUser> FromCsv(string fileName)
+        {
+            return new UserUtils(fileName, new CsvUtils()).GetAllUsers();
+        }
+
         public List<IUser> FromExcel()
         {
             // TODO
