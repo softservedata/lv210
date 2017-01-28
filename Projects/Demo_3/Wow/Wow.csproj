@@ -65,10 +65,6 @@
   <ItemGroup>
     <Compile Include="Appl\ApplicationSources.cs" />
     <Compile Include="Appl\ApplicationSourcesRepository.cs" />
-    <Compile Include="DataBase\IRepositorySettings.cs" />
-    <Compile Include="DataBase\RepositorySettings.cs" />
-    <Compile Include="DataBase\SqlQueries.cs" />
-    <Compile Include="DataBase\SqlRepository.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\UserRepository.cs" />
     <Compile Include="Helpers\Extensions.cs" />
@@ -88,14 +84,6 @@
     <Compile Include="Tests\EditProfileCancelButtonTest.cs" />
     <Compile Include="Tests\LoginTest.cs" />
     <Compile Include="Tests\TestRunner.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DataBase\FIndCountOfUsersQuery.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DataBase\GetAllQuery.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
