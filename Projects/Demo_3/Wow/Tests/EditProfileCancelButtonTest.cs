@@ -26,6 +26,8 @@ namespace Wow.Tests
 
             admin.SetEmail("sokt@securehost.com.es");
             admin.SetPassword("blackstar");
+            admin.SetFirstName("Black");
+            admin.SetLastName("Star");
 
             // Login
             LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();
@@ -36,7 +38,9 @@ namespace Wow.Tests
             // 1. Go to 'Edit Profile' page
             YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
             Assert.IsNotNull(yourProfilePage.YourProfileLabel);
-            admin.SetName(yourProfilePage.GetNameValue());  // Get Current Name
+            //admin.SetName(yourProfilePage.GetNameValue());  // Get Current Name
+            Console.WriteLine(admin.GetFullName());
+            Assert.AreEqual(yourProfilePage.GetNameValue(), admin.GetFullName());
 
             // 2. Go to 'Edit Name' form
             yourProfilePage.ClickEditName();
@@ -47,7 +51,7 @@ namespace Wow.Tests
 
             // 4. Press 'Cancel' and check if information wasn't saved.
             yourProfilePage.CancelNameChanges();
-            Assert.AreNotEqual(newName, admin.GetName());
+            Assert.AreNotEqual(newName, admin.GetFullName());
 
             // 5. Go to 'Edit Password' form
             yourProfilePage.ClickEditPassword();

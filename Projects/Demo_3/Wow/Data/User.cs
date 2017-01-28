@@ -2,7 +2,23 @@
 
 namespace Wow.Data
 {
-    // Builder Interfaces
+    // Builder
+
+    public interface IFirstName                 // ++++ 28.01
+    {
+        ILastName SetFirstName(string firstName);
+    }
+
+    public interface ILastName                  // ++++ 28.01
+    {
+        ILanguage SetLastName(string lastName);
+    }
+
+    public interface ILanguage                  // ++++ 28.01
+    {
+        IEmail SetLanguage(string language);
+    }
+
     public interface IEmail
     {
         IPassword SetEmail(string email);
@@ -10,13 +26,13 @@ namespace Wow.Data
 
     public interface IPassword
     {
-        IName SetPassword(string password);
+        IAdmin SetPassword(string password);
     }
 
-    public interface IName
-    {
-        IAdmin SetName(string name);
-    }
+    //public interface IName            // ---
+    //{
+    //    IAdmin SetName(string name);
+    //}
 
     public interface IAdmin
     {
@@ -39,48 +55,75 @@ namespace Wow.Data
     }
 
     // Dependency Inversion Interface
+
     public interface IUser
     {
+        string GetFirstName();  //+++
+        string GetLastName();   //+++
+        string GetFullName();   //+++
+        string GetLanguage();   //+++
         string GetEmail();
         string GetPassword();
-        string GetName();
         bool GetIsAdmin();
         bool GetIsTeacher();
         bool GetIsStudent();
     }
 
-    public class User : IEmail, IPassword, IName, IAdmin, ITeacher, IStudent, IBuilder, IUser
+    public class User : IFirstName, ILastName, ILanguage, IEmail, IPassword, IAdmin, ITeacher, IStudent, IBuilder, IUser
     {
+        private string firstName;
+        private string lastName;
+        private string language;
         private string email;
         private string password;
-        private string name;
         private bool isAdmin;
         private bool isTeacher;
         private bool isStudent;
 
         private User() { }
 
-        private bool LogicExpressionForEqualMathod(User user)
-        {
-            return (this.email == user.email) && (this.password == user.password) && (this.name == user.name) &&
-                   (this.isAdmin == user.isAdmin) &&
-                   (this.isTeacher == user.isTeacher) &&
-                   (this.isStudent == user.isStudent);
-        }
+        //private bool LogicExpressionForEqualMathod(User user) // to del
+        //{
+        //    return (this.email == user.email) && (this.password == user.password) && (this.name == user.name) &&
+        //           (this.isAdmin == user.isAdmin) &&
+        //           (this.isTeacher == user.isTeacher) &&
+        //           (this.isStudent == user.isStudent);
+        //}
 
-        private static bool LogicExpressionForEqualMathod(User userFirst, User userSecond)
-        {
-            return (userFirst.email == userSecond.email) && (userFirst.password == userSecond.password) &&
-                   (userFirst.name == userSecond.name) &&
-                   (userFirst.isAdmin == userSecond.isAdmin) &&
-                   (userFirst.isTeacher == userSecond.isTeacher) &&
-                   (userFirst.isStudent == userSecond.isStudent);
-        }
+        //private static bool LogicExpressionForEqualMathod(User userFirst, User userSecond)
+        //{
+        //    return (userFirst.email == userSecond.email) && (userFirst.password == userSecond.password) &&
+        //           (userFirst.name == userSecond.name) &&
+        //           (userFirst.isAdmin == userSecond.isAdmin) &&
+        //           (userFirst.isTeacher == userSecond.isTeacher) &&
+        //           (userFirst.isStudent == userSecond.isStudent);
+        //}
 
         // Static Factory
-        public static IEmail Get()
+
+        public static IFirstName Get()
         {
             return new User();
+        }
+
+        // Setters
+
+        public ILastName SetFirstName(string firstName)     //+++
+        {
+            this.firstName = firstName;
+            return this;
+        }
+
+        public ILanguage SetLastName(string lastName)       //+++
+        {
+            this.lastName = lastName;
+            return this;
+        }
+
+        public IEmail SetLanguage(string language)      //+++
+        {
+            this.language = language;
+            return this;
         }
 
         public IPassword SetEmail(string email)
@@ -89,15 +132,9 @@ namespace Wow.Data
             return this;
         }
 
-        public IName SetPassword(string password)
+        public IAdmin SetPassword(string password)
         {
             this.password = password;
-            return this;
-        }
-
-        public IAdmin SetName(string name)
-        {
-            this.name = name;
             return this;
         }
 
@@ -124,6 +161,28 @@ namespace Wow.Data
             return this;
         }
 
+        // Getters
+
+        public string GetFirstName()
+        {
+            return this.firstName;
+        }
+
+        public string GetLastName()
+        {
+            return this.lastName;
+        }
+
+        public string GetFullName()
+        {
+            return String.Format($"{GetFirstName()} {GetLastName()}");
+        }
+
+        public string GetLanguage()
+        {
+            return this.language;
+        }
+
         public string GetEmail()
         {
             return this.email;
@@ -132,11 +191,6 @@ namespace Wow.Data
         public string GetPassword()
         {
             return this.password;
-        }
-
-        public string GetName()
-        {
-            return this.name;
         }
 
         public bool GetIsAdmin()
@@ -152,45 +206,45 @@ namespace Wow.Data
         public bool GetIsStudent()
         {
             return this.isStudent;
-        }
+        }    
 
-        public override bool Equals(Object obj)
-        {
-            User user = obj as User;
-            if ((System.Object)user == null)
-                return false;
+        //public override bool Equals(Object obj)
+        //{
+        //    User user = obj as User;
+        //    if ((System.Object)user == null)
+        //        return false;
 
-            return LogicExpressionForEqualMathod(user);
-        }
+        //    return LogicExpressionForEqualMathod(user);
+        //}
 
-        public bool Equals(User user)
-        {
-            if ((object)user == null)
-                return false;
+        //public bool Equals(User user)
+        //{
+        //    if ((object)user == null)
+        //        return false;
 
-            return LogicExpressionForEqualMathod(user);
-        }
+        //    return LogicExpressionForEqualMathod(user);
+        //}
 
-        public override int GetHashCode()
-        {
-            return this.GetEmail().GetHashCode() ^ this.GetPassword().GetHashCode() ^ this.GetName().GetHashCode() ^
-                   this.GetIsAdmin().GetHashCode() ^ this.GetIsTeacher().GetHashCode() ^ this.GetIsStudent().GetHashCode();
-        }
+        //public override int GetHashCode()
+        //{
+        //    return this.GetEmail().GetHashCode() ^ this.GetPassword().GetHashCode() ^ this.GetName().GetHashCode() ^
+        //           this.GetIsAdmin().GetHashCode() ^ this.GetIsTeacher().GetHashCode() ^ this.GetIsStudent().GetHashCode();
+        //}
 
-        public static bool operator ==(User firstUser, User secondUser)
-        {
-            if (System.Object.ReferenceEquals(firstUser, secondUser))
-                return true;
+        //public static bool operator ==(User firstUser, User secondUser)
+        //{
+        //    if (System.Object.ReferenceEquals(firstUser, secondUser))
+        //        return true;
 
-            if ((object)firstUser == null || (object)secondUser == null)
-                return false;
+        //    if ((object)firstUser == null || (object)secondUser == null)
+        //        return false;
 
-            return LogicExpressionForEqualMathod(firstUser, secondUser);
-        }
+        //    return LogicExpressionForEqualMathod(firstUser, secondUser);
+        //}
 
-        public static bool operator !=(User firstUser, User secondUser)
-        {
-            return !(firstUser == secondUser);
-        }
+        //public static bool operator !=(User firstUser, User secondUser)
+        //{
+        //    return !(firstUser == secondUser);
+        //}
     }
 }

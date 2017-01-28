@@ -69,8 +69,6 @@
     <Compile Include="DataBase\RepositorySettings.cs" />
     <Compile Include="DataBase\SqlQueries.cs" />
     <Compile Include="DataBase\SqlRepository.cs" />
-    <Compile Include="Data\DbUserRepository.cs" />
-    <Compile Include="Data\IDbUserRepository.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\UserRepository.cs" />
     <Compile Include="Helpers\Extensions.cs" />
@@ -89,10 +87,7 @@
     <Compile Include="Tests\AddNewLanguageTestSuite.cs" />
     <Compile Include="Tests\EditProfileCancelButtonTest.cs" />
     <Compile Include="Tests\LoginTest.cs" />
-    <Compile Include="Tests\PaginationTest.cs" />
     <Compile Include="Tests\TestRunner.cs" />
-    <Compile Include="Tests\UserRoleTestSuite.cs" />
-    <Compile Include="Tests\UserSearchTestSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\FIndCountOfUsersQuery.txt">

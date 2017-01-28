@@ -177,17 +177,6 @@ namespace Wow.Pages
 
         // Functional : work with table
 
-        private User ReadDataFromRow(IList<HtmlTableRow> rows, int rowIndex)
-        {
-            return User.Get().SetEmail(rows[rowIndex].Cells[1].InnerText)
-                .SetPassword(null)
-                .SetName(rows[rowIndex].Cells[0].InnerText)
-                .SetIsAdmin(rows[rowIndex].Cells[2].ChildNodes[0].As<HtmlInputCheckBox>().Checked)
-                .SetIsTeacher(rows[rowIndex].Cells[3].ChildNodes[0].As<HtmlInputCheckBox>().Checked)
-                .SetIsStudent(rows[rowIndex].Cells[4].ChildNodes[0].As<HtmlInputCheckBox>().Checked)
-                .Build();
-        }
-
         private HtmlTableRow GetRow(int index)
         {
             return this.TableOfUsers.Rows.ElementAt(index);
@@ -259,19 +248,7 @@ namespace Wow.Pages
             return this.Search.Placeholder;
         }
 
-        /// <returns>Returns IList collection that contains all users displayed in a table.</returns>
-        public IList<User> GetUsersDataForTable()
-        {
-            var usersAtCurrentPage = new List<User>();
-            var rows = GetAllRows();
-
-            for (var i = 1; i < GetRowsCountInTable(); i++)
-            {
-                usersAtCurrentPage.Add(ReadDataFromRow(rows, i));
-            }
-
-            return usersAtCurrentPage;
-        }
+        /// <returns>Returns IList collection that contains all users displayed in a table.</returns>}
 
         public bool IsAdminRoleEnabled()
         {

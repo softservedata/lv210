@@ -29,21 +29,39 @@ namespace Wow.Data
         public IUser Admin()
         {
             return User.Get()
+                .SetFirstName("LV-204")
+                .SetLastName("ISTQB")
+                .SetLanguage("English")
                 .SetEmail("wowira@ukr.net")
                 .SetPassword("irawow123")
-                .SetName("LV-204 ISTQB")
                 .SetIsAdmin(true)
-                .SetIsTeacher(true)
-                .SetIsStudent(true)
+                .SetIsTeacher(false)
+                .SetIsStudent(false)
+                .Build();
+        }
+
+        public IUser Student()
+        {
+            return User.Get()
+                .SetFirstName("aaaaaa")
+                .SetLastName("aaaaaa")
+                .SetLanguage("English")
+                .SetEmail("k2854799@mvrht.com")
+                .SetPassword("qwerty+1")
+                .SetIsAdmin(false)
+                .SetIsTeacher(false)
+                .SetIsStudent(false)
                 .Build();
         }
 
         public IUser Invalid()
         {
             return User.Get()
+                .SetFirstName("123")
+                .SetLastName("456")
+                .SetLanguage("English")
                 .SetEmail("wow@i.ua")
                 .SetPassword("qwerty")
-                .SetName("some name")
                 .SetIsAdmin(true)
                 .SetIsTeacher(true)
                 .SetIsStudent(true)
@@ -54,9 +72,11 @@ namespace Wow.Data
         public IUser NewUser()
         {
             return User.Get()
+                .SetFirstName("")
+                .SetLastName("")
+                .SetLanguage("English")
                 .SetEmail("new@gmail.com")
                 .SetPassword("qwerty")
-                .SetName("some name")
                 .SetIsAdmin(true)
                 .SetIsTeacher(true)
                 .SetIsStudent(true)
