@@ -37,7 +37,8 @@ namespace Event
         public void AddMark(int mark)
         {
             _marks.Add(mark);
-            MarkChange?.Invoke(mark);
+            if (MarkChange != null)
+                MarkChange.Invoke(mark);
         }
     }
 }
