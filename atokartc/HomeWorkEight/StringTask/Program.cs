@@ -19,6 +19,8 @@ namespace StringTask
     /// </summary>
     internal class Program
     {
+        public const string FILE = "FileToRead.txt";
+
         public static Dictionary<int, int> SymbolsPerLine(string[] input)
         {
             var symbolsPerLine = new Dictionary<int, int>();
@@ -32,39 +34,39 @@ namespace StringTask
         }
 
 
-        public static List<string> LongestStrings(string[] input)
+        public static List<string> GetLongestString(string[] input)
         {
             var maxString = input.Max(line => line.Length);
             return input.Where(item => item.Length == maxString).ToList();
         }
 
-        public static List<string> ShortestStrings(string[] input)
+        public static List<string> GetShortestString(string[] input)
         {
             var minString = input.Min(line => line.Length);
             return input.Where(item => item.Length == minString).ToList();
         }
 
-        public static List<string> StringsContainsWord(string[] input, string word)
+        public static List<string> GetStringsContainsWord(string[] input, string word)
         {
             return input.Where(item => item.Contains(word)).ToList();
         }
 
         private static void Main(string[] args)
         {
-            var text = File.ReadAllLines("FileToRead.txt");
+            var text = File.ReadAllLines(FILE);
             var symbolsPerLine = SymbolsPerLine(text);
             var symbolsCountPerLine = symbolsPerLine.Select(line => line.Key + "=>" + line.Value);
             foreach (var keyValue in symbolsPerLine)
                 Console.WriteLine("String {0}: {1}", keyValue.Key, keyValue.Value);
 
-            var longestLines = LongestStrings(text);
+            var longestLines = GetLongestString(text);
             longestLines.ForEach(Console.WriteLine);
 
-            var shortestLines = ShortestStrings(text);
+            var shortestLines = GetShortestString(text);
             longestLines.ForEach(Console.WriteLine);
 
             Console.WriteLine("Lines with word 'var'");
-            var linesWithVar = StringsContainsWord(text, "var");
+            var linesWithVar = GetStringsContainsWord(text, "var");
 
             linesWithVar.ForEach(Console.WriteLine);
             Console.ReadKey();

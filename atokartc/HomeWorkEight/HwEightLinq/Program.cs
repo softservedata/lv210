@@ -16,6 +16,9 @@ namespace HwEightLinq
     /// </summary>
     class Program
     {
+        public const string FILETOWRITESHAPES = "ShapesByArea.txt";
+        public const string FILETOWRITENAMES = "ShapesByName.txt";
+
         public static void WriteListToFile(string pathToFile, List<Shape> list)
         {
             File.WriteAllLines(pathToFile, list.Select(item => item.ToString()));
@@ -33,11 +36,11 @@ namespace HwEightLinq
             int lowerBound = 10;
             int upperBound = 100;
             var shapesInRange = shapes.Where(item => item.Area() >= lowerBound && item.Area() <= upperBound);
-            WriteListToFile("ShapesByArea.txt", shapesInRange.ToList());
+            WriteListToFile(FILETOWRITESHAPES, shapesInRange.ToList());
 
             string letter = "a";
             var shapesContainsLetter = shapes.Where(item => item.Name.Contains(letter));
-            WriteListToFile("ShapesByName.txt", shapesContainsLetter.ToList());
+            WriteListToFile(FILETOWRITENAMES, shapesContainsLetter.ToList());
 
             int minimalPerimeter = 5;
             shapes.RemoveAll(item => item.Perimeter() < minimalPerimeter);

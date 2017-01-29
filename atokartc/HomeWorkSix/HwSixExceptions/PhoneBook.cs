@@ -13,6 +13,7 @@ namespace HwSixExceptions
     /// </summary>
     public class PhoneBook
     {
+        public const string FILENAME = "PhoneBook.txt";
         public Dictionary<string, string> PhoneDictionary { get; private set; }
 
         /// <summary>
@@ -38,7 +39,6 @@ namespace HwSixExceptions
             {
                 Console.WriteLine("File was not found");
             }
-
         }
 
         public void Output()
@@ -68,7 +68,7 @@ namespace HwSixExceptions
 
         public void WriteToFile()
         {
-            File.WriteAllLines("PhoneBook.txt", PhoneDictionary.Select(item => item.Key + ", " + item.Value));
+            File.WriteAllLines(FILENAME, PhoneDictionary.Select(item => item.Key + ", " + item.Value));
         }
 
         /// <summary>

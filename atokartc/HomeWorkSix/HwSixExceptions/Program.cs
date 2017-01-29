@@ -4,13 +4,16 @@ namespace HwSixExceptions
 {
     class Program
     {
+        public const string READFROMFILE = "phones.txt";
+        public const string WRITENUMBERSTOFILE = "OnlyPhones.txt";
+
         static void Main(string[] args)
         {
             PhoneBook phoneBook = new PhoneBook();
-            phoneBook.ReadFromFile("phones.txt");
+            phoneBook.ReadFromFile(READFROMFILE);
             phoneBook.Output();
 
-            phoneBook.WritePhoneNumbersToFile("OnlyPhones.txt");
+            phoneBook.WritePhoneNumbersToFile(WRITENUMBERSTOFILE);
 
             string findNumber = phoneBook.FindNumber();
             Console.WriteLine(findNumber);
