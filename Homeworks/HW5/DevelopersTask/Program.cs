@@ -3,15 +3,9 @@ using System.Collections.Generic;
 
 namespace DevelopersTask
 {
-    /// <summary>
-    /// Create interface IDeveloper with property Tool, methods Create() and Destroy()
-    /// Create two classes Programmer and Builder, which implement this interface.
-    /// Create List of IDeveloper and add some Programmer and Builder to it. 
-    /// Call Create() and Destroy() methods, property Tool for all of it
-    /// </summary>
     internal class Program
     {
-        private static List<IDeveloper> CreateDevelopersList()
+        private static IList<IDeveloper> CreateDevelopersList()
         {
             var developersList = new List<IDeveloper>
             {
@@ -32,7 +26,8 @@ namespace DevelopersTask
             }
             foreach (var item in developersList)
             {
-                item.Create();   
+                item.Create();
+                item.Destroy();                
             }
             Console.ReadLine();
         }

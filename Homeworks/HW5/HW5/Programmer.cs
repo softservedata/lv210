@@ -8,6 +8,8 @@ namespace DevelopersTask
         private string lastName;
         private string tool;
 
+        public string Tool { get; }
+
         public Programmer()
         {
         }
@@ -17,14 +19,6 @@ namespace DevelopersTask
             this.firstName = firstName;
             this.lastName = lastName;
             this.tool = tool;
-        }
-
-        public string Tool
-        {
-            get
-            {
-                return tool;
-            }
         }
 
         public void Create()

@@ -20,9 +20,6 @@ namespace Wow.Tests
         public void AddExistingLanguage(User admin, string language)
         {
             // Precondition
-            admin.SetEmail("admin.wow@ukr.net");
-            admin.SetPassword("qwerty");
-
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
             LanguagesPage languagesPage = usersPage.GotoLanguagesPage();
@@ -32,10 +29,11 @@ namespace Wow.Tests
 
             languagesPage.SelectLanguageFromList(language);
             Assert.IsFalse(languagesPage.IsAddButtonEnabled());
-            Assert.AreEqual(LanguagesPage.errorMessageForExistingLanguage, languagesPage.GetLanguageAlreadyExistMessage());
+            Assert.AreEqual(LanguagesPage.errorMessageForEnglishExistingLanguage, 
+                            languagesPage.GetLanguageAlreadyExistMessage());
 
             // Return to previous state
-            loginPage = languagesPage.GoToLogOut();
+            languagesPage.GoToLogOut();
         }
     }
 }

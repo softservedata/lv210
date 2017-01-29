@@ -25,9 +25,6 @@ namespace Wow.Tests
             logger.Info("Start CancelLanguageDeleting(IUser admin, string language), admin = " + admin.GetEmail());
 
             // Precondition
-            admin.SetEmail("admin.wow@ukr.net");
-            admin.SetPassword("qwerty");
-
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
             LanguagesPage languagesPage = usersPage.GotoLanguagesPage();

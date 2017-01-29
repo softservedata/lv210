@@ -12,19 +12,13 @@ namespace DevelopersTask
         {
         }
 
+        public string Tool { get; }
+
         public Programmer(string firstName, string lastName, string tool)
         {
             this.firstName = firstName;
             this.lastName = lastName;
             this.tool = tool;
-        }
-
-        public string Tool
-        {
-            get
-            {
-                return tool;
-            }
         }
 
         public void Create()

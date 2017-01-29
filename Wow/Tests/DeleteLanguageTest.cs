@@ -20,9 +20,6 @@ namespace Wow.Tests
         public void DeleteLanguage(User admin, string language)
         {
             // Precondition
-            admin.SetEmail("admin.wow@ukr.net");
-            admin.SetPassword("qwerty");
-
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
             LanguagesPage languagesPage = usersPage.GotoLanguagesPage();
@@ -35,7 +32,7 @@ namespace Wow.Tests
             Assert.IsFalse(languagesPage.IsLanguageInExistingList(language));
 
             // Return to previous state
-            loginPage = languagesPage.GoToLogOut();
+            languagesPage.GoToLogOut();
         }
     }
 }
