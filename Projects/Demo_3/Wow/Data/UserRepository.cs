@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Wow.Data
 {
@@ -88,10 +89,19 @@ namespace Wow.Data
             return new UserUtils(fileName, new CsvUtils()).GetAllUsers();
         }
 
-        public List<IUser> FromExcel()
+        public IList<IUser> FromExcel(string fileName)
         {
-            // TODO
-            return null;
+            return new UserUtils(fileName, new ExelUtils()).GetAllUsers();
+        }
+
+        public IList<IUser> FromXml(string fileName)
+        {
+            return new UserUtils(fileName, new XmlUtil()).GetAllUsers();
+        }
+
+        public IList<User> FromJson(string fileName)
+        {
+            return new JsonUtils(fileName).GetAllUsers();
         }
     }
 }

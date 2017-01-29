@@ -15,7 +15,9 @@ namespace Wow.Tests
     {
 
         private static readonly object[] ExternalData =
-            ListUtils.ToMultiArray(UserRepository.Get().FromCsv("Users.csv"));
+            //ListUtils.ToMultiArray(UserRepository.Get().FromCsv("Users.csv"));
+            //ListUtils.ToMultiArray(UserRepository.Get().FromJson("Users.json"));
+            ListUtils.ToMultiArray(UserRepository.Get().FromXml("Users.xml"));
 
         [Test, TestCaseSource(nameof(ExternalData))]
         public void TestSignin(IUser admin)
@@ -24,7 +26,7 @@ namespace Wow.Tests
             // Test Steps
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
-           
+
             // Check
             Assert.AreEqual(admin.GetFullName(), usersPage.GetUsernameText());
             //
@@ -38,15 +40,6 @@ namespace Wow.Tests
         //[Test]
         public void Beta()
         {
-            string STORAGE_DIR = @"\FileStorage\";
-            string _storagePath;
-            string fileName = "nn";
-            _storagePath = $"{STORAGE_DIR}{fileName}";
-
-            string appDirPath = Path.GetDirectoryName(Path.GetDirectoryName(AppDomain.CurrentDomain.SetupInformation.ApplicationBase));
-            string fullPath = $"{appDirPath}{_storagePath}";
-
-            Console.WriteLine(appDirPath);
         }
     }
 }

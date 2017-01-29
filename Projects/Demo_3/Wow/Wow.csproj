@@ -40,13 +40,19 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\Test Studio\Bin\ArtOfTest.WebAii.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -66,11 +72,14 @@
     <Compile Include="Appl\ApplicationSources.cs" />
     <Compile Include="Appl\ApplicationSourcesRepository.cs" />
     <Compile Include="Data\CsvUtils.cs" />
+    <Compile Include="Data\ExelUtils.cs" />
     <Compile Include="Data\IExternalData.cs" />
+    <Compile Include="Data\JsonUtils.cs" />
     <Compile Include="Data\ListUtils.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\UserRepository.cs" />
     <Compile Include="Data\UserUtils.cs" />
+    <Compile Include="Data\XmlUtil.cs" />
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\ApplicationPage.cs" />
@@ -91,10 +100,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FileStorage\Users.csv" />
+    <None Include="FileStorage\Users.json" />
     <None Include="FileStorage\Users.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FileStorage\Users.xml" />
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

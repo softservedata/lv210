@@ -1,0 +1,22 @@
+[
+{
+	"firstName":"LV-204",
+	"lastName":"ISTQB",
+	"language":"English",
+	"email":"wowira@ukr.net",
+	"password":"irawow123",
+	"isAdmin":true,
+	"isTeacher":true,
+	"isStudent":true
+},
+{
+	"firstName":"aaaaaa",
+	"lastName":"aaaaaa",
+	"language":"English",
+	"email":"k2854799@mvrht.com",
+	"password":"qwerty+1",
+	"isAdmin":false,
+	"isTeacher":false,
+	"isStudent":true
+}
+]

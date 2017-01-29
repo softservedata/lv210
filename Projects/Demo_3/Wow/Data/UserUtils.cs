@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Json;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,8 +25,6 @@ namespace Wow.Data
         {
             string appDirPath = Path.GetDirectoryName(Path.GetDirectoryName(AppDomain.CurrentDomain.SetupInformation.ApplicationBase));
             string fullPath = $"{appDirPath}{_storagePath}";
-            Console.WriteLine(appDirPath);
-            Console.WriteLine(fullPath);
             return GetAllUsers(fullPath);
         }
 

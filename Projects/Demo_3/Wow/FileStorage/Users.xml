@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ArrayOfUsers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <firstName>LV-204</firstName>
+    <lastName>ISTQB</lastName>
+    <language>English</language>
+    <email>wowira@ukr.net</email>
+    <password>irawow123</password>
+    <isAdmin>true</isAdmin>
+    <isTeacher>true</isTeacher>
+    <isStudent>true</isStudent>
+  </User>
+  <User>
+    <firstName>aaaaaa</firstName>
+    <lastName>aaaaaa</lastName>
+    <language>English</language>
+    <email>k2854799@mvrht.com</email>
+    <password>qwerty+1</password>
+    <isAdmin>false</isAdmin>
+    <isTeacher>false</isTeacher>
+    <isStudent>true</isStudent>
+  </User>
+</ArrayOfUsers>

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 
 namespace Wow.Data
 {
@@ -69,15 +71,26 @@ namespace Wow.Data
         bool GetIsStudent();
     }
 
+    [DataContract]
+    [Serializable]
     public class User : IFirstName, ILastName, ILanguage, IEmail, IPassword, IAdmin, ITeacher, IStudent, IBuilder, IUser
     {
+
+        [DataMember]
         private string firstName;
+        [DataMember]
         private string lastName;
+        [DataMember]
         private string language;
+        [DataMember]
         private string email;
+        [DataMember]
         private string password;
+        [DataMember]
         private bool isAdmin;
+        [DataMember]
         private bool isTeacher;
+        [DataMember]
         private bool isStudent;
 
         private User() { }
