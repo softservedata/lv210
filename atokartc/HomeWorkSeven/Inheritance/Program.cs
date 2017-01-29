@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Inheritance
+namespace HomeWorkSeven
 {
     /// <summary>
     /// 1. Practical task:

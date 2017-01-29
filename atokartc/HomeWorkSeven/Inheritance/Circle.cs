@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Inheritance
+namespace HomeWorkSeven
 {
     /// <summary>
     /// Class that reprents Circle functionality

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Inheritance
+﻿namespace HomeWorkSeven
 {
     /// <summary>
     /// Class that reprents Square functionality

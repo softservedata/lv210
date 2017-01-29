@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Inheritance
+namespace HomeWorkSeven
 {
     /// <summary>
     /// Class reperesents methods that are used to make operations with shapes.

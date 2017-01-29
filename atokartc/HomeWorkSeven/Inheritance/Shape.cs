@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Inheritance
+namespace HomeWorkSeven
 {
     /// <summary>
     /// Base class Shape
