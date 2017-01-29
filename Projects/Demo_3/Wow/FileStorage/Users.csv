@@ -1,3 +1,4 @@
 Firstname;Lastname;Language;Email;Password;IsAdmin;IsTeacher;IsStudent
-LV-204;ISTQB;English;wowira@ukr.net;irawow123;true;true;true
-aaaaaa;aaaaaa;English;k2854799@mvrht.com;qwerty+1;false;false;true
+Yuriy;Boyko;Ukrainian;stechahudr@housat.com;qwerty;false;false;true
+Petter;Northug;English;thichapora@housat.com;qwerty2;false;true;false
+Joe;Admin;English;koyocore@go2usa.info;qwertya;true;false;false

@@ -51,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
   </ItemGroup>
@@ -75,7 +76,7 @@
     <Compile Include="Data\ExelUtils.cs" />
     <Compile Include="Data\IExternalData.cs" />
     <Compile Include="Data\JsonUtils.cs" />
-    <Compile Include="Data\ListUtils.cs" />
+    <Compile Include="Data\ExtentionForUserRepository.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\UserRepository.cs" />
     <Compile Include="Data\UserUtils.cs" />

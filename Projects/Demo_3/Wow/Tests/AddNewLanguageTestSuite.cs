@@ -13,7 +13,7 @@ namespace Wow.Tests
         {
             new object[]
             {
-                UserRepository.Get().Admin(),   // Admin user
+                UserRepository.Get().FromXml("Users.xml").GetAdmin(),
                 "Afrikaans",                    // Language to add
                 "Add language",                 // Dialog window title 
                 "Language added successfully"   // Dialog window message
@@ -23,11 +23,6 @@ namespace Wow.Tests
         [Test, TestCaseSource(nameof(TestData))]
         public void AddAfrikaansLanguageTest(User admin, string languageToAdd, string windowTitle, string windowMessage)
         {
-            // --- Precondition --- //
-
-            admin.SetEmail("admin.wow@ukr.net");
-            admin.SetPassword("qwerty");
-
             // Login
             LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);

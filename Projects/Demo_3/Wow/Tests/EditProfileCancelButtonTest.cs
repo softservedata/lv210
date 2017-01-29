@@ -13,7 +13,7 @@ namespace Wow.Tests
         {
             new object[]
             {
-                UserRepository.Get().Admin(),   // Admin User
+                UserRepository.Get().FromXml("Users.xml").GetAdmin(),
                 "Supernova",                    // New Name
                 "starblack",                    // New Password
             }
@@ -22,13 +22,6 @@ namespace Wow.Tests
         [Test, TestCaseSource(nameof(TestData))]
         public void CancelButtonTest(User admin, string newName, string newPassword)
         {
-            // --- Precondition --- //
-
-            admin.SetEmail("sokt@securehost.com.es");
-            admin.SetPassword("blackstar");
-            admin.SetFirstName("Black");
-            admin.SetLastName("Star");
-
             // Login
             LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);

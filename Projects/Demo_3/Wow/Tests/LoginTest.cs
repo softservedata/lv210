@@ -15,10 +15,10 @@ namespace Wow.Tests
     {
 
         private static readonly object[] ExternalData =
-            ListUtils.ToMultiArray(UserRepository.Get().FromCsv("Users.csv"));
-            //ListUtils.ToMultiArray(UserRepository.Get().FromJson("Users.json"));
-            //ListUtils.ToMultiArray(UserRepository.Get().FromXml("Users.xml"));
-            //ListUtils.ToMultiArray(UserRepository.Get().FromExcel("Users.xlsx"));
+            UserRepository.Get().FromCsv("Users.csv").GetAllUsers();
+            //UserRepository.Get().FromJson("Users.json").GetAllUsers();
+            //UserRepository.Get().FromXml("Users.xml").GetAllUsers();
+            //UserRepository.Get().FromExcel("Users.xlsx").GetAllUsers();
 
         [Test, TestCaseSource(nameof(ExternalData))]
         public void TestSignin(IUser admin)
@@ -41,6 +41,7 @@ namespace Wow.Tests
         //[Test, TestCaseSource(nameof(ExternalData))]
         public void Beta(IUser admin)
         {
+            UserRepository.Get().FromCsv("Users.csv").GetAdmin();
             Console.WriteLine(admin.GetFullName());
             Console.WriteLine(admin.GetEmail());
             Console.WriteLine(admin.GetPassword());

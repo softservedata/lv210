@@ -29,7 +29,6 @@ namespace Wow.Data
                 for (int i = 0; i < tagNames.Length; i++)
                 {
                     line[i] = node[tagNames[i]].InnerText;
-                    Console.Write($"{node[tagNames[i]].InnerText};");
                 }
                 allValues.Add(line.ToList());
             }
@@ -46,7 +45,6 @@ namespace Wow.Data
             {
                 tagNames[i] = objectNode.ChildNodes[i].LocalName;
             }
-            //return tagNames;
         }
     }
 }

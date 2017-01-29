@@ -9,6 +9,7 @@ using System.Xml;
 using System.Xml.Linq;
 using Wow.Data;
 using System.Xml.Serialization;
+using System.Web;
 
 namespace beta
 {
@@ -76,40 +77,41 @@ namespace beta
             //    Console.WriteLine(elemList[i].LocalName);
             //}
 
-            XmlDocument xml = new XmlDataDocument();
-            xml.Load("Users.xml");
+            //XmlDocument xml = new XmlDataDocument();
+            //xml.Load("Users.xml");
 
-            XmlNode users = xml.DocumentElement.FirstChild;
-            string[] tags = new string[users.ChildNodes.Count];
+            //XmlNode users = xml.DocumentElement.FirstChild;
+            //string[] tags = new string[users.ChildNodes.Count];
 
-            Console.WriteLine("------");
+            //Console.WriteLine("------");
 
-            for (int i = 0; i < users.ChildNodes.Count; i++)
-            {
+            //for (int i = 0; i < users.ChildNodes.Count; i++)
+            //{
 
-                tags[i] = users.ChildNodes[i].LocalName;
-            }
-
-
-            IList<IList<string>> allValues = new List<IList<string>>();
+            //    tags[i] = users.ChildNodes[i].LocalName;
+            //}
 
 
-            XmlNodeList xnList = xml.SelectNodes("/ArrayOfUsers/User");
-            foreach (XmlNode xn in xnList)
-            {
-                string[] line = new string[tags.Length];
-                for (int i = 0; i < tags.Length; i++)
-                {
-                    line[i] = xn[tags[i]].InnerText;
-                    Console.Write($"{xn[tags[i]].InnerText};");
-                }
+            //IList<IList<string>> allValues = new List<IList<string>>();
 
-                allValues.Add(line.ToList());
-                Console.WriteLine();
-            }
+
+            //XmlNodeList xnList = xml.SelectNodes("/ArrayOfUsers/User");
+            //foreach (XmlNode xn in xnList)
+            //{
+            //    string[] line = new string[tags.Length];
+            //    for (int i = 0; i < tags.Length; i++)
+            //    {
+            //        line[i] = xn[tags[i]].InnerText;
+            //        Console.Write($"{xn[tags[i]].InnerText};");
+            //    }
+
+            //    allValues.Add(line.ToList());
+            //    Console.WriteLine();
+            //}
 
             //IList<IUser>
 
+            // TODO TODO TODO TODO
             //foreach (XmlNode xn in xnList)
             //{
             //    string firstName = xn["firstName"].InnerText;
@@ -123,9 +125,9 @@ namespace beta
             //    Console.WriteLine($"{firstName} {lastName} {language} {email} {password} {isAdmin} {isStudent} {isTeacher}");
             //}
 
+            //IUser s = JsonUtils.xGetAllUsers("Users.json").GetAdmin();
+            //Console.WriteLine(s.GetFullName());
 
-
-            //IList<IUser> user
         }
     }
 }

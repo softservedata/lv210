@@ -1,22 +1,32 @@
 [
 {
-	"firstName":"LV-204",
-	"lastName":"ISTQB",
-	"language":"English",
-	"email":"wowira@ukr.net",
-	"password":"irawow123",
-	"isAdmin":true,
-	"isTeacher":true,
-	"isStudent":true
-},
-{
-	"firstName":"aaaaaa",
-	"lastName":"aaaaaa",
-	"language":"English",
-	"email":"k2854799@mvrht.com",
-	"password":"qwerty+1",
+	"firstName":"Yuriy",
+	"lastName":"Boyko",
+	"language":"Ukrainian",
+	"email":"stechahudr@housat.com",
+	"password":"qwerty",
 	"isAdmin":false,
 	"isTeacher":false,
 	"isStudent":true
+},
+{
+	"firstName":"Petter",
+	"lastName":"Northug",
+	"language":"English",
+	"email":"thichapora@housat.com",
+	"password":"qwerty2",
+	"isAdmin":false,
+	"isTeacher":true,
+	"isStudent":false
+},
+{
+	"firstName":"Joe",
+	"lastName":"Admin",
+	"language":"English",
+	"email":"koyocore@go2usa.info",
+	"password":"qwertya",
+	"isAdmin":true,
+	"isTeacher":false,
+	"isStudent":false
 }
 ]

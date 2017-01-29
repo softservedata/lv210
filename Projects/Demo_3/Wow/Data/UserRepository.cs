@@ -99,9 +99,13 @@ namespace Wow.Data
             return new UserUtils(fileName, new XmlUtil()).GetAllUsers();
         }
 
-        public IList<User> FromJson(string fileName)
+        public IList<IUser> FromJson(string fileName)
         {
             return new JsonUtils(fileName).GetAllUsers();
         }
+    }
+
+    public static class ExtentionForUserRole
+    {
     }
 }
