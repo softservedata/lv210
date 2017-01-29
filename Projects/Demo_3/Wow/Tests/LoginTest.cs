@@ -15,9 +15,10 @@ namespace Wow.Tests
     {
 
         private static readonly object[] ExternalData =
-            //ListUtils.ToMultiArray(UserRepository.Get().FromCsv("Users.csv"));
+            ListUtils.ToMultiArray(UserRepository.Get().FromCsv("Users.csv"));
             //ListUtils.ToMultiArray(UserRepository.Get().FromJson("Users.json"));
-            ListUtils.ToMultiArray(UserRepository.Get().FromXml("Users.xml"));
+            //ListUtils.ToMultiArray(UserRepository.Get().FromXml("Users.xml"));
+            //ListUtils.ToMultiArray(UserRepository.Get().FromExcel("Users.xlsx"));
 
         [Test, TestCaseSource(nameof(ExternalData))]
         public void TestSignin(IUser admin)
@@ -37,9 +38,12 @@ namespace Wow.Tests
             Assert.AreEqual("SoftServe Language School", loginPage.GetLoginDescriptionText());
         }
 
-        //[Test]
-        public void Beta()
+        //[Test, TestCaseSource(nameof(ExternalData))]
+        public void Beta(IUser admin)
         {
+            Console.WriteLine(admin.GetFullName());
+            Console.WriteLine(admin.GetEmail());
+            Console.WriteLine(admin.GetPassword());
         }
     }
 }

@@ -29,9 +29,9 @@ namespace Wow.Data
                 for (int j = 1; j <= colCount; j++)
                 {
                     if ((exlRange.Cells[i, j] != null)
-                        && (exlRange.Cells[i, j].Value2 != null))
+                        && (exlRange.Cells[i, j].Value != null))
                     {
-                        String cell = exlRange.Cells[i, j].Value.ToString().Trim();
+                        string cell = exlRange.Cells[i, j].Value.ToString().Trim();
                         rowCells.Add(cell);
                     }
                 }
