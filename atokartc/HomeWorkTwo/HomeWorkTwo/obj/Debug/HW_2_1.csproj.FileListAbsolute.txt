@@ -1,5 +1,0 @@
-C:\Users\Andrii\lv210\atokartc\HomeWorkTwo\HomeWorkTwo\bin\Debug\HomeWorkTwo.exe.config
-C:\Users\Andrii\lv210\atokartc\HomeWorkTwo\HomeWorkTwo\bin\Debug\HomeWorkTwo.exe
-C:\Users\Andrii\lv210\atokartc\HomeWorkTwo\HomeWorkTwo\bin\Debug\HomeWorkTwo.pdb
-C:\Users\Andrii\lv210\atokartc\HomeWorkTwo\HomeWorkTwo\obj\Debug\HomeWorkTwo.exe
-C:\Users\Andrii\lv210\atokartc\HomeWorkTwo\HomeWorkTwo\obj\Debug\HomeWorkTwo.pdb
