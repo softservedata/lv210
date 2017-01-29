@@ -1,5 +1,0 @@
-C:\Users\Andrii\lv210\atokartc\HwFive\HW_IDeveloper\bin\Debug\HW_IDeveloper.exe.config
-C:\Users\Andrii\lv210\atokartc\HwFive\HW_IDeveloper\bin\Debug\HW_IDeveloper.exe
-C:\Users\Andrii\lv210\atokartc\HwFive\HW_IDeveloper\bin\Debug\HW_IDeveloper.pdb
-C:\Users\Andrii\lv210\atokartc\HwFive\HW_IDeveloper\obj\Debug\HW_IDeveloper.exe
-C:\Users\Andrii\lv210\atokartc\HwFive\HW_IDeveloper\obj\Debug\HW_IDeveloper.pdb
