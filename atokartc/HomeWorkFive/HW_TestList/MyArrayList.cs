@@ -6,6 +6,18 @@ namespace HwFive
 {
     public class MyArrayList
     {
+        private int GetInteger()
+        {
+            int readedVar = 0;
+            bool isIntEntered = Int32.TryParse(Console.ReadLine(), out readedVar);
+
+            if (isIntEntered == false)
+            {
+                Console.WriteLine("Please, enter an positive integer");
+                return this.GetInteger();
+            }
+            return readedVar;
+        }
         /// <summary>
     	/// Fills array list from console.
     	/// </summary>
@@ -15,6 +27,12 @@ namespace HwFive
         {
             ArrayList arrayList = new ArrayList(inputedValuesCount);
 
+            for (int i = 0; i < arrayList.Count; i++)
+            {
+                arrayList.Add(GetInteger());
+            }
+
+            arrayList.TrimToSize();
             return arrayList;
         }
         /// <summary>

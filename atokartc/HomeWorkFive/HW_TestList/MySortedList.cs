@@ -5,6 +5,18 @@ namespace HwFive
 {
     public class MySortedList
     {
+        private int GetInteger()
+        {
+            int readedVar = 0;
+            bool isIntEntered = Int32.TryParse(Console.ReadLine(), out readedVar);
+
+            if (isIntEntered == false)
+            {
+                Console.WriteLine("Please, enter an positive integer");
+                return this.GetInteger();
+            }
+            return readedVar;
+        }
         /// <summary>
     	/// Fills sorted list from console.
     	/// </summary>
@@ -12,10 +24,14 @@ namespace HwFive
     	/// <returns>filled sorted list</returns>
     	public SortedList FillFromConsole(int inputedValuesCount)
         {
-            Console.WriteLine("Enter 10 integer numbers one by one separated by space.");
-
             SortedList list = new SortedList(inputedValuesCount);
 
+            for (int i = 0; i < list.Count; i++)
+            {
+                list.Add(i, GetInteger());
+            }
+
+            list.TrimToSize();
             return list;
         }
         /// <summary>
