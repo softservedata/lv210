@@ -34,17 +34,17 @@ namespace Wow.Pages
             public SidebarMenu(Manager manager)
             {
                 this.manager = manager;
-                this.Users = manager.ActiveBrowser.Find.ByExpression<HtmlAnchor>("tagname=a", "href=Index#/Users");
-                this.Languages = manager.ActiveBrowser.Find.ByExpression<HtmlAnchor>("tagname=a", "href=Index#/Languages");
-                this.Profile = manager.ActiveBrowser.Find.ByExpression<HtmlAnchor>("tagname=a", "href=Index#/EditUserProfile");
+                this.Users = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='admin-tools']//span[contains(text(), 'Users')]");
+                this.Languages = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='admin-tools']//span[contains(text(), 'Languages')]");
+                this.Profile = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='your-stuff']//span[contains(text(), 'Profile')]");
             }
 
             // 'Admin Tools' Category
-            public HtmlAnchor Users { get; private set; }
-            public HtmlAnchor Languages { get; private set; }
+            public HtmlSpan Users { get; private set; }  // ---- old value HtmlAnchor
+            public HtmlSpan Languages { get; private set; } // ---- old value HtmlAnchor
 
             // 'Your Stuff' Category
-            public HtmlAnchor Profile { get; private set; }
+            public HtmlSpan Profile { get; private set; } // ---- old value HtmlAnchor
         }
 
         protected Manager manager;
@@ -58,9 +58,13 @@ namespace Wow.Pages
             this.manager = manager;
             this.navbarCollapse = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=collapse navbar-collapse");
             this.body = manager.ActiveBrowser.Find.ByTagIndex("body", 0);
-            //
-            this.Username = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("ng-model=getName");
-            this.DefaultTheme = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=defaultTheme");
+            
+            //this.Username = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("ng-model=getName"); // ------ old
+            this.Username = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//button[@type='button']/strong/span");
+            
+            //this.DefaultTheme = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=defaultTheme"); // ------ old
+            this.DefaultTheme = manager.ActiveBrowser.Find.ByXPath<HtmlSelect>("//span[@class='custom-dropdown']/select");
+
             this.SidebarToggle = manager.ActiveBrowser.Find.ById<HtmlButton>("sidebar-toggle");
         }
 
@@ -81,19 +85,19 @@ namespace Wow.Pages
             return this.usernameDropdown.LogOut;
         }
 
-        private HtmlAnchor GetAdminToolUsers()
+        private HtmlSpan GetAdminToolUsers() // ------- old value HtmlAnchor
         {
             sidebarMenu = new SidebarMenu(manager);
             return sidebarMenu.Users;
         }
 
-        private HtmlAnchor GetAdminToolLanguages()
+        private HtmlSpan GetAdminToolLanguages() // edit HtmlAnchor old
         {
             sidebarMenu = new SidebarMenu(manager);
             return sidebarMenu.Languages;
         }
 
-        private HtmlAnchor GetYourStuffProfile()
+        private HtmlSpan GetYourStuffProfile() // ------- old value HtmlAnchor
         {
             sidebarMenu = new SidebarMenu(manager);
             return sidebarMenu.Profile;

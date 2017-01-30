@@ -12,8 +12,8 @@ namespace Wow.Pages
             public EditNameForm(Manager manager) : base(manager)
             {
                 this.NewNameField = manager.ActiveBrowser.Find.ById<HtmlInputText>("userNewName");
-                this.ConfirmChanges = manager.ActiveBrowser.Find.ByAttributes<HtmlInputSubmit>("value=Change Name");
-                this.CancelChanges = manager.ActiveBrowser.Find.ByAttributes<HtmlInputSubmit>("value=Cancel");
+                this.ConfirmChanges = manager.ActiveBrowser.Find.ByXPath<HtmlInputSubmit>("//input[@id='editUserProfileBtn' and @value='Change Name']");
+                this.CancelChanges = manager.ActiveBrowser.Find.ByXPath<HtmlInputSubmit>("//form[@id='editNameForm']//input[@id='editUserProfileBtn' and @value='Cancel']");
             }
             
             public HtmlInputText NewNameField { get; protected set; }
@@ -26,8 +26,8 @@ namespace Wow.Pages
                 this.CurrentPasswordField = manager.ActiveBrowser.Find.ById<HtmlInputPassword>("userCurrentPassword");
                 this.NewPasswordField = manager.ActiveBrowser.Find.ById<HtmlInputPassword>("password");
                 this.ConfirmPasswordField = manager.ActiveBrowser.Find.ById<HtmlInputPassword>("userConfirmNewPassword");
-                this.ConfirmChanges = manager.ActiveBrowser.Find.ByAttributes<HtmlInputSubmit>("value=Change Password");
-                this.CancelChanges = manager.ActiveBrowser.Find.ByAttributes<HtmlInputSubmit>("value=Cancel");
+                this.ConfirmChanges = manager.ActiveBrowser.Find.ByXPath<HtmlInputSubmit>("//input[@id='editUserProfileBtn' and @value='Change Password']");
+                this.CancelChanges = manager.ActiveBrowser.Find.ByXPath<HtmlInputSubmit>("//form[@id='editPasswordForm']//input[@id='editUserProfileBtn' and @value='Cancel']");
             }
 
             public HtmlInputPassword CurrentPasswordField { get; private set; }
@@ -41,7 +41,7 @@ namespace Wow.Pages
         public YourProfilePage(Manager manager) : base(manager)
         {
             this.YourProfileLabel = manager.ActiveBrowser.Find.ByContent<HtmlControl>("Your Profile");
-            this.UserName = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>(new string[] { "ng-bind=userName", "class=ng-binding" });
+            this.UserName = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//label[@id='userNameStyle']/span");
             this.EditUserName = manager.ActiveBrowser.Find.ById<HtmlAnchor>("editName");
             this.EditUserPassword = manager.ActiveBrowser.Find.ById<HtmlAnchor>("editPassword");
         }

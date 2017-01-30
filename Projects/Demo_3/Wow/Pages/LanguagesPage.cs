@@ -14,9 +14,8 @@ namespace Wow.Pages
         {
             public DialogWindow(Manager manager) : base(manager)
             {
-                this.HeaderName = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=modal-header ng-scope bg-primary");
-                this.BodyMessage = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=modal-body text-center ng-scope");
-                this.OkButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-block btn-primary");
+                //this.OkButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-block btn-primary");
+                this.OkButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[contains(text(),'Ok')]");
             }
 
             public HtmlButton OkButton { get; private set; }
@@ -28,9 +27,7 @@ namespace Wow.Pages
         private class ConfirmWindow : ModalContent
         {
             public ConfirmWindow(Manager manager) : base(manager)
-            {
-                this.HeaderName = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=modal-header bg-primary ng-scope");
-                this.BodyMessage = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=modal-body text-center ng-scope");
+            {              
                 this.YesButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[contains(text(),'Yes')]");
                 this.NoButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[contains(text(),'No')]");
             }
@@ -44,10 +41,17 @@ namespace Wow.Pages
 
         public LanguagesPage(Manager manager) : base(manager)
         {
-            this.LanguageHeader = manager.ActiveBrowser.Find.ByAttributes("class=text-center ng-scope");
-            this.LanguageSelect = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=selectedLanguage");
-            this.AddLanguageButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-default btn-block");
-            this.ExistingLanguagesTable = manager.ActiveBrowser.Find.ByAttributes<HtmlTable>("class=table table-striped width-quarter");
+            //this.LanguageHeader = manager.ActiveBrowser.Find.ByAttributes("class=text-center ng-scope");
+            this.LanguageHeader = manager.ActiveBrowser.Find.ByXPath("//header/h2[text()='Languages']");
+
+            //this.LanguageSelect = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=selectedLanguage");
+            this.LanguageSelect = manager.ActiveBrowser.Find.ByXPath<HtmlSelect>("//select[contains(@class, 'form-control')]");
+
+            //this.AddLanguageButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-default btn-block");
+            this.AddLanguageButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//span[contains(@class, 'input-group-btn')]/button");
+
+            //this.ExistingLanguagesTable = manager.ActiveBrowser.Find.ByAttributes<HtmlTable>("class=table table-striped width-quarter");
+            this.ExistingLanguagesTable = manager.ActiveBrowser.Find.ByAttributes<HtmlTable>("class=~table");
         }
 
         public Element LanguageHeader { get; private set; }
@@ -68,7 +72,8 @@ namespace Wow.Pages
 
         public HtmlButton GetDeleteLanguageButtonByRow(HtmlTableRow languageRow)
         {
-            return languageRow.Find.ByAttributes<HtmlButton>("class=btn btn-default nomargins");
+            //return languageRow.Find.ByAttributes<HtmlButton>("class=btn btn-default nomargins");
+            return languageRow.Find.ByAttributes<HtmlButton>("class=~btn");
         }
 
         private DialogWindow GetDialogWindow()

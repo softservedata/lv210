@@ -1,4 +1,5 @@
-﻿using ArtOfTest.WebAii.Core;
+﻿using System.Collections.Generic;
+using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 
 namespace Wow.Pages
@@ -13,6 +14,8 @@ namespace Wow.Pages
         public ModalContent(Manager manager)
         {
             this.manager = manager;
+            this.HeaderName = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=~modal-header");
+            this.BodyMessage = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=~modal-body");
         }
 
         public HtmlDiv HeaderName { get; protected set; }

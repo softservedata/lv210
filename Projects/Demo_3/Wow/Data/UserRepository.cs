@@ -104,8 +104,4 @@ namespace Wow.Data
             return new JsonUtils(fileName).GetAllUsers();
         }
     }
-
-    public static class ExtentionForUserRole
-    {
-    }
 }
