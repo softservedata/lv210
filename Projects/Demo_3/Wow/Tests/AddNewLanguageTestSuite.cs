@@ -33,7 +33,7 @@ namespace Wow.Tests
 
             // 1. Check if language is not presented on the list of existing languages
             Assert.IsFalse(languagesPage.IsLanguageInExistingList(languageToAdd));
-
+            
             // 2. Add Language
             languagesPage.AddNewLanguage(languageToAdd);
             Assert.IsTrue(languagesPage.IsAddLanguageDialogWindowAppear(windowTitle, windowMessage));

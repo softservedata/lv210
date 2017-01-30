@@ -2,6 +2,7 @@
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
+using NUnit.Framework;
 
 namespace Wow.Pages
 {
@@ -42,7 +43,7 @@ namespace Wow.Pages
         public LanguagesPage(Manager manager) : base(manager)
         {
             //this.LanguageHeader = manager.ActiveBrowser.Find.ByAttributes("class=text-center ng-scope");
-            this.LanguageHeader = manager.ActiveBrowser.Find.ByXPath("//header/h2[text()='Languages']");
+            this.LanguageHeader = manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//header/h2[text()='Languages']");
 
             //this.LanguageSelect = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=selectedLanguage");
             this.LanguageSelect = manager.ActiveBrowser.Find.ByXPath<HtmlSelect>("//select[contains(@class, 'form-control')]");
@@ -54,7 +55,7 @@ namespace Wow.Pages
             this.ExistingLanguagesTable = manager.ActiveBrowser.Find.ByAttributes<HtmlTable>("class=~table");
         }
 
-        public Element LanguageHeader { get; private set; }
+        public HtmlControl LanguageHeader { get; private set; }
         public HtmlSelect LanguageSelect { get; private set; }
         public HtmlButton AddLanguageButton { get; private set; }
         public HtmlTable ExistingLanguagesTable { get; private set; }
@@ -62,7 +63,7 @@ namespace Wow.Pages
         // Get Data
         public string GetLanguagePageDescription()
         {
-            return LanguageHeader.InnerText;
+            return LanguageHeader.ChildNodes[0].Content;
         }
 
         public HtmlTableRow GetLastLanguageRowFromExistingList()

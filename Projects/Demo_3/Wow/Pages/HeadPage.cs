@@ -37,11 +37,18 @@ namespace Wow.Pages
                 this.Users = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='admin-tools']//span[contains(text(), 'Users')]");
                 this.Languages = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='admin-tools']//span[contains(text(), 'Languages')]");
                 this.Profile = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='your-stuff']//span[contains(text(), 'Profile')]");
+                this.TeacherManager = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//section[@id='teaching-tools']//a[@id='cursorStyle']");
+                this.Groups = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='teaching-tools']//span[contains(text(), 'Groups')]");
+
             }
 
             // 'Admin Tools' Category
             public HtmlSpan Users { get; private set; }  // ---- old value HtmlAnchor
             public HtmlSpan Languages { get; private set; } // ---- old value HtmlAnchor
+
+            // 'Teaching Tools' Category
+            public HtmlAnchor TeacherManager { get; private set; }
+            public HtmlSpan Groups { get; private set; }
 
             // 'Your Stuff' Category
             public HtmlSpan Profile { get; private set; } // ---- old value HtmlAnchor
@@ -103,6 +110,18 @@ namespace Wow.Pages
             return sidebarMenu.Profile;
         }
 
+        private HtmlAnchor GetTeachingToolsManager() // --------------------- new
+        {
+            sidebarMenu = new SidebarMenu(manager);
+            return sidebarMenu.TeacherManager;
+        }
+
+        private HtmlSpan GetTeachingToolsGroups() // --------------------- new
+        {
+            sidebarMenu = new SidebarMenu(manager);
+            return sidebarMenu.Groups;
+        }
+
         // Functional
         public string GetUsernameText()
         {
@@ -157,6 +176,16 @@ namespace Wow.Pages
             GetYourStuffProfile().Click();
         }
 
+        private void ClickTeacherManager()     // ----------------------- new
+        {
+            GetTeachingToolsManager().Click();
+        }
+
+        private void ClickGroups()     // ----------------------- new
+        {
+            GetTeachingToolsGroups().Click();
+        }
+
         public void SelectDefaultTheme(ThemeState theme)
         {
             DefaultTheme.SelectByPartialText(theme.ToString().Substring(0, 4), true);
@@ -179,6 +208,13 @@ namespace Wow.Pages
         {
             ClickLanguages();
             return new LanguagesPage(manager);
+        }
+
+        public GroupsPage GotoGroupsPage() // -------------------- !!!!!!!!!!!!
+        {
+            ClickTeacherManager();
+            ClickGroups();
+            return new GroupsPage(manager);
         }
 
         public YourProfilePage GotoProfilePage()

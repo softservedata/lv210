@@ -84,6 +84,7 @@
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\ApplicationPage.cs" />
+    <Compile Include="Pages\GroupsPage.cs" />
     <Compile Include="Pages\EditForm.cs" />
     <Compile Include="Pages\LanguagesPage.cs" />
     <Compile Include="Pages\ModalContent.cs" />
@@ -96,7 +97,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\AddNewLanguageTestSuite.cs" />
     <Compile Include="Tests\EditProfileCancelButtonTest.cs" />
-    <Compile Include="Tests\EditProfileTestSuite.cs" />
+    <Compile Include="Tests\EditGropsTestSuite.cs" />
     <Compile Include="Tests\LoginTest.cs" />
     <Compile Include="Tests\TestRunner.cs" />
   </ItemGroup>
