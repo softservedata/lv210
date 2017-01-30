@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using Wow.Data;
 using Wow.Pages;
 
@@ -23,7 +24,7 @@ namespace Wow.Tests
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
             LanguagesPage languagesPage = usersPage.GotoLanguagesPage();
-
+            
             languagesPage.AddNewLanguage(language);
             Assert.IsTrue(languagesPage.IsLanguageInExistingList(language));
 
