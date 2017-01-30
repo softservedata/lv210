@@ -65,22 +65,63 @@ namespace Wow.Pages
         // get Data
         //public List<Element> getHeader() { return null; }
 
-        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        public IList<IList<HtmlTableCell>> GetAllCells()
+        {
+            bool hasNextPage = true;
+            IList<IList<HtmlTableCell>> result = new List<IList<HtmlTableCell>>();
+            ClickFirstItem();
+            while (hasNextPage)
+            {
+                hasNextPage = IsLastItemEnable();
+                // Code
+                foreach (var row in this.Table.Rows)
+                {
+                    result.Add(row.Cells);
+                }
+                ClickStepForwardItem();
+            }
+            return result;
+        }
 
-        // TODO
-        public IList<IList<Element>> GetAllCells() { return null; }
+        public int GetRowCount()
+        {
+            return this.Table.Rows.Count;
+        }
 
-        public IList<HtmlTableCell> getRowByIndex(int rowIndex)
+        public int GetColumnCount()
+        {
+            return this.Table.ColumnCount;
+        }
+
+        public IList<HtmlTableCell> GetRowByIndex(int rowIndex)
         {
             return this.Table.Rows.ElementAt(rowIndex).Cells;
         }
 
-        public IList<HtmlTableCell> getRowByValueInColumn(String value, int columnIndex)
+        public IList<IList<HtmlTableCell>> GetRowByValue(String value)
+        {
+            IList<IList<HtmlTableCell>> result = new List<IList<HtmlTableCell>>();
+            foreach (var row in this.Table.Rows)
+            {
+                foreach (var cell in row.Cells)
+                {
+                    if (cell.InnerText.ToLower().Contains(value.ToLower()))
+                    {
+                        result.Add(row.Cells);
+                        break;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public IList<HtmlTableCell> GetRowByValueInColumn(String value, int columnIndex)
         {
             IList<HtmlTableCell> result = null;
             foreach (var row in this.Table.Rows)
             {
-                if (row.Cells[columnIndex].TextContent.ToLower().Contains(value))
+                if (row.Cells[columnIndex].InnerText.ToLower().Contains(value.ToLower())) // do not use TextContent
                 {
                     result = row.Cells;
                     break;
@@ -89,12 +130,13 @@ namespace Wow.Pages
             return result;
         }
 
-        public int getRowIndexByValueInColumn(String value, int columnIndex)
+        public int GetRowIndexByValueInColumn(String value, int columnIndex)
         {
             int result = -1;
-            for (int i = 0; i < this.Table.Rows.Count; i++)
+            //for (int i = 0; i < this.Table.Rows.Count; i++)
+            for (int i = 0; i < GetRowCount(); i++)
             {
-                if (this.Table.Rows.ElementAt(i).Cells[columnIndex].TextContent.ToLower().Contains(value))
+                if (this.Table.Rows.ElementAt(i).Cells[columnIndex].InnerText.ToLower().Contains(value.ToLower())) // do not use TextContent
                 {
                     result = i;
                     break;
@@ -103,17 +145,61 @@ namespace Wow.Pages
             return result;
         }
 
-        public IList<Element> getColumnByIndex(int columnIndex) { return null; }
+        public IList<HtmlTableCell> GetColumnByIndex(int columnIndex)
+        {
+            IList<HtmlTableCell> result = new List<HtmlTableCell>();
+            foreach (var row in this.Table.Rows)
+            {
+                result.Add(row.Cells[columnIndex]);
+            }
+            return result;
+        }
 
-        public IList<Element> getColumnByValueInRow(String value, int rowIndex) { return null; }
+        public IList<HtmlTableCell> GetAllColumnByIndex(int columnIndex)
+        {
+            bool hasNextPage = true;
+            IList<HtmlTableCell> result = new List<HtmlTableCell>();
+            ClickFirstItem();
+            while (hasNextPage)
+            {
+                hasNextPage = IsLastItemEnable();
+                // Code
+                foreach (var row in this.Table.Rows)
+                {
+                    result.Add(row.Cells[columnIndex]);
+                }
+                ClickStepForwardItem();
+            }
+            return result;
+        }
 
-        //public List<Element> getColumnByValueOfHeader(String value) { return null; }
+        public IList<HtmlTableCell> GetColumnByValueInRow(String value, int rowIndex)
+        {
+            IList<HtmlTableCell> result = null;
+            int columnIndex = -1;
+            foreach (var cell in GetRowByIndex(rowIndex))
+            {
+                columnIndex++;
+                if (cell.InnerText.ToLower().Contains(value.ToLower()))
+                {
+                    break;
+                }
+            }
+            if (columnIndex > -1)
+            {
+                result = GetColumnByIndex(columnIndex);
+            }
+            return result;
+        }
 
-        //public int getColumnIndexByValueOfHeader(String value) { return null; }
+        //public List<Element> GetColumnByValueOfHeader(String value) { return null; }
 
-        public Element getCell(int rowIndex, int columnIndex) { return null; }
+        //public int GetColumnIndexByValueOfHeader(String value) { return null; }
 
-        // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        public HtmlTableCell GetCell(int rowIndex, int columnIndex)
+        {
+            return this.Table.Rows.ElementAt(rowIndex).Cells[columnIndex];
+        }
 
         public bool IsFirstItemEnable()
         {

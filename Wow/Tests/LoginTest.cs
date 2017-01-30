@@ -18,7 +18,7 @@ namespace Wow.Tests
         private static readonly object[] TestSigninData =
         {
             new object[] { UserRepository.Get().Admin() },
-            new object[] { UserRepository.Get().Student() },
+            //new object[] { UserRepository.Get().Student() },
         };
 
         private static readonly object[] TestExternalData =
@@ -33,8 +33,8 @@ namespace Wow.Tests
             Console.WriteLine("IsIsAdmin = " + admin.GetIsAdmin());
         }
 
-        //[Test, TestCaseSource(nameof(TestSigninData))]
-        [Test, TestCaseSource(nameof(TestExternalData))]
+        [Test, TestCaseSource(nameof(TestSigninData))]
+        //[Test, TestCaseSource(nameof(TestExternalData))]
         public void TestSignin(IUser admin)
         {
             logger.Info("Start TestSignin(IUser admin), admin = " + admin.GetEmail());
@@ -46,6 +46,7 @@ namespace Wow.Tests
             //
             // Check
             Assert.AreEqual(admin.GetName(), usersPage.GetUsernameText());
+            CollectionAssert.IsNotEmpty(usersPage.GetUserTableEMails());
             //
             // Return to previous state
             loginPage = usersPage.GotoLogOut();

@@ -6,74 +6,62 @@ using System.Threading.Tasks;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
-
+using NLog;
+using Wow.Data;
 
 namespace Wow.Pages
 {
     public class UsersPage : HeadPage
     {
         // Components
-        private class UserTable
+        private class UserTableUtils : IExternalData
         {
             // Fields
-            private Manager manager;
-
-            // get Data
-            public HtmlTable Table { get; private set; }
-            public HtmlAnchor Next { get; private set; }
-            //public HtmlControl DirectionItem { get; private set; }
-            //
-            // TODO First
-            // Header
-            private List<Element> header;
-            private List<List<Element>> cells;
+            BasicTable userTable;
 
             // Constructor
-            public UserTable(Manager manager)
+            public UserTableUtils(BasicTable userTable)
             {
-                this.manager = manager;
-                this.Table = manager.ActiveBrowser.Find.ByAttributes<HtmlTable>("class=table table-striped width-half");
-                //this.Next = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'›')]");
-                this.Next = manager.ActiveBrowser.Find.ByContent<HtmlAnchor>("›");
-                //this.DirectionItem = manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//a[contains(text(),'›')]/ancestor::li");
+                this.userTable = userTable;
             }
 
-            // Page Object
-            // get Data
-            // Functional
-            private List<List<Element>> GetAllCells()
+            public IList<IList<string>> GetAllCells(string path)
             {
-                return null;
+                IList<IList<string>> allCells = new List<IList<string>>();
+                foreach (var row in userTable.GetAllCells())
+                {
+                    IList<string> allvalues = new List<string>();
+                    foreach (var cell in row)
+                    {
+                        allvalues.Add(cell.InnerText);
+                    }
+                }
+                //
+                //using (StreamReader streamReader = new StreamReader(path))
+                //{
+                //    while ((row = streamReader.ReadLine()) != null)
+                //    {
+                //        allCells.Add(row.Split(CSV_SPLIT_BY).ToList());
+                //    }
+                //}
+                return allCells;
             }
-
-            public bool IsItemPresent(string text)
-            {
-                return true;
-            }
-
-            public bool IsItemPresent(int columnNumber, string text)
-            {
-                // Searching
-                return true;
-            }
-
-            public bool IsItemPresent(string columnName, string text)
-            {
-                return true;
-            }
-
-            public List<String> GetAllEMails()
-            {
-                return null;
-            }
-
-            // set Data
-
-            // Business Logic
 
         }
 
+        // Components
+        public enum UserTableHeader
+        {
+            Name = 0,
+            Email = 1,
+            AdminRole = 2,
+            TeacherRole = 3,
+            StudentRole = 4,
+            ClickToedit = 5
+        }
+
         // Fields
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         // get Data
         public HtmlControl All { get; private set; }
@@ -82,7 +70,7 @@ namespace Wow.Pages
         public HtmlControl Students { get; private set; }
         public HtmlInputText Search { get; private set; }
         //
-        private UserTable userTable;
+        private BasicTable userTable;
 
         // Constructor
         public UsersPage(Manager manager) : base(manager)
@@ -92,14 +80,29 @@ namespace Wow.Pages
             this.Teacher = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Teachers");
             this.Students = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Students");
             this.Search = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=valueToSearch");
+            this.userTable = new BasicTable(manager, "class=table table-striped width-half",
+                    "//a[contains(text(),'First')]", "//a[contains(text(),'‹')]", "//a[contains(text(),'›')]",
+                    "//a[contains(text(),'Last')]", "//li[@class = 'ng-scope active']/a");
         }
 
         // Page Object
         // get Data
         // Functional
-        public List<string> GetUserTableEMails()
+        public IList<string> GetUserTableEMails()
         {
-            return null;
+            logger.Debug("Start List<string> GetUserTableEMails()");
+            //
+            IList<string> result = new List<string>();
+            foreach (var email in userTable.GetAllColumnByIndex((int)UserTableHeader.Email))
+            {
+                if (!email.InnerText.ToLower().Equals(UserTableHeader.Email.ToString().ToLower()))
+                {
+                    result.Add(email.InnerText);
+                    logger.Debug("Added " + email.InnerText);
+                }
+            }
+            logger.Debug("Done List<string> GetUserTableEMails()");
+            return result;
         }
 
         // set Data
