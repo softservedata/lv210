@@ -39,7 +39,6 @@ namespace Wow.Pages
                 this.Profile = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='your-stuff']//span[contains(text(), 'Profile')]");
                 this.TeacherManager = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//section[@id='teaching-tools']//a[@id='cursorStyle']");
                 this.Groups = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='teaching-tools']//span[text()='Groups']");
-
             }
 
             // 'Admin Tools' Category
@@ -71,7 +70,6 @@ namespace Wow.Pages
             
             //this.DefaultTheme = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=defaultTheme"); // ------ old
             this.DefaultTheme = manager.ActiveBrowser.Find.ByXPath<HtmlSelect>("//span[@class='custom-dropdown']/select");
-
             this.SidebarToggle = manager.ActiveBrowser.Find.ById<HtmlButton>("sidebar-toggle");
         }
 
@@ -80,6 +78,7 @@ namespace Wow.Pages
         public HtmlButton SidebarToggle { get; private set; }
 
         // Get Data
+
         private HtmlAnchor GetEditProfile()
         {
             ClickUsername();
@@ -122,18 +121,8 @@ namespace Wow.Pages
             return sidebarMenu.Groups;
         }
 
-        // Functional
-        public string GetUsernameText()
-        {
-            return this.Username.TextContent.Trim();
-        }
-
-        public bool IsSidebarMenuMinimized()
-        {
-            return body.GetAttributeValueOrEmpty("class").Contains("sidebar-minimized");
-        }
-
         // Set Data
+
         private void ClickNavbarCollapse()
         {
             this.navbarCollapse.Click();
@@ -191,6 +180,39 @@ namespace Wow.Pages
             DefaultTheme.SelectByPartialText(theme.ToString().Substring(0, 4), true);
         }
 
+        // Functional
+
+        public string GetUsernameText()
+        {
+            return this.Username.TextContent.Trim();
+        }
+
+        public bool IsSidebarMenuMinimized()
+        {
+            return body.GetAttributeValueOrEmpty("class").Contains("sidebar-minimized");
+        }
+
+        private bool IsTeacherManagerToolOpened()
+        {
+            return GetTeachingToolsGroups().BaseElement.GetAttributeValueOrEmpty("class").Contains("active");
+        }
+
+        private void OpenManagerTool()
+        {
+            if (!IsTeacherManagerToolOpened())
+            {
+                ClickTeacherManager();
+            }
+        }
+
+        private void CloseManagerTool()
+        {
+            if (IsTeacherManagerToolOpened())
+            {
+                ClickTeacherManager();
+            }
+        }
+
         // Business Logic
         public YourProfilePage GotoEditProfile()
         {
@@ -212,7 +234,7 @@ namespace Wow.Pages
 
         public GroupsPage GotoGroupsPage() // -------------------- !!!!!!!!!!!!
         {
-            ClickTeacherManager();
+            OpenManagerTool();
             ClickGroups();
             return new GroupsPage(manager);
         }

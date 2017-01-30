@@ -7,7 +7,7 @@ using Wow.Pages;
 namespace Wow.Tests
 {
     [TestFixture]
-    class EditProfileCancelButtonTest : TestRunner
+    class EditProfileTestSuite : TestRunner
     {
         private static readonly object[] TestData =
         {
@@ -31,9 +31,7 @@ namespace Wow.Tests
             // 1. Go to 'Edit Profile' page
             YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
             Assert.IsNotNull(yourProfilePage.YourProfileLabel);
-            //admin.SetName(yourProfilePage.GetNameValue());  // Get Current Name
-            Console.WriteLine(admin.GetFullName());
-            Assert.AreEqual(yourProfilePage.GetNameValue(), admin.GetFullName());
+            Assert.AreEqual(admin.GetFullName(), yourProfilePage.GetNameValue());
 
             // 2. Go to 'Edit Name' form
             yourProfilePage.ClickEditName();
@@ -44,7 +42,7 @@ namespace Wow.Tests
 
             // 4. Press 'Cancel' and check if information wasn't saved.
             yourProfilePage.CancelNameChanges();
-            Assert.AreNotEqual(newName, admin.GetFullName());
+            Assert.AreNotEqual(newName, yourProfilePage.GetNameValue());
 
             // 5. Go to 'Edit Password' form
             yourProfilePage.ClickEditPassword();
@@ -57,7 +55,7 @@ namespace Wow.Tests
 
             // 7. Press 'Cancel' and check if information wasn't saved.
             yourProfilePage.CancelPasswordChanges();
-            Assert.AreNotEqual(admin.GetPassword(), newPassword);
+            Assert.AreNotEqual(newPassword, admin.GetPassword());
 
             // --- Logout --- //
             loginPage = yourProfilePage.GotoLogOut();

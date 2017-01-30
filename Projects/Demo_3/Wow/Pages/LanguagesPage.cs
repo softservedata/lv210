@@ -30,7 +30,7 @@ namespace Wow.Pages
         {
             public ConfirmWindow(Manager manager) : base(manager)
             {
-                this.YesButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[(text()='Yes']");
+                this.YesButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[text()='Yes']");
                 this.NoButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[text()='No']");
             }
 

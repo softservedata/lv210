@@ -7,21 +7,21 @@ using Wow.Appl;
 namespace Wow.Tests
 {
     [TestFixture]
-    class AddNewLanguageTest : TestRunner
+    class ManageLanguagesTestSuite : TestRunner
     {
         private static readonly object[] TestData =
         {
             new object[]
             {
                 UserRepository.Get().FromXml("Users.xml").GetAdmin(),
-                "English",                      // Language to add
+                "Afrikaans",                      // Language to add
                 "Add language",                 // Dialog window title    // class
                 "Language added successfully"   // Dialog window message
             }
         };
 
         [Test, TestCaseSource(nameof(TestData))]
-        public void AddLanguageTest(User admin, string languageToAdd, string windowTitle, string windowMessage)
+        public void AddNewLanguageTest(User admin, string languageToAdd, string windowTitle, string windowMessage)
         {
             // Login
             LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();

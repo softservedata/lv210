@@ -19,9 +19,9 @@ namespace Wow.Data
             Excel.Workbook exlWorkbook = exlApp.Workbooks.Open(path);
             Excel._Worksheet exlWorksheet = exlWorkbook.Sheets[DATA_SHEET];
             Excel.Range exlRange = exlWorksheet.UsedRange;
-            //
             int rowCount = exlRange.Rows.Count;
             int colCount = exlRange.Columns.Count;
+            
             // Iterate over the rows and columns and print to the console as it appears in the file excel is not zero based
             for (int i = 1; i <= rowCount; i++)
             {
