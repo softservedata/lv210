@@ -14,14 +14,14 @@ namespace Wow.Tests
             new object[]
             {
                 UserRepository.Get().FromXml("Users.xml").GetAdmin(),
-                "Afrikaans",                    // Language to add
-                "Add language",                 // Dialog window title 
+                "English",                      // Language to add
+                "Add language",                 // Dialog window title    // class
                 "Language added successfully"   // Dialog window message
             }
         };
 
         [Test, TestCaseSource(nameof(TestData))]
-        public void AddAfrikaansLanguageTest(User admin, string languageToAdd, string windowTitle, string windowMessage)
+        public void AddLanguageTest(User admin, string languageToAdd, string windowTitle, string windowMessage)
         {
             // Login
             LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();

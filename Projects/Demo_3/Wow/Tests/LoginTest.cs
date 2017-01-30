@@ -15,10 +15,10 @@ namespace Wow.Tests
     {
 
         private static readonly object[] ExternalData =
-            UserRepository.Get().FromCsv("Users.csv").GetAllUsers();
+            //UserRepository.Get().FromCsv("Users.csv").GetAllUsers();
             //UserRepository.Get().FromJson("Users.json").GetAllUsers();
             //UserRepository.Get().FromXml("Users.xml").GetAllUsers();
-            //UserRepository.Get().FromExcel("Users.xlsx").GetAllUsers();
+            UserRepository.Get().FromExcel("Users.xlsx").GetAllUsers();
 
         [Test, TestCaseSource(nameof(ExternalData))]
         public void TestSignin(IUser admin)

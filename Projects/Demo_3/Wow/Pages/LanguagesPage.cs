@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
@@ -16,7 +17,7 @@ namespace Wow.Pages
             public DialogWindow(Manager manager) : base(manager)
             {
                 //this.OkButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-block btn-primary");
-                this.OkButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[contains(text(),'Ok')]");
+                this.OkButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[text()='Ok']");
             }
 
             public HtmlButton OkButton { get; private set; }
@@ -28,7 +29,7 @@ namespace Wow.Pages
         private class ConfirmWindow : ModalContent
         {
             public ConfirmWindow(Manager manager) : base(manager)
-            {              
+            {
                 this.YesButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[contains(text(),'Yes')]");
                 this.NoButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[contains(text(),'No')]");
             }
@@ -43,7 +44,7 @@ namespace Wow.Pages
         public LanguagesPage(Manager manager) : base(manager)
         {
             //this.LanguageHeader = manager.ActiveBrowser.Find.ByAttributes("class=text-center ng-scope");
-            this.LanguageHeader = manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//header/h2[text()='Languages']");
+            this.LanguageHeader = manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//h2");
 
             //this.LanguageSelect = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=selectedLanguage");
             this.LanguageSelect = manager.ActiveBrowser.Find.ByXPath<HtmlSelect>("//select[contains(@class, 'form-control')]");
@@ -63,7 +64,7 @@ namespace Wow.Pages
         // Get Data
         public string GetLanguagePageDescription()
         {
-            return LanguageHeader.ChildNodes[0].Content;
+            return LanguageHeader.ChildNodes[0].InnerText;
         }
 
         public HtmlTableRow GetLastLanguageRowFromExistingList()
@@ -116,7 +117,12 @@ namespace Wow.Pages
         // Functional
         public bool IsLanguageInExistingList(string language)
         {
-            return ExistingLanguagesTable.BodyRows.Any(item => item.InnerText.ToLower().Equals(language.ToLower()));
+            // TODO wloop while()
+            // 
+            bool con = ExistingLanguagesTable.BodyRows.Any(item => item.InnerText.ToLower().Equals(language.ToLower()));
+            if (con)
+                throw new Exception("sdsdassdas");
+            return false;
         }
 
         private bool IsAddButtonEnabled()
