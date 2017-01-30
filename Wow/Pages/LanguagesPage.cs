@@ -106,7 +106,7 @@ namespace Wow.Pages
         // Functional
         public bool IsLanguageInExistingList(string language)
         {
-            return ExistingLanguagesTable.BodyRows.Any(item => item.InnerText.ToLower().Equals(language.ToLower()));
+            return ExistingLanguagesTable.BodyRows.Any(item => item.InnerText.Equals(language));
         }
 
         public bool IsAddButtonEnabled()
@@ -144,10 +144,10 @@ namespace Wow.Pages
             SelectLanguageFromList(language);
             if (IsAddButtonEnabled())
             {
-                ClickAddButton();
-                ExistingLanguagesTable.Refresh();
+                ClickAddButton();               
                 GetDialogWindow();
                 CloseAddLanguageDialogWindow();
+                ExistingLanguagesTable.Refresh();
             }
         }
 

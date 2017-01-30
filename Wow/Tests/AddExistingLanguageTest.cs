@@ -33,7 +33,9 @@ namespace Wow.Tests
                             languagesPage.GetLanguageAlreadyExistMessage());
 
             // Return to previous state
-            languagesPage.GoToLogOut();
+            loginPage = languagesPage.GoToLogOut();
+            Assert.AreEqual(LoginPage.loginDescriptionText, 
+                            loginPage.GetLoginDescriptionText());
         }
     }
 }

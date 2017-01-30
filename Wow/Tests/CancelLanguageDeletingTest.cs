@@ -38,7 +38,9 @@ namespace Wow.Tests
 
             // Return to previous state
             languagesPage.DeleteLastAddedLanguage();
-            languagesPage.GoToLogOut();
+            loginPage = languagesPage.GoToLogOut();
+            Assert.AreEqual(LoginPage.loginDescriptionText, 
+                            loginPage.GetLoginDescriptionText());
 
             logger.Info("Done CancelLanguageDeleting(IUser admin, string language), admin = " + admin.GetEmail());
         }

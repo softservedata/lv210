@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Wow.Data;
 using Wow.Pages;
 
@@ -33,7 +32,9 @@ namespace Wow.Tests
             Assert.IsFalse(languagesPage.IsLanguageInExistingList(language));
 
             // Return to previous state
-            languagesPage.GoToLogOut();
+            loginPage = languagesPage.GoToLogOut();
+            Assert.AreEqual(LoginPage.loginDescriptionText, 
+                            loginPage.GetLoginDescriptionText());
         }
     }
 }

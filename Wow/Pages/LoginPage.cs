@@ -25,6 +25,8 @@ namespace Wow.Pages
             public Element ErrorMessage { get; internal set; }
         }
 
+        public static readonly string loginDescriptionText = "SoftServe Language School";
+
         private Manager manager;
         private LoginForm loginForm;
 
