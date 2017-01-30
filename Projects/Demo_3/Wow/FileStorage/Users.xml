@@ -11,6 +11,16 @@
     <isStudent>true</isStudent>
   </User>
   <User>
+    <firstName>LV-204</firstName>
+    <lastName>ISTQB</lastName>
+    <language>English</language>
+    <email>wowira@ukr.net</email>
+    <password>irawow123</password>
+    <isAdmin>false</isAdmin>
+    <isTeacher>true</isTeacher>
+    <isStudent>false</isStudent>
+  </User>
+  <User>
     <firstName>Petter</firstName>
     <lastName>Northug</lastName>
     <language>English</language>

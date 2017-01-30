@@ -10,6 +10,16 @@
 	"isStudent":true
 },
 {
+	"firstName":"LV-204",
+	"lastName":"ISTQB",
+	"language":"English",
+	"email":"wowira@ukr.net",
+	"password":"irawow123",
+	"isAdmin":false,
+	"isTeacher":true,
+	"isStudent":false
+},
+{
 	"firstName":"Petter",
 	"lastName":"Northug",
 	"language":"English",

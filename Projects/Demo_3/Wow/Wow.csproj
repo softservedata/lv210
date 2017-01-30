@@ -84,6 +84,8 @@
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\ApplicationPage.cs" />
+    <Compile Include="Pages\BasicTable.cs" />
+    <Compile Include="Pages\CreateGroupPage.cs" />
     <Compile Include="Pages\GroupsPage.cs" />
     <Compile Include="Pages\EditForm.cs" />
     <Compile Include="Pages\LanguagesPage.cs" />

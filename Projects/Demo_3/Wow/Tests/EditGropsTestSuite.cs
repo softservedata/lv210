@@ -25,6 +25,16 @@ namespace Wow.Tests
             LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(teacher);
             GroupsPage groupsPage = usersPage.GotoGroupsPage();
+
+            CreateGroupPage createGroupPage = groupsPage.ClickCreateGroup();
+
+            string usedName = groupsPage.GetExistingGroupName();
+            createGroupPage.SetGroupName(usedName);
+            createGroupPage.ClickSubmitButton();
+
+            StringAssert.Contains($"Group {usedName} already exist!", createGroupPage.GetErrorMessage());
+            loginPage = createGroupPage.GotoLogOut();
+            Console.WriteLine("Test Done!");
         }
     }
 }
