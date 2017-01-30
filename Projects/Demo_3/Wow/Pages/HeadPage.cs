@@ -34,8 +34,8 @@ namespace Wow.Pages
             public SidebarMenu(Manager manager)
             {
                 this.manager = manager;
-                this.Users = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='admin-tools']//span[contains(text(), 'Users')]");
-                this.Languages = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='admin-tools']//span[contains(text(), 'Languages')]");
+                this.Users = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='admin-tools']//span[text()='Users']");
+                this.Languages = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='admin-tools']//span[text()='Languages']");
                 this.Profile = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='your-stuff']//span[contains(text(), 'Profile')]");
                 this.TeacherManager = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//section[@id='teaching-tools']//a[@id='cursorStyle']");
                 this.Groups = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='teaching-tools']//span[text()='Groups']");

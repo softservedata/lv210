@@ -30,8 +30,8 @@ namespace Wow.Pages
         {
             public ConfirmWindow(Manager manager) : base(manager)
             {
-                this.YesButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[contains(text(),'Yes')]");
-                this.NoButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[contains(text(),'No')]");
+                this.YesButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[(text()='Yes']");
+                this.NoButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[text()='No']");
             }
 
             public HtmlButton NoButton { get; private set; }
@@ -118,7 +118,7 @@ namespace Wow.Pages
         public bool IsLanguageInExistingList(string language)
         {
             // TODO wloop while()
-            // 
+
             bool con = ExistingLanguagesTable.BodyRows.Any(item => item.InnerText.ToLower().Equals(language.ToLower()));
             if (con)
                 throw new Exception("sdsdassdas");
