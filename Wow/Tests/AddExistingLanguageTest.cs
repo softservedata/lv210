@@ -29,7 +29,7 @@ namespace Wow.Tests
 
             languagesPage.SelectLanguageFromList(language);
             Assert.IsFalse(languagesPage.IsAddButtonEnabled());
-            Assert.AreEqual(LanguagesPage.errorMessageForEnglishExistingLanguage, 
+            Assert.AreEqual(LanguagesPage.ErrorMessageForEnglishExistingLanguage, 
                             languagesPage.GetLanguageAlreadyExistMessage());
 
             // Return to previous state

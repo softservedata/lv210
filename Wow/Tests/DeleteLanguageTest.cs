@@ -28,7 +28,7 @@ namespace Wow.Tests
             Assert.IsTrue(languagesPage.IsLanguageInExistingList(language));
 
             // Test steps
-            languagesPage.DeleteLastAddedLanguage();
+            languagesPage.DeleteLanguage(language);
             Assert.IsFalse(languagesPage.IsLanguageInExistingList(language));
 
             // Return to previous state

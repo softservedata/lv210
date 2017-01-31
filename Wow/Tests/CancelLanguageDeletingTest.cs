@@ -33,11 +33,11 @@ namespace Wow.Tests
             Assert.IsTrue(languagesPage.IsLanguageInExistingList(language));
 
             // Test steps
-            languagesPage.CancelDeletingOfLastAddedLanguage();
+            languagesPage.CancelDeletingOfLanguage(language);
             Assert.IsTrue(languagesPage.IsLanguageInExistingList(language));
 
             // Return to previous state
-            languagesPage.DeleteLastAddedLanguage();
+            languagesPage.DeleteLanguage(language);
             loginPage = languagesPage.GoToLogOut();
             Assert.AreEqual(LoginPage.loginDescriptionText, 
                             loginPage.GetLoginDescriptionText());

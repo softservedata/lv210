@@ -7,7 +7,7 @@ namespace Wow.Pages
 {
     public class LanguagesPage : HeadPage
     {
-        public const string errorMessageForEnglishExistingLanguage = "English already exists";
+        public const string ErrorMessageForEnglishExistingLanguage = "English already exists";
 
         private class DialogWindow : ModalContent
         {
@@ -80,11 +80,31 @@ namespace Wow.Pages
         private ConfirmWindow GetConfirmWindow()
         {
             return confirmWindow = new ConfirmWindow(manager);
+            
         }
 
         public string GetLanguageAlreadyExistMessage()
         {
             return manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("class=tile-large").InnerText;
+        }
+
+        public HtmlTableRow GetRowByValueInColumn(string value, int columnIndex)
+        {
+            HtmlTableRow result = null;
+            foreach (var row in ExistingLanguagesTable.Rows)
+            {
+                if (row.Cells[columnIndex].InnerText.ToLower().Contains(value.ToLower()))
+                {
+                    result = row;
+                    break;
+                }
+            }
+            return result;
+        }
+
+        public HtmlButton GetDeleteLanguageButton(string language)
+        {
+            return GetRowByValueInColumn(language, 0).Find.ByAttributes<HtmlButton>("class=btn btn-default nomargins");
         }
 
         // Set Data
@@ -138,6 +158,11 @@ namespace Wow.Pages
             GetConfirmWindow().NoButton.Click();
         }
 
+        private void ClickDeleteLanguageButton(string language)
+        {
+            GetDeleteLanguageButton(language).Click();
+        }
+
         // Business Logic
         public void AddNewLanguage(string language)
         {
@@ -151,16 +176,16 @@ namespace Wow.Pages
             }
         }
 
-        public void DeleteLastAddedLanguage()
+        public void DeleteLanguage(string language)
         {
-            GetLastLanguageRowFromExistingList().Find.ByAttributes<HtmlButton>("class=btn btn-default nomargins").Click();
+            ClickDeleteLanguageButton(language);
             ConfirmLanguageDeletion();
             ExistingLanguagesTable.Refresh();
         }
 
-        public void CancelDeletingOfLastAddedLanguage()
+        public void CancelDeletingOfLanguage(string language)
         {
-            GetLastLanguageRowFromExistingList().Find.ByAttributes<HtmlButton>("class=btn btn-default nomargins").Click();
+            ClickDeleteLanguageButton(language);
             CancelLanguageDeletion();
             ExistingLanguagesTable.Refresh();
         }

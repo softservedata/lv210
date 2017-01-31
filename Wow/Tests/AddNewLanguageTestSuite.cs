@@ -48,7 +48,7 @@ namespace Wow.Tests
             Assert.AreEqual(languageToAdd, languagesPage.GetLastLanguageRowFromExistingList().InnerText);
 
             // --- Return to a previous state --- //
-            languagesPage.DeleteLastAddedLanguage();
+            languagesPage.DeleteLanguage(languageToAdd);
 
             // --- Logout --- //
             loginPage = languagesPage.GoToLogOut();
