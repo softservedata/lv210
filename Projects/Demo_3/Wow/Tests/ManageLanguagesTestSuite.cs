@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using NUnit.Framework;
 using Wow.Data;
 using Wow.Pages;
@@ -13,7 +14,7 @@ namespace Wow.Tests
         {
             new object[]
             {
-                UserRepository.Get().FromXml("Users.xml").GetAdmin(),
+                UserRepository.Get().FromExcel("Users.xlsx").GetTeacher(),
                 "Afrikaans",                      // Language to add
                 "Add language",                 // Dialog window title    // class
                 "Language added successfully"   // Dialog window message
@@ -47,8 +48,7 @@ namespace Wow.Tests
             Assert.IsFalse(languagesPage.IsLanguageInExistingList(languageToAdd));
 
             // --- Logout --- //
-            loginPage = languagesPage.GotoLogOut();
-
+            languagesPage.GotoLogOut();
             Console.WriteLine("Test Done!");
         }
     }
