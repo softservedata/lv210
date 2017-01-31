@@ -17,6 +17,8 @@ namespace Wow.Pages
         private class UserTableUtils : IExternalData
         {
             // Fields
+            private static Logger logger = LogManager.GetCurrentClassLogger();
+            //
             BasicTable userTable;
 
             // Constructor
@@ -28,25 +30,40 @@ namespace Wow.Pages
             public IList<IList<string>> GetAllCells(string path)
             {
                 IList<IList<string>> allCells = new List<IList<string>>();
+                string lastname;
+                string email;
                 foreach (var row in userTable.GetAllCells())
                 {
                     IList<string> allvalues = new List<string>();
-                    foreach (var cell in row)
+                    email = ((row[1].InnerText != null)
+                            && (row[1].InnerText.Trim().Length > 0)) ? row[1].InnerText.Trim() : string.Empty;
+                    if (!email.Contains("@"))
                     {
-                        allvalues.Add(cell.InnerText);
+                        continue;
                     }
+                    string[] names = row[0].InnerText.Trim().Split(' ');
+                    logger.Debug("row[0].InnerText=" + row[0].InnerText);
+                    allvalues.Add(((names[0] != null) && (names[0].Length > 0)) ? names[0] : string.Empty);     // Firstname
+                    lastname = string.Empty;
+                    if (names.Length > 1)
+                    {
+                        lastname = ((names[1] != null) && (names[1].Length > 0)) ? names[1] : string.Empty;
+                    }
+                    logger.Debug("Lastname=" + lastname);
+                    allvalues.Add(lastname);                                                                    // Lastname
+                    allvalues.Add("English");                                                                   // Language
+                    allvalues.Add(email);                                                                       // Email
+                    allvalues.Add(string.Empty);                                                                // Password
+                    //allvalues.Add(row[2].ChildNodes[0].As<HtmlInputCheckBox>().Checked.ToString());             // IsAdmin
+                    //allvalues.Add(row[3].ChildNodes[0].As<HtmlInputCheckBox>().Checked.ToString());             // IsTeacher
+                    //allvalues.Add(row[4].ChildNodes[0].As<HtmlInputCheckBox>().Checked.ToString());             // IsStudent
+                    allvalues.Add("true");
+                    allvalues.Add("true");
+                    allvalues.Add("true");
+                    allCells.Add(allvalues);
                 }
-                //
-                //using (StreamReader streamReader = new StreamReader(path))
-                //{
-                //    while ((row = streamReader.ReadLine()) != null)
-                //    {
-                //        allCells.Add(row.Split(CSV_SPLIT_BY).ToList());
-                //    }
-                //}
                 return allCells;
             }
-
         }
 
         // Components
@@ -108,6 +125,10 @@ namespace Wow.Pages
         // set Data
 
         // Business Logic
+        public IList<IUser> GetUsersFromTable()
+        {
+            return new UserUtils(string.Empty, new UserTableUtils(userTable)).GetAllUsers();
+        }
 
     }
 }

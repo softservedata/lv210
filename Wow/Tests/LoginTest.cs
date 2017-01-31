@@ -46,7 +46,8 @@ namespace Wow.Tests
             //
             // Check
             Assert.AreEqual(admin.GetName(), usersPage.GetUsernameText());
-            CollectionAssert.IsNotEmpty(usersPage.GetUserTableEMails());
+            //CollectionAssert.IsNotEmpty(usersPage.GetUserTableEMails());
+            CollectionAssert.IsNotEmpty(usersPage.GetUsersFromTable());
             //
             // Return to previous state
             loginPage = usersPage.GotoLogOut();

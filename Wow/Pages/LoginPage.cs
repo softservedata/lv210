@@ -7,6 +7,7 @@ using System.Threading;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
+using NLog;
 using Wow.Data;
 
 namespace Wow.Pages
@@ -34,8 +35,13 @@ namespace Wow.Pages
             }
         }
 
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         // Expected Data
         public static readonly string LOGIN_DESCRIPTION_TEXT = "SoftServe Language School";
+
+        // Check Login Form
+        private const string LOGIN_FORM_BY_ATTRIBUTE = "id=myModalLabel";
 
         // Fields
         private Manager manager;
@@ -88,8 +94,12 @@ namespace Wow.Pages
         // set Data
         public void ClickLoginButton()
         {
-            this.LoginButton.Click();
-            loginForm = new LoginForm(manager);
+            if (manager.ActiveBrowser.Find.AllByAttributes<HtmlControl>(LOGIN_FORM_BY_ATTRIBUTE).Count == 0)
+            {
+                logger.Debug("ClickLoginButton() this.LoginButton.Click() and new LoginForm(manager);");
+                this.LoginButton.Click();
+                loginForm = new LoginForm(manager);
+            }
         }
 
         // Business Logic
