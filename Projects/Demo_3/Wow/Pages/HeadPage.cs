@@ -41,15 +41,10 @@ namespace Wow.Pages
                 this.Groups = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//section[@id='teaching-tools']//span[text()='Groups']");
             }
 
-            // 'Admin Tools' Category
             public HtmlSpan Users { get; private set; }  // ---- old value HtmlAnchor
             public HtmlSpan Languages { get; private set; } // ---- old value HtmlAnchor
-
-            // 'Teaching Tools' Category
             public HtmlAnchor TeacherManager { get; private set; }
             public HtmlSpan Groups { get; private set; }
-
-            // 'Your Stuff' Category
             public HtmlSpan Profile { get; private set; } // ---- old value HtmlAnchor
         }
 
@@ -64,11 +59,7 @@ namespace Wow.Pages
             this.manager = manager;
             this.navbarCollapse = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=collapse navbar-collapse");
             this.body = manager.ActiveBrowser.Find.ByTagIndex("body", 0);
-            
-            //this.Username = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("ng-model=getName"); // ------ old
             this.Username = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//button[@type='button']/strong/span");
-            
-            //this.DefaultTheme = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=defaultTheme"); // ------ old
             this.DefaultTheme = manager.ActiveBrowser.Find.ByXPath<HtmlSelect>("//span[@class='custom-dropdown']/select");
             this.SidebarToggle = manager.ActiveBrowser.Find.ById<HtmlButton>("sidebar-toggle");
         }
@@ -91,31 +82,31 @@ namespace Wow.Pages
             return this.usernameDropdown.LogOut;
         }
 
-        private HtmlSpan GetAdminToolUsers() // ------- old value HtmlAnchor
+        private HtmlSpan GetAdminToolUsers() 
         {
             sidebarMenu = new SidebarMenu(manager);
             return sidebarMenu.Users;
         }
 
-        private HtmlSpan GetAdminToolLanguages() // edit HtmlAnchor old
+        private HtmlSpan GetAdminToolLanguages() 
         {
             sidebarMenu = new SidebarMenu(manager);
             return sidebarMenu.Languages;
         }
 
-        private HtmlSpan GetYourStuffProfile() // ------- old value HtmlAnchor
+        private HtmlSpan GetYourStuffProfile() 
         {
             sidebarMenu = new SidebarMenu(manager);
             return sidebarMenu.Profile;
         }
 
-        private HtmlAnchor GetTeachingToolsManager() // --------------------- new
+        private HtmlAnchor GetTeachingToolsManager() 
         {
             sidebarMenu = new SidebarMenu(manager);
             return sidebarMenu.TeacherManager;
         }
 
-        private HtmlSpan GetTeachingToolsGroups() // --------------------- new
+        private HtmlSpan GetTeachingToolsGroups() 
         {
             sidebarMenu = new SidebarMenu(manager);
             return sidebarMenu.Groups;
@@ -165,12 +156,12 @@ namespace Wow.Pages
             GetYourStuffProfile().Click();
         }
 
-        private void ClickTeacherManager()     // ----------------------- new
+        private void ClickTeacherManager()     
         {
             GetTeachingToolsManager().Click();
         }
 
-        private void ClickGroups()     // ----------------------- new
+        private void ClickGroups() 
         {
             GetTeachingToolsGroups().Click();
         }
@@ -214,16 +205,11 @@ namespace Wow.Pages
         }
 
         // Business Logic
+
         public YourProfilePage GotoEditProfile()
         {
             ClickEditProfile();
             return new YourProfilePage(manager);
-        }
-
-        public UsersPage GotoUsersPage()
-        {
-            ClickUsers();
-            return new UsersPage(manager);
         }
 
         public LanguagesPage GotoLanguagesPage()
@@ -232,7 +218,7 @@ namespace Wow.Pages
             return new LanguagesPage(manager);
         }
 
-        public GroupsPage GotoGroupsPage() // -------------------- !!!!!!!!!!!!
+        public GroupsPage GotoGroupsPage() 
         {
             OpenManagerTool();
             ClickGroups();

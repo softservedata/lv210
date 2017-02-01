@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Wow.Data
 {
@@ -36,27 +32,5 @@ namespace Wow.Data
             var teacherUser = users.FirstOrDefault(user => user.GetIsTeacher());
             return teacherUser;
         }
-
-        //public static object[] ToMultiArray(object argList) < --------------------- origin / del
-        //{
-        //    IList list = ((IList)argList);
-        //    object[] array = new object[list.Count];
-        //    for (int i = 0; i < list.Count; i++)
-        //    {
-        //        array[i] = new object[] { list[i] };
-        //    }
-        //    return array;
-        //}
-
-        //public static object[] ToMultiArray(object source, object argList) // < ---------------------- del
-        //{
-        //    IList list = ((IList)argList);
-        //    object[] array = new object[list.Count];
-        //    for (int i = 0; i < list.Count; i++)
-        //    {
-        //        array[i] = new object[] { source, list[i] };
-        //    }
-        //    return array;
-        //}
     }
 }

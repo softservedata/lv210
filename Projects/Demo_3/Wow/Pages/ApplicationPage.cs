@@ -11,9 +11,6 @@ namespace Wow.Pages
         private static readonly Object synchronize = new Object();
 
         private Manager manager;
-
-        // Get Data
-        // private IList<HtmlControl> description;
         private string controlLocator;
 
         private ApplicationPage(Manager manager)
@@ -22,7 +19,6 @@ namespace Wow.Pages
             this.controlLocator = "//div[@class='text-primary']/h2/small";
         }
 
-        // Static factory
         public static ApplicationPage Get()
         {
             if ((instance == null) || (instance.manager == null) || (!Manager.Current.Disposed))
@@ -38,7 +34,6 @@ namespace Wow.Pages
             return instance;
         }
 
-        // Functional
         private void AcceptHttpsKeyChrome()
         {
             for (int i = 0; i < 5; i++)
@@ -53,29 +48,7 @@ namespace Wow.Pages
 
         private void AcceptHttpsKey()
         {
-            switch (manager.ActiveBrowser.BrowserType)
-            {
-                case BrowserType.Chrome:
-                    {
-                        AcceptHttpsKeyChrome();
-                        break;
-                    }
-                case BrowserType.FireFox:
-                    {
-                        // TODO
-                        break;
-                    }
-                case BrowserType.InternetExplorer:
-                    {
-                        // TODO
-                        break;
-                    }
-                default:
-                    {
-                        // TODO throw Exception
-                        break;
-                    }
-            }
+            AcceptHttpsKeyChrome();
         }
 
         private bool IsHttpsKeyActive()

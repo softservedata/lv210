@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Wow.Data
 {
@@ -11,7 +10,6 @@ namespace Wow.Data
 
         private UserRepository() { }
 
-        // Static Factory
         public static UserRepository Get()
         {
             if (instance == null)
@@ -62,21 +60,6 @@ namespace Wow.Data
                 .SetLastName("456")
                 .SetLanguage("English")
                 .SetEmail("wow@i.ua")
-                .SetPassword("qwerty")
-                .SetIsAdmin(true)
-                .SetIsTeacher(true)
-                .SetIsStudent(true)
-                .Build();
-        }
-
-        // Not exist in DB
-        public IUser NewUser()
-        {
-            return User.Get()
-                .SetFirstName("")
-                .SetLastName("")
-                .SetLanguage("English")
-                .SetEmail("new@gmail.com")
                 .SetPassword("qwerty")
                 .SetIsAdmin(true)
                 .SetIsTeacher(true)

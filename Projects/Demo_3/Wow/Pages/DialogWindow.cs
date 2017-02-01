@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
-using ArtOfTest.WebAii.Core;
+﻿using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 
 namespace Wow.Pages
 {
-    /// <summary>
-    /// For popup window that is displayed on top of the current page
-    /// </summary>
     public class DialogWindow
     {
         private HtmlDiv dialogWindow;

@@ -1,6 +1,4 @@
-﻿using System;
-using NUnit.Framework;
-using Wow.Appl;
+﻿using NUnit.Framework;
 using Wow.Data;
 using Wow.Pages;
 
@@ -22,11 +20,9 @@ namespace Wow.Tests
         [Test, TestCaseSource(nameof(TestData))]
         public void CancelButtonTest(User admin, string newName, string newPassword)
         {
-            // Login
-            LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();
-            UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
-
-            // --- Test Steps --- //
+            // Precondition
+            LoginPage loginPage = Application.Get().Login();
+            UserPage usersPage = loginPage.SuccessUserLogin(admin);
 
             // 1. Go to 'Edit Profile' page
             YourProfilePage yourProfilePage = usersPage.GotoEditProfile();
@@ -57,10 +53,7 @@ namespace Wow.Tests
             yourProfilePage.CancelPasswordChanges();
             Assert.AreNotEqual(newPassword, admin.GetPassword());
 
-            // --- Logout --- //
             yourProfilePage.GotoLogOut();
-
-            Console.WriteLine("Test Done!");
         }
     }
 }

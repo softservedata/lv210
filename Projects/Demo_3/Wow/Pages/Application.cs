@@ -1,25 +1,25 @@
 ﻿using System;
 using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.Win32.Dialogs;
+using NLog;
 using Wow.Appl;
 
 namespace Wow.Pages
 {
     public class Application
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         private static volatile Application instance;
         private static readonly Object synchronize = new Object();
 
         private Application(ApplicationSources applicationSources)
         {
             this.applicationSources = applicationSources;
-            Init();
+            InitManager();
         }
 
         public Manager CurrentManager { get; private set; }
         public ApplicationSources applicationSources { get; private set; }
 
-        // Static Factory
         public static Application Get()
         {
             return Get(null);
@@ -44,12 +44,6 @@ namespace Wow.Pages
             return instance;
         }
 
-        public void Init()
-        {
-            InitManager();
-            // TODO Init Strategy, Init DB access, etc.
-        }
-
         public LoginPage Login()
         {
             StartBrowser();
@@ -70,6 +64,7 @@ namespace Wow.Pages
             if (Manager.Current.ActiveBrowser == null)
             {
                 CurrentManager.LaunchNewBrowser();
+                logger.Debug("Start Browser");
             }
         }
 
@@ -78,6 +73,7 @@ namespace Wow.Pages
             if (Manager.Current.ActiveBrowser != null)
             {
                 Manager.Current.ActiveBrowser.Close();
+                logger.Debug("Close Browser");
             }
         }
 
@@ -87,32 +83,11 @@ namespace Wow.Pages
             if ((CurrentManager != null) && (Manager.Current != null))
             {
                 CurrentManager.Dispose();
-                Console.WriteLine("DisposeManager() Done!");
+                logger.Debug("Dispose Manager");
             }
         }
 
-        public string InvokeScript(string javaScript)
-        {
-            InitManager();
-            return Manager.Current.ActiveBrowser.Actions.InvokeScript(javaScript);
-        }
-
-        public void AddAlertDialog()
-        {
-            StopAlertDialog();
-            Manager.Current.DialogMonitor.AddDialog(AlertDialog.CreateAlertDialog(Manager.Current.ActiveBrowser, DialogButton.OK));
-            Manager.Current.DialogMonitor.Start();
-        }
-
-        private void StopAlertDialog()
-        {
-            if (Manager.Current.DialogMonitor.IsMonitoring)
-            {
-                Manager.Current.DialogMonitor.Stop();
-            }
-        }
-
-        private void InitManager()
+        public void InitManager()
         {
             if ((CurrentManager == null) || (Manager.Current == null))
             {
@@ -121,6 +96,7 @@ namespace Wow.Pages
                 currentSettings.UnexpectedDialogAction = UnexpectedDialogAction.HandleAndContinue;
                 CurrentManager = new Manager(currentSettings);
                 CurrentManager.Start();
+                logger.Debug("Init Manager");
             }
         }
 

@@ -38,6 +38,7 @@ namespace Wow.Pages
         public Element LoginDescription { get; private set; }
         
         // Get Data
+
         public HtmlInputEmail GetLoginInput()
         {
             ClickLoginButton();
@@ -56,7 +57,6 @@ namespace Wow.Pages
             return this.loginForm.SubmitInput;
         }
 
-        // Functional
         public string GetLoginButtonText()
         {
             return this.LoginButton.TextContent.Trim();
@@ -68,6 +68,7 @@ namespace Wow.Pages
         }
 
         // Set Data
+
         private void ClickLoginButton()
         {
             this.LoginButton.Click();
@@ -75,6 +76,7 @@ namespace Wow.Pages
         }
 
         // Business Logic
+
         private void SetLoginData(IUser user)
         {
             ClickLoginButton();
@@ -83,22 +85,10 @@ namespace Wow.Pages
             this.loginForm.SubmitInput.Click();
         }
 
-        public UsersPage SuccessAdminLogin(IUser admin)
+        public UserPage SuccessUserLogin(IUser admin)
         {
             SetLoginData(admin);
-            return new UsersPage(manager);
-        }
-
-        public TeacherPage SuccessTeacherLogin(IUser teacher)
-        {
-            SetLoginData(teacher);
-            return new TeacherPage(manager);
-        }
-
-        public StudentPage SuccessStudentLogin(IUser student)
-        {
-            SetLoginData(student);
-            return new StudentPage(manager);
+            return new UserPage(manager);
         }
     }
 }

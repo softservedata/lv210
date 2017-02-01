@@ -4,19 +4,17 @@ using System.Runtime.Serialization.Json;
 
 namespace Wow.Data
 {
-    // Builder
-
-    public interface IFirstName                 // ++++ 28.01
+    public interface IFirstName                 
     {
         ILastName SetFirstName(string firstName);
     }
 
-    public interface ILastName                  // ++++ 28.01
+    public interface ILastName                  
     {
         ILanguage SetLastName(string lastName);
     }
 
-    public interface ILanguage                  // ++++ 28.01
+    public interface ILanguage                  
     {
         IEmail SetLanguage(string language);
     }
@@ -30,11 +28,6 @@ namespace Wow.Data
     {
         IAdmin SetPassword(string password);
     }
-
-    //public interface IName            // ---
-    //{
-    //    IAdmin SetName(string name);
-    //}
 
     public interface IAdmin
     {
@@ -56,14 +49,12 @@ namespace Wow.Data
         User Build();
     }
 
-    // Dependency Inversion Interface
-
     public interface IUser
     {
-        string GetFirstName();  //+++
-        string GetLastName();   //+++
-        string GetFullName();   //+++
-        string GetLanguage();   //+++
+        string GetFirstName();  
+        string GetLastName();  
+        string GetFullName();   
+        string GetLanguage(); 
         string GetEmail();
         string GetPassword();
         bool GetIsAdmin();
@@ -95,45 +86,24 @@ namespace Wow.Data
 
         private User() { }
 
-        //private bool LogicExpressionForEqualMathod(User user) // to del
-        //{
-        //    return (this.email == user.email) && (this.password == user.password) && (this.name == user.name) &&
-        //           (this.isAdmin == user.isAdmin) &&
-        //           (this.isTeacher == user.isTeacher) &&
-        //           (this.isStudent == user.isStudent);
-        //}
-
-        //private static bool LogicExpressionForEqualMathod(User userFirst, User userSecond)
-        //{
-        //    return (userFirst.email == userSecond.email) && (userFirst.password == userSecond.password) &&
-        //           (userFirst.name == userSecond.name) &&
-        //           (userFirst.isAdmin == userSecond.isAdmin) &&
-        //           (userFirst.isTeacher == userSecond.isTeacher) &&
-        //           (userFirst.isStudent == userSecond.isStudent);
-        //}
-
-        // Static Factory
-
         public static IFirstName Get()
         {
             return new User();
         }
 
-        // Setters
-
-        public ILastName SetFirstName(string firstName)     //+++
+        public ILastName SetFirstName(string firstName)    
         {
             this.firstName = firstName;
             return this;
         }
 
-        public ILanguage SetLastName(string lastName)       //+++
+        public ILanguage SetLastName(string lastName)      
         {
             this.lastName = lastName;
             return this;
         }
 
-        public IEmail SetLanguage(string language)      //+++
+        public IEmail SetLanguage(string language)      
         {
             this.language = language;
             return this;
@@ -220,44 +190,5 @@ namespace Wow.Data
         {
             return this.isStudent;
         }    
-
-        //public override bool Equals(Object obj)
-        //{
-        //    User user = obj as User;
-        //    if ((System.Object)user == null)
-        //        return false;
-
-        //    return LogicExpressionForEqualMathod(user);
-        //}
-
-        //public bool Equals(User user)
-        //{
-        //    if ((object)user == null)
-        //        return false;
-
-        //    return LogicExpressionForEqualMathod(user);
-        //}
-
-        //public override int GetHashCode()
-        //{
-        //    return this.GetEmail().GetHashCode() ^ this.GetPassword().GetHashCode() ^ this.GetName().GetHashCode() ^
-        //           this.GetIsAdmin().GetHashCode() ^ this.GetIsTeacher().GetHashCode() ^ this.GetIsStudent().GetHashCode();
-        //}
-
-        //public static bool operator ==(User firstUser, User secondUser)
-        //{
-        //    if (System.Object.ReferenceEquals(firstUser, secondUser))
-        //        return true;
-
-        //    if ((object)firstUser == null || (object)secondUser == null)
-        //        return false;
-
-        //    return LogicExpressionForEqualMathod(firstUser, secondUser);
-        //}
-
-        //public static bool operator !=(User firstUser, User secondUser)
-        //{
-        //    return !(firstUser == secondUser);
-        //}
     }
 }

@@ -17,37 +17,36 @@ namespace Wow.Tests
 
         private static readonly object[] ExternalData =
             //UserRepository.Get().FromCsv("Users.csv").GetAllUsers();
-            {UserRepository.Get().FromJson("Users.json").GetAdmin()};
+            UserRepository.Get().FromJson("Users.json").GetAllUsers();
             //UserRepository.Get().FromXml("Users.xml").GetAllUsers();
             //UserRepository.Get().FromExcel("Users.xlsx").GetAllUsers();
 
-        //[Test, TestCaseSource(nameof(ExternalData))]
+        [Test, TestCaseSource(nameof(ExternalData))]
         public void TestSignin(IUser admin)
         {
             // Precondition
             // Test Steps
             LoginPage loginPage = Application.Get().Login();
-            UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
-
+            UserPage userPage = loginPage.SuccessUserLogin(admin);
+            
             // Check
-            Assert.AreEqual(admin.GetFullName(), usersPage.GetUsernameText());
+            Assert.AreEqual(admin.GetFullName(), userPage.GetUsernameText());
             //
             // Return to previous state
-            loginPage = usersPage.GotoLogOut();
+            loginPage = userPage.GotoLogOut();
             //
             // Check
             Assert.AreEqual("SoftServe Language School", loginPage.GetLoginDescriptionText());
         }
 
-        [Test, TestCaseSource(nameof(ExternalData))]
+        //[Test, TestCaseSource(nameof(ExternalData))]
         public void Beta(IUser admin)
         {
             LoginPage loginPage = Application.Get().Login(); // change chrome by IP
-            UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
+            UserPage usersPage = loginPage.SuccessUserLogin(admin);
             LanguagesPage languagesPage = usersPage.GotoLanguagesPage();
             Assert.IsNotNull(languagesPage.GetLanguagePageDescription());
 
-            languagesPage.GetAddedLanguages();
             Manager m = Manager.Current;
             m.Dispose();
         }

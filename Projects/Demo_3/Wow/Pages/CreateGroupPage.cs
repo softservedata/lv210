@@ -1,9 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.ObjectModel;
+﻿using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.Controls.HtmlControls;
-using NUnit.Framework;
 
 namespace Wow.Pages
 {
@@ -17,7 +13,6 @@ namespace Wow.Pages
         {
             nameField = manager.ActiveBrowser.Find.ById<HtmlInputText>("name");
             submitButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[@type='submit']");
-            
         }
 
         public void ClickSubmitButton()

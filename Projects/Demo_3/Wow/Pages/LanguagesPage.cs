@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
-using NUnit.Framework;
+using NLog;
 
 namespace Wow.Pages
 {
     public class LanguagesPage : HeadPage
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         private DialogWindow dialogWindow;
 
         public LanguagesPage(Manager manager) : base(manager)
@@ -49,13 +48,13 @@ namespace Wow.Pages
             return dialogWindow.GetBodyMessage();
         }
 
-        public IList<string> GetAllLanguages()  // <----------------------- private
+        private IList<string> GetAllLanguages()
         {
             return LanguageSelect.Options
                 .Select(option => option.Text).Skip(1).ToList();
         }
 
-        public IList<string> GetAddedLanguages()  // <----------------------- private
+        private IList<string> GetAddedLanguages() 
         {
             IList<string> languages = new List<string>();
             int index = (int)TableHeader.Name;
@@ -72,7 +71,7 @@ namespace Wow.Pages
             string newLanguage = GetAllLanguages().Except(GetAddedLanguages()).First();
 
             if (newLanguage == null)
-                throw new InvalidOperationException("All languages added !");
+                throw new InvalidOperationException("All languages added!");
 
             return newLanguage;
         }
@@ -103,11 +102,11 @@ namespace Wow.Pages
 
         public bool IsLanguageInExistingList(string language)
         {
-            // TODO loop while()
-
             bool condition = LanguagesTable.BodyRows.Any(row => row.InnerText.Equals(language));
+
             if (condition)
                 throw new Exception($"{language} present in language list");
+
             return false;
         }
 
@@ -149,6 +148,7 @@ namespace Wow.Pages
                 ClickAddButton();
                 LanguagesTable.Refresh();
                 InitializeDialogWindow();
+                logger.Info($"{language} added");
             }
         }
 
@@ -159,6 +159,7 @@ namespace Wow.Pages
                 .Find.ByAttributes<HtmlButton>("class=~btn").Click();
             ConfirmLanguageDeletion();
             LanguagesTable.Refresh();
+            logger.Info($"{language} delete");
         }
     }
 }

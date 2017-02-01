@@ -52,6 +52,7 @@ namespace Wow.Pages
         public HtmlAnchor EditUserPassword { get; private set; }
 
         // Get Data
+
         public string GetNameValue()
         {
             return UserName.TextContent;
@@ -78,6 +79,7 @@ namespace Wow.Pages
         }
 
         // Set Data
+
         public void SetNewName(string newName)
         {
             editNameForm.NewNameField.Text = newName;
@@ -99,6 +101,7 @@ namespace Wow.Pages
         }
 
         // Functional
+
         public void ClickEditName()
         {
             EditUserName.Click();

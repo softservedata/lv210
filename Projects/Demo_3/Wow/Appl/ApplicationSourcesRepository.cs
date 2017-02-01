@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Wow.Appl
 {
     public sealed class ApplicationSourcesRepository
     {
-        private static volatile ApplicationSourcesRepository _instance;
+        private static volatile ApplicationSourcesRepository instance;
         private static readonly object Synchronize = new object();
 
         private ApplicationSourcesRepository() { }
@@ -16,17 +12,17 @@ namespace Wow.Appl
         // Static Factory
         public static ApplicationSourcesRepository Get()
         {
-            if (_instance == null)
+            if (instance == null)
             {
                 lock (Synchronize)
                 {
-                    if (_instance == null)
+                    if (instance == null)
                     {
-                        _instance = new ApplicationSourcesRepository();
+                        instance = new ApplicationSourcesRepository();
                     }
                 }
             }
-            return _instance;
+            return instance;
         }
 
         public static ApplicationSources Default()

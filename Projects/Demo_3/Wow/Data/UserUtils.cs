@@ -1,53 +1,51 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Json;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Wow.Data
 {
-    public class UserUtils
+    public class UserUtils : UserPropertyIndex
     {
-        private const string STORAGE_DIR = @"\FileStorage\";
-        private string _storagePath;
-        private IExternalData _externalData;
+        private string fileName;
+        private IExternalData externalData;
 
         public UserUtils(string fileName, IExternalData externalData)
         {
-            _storagePath = $"{STORAGE_DIR}{fileName}";
-            _externalData = externalData;
+            this.fileName = fileName;
+            this.externalData = externalData;
         }
 
         public IList<IUser> GetAllUsers()
         {
-            string appDirPath = Path.GetDirectoryName(Path.GetDirectoryName(AppDomain.CurrentDomain.SetupInformation.ApplicationBase));
-            string fullPath = $"{appDirPath}{_storagePath}";
-            return GetAllUsers(fullPath);
-        }
-
-        public IList<IUser> GetAllUsers(string path)
-        {
             IList<IUser> users = new List<IUser>();
-            foreach (var item in _externalData.GetAllValues(path))
+            string path = FileStorage.GetPath(fileName);
+            foreach (var item in externalData.GetAllValues(path))
             {
-                if (item[3].ToLower().Equals("email") &&
-                    item[4].ToLower().Equals("password"))
+                if (item[Email].ToLower().Equals("email") &&
+                    item[Password].ToLower().Equals("password"))
                     continue;
                 users.Add(User.Get()
-                    .SetFirstName(item[0])
-                    .SetLastName(item[1])
-                    .SetLanguage(item[2])
-                    .SetEmail(item[3])
-                    .SetPassword(item[4])
-                    .SetIsAdmin(item[5].ToLower().Equals("true"))
-                    .SetIsTeacher(item[6].ToLower().Equals("true"))
-                    .SetIsStudent(item[7].ToLower().Equals("true"))
+                    .SetFirstName(item[FirstName])
+                    .SetLastName(item[LastName])
+                    .SetLanguage(item[Language])
+                    .SetEmail(item[Email])
+                    .SetPassword(item[Password])
+                    .SetIsAdmin(item[Admin].ToLower().Equals("true"))
+                    .SetIsTeacher(item[Teacher].ToLower().Equals("true"))
+                    .SetIsStudent(item[Student].ToLower().Equals("true"))
                     .Build());
             }
             return users;
         }
+    }
+
+    public class UserPropertyIndex
+    {
+        public byte FirstName { get; } = 0;
+        public byte LastName { get; } = 1;
+        public byte Language { get; } = 2;
+        public byte Email { get; } = 3;
+        public byte Password { get; } = 4;
+        public byte Admin { get; } = 5;
+        public byte Teacher { get; } = 6;
+        public byte Student { get; } = 7;
     }
 }

@@ -78,14 +78,13 @@
     <Compile Include="Appl\ApplicationSourcesRepository.cs" />
     <Compile Include="Data\CsvUtils.cs" />
     <Compile Include="Data\ExelUtils.cs" />
-    <Compile Include="Data\IExternalData.cs" />
+    <Compile Include="Data\ExternalData.cs" />
     <Compile Include="Data\JsonUtils.cs" />
     <Compile Include="Data\ExtentionForUserRepository.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\UserRepository.cs" />
     <Compile Include="Data\UserUtils.cs" />
     <Compile Include="Data\XmlUtil.cs" />
-    <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\ApplicationPage.cs" />
     <Compile Include="Pages\BasicTable.cs" />
@@ -94,10 +93,9 @@
     <Compile Include="Pages\EditForm.cs" />
     <Compile Include="Pages\LanguagesPage.cs" />
     <Compile Include="Pages\DialogWindow.cs" />
-    <Compile Include="Pages\UsersPage.cs" />
+    <Compile Include="Pages\UserPage.cs" />
     <Compile Include="Pages\HeadPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
-    <Compile Include="Pages\StudentPage.cs" />
     <Compile Include="Pages\TeacherPage.cs" />
     <Compile Include="Pages\YourProfilePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

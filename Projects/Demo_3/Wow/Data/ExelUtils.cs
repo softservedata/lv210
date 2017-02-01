@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -22,7 +18,6 @@ namespace Wow.Data
             int rowCount = exlRange.Rows.Count;
             int colCount = exlRange.Columns.Count;
             
-            // Iterate over the rows and columns and print to the console as it appears in the file excel is not zero based
             for (int i = 1; i <= rowCount; i++)
             {
                 IList<string> rowCells = new List<string>();
@@ -37,17 +32,12 @@ namespace Wow.Data
                 }
                 allValues.Add(rowCells);
             }
-            // Cleanup
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-            //
+
             exlWorkbook.Close();
             Marshal.ReleaseComObject(exlWorkbook);
-
-            // Quit and release
             exlApp.Quit();
             Marshal.ReleaseComObject(exlApp);
-            //
+
             return allValues;
         }
     }

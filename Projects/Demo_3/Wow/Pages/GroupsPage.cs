@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
-using NUnit.Framework;
 
 namespace Wow.Pages
 {
@@ -50,7 +48,7 @@ namespace Wow.Pages
 
         public string GetExistingGroupName()
         {
-            return GetExistingGroupNames()[0];
+            return GetExistingGroupNames().First();
         }
     }
 }
