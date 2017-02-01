@@ -39,16 +39,6 @@ namespace Wow.Pages
             return LanguagePageDescription.BaseElement.InnerText;
         }
 
-        public HtmlTableRow GetLastLanguageRowFromExistingList() // rework delition and remove cos this is sparta !!!
-        {
-            return LanguagesTable.BodyRows.Last();
-        }
-
-        public HtmlButton GetDeleteLanguageButtonByRow(HtmlTableRow languageRow)
-        {
-            return languageRow.Find.ByAttributes<HtmlButton>("class=~btn");
-        }
-
         private string GetDialogWindowTitle()
         {
             return dialogWindow.GetTitle();
@@ -162,17 +152,10 @@ namespace Wow.Pages
             }
         }
 
-        public void DeleteLastAddedLanguage()
-        {
-            GetDeleteLanguageButtonByRow(GetLastLanguageRowFromExistingList()).Click();
-            ConfirmLanguageDeletion();
-            LanguagesTable.Refresh();
-        }
-
         public void DeleteLanguage(string language)
         {
             int index = GetAddedLanguages().IndexOf(language);
-            LanguagesTable.Rows[++index].Cells[(int)TableHeader.Delete]    // try click on cell
+            LanguagesTable.Rows[++index].Cells[(int)TableHeader.Delete]
                 .Find.ByAttributes<HtmlButton>("class=~btn").Click();
             ConfirmLanguageDeletion();
             LanguagesTable.Refresh();
