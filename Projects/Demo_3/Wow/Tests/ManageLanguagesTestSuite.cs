@@ -35,7 +35,7 @@ namespace Wow.Tests
             
             // 2. Add Language
             languagesPage.AddNewLanguage(languageToAdd);
-            Assert.IsTrue(languagesPage.IsDialogWindowAppears(DialogWindowTitle.AddLanguage, DialogWindowMessage.AddLanguage));         
+            Assert.IsTrue(languagesPage.IsDialogWindowAppears(DialogWindowTitle.AddLanguage, DialogWindowMessage.AddLanguage));
             languagesPage.CloseDialogWindow();
 
             // 3. Check if added language is presented in the list as last language
@@ -47,6 +47,8 @@ namespace Wow.Tests
 
             // --- Logout --- //
             languagesPage.GotoLogOut();
+
+            Console.WriteLine("Test Done!");
         }
     }
 }
