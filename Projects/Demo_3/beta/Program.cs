@@ -111,7 +111,7 @@ namespace beta
 
             //IList<IUser>
 
-            // TODO TODO TODO TODO
+            //// TODO TODO TODO TODO
             //foreach (XmlNode xn in xnList)
             //{
             //    string firstName = xn["firstName"].InnerText;
@@ -122,11 +122,20 @@ namespace beta
             //    string isAdmin = xn["isAdmin"].InnerText;
             //    string isTeacher = xn["isTeacher"].InnerText;
             //    string isStudent = xn["isStudent"].InnerText;
-            //    Console.WriteLine($"{firstName} {lastName} {language} {email} {password} {isAdmin} {isStudent} {isTeacher}");
             //}
 
             //IUser s = JsonUtils.xGetAllUsers("Users.json").GetAdmin();
             //Console.WriteLine(s.GetFullName());
+
+            string[] soft = { "Microsoft", "Google", "Apple" };
+            string[] hard = { "Apple", "IBM", "Samsung", "Microsoft", "Google" };
+
+            // разность множеств
+            var result = soft.Except(hard).First();
+
+            Console.WriteLine(result);
+            //foreach (string s in result)
+            //    Console.WriteLine(s);
 
         }
     }

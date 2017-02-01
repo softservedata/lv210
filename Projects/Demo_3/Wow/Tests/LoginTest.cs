@@ -5,6 +5,7 @@ using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 using System.Collections.Generic;
 using System.IO;
+using Wow.Appl;
 using Wow.Data;
 using Wow.Pages;
 
@@ -16,11 +17,11 @@ namespace Wow.Tests
 
         private static readonly object[] ExternalData =
             //UserRepository.Get().FromCsv("Users.csv").GetAllUsers();
-            //UserRepository.Get().FromJson("Users.json").GetAllUsers();
+            {UserRepository.Get().FromJson("Users.json").GetAdmin()};
             //UserRepository.Get().FromXml("Users.xml").GetAllUsers();
-            UserRepository.Get().FromExcel("Users.xlsx").GetAllUsers();
+            //UserRepository.Get().FromExcel("Users.xlsx").GetAllUsers();
 
-        [Test, TestCaseSource(nameof(ExternalData))]
+        //[Test, TestCaseSource(nameof(ExternalData))]
         public void TestSignin(IUser admin)
         {
             // Precondition
@@ -38,13 +39,17 @@ namespace Wow.Tests
             Assert.AreEqual("SoftServe Language School", loginPage.GetLoginDescriptionText());
         }
 
-        //[Test, TestCaseSource(nameof(ExternalData))]
+        [Test, TestCaseSource(nameof(ExternalData))]
         public void Beta(IUser admin)
         {
-            UserRepository.Get().FromCsv("Users.csv").GetAdmin();
-            Console.WriteLine(admin.GetFullName());
-            Console.WriteLine(admin.GetEmail());
-            Console.WriteLine(admin.GetPassword());
+            LoginPage loginPage = Application.Get().Login(); // change chrome by IP
+            UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
+            LanguagesPage languagesPage = usersPage.GotoLanguagesPage();
+            Assert.IsNotNull(languagesPage.GetLanguagePageDescription());
+
+            languagesPage.GetAddedLanguages();
+            Manager m = Manager.Current;
+            m.Dispose();
         }
     }
 }

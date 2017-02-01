@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
@@ -9,96 +10,89 @@ namespace Wow.Pages
 {
     public class LanguagesPage : HeadPage
     {
-        /// <summary>
-        /// Appears after adding or deleting language
-        /// </summary>
-        private class DialogWindow : ModalContent
-        {
-            public DialogWindow(Manager manager) : base(manager)
-            {
-                //this.OkButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-block btn-primary");
-                this.OkButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[text()='Ok']");
-            }
-
-            public HtmlButton OkButton { get; private set; }
-        }
-
-        /// <summary>
-        /// Appears to confirm or cancel deleting language
-        /// </summary>
-        private class ConfirmWindow : ModalContent
-        {
-            public ConfirmWindow(Manager manager) : base(manager)
-            {
-                this.YesButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[text()='Yes']");
-                this.NoButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//button[text()='No']");
-            }
-
-            public HtmlButton NoButton { get; private set; }
-            public HtmlButton YesButton { get; private set; }
-        }
-
         private DialogWindow dialogWindow;
-        private ConfirmWindow confirmWindow;
 
         public LanguagesPage(Manager manager) : base(manager)
         {
-            //this.LanguageHeader = manager.ActiveBrowser.Find.ByAttributes("class=text-center ng-scope");
-            this.LanguageHeader = manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//h2");
-
-            //this.LanguageSelect = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=selectedLanguage");
+            this.LanguagePageDescription = manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//h2");
             this.LanguageSelect = manager.ActiveBrowser.Find.ByXPath<HtmlSelect>("//select[contains(@class, 'form-control')]");
-
-            //this.AddLanguageButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-default btn-block");
             this.AddLanguageButton = manager.ActiveBrowser.Find.ByXPath<HtmlButton>("//span[contains(@class, 'input-group-btn')]/button");
-
-            //this.ExistingLanguagesTable = manager.ActiveBrowser.Find.ByAttributes<HtmlTable>("class=table table-striped width-quarter");
-            this.ExistingLanguagesTable = manager.ActiveBrowser.Find.ByAttributes<HtmlTable>("class=~table");
+            this.LanguagesTable = manager.ActiveBrowser.Find.ByAttributes<HtmlTable>("class=~table");
         }
 
-        public HtmlControl LanguageHeader { get; private set; }
+        public HtmlControl LanguagePageDescription { get; private set; }
         public HtmlSelect LanguageSelect { get; private set; }
         public HtmlButton AddLanguageButton { get; private set; }
-        public HtmlTable ExistingLanguagesTable { get; private set; }
+        public HtmlTable LanguagesTable { get; private set; }
 
-        // Get Data
-        public string GetLanguagePageDescription()
+        enum TableHeader
         {
-            return LanguageHeader.ChildNodes[0].InnerText;
+            Name,
+            Delete
         }
 
-        public HtmlTableRow GetLastLanguageRowFromExistingList()
+        // Get Data
+
+        public string GetLanguagePageDescription()
         {
-            return ExistingLanguagesTable.BodyRows.Last();
+            return LanguagePageDescription.BaseElement.InnerText;
+        }
+
+        public HtmlTableRow GetLastLanguageRowFromExistingList() // rework delition and remove cos this is sparta !!!
+        {
+            return LanguagesTable.BodyRows.Last();
         }
 
         public HtmlButton GetDeleteLanguageButtonByRow(HtmlTableRow languageRow)
         {
-            //return languageRow.Find.ByAttributes<HtmlButton>("class=btn btn-default nomargins");
             return languageRow.Find.ByAttributes<HtmlButton>("class=~btn");
-        }
-
-        private DialogWindow GetDialogWindow()
-        {
-            return dialogWindow = new DialogWindow(manager);
         }
 
         private string GetDialogWindowTitle()
         {
-            return dialogWindow.HeaderName.InnerText;
+            return dialogWindow.GetTitle();
         }
 
         private string GetDialogWindowMessage()
         {
-            return dialogWindow.BodyMessage.InnerText;
+            return dialogWindow.GetBodyMessage();
         }
 
-        private ConfirmWindow GetConfirmWindow()
+        public IList<string> GetAllLanguages()  // <----------------------- private
         {
-            return confirmWindow = new ConfirmWindow(manager);
+            return LanguageSelect.Options
+                .Select(option => option.Text).Skip(1).ToList();
+        }
+
+        public IList<string> GetAddedLanguages()  // <----------------------- private
+        {
+            IList<string> languages = new List<string>();
+            int index = (int)TableHeader.Name;
+
+            foreach (var row in LanguagesTable.BodyRows)
+                languages.Add(row.Cells[index].InnerText);
+
+            languages.Remove(TableHeader.Name.ToString());
+            return languages;
+        }
+
+        public string GetNewLanguage()
+        {
+            string newLanguage = GetAllLanguages().Except(GetAddedLanguages()).First();
+
+            if (newLanguage == null)
+                throw new InvalidOperationException("All languages added !");
+
+            return newLanguage;
+        }
+
+        public string GetLastLanguage()
+        {
+            return LanguagesTable.Rows.Last().Cells[(int)TableHeader.Name].InnerText;
         }
 
         // Set Data
+
         public void SelectLanguageFromList(string language)
         {
             LanguageSelect.SelectByText(language, true);
@@ -109,19 +103,20 @@ namespace Wow.Pages
             AddLanguageButton.Click();
         }
 
-        private void ClickOkButton()
+        // Functional
+
+        private void InitializeDialogWindow()
         {
-            GetDialogWindow().OkButton.Click();
+            dialogWindow = new DialogWindow(manager);
         }
 
-        // Functional
         public bool IsLanguageInExistingList(string language)
         {
-            // TODO wloop while()
+            // TODO loop while()
 
-            bool con = ExistingLanguagesTable.BodyRows.Any(item => item.InnerText.ToLower().Equals(language.ToLower()));
-            if (con)
-                throw new Exception("sdsdassdas");
+            bool condition = LanguagesTable.BodyRows.Any(row => row.InnerText.Equals(language));
+            if (condition)
+                throw new Exception($"{language} present in language list");
             return false;
         }
 
@@ -131,37 +126,38 @@ namespace Wow.Pages
             return AddLanguageButton.IsEnabled;
         }
 
-        public bool IsAddLanguageDialogWindowAppear(string title, string message)
+        public bool IsDialogWindowAppears(string title, string message)
         {
-            return GetDialogWindowTitle().ToLower().Equals(title.ToLower()) &&
-                GetDialogWindowMessage().ToLower().Equals(message.ToLower());
+            return GetDialogWindowTitle().Equals(title) &&
+                GetDialogWindowMessage().Equals(message);
         }
 
-        public void CloseAddLanguageDialogWindow()
+        public void CloseDialogWindow()
         {
-            ClickOkButton();
+            dialogWindow.ClickButton(Button.Ok);
         }
 
         private void ConfirmLanguageDeletion()
         {
-            GetConfirmWindow().YesButton.Click();
-            ClickOkButton();
+            dialogWindow.ClickButton(Button.Yes);
+            dialogWindow.ClickButton(Button.Ok);
         }
 
         private void CancelLanguageDeletion()
         {
-            GetConfirmWindow().NoButton.Click();
+            dialogWindow.ClickButton(Button.No);
         }
 
         // Business Logic
+
         public void AddNewLanguage(string language)
         {
             SelectLanguageFromList(language);
             if (IsAddButtonEnabled())
             {
                 ClickAddButton();
-                ExistingLanguagesTable.Refresh();
-                GetDialogWindow();
+                LanguagesTable.Refresh();
+                InitializeDialogWindow();
             }
         }
 
@@ -169,7 +165,16 @@ namespace Wow.Pages
         {
             GetDeleteLanguageButtonByRow(GetLastLanguageRowFromExistingList()).Click();
             ConfirmLanguageDeletion();
-            ExistingLanguagesTable.Refresh();
+            LanguagesTable.Refresh();
+        }
+
+        public void DeleteLanguage(string language)
+        {
+            int index = GetAddedLanguages().IndexOf(language);
+            LanguagesTable.Rows[++index].Cells[(int)TableHeader.Delete]    // try click on cell
+                .Find.ByAttributes<HtmlButton>("class=~btn").Click();
+            ConfirmLanguageDeletion();
+            LanguagesTable.Refresh();
         }
     }
 }

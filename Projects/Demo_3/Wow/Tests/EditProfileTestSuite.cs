@@ -58,7 +58,7 @@ namespace Wow.Tests
             Assert.AreNotEqual(newPassword, admin.GetPassword());
 
             // --- Logout --- //
-            loginPage = yourProfilePage.GotoLogOut();
+            yourProfilePage.GotoLogOut();
 
             Console.WriteLine("Test Done!");
         }

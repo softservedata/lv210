@@ -31,7 +31,7 @@ namespace Wow.Appl
 
         public static ApplicationSources Default()
         {
-            return ChromeByTrainingLocal();
+            return ChromeByIP();
         }
 
         public static ApplicationSources ChromeByTrainingLocal()
