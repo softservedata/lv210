@@ -49,7 +49,7 @@
       <HintPath>..\packages\NLog.4.4.1\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+    <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -81,6 +81,7 @@
     <Compile Include="Pages\Application.cs" />
     <Compile Include="Pages\ApplicationPage.cs" />
     <Compile Include="Pages\BasicTable.cs" />
+    <Compile Include="Pages\MyGroupsPage.cs" />
     <Compile Include="Pages\UsersPage.cs" />
     <Compile Include="Pages\HeadPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
@@ -88,7 +89,9 @@
     <Compile Include="Pages\TeacherPage.cs" />
     <Compile Include="Pages\YourProfilePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\AddUsersToGroupByTeacherTest.cs" />
     <Compile Include="Tests\LoginTest.cs" />
+    <Compile Include="Tests\SwitchBetweenThemes.cs" />
     <Compile Include="Tests\TestRunner.cs" />
   </ItemGroup>
   <ItemGroup />

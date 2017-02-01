@@ -6,12 +6,16 @@ using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 using System.Collections.Generic;
 using ArtOfTest.WebAii.Win32.Dialogs;
+using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace UnitTestProjectTelerikFirst
 {
     [TestFixture]
     public class TelerikFirstTest
     {
+        public object SqlCommand { get; private set; }
+
         //[Test]
         public void TestMethod1()
         {
@@ -27,7 +31,7 @@ namespace UnitTestProjectTelerikFirst
             manager.LaunchNewBrowser();
             //manager.Settings.Web.RecycleBrowser = true;
             //manager.Settings.Web.KillBrowserProcessOnClose = true;
-            manager.ActiveBrowser.NavigateTo("http://java.training.local:8080/registrator/login");
+            manager.ActiveBrowser.NavigateTo("https://192.168.195.249");
             //
             HtmlInputText login = manager.ActiveBrowser.Find.ById<HtmlInputText>("login");
             login.Text = "admin11111";
@@ -57,7 +61,7 @@ namespace UnitTestProjectTelerikFirst
             manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-primary btn-sm dropdown-toggle").Click();
             manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(@href,'/logout')]").Click();
             //
-            HtmlImage image = manager.ActiveBrowser.Find.ByTagIndex<HtmlImage>("img",0);
+            HtmlImage image = manager.ActiveBrowser.Find.ByTagIndex<HtmlImage>("img", 0);
             Assert.IsTrue(image.Src.ToLower().Contains("ukraine_logo2.gif"));
             Thread.Sleep(2000);
             //
@@ -85,7 +89,7 @@ namespace UnitTestProjectTelerikFirst
             HtmlSelect language = manager.ActiveBrowser.Find.ById<HtmlSelect>("changeLanguage");
             //
             //language.SelectByIndex(2);
-            language.SelectByText("english",true);
+            language.SelectByText("english", true);
             //language.Click();
             //manager.ActiveBrowser.Refresh();
             //manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//option[contains(@value,'en')]").Click();
@@ -112,7 +116,7 @@ namespace UnitTestProjectTelerikFirst
             Console.WriteLine("done");
         }
 
-        [Test]
+        //[Test]
         public void TestMethod3()
         {
             Manager manager;
@@ -127,11 +131,11 @@ namespace UnitTestProjectTelerikFirst
             manager = new Manager(mySettings);
             manager.Start();
             manager.LaunchNewBrowser();
-            manager.ActiveBrowser.NavigateTo("https://wow.training.local/Index#/Home");
+            manager.ActiveBrowser.NavigateTo("https://192.168.195.249");
             //
             IList<HtmlControl> description = manager.ActiveBrowser.Find.AllByXPath<HtmlControl>("//div[@class='text-primary']/h2/small");
             Console.WriteLine("description = " + description.Count);
-            if ((description.Count == 0)  && (manager.ActiveBrowser.BrowserType == BrowserType.Chrome))
+            if ((description.Count == 0) && (manager.ActiveBrowser.BrowserType == BrowserType.Chrome))
             {
                 for (int i = 0; i < 5; i++)
                 {
@@ -189,6 +193,16 @@ namespace UnitTestProjectTelerikFirst
             manager.ActiveBrowser.Find.ById<HtmlDiv>("dropdownBtn").Click();
             //Console.WriteLine("dropdownBtn done");
             Thread.Sleep(2000);
+
+            // //*[@id="cursorStyle"]/span[1]/text()
+            var ManagerSide = manager.ActiveBrowser.Find.AllByXPath("@id='cursorStyle']//*[contains(text(), 'Manager')]");
+            ////*[@id="cursorStyle"]/span[1]/text()
+
+
+
+
+
+
             // logout
             manager.ActiveBrowser.Find.ByAttributes<HtmlAnchor>("ng-click=logOut()").Click();
             //Manager.Current.ActiveBrowser.Actions.InvokeScript("logOut();");
@@ -227,5 +241,57 @@ namespace UnitTestProjectTelerikFirst
             }
         }
 
+
+        [Test]
+        public void TestMethod5()
+        {
+            Manager manager;
+            Settings mySettings = new Settings();
+            //
+            mySettings.Web.DefaultBrowser = BrowserType.Chrome;
+            manager = new Manager(mySettings);
+            manager.Start();
+            manager.LaunchNewBrowser();
+            manager.ActiveBrowser.NavigateTo("https://192.168.195.249");
+            HtmlButton loginButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-success");
+            loginButton.Click();
+            //HtmlInputEmail loginInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("class=form-control ng-pristine ng-valid ng-valid-email ng-touched");
+            HtmlInputEmail loginInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=email");
+            loginInput.Text = "wowira@ukr.net";
+            Thread.Sleep(1000);
+            HtmlInputPassword passwordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=password");
+            passwordInput.Text = "irawow123";
+            Thread.Sleep(1000);
+            HtmlInputSubmit submitInput = manager.ActiveBrowser.Find.ByName<HtmlInputSubmit>("loginButton");
+            submitInput.Click();
+            Thread.Sleep(2000);
+
+            HtmlAnchor managerButton = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//section[@id='teaching-tools']/li/a");
+            managerButton.Click();
+
+            HtmlAnchor groups = manager.ActiveBrowser.Find.ByAttributes<HtmlAnchor>("href=Index#/Groups");
+            groups.Click();
+
+            HtmlAnchor editIcon = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//*[@id='myJum']/div/div[3]/div[4]/table/tbody/tr[2]/td[3]/a");
+            editIcon.Click();
+
+            HtmlButton selectButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=dropdown-toggle ng-binding btn btn-default");
+            selectButton.Click();
+
+            HtmlAnchor selectAllItem = manager.ActiveBrowser.Find.ByAttributes<HtmlAnchor>("data-ng-click='selectAll();");
+            selectAllItem.Click();
+
+            HtmlAnchor deselectAllItem = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("data-ng-click='deselectAll();");
+            deselectAllItem.Click();
+
+            HtmlInputText searchBox = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("class=form-control ng-pristine ng-valid ng-touched");
+            searchBox.Text = "Mariana Tester";
+
+            HtmlButton submitChangesButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-default center-block");
+            submitChangesButton.Click();
+
+            
+            SqlCommand asasd; 
+        }
     }
 }

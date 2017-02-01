@@ -60,6 +60,20 @@ namespace Wow.Data
                 .Build();
         }
 
+        public IUser Teacher()
+        {
+            return User.Get()
+                .SetFirstname("Mariana")
+                .SetLastname("Medynska")
+                .SetLanguage("English")
+                .SetEmail("mar_yanap@yahoo.de")
+                .SetPassword("q2w3e4r5")
+                .SetIsAdmin(false)
+                .SetIsTeacher(true)
+                .SetIsStudent(false)
+                .Build();
+        }
+
         public IUser Invalid()
         {
             return User.Get()

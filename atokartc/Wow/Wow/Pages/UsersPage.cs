@@ -6,74 +6,79 @@ using System.Threading.Tasks;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
-
+using NLog;
+using Wow.Data;
 
 namespace Wow.Pages
 {
     public class UsersPage : HeadPage
     {
         // Components
-        private class UserTable
+        private class UserTableUtils : IExternalData
         {
             // Fields
-            private Manager manager;
-
-            // get Data
-            public HtmlTable Table { get; private set; }
-            public HtmlAnchor Next { get; private set; }
-            //public HtmlControl DirectionItem { get; private set; }
+            private static Logger logger = LogManager.GetCurrentClassLogger();
             //
-            // TODO First
-            // Header
-            private List<Element> header;
-            private List<List<Element>> cells;
+            BasicTable userTable;
 
             // Constructor
-            public UserTable(Manager manager)
+            public UserTableUtils(BasicTable userTable)
             {
-                this.manager = manager;
-                this.Table = manager.ActiveBrowser.Find.ByAttributes<HtmlTable>("class=table table-striped width-half");
-                //this.Next = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//a[contains(text(),'›')]");
-                this.Next = manager.ActiveBrowser.Find.ByContent<HtmlAnchor>("›");
-                //this.DirectionItem = manager.ActiveBrowser.Find.ByXPath<HtmlControl>("//a[contains(text(),'›')]/ancestor::li");
+                this.userTable = userTable;
             }
 
-            // Page Object
-            // get Data
-            // Functional
-            private List<List<Element>> GetAllCells()
+            public IList<IList<string>> GetAllCells(string path)
             {
-                return null;
+                IList<IList<string>> allCells = new List<IList<string>>();
+                string lastname;
+                string email;
+                foreach (var row in userTable.GetAllCells())
+                {
+                    IList<string> allvalues = new List<string>();
+                    email = ((row[1].InnerText != null)
+                            && (row[1].InnerText.Trim().Length > 0)) ? row[1].InnerText.Trim() : string.Empty;
+                    if (!email.Contains("@"))
+                    {
+                        continue;
+                    }
+                    string[] names = row[0].InnerText.Trim().Split(' ');
+                    logger.Debug("row[0].InnerText=" + row[0].InnerText);
+                    allvalues.Add(((names[0] != null) && (names[0].Length > 0)) ? names[0] : string.Empty);     // Firstname
+                    lastname = string.Empty;
+                    if (names.Length > 1)
+                    {
+                        lastname = ((names[1] != null) && (names[1].Length > 0)) ? names[1] : string.Empty;
+                    }
+                    logger.Debug("Lastname=" + lastname);
+                    allvalues.Add(lastname);                                                                    // Lastname
+                    allvalues.Add("English");                                                                   // Language
+                    allvalues.Add(email);                                                                       // Email
+                    allvalues.Add(string.Empty);                                                                // Password
+                    //allvalues.Add(row[2].ChildNodes[0].As<HtmlInputCheckBox>().Checked.ToString());             // IsAdmin
+                    //allvalues.Add(row[3].ChildNodes[0].As<HtmlInputCheckBox>().Checked.ToString());             // IsTeacher
+                    //allvalues.Add(row[4].ChildNodes[0].As<HtmlInputCheckBox>().Checked.ToString());             // IsStudent
+                    allvalues.Add("true");
+                    allvalues.Add("true");
+                    allvalues.Add("true");
+                    allCells.Add(allvalues);
+                }
+                return allCells;
             }
+        }
 
-            public bool IsItemPresent(string text)
-            {
-                return true;
-            }
-
-            public bool IsItemPresent(int columnNumber, string text)
-            {
-                // Searching
-                return true;
-            }
-
-            public bool IsItemPresent(string columnName, string text)
-            {
-                return true;
-            }
-
-            public List<String> GetAllEMails()
-            {
-                return null;
-            }
-
-            // set Data
-
-            // Business Logic
-
+        // Components
+        public enum UserTableHeader
+        {
+            Name = 0,
+            Email = 1,
+            AdminRole = 2,
+            TeacherRole = 3,
+            StudentRole = 4,
+            ClickToedit = 5
         }
 
         // Fields
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         // get Data
         public HtmlControl All { get; private set; }
@@ -82,7 +87,7 @@ namespace Wow.Pages
         public HtmlControl Students { get; private set; }
         public HtmlInputText Search { get; private set; }
         //
-        private UserTable userTable;
+        private BasicTable userTable;
 
         // Constructor
         public UsersPage(Manager manager) : base(manager)
@@ -92,19 +97,38 @@ namespace Wow.Pages
             this.Teacher = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Teachers");
             this.Students = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:Students");
             this.Search = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=valueToSearch");
+            this.userTable = new BasicTable(manager, "class=table table-striped width-half",
+                    "//a[contains(text(),'First')]", "//a[contains(text(),'‹')]", "//a[contains(text(),'›')]",
+                    "//a[contains(text(),'Last')]", "//li[@class = 'ng-scope active']/a");
         }
 
         // Page Object
         // get Data
         // Functional
-        public List<string> GetUserTableEMails()
+        public IList<string> GetUserTableEMails()
         {
-            return null;
+            logger.Debug("Start List<string> GetUserTableEMails()");
+            //
+            IList<string> result = new List<string>();
+            foreach (var email in userTable.GetAllColumnByIndex((int)UserTableHeader.Email))
+            {
+                if (!email.InnerText.ToLower().Equals(UserTableHeader.Email.ToString().ToLower()))
+                {
+                    result.Add(email.InnerText);
+                    logger.Debug("Added " + email.InnerText);
+                }
+            }
+            logger.Debug("Done List<string> GetUserTableEMails()");
+            return result;
         }
 
         // set Data
 
         // Business Logic
+        public IList<IUser> GetUsersFromTable()
+        {
+            return new UserUtils(string.Empty, new UserTableUtils(userTable)).GetAllUsers();
+        }
 
     }
 }

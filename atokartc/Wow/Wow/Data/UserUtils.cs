@@ -5,11 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
+using NLog;
 
 namespace Wow.Data
 {
     public class UserUtils
     {
+        // Fields
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         private const string FILE_STORAGE = @"\FileStorage\";
         private string storageName;
         private IExternalData externalData;
@@ -41,6 +45,7 @@ namespace Wow.Data
 
         public IList<IUser> GetAllUsers(string path)
         {
+            logger.Debug("Start GetAllUsers, path = " + path);
             Console.WriteLine("path = " + path);
             IList<IUser> users = new List<IUser>();
             foreach (IList<string> row in externalData.GetAllCells(path))
@@ -60,7 +65,9 @@ namespace Wow.Data
                         .SetIsTeacher(row[6].ToLower().Equals("true"))
                         .SetIsStudent(row[7].ToLower().Equals("true"))
                         .Build());
+                logger.Debug("Add User Firstname= " + row[0] + " Lastname = " + row[1] + " Email = " + row[3]);
             }
+            logger.Debug("Done GetAllUsers, path = " + path);
             return users;
         }
 
