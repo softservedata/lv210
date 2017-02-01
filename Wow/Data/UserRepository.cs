@@ -10,6 +10,12 @@ namespace Wow.Data
     {
         private static volatile UserRepository instance;
         private static readonly Object synchronize = new Object();
+        //
+        //private const string CONNECTION_STRING = "Data Source=192.168.195.249;Database=WoWDB;User Id = wowtest; Password=wowtest;";
+        //private const string CONNECTION_STRING = "Driver={SQL Server};Server=192.168.195.249;Database=WoWDB;Uid=wowtest;Pwd=wowtest;";
+        private const string CONNECTION_STRING = "Driver={SQL Server};Server=192.168.103.142;Database=WoWDB;Uid=wowtest;Pwd=wowtest;";
+        //private const string REQUEST_USERS = "SELECT U.Name, U.EMail, IIF(EXISTS(SELECT Name FROM Roles JOIN UserRole ON Roles.Id = UserRole.RoleId Where UserRole.UserId = U.Id and Name = 'Admin'),1,0) as IsAdmin, IIF(EXISTS(SELECT Name FROM Roles JOIN UserRole ON Roles.Id = UserRole.RoleId Where UserRole.UserId = U.Id and Name = 'Teacher'),1,0) as IsTeacher, IIF(EXISTS(SELECT Name FROM Roles JOIN UserRole ON Roles.Id = UserRole.RoleId Where UserRole.UserId = U.Id and Name = 'Student'),1,0) as IsStudent FROM[Users] as U JOIN UserRole ON U.Id = UserRole.UserId WHERE UserRole.RoleId= 1 ORDER BY U.Name";
+        private const string REQUEST_USERS = "Select Firstname, Lastname, Language, Email, Password, IsAdmin, IsTeacher, IsStudent from Users;";
 
         // constructor
         private UserRepository()
@@ -97,6 +103,12 @@ namespace Wow.Data
         public IList<IUser> FromExcel()
         {
             return new UserUtils("Users.xlsx", new ExcelUtils()).GetAllUsers();
+            //return null;
+        }
+
+        public IList<IUser> FromDB()
+        {
+            return new UserUtils(string.Empty, new DBUtils(CONNECTION_STRING)).GetAllUsers(REQUEST_USERS);
             //return null;
         }
 

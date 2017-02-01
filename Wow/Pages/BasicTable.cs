@@ -65,6 +65,7 @@ namespace Wow.Pages
         // get Data
         //public List<Element> getHeader() { return null; }
 
+        // TODO If using pagination Must be return string
         public IList<IList<HtmlTableCell>> GetAllCells()
         {
             bool hasNextPage = true;

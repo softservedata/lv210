@@ -54,6 +54,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <Choose>
@@ -72,6 +73,7 @@
     <Compile Include="Appl\ApplicationSources.cs" />
     <Compile Include="Appl\ApplicationSourcesRepository.cs" />
     <Compile Include="Data\CsvUtils.cs" />
+    <Compile Include="Data\DBUtils.cs" />
     <Compile Include="Data\ExcelUtils.cs" />
     <Compile Include="Data\IExternalData.cs" />
     <Compile Include="Data\ListUtils.cs" />

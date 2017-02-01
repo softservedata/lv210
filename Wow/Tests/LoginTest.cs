@@ -23,7 +23,8 @@ namespace Wow.Tests
 
         private static readonly object[] TestExternalData =
             //ListUtils.ToMultiArray(UserRepository.Get().FromDefaultCsv());
-            ListUtils.ToMultiArray(UserRepository.Get().FromExcel());
+            //ListUtils.ToMultiArray(UserRepository.Get().FromExcel());
+            ListUtils.ToMultiArray(UserRepository.Get().FromDB());
 
         //[Test, TestCaseSource(nameof(TestExternalData))]
         public void TestRead(User admin)
@@ -33,7 +34,7 @@ namespace Wow.Tests
             Console.WriteLine("IsIsAdmin = " + admin.GetIsAdmin());
         }
 
-        [Test, TestCaseSource(nameof(TestSigninData))]
+        //[Test, TestCaseSource(nameof(TestSigninData))]
         //[Test, TestCaseSource(nameof(TestExternalData))]
         public void TestSignin(IUser admin)
         {
@@ -69,6 +70,7 @@ namespace Wow.Tests
               { new object[] { "111", "info1" }, new object[] { "222", "info2" }, new object[] { "333", "info3" } };
 
         //[Test, TestCaseSource(nameof(TwoDimData))]
+        [Test, TestCaseSource(nameof(TestExternalData))]
         public void TestFile(string data, string info)
         {
             logger.Info("Start");
@@ -79,6 +81,8 @@ namespace Wow.Tests
                 Console.WriteLine("Email = " + user.GetEmail());
                 Console.WriteLine("Password = " + user.GetPassword());
                 Console.WriteLine("IsIsAdmin = " + user.GetIsAdmin());
+                //
+                logger.Info("Email = " + user.GetEmail());
             }
             logger.Info("Done");
         }
