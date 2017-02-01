@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
-using ArtOfTest.WebAii.Core;
+﻿using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 using Wow.Data;
@@ -13,75 +7,38 @@ namespace Wow.Pages
 {
     public class LoginPage
     {
-        // Components
         private class LoginForm
         {
-            // Fields
             private Manager manager;
 
-            // get Data
-            public HtmlInputEmail LoginInput { get; private set; }
-            public HtmlInputPassword PasswordInput { get; private set; }
-            public HtmlInputSubmit SubmitInput { get; private set; }
-
-            // Constructor
             public LoginForm(Manager manager)
             {
                 this.manager = manager;
-                this.LoginInput =  manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=email");
+                this.LoginInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=email");
                 this.PasswordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=password");
                 this.SubmitInput = manager.ActiveBrowser.Find.ByName<HtmlInputSubmit>("loginButton");
             }
-        }
 
-        private class SignUpForm
-        {
-            // Fields
-            private Manager manager;
-
-            // get Data
-            public HtmlInputText NameInput { get; private set; }
-            public HtmlInputText SurnameInput { get; private set; }
-            public HtmlSelect LanguageSelect { get; private set; }
-            public HtmlInputEmail EmailInput { get; private set; }
+            public HtmlInputEmail LoginInput { get; private set; }
             public HtmlInputPassword PasswordInput { get; private set; }
-            public HtmlInputPassword RepeatPassword { get; private set; }
-            public HtmlButton SignUp { get; private set; }
-
-            public SignUpForm(Manager manager)
-            {
-                this.manager = manager;
-                this.NameInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=nameValue");
-                this.SurnameInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=surnameValue");
-                this.LanguageSelect = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=languageId");
-                this.EmailInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=emailValue");
-                this.PasswordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=passwordValue");
-                this.RepeatPassword = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=repeatPasswordValue");
-                this.SignUp = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-block btn-primary");
-            }
+            public HtmlInputSubmit SubmitInput { get; private set; }
+            public Element ErrorMessage { get; internal set; }
         }
-        
+
         private Manager manager;
-
-        // get Data
-        public HtmlButton LoginButton { get; private set; }
-        public Element LoginDescription { get; private set; }
-        public HtmlButton SignUpButton { get; private set; }
-        //
         private LoginForm loginForm;
-        private SignUpForm signUpForm;
 
-        // Constructor
         public LoginPage(Manager manager)
         {
             this.manager = manager;
             this.LoginButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-success");
             this.LoginDescription = manager.ActiveBrowser.Find.ByXPath("//div[@class='text-primary']/h2/small");
-            this.SignUpButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-primary");
         }
 
-        // Page Object
-        // get Data
+        public HtmlButton LoginButton { get; private set; }
+        public Element LoginDescription { get; private set; }
+        
+        // Get Data
         public HtmlInputEmail GetLoginInput()
         {
             ClickLoginButton();
@@ -111,6 +68,13 @@ namespace Wow.Pages
             return this.LoginDescription.TextContent.Trim();
         }
 
+        public string GetLoginErrorMessageText(IUser user)
+        {
+            SetLoginData(user);
+            loginForm.ErrorMessage = manager.ActiveBrowser.Find.ByAttributes("class=text-danger ng-binding");
+            return this.loginForm.ErrorMessage.TextContent.Trim();
+        }
+
         // set Data
         public void ClickLoginButton()
         {
@@ -118,34 +82,22 @@ namespace Wow.Pages
             loginForm = new LoginForm(manager);
         }
 
-        public void ClickSignUpButton()
-        {
-            this.SignUpButton.Click();
-            signUpForm = new SignUpForm(manager);
-        }
-
         // Business Logic
         private void SetLoginData(IUser user)
         {
-            ClickLoginButton();
+            if (this.loginForm == null)
+            {
+                ClickLoginButton();
+            }
+            
             this.loginForm.LoginInput.Text = user.GetEmail();
             this.loginForm.PasswordInput.Text = user.GetPassword();
             this.loginForm.SubmitInput.Click();
         }
 
-        private void SetSignUpData(IUser user)
-        {
-            ClickSignUpButton();
-            this.signUpForm.NameInput.Text = user.GetName();
-            this.signUpForm.NameInput.Text = user.GetName();
-            this.
-        }
         public UsersPage SuccessAdminLogin(IUser admin)
         {
-            //public AdminHomePage SuccessAdminLogin(String login, String password) {
             SetLoginData(admin);
-            //SetLoginData(login, password);
-            // Return a new page object representing the destination.
             return new UsersPage(manager);
         }
 

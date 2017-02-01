@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ArtOfTest.WebAii.Core;
+﻿using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using ArtOfTest.WebAii.Controls.HtmlControls;
 
@@ -11,47 +6,53 @@ namespace Wow.Pages
 {
     public abstract class HeadPage
     {
-        // Components
         public enum ThemeState
         {
             DarkTheme = 0,
             BlueTheme = 1
         }
 
-        // Components
         private class UsernameDropdown
         {
-            // Fields
             private Manager manager;
 
-            // get Data
-            public HtmlAnchor EditProfile { get; private set; }
-            public HtmlAnchor LogOut { get; private set; }
-
-            // Constructor
             public UsernameDropdown(Manager manager)
             {
                 this.manager = manager;
                 this.EditProfile = manager.ActiveBrowser.Find.ByContent<HtmlAnchor>("l:Edit Profile");
                 this.LogOut = manager.ActiveBrowser.Find.ByContent<HtmlAnchor>("p:Log Out");
             }
+
+            public HtmlAnchor EditProfile { get; private set; }
+            public HtmlAnchor LogOut { get; private set; }
         }
 
-        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        private class SidebarMenu 
+        {
+            private Manager manager;
 
-        // Fields
+            public SidebarMenu(Manager manager)
+            {
+                this.manager = manager;
+                this.Users = manager.ActiveBrowser.Find.ByExpression<HtmlAnchor>("tagname=a", "href=Index#/Users");
+                this.Languages = manager.ActiveBrowser.Find.ByExpression<HtmlAnchor>("tagname=a", "href=Index#/Languages");
+                this.Profile = manager.ActiveBrowser.Find.ByExpression<HtmlAnchor>("tagname=a", "href=Index#/EditUserProfile");
+            }
+
+            // 'Admin Tools' Category
+            public HtmlAnchor Users { get; private set; }
+            public HtmlAnchor Languages { get; private set; }
+
+            // 'Your Stuff' Category
+            public HtmlAnchor Profile { get; private set; }
+        }
+
         protected Manager manager;
         private HtmlDiv navbarCollapse;
         private Element body;
-
-        // get Data
-        public HtmlSpan Username { get; private set; }
-        public HtmlSelect DefaultTheme { get; private set; }
-        public HtmlButton SidebarToggle { get; private set; }
-        //
         private UsernameDropdown usernameDropdown;
+        private SidebarMenu sidebarMenu;
 
-        // Constructor
         public HeadPage(Manager manager)
         {
             this.manager = manager;
@@ -61,11 +62,13 @@ namespace Wow.Pages
             this.Username = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("ng-model=getName");
             this.DefaultTheme = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=defaultTheme");
             this.SidebarToggle = manager.ActiveBrowser.Find.ById<HtmlButton>("sidebar-toggle");
-
         }
 
-        // Page Object
-        // get Data
+        public HtmlSpan Username { get; private set; }
+        public HtmlSelect DefaultTheme { get; private set; }
+        public HtmlButton SidebarToggle { get; private set; }
+
+        // Get Data
         public HtmlAnchor GetEditProfile()
         {
             ClickUsername();
@@ -78,18 +81,36 @@ namespace Wow.Pages
             return this.usernameDropdown.LogOut;
         }
 
+        private HtmlAnchor GetAdminToolUsers()
+        {
+            sidebarMenu = new SidebarMenu(manager);
+            return sidebarMenu.Users;
+        }
+
+        private HtmlAnchor GetAdminToolLanguages()
+        {
+            sidebarMenu = new SidebarMenu(manager);
+            return sidebarMenu.Languages;
+        }
+
+        private HtmlAnchor GetYourStuffProfile()
+        {
+            sidebarMenu = new SidebarMenu(manager);
+            return sidebarMenu.Profile;
+        }
+
         // Functional
         public string GetUsernameText()
         {
             return this.Username.TextContent.Trim();
         }
 
-        public bool IsSidebarToggleMinimized()
+        public bool IsSidebarMenuMinimized()
         {
             return body.GetAttributeValueOrEmpty("class").Contains("sidebar-minimized");
         }
 
-        // set Data
+        // Set Data
         private void ClickNavbarCollapse()
         {
             this.navbarCollapse.Click();
@@ -117,9 +138,23 @@ namespace Wow.Pages
             GetLogOut().Click();
         }
 
+        private void ClickUsers()
+        {
+            GetAdminToolUsers().Click();
+        }
+
+        private void ClickLanguages()
+        {
+            GetAdminToolLanguages().Click();
+        }
+
+        private void ClickProfile()
+        {
+            GetYourStuffProfile().Click();
+        }
+
         public void SelectDefaultTheme(ThemeState theme)
         {
-            //DefaultTheme.SelectByIndex((int)theme);
             DefaultTheme.SelectByPartialText(theme.ToString().Substring(0, 4), true);
         }
 
@@ -127,22 +162,39 @@ namespace Wow.Pages
         public YourProfilePage GotoEditProfile()
         {
             ClickEditProfile();
-            // Return a new page object representing the destination.
             return new YourProfilePage(manager);
         }
 
-        public HeadPage OpenSidebarToggle()
+        public UsersPage GotoUsersPage()
         {
-            if (IsSidebarToggleMinimized())
+            ClickUsers();
+            return new UsersPage(manager);
+        }
+
+        public LanguagesPage GotoLanguagesPage()
+        {
+            ClickLanguages();
+            return new LanguagesPage(manager);
+        }
+
+        public YourProfilePage GotoProfilePage()
+        {
+            ClickProfile();
+            return new YourProfilePage(manager);
+        }
+
+        public HeadPage OpenSidebarMenu()
+        {
+            if (IsSidebarMenuMinimized())
             {
                 ClickSidebarToggle();
             }
             return this;
         }
 
-        public HeadPage CloseSidebarToggle()
+        public HeadPage CloseSidebarMenu()
         {
-            if (!IsSidebarToggleMinimized())
+            if (!IsSidebarMenuMinimized())
             {
                 ClickSidebarToggle();
             }
@@ -166,6 +218,5 @@ namespace Wow.Pages
             SelectDefaultTheme(ThemeState.BlueTheme);
             return this;
         }
-
     }
 }

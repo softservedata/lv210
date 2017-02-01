@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.ObjectModel;
-using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Win32.Dialogs;
 using Wow.Appl;
 
@@ -15,18 +9,17 @@ namespace Wow.Pages
     {
         private static volatile Application instance;
         private static readonly Object synchronize = new Object();
-        //
-        public Manager CurrentManager { get; private set; }
-        public ApplicationSources applicationSources { get; private set; }
 
-        // constructor
         private Application(ApplicationSources applicationSources)
         {
             this.applicationSources = applicationSources;
-            init();
+            Init();
         }
 
-        // static factory
+        public Manager CurrentManager { get; private set; }
+        public ApplicationSources applicationSources { get; private set; }
+
+        // Static Factory
         public static Application Get()
         {
             return Get(null);
@@ -51,19 +44,15 @@ namespace Wow.Pages
             return instance;
         }
 
-
-        public void init()
+        public void Init()
         {
             InitManager();
-            // TODO
-            // Init Strategy from applicationSources
-            // Init DB access, etc.
+            // TODO Init Strategy, Init DB access, etc.
         }
 
         public LoginPage Login()
         {
             StartBrowser();
-            //CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LoginUrl);
             ApplicationPage.Get().NavigateTo(applicationSources.GetLoginUrl());
             return new LoginPage(CurrentManager);
         }
@@ -71,13 +60,11 @@ namespace Wow.Pages
         public LoginPage Logout()
         {
             StartBrowser();
-            //CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LogoutUrl);
-            // TODO now do not working properly
             ApplicationPage.Get().NavigateTo(applicationSources.GetLogoutUrl());
             return new LoginPage(CurrentManager);
         }
 
-        public void StartBrowser()
+        private void StartBrowser()
         {
             InitManager();
             if (Manager.Current.ActiveBrowser == null)
@@ -86,7 +73,7 @@ namespace Wow.Pages
             }
         }
 
-        public void CloseBrowser()
+        private void CloseBrowser()
         {
             if (Manager.Current.ActiveBrowser != null)
             {
@@ -99,11 +86,6 @@ namespace Wow.Pages
             Console.WriteLine("+++DisposeManager()");
             CloseBrowser();
             CurrentManager.Dispose();
-            // if ((CurrentManager != null) && (Manager.Current.Disposed))
-            //{
-            //    Console.WriteLine("+++CurrentManager.Dispose();");
-            //    CurrentManager.Dispose();
-            //}
         }
 
         public string InvokeScript(string javaScript)
@@ -119,7 +101,7 @@ namespace Wow.Pages
             Manager.Current.DialogMonitor.Start();
         }
 
-        public void StopAlertDialog()
+        private void StopAlertDialog()
         {
             if (Manager.Current.DialogMonitor.IsMonitoring)
             {
@@ -132,16 +114,10 @@ namespace Wow.Pages
             if ((CurrentManager == null) || (!Manager.Current.Disposed))
             {
                 Settings currentSettings = new Settings();
-                //currentSettings.Web.DefaultBrowser = BrowserType.FireFox;
-                //currentSettings.Web.DefaultBrowser = BrowserType.InternetExplorer;
-                //currentSettings.Web.DefaultBrowser = BrowserType.Chrome;
                 currentSettings.Web.DefaultBrowser = GetBrowser();
-                //
-                //currentSettings.UnexpectedDialogAction = UnexpectedDialogAction.DoNotHandle;
                 currentSettings.UnexpectedDialogAction = UnexpectedDialogAction.HandleAndContinue;
                 CurrentManager = new Manager(currentSettings);
                 CurrentManager.Start();
-                //CurrentManager.LaunchNewBrowser();
             }
         }
 
@@ -158,6 +134,5 @@ namespace Wow.Pages
             }
             return currentBrowser;
         }
-
     }
 }
