@@ -15,6 +15,8 @@ namespace Wow.Tests
             new object[] { UserRepository.Get().FromCsv("Users.csv").GetAdmin() }
         };
 
+        // Verify the adding new (not existing in WOW) languages to the application
+
         [Test, TestCaseSource(nameof(TestData))]
         public void AddNewLanguageTest(User admin)
         {
