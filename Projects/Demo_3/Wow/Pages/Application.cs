@@ -87,7 +87,7 @@ namespace Wow.Pages
             if ((CurrentManager != null) && (Manager.Current != null))
             {
                 CurrentManager.Dispose();
-                Console.WriteLine("DisposeManager() Done!");
+                //Console.WriteLine("DisposeManager() Done!");
             }
         }
 

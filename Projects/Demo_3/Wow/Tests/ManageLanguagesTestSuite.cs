@@ -36,19 +36,20 @@ namespace Wow.Tests
             // 2. Add Language
             languagesPage.AddNewLanguage(languageToAdd);
             Assert.IsTrue(languagesPage.IsDialogWindowAppears(DialogWindowTitle.AddLanguage, DialogWindowMessage.AddLanguage));
+            Thread.Sleep(1200); // ----- for demonstration
             languagesPage.CloseDialogWindow();
 
             // 3. Check if added language is presented in the list as last language
             Assert.AreEqual(languageToAdd, languagesPage.GetLastLanguage());
+            Thread.Sleep(1900); // ----- for demonstration
 
             // --- Return to a previous state and check--- //
             languagesPage.DeleteLanguage(languageToAdd);
             Assert.IsFalse(languagesPage.IsLanguageInExistingList(languageToAdd));
+            Thread.Sleep(1200); // ----- for demonstration
 
             // --- Logout --- //
             languagesPage.GotoLogOut();
-
-            Console.WriteLine("Test Done!");
         }
     }
 }

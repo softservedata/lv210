@@ -130,7 +130,9 @@ namespace Wow.Pages
 
         private void ConfirmLanguageDeletion()
         {
+            Thread.Sleep(1200);
             dialogWindow.ClickButton(Button.Yes);
+            Thread.Sleep(1200);
             dialogWindow.ClickButton(Button.Ok);
         }
 
@@ -144,6 +146,7 @@ namespace Wow.Pages
         public void AddNewLanguage(string language)
         {
             SelectLanguageFromList(language);
+            Thread.Sleep(1200);   // ------------------------------- sleep
             if (IsAddButtonEnabled())
             {
                 ClickAddButton();
