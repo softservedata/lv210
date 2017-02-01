@@ -12,8 +12,6 @@ namespace Wow.Pages
 
         private Manager manager;
 
-        // Get Data
-        // private IList<HtmlControl> description;
         private string controlLocator;
 
         private ApplicationPage(Manager manager)

@@ -7,11 +7,11 @@ namespace Wow.Pages
 {
     public class YourProfilePage : HeadPage
     {
-        public const string errorMessageForNameWithDigits = "Name can't contain digits";
-        public const string errorMessageForNameWithSymbols = "Name can't contain reserved characters";
-        public const string errorMessageForTooShortName = "Name can't be shorter than 7 characters";
-        public const string errorMessageForTooLongName = "Name can't be longer than 31 characters";
-        public const string errorMessageForBlankMandatoryFields = "All fields are mandatory";
+        public const string ErrorMessageForNameWithDigits = "Name can't contain digits";
+        public const string ErrorMessageForNameWithSymbols = "Name can't contain reserved characters";
+        public const string ErrorMessageForTooShortName = "Name can't be shorter than 7 characters";
+        public const string ErrorMessageForTooLongName = "Name can't be longer than 31 characters";
+        public const string ErrorMessageForBlankMandatoryFields = "All fields are mandatory";
 
         private class EditNameForm
         {

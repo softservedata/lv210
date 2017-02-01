@@ -1,14 +1,19 @@
 ﻿using NUnit.Framework;
-using NLog;
 using Wow.Data;
 using Wow.Pages;
+using NLog;
 
 namespace Wow.Tests
 {
+    /// <summary>
+    /// WOW-181
+    /// This test case verifies that Admin can cancel the language deleting
+    /// from the application which is not in use. 
+    /// </summary>
     [TestFixture]
     public class CancelLanguageDeletingTest : TestRunner
     {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         private static readonly object[] TestData =
         {
@@ -22,7 +27,7 @@ namespace Wow.Tests
         [Test, TestCaseSource(nameof(TestData))]
         public void CancelLanguageDeleting(User admin, string language)
         {
-            logger.Info("Start CancelLanguageDeleting(IUser admin, string language), admin = " + admin.GetEmail());
+            Logger.Info("Start CancelLanguageDeletingTest");
 
             // Precondition
             LoginPage loginPage = Application.Get().Login();
@@ -33,16 +38,16 @@ namespace Wow.Tests
             Assert.IsTrue(languagesPage.IsLanguageInExistingList(language));
 
             // Test steps
-            languagesPage.CancelDeletingOfLanguage(language);
+            languagesPage.CancelDeletingOfLastAddedLanguage();
             Assert.IsTrue(languagesPage.IsLanguageInExistingList(language));
 
             // Return to previous state
-            languagesPage.DeleteLanguage(language);
+            languagesPage.DeleteLastAddedLanguage();
             loginPage = languagesPage.GoToLogOut();
             Assert.AreEqual(LoginPage.loginDescriptionText, 
                             loginPage.GetLoginDescriptionText());
 
-            logger.Info("Done CancelLanguageDeleting(IUser admin, string language), admin = " + admin.GetEmail());
+            Logger.Info("Done CancelLanguageDeletingTest");
         }
     }
 }

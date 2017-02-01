@@ -49,12 +49,12 @@ namespace Wow.Tests
             //Fill 'New Name' field with too short name. Check if appropriate message appears.
             yourProfilePage.SetNewName(names[0]);
             yourProfilePage.ChangeName(admin);
-            Assert.AreEqual(YourProfilePage.errorMessageForTooShortName, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.ErrorMessageForTooShortName, yourProfilePage.GetMessageText());
 
             //Fill 'New Name' field with too long name. Check if appropriate message appears.
             yourProfilePage.SetNewName(names[1]);
             yourProfilePage.ChangeName(admin);
-            Assert.AreEqual(YourProfilePage.errorMessageForTooLongName, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.ErrorMessageForTooLongName, yourProfilePage.GetMessageText());
 
             //Fill 'New Name' field with correct name. Check if name is really changed.
             yourProfilePage.SetNewName(names[2]);

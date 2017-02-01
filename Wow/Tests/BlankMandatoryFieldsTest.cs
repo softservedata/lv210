@@ -42,7 +42,7 @@ namespace Wow.Tests
 
             // Leave 'New Name' field empty. Check if appropriate message appears.
             yourProfilePage.ChangeName(admin);
-            Assert.AreEqual(YourProfilePage.errorMessageForBlankMandatoryFields, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.ErrorMessageForBlankMandatoryFields, yourProfilePage.GetMessageText());
 
             yourProfilePage.ClickCancelEditName();
 
@@ -55,21 +55,21 @@ namespace Wow.Tests
             yourProfilePage.SetNewPassword(newPassword);
             yourProfilePage.SetConfirmPassword(newPassword);
             yourProfilePage.ClickChangePassword();
-            Assert.AreEqual(YourProfilePage.errorMessageForBlankMandatoryFields, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.ErrorMessageForBlankMandatoryFields, yourProfilePage.GetMessageText());
 
             // Clear the 'New Password' field and fill in the 'Current Password' field
             yourProfilePage.SetCurrentPassword(admin.GetPassword());
             yourProfilePage.SetBlankNewPassword();
             yourProfilePage.SetConfirmPassword(newPassword);
             yourProfilePage.ClickChangePassword();
-            Assert.AreEqual(YourProfilePage.errorMessageForBlankMandatoryFields, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.ErrorMessageForBlankMandatoryFields, yourProfilePage.GetMessageText());
 
             // Clear the 'Confirm Password' field and fill in the 'New Password' field
             yourProfilePage.SetCurrentPassword(admin.GetPassword());
             yourProfilePage.SetNewPassword(newPassword);
             yourProfilePage.SetBlankConfirmPassword();
             yourProfilePage.ClickChangePassword();
-            Assert.AreEqual(YourProfilePage.errorMessageForBlankMandatoryFields, yourProfilePage.GetMessageText());
+            Assert.AreEqual(YourProfilePage.ErrorMessageForBlankMandatoryFields, yourProfilePage.GetMessageText());
 
             // Return to previous state
             loginPage = yourProfilePage.GoToLogOut();
