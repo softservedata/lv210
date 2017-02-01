@@ -125,6 +125,7 @@ namespace Wow.Pages
 
         public void CloseDialogWindow()
         {
+            Thread.Sleep(1200); // ----- for demonstration
             dialogWindow.ClickButton(Button.Ok);
         }
 
@@ -157,6 +158,7 @@ namespace Wow.Pages
 
         public void DeleteLanguage(string language)
         {
+            Thread.Sleep(1900); // -------------- sleep
             int index = GetAddedLanguages().IndexOf(language);
             LanguagesTable.Rows[++index].Cells[(int)TableHeader.Delete]
                 .Find.ByAttributes<HtmlButton>("class=~btn").Click();
