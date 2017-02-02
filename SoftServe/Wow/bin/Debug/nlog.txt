@@ -1,0 +1,3 @@
+level	date	message	exception
+[INFO]	Date: 2017-02-02 07:30:24.4723	Message: TestDeleteLanguage Start	
+[INFO]	Date: 2017-02-02 07:31:46.4753	Message: TestDeleteLanguage Start	

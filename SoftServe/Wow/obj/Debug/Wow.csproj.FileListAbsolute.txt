@@ -1,0 +1,16 @@
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\NLog.config
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\Wow.dll
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\Wow.pdb
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\ArtOfTest.WebAii.dll
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\NLog.dll
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\nunit.framework.dll
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\Telerik.TestStudio.Core.dll
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\Telerik.TestingFramework.Json.dll
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\Telerik.TestingFramework.Hosts.Common.dll
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\ArtOfTest.WebAii.xml
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\NLog.xml
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\bin\Debug\nunit.framework.xml
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\obj\Debug\Wow.csprojResolveAssemblyReference.cache
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\obj\Debug\Wow.dll
+\\fstrain\Homes\Lv-2010.AQC\dkottc\Documents\Visual Studio 2015\Projects\Wow\obj\Debug\Wow.pdb
