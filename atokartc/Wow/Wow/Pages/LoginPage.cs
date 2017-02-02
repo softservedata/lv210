@@ -2,7 +2,6 @@
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
 using NLog;
-using System.Threading;
 using Wow.Data;
 
 namespace Wow.Pages

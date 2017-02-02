@@ -1,13 +1,6 @@
-﻿using System;
-using System.Threading;
-using NUnit.Framework;
-using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.Controls.HtmlControls;
-using System.Collections.Generic;
-using System.IO;
+﻿using NUnit.Framework;
 using Wow.Data;
 using Wow.Pages;
-using static Wow.Pages.MyGroupsPage;
 
 namespace Wow.Tests
 {
@@ -93,8 +86,7 @@ namespace Wow.Tests
             // EndStep 8: Student with name 'Mariana Tester' displays in the table
 
             // Return to previous state
-            //loginPage = usersPage.GotoLogOut();
-            //
+            loginPage = usersPage.GotoLogOut();
         }
     }
 }

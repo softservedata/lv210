@@ -1,7 +1,6 @@
 ﻿using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
-using System.Threading;
 
 namespace Wow.Pages
 {
