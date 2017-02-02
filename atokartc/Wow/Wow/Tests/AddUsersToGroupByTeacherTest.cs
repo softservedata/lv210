@@ -19,17 +19,19 @@ namespace Wow.Tests
             new object[]
             {
                 UserRepository.Get().Teacher(),
-                "Test_M",
-                "Jack Black"
+                "Test_M",       // group's name
+                "Black Cat",    // group's participant 1
+                "Ulyana Holub"  // group's participant 2
             },
         };
 
         [Test, TestCaseSource(nameof(TestSigninData))]
-        public void AddUsersToGroupByTeacherTest(User teacher, string groupName, string userName)
+        public void AddUsersToGroupByTeacherTest(User teacher, string groupName, string userOneName, string userTwoName)
         {
             // Preconditions
             // 1. World of Words home page is opened ('https://192.168.195.249')
-            // 2.Teacher is logged in: e - mail 'mar_yanap@yahoo.de', password 'q2w3e4r5'
+            // 2. Teacher is logged in: e - mail 'mar_yanap@yahoo.de', password 'q2w3e4r5'
+            // 3. Users "Black Cat" and "Ulyana Holub" are available partivipants of the group
 
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessTeacherLogin(teacher);
@@ -55,7 +57,10 @@ namespace Wow.Tests
 
             myGroupsPage.editGroupPage.OpenSelectDropdownToggle();
 
-            // EndStep 3: All available users appear in drop-down list.
+            Assert.True(myGroupsPage.editGroupPage.selectDropdownToggle.IsUserPresentInDropdown(userOneName));
+            Assert.True(myGroupsPage.editGroupPage.selectDropdownToggle.IsUserPresentInDropdown(userTwoName));
+
+            // EndStep 3: Users "Black Cat" and "Ulyana Holub" are present in drop down list.
 
             // Step 4: Click 'Check All'
 
@@ -71,7 +76,7 @@ namespace Wow.Tests
 
             // Step 6: Type 'Mariana Tester' into the text field 'Search'. Check off 'Mariana Tester'.
 
-            myGroupsPage.editGroupPage.selectDropdownToggle.FindUserViaSearchBox(userName);
+            myGroupsPage.editGroupPage.selectDropdownToggle.FindUserViaSearchBox(userOneName);
 
             // EndStep 6: 'Mariana Tester' is found and checked off.
 
@@ -83,27 +88,10 @@ namespace Wow.Tests
 
             // Step 8: Enter 'Mariana Tester' into edit field 'Search by Name'
 
-
+            myGroupsPage.editGroupPage.EnterUserNameInSearch(userOneName);
+            Thread.Sleep(5000);
 
             // EndStep 8: Student with name 'Mariana Tester' displays in the table
-
-            // Step 9: Verify that user 'Mariana Tester' is added into the group 'Test_M' 
-
-
-
-            // EndStep 9: User 'Tester Mariana' is added into the group 'Test_M' in database
-
-            // Step 10: 'Click on the icon 'Unenroll' in the row with User name 'Mariana Tester'
-
-
-
-            // EndStep 10: A message appears: "Are you sure? This person may be a great student..."
-
-            // Step 11: Press button 'Yes'
-
-
-
-            // EndStep 11: Student with name 'Mariana Tester' is deleted from the group
 
             // Return to previous state
             //loginPage = usersPage.GotoLogOut();

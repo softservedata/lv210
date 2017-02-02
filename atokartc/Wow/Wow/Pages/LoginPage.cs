@@ -1,58 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
+﻿using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
-using ArtOfTest.WebAii.Controls.HtmlControls;
 using NLog;
+using System.Threading;
 using Wow.Data;
 
 namespace Wow.Pages
 {
     public class LoginPage
     {
+        internal static readonly string LOGIN_DESCRIPTION_TEXT = "SoftServe Language School";
+        private const string LOGIN_FORM_BY_ATTRIBUTE = "id=myModalLabel";
+
         // Components
         private class LoginForm
         {
-            // Fields
             private Manager manager;
 
-            // get Data
             public HtmlInputEmail LoginInput { get; private set; }
             public HtmlInputPassword PasswordInput { get; private set; }
             public HtmlInputSubmit SubmitInput { get; private set; }
 
-            // Constructor
             public LoginForm(Manager manager)
             {
                 this.manager = manager;
-                this.LoginInput =  manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=email");
+                this.LoginInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=email");
                 this.PasswordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=password");
                 this.SubmitInput = manager.ActiveBrowser.Find.ByName<HtmlInputSubmit>("loginButton");
             }
         }
 
         private static Logger logger = LogManager.GetCurrentClassLogger();
-
-        // Expected Data
-        public static readonly string LOGIN_DESCRIPTION_TEXT = "SoftServe Language School";
-
-        // Check Login Form
-        private const string LOGIN_FORM_BY_ATTRIBUTE = "id=myModalLabel";
-
-        // Fields
         private Manager manager;
-
-        // get Data
-        public HtmlButton LoginButton { get; private set; }
-        public Element LoginDescription { get; private set; }
-        //
         private LoginForm loginForm;
 
-        // Constructor
+        public HtmlButton LoginButton { get; private set; }
+        public Element LoginDescription { get; private set; }
+
         public LoginPage(Manager manager)
         {
             this.manager = manager;
@@ -60,7 +44,6 @@ namespace Wow.Pages
             this.LoginDescription = manager.ActiveBrowser.Find.ByXPath("//div[@class='text-primary']/h2/small");
         }
 
-        // Page Object
         // get Data
         public HtmlInputEmail GetLoginInput()
         {
@@ -113,10 +96,7 @@ namespace Wow.Pages
 
         public UsersPage SuccessAdminLogin(IUser admin)
         {
-            //public AdminHomePage SuccessAdminLogin(String login, String password) {
             SetLoginData(admin);
-            //SetLoginData(login, password);
-            // Return a new page object representing the destination.
             return new UsersPage(manager);
         }
 

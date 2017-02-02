@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.ObjectModel;
-using ArtOfTest.WebAii.Controls.HtmlControls;
+using System.Threading;
 
 namespace Wow.Pages
 {
@@ -18,17 +14,18 @@ namespace Wow.Pages
             BlueTheme = 1
         }
 
-        // Components
+        private HtmlDiv navbarCollapse;
+        private Element body;
+        private UsernameDropdown usernameDropdown;
+        private ManagerDropdown managerDropdown;
+
         private class UsernameDropdown
         {
-            // Fields
             private Manager manager;
 
-            // get Data
             public HtmlAnchor EditProfile { get; private set; }
             public HtmlAnchor LogOut { get; private set; }
 
-            // Constructor
             public UsernameDropdown(Manager manager)
             {
                 this.manager = manager;
@@ -39,13 +36,10 @@ namespace Wow.Pages
 
         private class ManagerDropdown
         {
-            // Fields
             private Manager manager;
 
-            // get Data
             public HtmlAnchor GroupsSubItem { get; private set; }
 
-            // Constructor
             protected internal ManagerDropdown(Manager manager)
             {
                 this.manager = manager;
@@ -53,14 +47,8 @@ namespace Wow.Pages
             }
         }
 
-        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-        // Fields
         protected Manager manager;
-        private HtmlDiv navbarCollapse;
-        private Element body;
 
-        // get Data
         public HtmlSpan Username { get; private set; }
         public HtmlSelect DefaultTheme { get; private set; }
         public HtmlButton SidebarToggle { get; private set; }
@@ -68,25 +56,19 @@ namespace Wow.Pages
         public Element SelectedThemeBlack { get; private set; }
         public HtmlAnchor ManagerSubMenu { get; private set; }
 
-        //
-        private UsernameDropdown usernameDropdown;
-        private ManagerDropdown managerDropdown;
-
-        // Constructor
         public HeadPage(Manager manager)
         {
             this.manager = manager;
             this.navbarCollapse = manager.ActiveBrowser.Find.ByAttributes<HtmlDiv>("class=collapse navbar-collapse");
             this.body = manager.ActiveBrowser.Find.ByTagIndex("body", 0);
-            //
+
             this.Username = manager.ActiveBrowser.Find.ByAttributes<HtmlSpan>("ng-model=getName");
             this.DefaultTheme = manager.ActiveBrowser.Find.ByAttributes<HtmlSelect>("ng-model=defaultTheme");
             this.SidebarToggle = manager.ActiveBrowser.Find.ById<HtmlButton>("sidebar-toggle");
             this.ManagerSubMenu = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//section[@id='teaching-tools']/li/a");
             this.SelectedThemeBlue = manager.ActiveBrowser.Find.ByXPath("//link[@href ='dist/styles-concat-blue-theme.css']");
-    }
+        }
 
-        // Page Object
         // get Data
         public HtmlAnchor GetEditProfile()
         {
@@ -106,7 +88,6 @@ namespace Wow.Pages
             return this.managerDropdown.GroupsSubItem;
         }
 
-        // Functional
         public string GetUsernameText()
         {
             return this.Username.TextContent.Trim();
@@ -150,6 +131,7 @@ namespace Wow.Pages
         {
             GetEditProfile().Click();
         }
+
         public void ClickGroupsSubItem()
         {
             GetGroupsSubItem().Click();
@@ -167,7 +149,6 @@ namespace Wow.Pages
 
         public void SelectDefaultTheme(ThemeState theme)
         {
-            //DefaultTheme.SelectByIndex((int)theme);
             DefaultTheme.SelectByPartialText(theme.ToString().Substring(0, 4), true);
         }
 
@@ -178,7 +159,6 @@ namespace Wow.Pages
 
         public bool IsDarkThemeSelected()
         {
-            //this.SelectedThemeBlack.Refresh();
             return this.SelectedThemeBlack.Content.ToLower().Contains("dark");
         }
 
@@ -186,7 +166,6 @@ namespace Wow.Pages
         public YourProfilePage GotoEditProfile()
         {
             ClickEditProfile();
-            // Return a new page object representing the destination.
             return new YourProfilePage(manager);
         }
 

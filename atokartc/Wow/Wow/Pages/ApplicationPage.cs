@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.ObjectModel;
-using ArtOfTest.WebAii.Controls.HtmlControls;
+using System;
+using System.Windows.Forms;
 
 namespace Wow.Pages
 {
@@ -14,15 +9,9 @@ namespace Wow.Pages
     {
         private static volatile ApplicationPage instance;
         private static readonly Object synchronize = new Object();
-        //
-        // Fields
         private Manager manager;
-
-        // get Data
-        //private IList<HtmlControl> description;
         private string controlLocator;
 
-        // constructor
         private ApplicationPage(Manager manager)
         {
             this.manager = manager;
@@ -45,9 +34,6 @@ namespace Wow.Pages
             return instance;
         }
 
-        // Page Object
-        // get Data
-
         // Functional
         private void AcceptHttpsKeyChrome()
         {
@@ -55,6 +41,7 @@ namespace Wow.Pages
             {
                 manager.ActiveBrowser.Desktop.KeyBoard.KeyPress(Keys.Tab);
             }
+
             manager.ActiveBrowser.Desktop.KeyBoard.KeyPress(Keys.Space);
             manager.ActiveBrowser.Desktop.KeyBoard.KeyPress(Keys.Tab);
             manager.ActiveBrowser.Desktop.KeyBoard.KeyPress(Keys.Tab);
@@ -90,8 +77,6 @@ namespace Wow.Pages
 
         private bool IsHttpsKeyActive()
         {
-            //IList<HtmlControl> description = manager.ActiveBrowser.Find.AllByXPath<HtmlControl>(controlLocator);
-            //return description.Count > 0;
             return manager.ActiveBrowser.Find.AllByXPath<HtmlControl>(controlLocator).Count > 0;
         }
 
@@ -108,8 +93,5 @@ namespace Wow.Pages
         {
             instance = null;
         }
-
-        // set Data
-        // Business Logic
     }
 }

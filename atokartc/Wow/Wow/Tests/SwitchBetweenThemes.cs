@@ -6,7 +6,7 @@ using Wow.Pages;
 namespace Wow.Tests
 {
     [TestFixture]
-    class SwitchBetweenThemes : TestRunner
+    public class SwitchingBetweenThemes : TestRunner
     {
         private static readonly object[] TestSigninData =
         {
@@ -20,7 +20,7 @@ namespace Wow.Tests
             admin.SetEmail("bslw@wovz.cu.cc");
             admin.SetPassword("phoenixrising");
 
-            LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();
+            LoginPage loginPage = Application.Get(ApplicationSourcesRepository.DefaultBrowser()).Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
 
             // --- Test Steps --- //
@@ -28,25 +28,21 @@ namespace Wow.Tests
             // Step 1: Click on the theme selection drop-down list on top of the page
 
             usersPage.OpenThemeDropdown();
-            bool isBlueThemeSelcted = usersPage.IsBlueThemeSelected();
 
-            Assert.IsTrue(isBlueThemeSelcted);
+            Assert.IsTrue(usersPage.IsBlueThemeSelected());
 
             // EndStep 1: The Blue theme is selected by default
 
             // Step 2: Select the Dark theme from the drop-down list
 
             usersPage.SelectDarkTheme();
-            bool isdarkThemeSelcted = usersPage.IsDarkThemeSelected();
 
-            Assert.IsTrue(isdarkThemeSelcted);
+            Assert.IsTrue(usersPage.IsDarkThemeSelected());
 
             // EndStep 2: The theme changed to the Dark one
-
+           
             // Return to default state
-
             loginPage = usersPage.GotoLogOut();
-
         }
     }
 }

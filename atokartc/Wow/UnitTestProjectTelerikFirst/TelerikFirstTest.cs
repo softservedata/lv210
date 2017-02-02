@@ -290,8 +290,6 @@ namespace UnitTestProjectTelerikFirst
             HtmlButton submitChangesButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-default center-block");
             submitChangesButton.Click();
 
-            
-            SqlCommand asasd; 
         }
     }
 }

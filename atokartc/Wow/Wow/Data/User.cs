@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Wow.Data
+﻿namespace Wow.Data
 {
     // builder interfaces
     public interface IFirstname
@@ -64,7 +58,7 @@ namespace Wow.Data
         bool GetIsTeacher();
         bool GetIsStudent();
     }
-    
+
     public class User : IFirstname, ILastname, ILanguage, IEmail, IPassword, IAdmin, ITeacher, IStudent, IBuilder, IUser
     {
         private const string SPACE = " ";
@@ -72,36 +66,21 @@ namespace Wow.Data
         private string lastname;
         private string language;
         private string email;
-        private string password; // { get; private set; }
+        private string password;
         private bool isAdmin;
         private bool isTeacher;
         private bool isStudent;
 
-        // Constructor
-        /*
-        public User(string email, string password, bool isAdmin, bool isTeacher, bool isStudent)
-        {
-            this.email = email;
-            this.password = password;
-            this.isAdmin = isAdmin;
-            this.isTeacher = isTeacher;
-            this.isStudent = isStudent;
-        }
-        */
         private User()
-        {
-            // default
-        }
+        { }
 
         // static factory
-        // public static User Get() // old
         public static IFirstname Get()
         {
             return new User();
         }
 
         // setters
-
         public ILastname SetFirstname(string firstname)
         {
             this.firstname = firstname;
@@ -156,7 +135,6 @@ namespace Wow.Data
         }
 
         // getters
-
         public string GetName()
         {
             return GetFirstname() + SPACE + GetLastname();
@@ -201,6 +179,5 @@ namespace Wow.Data
         {
             return this.isStudent;
         }
-
     }
 }

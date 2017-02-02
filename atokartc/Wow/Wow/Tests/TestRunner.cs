@@ -27,20 +27,10 @@ namespace Wow.Tests
             Application.Get().DisposeManager();
         }
 
-        //[SetUp]
-        //public void SetUp()
-        //{
-        //Application.Get().StartBrowser();
-        //}
-
         [TearDown]
         public void TearDown()
         {
             Console.WriteLine("[TearDown] done");
-            // TODO
-            //Application.Get().Logout();
-            //Application.Get().CloseBrowser();
         }
-
     }
 }

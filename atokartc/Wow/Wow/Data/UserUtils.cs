@@ -1,20 +1,15 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
-using System.Reflection;
-using NLog;
 
 namespace Wow.Data
 {
     public class UserUtils
     {
+        private const string FILE_STORAGE = @"\FileStorage\";
         // Fields
         private static Logger logger = LogManager.GetCurrentClassLogger();
-
-        private const string FILE_STORAGE = @"\FileStorage\";
         private string storageName;
         private IExternalData externalData;
 
@@ -32,13 +27,6 @@ namespace Wow.Data
 
         public IList<IUser> GetAllUsers()
         {
-            // for main method
-            //return GetAllUsers(Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + storageName);
-            // for test, ver 1
-            //var codeBase = Assembly.GetExecutingAssembly().CodeBase;
-            //var uri = new UriBuilder(codeBase);
-            //var path = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Uri.UnescapeDataString(uri.Path))));
-            // for test, ver 2
             string path = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(AppDomain.CurrentDomain.SetupInformation.ApplicationBase)));
             return GetAllUsers(path + storageName);
         }
@@ -70,6 +58,5 @@ namespace Wow.Data
             logger.Debug("Done GetAllUsers, path = " + path);
             return users;
         }
-
     }
 }

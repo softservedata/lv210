@@ -1,28 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.ObjectModel;
-using ArtOfTest.WebAii.Controls.HtmlControls;
+﻿using ArtOfTest.WebAii.Core;
 using ArtOfTest.WebAii.Win32.Dialogs;
-using Wow.Appl;
 using NLog;
+using System;
+using Wow.Appl;
 
 namespace Wow.Pages
 {
     public class Application
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
-        //
         private static volatile Application instance;
         private static readonly Object synchronize = new Object();
-        //
+
         public Manager CurrentManager { get; private set; }
         public ApplicationSources applicationSources { get; private set; }
 
-        // constructor
         private Application(ApplicationSources applicationSources)
         {
             this.applicationSources = applicationSources;
@@ -45,7 +37,7 @@ namespace Wow.Pages
                     {
                         if (applicationSources == null)
                         {
-                            applicationSources = ApplicationSourcesRepository.Default();
+                            applicationSources = ApplicationSourcesRepository.DefaultBrowser();
                         }
                         instance = new Application(applicationSources);
                     }
@@ -54,21 +46,16 @@ namespace Wow.Pages
             return instance;
         }
 
-
         public void init()
         {
             logger.Debug("Start init()");
             InitManager();
-            // TODO
-            // Init Strategy from applicationSources
-            // Init DB access, etc.
             logger.Debug("Done init()");
         }
 
         public LoginPage Login()
         {
             StartBrowser();
-            //CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LoginUrl);
             ApplicationPage.Get().NavigateTo(applicationSources.LoginUrl);
             return new LoginPage(CurrentManager);
         }
@@ -76,8 +63,6 @@ namespace Wow.Pages
         public LoginPage Logout()
         {
             StartBrowser();
-            //CurrentManager.ActiveBrowser.NavigateTo(applicationSources.LogoutUrl);
-            // TODO now do not working properly
             ApplicationPage.Get().NavigateTo(applicationSources.LogoutUrl);
             return new LoginPage(CurrentManager);
         }
@@ -85,38 +70,43 @@ namespace Wow.Pages
         public void StartBrowser()
         {
             logger.Debug("Start StartBrowser()");
+
             InitManager();
             if (Manager.Current.ActiveBrowser == null)
             {
                 logger.Trace("Run CurrentManager.LaunchNewBrowser();");
                 CurrentManager.LaunchNewBrowser();
-                //Manager.Current.ActiveBrowser.WaitForElement(1, null);
             }
+
             logger.Debug("Done StartBrowser()");
         }
 
         public void CloseBrowser()
         {
             logger.Debug("Start CloseBrowser()");
+
             if (Manager.Current.ActiveBrowser != null)
             {
                 Manager.Current.ActiveBrowser.Close();
             }
+
             logger.Debug("Done CloseBrowser()");
         }
 
         public void DisposeManager()
         {
             logger.Debug("Start DisposeManager()");
+
             Console.WriteLine("+++DisposeManager()");
             CloseBrowser();
+
             if ((CurrentManager != null) && (Manager.Current != null))
-            //if ((CurrentManager != null) && (Manager.Current.Disposed))
             {
                 logger.Trace("Run CurrentManager.Dispose();");
                 Console.WriteLine("+++CurrentManager.Dispose();");
                 CurrentManager.Dispose();
             }
+
             logger.Debug("Done DisposeManager()");
         }
 
@@ -144,21 +134,13 @@ namespace Wow.Pages
         private void InitManager()
         {
             if ((CurrentManager == null) || (Manager.Current == null))
-            //if ((CurrentManager == null) || (!Manager.Current.Disposed))
             {
                 Settings currentSettings = new Settings();
-                //currentSettings.Web.DefaultBrowser = BrowserType.FireFox;
-                //currentSettings.Web.DefaultBrowser = BrowserType.InternetExplorer;
-                //currentSettings.Web.DefaultBrowser = BrowserType.Chrome;
                 currentSettings.Web.DefaultBrowser = GetBrowser();
-                //
-                //currentSettings.UnexpectedDialogAction = UnexpectedDialogAction.DoNotHandle;
                 currentSettings.UnexpectedDialogAction = UnexpectedDialogAction.HandleAndContinue;
                 CurrentManager = new Manager(currentSettings);
                 CurrentManager.Start();
-                //CurrentManager.LaunchNewBrowser();
             }
-            //Console.WriteLine("+++Manager.Current.Disposed = " + Manager.Current.Disposed);
         }
 
         private BrowserType GetBrowser()
@@ -174,6 +156,5 @@ namespace Wow.Pages
             }
             return currentBrowser;
         }
-
     }
 }

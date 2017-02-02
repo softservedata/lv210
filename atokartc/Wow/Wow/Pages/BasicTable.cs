@@ -1,19 +1,18 @@
-﻿using System;
+﻿using ArtOfTest.WebAii.Controls.HtmlControls;
+using ArtOfTest.WebAii.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.ObjectModel;
-using ArtOfTest.WebAii.Controls.HtmlControls;
 
 namespace Wow.Pages
 {
     public class BasicTable
     {
+        private const string CLASS_ATTRIBUTE = "class";
+        private const string DISABLE_VALUE = "disabled";
+
         private class Pagination
         {
-            // Fields
             private Manager manager;
 
             public HtmlAnchor FirstItem { get; private set; }
@@ -22,7 +21,6 @@ namespace Wow.Pages
             public HtmlAnchor LastItem { get; private set; }
             public HtmlAnchor ActiveItem { get; private set; }
 
-            // TODO Develop Builder
             protected internal Pagination(Manager manager,
                 string FirstXPath, string StepBackXPath, string StepForwardXPath, string LastXPath, string ActiveXPath)
             {
@@ -35,18 +33,11 @@ namespace Wow.Pages
             }
         }
 
-        private const string CLASS_ATTRIBUTE = "class";
-        private const string DISABLE_VALUE = "disabled";
-        //
-        // Fields
         private Manager manager;
-
-        // get Data
-        public HtmlTable Table { get; private set; }
         private Pagination pagination;
 
-        // Constructor
-        // TODO Develop Builder
+        public HtmlTable Table { get; private set; }
+
         public BasicTable(Manager manager, string TableAttribute)
         {
             this.manager = manager;
@@ -61,10 +52,6 @@ namespace Wow.Pages
             this.pagination = new Pagination(manager, FirstXPath, StepBackXPath, StepForwardXPath, LastXPath, ActiveXPath);
         }
 
-        // Page Object
-        // get Data
-        //public List<Element> getHeader() { return null; }
-
         public IList<IList<HtmlTableCell>> GetAllCells()
         {
             bool hasNextPage = true;
@@ -73,7 +60,7 @@ namespace Wow.Pages
             while (hasNextPage)
             {
                 hasNextPage = IsLastItemEnable();
-                // Code
+
                 foreach (var row in this.Table.Rows)
                 {
                     result.Add(row.Cells);
@@ -133,7 +120,7 @@ namespace Wow.Pages
         public int GetRowIndexByValueInColumn(String value, int columnIndex)
         {
             int result = -1;
-            //for (int i = 0; i < this.Table.Rows.Count; i++)
+
             for (int i = 0; i < GetRowCount(); i++)
             {
                 if (this.Table.Rows.ElementAt(i).Cells[columnIndex].InnerText.ToLower().Contains(value.ToLower())) // do not use TextContent
@@ -191,10 +178,6 @@ namespace Wow.Pages
             }
             return result;
         }
-
-        //public List<Element> GetColumnByValueOfHeader(String value) { return null; }
-
-        //public int GetColumnIndexByValueOfHeader(String value) { return null; }
 
         public HtmlTableCell GetCell(int rowIndex, int columnIndex)
         {
@@ -254,25 +237,6 @@ namespace Wow.Pages
             return htmlAnchor.Parent<HtmlListItem>();
         }
 
-        // TODO
-        public bool IsItemPresent(string text)
-        {
-            return true;
-        }
-
-        // TODO
-        public bool IsItemPresent(int columnNumber, string text)
-        {
-            // Searching
-            return true;
-        }
-
-        // TODO
-        public bool IsItemPresent(string columnName, string text)
-        {
-            return true;
-        }
-
         // set Data
         public void ClickFirstItem()
         {
@@ -309,8 +273,5 @@ namespace Wow.Pages
                 RefreshPagination();
             }
         }
-
-        // Business Logic
-
     }
 }

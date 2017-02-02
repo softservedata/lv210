@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Wow.Data
 {
@@ -11,7 +8,6 @@ namespace Wow.Data
         private static volatile UserRepository instance;
         private static readonly Object synchronize = new Object();
 
-        // constructor
         private UserRepository()
         {
         }
@@ -111,8 +107,6 @@ namespace Wow.Data
         public IList<IUser> FromExcel()
         {
             return new UserUtils("Users.xlsx", new ExcelUtils()).GetAllUsers();
-            //return null;
         }
-
     }
 }

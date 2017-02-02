@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ArtOfTest.WebAii.Controls.HtmlControls;
 using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.ObjectModel;
-using ArtOfTest.WebAii.Controls.HtmlControls;
 using NLog;
+using System.Collections.Generic;
 using Wow.Data;
 
 namespace Wow.Pages
@@ -14,14 +9,21 @@ namespace Wow.Pages
     public class UsersPage : HeadPage
     {
         // Components
+        public enum UserTableHeader
+        {
+            Name = 0,
+            Email = 1,
+            AdminRole = 2,
+            TeacherRole = 3,
+            StudentRole = 4,
+            ClickToedit = 5
+        }
+
         private class UserTableUtils : IExternalData
         {
-            // Fields
             private static Logger logger = LogManager.GetCurrentClassLogger();
-            //
             BasicTable userTable;
 
-            // Constructor
             public UserTableUtils(BasicTable userTable)
             {
                 this.userTable = userTable;
@@ -50,13 +52,10 @@ namespace Wow.Pages
                         lastname = ((names[1] != null) && (names[1].Length > 0)) ? names[1] : string.Empty;
                     }
                     logger.Debug("Lastname=" + lastname);
-                    allvalues.Add(lastname);                                                                    // Lastname
-                    allvalues.Add("English");                                                                   // Language
-                    allvalues.Add(email);                                                                       // Email
-                    allvalues.Add(string.Empty);                                                                // Password
-                    //allvalues.Add(row[2].ChildNodes[0].As<HtmlInputCheckBox>().Checked.ToString());             // IsAdmin
-                    //allvalues.Add(row[3].ChildNodes[0].As<HtmlInputCheckBox>().Checked.ToString());             // IsTeacher
-                    //allvalues.Add(row[4].ChildNodes[0].As<HtmlInputCheckBox>().Checked.ToString());             // IsStudent
+                    allvalues.Add(lastname);
+                    allvalues.Add("English");
+                    allvalues.Add(email);
+                    allvalues.Add(string.Empty);
                     allvalues.Add("true");
                     allvalues.Add("true");
                     allvalues.Add("true");
@@ -66,30 +65,15 @@ namespace Wow.Pages
             }
         }
 
-        // Components
-        public enum UserTableHeader
-        {
-            Name = 0,
-            Email = 1,
-            AdminRole = 2,
-            TeacherRole = 3,
-            StudentRole = 4,
-            ClickToedit = 5
-        }
-
-        // Fields
         private static Logger logger = LogManager.GetCurrentClassLogger();
+        private BasicTable userTable;
 
-        // get Data
         public HtmlControl All { get; private set; }
         public HtmlControl Admins { get; private set; }
         public HtmlControl Teacher { get; private set; }
         public HtmlControl Students { get; private set; }
         public HtmlInputText Search { get; private set; }
-        //
-        private BasicTable userTable;
 
-        // Constructor
         public UsersPage(Manager manager) : base(manager)
         {
             this.All = manager.ActiveBrowser.Find.ByContent<HtmlControl>("l:All");
@@ -102,8 +86,6 @@ namespace Wow.Pages
                     "//a[contains(text(),'Last')]", "//li[@class = 'ng-scope active']/a");
         }
 
-        // Page Object
-        // get Data
         // Functional
         public IList<string> GetUserTableEMails()
         {
@@ -121,8 +103,6 @@ namespace Wow.Pages
             logger.Debug("Done List<string> GetUserTableEMails()");
             return result;
         }
-
-        // set Data
 
         // Business Logic
         public IList<IUser> GetUsersFromTable()
