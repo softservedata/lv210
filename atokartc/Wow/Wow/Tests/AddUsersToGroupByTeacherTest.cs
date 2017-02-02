@@ -89,7 +89,6 @@ namespace Wow.Tests
             // Step 8: Enter 'Mariana Tester' into edit field 'Search by Name'
 
             myGroupsPage.editGroupPage.EnterUserNameInSearch(userOneName);
-            Thread.Sleep(5000);
 
             // EndStep 8: Student with name 'Mariana Tester' displays in the table
 
