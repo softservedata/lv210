@@ -1,11 +1,5 @@
-﻿using System;
-using System.Threading;
+﻿using NLog;
 using NUnit.Framework;
-using ArtOfTest.WebAii.Core;
-using ArtOfTest.WebAii.Controls.HtmlControls;
-using System.Collections.Generic;
-using System.IO;
-using Wow.Appl;
 using Wow.Data;
 using Wow.Pages;
 
@@ -14,41 +8,27 @@ namespace Wow.Tests
     [TestFixture]
     public class LoginTest : TestRunner
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         private static readonly object[] ExternalData =
-            //UserRepository.Get().FromCsv("Users.csv").GetAllUsers();
             UserRepository.Get().FromJson("Users.json").GetAllUsers();
-            //UserRepository.Get().FromXml("Users.xml").GetAllUsers();
-            //UserRepository.Get().FromExcel("Users.xlsx").GetAllUsers();
 
         [Test, TestCaseSource(nameof(ExternalData))]
-        public void TestSignin(IUser admin)
+        public void TestSignin(IUser user)
         {
-            // Precondition
+            logger.Info("Start 'Sign in test'");
+
             // Test Steps
             LoginPage loginPage = Application.Get().Login();
-            UserPage userPage = loginPage.SuccessUserLogin(admin);
-            
-            // Check
-            Assert.AreEqual(admin.GetFullName(), userPage.GetUsernameText());
-            //
-            // Return to previous state
-            loginPage = userPage.GotoLogOut();
-            //
-            // Check
-            Assert.AreEqual("SoftServe Language School", loginPage.GetLoginDescriptionText());
-        }
+            UserPage userPage = loginPage.SuccessUserLogin(user);
+            logger.Info($"User {user.GetFullName()} sign in");
+            logger.Info($"User login: {user.GetEmail()}");
+            logger.Info($"User role (student/teacher/admin): {user.IsStudent()}/{user.IsTeacher()}/{user.IsAdmin()}");
+            Assert.AreEqual(user.GetFullName(), userPage.GetUsernameText());
 
-        //[Test, TestCaseSource(nameof(ExternalData))]
-        public void Beta(IUser admin)
-        {
-            LoginPage loginPage = Application.Get().Login(); // change chrome by IP
-            UserPage usersPage = loginPage.SuccessUserLogin(admin);
-            LanguagesPage languagesPage = usersPage.GotoLanguagesPage();
-            Assert.IsNotNull(languagesPage.GetLanguagePageDescription());
-
-            Manager m = Manager.Current;
-            m.Dispose();
+            userPage.GotoLogOut();
+            logger.Info($"User {user.GetFullName()} log out");
+            logger.Info("Test done");
         }
     }
 }

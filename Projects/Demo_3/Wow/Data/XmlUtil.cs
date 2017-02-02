@@ -9,7 +9,7 @@ namespace Wow.Data
 {
     public class XmlUtil: IExternalData
     {
-        private const string XPATH_FOR_USER_NODE = "/ArrayOfUsers/User";
+        private const string XPATH_FOR_USER_NODE = "/ArrayOfUser/User";
         private string[] tagNames;
 
         private void TagNames(XmlDocument xmlFile)

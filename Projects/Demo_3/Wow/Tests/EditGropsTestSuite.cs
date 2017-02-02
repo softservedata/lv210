@@ -1,6 +1,6 @@
 ﻿using System;
+using NLog;
 using NUnit.Framework;
-using Wow.Appl;
 using Wow.Data;
 using Wow.Pages;
 
@@ -9,6 +9,7 @@ namespace Wow.Tests
     [TestFixture]
     public class EditGropsTestSuite
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         private static readonly object[] TestData =
         {
             new object[]
@@ -20,7 +21,8 @@ namespace Wow.Tests
         [Test, TestCaseSource(nameof(TestData))]
         public void CreateNewGroup(User teacher)
         {
-            LoginPage loginPage = Application.Get(ApplicationSourcesRepository.ChromeByIP()).Login();
+            logger.Info("Start 'Create New Group' test");
+            LoginPage loginPage = Application.Get().Login();
             UserPage usersPage = loginPage.SuccessUserLogin(teacher);
             GroupsPage groupsPage = usersPage.GotoGroupsPage();
             CreateGroupPage createGroupPage = groupsPage.ClickCreateGroup();
@@ -31,7 +33,7 @@ namespace Wow.Tests
 
             StringAssert.Contains($"Group {usedName} already exist!", createGroupPage.GetErrorMessage());
             createGroupPage.GotoLogOut();
-            Console.WriteLine("Test Done!");
+            logger.Info("Test done");
         }
     }
 }

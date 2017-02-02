@@ -17,19 +17,19 @@ namespace Wow.Data
 
         public static IUser GetAdmin(this IList<IUser> users)
         {
-            var adminUser = users.FirstOrDefault(user => user.GetIsAdmin());
+            var adminUser = users.FirstOrDefault(user => user.IsAdmin());
             return adminUser;
         }
 
         public static IUser GetStudent(this IList<IUser> users)
         {
-            var studentUser = users.FirstOrDefault(user => user.GetIsStudent());
+            var studentUser = users.FirstOrDefault(user => user.IsStudent());
             return studentUser;
         }
 
         public static IUser GetTeacher(this IList<IUser> users)
         {
-            var teacherUser = users.FirstOrDefault(user => user.GetIsTeacher());
+            var teacherUser = users.FirstOrDefault(user => user.IsTeacher());
             return teacherUser;
         }
     }

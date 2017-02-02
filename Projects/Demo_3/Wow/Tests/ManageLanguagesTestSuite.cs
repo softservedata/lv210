@@ -12,7 +12,7 @@ namespace Wow.Tests
 
         private static readonly object[] TestData =
         {
-            new object[] { UserRepository.Get().FromCsv("Users.csv").GetAdmin() }
+            new object[] { UserRepository.Get().FromXml("Users.xml").GetAdmin() }
         };
 
         // Verify the adding new (not existing in WOW) languages to the application
@@ -20,7 +20,7 @@ namespace Wow.Tests
         [Test, TestCaseSource(nameof(TestData))]
         public void AddNewLanguageTest(User admin)
         {
-            logger.Info("Start add new language test");
+            logger.Info("Start 'Add New Language' test");
             
             // Preconditions
             LoginPage loginPage = Application.Get().Login();

@@ -57,9 +57,9 @@ namespace Wow.Data
         string GetLanguage(); 
         string GetEmail();
         string GetPassword();
-        bool GetIsAdmin();
-        bool GetIsTeacher();
-        bool GetIsStudent();
+        bool IsAdmin();
+        bool IsTeacher();
+        bool IsStudent();
     }
 
     [DataContract]
@@ -69,18 +69,25 @@ namespace Wow.Data
 
         [DataMember]
         private string firstName;
+
         [DataMember]
         private string lastName;
+
         [DataMember]
         private string language;
+
         [DataMember]
         private string email;
+
         [DataMember]
         private string password;
+
         [DataMember]
         private bool isAdmin;
+
         [DataMember]
         private bool isTeacher;
+
         [DataMember]
         private bool isStudent;
 
@@ -176,17 +183,17 @@ namespace Wow.Data
             return this.password;
         }
 
-        public bool GetIsAdmin()
+        public bool IsAdmin()
         {
             return this.isAdmin;
         }
 
-        public bool GetIsTeacher()
+        public bool IsTeacher()
         {
             return this.isTeacher;
         }
 
-        public bool GetIsStudent()
+        public bool IsStudent()
         {
             return this.isStudent;
         }    
