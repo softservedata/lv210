@@ -2,7 +2,6 @@
 
 namespace Wow.Appl
 {
-    // Builder Interfaces
     public interface IBrowserName
     {
         IImplicitTimeOut SetBrowserName(string browserName);
@@ -28,7 +27,6 @@ namespace Wow.Appl
         ApplicationSources Build();
     }
 
-    // Dependency Inversion Interface
     public interface IApplicationSources
     {
         string GetBrowserName();
@@ -39,23 +37,21 @@ namespace Wow.Appl
 
     public class ApplicationSources : IBrowserName, IImplicitTimeOut, ILoginUrl, ILogoutUrl, IBuilder, IApplicationSources
     {
-        // Browser Data
         private string browserName;
         private long implicitTimeOut;
 
-        // URLs
         private string loginUrl;
         private string logoutUrl;
 
         private ApplicationSources() { }
 
-        // Static Factory
         public static IBrowserName Get()
         {
             return new ApplicationSources();
         }
 
         // Setters
+
         public IImplicitTimeOut SetBrowserName(string browserName)
         {
             this.browserName = browserName;
@@ -86,6 +82,7 @@ namespace Wow.Appl
         }
 
         // Getters
+
         public string GetBrowserName()
         {
             return this.browserName;
