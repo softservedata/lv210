@@ -25,31 +25,28 @@ namespace Wow.Pages
             public HtmlInputSubmit SubmitInput { get; private set; }
 
             // Constructor
-            protected internal LoginForm(Manager manager)
+            public LoginForm(Manager manager)
             {
                 this.manager = manager;
-                this.LoginInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=email");
+                this.LoginInput =  manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=email");
                 this.PasswordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=password");
                 this.SubmitInput = manager.ActiveBrowser.Find.ByName<HtmlInputSubmit>("loginButton");
             }
         }
+
         internal class SignUpForm
         {
-            // Fields
             private Manager manager;
+            public HtmlInputText NameInput { get; set; }
+            public HtmlInputText SurnameInput { get; set; }
+            public HtmlSelect SelectLanguageInput { get; set; }
+            public HtmlInputEmail EmailInput { get; set; }
+            public HtmlInputPassword PasswordInput { get; set; }
+            public HtmlInputPassword RepeatPasswordInput { get; set; }
+            public HtmlButton ConfirmSignUpButton { get; set; }
+            public Element ErrorMessage { get; set; }
 
-            // get Data
-            public HtmlInputText NameInput { get; private set; }
-            public HtmlInputText SurnameInput { get; private set; }
-            public HtmlSelect SelectLanguageInput { get; private set; }
-            public HtmlInputEmail EmailInput { get; private set; }
-            public HtmlInputPassword PasswordInput { get; private set; }
-            public HtmlInputPassword RepeatPasswordInput { get; private set; }
-            public HtmlInputSubmit ConfirmSignUpButton { get; private set; }
-            public Element ErrorMessage { get; internal set; }
-
-            // Constructor
-            protected internal SignUpForm(Manager manager)
+            public SignUpForm(Manager manager)
             {
                 this.manager = manager;
                 this.NameInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputText>("ng-model=nameValue");
@@ -58,30 +55,27 @@ namespace Wow.Pages
                 this.EmailInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputEmail>("ng-model=emailValue");
                 this.PasswordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=passwordValue");
                 this.RepeatPasswordInput = manager.ActiveBrowser.Find.ByAttributes<HtmlInputPassword>("ng-model=repeatPasswordValue");
-                this.ConfirmSignUpButton = manager.ActiveBrowser.Find.ByAttributes<HtmlInputSubmit>("class=btn btn-block btn-primary");
+                this.ConfirmSignUpButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("ng-click=registerButtonClick()");
             }
         }
 
         // Fields
         private Manager manager;
+        private LoginForm loginForm;
+        private SignUpForm signUpForm;
 
         // get Data
         public HtmlButton LoginButton { get; private set; }
-
-        public HtmlButton SignupButton { get; private set; }
-
+        public HtmlButton SignUpButton { get; private set; }
         public Element LoginDescription { get; private set; }
-        //
-        private LoginForm loginForm;
-        private SignUpForm signUpForm;
 
         // Constructor
         public LoginPage(Manager manager)
         {
             this.manager = manager;
             this.LoginButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-success");
+            this.SignUpButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-primary");
             this.LoginDescription = manager.ActiveBrowser.Find.ByXPath("//div[@class='text-primary']/h2/small");
-            this.SignupButton = manager.ActiveBrowser.Find.ByAttributes<HtmlButton>("class=btn btn-primary");
         }
 
         // Page Object
@@ -104,42 +98,6 @@ namespace Wow.Pages
             return this.loginForm.SubmitInput;
         }
 
-        //Geters to SingForm
-        private HtmlInputText GetNameInput()
-        {
-            return this.signUpForm.NameInput;
-        }
-
-        private HtmlInputText GetSurnameInput()
-        {
-            return this.signUpForm.SurnameInput;
-        }
-
-        private HtmlSelect GetSelectLanguageInput()
-        {
-            return this.signUpForm.SelectLanguageInput;
-        }
-
-        private HtmlInputEmail GetEmailInput()
-        {
-            return this.signUpForm.EmailInput;
-        }
-
-        private HtmlInputPassword GetPasswordInSingFormInput()
-        {
-            return this.signUpForm.PasswordInput;
-        }
-
-        private HtmlInputPassword GetRepeatPasswordInput()
-        {
-            return this.signUpForm.RepeatPasswordInput;
-        }
-
-        private HtmlInputSubmit GetSignUp()
-        {
-            return this.signUpForm.ConfirmSignUpButton;
-        }
-
         // Functional
         public string GetLoginButtonText()
         {
@@ -158,9 +116,9 @@ namespace Wow.Pages
             loginForm = new LoginForm(manager);
         }
 
-        public void ClickSignButton()
+        public void ClickSignUpButton()
         {
-            this.SignupButton.Click();
+            this.SignUpButton.Click();
             signUpForm = new SignUpForm(manager);
         }
 
@@ -173,16 +131,20 @@ namespace Wow.Pages
             this.loginForm.SubmitInput.Click();
         }
 
-        internal void SetSignupData(IUser user)
+        internal void SetSignUpData(IUser user)
         {
             this.signUpForm.NameInput.Text = user.GetFirstname();
             this.signUpForm.SurnameInput.Text = user.GetLastname();
             string selectedLanguage = user.GetLanguage();
-            this.signUpForm.SelectLanguageInput.SelectByText(selectedLanguage, true);
+            this.signUpForm.SelectLanguageInput.SelectByText(selectedLanguage);
             this.signUpForm.EmailInput.Text = user.GetEmail();
             this.signUpForm.PasswordInput.Text = user.GetPassword();
             this.signUpForm.RepeatPasswordInput.Text = user.GetPassword();
-            this.signUpForm.ConfirmSignUpButton.Click();                                    //винести в окремий метод
+        }
+
+        internal void ClickSubmitSignUpButton()
+        {
+            this.signUpForm.ConfirmSignUpButton.Click();
         }
 
         public string GetSignUpErrorMessage()
@@ -191,18 +153,15 @@ namespace Wow.Pages
             return signUpForm.ErrorMessage.TextContent.Trim();
         }
 
-        internal SignUpForm InvalidSignUp(IUser user)
+        internal SignUpForm InvalidSignUpData(IUser user)
         {
-            SetSignupData(user);
-
+            SetSignUpData(user);
             return new SignUpForm(manager);
         }
 
         public UsersPage SuccessAdminLogin(IUser admin)
         {
-
             SetLoginData(admin);
-
             return new UsersPage(manager);
         }
 

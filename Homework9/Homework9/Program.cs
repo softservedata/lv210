@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Homework9
 {
-    //    1. Створити делегат, який отримує і повертає дійсне число.
-    //2. Створити метод Tabulation, який отримує цей делегат та два числа a, b, n  і 
+    // 1. Створити делегат, який отримує і повертає дійсне число.
+    // 2. Створити метод Tabulation, який отримує цей делегат та два числа a, b, n  і 
     // видруковує значення делегату в точках: a+k*(b-a)/n, k=0,1,2,…n 
-    //3. Викликати метод Tabulation для табуляції функції sin(x), 2x^2+3x* cos(x^3);
-
+    // 3. Викликати метод Tabulation для табуляції функції sin(x), 2x^2+3x* cos(x^3);
 
     class Program
     {
@@ -27,9 +26,9 @@ namespace Homework9
 
         public static void Tabulation(TabDelegat del, double a, double b, int n)
         {
-            double x;
             for (int k = 0; k < n; k++)
             {
+                double x;
                 x = a + k * (b - a) / n;
                 Console.WriteLine("Function in point {0} = {1}", x, del(x));
             }

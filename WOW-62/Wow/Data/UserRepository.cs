@@ -34,14 +34,17 @@ namespace Wow.Data
 
         public IUser Admin()
         {
-            //return User.Get()
-            //    .SetEmail("wowira@ukr.net")
-            //    .SetPassword("irawow123")
-            //    .SetIsAdmin(true)
-            //    .SetIsTeacher(true)
-            //    .SetIsStudent(true)
-            //    .Build();
-            return null;
+            return User.Get()
+                .SetFirstname(null)
+                .SetLastname(null)
+                .SetLanguage(null)
+                .SetEmail("wowira@ukr.net")
+                .SetPassword("irawow123")
+                .SetConfirmPassword("irawow123")
+                .SetIsAdmin(true)
+                .SetIsTeacher(true)
+                .SetIsStudent(true)
+                .Build();
         }
 
         public IUser Invalid()
@@ -56,20 +59,25 @@ namespace Wow.Data
             return null;
         }
 
+        
+        
         // not exist in DB
         public IUser NewUser()
         {
             return User.Get()
                 .SetFirstname("Red")
                 .SetLastname("Sun")
-                .SetLanguage(null)
+                .SetLanguage("English")
                 .SetEmail("mail@example.com")
                 .SetPassword("redsun")
+                .SetConfirmPassword("redsun")
                 .SetIsAdmin(true)
                 .SetIsTeacher(true)
                 .SetIsStudent(true)
                 .Build();
         }
+
+
 
         public List<IUser> FromExcel()
         {

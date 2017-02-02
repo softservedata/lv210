@@ -26,9 +26,15 @@ namespace Wow.Data
     {
         IPassword SetEmail(string email);
     }
+
     public interface IPassword
     {
-        IAdmin SetPassword(string password);
+        IConfirmPassword SetPassword(string password);
+    }
+
+    public interface IConfirmPassword
+    {
+        IAdmin SetConfirmPassword(string password);
     }
 
     public interface IAdmin
@@ -65,43 +71,30 @@ namespace Wow.Data
         bool GetIsStudent();
     }
 
-    public class User : IFirstname, ILastname, ILanguage, IEmail, IPassword, IAdmin, ITeacher, IStudent, IBuilder, IUser
+    public class User : IFirstname, ILastname, ILanguage, IEmail, IPassword, IConfirmPassword, IAdmin, ITeacher, IStudent, IBuilder, IUser
     {
         private const string SPACE = " ";
         private string firstname;
         private string lastname;
         private string language;
         private string email;
-        private string password; // { get; private set; }
+        private string password; 
         private bool isAdmin;
         private bool isTeacher;
         private bool isStudent;
 
         // Constructor
-        /*
-        public User(string email, string password, bool isAdmin, bool isTeacher, bool isStudent)
-        {
-            this.email = email;
-            this.password = password;
-            this.isAdmin = isAdmin;
-            this.isTeacher = isTeacher;
-            this.isStudent = isStudent;
-        }
-        */
         private User()
         {
-            // default
         }
 
         // static factory
-        // public static User Get() // old
         public static IFirstname Get()
         {
             return new User();
         }
 
         // setters
-
         public ILastname SetFirstname(string firstname)
         {
             this.firstname = firstname;
@@ -126,7 +119,13 @@ namespace Wow.Data
             return this;
         }
 
-        public IAdmin SetPassword(string password)
+        public IConfirmPassword SetPassword(string password)
+        {
+            this.password = password;
+            return this;
+        }
+
+        public IAdmin SetConfirmPassword(string password)
         {
             this.password = password;
             return this;
@@ -156,7 +155,6 @@ namespace Wow.Data
         }
 
         // getters
-
         public string GetName()
         {
             return GetFirstname() + SPACE + GetLastname();
@@ -201,6 +199,5 @@ namespace Wow.Data
         {
             return this.isStudent;
         }
-
     }
 }

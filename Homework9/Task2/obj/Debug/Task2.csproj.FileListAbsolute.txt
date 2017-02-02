@@ -4,3 +4,9 @@ C:\Docs\Anya\AQC\C#Projects\Homework9\Task2\bin\Debug\Task2.pdb
 C:\Docs\Anya\AQC\C#Projects\Homework9\Task2\obj\Debug\Task2.exe
 C:\Docs\Anya\AQC\C#Projects\Homework9\Task2\obj\Debug\Task2.pdb
 C:\Docs\Anya\AQC\C#Projects\Homework9\Task2\obj\Debug\Task2.csprojResolveAssemblyReference.cache
+C:\Users\aorlovtc\Source\Repos\lv210\Homework9\Task2\bin\Debug\Task2.exe.config
+C:\Users\aorlovtc\Source\Repos\lv210\Homework9\Task2\obj\Debug\Task2.exe
+C:\Users\aorlovtc\Source\Repos\lv210\Homework9\Task2\obj\Debug\Task2.pdb
+C:\Users\aorlovtc\Source\Repos\lv210\Homework9\Task2\bin\Debug\Task2.exe
+C:\Users\aorlovtc\Source\Repos\lv210\Homework9\Task2\bin\Debug\Task2.pdb
+C:\Users\aorlovtc\Source\Repos\lv210\Homework9\Task2\obj\Debug\Task2.csprojResolveAssemblyReference.cache
