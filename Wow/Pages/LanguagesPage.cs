@@ -9,6 +9,7 @@ namespace Wow.Pages
     public class LanguagesPage : HeadPage
     {
         public const string ErrorMessageForEnglishExistingLanguage = "English already exists";
+        public const string LanguagePageDescription = "Languages";
         private ModalWindow dialogWindow;
 
         public LanguagesPage(Manager manager) : base(manager)

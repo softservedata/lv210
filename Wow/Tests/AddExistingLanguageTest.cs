@@ -33,6 +33,7 @@ namespace Wow.Tests
             LoginPage loginPage = Application.Get().Login();
             UsersPage usersPage = loginPage.SuccessAdminLogin(admin);
             LanguagesPage languagesPage = usersPage.GotoLanguagesPage();
+            Assert.AreEqual(LanguagesPage.LanguagePageDescription, languagesPage.GetLanguagePageDescription());
 
             // Test steps
             Assert.IsTrue(languagesPage.IsLanguageInExistingList(language));
