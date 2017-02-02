@@ -25,7 +25,7 @@ namespace Wow.Pages
             public HtmlAnchor EditProfile { get; private set; }
             public HtmlAnchor LogOut { get; private set; }
 
-            public UsernameDropdown(Manager manager)
+            protected internal UsernameDropdown(Manager manager)
             {
                 this.manager = manager;
                 this.EditProfile = manager.ActiveBrowser.Find.ByContent<HtmlAnchor>("l:Edit Profile");
@@ -148,7 +148,7 @@ namespace Wow.Pages
 
         public void SelectDefaultTheme(ThemeState theme)
         {
-            DefaultTheme.SelectByPartialText(theme.ToString().Substring(0, 4), true);
+           DefaultTheme.SelectByPartialText(theme.ToString().Substring(0, 4), true);
         }
 
         public bool IsBlueThemeSelected()

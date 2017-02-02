@@ -9,7 +9,7 @@ namespace Wow.Pages
         internal const string GROUPSPAGE_DESCRIPTION_TEXT = "My Groups";
 
         //Componennts
-        internal class EditSelectedGroupPage
+        internal class EditGroupPage
         {
             internal class SelectDropdownToggle
             {
@@ -19,6 +19,7 @@ namespace Wow.Pages
                 public HtmlAnchor UncheckAllItem { get; private set; }
                 public HtmlInputText SearchBox { get; private set; }
                 public HtmlAnchor UserName { get; private set; }
+                public HtmlSpan CheckMark { get; private set; }
 
                 internal SelectDropdownToggle(Manager manager)
                 {
@@ -49,6 +50,49 @@ namespace Wow.Pages
                     bool isPresent = (UserName != null);
                     return isPresent;
                 }
+
+                public void MarkUserInDropdown(string userName)
+                {
+                    UserName = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>($"//a[contains(text(), '{userName}')]");
+                    if (UserName != null)
+                    {
+                        UserName.Click();
+                    }
+                }
+
+                public bool IsUserChecked(string UserName)
+                {
+                    bool isChecked = false;
+
+                    if (IsUserPresentInDropdown(UserName))
+                    {
+                        this.CheckMark = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//a[@role='menuitem']/span[@class='glyphicon glyphicon-ok']");
+
+                        if (CheckMark != null)
+                        {
+                            isChecked = true;
+                        }
+                    }
+                    return isChecked;
+                }
+
+                public bool IsUserChecked()
+                {
+                    bool isChecked = false;
+                    this.CheckMark = manager.ActiveBrowser.Find.ByXPath<HtmlSpan>("//a[@role='menuitem']/span[@class='glyphicon glyphicon-ok']");
+
+                    if (CheckMark != null)
+                    {
+                        isChecked = true;
+                    }
+
+                    return isChecked;
+                }
+
+                public bool IsUserUnChecked(string UserName)
+                {
+                    return !IsUserChecked(UserName);
+                }
             }
 
             private Manager manager;
@@ -58,8 +102,9 @@ namespace Wow.Pages
             public HtmlButton SelectButton { get; private set; }
             public HtmlButton SubmitChangesButton { get; private set; }
             public HtmlInputText SearchBox { get; private set; }
+            public HtmlContainerControl User { get; private set; }
 
-            internal EditSelectedGroupPage(Manager manager)
+            internal EditGroupPage(Manager manager)
             {
                 this.manager = manager;
                 this.SelectedGroupPageDescription = manager.ActiveBrowser.Find.ByAttributes("class=col-md-4 text-left blod-text ng-binding");
@@ -83,6 +128,13 @@ namespace Wow.Pages
                 SubmitChangesButton.Click();
             }
 
+            public bool IsUserPresentInGrid(string userName)
+            {
+                User = manager.ActiveBrowser.Find.ByXPath<HtmlContainerControl>($"//td[contains(text(), '{userName}')]");
+                bool isPresent = (User != null);
+                return isPresent;
+            }
+
             public SelectDropdownToggle OpenSelectDropdownToggle()
             {
                 ClickSelectButton();
@@ -97,18 +149,18 @@ namespace Wow.Pages
         }
 
         private Manager manager;
-        internal EditSelectedGroupPage editGroupPage;
+        internal EditGroupPage editGroupPage;
 
-        private HtmlAnchor FirstEditIconInTable { get; set; }
+        public HtmlAnchor FirstEditIconInTable { get; private set; }
         public Element MyGroupsPageDescription { get; private set; }
-        public HtmlInputText ByNameSearchBox { get; private set; }
+        public HtmlInputText SearchBox { get; private set; }
 
         public MyGroupsPage(Manager manager)
         {
             this.manager = manager;
             this.MyGroupsPageDescription = manager.ActiveBrowser.Find.ByXPath("//div[@class='col-md-12 text-center']/h2");
             this.FirstEditIconInTable = manager.ActiveBrowser.Find.ByXPath<HtmlAnchor>("//tr[@ng-repeat='group in groupsToShow']//a");
-            this.ByNameSearchBox = manager.ActiveBrowser.Find.ByXPath<HtmlInputText>("//div[@class='col-md-2']/input");
+            this.SearchBox = manager.ActiveBrowser.Find.ByXPath<HtmlInputText>("//div[@class='col-md-2']/input");
         }
 
         public string GetMyGroupsPageDescriptionText()
@@ -116,23 +168,23 @@ namespace Wow.Pages
             return this.MyGroupsPageDescription.TextContent.Trim();
         }
 
-        internal EditSelectedGroupPage ClickFirstEditIconInTable()
+        internal EditGroupPage ClickFirstEditIconInTable()
         {
             FirstEditIconInTable.Click();
-            editGroupPage = new EditSelectedGroupPage(manager);
+            editGroupPage = new EditGroupPage(manager);
             return editGroupPage;
         }
 
         public void FindGroupViaSearchBox(string groupName)
         {
-            ByNameSearchBox.Text = groupName;
+            SearchBox.Text = groupName;
         }
 
-        internal EditSelectedGroupPage EditSpecificGroup(string groupName)
+        internal EditGroupPage EditGroup(string groupName)
         {
             FindGroupViaSearchBox(groupName);
             ClickFirstEditIconInTable();
-            return new EditSelectedGroupPage(manager);
+            return new EditGroupPage(manager);
         }
     }
 }

@@ -1,12 +1,15 @@
-﻿using NUnit.Framework;
+﻿using NLog;
+using NUnit.Framework;
 using Wow.Data;
 using Wow.Pages;
 
 namespace Wow.Tests
 {
     [TestFixture]
-    public class AddUsersToGroupByTeacher : TestRunner
+    internal class AddUsersToGroupByTeacher : TestRunner
     {
+        private readonly Logger logger = LogManager.GetCurrentClassLogger();
+
         private static readonly object[] TestSigninData =
         {
             new object[]
@@ -21,6 +24,9 @@ namespace Wow.Tests
         [Test, TestCaseSource(nameof(TestSigninData))]
         public void AddUsersToGroupByTeacherTest(User teacher, string groupName, string userOneName, string userTwoName)
         {
+            logger.Info(
+                "Start test AddUsersToGroupByTeacherTest(User teacher, string groupName, string userOneName, string userTwoName");
+
             // Preconditions
             // 1. World of Words home page is opened ('https://192.168.195.249')
             // 2. Teacher is logged in: e - mail 'mar_yanap@yahoo.de', password 'q2w3e4r5'
@@ -34,6 +40,7 @@ namespace Wow.Tests
             // Step 1: Click on 'Manager' tab in ‘Teaching tools’ menu. Click on 'Groups'
 
             MyGroupsPage myGroupsPage = usersPage.OpenMyGroupsPage();
+
             Assert.AreEqual(MyGroupsPage.GROUPSPAGE_DESCRIPTION_TEXT, myGroupsPage.GetMyGroupsPageDescriptionText());
 
             // EndStep 1: Page 'My Groups' is opened
@@ -42,6 +49,7 @@ namespace Wow.Tests
 
             myGroupsPage.FindGroupViaSearchBox(groupName);
             myGroupsPage.ClickFirstEditIconInTable();
+            ;
             Assert.AreEqual(groupName, myGroupsPage.editGroupPage.GetSelectedGroupDescriptionText());
 
             // EndStep 2: The Group 'Test_M' page is opened
@@ -50,8 +58,8 @@ namespace Wow.Tests
 
             myGroupsPage.editGroupPage.OpenSelectDropdownToggle();
 
-            Assert.True(myGroupsPage.editGroupPage.selectDropdownToggle.IsUserPresentInDropdown(userOneName));
-            Assert.True(myGroupsPage.editGroupPage.selectDropdownToggle.IsUserPresentInDropdown(userTwoName));
+            Assert.IsTrue(myGroupsPage.editGroupPage.selectDropdownToggle.IsUserPresentInDropdown(userOneName));
+            Assert.IsTrue(myGroupsPage.editGroupPage.selectDropdownToggle.IsUserPresentInDropdown(userTwoName));
 
             // EndStep 3: Users "Black Cat" and "Ulyana Holub" are present in drop down list.
 
@@ -59,19 +67,29 @@ namespace Wow.Tests
 
             myGroupsPage.editGroupPage.selectDropdownToggle.ClickCheckAllItem();
 
-            // EndStep 4: All users are selected with green check marks
+            Assert.IsTrue(myGroupsPage.editGroupPage.selectDropdownToggle.IsUserChecked(userOneName));
+            Assert.IsTrue(myGroupsPage.editGroupPage.selectDropdownToggle.IsUserChecked(userTwoName));
+
+            // EndStep 4: Users "Black Cat" and "Ulyana Holub" are selected with green check marks
 
             // Step 5: Click 'Uncheck All'
 
             myGroupsPage.editGroupPage.selectDropdownToggle.ClickUncheckAllItem();
 
-            // EndStep 5: No one user is selected
+            Assert.IsTrue(myGroupsPage.editGroupPage.selectDropdownToggle.IsUserUnChecked(userOneName));
+            Assert.IsTrue(myGroupsPage.editGroupPage.selectDropdownToggle.IsUserUnChecked(userTwoName));
 
-            // Step 6: Type 'Mariana Tester' into the text field 'Search'. Check off 'Mariana Tester'.
+            // EndStep 5: Users "Black Cat" and "Ulyana Holub" are unmarked
+
+            // Step 6: Type 'Black Cat' into the text field 'Search'. Check off 'Black Cat'.
 
             myGroupsPage.editGroupPage.selectDropdownToggle.FindUserViaSearchBox(userOneName);
+            myGroupsPage.editGroupPage.selectDropdownToggle.MarkUserInDropdown(userOneName);
 
-            // EndStep 6: 'Mariana Tester' is found and checked off.
+            Assert.IsTrue(myGroupsPage.editGroupPage.selectDropdownToggle.IsUserPresentInDropdown(userOneName));
+            Assert.IsTrue(myGroupsPage.editGroupPage.selectDropdownToggle.IsUserChecked());
+
+            // EndStep 6: 'Black Cat' is found and checked off.
 
             // Step 7: Press button 'Submit changes'
 
@@ -79,14 +97,19 @@ namespace Wow.Tests
 
             // EndStep 7: 
 
-            // Step 8: Enter 'Mariana Tester' into edit field 'Search by Name'
+            // Step 8: Enter 'Black Cat' into edit field 'Search by Name'
 
             myGroupsPage.editGroupPage.EnterUserNameInSearch(userOneName);
 
-            // EndStep 8: Student with name 'Mariana Tester' displays in the table
+            Assert.IsTrue(myGroupsPage.editGroupPage.IsUserPresentInGrid(userOneName));
+
+            // EndStep 8: Student with name 'Black Cat' displays in the table
 
             // Return to previous state
             loginPage = usersPage.GotoLogOut();
+
+            logger.Info(
+               "End test AddUsersToGroupByTeacherTest(User teacher, string groupName, string userOneName, string userTwoName)");
         }
     }
 }
