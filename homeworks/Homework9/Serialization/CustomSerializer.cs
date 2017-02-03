@@ -30,11 +30,11 @@ namespace Serialization
 
         public static void SerializeToJSON(Person person, string fileName)
         {
-            DataContractSerializer jsonSer = new DataContractSerializer(typeof(Person));
+            DataContractSerializer jsonSerializer = new DataContractSerializer(typeof(Person));
 
             using (Stream stream = new FileStream(fileName, FileMode.Open, FileAccess.Write))
             {
-                jsonSer.WriteObject(stream, person);
+                jsonSerializer.WriteObject(stream, person);
             }
         }
     }

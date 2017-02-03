@@ -11,7 +11,11 @@ namespace Homework9
     public class Tabulator
     {
         /// <summary>
+<<<<<<< HEAD
         /// Method tabulates given function in given interval
+=======
+         /// Method tabulates given function in given interval
+>>>>>>> 2e6c481fb66dc1e8cd1731eaaa27d3f163802981
         /// from a to b.
         /// </summary>
         /// <param name="del">Function</param>
